@@ -1,0 +1,2325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- Aeon MQ 6 -->
+	<!-- ######################################################################### Menu Principal ######################################################################### -->
+	<include name="MainMenuWidgetsMode">
+		<left>510</left>
+		<top>776</top>
+		<width>900</width>
+		<height>40</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_20</font>
+		<textcolor>FFFFFAF0</textcolor>
+		<include>Animation_WidgetsSelector</include>
+		<animation effect="slide" start="0,0" end="0,-285" condition="Skin.HasSetting(higherwidgets) | Skin.HasSetting(highermainmenu) + Skin.HasSetting(higherwidgets)">Conditional</animation>
+	</include>
+	<include name="MainMenuFixedList">
+		<control type="fixedlist" id="9000">
+			<include condition="!Skin.HasSetting(homemq)">MainMenu_Content</include>
+			<include condition="Skin.HasSetting(homemq) + !Skin.HasSetting(mainmenuvertical)">MainMenu_Horizontal</include>
+			<include condition="Skin.HasSetting(homemq) + Skin.HasSetting(mainmenuvertical)">MainMenu_Vertical</include>
+		</control>
+	</include>
+	<include name="MainMenuWrapList">
+		<control type="wraplist" id="9000">
+			<include condition="!Skin.HasSetting(homemq)">MainMenu_Content</include>
+			<include condition="Skin.HasSetting(homemq) + !Skin.HasSetting(mainmenuvertical)">MainMenu_Horizontal</include>
+			<include condition="Skin.HasSetting(homemq) + Skin.HasSetting(mainmenuvertical)">MainMenu_Vertical</include>
+		</control>
+	</include>
+	<include name="MainMenuPreview">
+		<control type="wraplist" id="9001">
+			<include>MainMenu_Content</include>
+		</control>
+	</include>
+	<include name="MainMenuFont">
+		<height>90</height>
+		<width>600</width>
+		<align>center</align>
+		<aligny>center</aligny>
+		<label>$INFO[ListItem.Label]</label>
+		<textcolor>$VAR[value_fontcolor]</textcolor>
+		<animation effect="fade" end="40" condition="true">Conditional</animation>
+	</include>
+	<include name="MainMenuFontFocus">
+		<height>90</height>
+		<width>600</width>
+		<align>center</align>
+		<aligny>center</aligny>
+		<label>$INFO[ListItem.Label]</label>
+		<textcolor>$VAR[value_fontcolor]</textcolor>
+		<animation effect="zoom" center="320,20" start="100" end="120" time="400" tween="cubic" easing="out" condition="!Skin.HasSetting(mainmenuvertical)">conditional</animation>
+		<animation effect="zoom" center="50,20" start="100" end="120" time="400" tween="cubic" easing="out" condition="Skin.HasSetting(homemq)+Skin.HasSetting(mainmenuvertical)">conditional</animation>
+		<animation effect="fade" start="100" end="50" time="100" condition="!Control.Hasfocus(9000) | Skin.HasSetting(submode)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,15" time="300" tween="sine" easing="out" condition="Skin.HasSetting(homemq)+Skin.HasSetting(mainmenuvertical) + !Skin.HasSetting(submode) + ![String.Contains(Container(9000).ListItem.Property(id),movie) + Library.HasContent(Movies) | String.Contains(Container(9000).ListItem.Property(id),tvshow) + Library.HasContent(TVShows) | String.Contains(Container(9000).ListItem.Property(id),concert) + Library.HasContent(MusicVideos) | String.Contains(Container(9000).ListItem.Property(id),music) + Library.HasContent(Music) | String.Contains(Container(9000).ListItem.Property(id),favourites) + !String.IsEmpty(Window(0).Property(Favourite.1.Name)) | String.Contains(Container(9000).ListItem.Property(id),vpl) | String.Contains(Container(9000).ListItem.Property(id),apl) | String.Contains(Container(9000).ListItem.Property(id),radio) | String.Contains(Container(9000).ListItem.Property(id),livetv) | String.Contains(Container(9000).ListItem.Property(id),programs)]+ !Skin.HasSetting(nohometotals)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,15" time="300" tween="sine" easing="out" condition="Skin.HasSetting(homemq)+Skin.HasSetting(nohometotals) + !Skin.HasSetting(submode)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,40" time="400" delay="300" easing="in" tween="quadratic" condition="Skin.HasSetting(homemq)+Skin.HasSetting(submode) + Skin.HasSetting(mainmenuvertical)">Conditional</animation>
+	</include>
+	<include name="MainMenu_Content">
+		<viewtype label="Main Menu">list</viewtype>
+		<animation type="WindowOpen" reversible="false" condition="true">
+			<effect type="slide" start="-1920" end="0" time="600" tween="quadratic" easing="out"/>
+			<effect type="fade" start="0" end="100" time="400"/>
+		</animation>
+		<animation type="VisibleChange" reversible="false" condition="true">
+			<effect type="slide" start="-1920" end="0" time="600" tween="quadratic" easing="out"/>
+			<effect type="fade" start="0" end="100" time="400"/>
+		</animation>
+		<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
+		<animation effect="fade" start="100" end="0" time="750" condition="[Player.HasMedia + System.IdleTime(8)] + !Window.IsVisible(6000)">Conditional</animation>
+		<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(510) | Control.HasFocus(600) | Control.HasFocus(1000) | Skin.HasSetting(extra_extra) + [Control.HasFocus(2518) | Control.HasFocus(2510) | Control.HasFocus(2511) | Control.HasFocus(2512) | Control.HasFocus(2513) | Control.HasFocus(2514) | Control.HasFocus(2515) | Control.HasFocus(2516) | Control.HasFocus(2517)]">Conditional</animation>
+		<left>0</left>
+		<top>818</top>
+		<width>1920</width>
+		<height>90</height>
+		<onup>8001</onup>
+		<ondown>8002</ondown>
+		<orientation>horizontal</orientation>
+		<scrolltime>300</scrolltime>
+		<focusposition>1</focusposition>
+		<movement>1</movement>
+		<itemlayout width="639" height="90">
+			<control type="label">
+				<left>22</left>
+				<top>3</top>
+				<font>Font_60</font>
+				<include>MainMenuFont</include>
+				<visible>String.IsEqual(skin.string(font),font1)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>1</top>
+				<font>Font_60a</font>
+				<include>MainMenuFont</include>
+				<visible>String.IsEqual(skin.string(font),font2)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>3</top>
+				<font>Font_60b</font>
+				<include>MainMenuFont</include>
+				<visible>String.IsEqual(skin.string(font),font3)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>1</top>
+				<font>Font_60c</font>
+				<include>MainMenuFont</include>
+				<visible>String.IsEqual(skin.string(font),font4)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>8</top>
+				<font>Font_60d</font>
+				<include>MainMenuFont</include>
+				<visible>String.IsEqual(skin.string(font),font5)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>0</top>
+				<font>Font_60e</font>
+				<include>MainMenuFont</include>
+				<visible>String.IsEqual(skin.string(font),font6)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>8</top>
+				<font>Font_60f</font>
+				<include>MainMenuFont</include>
+				<visible>String.IsEqual(skin.string(font),font7)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>-2</top>
+				<font>Font_60g</font>
+				<include>MainMenuFont</include>
+				<visible>String.IsEqual(skin.string(font),font8)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>-2</top>
+				<font>Font_60h</font>
+				<include>MainMenuFont</include>
+				<visible>String.IsEqual(skin.string(font),font9)</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout width="639" height="90">
+			<control type="group">
+				<visible>String.IsEqual(skin.string(mainmenustyle),metal.png)</visible>
+				<control type="image">
+					<left>0</left>
+					<top>8</top>
+					<width>639</width>
+					<height>75</height>
+					<texture>details_back.png</texture>
+					<colordiffuse>$VAR[value_stylecolor]</colordiffuse>
+					<animation effect="fade" start="100" end="75" condition="true">conditional</animation>
+				</control>
+				<control type="image">
+					<left>-45</left>
+					<top>8</top>
+					<width>45</width>
+					<height>75</height>
+					<texture flipx="true" diffuse="details_back.png">shadow.png</texture>
+				</control>
+				<control type="image">
+					<left>639</left>
+					<top>8</top>
+					<width>45</width>
+					<height>75</height>
+					<texture diffuse="details_back.png">shadow.png</texture>
+				</control>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>3</top>
+				<font>Font_60</font>
+				<include>MainMenuFontFocus</include>
+				<visible>String.IsEqual(skin.string(font),font1)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>1</top>
+				<font>Font_60a</font>
+				<include>MainMenuFontFocus</include>
+				<visible>String.IsEqual(skin.string(font),font2)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>3</top>
+				<font>Font_60b</font>
+				<include>MainMenuFontFocus</include>
+				<visible>String.IsEqual(skin.string(font),font3)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>1</top>
+				<font>Font_60c</font>
+				<include>MainMenuFontFocus</include>
+				<visible>String.IsEqual(skin.string(font),font4)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>8</top>
+				<font>Font_60d</font>
+				<include>MainMenuFontFocus</include>
+				<visible>String.IsEqual(skin.string(font),font5)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>0</top>
+				<font>Font_60e</font>
+				<include>MainMenuFontFocus</include>
+				<visible>String.IsEqual(skin.string(font),font6)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>8</top>
+				<font>Font_60f</font>
+				<include>MainMenuFontFocus</include>
+				<visible>String.IsEqual(skin.string(font),font7)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>-2</top>
+				<font>Font_60g</font>
+				<include>MainMenuFontFocus</include>
+				<visible>String.IsEqual(skin.string(font),font8)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>-2</top>
+				<font>Font_60h</font>
+				<include>MainMenuFontFocus</include>
+				<visible>String.IsEqual(skin.string(font),font9)</visible>
+			</control>
+		</focusedlayout>
+		<content>
+			<include condition="Window.IsVisible(home)">Menu_Content</include>
+			<include condition="Window.IsVisible(6000)">Menu_ContentPreview</include>
+		</content>
+	</include>
+
+	<include name="SubMenuDefault">
+		<control type="image">
+			<left>0</left>
+			<top>932</top>
+			<width>1935</width>
+			<height>45</height>
+			<texture>shadow_h.png</texture>
+			<colordiffuse>C3FFFFFF</colordiffuse>
+			<visible>!Skin.HasSetting(homemq) | [Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)]</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>976</top>
+			<width>1935</width>
+			<height>183</height>
+			<aligny>top</aligny>
+			<texture>darkgrey.png</texture>
+			<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+			<include>Animation_HomeGlass</include>
+			<visible>!Skin.HasSetting(homemq) | [Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)]</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>440</width>
+			<height>760</height>
+				<texture diffuse="shadow_mask_v.png">darkgrey.png</texture>
+				<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+				<animation effect="fade" end="75" condition="true">Conditional</animation>
+				<animation effect="rotate" center="auto" start="0" end="180" time="0" condition="true">Conditional</animation>
+			<visible>Skin.HasSetting(homemq)+Skin.HasSetting(mainmenuvertical)</visible>
+		</control>
+		<control type="button" id="9101">
+			<!-- Botao vazio -->
+			<left>0</left>
+			<top>980</top>
+			<width>310</width>
+			<height>48</height>
+			<onup>Close</onup>
+			<ondown>Close</ondown>
+			<ondown condition="!Skin.HasSetting(nosmartsub)">ActivateWindow(5099)</ondown>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_15</font>
+			<label>31014</label>
+			<textoffsetx>0</textoffsetx>
+			<textoffsety>8</textoffsety>
+			<texturefocus>topmenu_button_nofocus.png</texturefocus>
+			<texturenofocus></texturenofocus>
+			<textcolor>FFFFFAF0</textcolor>
+			<focusedcolor>FF101010</focusedcolor>
+			<selectedcolor>FF101010</selectedcolor>
+			<pulseonselect>no</pulseonselect>
+			<visible>Integer.IsEqual(Container(9000).numitems,0)</visible>
+		</control>
+	</include>
+	<include name="SubMenuCommon">
+		<onload condition="!Integer.IsEqual(Container(9000).numitems,0)">SetFocus(9000)</onload>
+		<onload condition="Integer.IsEqual(Container(9000).numitems,0)">SetFocus(9101)</onload>
+		<onload>Skin.Reset(submenu_action)</onload>
+		<onunload>Skin.Reset(submode)</onunload>
+		<onunload condition="!String.IsEmpty(skin.string(submenu_action))">SetFocus(8000)</onunload>
+	</include>
+	<!-- ######################################################################### Submenu Lista Vertical ######################################################################### -->
+	<include name="SubmenuVList">
+		<viewtype>list</viewtype>
+		<left>0</left>
+		<top>82</top>
+		<width>495</width>
+		<height>892</height>
+		<onleft>Close</onleft>
+		<onright>5000</onright>
+		<orientation>vertical</orientation>
+		<scrolltime>350</scrolltime>
+		<focusposition>0</focusposition>
+		<itemlayout width="495" height="50">
+			<control type="image">
+				<!-- azul -->
+				<left>0</left>
+				<top>0</top>
+				<width>447</width>
+				<height>50</height>
+				<texture>grey.png</texture>
+				<colordiffuse>40007399</colordiffuse>
+				<visible>Window.IsVisible(6000) + ![String.IsEmpty(ListItem.Property(id)) | !String.IsEmpty(ListItem.Property(condition))]</visible>
+			</control>
+			<control type="image">
+				<!-- vermelho -->
+				<left>0</left>
+				<top>0</top>
+				<width>447</width>
+				<height>50</height>
+				<texture>grey.png</texture>
+				<colordiffuse>50B20000</colordiffuse>
+				<visible>Window.IsVisible(6000) + [String.IsEmpty(ListItem.Property(id)) | !String.String.IsEmpty(ListItem.Property(condition))]</visible>
+			</control>
+			<control type="image">
+				<!-- amarelo -->
+				<left>0</left>
+				<top>0</top>
+				<width>447</width>
+				<height>50</height>
+				<texture>grey.png</texture>
+				<colordiffuse>50C4941D</colordiffuse>
+				<visible>Window.IsVisible(6000) + String.IsEmpty(ListItem.Property(id))</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>447</width>
+				<height>4</height>
+				<texture>divider.png</texture>
+				<colordiffuse>90FFFFFF</colordiffuse>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>3</top>
+				<height>45</height>
+				<width>390</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>Font_18</font>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<textcolor>E4101010</textcolor>
+			</control>
+		</itemlayout>
+		<focusedlayout width="495" height="50">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>450</width>
+				<height>50</height>
+				<texture>settings_button.png</texture>
+				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+				<include>Animation_DefaultGlass</include>
+				<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(9000)">conditional</animation>
+				<visible>Window.IsVisible(Home)</visible>
+			</control>
+			<control type="image">
+				<!-- azul -->
+				<left>0</left>
+				<top>0</top>
+				<width>447</width>
+				<height>50</height>
+				<texture>grey.png</texture>
+				<colordiffuse>FF007399</colordiffuse>
+				<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(9000)">conditional</animation>
+				<visible>Window.IsVisible(6000) + ![String.IsEmpty(ListItem.Property(id)) | !String.IsEmpty(ListItem.Property(condition))]</visible>
+			</control>
+			<control type="image">
+				<!-- vermelho -->
+				<left>0</left>
+				<top>0</top>
+				<width>447</width>
+				<height>50</height>
+				<texture>grey.png</texture>
+				<colordiffuse>FFB20000</colordiffuse>
+				<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(9000)">conditional</animation>
+				<visible>Window.IsVisible(6000) + [String.IsEmpty(ListItem.Property(id)) | !String.IsEmpty(ListItem.Property(condition))]</visible>
+			</control>
+			<control type="image">
+				<!-- amarelo -->
+				<left>0</left>
+				<top>0</top>
+				<width>447</width>
+				<height>50</height>
+				<texture>grey.png</texture>
+				<colordiffuse>FFC4941D</colordiffuse>
+				<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(9000)">conditional</animation>
+				<visible>Window.IsVisible(6000) + String.IsEmpty(ListItem.Property(id))</visible>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>3</top>
+				<height>45</height>
+				<width>390</width>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>Font_18</font>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<textcolor>FFFFFAF0</textcolor>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="SubmenuVListmq7">
+	<viewtype>list</viewtype>
+	<left>0</left>
+	<top>100</top>
+	<width>495</width>
+	<height>665</height>
+	<onleft>Close</onleft>
+	<onleft condition="!Skin.HasSetting(nosmartsub)">ActivateWindow(5099)</onleft>
+	<onright>Close</onright>
+	<orientation>vertical</orientation>
+	<scrolltime>350</scrolltime>
+	<focusposition>0</focusposition>
+	<itemlayout width="495" height="50">
+	<control type="image">
+	<left>0</left>
+	<top>0</top>
+	<width>447</width>
+	<height>4</height>
+	<texture>divider.png</texture>
+	<colordiffuse>90FFFFFF</colordiffuse>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>3</top>
+	<height>45</height>
+	<width>390</width>
+	<align>left</align>
+	<aligny>center</aligny>
+	<font>Font_15</font>
+	<label>$INFO[ListItem.Label]</label>
+	<textcolor>FFFFFAF0</textcolor>
+	</control>
+	</itemlayout>
+	<focusedlayout width="495" height="50">
+	<control type="image">
+	<left>0</left>
+	<top>0</top>
+	<width>450</width>
+	<height>50</height>
+	<texture flipx="true" diffuse="shadow_mask_v.png">grey.png</texture>
+	</control>	
+	<control type="label">
+	<left>50</left>
+	<top>3</top>
+	<height>45</height>
+	<width>390</width>
+	<align>left</align>
+	<aligny>center</aligny>
+	<font>Font_15</font>
+	<label>$INFO[ListItem.Label]</label>
+	<textcolor>FF101010</textcolor>
+	</control>
+	</focusedlayout>
+	</include>
+	<!-- ######################################################################### Submenu Lista Horizontal ######################################################################### -->
+	<include name="SubmenuHList">
+		<viewtype>list</viewtype>
+		<left>0</left>
+		<top>980</top>
+		<width>1920</width>
+		<height>99</height>
+		<onup>300</onup>
+		<ondown>Close</ondown>
+		<ondown condition="!Skin.HasSetting(nosmartsub)">ActivateWindow(5099)</ondown>
+		<onup condition="Window.IsVisible(Home)">Close</onup>
+		<onup condition="Window.IsVisible(6000) + !String.IsEqual(Container(9100).ListItem.Property(type),add)">5100</onup>
+		<orientation>vertical</orientation>
+		<scrolltime>350</scrolltime>
+		<focusposition>3</focusposition>
+		<itemlayout width="320" height="50">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>1</width>
+				<height>50</height>
+				<texture>separator_v.png</texture>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>0</top>
+				<height>50</height>
+				<width>286</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_15</font>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<textcolor>FFFFFAF0</textcolor>
+			</control>
+		</itemlayout>
+		<focusedlayout width="320" height="50">
+			<control type="image">
+				<left>3</left>
+				<top>-2</top>
+				<width>315</width>
+				<height>50</height>
+				<texture>topmenu_button_nofocus.png</texture>
+				<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(9000)">conditional</animation>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>0</top>
+				<height>50</height>
+				<width>286</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_15</font>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<textcolor>E4101010</textcolor>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="SubmenuGoTo">
+		<control type="button" id="5200">
+			<!-- Para menu -->
+			<left>0</left>
+			<top>1035</top>
+			<width>225</width>
+			<height>44</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>5100</ondown>
+			<onclick>Close</onclick>
+			<align>left</align>
+			<font>Font_15</font>
+			<textwidth>225</textwidth>
+			<textcolor>E4101010</textcolor>
+			<focusedcolor>FFFFFAF0</focusedcolor>
+			<label>31200</label>
+			<texturefocus diffuse="gradient_button.png">settings_button.png</texturefocus>
+			<texturenofocus></texturenofocus>
+			<colordiffuse>F9FFFFFF</colordiffuse>
+		</control>
+		<control type="image">
+			<left>30</left>
+			<top>1040</top>
+			<width>33</width>
+			<height>33</height>
+			<texture>$VAR[value_arrow1]</texture>
+			<colordiffuse>$VAR[value_arrow1_color]</colordiffuse>
+			<include>Animation_Fade</include>
+		</control>
+	</include>
+	<include name="Menu_Preset">
+		<item>
+			<property name="condition"/>
+			<label>31169</label>
+			<icon>$VAR[value_menutheme_settings]</icon>
+			<property name="name">menuvirtual</property>
+			<property name="id">virtual</property>
+			<property name="subid">none</property>
+			<property name="path">none</property>
+			<property name="action">none</property>
+			<onclick>SetFocus(5000)</onclick>
+			<visible>Window.IsVisible(6000)</visible>
+			<enable>Window.IsVisible(6000)</enable>
+		</item>
+	</include>
+	<!-- ######################################################################### MENU PREVER ######################################################################### -->
+	<include name="Menu_ContentPreview">
+		<item>
+			<label>31083</label>
+			<icon></icon>
+			<onclick>noop</onclick>
+		</item>
+	</include>
+	<!-- ######################################################################### MENU ######################################################################### -->
+	<include name="Menu_Content">
+		<include condition="Window.IsVisible(6000)">Menu_Preset</include>
+		<item>
+			<label fallback="31014">$VAR[value_menu1.label]</label>
+			<icon>$INFO[skin.string(menu1.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu1.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu1.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu1.visible)]</property>
+			<property name="name">menu1</property>
+			<property name="id">$VAR[value_menu1.id]</property>
+			<property name="subid">$VAR[value_menu1.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu1.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu1.target)]</property>
+			<property name="path">$INFO[skin.string(menu1.path)]</property>
+			<property name="action">$VAR[value_menu1.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu1.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu1.master)) | String.IsEqual(skin.string(menu1.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu2.label]</label>
+			<icon>$INFO[skin.string(menu2.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu2.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu2.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu2.visible)]</property>
+			<property name="name">menu2</property>
+			<property name="id">$VAR[value_menu2.id]</property>
+			<property name="subid">$VAR[value_menu2.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu2.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu2.target)]</property>
+			<property name="path">$INFO[skin.string(menu2.path)]</property>
+			<property name="action">$VAR[value_menu2.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu2.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu2.master)) | String.IsEqual(skin.string(menu2.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu3.label]</label>
+			<icon>$INFO[skin.string(menu3.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu3.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu3.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu3.visible)]</property>
+			<property name="name">menu3</property>
+			<property name="id">$VAR[value_menu3.id]</property>
+			<property name="subid">$VAR[value_menu3.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu3.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu3.target)]</property>
+			<property name="path">$INFO[skin.string(menu3.path)]</property>
+			<property name="action">$VAR[value_menu3.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu3.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu3.master)) | String.IsEqual(skin.string(menu3.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu4.label]</label>
+			<icon>$INFO[skin.string(menu4.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu4.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu4.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu4.visible)]</property>
+			<property name="name">menu4</property>
+			<property name="id">$VAR[value_menu4.id]</property>
+			<property name="subid">$VAR[value_menu4.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu4.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu4.target)]</property>
+			<property name="path">$INFO[skin.string(menu4.path)]</property>
+			<property name="action">$VAR[value_menu4.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu4.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu4.master)) | String.IsEqual(skin.string(menu4.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu5.label]</label>
+			<icon>$INFO[skin.string(menu5.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu5.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu5.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu5.visible)]</property>
+			<property name="name">menu5</property>
+			<property name="id">$VAR[value_menu5.id]</property>
+			<property name="subid">$VAR[value_menu5.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu5.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu5.target)]</property>
+			<property name="path">$INFO[skin.string(menu5.path)]</property>
+			<property name="action">$VAR[value_menu5.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu5.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu5.master)) | String.IsEqual(skin.string(menu5.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu6.label]</label>
+			<icon>$INFO[skin.string(menu6.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu6.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu6.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu6.visible)]</property>
+			<property name="name">menu6</property>
+			<property name="id">$VAR[value_menu6.id]</property>
+			<property name="subid">$VAR[value_menu6.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu6.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu6.target)]</property>
+			<property name="path">$INFO[skin.string(menu6.path)]</property>
+			<property name="action">$VAR[value_menu6.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu6.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu6.master)) | String.IsEqual(skin.string(menu6.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu7.label]</label>
+			<icon>$INFO[skin.string(menu7.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu7.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu7.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu7.visible)]</property>
+			<property name="name">menu7</property>
+			<property name="id">$VAR[value_menu7.id]</property>
+			<property name="subid">$VAR[value_menu7.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu7.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu7.target)]</property>
+			<property name="path">$INFO[skin.string(menu7.path)]</property>
+			<property name="action">$VAR[value_menu7.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu7.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu7.master)) | String.IsEqual(skin.string(menu7.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu8.label]</label>
+			<icon>$INFO[skin.string(menu8.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu8.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu8.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu8.visible)]</property>
+			<property name="name">menu8</property>
+			<property name="id">$VAR[value_menu8.id]</property>
+			<property name="subid">$VAR[value_menu8.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu8.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu8.target)]</property>
+			<property name="path">$INFO[skin.string(menu8.path)]</property>
+			<property name="action">$VAR[value_menu8.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu8.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu8.master)) | String.IsEqual(skin.string(menu8.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu9.label]</label>
+			<icon>$INFO[skin.string(menu9.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu9.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu9.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu9.visible)]</property>
+			<property name="name">menu9</property>
+			<property name="id">$VAR[value_menu9.id]</property>
+			<property name="subid">$VAR[value_menu9.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu9.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu9.target)]</property>
+			<property name="path">$INFO[skin.string(menu9.path)]</property>
+			<property name="action">$VAR[value_menu9.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu9.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu9.master)) | String.IsEqual(skin.string(menu9.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu10.label]</label>
+			<icon>$INFO[skin.string(menu10.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu10.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu10.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu10.visible)]</property>
+			<property name="name">menu10</property>
+			<property name="id">$VAR[value_menu10.id]</property>
+			<property name="subid">$VAR[value_menu10.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu10.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu10.target)]</property>
+			<property name="path">$INFO[skin.string(menu10.path)]</property>
+			<property name="action">$VAR[value_menu10.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu10.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu10.master)) | String.IsEqual(skin.string(menu10.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu11.label]</label>
+			<icon>$INFO[skin.string(menu11.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu11.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu11.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu11.visible)]</property>
+			<property name="name">menu11</property>
+			<property name="id">$VAR[value_menu11.id]</property>
+			<property name="subid">$VAR[value_menu11.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu11.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu11.target)]</property>
+			<property name="path">$INFO[skin.string(menu11.path)]</property>
+			<property name="action">$VAR[value_menu11.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu11.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu11.master)) | String.IsEqual(skin.string(menu11.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu12.label]</label>
+			<icon>$INFO[skin.string(menu12.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu12.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu12.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu12.visible)]</property>
+			<property name="name">menu12</property>
+			<property name="id">$VAR[value_menu12.id]</property>
+			<property name="subid">$VAR[value_menu12.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu12.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu12.target)]</property>
+			<property name="path">$INFO[skin.string(menu12.path)]</property>
+			<property name="action">$VAR[value_menu12.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu12.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu12.master)) | String.IsEqual(skin.string(menu12.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu13.label]</label>
+			<icon>$INFO[skin.string(menu13.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu13.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu13.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu13.visible)]</property>
+			<property name="name">menu13</property>
+			<property name="id">$VAR[value_menu13.id]</property>
+			<property name="subid">$VAR[value_menu13.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu13.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu13.target)]</property>
+			<property name="path">$INFO[skin.string(menu13.path)]</property>
+			<property name="action">$VAR[value_menu13.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu13.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu13.master)) | String.IsEqual(skin.string(menu13.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu14.label]</label>
+			<icon>$INFO[skin.string(menu14.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu14.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu14.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu14.visible)]</property>
+			<property name="name">menu14</property>
+			<property name="id">$VAR[value_menu14.id]</property>
+			<property name="subid">$VAR[value_menu14.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu14.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu14.target)]</property>
+			<property name="path">$INFO[skin.string(menu14.path)]</property>
+			<property name="action">$VAR[value_menu14.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu14.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu14.master)) | String.IsEqual(skin.string(menu14.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu15.label]</label>
+			<icon>$INFO[skin.string(menu15.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu15.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu15.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu15.visible)]</property>
+			<property name="name">menu15</property>
+			<property name="id">$VAR[value_menu15.id]</property>
+			<property name="subid">$VAR[value_menu15.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu15.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu15.target)]</property>
+			<property name="path">$INFO[skin.string(menu15.path)]</property>
+			<property name="action">$VAR[value_menu15.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu15.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu15.master)) | String.IsEqual(skin.string(menu15.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu16.label]</label>
+			<icon>$INFO[skin.string(menu16.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu16.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu16.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu16.visible)]</property>
+			<property name="name">menu16</property>
+			<property name="id">$VAR[value_menu16.id]</property>
+			<property name="subid">$VAR[value_menu16.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu16.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu16.target)]</property>
+			<property name="path">$INFO[skin.string(menu16.path)]</property>
+			<property name="action">$VAR[value_menu16.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu16.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu16.master)) | String.IsEqual(skin.string(menu16.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu17.label]</label>
+			<icon>$INFO[skin.string(menu17.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu17.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu17.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu17.visible)]</property>
+			<property name="name">menu17</property>
+			<property name="id">$VAR[value_menu17.id]</property>
+			<property name="subid">$VAR[value_menu17.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu17.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu17.target)]</property>
+			<property name="path">$INFO[skin.string(menu17.path)]</property>
+			<property name="action">$VAR[value_menu17.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu17.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu17.master)) | String.IsEqual(skin.string(menu17.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu18.label]</label>
+			<icon>$INFO[skin.string(menu18.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu18.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu18.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu18.visible)]</property>
+			<property name="name">menu18</property>
+			<property name="id">$VAR[value_menu18.id]</property>
+			<property name="subid">$VAR[value_menu18.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu18.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu18.target)]</property>
+			<property name="path">$INFO[skin.string(menu18.path)]</property>
+			<property name="action">$VAR[value_menu18.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu18.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu18.master)) | String.IsEqual(skin.string(menu18.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu19.label]</label>
+			<icon>$INFO[skin.string(menu19.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu19.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu19.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu19.visible)]</property>
+			<property name="name">menu19</property>
+			<property name="id">$VAR[value_menu19.id]</property>
+			<property name="subid">$VAR[value_menu19.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu19.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu19.target)]</property>
+			<property name="path">$INFO[skin.string(menu19.path)]</property>
+			<property name="action">$VAR[value_menu19.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu19.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu19.master)) | String.IsEqual(skin.string(menu19.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+		<item>
+			<label fallback="31014">$VAR[value_menu20.label]</label>
+			<icon>$INFO[skin.string(menu20.bg)]</icon>
+			<property name="composition">$INFO[Skin.String(menu20.composition)]</property>
+			<property name="colorcomposition">$INFO[Skin.String(menu20.colorcomposition)]</property>
+			<property name="condition">$INFO[skin.string(menu20.visible)]</property>
+			<property name="name">menu20</property>
+			<property name="id">$VAR[value_menu20.id]</property>
+			<property name="subid">$VAR[value_menu20.subid]</property>
+			<property name="widgets">$INFO[skin.string(menu20.widgets)]</property>
+			<property name="target">$INFO[skin.string(menu20.target)]</property>
+			<property name="path">$INFO[skin.string(menu20.path)]</property>
+			<property name="action">$VAR[value_menu20.action]</property>
+			<onclick>Skin.SetString(windowbg,$VAR[value_menubg])</onclick>
+			<onclick condition="Window.IsVisible(Home)">$VAR[value_menu20.action]</onclick>
+			<onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
+			<visible>![String.IsEmpty(skin.string(menu20.master)) | String.IsEqual(skin.string(menu20.visible),false)] | Window.IsVisible(6000)</visible>
+		</item>
+	</include>
+
+	<!-- ###################################################################### MENU PRINCIPAL - COMUM ###################################################################### -->
+	<include name="NowPlayingCommon">
+	<!-- Tocando agora menor -->
+	<control type="group">
+	<animation effect="slide" start="0,-500" end="0,0" time="300" delay="600" tween="sine" easing="out">Visible</animation>
+	<animation effect="slide" start="0,0" end="0,-500" time="200" tween="sine" easing="out">Hidden</animation>
+	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703)] + Player.HasMedia + ![System.IdleTime(18)+Skin.HasSetting(mq6) | String.IsEqual(Container(9000).ListItem.Property(widgets),settings) | String.IsEqual(Container(9000).ListItem.Property(widgets),weather) | Skin.HasSetting(mainmenuvertical) + Skin.HasSetting(submode)]</visible>
+	<!-- Fundo -->
+	<control type="image">
+	<left>0</left>
+	<top>0</top>
+	<width>1920</width>
+	<height>1080</height>
+	<texture>special://skin/backgrounds/default.jpg</texture>
+	<animation effect="fade" end="80" condition="true">Conditional</animation>
+	</control>
+	<!-- Fundo borda -->
+	<control type="image">                    
+	<left>39</left>
+	<top>36</top>
+	<width>596</width>
+	<height>347</height>
+	<texture>fanartframe.png</texture>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	</control>
+	<!-- Fanart do artista -->
+	<control type="multiimage">
+	<left>60</left>
+	<top>53</top>
+	<width>552</width>
+	<height>311</height>
+	<timeperimage>5000</timeperimage>
+	<randomize>true</randomize>
+	<aspectratio>keep</aspectratio>
+	<imagepath fallback="DefaultExtraThumbs.png" background="true">$VAR[value_playerthumb]</imagepath>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<visible>Player.HasAudio + !Control.HasFocus(703)</visible>
+	</control>
+	<!-- Thumb das proximas faixas -->
+	<control type="image">	
+	<left>60</left>
+	<top>53</top>
+	<width>552</width>
+	<height>311</height>
+	<aspectratio align="center" aligny="center">keep</aspectratio>
+	<texture fallback="DefaultAudioCover.png" background="true">$INFO[Container(703).ListItem.Icon]</texture>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<visible>Control.HasFocus(703)</visible>
+	</control>
+	<!-- Logo -->
+	<control type="image">	
+	<left>65</left>
+	<top>280</top>
+	<width>165</width>
+	<height>90</height>
+	<aspectratio align="left" aligny="bottom">keep</aspectratio>
+	<texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClarLogo)]</texture>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<visible>Player.HasAudio</visible>
+	</control>
+	<control type="videowindow" id="8">
+	<left>60</left>
+	<top>53</top>
+	<width>552</width>
+	<height>311</height>
+	<aspectratio>stretch</aspectratio>
+	<visible>Player.HasVideo</visible>
+	</control>
+	<!-- Titulo -->
+	<control type="label">	
+	<left>644</left>
+	<top>50</top>
+	<width>1224</width>
+	<height>30</height>
+	<align>left</align>	
+	<font>Font_24</font>	
+	<textcolor>$VAR[value_texturecolor]</textcolor>
+	<label>$VAR[value_playertitle]</label>
+	</control>
+	<!-- Subtitulo -->
+	<control type="label">	
+	<left>644</left>
+	<top>85</top>
+	<width>1224</width>
+	<height>30</height>
+	<align>left</align>
+	<font>Font13</font>	
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$VAR[value_playersubtitle]</label>
+	</control>
+	<control type="image">
+	<left>644</left>
+	<top>120</top>
+	<height>3</height>
+	<width>1224</width>
+	<texture>separator.png</texture>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	</control>
+	<!-- Detalhes da faixa em reproducao -->
+	<control type="label">	
+	<left>644</left>
+	<top>120</top>
+	<width>1224</width>
+	<height>50</height>
+	<align>left</align>
+	<font>Font13</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$INFO[Container(703).ListItem.Property(Details)]</label>	
+	<scroll>true</scroll>
+	<visible>Control.HasFocus(703)</visible>
+	</control>
+	<!-- Plot -->
+	<control type="textbox">	
+	<left>644</left>
+	<top>120</top>
+	<width>1224</width>
+	<height>252</height>
+	<font>Font13</font>
+	<label>$VAR[value_playerplot]</label>
+	<textcolor>FFFFFAF0</textcolor>	
+	<autoscroll delay="20000" time="3000" repeat="20000">!Skin.HasSetting(noallowscroll)</autoscroll>
+	<visible>!Control.HasFocus(703)</visible>
+	</control>
+	<!-- Proximas faixas -->
+	<control type="group">	
+	<visible>![String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks)]</visible>
+	<control type="label">
+	<left>52</left>
+	<top>380</top>
+	<width>600</width>
+	<height>25</height>
+	<align>left</align>
+	<font>Font_15</font>	
+	<textcolor>$INFO[Skin.String(colorheader)]</textcolor>
+	<label>$LOCALIZE[31325] [COLOR=FFFFFAF0]($INFO[Container(703).NumItems] $LOCALIZE[31126])[/COLOR]</label>
+	</control>
+	<control type="image">
+	<left>50</left>
+	<top>417</top>
+	<width>1820</width>
+	<height>60</height>
+	<texture>darkgrey.png</texture>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	<animation effect="fade" end="65" condition="true">Conditional</animation>
+	</control>
+	<control type="panel" id="703">
+	<left>52</left>
+	<top>417</top>
+	<width>1820</width>
+	<height>65</height>
+	<onup>9000</onup>
+	<ondown>9000</ondown>
+	<onleft>9000</onleft>
+	<onright>9000</onright>
+	<orientation>horizontal</orientation>
+	<pagecontrol></pagecontrol>
+	<include>Animation_HomeFade</include>
+	<itemlayout width="304" height="60">
+	<control type="image">
+	<left>0</left>
+	<top>0</top>
+	<width>60</width>
+	<height>60</height>
+	<aspectratio align="center">stretch</aspectratio>
+	<texture fallback="DefaultAudioCover.png">$INFO[ListItem.Icon]</texture>                                
+	</control>
+	<control type="label">
+	<left>70</left>
+	<top>5</top>
+	<width>220</width>
+	<height>24</height>
+	<align>left</align>
+	<font>Font13</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$INFO[ListItem.Label]</label>	
+	</control>
+	<control type="label">
+	<left>70</left>
+	<top>29</top>
+	<width>220</width>
+	<height>30</height>
+	<align>left</align>
+	<font>Font_14</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$INFO[ListItem.Label2]</label>	
+	</control>
+	</itemlayout>
+	<focusedlayout width="304" height="60">
+	<control type="image">
+	<left>60</left>
+	<top>0</top>
+	<width>240</width>
+	<height>60</height>
+	<texture>grey.png</texture>
+	<include>Animation_Fade</include>                               
+	</control>
+	<control type="image">
+	<left>0</left>
+	<top>0</top>
+	<width>60</width>
+	<height>60</height>
+	<aspectratio align="center">stretch</aspectratio>
+	<texture fallback="DefaultAudioCover.png">$INFO[ListItem.Icon]</texture>                                
+	</control>
+	<control type="label">
+	<left>70</left>
+	<top>5</top>
+	<width>220</width>
+	<height>24</height>
+	<align>left</align>
+	<font>Font13</font>
+	<textcolor>FF101010</textcolor>
+	<label>$INFO[ListItem.Label]</label>	
+	</control>
+	<control type="label">
+	<left>70</left>
+	<top>29</top>
+	<width>220</width>
+	<height>30</height>
+	<align>left</align>
+	<font>Font_14</font>
+	<textcolor>FF101010</textcolor>
+	<label>$INFO[ListItem.Label2]</label>	
+	</control>
+	</focusedlayout>
+	<include>NextTracksContent</include>
+	</control>
+	</control>
+	</control>
+	
+	<!-- Tocando agora maior -->
+	<control type="group">
+	<animation effect="zoom" start="30" end="100" center="337,359" time="500" easing="inout" tween="cubic">Visible</animation>
+	<animation effect="zoom" start="100" end="30" time="100" center="337,359" easing="inout" tween="cubic">Hidden</animation>
+	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus] + Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)</visible>
+			<control type="button" id="4450">	
+				<include>InvisibleButton</include>
+				<enable>[Control.HasFocus(9000) | ControlGroup(600).HasFocus] + Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)</enable>
+			</control>
+	<control type="image">                    
+	<left>329</left>
+	<top>120</top>
+	<width>1261</width>
+	<height>738</height>
+	<texture>fanartframe.png</texture>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	</control>
+	<control type="multiimage" id="4455">
+	<left>371</left>
+	<top>150</top>
+	<width>1177</width>
+	<height>662</height>
+	<timeperimage>5000</timeperimage>
+	<randomize>true</randomize>
+	<aspectratio>keep</aspectratio>
+	<imagepath fallback="DefaultExtraThumbs.png" background="true">$VAR[value_playerthumb]</imagepath>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<visible>Player.HasAudio</visible>
+	</control>
+	<!-- Logo -->
+	<control type="image">	
+	<left>382</left>
+	<top>615</top>
+	<width>351</width>
+	<height>191</height>
+	<aspectratio align="left" aligny="bottom">keep</aspectratio>
+	<texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<visible>Player.HasAudio</visible>
+	</control>
+	<control type="videowindow" id="8">
+	<left>371</left>
+	<top>150</top>
+	<width>1177</width>
+	<height>662</height>
+	<aspectratio>stretch</aspectratio>
+	<animation effect="slide" start="0,0" end="-3000,0" time="0">WindowClose</animation>
+	<visible>Player.HasVideo</visible>
+	</control>
+	</control>
+	</include>
+	
+	<!-- Controles -->
+	<include name="ControlsCommon">
+	<!-- play DVD -->	
+	<control type="button" id="601">
+	<left>0</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>
+	<onleft>9000</onleft>
+	<onright>602</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>PlayDVD</onclick>
+	<label></label>
+	<texturefocus>osd_menu_playdisc_square.png</texturefocus>
+	<texturenofocus>osd_menu_playdisc_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(601)">conditional</animation>
+	<enable>System.HasMediaDVD + ![Player.Playing | Player.Paused | Player.Forwarding | Player.Rewinding]</enable>
+	</control>
+	<!-- tocar/pausa -->
+	<control type="togglebutton" id="602">
+	<left>46</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>
+	<onleft>601</onleft>
+	<onright>603</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>PlayerControl(Play)</onclick>
+	<label></label>
+	<texturefocus>osd_menu_pause_square.png</texturefocus>
+	<texturenofocus>osd_menu_pause_square.png</texturenofocus>
+	<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+	<alttexturefocus>osd_menu_play_square.png</alttexturefocus>
+	<alttexturenofocus>osd_menu_play_square.png</alttexturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(602)">conditional</animation>
+	</control>
+	<!-- parar -->
+	<control type="button" id="603">
+	<left>92</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>602</onleft>
+	<onright>604</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>PlayerControl(Stop)</onclick>
+	<label></label>
+	<texturefocus>osd_menu_stop_square.png</texturefocus>
+	<texturenofocus>osd_menu_stop_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(603)">conditional</animation>
+	</control>
+	<!-- proximas faixas -->
+	<control type="button" id="604">
+	<left>138</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>603</onleft>
+	<onright>605</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>SetFocus(703)</onclick>
+	<label></label>
+	<texturefocus>osd_menu_nexttracks_square.png</texturefocus>
+	<texturenofocus>osd_menu_nexttracks_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(604)">conditional</animation>
+	<enable>Player.HasAudio + !String.IsEmpty(MusicPlayer.offset(1).Artist)</enable>
+	</control>
+	<!-- playlist -->
+	<control type="button" id="605">
+	<left>184</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>604</onleft>
+	<onright>606</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>ActivateWindow(musicplaylist)</onclick>
+	<label></label>
+	<texturefocus>osd_menu_playlist_square.png</texturefocus>
+	<texturenofocus>osd_menu_playlist_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(605)">conditional</animation>
+	<enable>Player.HasAudio + !String.IsEmpty(MusicPlayer.offset(1).Artist)</enable>
+	</control>
+	<!-- anterior -->
+	<control type="button" id="606">
+	<left>230</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>605</onleft>
+	<onright>607</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>PlayerControl(Previous)</onclick>
+	<label></label>
+	<texturefocus>osd_menu_skipbwd_square.png</texturefocus>
+	<texturenofocus>osd_menu_skipbwd_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(606)">conditional</animation>
+	<visible>!VideoPlayer.Content(LiveTV)</visible>
+	</control>
+	<!-- canal - -->
+	<control type="button" id="607">
+	<left>230</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>606</onleft>
+	<onright>608</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>ChannelDown</onclick>
+	<label></label>
+	<texturefocus>osd_menu_skipbwd_channeldown.png</texturefocus>
+	<texturenofocus>osd_menu_skipbwd_channeldown.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(607)">conditional</animation>
+	<visible>VideoPlayer.Content(LiveTV)</visible>
+	</control>
+	<!-- retrocesso -->
+	<control type="button" id="608">
+	<left>276</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>607</onleft>
+	<onright>609</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>PlayerControl(Rewind)</onclick>
+	<label></label>
+	<texturefocus>osd_menu_rew_square.png</texturefocus>
+	<texturenofocus>osd_menu_rew_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(608)">conditional</animation>
+	</control>
+	<!-- avanco -->
+	<control type="button" id="609">
+	<left>322</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>608</onleft>
+	<onright>610</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>PlayerControl(Forward)</onclick>
+	<label></label>
+	<texturefocus>osd_menu_ff_square.png</texturefocus>
+	<texturenofocus>osd_menu_ff_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(609)">conditional</animation>
+	</control>
+	<!-- proximo -->
+	<control type="button" id="610">
+	<left>368</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>609</onleft>
+	<onright>611</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>PlayerControl(Next)</onclick>
+	<label></label>
+	<texturefocus>osd_menu_skipfwd_square.png</texturefocus>
+	<texturenofocus>osd_menu_skipfwd_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(610)">conditional</animation>
+	<visible>!VideoPlayer.Content(LiveTV)</visible>
+	</control>
+	<!-- canal + -->
+	<control type="button" id="611">
+	<left>368</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>610</onleft>
+	<onright>612</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>ChannelUp</onclick>
+	<label></label>
+	<texturefocus>osd_menu_skipfwd_channelup.png</texturefocus>
+	<texturenofocus>osd_menu_skipfwd_channelup.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(611)">conditional</animation>
+	<visible>VideoPlayer.Content(LiveTV)</visible>
+	</control>
+	<!-- tela cheia -->
+	<control type="button" id="612">
+	<left>414</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>	
+	<onleft>611</onleft>
+	<onright>9000</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>fullscreen</onclick>
+	<label></label>
+	<texturefocus>osd_menu_fullscreen_square.png</texturefocus>
+	<texturenofocus>osd_menu_fullscreen_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(612)">conditional</animation>
+	</control>
+	</include>
+	
+	<!-- Imagem da composicao -->
+	<include name="CompositionCommon">		
+	<control type="multiimage">	
+	<left>0</left>
+	<top>680</top>
+	<width>1920</width>
+	<height>400</height>
+	<include condition="Integer.IsEqual(skin.string(homebg_seconds),5000)">Animation_Timer1</include>
+	<include condition="Integer.IsEqual(skin.string(homebg_seconds),10000)">Animation_Timer2</include>
+	<include condition="Integer.IsEqual(skin.string(homebg_seconds),30000)">Animation_Timer3</include>
+	<include condition="Integer.IsEqual(skin.string(homebg_seconds),60000)">Animation_Timer4</include>
+	<include condition="Integer.IsEqual(skin.string(homebg_seconds),600000)">Animation_Timer5</include>
+	<include condition="Integer.IsEqual(skin.string(homebg_seconds),3600000)">Animation_Timer6</include>
+	<randomize>true</randomize>
+	<fadetime>FanartCrossFadeTime</fadetime>	
+	<imagepath fallback="blanc.png" diffuse="shadow_mask.png" background="true">$VAR[value_composition]</imagepath>
+	<colordiffuse>$VAR[value_compositioncolor]</colordiffuse>
+	<visible>!Control.HasFocus(8005)</visible>
+	</control>
+	<control type="image">	
+	<left>0</left>
+	<top>525</top>
+	<width>1920</width>
+	<height>555</height>
+	<texture diffuse="shadow_mask.png">darkgrey.png</texture>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	<animation effect="fade" end="75" condition="true">Conditional</animation>
+	<visible>!Control.HasFocus(8005)</visible>
+	</control>
+				<control type="image" id="5603">
+					<left>700</left>
+					<top>1200</top>
+					<width>520</width>
+					<height>520</height>
+					<texture fallback="cdart.png" diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.DiscArt)]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<animation effect="slide" start="0,0" end="0,-300" time="3000" reversible="false" condition="true">Conditional</animation>
+					<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="Player.HasVideo|Player.HasAudio">Conditional</animation>
+					<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703)] + Skin.HasSetting(mainmenuvertical) + Player.HasMedia + ![System.IdleTime(18)+Skin.HasSetting(mq6) | String.IsEqual(Container(9000).ListItem.Property(widgets),settings) | String.IsEqual(Container(9000).ListItem.Property(widgets),weather) | Skin.HasSetting(mainmenuvertical) + Skin.HasSetting(submode)]</visible>
+				</control>
+				<control type="image" id="5604">
+					<left>1250</left>
+					<top>870</top>
+					<width>320</width>
+					<height>520</height>
+					<texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
+					<aspectratio align="center" aligny="top">keep</aspectratio>
+					<animation effect="slide" start="0,0" end="0,-40" time="3000" reversible="false" condition="system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="4000" reversible="false" condition="!Integer.IsGreater(MusicPlayer.Time,15)+!Integer.IsGreater(MusicPlayer.TimeRemaining,15)">Conditional</animation>
+					<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703)] + Skin.HasSetting(mainmenuvertical) + Player.HasMedia + ![System.IdleTime(18)+Skin.HasSetting(mq6) | String.IsEqual(Container(9000).ListItem.Property(widgets),settings) | String.IsEqual(Container(9000).ListItem.Property(widgets),weather) | Skin.HasSetting(mainmenuvertical) + Skin.HasSetting(submode)]</visible>
+				</control>
+				<control type="label" id="5605">
+					<left>1250</left>
+					<top>1030</top>
+					<width>320</width>
+					<height>30</height>
+					<align>center</align>
+					<font>Font_32</font>
+					<label>$INFO[MusicPlayer.Time]$INFO[MusicPlayer.Duration, / ,]</label>
+					<textcolor>CCFFFFFF</textcolor>
+					<shadowcolor>AA000000</shadowcolor>
+					<animation effect="slide" start="0,0" end="0,-40" time="3000" reversible="false" condition="system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation>
+					<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703)] + Skin.HasSetting(mainmenuvertical) + Player.HasMedia + ![System.IdleTime(18)+Skin.HasSetting(mq6) | String.IsEqual(Container(9000).ListItem.Property(widgets),settings) | String.IsEqual(Container(9000).ListItem.Property(widgets),weather) | Skin.HasSetting(mainmenuvertical) + Skin.HasSetting(submode)]</visible>
+				</control>
+	</include>
+	
+	<!-- Widgets -->
+	<include name="WidgetsCommon">		
+	<control type="group">
+	<include>widgets_common</include>
+	<include>widgets_dual</include>
+	<include condition="!String.IsEmpty(skin.string(mymenu1.widget))">widgets_mymenu1</include>
+	<include condition="!String.IsEmpty(skin.string(mymenu2.widget))">widgets_mymenu2</include>
+	<include condition="!String.IsEmpty(skin.string(mymenu3.widget))">widgets_mymenu3</include>
+	<include condition="!String.IsEmpty(skin.string(mymenu4.widget))">widgets_mymenu4</include>
+	<include condition="!String.IsEmpty(skin.string(mymenu5.widget))">widgets_mymenu5</include>
+	<include condition="System.HasAddon(script.tv.show.next.aired)">widgets_tvguide</include>
+	<include condition="System.HasAddon(script.games.rom.collection.browser)">widgets_games</include>
+	<include condition="System.HasAddon(script.favourites)">widgets_favourites</include>
+	<include>widgets_system</include>
+	<include condition="!String.IsEmpty(Weather.Plugin)">widgets_weather</include>
+	<include>widgets_info</include>
+	<animation effect="fade" start="100" end="0" time="300" easing="inout" tween="sine" condition="[String.IsEqual(skin.string(widgetsmode),manual) | String.IsEqual(skin.string(widgetsmode),auto) + !Control.IsVisible(9931) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6) | Control.HasFocus(8005)] + ![Control.HasFocus(500) | Control.HasFocus(510) | Control.HasFocus(520) | Control.HasFocus(521) | Control.HasFocus(523) | Control.HasFocus(5100) | ControlGroup(512).HasFocus]">Conditional</animation>
+	</control>
+	</include>
+	
+	<!-- Data e hora -->
+	<include name="TimeCommon">		
+	<control type="group">
+	<animation effect="slide" start="1920,0" end="0,0" time="500" delay="2000" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="slide" start="1920,0" end="0,0" time="500" delay="1000" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="slide" start="1920,0" end="0,0" time="500" delay="500" tween="sine" easing="out">Visible</animation>
+	<animation effect="slide" start="0,0" end="1920,0" time="500" tween="sine" easing="out">Hidden</animation>
+	<animation effect="fade" start="100" end="0" time="100" condition="Skin.HasSetting(submode) + !Skin.HasSetting(mainmenuvertical)">Conditional</animation>
+	<visible>Control.HasFocus(9000) + ![Skin.HasSetting(nohometime) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
+	<control type="label">
+	<left>1345</left>
+	<top>930</top>
+	<width>525</width>
+	<height>30</height>
+	<align>right</align>
+	<aligny>center</aligny>
+	<font>Font13</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$INFO[System.Date]</label>
+	</control>
+	<control type="label">
+	<left>1470</left>
+	<top>975</top>
+	<width>400</width>
+	<height>30</height>
+	<align>right</align>
+	<aligny>center</aligny>
+	<font>Font_27</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>[COLOR=$INFO[Skin.String(colorheader)]]$INFO[System.Time][/COLOR]</label>
+	</control>
+	</control>
+	</include>
+	
+	<!-- Diversos -->
+	<include name="MiscCommon">
+	<!-- Barra de cache -->
+	<control type="progress">
+	<left>0</left>
+	<top>831</top>
+	<width>1920</width>
+	<height>100</height>
+	<info>Player.ProgressCache</info>
+	<midtexture>progress_mid.png</midtexture>
+	<colordiffuse>$INFO[Skin.String(colorheader)]</colordiffuse>
+	<animation effect="fade" start="100" end="40" time="0" condition="true">Conditional</animation>
+	<animation effect="fade" start="0" end="100" time="750" condition="true">Visible</animation>
+	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703)] + [Player.HasMedia + System.IdleTime(18)]+Skin.HasSetting(mq6)</visible>
+	</control>
+	<!-- Barra de progresso -->
+	<control type="progress">
+	<left>0</left>
+	<top>831</top>
+	<width>1920</width>
+	<height>100</height>
+	<info>Player.Progress</info>
+	<texturebg>progress_clear.png</texturebg>
+	<animation effect="fade" start="100" end="40" time="0" condition="true">Conditional</animation>
+	<animation effect="fade" start="0" end="100" time="750" condition="true">Visible</animation>
+	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703)] + [Player.HasMedia + System.IdleTime(18)]+Skin.HasSetting(mq6)</visible>
+	</control>
+	<control type="grouplist">
+	<left>0</left>
+	<top>834</top>
+	<width>1920</width>
+	<height>90</height>
+	<itemgap>0</itemgap>	
+	<!-- Contador da reproducao -->
+	<control type="label">
+	<include condition="String.IsEqual(skin.string(font),font1)">Font1</include>
+	<include condition="String.IsEqual(skin.string(font),font2)">Font2</include>
+	<include condition="String.IsEqual(skin.string(font),font3)">Font3</include>
+	<include condition="String.IsEqual(skin.string(font),font4)">Font4</include>
+	<include condition="String.IsEqual(skin.string(font),font5)">Font5</include>
+	<include condition="String.IsEqual(skin.string(font),font6)">Font6</include>
+	<include condition="String.IsEqual(skin.string(font),font7)">Font7</include>
+	<include condition="String.IsEqual(skin.string(font),font8)">Font8</include>
+	<include condition="String.IsEqual(skin.string(font),font9)">Font9</include>
+	<label>$INFO[VideoPlayer.Time]$INFO[VideoPlayer.Duration , / ,]</label>
+	<animation effect="fade" start="0" end="100" time="750" condition="true">Visible</animation>
+	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703)] + [Player.HasMedia + System.IdleTime(18)]+Skin.HasSetting(mq6)</visible>
+	</control>
+	
+	<!-- Titulo dos controles -->
+	<control type="label">
+	<include condition="String.IsEqual(skin.string(font),font1)">Font1</include>
+	<include condition="String.IsEqual(skin.string(font),font2)">Font2</include>
+	<include condition="String.IsEqual(skin.string(font),font3)">Font3</include>
+	<include condition="String.IsEqual(skin.string(font),font4)">Font4</include>
+	<include condition="String.IsEqual(skin.string(font),font5)">Font5</include>
+	<include condition="String.IsEqual(skin.string(font),font6)">Font6</include>
+	<include condition="String.IsEqual(skin.string(font),font7)">Font7</include>
+	<include condition="String.IsEqual(skin.string(font),font8)">Font8</include>
+	<include condition="String.IsEqual(skin.string(font),font9)">Font9</include>
+	<label>$VAR[value_playercontrols]</label>
+	<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
+	<animation effect="fade" start="100" end="0" time="750" condition="Player.HasMedia + System.IdleTime(18)">Conditional</animation>
+	<animation effect="slide" start="0,0" end="0,50" time="0" tween="sine" easing="out" condition="Skin.HasSetting(mainmenuvertical)">Conditional</animation>
+	<visible>ControlGroup(600).HasFocus + ![Player.HasMedia + System.IdleTime(18)]+Skin.HasSetting(mq6)</visible>
+	</control>
+	</control>
+	<include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
+	<include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
+	</include>	
+	
+	<!-- ###################################################################### MENU PRINCIPAL - HORIZONTAL ###################################################################### -->
+	<include name="MenuHorizontal">
+
+	<!-- Tocando agora -->
+	<include>NowPlayingCommon</include>
+	
+	<!-- Imagem da composicao -->
+	<include>CompositionCommon</include>	
+	
+	<!-- Widgets -->
+	<include>WidgetsCommon</include>
+	
+	<!-- Temperatura e condicao -->
+	<control type="group">	
+	<animation effect="slide" start="-750,0" end="0,0" time="500" delay="2000" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="slide" start="-750,0" end="0,0" time="500" delay="1000" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="slide" start="-750,0" end="0,0" time="500" delay="500" tween="sine" easing="out">Visible</animation>
+	<animation effect="slide" start="0,0" end="-750,0" time="500" tween="sine" easing="out">Hidden</animation>
+	<animation effect="fade" start="100" end="0" time="300" condition="Skin.HasSetting(submode)">Conditional</animation>
+	<visible>Control.HasFocus(9000) + Weather.IsFetched + ![Skin.HasSetting(nohometime) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
+	<control type="label">
+	<left>50</left>
+	<top>930</top>
+	<width>525</width>
+	<height>30</height>
+	<align>left</align>
+	<aligny>center</aligny>
+	<font>Font13</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+	</control>
+	<control type="image">
+	<left>145</left>
+	<top>964</top>
+	<width>50</width>
+	<height>50</height>
+	<aspectratio align="center" aligny="center">keep</aspectratio>
+	<texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+	<visible>!Skin.HasSetting(weathericons)</visible>
+	</control>
+	<control type="multiimage">
+	<left>145</left>
+	<top>964</top>
+	<width>50</width>
+	<height>50</height>
+	<aspectratio align="center" aligny="center">keep</aspectratio>
+	<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+	<timeperimage>75</timeperimage>
+	<randomize>false</randomize>
+	<fadetime>1</fadetime>
+	<visible>!Skin.HasSetting(weathericons)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>975</top>
+	<width>100</width>
+	<height>30</height>
+	<align>left</align>
+	<aligny>center</aligny>
+	<font>Font_27</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>[COLOR=$INFO[Skin.String(colorheader)]]$INFO[Weather.Temperature][/COLOR]</label>
+	</control>
+	</control>
+	
+	<!-- Data e hora -->
+	<include>TimeCommon</include>
+	
+	<!-- Status da biblioteca -->
+	<control type="label">
+	<left>662</left>
+	<top>930</top>
+	<width>596</width>
+	<height>30</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<font>Font13</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$VAR[value_librarystatus]</label>
+	<animation effect="fade" start="0" end="100" time="500" delay="2300" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="500" delay="1300" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="500" delay="500" tween="sine" easing="out">Visible</animation>
+	<animation effect="fade" start="100" end="0" time="100" tween="sine" easing="out">Hidden</animation>
+	<animation effect="fade" start="100" end="0" time="0" condition="!Control.IsVisible(8007)">Conditional</animation>
+	<animation effect="fade" start="0" end="100" time="200" condition="Control.IsVisible(8007)">Conditional</animation>
+	<visible>Control.HasFocus(9000) + ![Skin.HasSetting(submode) | Window.IsVisible(5099) | Skin.HasSetting(nohometotals) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)] + [String.Contains(Container(9000).ListItem.Property(id),movie) + Library.HasContent(Movies) | String.Contains(Container(9000).ListItem.Property(id),tvshow) + Library.HasContent(TVShows) | String.Contains(Container(9000).ListItem.Property(id),concert) + Library.HasContent(MusicVideos) | String.Contains(Container(9000).ListItem.Property(id),music) + Library.HasContent(Music) | String.Contains(Container(9000).ListItem.Property(id),favourites) + !String.IsEmpty(Window(0).Property(Favourite.1.Name)) | String.Contains(Container(9000).ListItem.Property(id),vpl) | String.Contains(Container(9000).ListItem.Property(id),apl)|String.Contains(Container(9000).ListItem.Property(id),live) | String.Contains(Container(9000).ListItem.Property(id),radio) | String.Contains(Container(9000).ListItem.Property(id),program)| String.Contains(Container(9000).ListItem.Property(id),pictures)]</visible>
+	</control>
+	<control type="group">
+	<visible>Control.HasFocus(9224)</visible>
+	<control type="image">
+	<left>662</left>
+	<top>920</top>
+	<width>616</width>
+	<height>50</height>
+	<colordiffuse>grey</colordiffuse>
+	<include>Animation_HomeGlass</include>
+	<texture>dialogs_context_focus.png</texture>
+	</control>
+	<control type="image">
+	<left>662</left>
+	<top>920</top>
+	<width>616</width>
+	<height>50</height>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	<include>Animation_HomeGlass</include>
+	<texture>details_back.png</texture>
+	</control>	
+	<control type="label">
+	<left>662</left>
+	<top>920</top>
+	<width>616</width>
+	<height>50</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<font>Font13</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$VAR[value_widgetsstatus] $VAR[value_widgetscounter]</label>
+	<animation effect="fade" start="0" end="100" time="500" delay="2300" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="500" delay="1300" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="500" delay="500" tween="sine" easing="out">Visible</animation>
+	<animation effect="fade" start="100" end="0" time="100" tween="sine" easing="out">Hidden</animation>
+	<animation effect="fade" start="100" end="0" time="0" condition="!Control.IsVisible(8007)">Conditional</animation>
+	<animation effect="fade" start="0" end="100" time="200" condition="Control.IsVisible(8007)">Conditional</animation>
+	</control>	
+	</control>	
+	<!-- Controles -->
+	<control type="group">	
+	<visible>!Control.HasFocus(8005)+Player.HasMedia + !System.IdleTime(18) + ![Control.HasFocus(510) | ControlGroup(512).HasFocus]</visible>
+	<include>Animation_Fade</include>
+	<control type="group" id="600">
+	<left>50</left>
+	<top>784</top>
+	<height>40</height>
+	<width>560</width>	
+	<include>ControlsCommon</include>
+	<enable>Player.HasMedia</enable>
+	</control>
+	</control>
+
+	<!-- Menu Principal -->
+	<control type="group">
+	<visible>!Control.HasFocus(8005)</visible>
+	<control type="image">
+	<left>0</left>
+	<top>918</top>
+	<width>1960</width>
+	<height>60</height>
+	<texture>mq7_menu_bar.png</texture>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	<animation effect="fade" start="0" end="100" time="2000" easing="inout" tween="cubic">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="1500" easing="inout" tween="cubic">Visible</animation>
+	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+	<animation effect="fade" start="100" end="0" time="100" easing="inout" tween="cubic">Hidden</animation>
+	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703) | Control.HasFocus(9224)] + ![Skin.HasSetting(submode) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
+	</control>
+	
+	<!-- Barra de cache/contador da reproducao -->
+	<include>MiscCommon</include>
+	
+	</control>
+	</include>
+	
+	<!-- ###################################################################### MENU PRINCIPAL - VERTICAL ###################################################################### -->
+	<include name="MenuVertical">
+	
+	<!-- Tocando agora -->
+	<include>NowPlayingCommon</include>	
+	
+	<!-- Fundo do menu/widgets -->
+	<control type="image">	
+	<left>0</left>
+	<top>430</top>
+	<width>1920</width>
+	<height>650</height>
+	<texture diffuse="shadow_mask.png">darkgrey.png</texture>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	<animation effect="fade" end="75" condition="true">Conditional</animation>
+	<visible>!Control.HasFocus(8005)</visible>
+	</control>	
+	
+	<!-- Imagem da composicao -->
+	<include>CompositionCommon</include>
+	
+	<!-- Widgets -->
+	<include>WidgetsCommon</include>
+	
+	<!-- Temperatura e condicao -->
+	<control type="group">	
+	<animation effect="slide" start="1920,0" end="0,0" time="500" delay="2000" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="slide" start="1920,0" end="0,0" time="500" delay="1000" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="slide" start="1920,0" end="0,0" time="500" delay="500" tween="sine" easing="out">Visible</animation>
+	<animation effect="slide" start="0,0" end="1920,0" time="500" tween="sine" easing="out">Hidden</animation>
+	<visible>Control.HasFocus(9000) + Weather.IsFetched + ![Skin.HasSetting(nohometime) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
+	<control type="label">
+	<left>1345</left>
+	<top>840</top>
+	<width>525</width>
+	<height>30</height>
+	<align>right</align>
+	<aligny>center</aligny>
+	<font>Font13</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+	</control>
+	<control type="image">
+	<left>1720</left>
+	<top>872</top>
+	<width>50</width>
+	<height>50</height>
+	<aspectratio align="center" aligny="center">keep</aspectratio>
+	<texture>$INFO[skin.string(CustomWeatherIconFolder)]$INFO[Window(Weather).Property(Current.OutlookIcon)]</texture>
+	</control>
+
+	<control type="label">
+	<left>1770</left>
+	<top>885</top>
+	<width>100</width>
+	<height>30</height>
+	<align>right</align>
+	<aligny>center</aligny>
+	<font>Font_27</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>[COLOR=$INFO[Skin.String(colorheader)]]$INFO[Weather.Temperature][/COLOR]</label>
+	</control>
+	</control>
+	
+	<!-- Data e hora -->
+	<include>TimeCommon</include>	
+	
+	<!-- Status da biblioteca -->
+	<control type="label">
+	<left>55</left>
+	<top>730</top>
+	<width>540</width>
+	<height>30</height>
+	<align>left</align>
+	<aligny>center</aligny>
+	<font>Font_18A</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$VAR[value_librarystatus]</label>
+	<animation effect="fade" start="0" end="100" time="500" delay="2300" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="500" delay="1300" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="500" delay="500" tween="sine" easing="out">Visible</animation>
+	<animation effect="fade" start="100" end="0" time="500" tween="sine" easing="out">Hidden</animation>
+	<animation effect="fade" start="100" end="0" time="0" condition="!Control.IsVisible(8007)">Conditional</animation>
+	<animation effect="fade" start="0" end="100" time="200" condition="Control.IsVisible(8007)">Conditional</animation>
+	<visible>Control.HasFocus(9000) + ![Skin.HasSetting(submode) | Window.IsVisible(5099) | Skin.HasSetting(nohometotals) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)] + [String.Contains(Container(9000).ListItem.Property(id),movie) + Library.HasContent(Movies) | String.Contains(Container(9000).ListItem.Property(id),tvshow) + Library.HasContent(TVShows) | String.Contains(Container(9000).ListItem.Property(id),concert) + Library.HasContent(MusicVideos) | String.Contains(Container(9000).ListItem.Property(id),music) + Library.HasContent(Music) | String.Contains(Container(9000).ListItem.Property(id),favourites) + !String.IsEmpty(Window(0).Property(Favourite.1.Name)) | String.Contains(Container(9000).ListItem.Property(id),vpl) | String.Contains(Container(9000).ListItem.Property(id),apl)|String.Contains(Container(9000).ListItem.Property(id),live) | String.Contains(Container(9000).ListItem.Property(id),radio) | String.Contains(Container(9000).ListItem.Property(id),program)| String.Contains(Container(9000).ListItem.Property(id),pictures)]</visible>
+	</control>
+	<control type="group">
+	<visible>Control.HasFocus(9224)</visible>
+	<control type="image">
+	<left>55</left>
+	<top>720</top>
+	<width>540</width>
+	<height>50</height>
+	<colordiffuse>grey</colordiffuse>
+	<include>Animation_HomeGlass</include>
+	<texture>dialogs_context_focus.png</texture>
+	</control>
+	<control type="image">
+	<left>55</left>
+	<top>720</top>
+	<width>540</width>
+	<height>50</height>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	<include>Animation_HomeGlass</include>
+	<texture>details_back.png</texture>
+	</control>
+	<control type="label">
+	<left>55</left>
+	<top>720</top>
+	<width>540</width>
+	<height>50</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<font>Font_18A</font>
+	<textcolor>FFFFFAF0</textcolor>
+	<label>$VAR[value_widgetsstatus] $VAR[value_widgetscounter]</label>
+	<animation effect="fade" start="0" end="100" time="500" delay="2300" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="500" delay="1300" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="500" delay="500" tween="sine" easing="out">Visible</animation>
+	<animation effect="fade" start="100" end="0" time="100" tween="sine" easing="out">Hidden</animation>
+	<animation effect="fade" start="100" end="0" time="0" condition="!Control.IsVisible(8007)">Conditional</animation>
+	<animation effect="fade" start="0" end="100" time="200" condition="Control.IsVisible(8007)">Conditional</animation>
+	</control>
+	</control>
+	
+	<!-- Controles -->
+	<control type="group">	
+	<visible>!Control.HasFocus(8005)+Player.HasMedia + !System.IdleTime(18) + ![Control.HasFocus(510) | ControlGroup(512).HasFocus | Skin.HasSetting(submode)]</visible>
+	<include>Animation_Fade</include>
+	<control type="group" id="600">
+	<left>814</left>
+	<top>840</top>
+	<height>40</height>
+	<width>560</width>	
+	<include>ControlsCommon</include>
+	<enable>Player.HasMedia</enable>	
+	</control>
+	</control>	
+
+	<!-- Menu Principal -->
+	<control type="group">
+	<visible>!Control.HasFocus(8005)</visible>
+	<control type="image">
+	<left>-100</left>
+	<top>765</top>
+	<width>2020</width>
+	<height>60</height>
+	<texture>mq7_menu_bar_vertical.png</texture>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	<animation effect="fade" start="0" end="100" time="2000" easing="inout" tween="cubic">WindowOpen</animation>
+	<animation effect="fade" start="0" end="100" time="1500" easing="inout" tween="cubic">Visible</animation>
+	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+	<animation effect="fade" start="100" end="0" time="100" easing="inout" tween="cubic">Hidden</animation>
+	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703) | Control.HasFocus(9224)] + ![Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
+	</control>
+
+	<!-- Barra de cache/contador da reproducao -->
+	<include>MiscCommon</include>
+	
+	</control>
+	</include>
+
+	<!-- Layout Horizontal -->
+	<include name="MainMenu_Horizontal">
+	<viewtype label="Main Menu">list</viewtype>
+	<animation type="WindowOpen" reversible="false" condition="true">
+	<effect type="slide" start="-1920" end="0" time="600" tween="quadratic" easing="out" />
+	<effect type="fade" start="0" end="100" time="400" />
+	</animation>
+	<animation type="VisibleChange" reversible="false" condition="true">
+	<effect type="slide" start="-1920" end="0" time="600" tween="quadratic" easing="out" />
+	<effect type="fade" start="0" end="100" time="400" />
+	</animation>
+	<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
+	<animation effect="fade" start="100" end="0" time="350" condition="[Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)] + !Window.IsVisible(6000)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(510) + ![String.Contains(Container(9000).ListItem.Property(widgets),settings) | String.Contains(Container(9000).ListItem.Property(widgets),weather)] | Control.HasFocus(500) | ControlGroup(512).HasFocus | ControlGroup(600).HasFocus | Control.HasFocus(8005)">Conditional</animation>
+	<left>0</left>
+	<top>818</top>
+	<width>1920</width>
+	<height>90</height>
+	<onup>8001</onup>
+	<ondown>8002</ondown>
+	<orientation>horizontal</orientation>
+		<scrolltime>300</scrolltime>
+		<focusposition>1</focusposition>
+		<movement>1</movement>
+	<itemlayout width="639" height="90">
+	<control type="label">
+	<left>50</left>
+	<top>3</top>	
+	<font>Font_menu1</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font1)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>1</top>
+	<font>Font_menu2</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font2)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>3</top>
+	<font>Font_menu3</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font3)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>1</top>
+	<font>Font_menu4</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font4)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>8</top>
+	<font>Font_menu5</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font5)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>0</top>
+	<font>Font_menu6</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font6)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>8</top>
+	<font>Font_menu7</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font7)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>-2</top>
+	<font>Font_menu8</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font8)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>-2</top>
+	<font>Font_menu9</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font9)</visible>
+	</control>
+	</itemlayout>
+	<focusedlayout width="639" height="90">
+	<control type="label">
+	<left>50</left>
+	<top>3</top>
+	<font>Font_menu1</font>
+	<include>MainMenuFontFocus</include>	
+	<visible>String.IsEqual(skin.string(font),font1)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>1</top>
+	<font>Font_menu2</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font2)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>3</top>
+	<font>Font_menu3</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font3)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>1</top>
+	<font>Font_menu4</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font4)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>8</top>
+	<font>Font_menu5</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font5)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>0</top>
+	<font>Font_menu6</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font6)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>8</top>
+	<font>Font_menu7</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font7)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>-2</top>
+	<font>Font_menu8</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font8)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>-2</top>
+	<font>Font_menu9</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font9)</visible>
+	</control>
+	</focusedlayout>
+	<content>
+	<include condition="Window.IsVisible(0)">Menu_Content</include>
+	<include condition="Window.IsVisible(6000)">Menu_ContentPreview</include>
+	</content>
+	</include>
+	
+	<!-- Layout Vertical -->
+	<include name="MainMenu_Vertical">
+	<viewtype label="Main Menu">list</viewtype>
+	<animation type="WindowOpen" reversible="false" condition="true">
+	<effect type="slide" start="-1920" end="0" time="600" tween="quadratic" easing="out" />
+	<effect type="fade" start="0" end="100" time="400" />
+	</animation>
+	<animation type="VisibleChange" reversible="false" condition="true">
+	<effect type="slide" start="-1920" end="0" time="600" tween="quadratic" easing="out" />
+	<effect type="fade" start="0" end="100" time="400" />
+	</animation>
+	<animation effect="slide" start="0,0" end="780,0" time="250" easing="in" tween="quadratic" condition="Skin.HasSetting(submode)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
+	<animation effect="fade" start="100" end="0" time="350" condition="[Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)] + !Window.IsVisible(6000)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(510) + ![String.IsEqual(Container(9000).ListItem.Property(widgets),settings) | String.IsEqual(Container(9000).ListItem.Property(widgets),weather)] | Control.HasFocus(500) | ControlGroup(512).HasFocus | ControlGroup(600).HasFocus | Control.HasFocus(8005) | Window.IsActive(5099)">Conditional</animation>
+	<left>0</left>
+	<top>625</top>
+	<width>640</width>
+	<height>400</height>
+	<onleft>8002</onleft>
+	<onright>8001</onright>
+	<orientation>vertical</orientation>
+	<scrolltime>300</scrolltime>
+	<focusposition>0</focusposition>
+	<movement>1</movement>
+	<itemlayout width="639" height="110">
+	<control type="label">
+	<left>50</left>
+	<top>3</top>
+	<align>left</align>
+	<font>Font_menu1</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font1)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>1</top>
+	<align>left</align>
+	<font>Font_menu2</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font2)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>3</top>
+	<align>left</align>
+	<font>Font_menu3</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font3)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>1</top>
+	<align>left</align>
+	<font>Font_menu4</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font4)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>8</top>
+	<align>left</align>
+	<font>Font_menu5</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font5)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>0</top>
+	<align>left</align>
+	<font>Font_menu6</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font6)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>8</top>
+	<align>left</align>
+	<font>Font_menu7</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font7)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>-2</top>
+	<align>left</align>
+	<font>Font_menu8</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font8)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>-2</top>
+	<align>left</align>
+	<font>Font_menu9</font>
+	<include>MainMenuFont</include>
+	<visible>String.IsEqual(skin.string(font),font9)</visible>
+	</control>
+	</itemlayout>
+	<focusedlayout width="639" height="190">
+	<control type="label">
+	<left>50</left>
+	<top>3</top>
+	<align>left</align>
+	<font>Font_menu1</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font1)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>1</top>
+	<align>left</align>
+	<font>Font_menu2</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font2)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>3</top>
+	<align>left</align>
+	<font>Font_menu3</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font3)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>1</top>
+	<align>left</align>
+	<font>Font_menu4</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font4)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>8</top>
+	<align>left</align>
+	<font>Font_menu5</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font5)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>0</top>
+	<align>left</align>
+	<font>Font_menu6</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font6)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>8</top>
+	<align>left</align>
+	<font>Font_menu7</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font7)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>-2</top>
+	<align>left</align>
+	<font>Font_menu8</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font8)</visible>
+	</control>
+	<control type="label">
+	<left>50</left>
+	<top>-2</top>
+	<align>left</align>
+	<font>Font_menu9</font>
+	<include>MainMenuFontFocus</include>
+	<visible>String.IsEqual(skin.string(font),font9)</visible>
+	</control>
+	</focusedlayout>
+	<content>
+	<include condition="Window.IsVisible(0)">Menu_Content</include>
+	<include condition="Window.IsVisible(6000)">Menu_ContentPreview</include>
+	</content>
+	</include>
+	
+</includes>

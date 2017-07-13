@@ -1,0 +1,2723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <!-- Aeon MQ 6 -->
+    <defaultcontrol always="true">149</defaultcontrol>
+	<menucontrol>9100</menucontrol>
+    <onload>ClearProperty(logo,home)</onload>
+    <onload>ClearProperty(Banner,home)</onload>
+    <onload>ClearProperty(thumb,home)</onload>
+    <onload>ClearProperty(images,home)</onload>
+    <onload>ClearProperty(script.extendedinfo.isactive)</onload>
+    <onload>Skin.SetString(sextendalbum_list,6010)</onload>
+    <onload>ClearProperty(Banner,home)</onload>
+	<onload condition="Control.IsVisible(510)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[Container(510).ListItem.Artist],silent=False)</onload>
+	<onload condition="Player.IsInternetStream">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[Window(Home).Property(SkinHelper.Player.Artist)],silent=False)</onload>
+	<onload condition="Container.Content(songs)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
+    <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
+    <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
+    <onunload>ClearProperty(fanart,home)</onunload>
+    <controls> 
+        <control type="group">
+            <!-- default group -->
+            <include>Animation_Window</include>
+            <control type="image">
+                <!-- Single Fanart -->
+                <include>WindowBG</include>
+                <texture background="true">special://skin/backgrounds/music.jpg</texture>
+            </control>
+            <control type="image">
+                <!-- Single Fanart -->
+                <include>WindowBG</include>
+                <texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.Art.Fanart)]</texture>
+            </control>
+            <control type="multiimage">
+                <!-- Multi Fanart -->
+                <include>WindowBG</include>
+                <imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</imagepath>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt))</visible>
+			</control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <height>225</height>
+                <width>1920</width>
+                <texture flipy="true">shadow_mask.png</texture>
+                <colordiffuse>75000000</colordiffuse>
+            </control>
+            <control type="label">
+                <!-- Artist -->
+                <left>45</left>
+                <top>12</top>
+                <width>1650</width>
+                <height>60</height>
+                <font>Font_40</font>
+                <label>$VAR[value_music_title]</label>
+                <textcolor>FFFFFAF0</textcolor>
+                <scroll>true</scroll>
+                <scrollout>false</scrollout>
+            </control>
+            <control type="label">
+                <left>45</left>
+                <top>75</top>
+                <width>1650</width>
+                <height>38</height>
+                <font>Font_21</font>
+                <label>$VAR[value_music_subtitle]</label>
+                <textcolor>90FFFFFF</textcolor>
+                <scroll>true</scroll>
+                <scrollout>false</scrollout>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>120</top>
+                <width>1920</width>
+                <height>579</height>
+                <texture>darkgrey.png</texture>
+                <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                <include>Animation_DefaultGlass</include>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1920</width>
+                <height>120</height>
+                <texture>gradient_small.png</texture>
+            </control>
+            <control type="image">
+                <left>308</left>
+                <top>206</top>
+                <height>230</height>
+                <width>3</width>
+                <texture>separator_v.png</texture>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>204</top>
+                <height>3</height>
+                <width>1029</width>
+                <texture>separator.png</texture>
+            </control>
+                <control type="textbox">
+				<animation effect="slide" start="0,0" end="-340,0" time="4000" condition="Skin.HasSetting(music_case)+Control.HasFocus(49)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-310,0" time="4000" condition="!Skin.HasSetting(music_case)+Control.HasFocus(49)">Conditional</animation>
+                    <!-- Plot -->
+                    <left>1930</left>
+                    <top>120</top>
+                    <width>300</width>
+                    <height>562</height>
+                    <align>justify</align>
+                    <font>Font_18A</font>
+                    <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2)]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
+                </control>
+            <control type="label">
+                <!-- Year -->
+                <left>50</left>
+                <top>120</top>
+                <height>60</height>
+                <width>185</width>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>Font_24A</font>
+                <label>$INFO[ListItem.Year] </label>
+                <textcolor>FFFFFAF0</textcolor>
+            </control>
+            <control type="label">
+                <!--Helper Year -->
+                <left>50</left>
+                <top>120</top>
+                <height>60</height>
+                <width>185</width>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>Font_24A</font>
+                <label>$INFO[Window(Home).Property(SkinHelper.Player.Year)] </label>
+                <textcolor>FFFFFAF0</textcolor>
+				<visible>Window.IsActive(visualisation)+String.IsEmpty(ListItem.Year)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Year))</visible>
+            </control>
+            <control type="label">
+                <!-- Genre -->
+                <left>50</left>
+                <top>154</top>
+                <height>60</height>
+                <width>660</width>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>Font_24A</font>
+                <label>$INFO[ListItem.Genre]</label>
+                <textcolor>FFFFFAF0</textcolor>
+                <scroll>true</scroll>
+                <scrollout>false</scrollout>
+            </control>
+            <control type="label">
+                <!-- Helper Genre -->
+                <left>50</left>
+                <top>154</top>
+                <height>60</height>
+                <width>660</width>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>Font_24A</font>
+                <label>$INFO[Window(Home).Property(SkinHelper.Player.Genre)]</label>
+                <textcolor>FFFFFAF0</textcolor>
+                <scroll>true</scroll>
+                <scrollout>false</scrollout>
+				<visible>Window.IsActive(visualisation)+String.IsEmpty(ListItem.Year)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Genre))</visible>
+            </control>
+            <control type="list" id="49">
+                <!-- Lista de botoes/info -->
+                <left>30</left>
+                <top>218</top>
+                <width>1110</width>
+                <height>495</height>
+                <onleft>149</onleft>
+                <onright>149</onright>
+				<onup>Skin.Reset(coverzoom)</onup>
+                <onup>SetFocus(160)</onup>
+                <onup>Skin.SetBool(artistzoom)</onup>
+                <ondown>149</ondown>
+                <itemgap>0</itemgap>
+                <pagecontrol></pagecontrol>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="30">
+                    <control type="label">
+                        <left>-42</left>
+                        <top>0</top>
+                        <width>300</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>Font_18A</font>
+                        <textcolor>$VAR[value_headercolor]</textcolor>
+                        <selectedcolor>$VAR[value_headercolor]</selectedcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="label">
+                        <left>300</left>
+                        <top>0</top>
+                        <width>695</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_18A</font>
+                        <textcolor>FFFFFAF0</textcolor>
+                        <selectedcolor>E4101010</selectedcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <scroll>true</scroll>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="30">
+                    <control type="image">
+                        <left>285</left>
+                        <top>0</top>
+                        <width>695</width>
+                        <height>30</height>
+                        <texture>settings_button_focus.png</texture>
+                        <visible>Control.HasFocus(49)</visible>
+                    </control>
+                    <control type="label">
+                        <left>-42</left>
+                        <top>0</top>
+                        <width>300</width>
+                        <height>30</height>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>Font_18A</font>
+                        <textcolor>$VAR[value_headercolor]</textcolor>
+                        <selectedcolor>$VAR[value_headercolor]</selectedcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <left>300</left>
+                        <top>0</top>
+                        <width>695</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_18A</font>
+                        <textcolor>FFFFFAF0</textcolor>
+                        <selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <visible>!Control.HasFocus(49)</visible>
+                    </control>
+                    <control type="label">
+                        <left>300</left>
+                        <top>0</top>
+                        <width>695</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_18A</font>
+                        <textcolor>E4101010</textcolor>
+                        <selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <visible>Control.HasFocus(49)</visible>
+                    </control>
+                </focusedlayout>
+                <content>
+					<item>
+                        <label>Title</label>
+                        <!-- Helper Title -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.Player.Title)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Title))</visible>
+                    </item>
+					<item>
+                        <label>Album</label>
+                        <!-- Helper Album -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.Player.Album)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Album))</visible>
+                    </item>
+                    <item>
+                        <label>$LOCALIZE[175]</label>
+                        <!-- Mood -->
+                        <label2>$INFO[MusicPlayer.Property(Artist_Mood)]</label2>
+						<onclick>noop</onclick>
+						<visible>Window.IsActive(visualisation)+!String.IsEmpty(MusicPlayer.Property(Artist_Mood))</visible>
+                    </item>
+                    <item>
+                        <label>$LOCALIZE[175]</label>
+                        <!-- Helper Mood -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.Player.mood)]</label2>
+						<onclick>noop</onclick>
+						<visible>Window.IsActive(visualisation)+String.IsEmpty(MusicPlayer.Property(Album_Mood))+String.IsEmpty(MusicPlayer.Property(Artist_Mood))+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.mood))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[175]</label>
+                        <!-- Mood -->
+                        <label2>$INFO[MusicPlayer.Property(Album_Mood)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(MusicPlayer.Property(Album_Mood))+String.IsEmpty(MusicPlayer.Property(Artist_Mood))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[176]</label>
+                        <!-- Style -->
+                        <label2>$INFO[MusicPlayer.Property(Album_Style)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(MusicPlayer.Property(Album_Style))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[176]</label>
+                        <!-- Helper Style -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.Player.style)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+String.IsEmpty(MusicPlayer.Property(Album_Style))+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.style))</visible>
+                    </item>
+					<item>
+                        <label>Formed</label>
+                        <!-- Artist_Formed -->
+                        <label2>$INFO[MusicPlayer.Property(Artist_Formed)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(MusicPlayer.Property(Artist_Formed))</visible>
+                    </item>
+					<item>
+                        <label>Country/Formed</label>
+                        <!-- Helper Artist_Formed -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.Player.Country)] - $INFO[Window(Home).Property(SkinHelper.Player.formed)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+String.IsEmpty(MusicPlayer.Property(Artist_Formed))+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.formed))</visible>
+                    </item>
+					<item>
+                        <label>Disbanded</label>
+                        <!-- Artist_Formed -->
+                        <label2>$INFO[MusicPlayer.Property(Artist_Disbanded)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(MusicPlayer.Property(Artist_Disbanded))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[21895]</label>
+                        <!-- Album Theme -->
+                        <label2>$INFO[MusicPlayer.Property(Album_Theme)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(MusicPlayer.Property(Album_Theme))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[21898]</label>
+                        <!-- Artist_YearsActive -->
+                        <label2>$INFO[MusicPlayer.Property(Artist_YearsActive)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(MusicPlayer.Property(Artist_YearsActive))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[564]</label>
+                        <!-- Album Theme -->
+                        <label2>$INFO[MusicPlayer.Property(Album_Type)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(MusicPlayer.Property(Album_Type))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[21893]/$LOCALIZE[21897]</label>
+                        <!-- Artist_Born/Die -->
+						<label2>$INFO[MusicPlayer.Property(Artist_Born)] $INFO[MusicPlayer.Property(Artist_Die)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+[!String.IsEmpty(MusicPlayer.Property(Artist_Born))|!String.IsEmpty(MusicPlayer.Property(Artist_Die))]</visible>
+                    </item>
+					<item>
+                        <label>Instrument</label>
+                        <!-- Instrument -->
+                        <label2>$INFO[MusicPlayer.Property(Artist_Instrument)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(MusicPlayer.Property(Artist_Instrument))</visible>
+                    </item>
+					<item>
+                        <label>Tags</label>
+                        <!-- Helper Tags -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.Player.tags)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.tags))</visible>
+                    </item>
+					<item>
+                        <label>Similar Artist</label>
+                        <!-- Helper Tags -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.Player.lastfm.similarartists)]</label2>
+						<onclick>noop</onclick>
+                        <visible>Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.lastfm.similarartists))</visible>
+                    </item>
+	<!-- Library Info -->				
+                    <item>
+                        <label>$LOCALIZE[175]</label>
+                        <!-- Mood -->
+                        <label2>$INFO[ListItem.Property(Artist_Mood)]</label2>
+						<onclick>noop</onclick>
+						<visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Artist_Mood))+Container.Content(artists)</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[175]</label>
+                        <!-- Mood -->
+                        <label2>$INFO[ListItem.Property(Album_Mood)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Album_Mood))</visible>
+                    </item>
+                    <item>
+                        <label>$LOCALIZE[176]</label>
+                        <!-- Style -->
+                        <label2>$INFO[ListItem.Property(Artist_Style)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Artist_Style))+Container.Content(artists)</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[176]</label>
+                        <!-- Style -->
+                        <label2>$INFO[ListItem.Property(Album_Style)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Album_Style))</visible>
+                    </item>
+					<item>
+                        <label>Country/Formed</label>
+                        <!-- Helper Artist_Formed -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Country)] - $INFO[Window(Home).Property(SkinHelper.ListItem.formed)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+String.IsEmpty(MusicPlayer.Property(Artist_Formed))+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.formed))</visible>
+                    </item>		
+					<item>
+                        <label>Disbanded</label>
+                        <!-- Artist_Formed -->
+                        <label2>$INFO[ListItem.Property(Artist_Disbanded)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Artist_Disbanded))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[21895]</label>
+                        <!-- Album Theme -->
+                        <label2>$INFO[ListItem.Property(Album_Theme)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Album_Theme))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[21898]</label>
+                        <!-- Artist_YearsActive -->
+                        <label2>$INFO[ListItem.Property(Artist_YearsActive)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Artist_YearsActive))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[564]</label>
+                        <!-- Album Theme -->
+                        <label2>$INFO[ListItem.Property(Album_Type)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Album_Type))</visible>
+                    </item>
+					<item>
+                        <label>$LOCALIZE[21893]/$LOCALIZE[21897]</label>
+                        <!-- Artist_Born/Die -->
+						<label2>$INFO[ListItem.Property(Artist_Born)] $INFO[ListItem.Property(Artist_Die)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Artist_Born))|!String.IsEmpty(ListItem.Property(Artist_Die))</visible>
+                    </item>
+					<item>
+                        <label>Instrument</label>
+                        <!-- Instrument -->
+                        <label2>$INFO[ListItem.Property(Artist_Instrument)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Artist_Instrument))</visible>
+                    </item>
+					<item>
+                        <label>Tags</label>
+                        <!-- Helper Tags -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.tags)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.tags))</visible>
+                    </item>
+					<item>
+                        <label>Label</label>
+                        <!-- Helper Tags -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.albumlabel)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.albumlabel))</visible>
+                    </item>
+					<item>
+                        <label>Lyrics</label>
+                        <!-- Helper Tags -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.lyrics)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.lyrics))</visible>
+                    </item>
+					<item>
+                        <label>Lastfm tags</label>
+                        <!-- Helper Tags -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.lastfm.tags)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.lastfm.tags))</visible>
+                    </item>
+					<item>
+                        <label>Similar Artist</label>
+                        <!-- Helper Tags -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.lastfm.similarartists)]</label2>
+						<onclick>noop</onclick>
+                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.lastfm.similarartists))</visible>
+                    </item>
+
+                </content>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>435</top>
+                <height>3</height>
+                <width>1029</width>
+                <texture>separator.png</texture>
+            </control>
+            <control type="textbox">
+                <!-- Plot -->
+                <left>45</left>
+                <top>450</top>
+                <width>952</width>
+                <height>232</height>
+                <align>justify</align>
+                <font>Font_18A</font>
+                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]$INFO[ListItem.Property(Artist_Description)]</label>
+                <textcolor>FFFFFAF0</textcolor>
+                <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
+            </control>
+            <control type="textbox">
+                <!-- Plot -->
+                <left>45</left>
+                <top>450</top>
+                <width>952</width>
+                <height>262</height>
+                <align>justify</align>
+                <font>Font_18A</font>
+                <label>$INFO[Window(Home).Property(SkinHelper.Player.Plot)]</label>
+                <textcolor>FFFFFAF0</textcolor>
+                <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
+				<visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Plot))+String.IsEmpty(ListItem.Property(Artist_Description))</visible>
+            </control>
+			<control type="group">
+			<visible>Container.Content(Albums)|Container.Content(Songs)</visible>
+				<!--Star-->
+				<control type="image">
+					<left>1778</left>
+					<top>4</top>
+					<width>122</width>
+					<height>117</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texture>star.png</texture>
+					<colordiffuse>$VAR[value_floorcolor]</colordiffuse>
+				</control>
+				<!--UserRating in star-->
+				<control type="label">
+					<left>1778</left>
+					<top>12</top>
+					<width>122</width>
+					<height>117</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_24A</font>
+					<label>[B]$INFO[ListItem.UserRating][/B]</label>
+					<textcolor>FF101010</textcolor>
+				</control>
+			</control>
+			<control type="group">
+			<visible>Window.IsActive(visualisation)</visible>
+				<!--Star-->
+            <control type="image">
+                <left>1500</left>
+                <top>4</top>
+                <width>420</width>
+                <height>38</height>
+                <texture>$VAR[value_styleratingstars]$INFO[MusicPlayer.UserRating,,.0.png]</texture>
+                <colordiffuse>$VAR[value_music_starrating]</colordiffuse>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
+            </control>
+            <control type="image">
+                <left>1500</left>
+                <top>4</top>
+                <width>420</width>
+                <height>38</height>
+                <texture fallback="flags\stars\sloped\empty.png">flags\stars\sloped\$INFO[Window(home).Property(SkinHelper.Player.Rating),,.png]</texture>
+                <colordiffuse>$VAR[value_music_starrating]</colordiffuse>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
+				<visible>String.IsEmpty(MusicPlayer.UserRating)</visible>
+            </control>
+            <control type="label">
+                <left>1500</left>
+                <top>42</top>
+                <width>420</width>
+                <height>38</height>
+                <align>right</align>
+                <font>Font_17</font>
+                <textcolor>88DDDDDD</textcolor>
+                <shadowcolor>AA000000</shadowcolor>
+				<label>UserRating : [COLOR $VAR[value_music_starrating]]$INFO[MusicPlayer.UserRating][/COLOR]</label>
+				<visible>!String.IsEmpty(MusicPlayer.UserRating)</visible>
+            </control>
+            <control type="label">
+                <left>1460</left>
+                <top>42</top>
+                <width>450</width>
+                <height>45</height>
+                <align>right</align>
+                <font>Font_17</font>
+                <textcolor>88DDDDDD</textcolor>
+                <shadowcolor>AA000000</shadowcolor>
+				<label>rating : [COLOR=$VAR[value_headercolor]]$INFO[Window(home).Property(SkinHelper.Player.Rating)][/COLOR]</label>
+				<visible>String.IsEmpty(MusicPlayer.UserRating)+!String.IsEmpty(Window(home).Property(SkinHelper.Player.Rating))</visible>
+            </control>
+			</control>
+            <control type="group">
+                <!-- Side bar -->
+                <left>-1028</left>
+                <animation effect="slide" end="1028,0" time="1000" condition="Control.HasFocus(6010)">Conditional</animation>
+                <control type="image">
+                    <!-- Back side -->
+                    <left>0</left>
+                    <top>120</top>
+                    <width>1028</width>
+                    <height>579</height>
+                    <texture>darkgrey.png</texture>
+                    <fadetime>FanartCrossFadeTime</fadetime>
+                    <aspectratio align="center" aligny="top">stretch</aspectratio>
+                </control>
+                <control type="label">
+                    <!-- Label 6010 -->
+                    <left>0</left>
+                    <top>120</top>
+                    <height>40</height>
+                    <width>225</width>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>Album Title</label>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>120</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$INFO[Container(6010).ListItem.Label]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                </control>
+                <control type="label">
+                    <!-- Album Artist -->
+                    <left>0</left>
+                    <top>150</top>
+                    <height>40</height>
+                    <width>225</width>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>Album Artist</label>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>150</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$INFO[ListItem.artist]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>150</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$VAR[value_music_title]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+					<visible>Window.IsActive(visualisation)</visible>
+                </control>
+                <control type="label">
+                    <!-- Genre -->
+                    <left>0</left>
+                    <top>180</top>
+                    <height>40</height>
+                    <width>225</width>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>Album Genre</label>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>180</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$INFO[Container(6010).ListItem.Genre]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                </control>
+                <control type="label">
+                    <!-- Album Mood & Speed -->
+                    <left>0</left>
+                    <top>210</top>
+                    <height>40</height>
+                    <width>225</width>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>Speed and Mod</label>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>210</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$INFO[Container(6010).ListItem.Property(Speed)] $INFO[Container(6010).ListItem.Property(AlbumMood)]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                </control>
+                <control type="label">
+                    <!-- Type/Albums -->
+                    <left>0</left>
+                    <top>240</top>
+                    <height>40</height>
+                    <width>225</width>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>Type and Theme</label>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>240</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$INFO[Container(6010).ListItem..Property(Type)] $INFO[Container(6010).ListItem..Property(album_Theme)]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                </control>
+                <control type="label">
+                    <!-- year -->
+                    <left>0</left>
+                    <top>270</top>
+                    <height>40</height>
+                    <width>225</width>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>Year</label>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>270</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$INFO[Container(6010).ListItem.Year]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                </control>
+                <control type="label">
+                    <!-- Album Sales -->
+                    <left>0</left>
+                    <top>300</top>
+                    <height>40</height>
+                    <width>225</width>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>Album Sales</label>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>300</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$INFO[Container(6010).ListItem.Property(Sales)]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                </control>
+                <control type="label">
+                    <!--  Album ID -->
+                    <left>0</left>
+                    <top>330</top>
+                    <height>40</height>
+                    <width>225</width>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>Album ID</label>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>330</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$INFO[Container(6010).ListItem.Property(id)]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                </control>
+                <control type="label">
+                    <!--  Album MBID -->
+                    <left>0</left>
+                    <top>360</top>
+                    <height>40</height>
+                    <width>225</width>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>Album MBID</label>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="label">
+                    <left>255</left>
+                    <top>360</top>
+                    <height>40</height>
+                    <width>660</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18A</font>
+                    <label>$INFO[Container(6010).ListItem.Property(mbid)]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                </control>
+                <control type="image">
+                    <left>765</left>
+                    <top>210</top>
+                    <height>195</height>
+                    <width>195</width>
+                    <aspectratio align="center" aligny="top">stretch</aspectratio>
+                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Container(6010).ListItem.Property(thumb)]</texture>
+                    <visible>String.IsEmpty(Container(6010).ListItem.Property(cdart))</visible>
+                </control>
+                <control type="image">
+                    <left>765</left>
+                    <top>210</top>
+                    <height>195</height>
+                    <width>195</width>
+                    <texture>$INFO[Container(6010).ListItem.Property(cdart)]</texture>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>405</top>
+                    <height>3</height>
+                    <width>1029</width>
+                    <texture>separator.png</texture>
+                </control>
+                <control type="textbox">
+                    <!-- Plot -->
+                    <left>45</left>
+                    <top>420</top>
+                    <width>952</width>
+                    <height>262</height>
+                    <align>justify</align>
+                    <font>Font_18A</font>
+                    <label>$INFO[Container(6010).ListItem.Property(Description)]$INFO[Container(6010).ListItem.Property(Album_Description)]$INFO[Container(6010).ListItem.Property(Artist_Description)]</label>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
+                </control>
+            </control>
+            <control type="image">
+                <!-- Logo -->
+                <left>750</left>
+                <top>130</top>
+                <width>210</width>
+                <height>70</height>
+                <aspectratio>stretch</aspectratio>
+				<bordertexture border="-12">musicframe.png</bordertexture>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
+            </control>
+           <control type="image">
+                <!-- Logo -->
+                <left>750</left>
+                <top>130</top>
+                <width>210</width>
+                <height>70</height>
+                <aspectratio>stretch</aspectratio>
+				<bordertexture border="-12">musicframe.png</bordertexture>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
+                <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo))</visible>
+            </control>
+           <control type="group">
+			<visible>Skin.HasSetting(music_case)</visible>
+			<control type="group">
+			<animation effect="slide" start="-240,0" end="0,0" time="4000" condition="!Control.HasFocus(49)">Conditional</animation>
+            <control type="image">
+                <!-- Thumb cd -->
+                <include>LeftMusicADiscNoCase</include>
+                <texture>$INFO[Window(home).Property(discart)]</texture>
+                <fadetime>FanartCrossFadeTime</fadetime>
+                <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasAudio">Conditional</animation>
+                <include>Animation_ViewsCDart</include>
+                <visible>!Control.HasFocus(6010)+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb cd from helper-->
+                <include>LeftMusicDiscCase</include>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.DiscArt)]</texture>
+                <fadetime>FanartCrossFadeTime</fadetime>
+                <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="Player.HasAudio">Conditional</animation>
+                <include>Animation_ViewsCDart</include>
+                <visible>!Control.HasFocus(6010)+!Container.Content(artists)+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))</visible>
+            </control>
+            </control>
+            <control type="image">
+                <!-- Thumb Helper-->
+                <include>SizeMusicArtCase</include>
+                <texture diffuse="thumb_box_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ArtistThumb)]</texture>
+                <visible>!Control.HasFocus(6010)+Container.Content(artists)+String.IsEmpty(ListItem.Icon)</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb Helper-->
+                <include>SizeMusicArtCase</include>
+                <texture diffuse="thumb_box_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.AlbumThumb)]</texture>
+                <visible>!Control.HasFocus(6010)+Container.Content(albums)+String.IsEmpty(ListItem.Icon)</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb Helper-->
+                <include>SizeMusicArtCase</include>
+                <texture diffuse="thumb_box_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Thumb)]</texture>
+                <visible>!Control.HasFocus(6010)+String.IsEmpty(ListItem.Icon)</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb -->
+                <include>SizeMusicArtCase</include>
+                <texture fallback="DefaultAudio.png" diffuse="thumb_box_diffuse.png" background="true">$INFO[Listitem.Icon]</texture>
+                <visible>!Control.HasFocus(6010)+!String.IsEmpty(ListItem.Icon)</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb Stream -->
+                <include>SizeMusicArtCase</include>
+                <texture fallback="DefaultAudio.png" diffuse="thumb_box_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.Thumb)]</texture>
+                <visible>!Control.HasFocus(6010)+String.IsEmpty(ListItem.Icon)+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Thumb))+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.AlbumThumb))+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.ArtistThumb))</visible>
+            </control>			
+            </control>	
+			<control type="group">
+			<visible>!Skin.HasSetting(music_case)+!Control.HasFocus(6010)</visible>
+			<control type="group">
+			<animation effect="slide" start="-240,0" end="0,0" time="4000" condition="!Control.HasFocus(49)">Conditional</animation>
+            <control type="image">
+                <!-- Thumb cd -->
+                <include>LeftMusicADiscNoCase</include>
+                <texture>$INFO[Window(home).Property(discart)]</texture>
+                <fadetime>FanartCrossFadeTime</fadetime>
+                <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasAudio">Conditional</animation>
+                <include>Animation_ViewsCDart</include>
+                <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb cd from helper-->
+                <include>LeftMusicADiscNoCase</include>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.DiscArt)]</texture>
+                <fadetime>FanartCrossFadeTime</fadetime>
+                <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasAudio">Conditional</animation>
+                <include>Animation_ViewsCDart</include>
+                <visible>!Container.Content(artists)+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))</visible>
+            </control>
+            </control>
+            <control type="image">
+                <!-- Thumb Helper-->
+                <include>SizeMusicArtNoCase</include>
+                <texture diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ArtistThumb)]</texture>
+                <visible>Container.Content(artists)+String.IsEmpty(ListItem.Icon)</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb Helper-->
+                <include>SizeMusicArtNoCase</include>
+                <texture diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.AlbumThumb)]</texture>
+                <visible>Container.Content(albums)+String.IsEmpty(ListItem.Icon)</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb Helper-->
+                <include>SizeMusicArtNoCase</include>
+                <texture diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Thumb)]</texture>
+                <visible>String.IsEmpty(ListItem.Icon)</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb -->
+                <include>SizeMusicArtNoCase</include>
+                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Listitem.Icon]</texture>
+                <visible>!String.IsEmpty(ListItem.Icon)</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb Stream -->
+                <include>SizeMusicArtNoCase</include>
+                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.Thumb)]</texture>
+                <visible>String.IsEmpty(ListItem.Icon)+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Thumb))+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.AlbumThumb))+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.ArtistThumb))</visible>
+            </control>
+			</control>
+			<control type="group">
+			<visible>Control.HasFocus(6010)</visible>
+            <control type="image">
+                <!-- Thumb cd from helper-->
+                <include>LeftMusicADiscNoCase</include>
+                <texture background="true">$INFO[Container(6010).ListItem.Property(cdart)]</texture>
+                <fadetime>FanartCrossFadeTime</fadetime>
+                <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasAudio">Conditional</animation>
+                <include>Animation_ViewsCDart</include>
+            </control>
+            <control type="image">
+                <!-- Thumb Stream -->
+                <include>SizeMusicArtNoCase</include>
+                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Container(6010).ListItem.Property(thumb)]</texture>
+                <visible>!String.IsEmpty(Container(6010).ListItem.Property(thumb))+Control.HasFocus(6010)</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb Stream -->
+                <include>SizeMusicArtNoCase</include>
+                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Container(6010).ListItem.Property(thumbback)]</texture>
+                <visible>!String.IsEmpty(Container(6010).ListItem.Property(thumbback))+Control.HasFocus(6010)</visible>
+            </control>
+           </control>		
+            <control type="image">
+                <!-- Case -->
+                <left>1030</left>
+                <top>112</top>
+                <height>597</height>
+                <width>597</width>
+                <aspectratio align="left">keep</aspectratio>
+                <fadetime>FanartCrossFadeTime</fadetime>
+                <texture>case_music.png</texture>
+                <include>Animation_CaseGlass</include>
+                <visible>!Control.HasFocus(6010)+Skin.HasSetting(music_case)</visible>
+            </control>
+            <control type="image">
+                <!-- Logo -->
+                <left>1000</left>
+                <top>128</top>
+                <width>597</width>
+                <height>45</height>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
+                <visible>!Control.HasFocus(6010)+Skin.HasSetting(music_case)+Skin.HasSetting(music_artlogo)</visible>
+            </control>
+            <control type="image">
+                <!-- Logo -->
+                <left>1000</left>
+                <top>128</top>
+                <width>597</width>
+                <height>45</height>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
+                <visible>!Control.HasFocus(6010)+Skin.HasSetting(music_case)+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo))</visible>
+            </control>	
+            <control type="image">
+                <!-- Banner -->
+                <left>1050</left>
+                <top>8</top>
+                <aspectratio>keep</aspectratio>
+                <width>490</width>
+                <height>100</height>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</texture>
+            </control>
+            <control type="image">
+                <!-- Banner -->
+                <left>1050</left>
+                <top>8</top>
+                <aspectratio>keep</aspectratio>
+                <width>490</width>
+                <height>100</height>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.Banner)]</texture>
+				<visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Banner))</visible>
+            </control>
+            <control type="image">
+                <left>1029</left>
+                <top>120</top>
+                <height>579</height>
+                <width>3</width>
+                <texture>separator_v.png</texture>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>120</top>
+                <height>3</height>
+                <width>1920</width>
+                <texture>separator.png</texture>
+            </control>
+            <control type="image">
+                <!-- Fundo do rodape -->
+                <left>0</left>
+                <top>975</top>
+                <width>1920</width>
+                <height>105</height>
+                <colordiffuse>$VAR[value_floorcolor]</colordiffuse>
+                <texture>shadow_mask.png</texture>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>1020</top>
+                <height>64</height>
+                <width>1920</width>
+                <texture>gradient_small.png</texture>
+            </control>
+            <control type="image">
+                <!-- Cast -->
+                <left>0</left>
+                <top>1018</top>
+                <width>1920</width>
+                <height>45</height>
+                <texture flipy="true">shadow_h.png</texture>
+                <colordiffuse>C3FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>741</top>
+                <height>279</height>
+                <width>1920</width>
+                <texture>darkgrey.png</texture>
+                <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                <include>Animation_DefaultGlass2</include>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),6010)</visible>
+                <left>472</left>
+                <top>1038</top>
+                <width>975</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_24</font>
+                <label>$INFO[Container(6010).ListItem.Year,, : ]$INFO[Container(6010).ListItem.Label]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),7010)</visible>
+                <left>472</left>
+                <top>1038</top>
+                <width>975</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_24</font>
+                <label>$INFO[Container(7010).ListItem.Year,, : ]$INFO[Container(7010).ListItem.Label]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),8010)</visible>
+                <left>472</left>
+                <top>1038</top>
+                <width>975</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_24</font>
+                <label>$INFO[Container(8010).ListItem.Label]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),9010)</visible>
+                <left>472</left>
+                <top>1038</top>
+                <width>975</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_24</font>
+                <label>$INFO[Container(9010).ListItem.Label]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),15014)</visible>
+                <left>472</left>
+                <top>1038</top>
+                <width>975</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_24</font>
+                <label>$INFO[Container(15014).ListItem.Label]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
+                <left>305</left>
+                <top>1038</top>
+                <width>1300</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_24</font>
+                <label>$VAR[last_fmsa.0.name]$VAR[last_fmsa.1.name, /,]$VAR[last_fmsa.2.name, /,]$VAR[last_fmsa.3.name, /,]$VAR[last_fmsa.4.name, /,]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),15012)</visible>
+                <left>472</left>
+                <top>1038</top>
+                <width>975</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_24</font>
+                <label>$INFO[Container(15012).ListItem.Label]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),15013)</visible>
+                <left>472</left>
+                <top>1038</top>
+                <width>975</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_24</font>
+                <label>$INFO[Container(15013).ListItem.Label]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),15012)|String.Contains(skin.string(sextendalbum_list),15013)</visible>
+                <left>1420</left>
+                <top>1038</top>
+                <width>500</width>
+                <align>right</align>
+                <aligny>center</aligny>
+                <font>Font_14</font>
+                <label>$INFO[MusicPlayer.Title,NowPlaying: ]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>String.Contains(skin.string(sextendalbum_list),10010)</visible>
+                <left>472</left>
+                <top>1038</top>
+                <width>975</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Font_24</font>
+                <label>$INFO[Container(10010).ListItem.Label]</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <left>45</left>
+                <top>1020</top>
+                <width>600</width>
+                <height>40</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>Font_18A</font>
+                <label>31939</label>
+                <textcolor>$VAR[value_flagscolor]</textcolor>
+                <visible>String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumName)) + !String.IsEmpty(Window.Property(ArtistSlideshowRunning))</visible>
+            </control>
+            <control type="group" id="910">
+                <!-- Lists -->
+                <control type="list" id="6010">
+                    <visible>String.Contains(skin.string(sextendalbum_list),6010)</visible>
+                    <viewtype label="List">List Info</viewtype>
+                    <content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$VAR[value_discography_title]</content>
+                    <left>78</left>
+                    <top>738</top>
+                    <width>1842</width>
+                    <height>330</height>
+                    <onup>149</onup>
+					<ondown>Skin.Reset(artistzoom)</ondown>
+					<ondown>Skin.Reset(albums_as)</ondown>
+					<ondown>Skin.Reset(mostloved)</ondown>
+					<ondown>Skin.Reset(youtube)</ondown>
+					<ondown>Skin.Reset(similarartist)</ondown>
+					<ondown>Skin.Reset(similarartistlastfm)</ondown>
+                    <ondown>SetFocus(160)</ondown>
+					<ondown>Skin.SetBool(coverzoom)</ondown>
+					<onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,album)">RunScript(script.playalbum,albumid=$INFO[Container(6010).ListItem.Property(id)])</onclick>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>2</focusposition>
+                    <itemlayout height="255" width="372">
+                        <control type="image">
+                            <!-- Fake cd -->
+                            <left>60</left>
+                            <top>8</top>
+                            <width>268</width>
+                            <height>268</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <!-- Fake cd -->
+                            <left>60</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Property(cdart)]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Property(thumb)]</texture>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="255" width="372">
+                        <control type="image">
+                            <!-- Fake cd -->
+                            <left>60</left>
+                            <top>8</top>
+                            <width>268</width>
+                            <height>268</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <!-- Fake cd -->
+                            <left>60</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Property(cdart)]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Property(thumb)]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(6010)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Property(thumb)]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(6010)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>
+                 <control type="list" id="7010">
+                    <visible>String.Contains(skin.string(sextendalbum_list),7010)</visible>
+                    <viewtype label="List">List Info</viewtype>
+                    <content>plugin://script.extendedinfo?info=mostlovedtracks&amp;&amp;artistname=$VAR[value_discography_title]</content>
+                    <left>78</left>
+                    <top>738</top>
+                    <width>1800</width>
+                    <height>330</height>
+                    <onup>149</onup>
+					<ondown>Skin.Reset(artistzoom)</ondown>
+					<ondown>Skin.Reset(coverzoom)</ondown>
+					<ondown>Skin.Reset(albums_as)</ondown>
+					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(youtube)</ondown>
+					<ondown>Skin.Reset(similarartist)</ondown>
+					<ondown>Skin.Reset(similarartistlastfm)</ondown>
+                    <ondown>SetFocus(160)</ondown>
+					<ondown>Skin.SetBool(mostloved)</ondown>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>2</focusposition>
+                    <itemlayout height="255" width="372">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="255" width="372">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(7010)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(7010)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>
+                <control type="list" id="15014">
+                    <visible>String.Contains(skin.string(sextendalbum_list),15014)+!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))</visible>
+                    <viewtype label="List">List Info</viewtype>
+					<include>PodobniArtysci</include>
+                    <left>78</left>
+                    <top>738</top>
+                    <width>1800</width>
+                    <height>330</height>
+                    <onup>149</onup>
+					<ondown>Skin.Reset(artistzoom)</ondown>
+					<ondown>Skin.Reset(coverzoom)</ondown>
+					<ondown>Skin.Reset(mostloved)</ondown>
+					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(youtube)</ondown>
+					<ondown>Skin.Reset(albums_as)</ondown>
+					<ondown>Skin.Reset(similarartistlastfm)</ondown>
+                    <ondown>SetFocus(160)</ondown>
+					<ondown>Skin.SetBool(similarartist)</ondown>
+					<onclick>RunScript(script.globalsearch,searchstring=$INFO[ListItem.Label])</onclick>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>2</focusposition>
+                    <itemlayout height="255" width="372">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="255" width="372">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(15014)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(15014)</visible>
+                        </control>
+                    </focusedlayout>
+                </control> 
+                <control type="list" id="15011">
+                    <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
+                    <viewtype>list</viewtype>
+                    <left>78</left>
+                    <top>738</top>
+                    <width>1800</width>
+                    <height>330</height>
+                    <onup>149</onup>
+                    <ondown>SetFocus(149)</ondown>
+					<ondown>Skin.SetBool(similarartistlastfm)</ondown>
+					<onclick>Dialog.Close(2001)</onclick>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>2</focusposition>
+                    <itemlayout height="255" width="372">
+                    </itemlayout>
+                    <focusedlayout height="255" width="372">
+                    </focusedlayout>
+			<content>
+			</content>
+                </control>
+                        <control type="image">
+							<left>78</left>
+							<top>746</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.0.thumb]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
+                        </control>
+                        <control type="image">
+							<left>450</left>
+							<top>746</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.1.thumb]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
+                        </control>
+                        <control type="image">
+							<left>832</left>
+							<top>746</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.2.thumb]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
+                        </control>
+                        <control type="image">
+							<left>1204</left>
+							<top>746</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.3.thumb]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
+                        </control>
+                        <control type="image">
+							<left>1576</left>
+							<top>746</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.4.thumb]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
+                        </control>
+                        <control type="image">
+							<left>1948</left>
+							<top>746</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.3.thumb]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
+                        </control>							
+                 <control type="list" id="15012">
+                    <visible>String.Contains(skin.string(sextendalbum_list),15012)</visible>
+                    <viewtype label="List">List Info</viewtype>
+                    <content>musicdb://artists/$INFO[ListItem.DBID]/</content>
+                    <left>78</left>
+                    <top>738</top>
+                    <width>1800</width>
+                    <height>330</height>
+                    <onup>149</onup>
+					<onclick>RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
+					<ondown>Skin.Reset(artistzoom)</ondown>
+					<ondown>Skin.Reset(coverzoom)</ondown>
+					<ondown>Skin.Reset(albums_as)</ondown>
+					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(youtube)</ondown>
+					<ondown>Skin.Reset(similarartist)</ondown>
+					<ondown>Skin.Reset(similarartistlastfm)</ondown>
+                    <ondown>SetFocus(160)</ondown>
+					<ondown>Skin.SetBool(mostloved)</ondown>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>2</focusposition>
+                    <itemlayout height="255" width="372">
+                        <control type="image">
+                            <!-- CDArt -->
+                            <left>70</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="255" width="372">
+                        <control type="image">
+                            <!-- CDArt -->
+                            <left>70</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(15012)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(15012)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>
+                 <control type="list" id="15013">
+                    <visible>String.Contains(skin.string(sextendalbum_list),15013)</visible>
+                    <viewtype label="List">List Info</viewtype>
+                    <content>musicdb://albums/$INFO[ListItem.DBID]/</content>
+                    <left>78</left>
+                    <top>738</top>
+                    <width>1800</width>
+                    <height>330</height>
+                    <onup>149</onup>
+					<ondown>Skin.Reset(artistzoom)</ondown>
+					<ondown>Skin.Reset(coverzoom)</ondown>
+					<ondown>Skin.Reset(albums_as)</ondown>
+					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(youtube)</ondown>
+					<ondown>Skin.Reset(similarartist)</ondown>
+					<ondown>Skin.Reset(similarartistlastfm)</ondown>
+                    <ondown>SetFocus(160)</ondown>
+					<ondown>Skin.SetBool(mostloved)</ondown>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>2</focusposition>
+                    <itemlayout height="255" width="372">
+                        <control type="image">
+                            <!-- CDArt -->
+                            <left>70</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="255" width="372">
+                        <control type="image">
+                            <!-- CDArt -->
+                            <left>70</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(15013)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(15013)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>
+                <control type="list" id="8010">
+                    <visible>String.Contains(skin.string(sextendalbum_list),8010)</visible>
+                    <viewtype label="List">List Info</viewtype>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.1.AlbumThumb)]</icon>
+				<disc>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</disc>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.1.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumThumb))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.2.AlbumThumb)]</icon>
+				<disc>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</disc>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.2.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.2.AlbumThumb))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.3.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.3.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.3.AlbumThumb))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.4.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.4.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.4.AlbumThumb))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.5.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.5.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.5.AlbumThumb))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.6.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.6.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.6.AlbumThumb))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.7.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.7.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.7.AlbumThumb))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.8.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.8.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.8.AlbumThumb))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.9.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.9.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.9.AlbumThumb))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.10.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.10.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.10.AlbumThumb))</visible>
+			</item>
+			<item id="11">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.11.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.11.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.11.AlbumThumb))</visible>
+			</item>
+			<item id="12">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.12.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.12.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.12.AlbumThumb))</visible>
+			</item>
+			<item id="13">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.13.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.13.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.13.AlbumThumb))</visible>
+			</item>
+			<item id="14">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.14.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.14.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.14.AlbumThumb))</visible>
+			</item>
+			<item id="15">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.15.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.15.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.15.AlbumThumb))</visible>
+			</item>
+			<item id="16">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.16.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.16.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.16.AlbumThumb))</visible>
+			</item>
+			<item id="17">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.17.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.17.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.17.AlbumThumb))</visible>
+			</item>
+			<item id="18">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.18.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.18.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.18.AlbumThumb))</visible>
+			</item>
+			<item id="19">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.19.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.19.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.19.AlbumThumb))</visible>
+			</item>
+			<item id="20">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.20.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.20.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.20.AlbumThumb))</visible>
+			</item>
+			<item id="21">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.21.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.21.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.21.AlbumThumb))</visible>
+			</item>
+			<item id="22">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.22.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.22.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.22.AlbumThumb))</visible>
+			</item>
+			<item id="23">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.23.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.23.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.23.AlbumThumb))</visible>
+			</item>
+			<item id="24">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.24.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.24.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.24.AlbumThumb))</visible>
+			</item>
+			<item id="25">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.25.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.25.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.25.AlbumThumb))</visible>
+			</item>
+			<item id="26">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.26.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.26.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.26.AlbumThumb))</visible>
+			</item>
+			<item id="27">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.27.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.27.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.27.AlbumThumb))</visible>
+			</item>
+			<item id="28">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.28.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.28.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.28.AlbumThumb))</visible>
+			</item>
+			<item id="29">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.29.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.29.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.29.AlbumThumb))</visible>
+			</item>
+			<item id="30">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.30.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.30.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.30.AlbumThumb))</visible>
+			</item>
+			<item id="31">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.31.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.31.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.31.AlbumThumb))</visible>
+			</item>
+			<item id="32">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.32.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.32.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.32.AlbumThumb))</visible>
+			</item>
+			<item id="33">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.33.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.33.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.33.AlbumThumb))</visible>
+			</item>
+			<item id="34">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.34.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.34.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.34.AlbumThumb))</visible>
+			</item>
+			<item id="35">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.35.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.35.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.35.AlbumThumb))</visible>
+			</item>
+			<item id="36">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.36.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.36.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.36.AlbumThumb))</visible>
+			</item>
+			<item id="37">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.37.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.37.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.37.AlbumThumb))</visible>
+			</item>
+			<item id="38">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.38.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.38.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.38.AlbumThumb))</visible>
+			</item>
+			<item id="39">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.39.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.39.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.39.AlbumThumb))</visible>
+			</item>
+			<item id="40">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.40.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.40.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.40.AlbumThumb))</visible>
+			</item>
+			<item id="41">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.41.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.41.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.41.AlbumThumb))</visible>
+			</item>
+			<item id="42">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.42.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.42.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.42.AlbumThumb))</visible>
+			</item>
+			<item id="43">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.43.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.43.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.43.AlbumThumb))</visible>
+			</item>
+			<item id="44">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.44.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.44.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.44.AlbumThumb))</visible>
+			</item>
+			<item id="45">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.45.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.45.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.45.AlbumThumb))</visible>
+			</item>
+			<item id="46">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.46.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.46.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.46.AlbumThumb))</visible>
+			</item>
+			<item id="47">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.47.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.47.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.47.AlbumThumb))</visible>
+			</item>
+			<item id="48">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.48.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.48.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.48.AlbumThumb))</visible>
+			</item>
+			<item id="49">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.49.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.49.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.49.AlbumThumb))</visible>
+			</item>
+			<item id="50">
+				<icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.50.AlbumThumb)]</icon>
+				<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.50.AlbumName)]</label>
+				<onclick>noop</onclick>
+				<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.50.AlbumThumb))</visible>
+			</item>
+		</content>
+                    <left>78</left>
+                    <top>738</top>
+                    <width>1800</width>
+                    <height>330</height>
+                    <onup>149</onup>
+					<ondown>Skin.Reset(artistzoom)</ondown>
+					<ondown>Skin.Reset(coverzoom)</ondown>
+					<ondown>Skin.Reset(mostloved)</ondown>
+					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(youtube)</ondown>
+					<ondown>Skin.Reset(similarartist)</ondown>
+					<ondown>Skin.Reset(similarartistlastfm)</ondown>
+                    <ondown>SetFocus(160)</ondown>
+					<ondown>Skin.SetBool(albums_as)</ondown>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>2</focusposition>
+                    <itemlayout height="255" width="372">
+                        <control type="image">
+                            <!-- Fake cd -->
+                            <left>80</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Disc)]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="255" width="372">
+                        <control type="image">
+                            <!-- Fake cd -->
+                            <left>80</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(8010)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(8010)</visible>
+                        </control>
+                    </focusedlayout>
+                </control> 
+           <!--    <control type="list" id="9010">
+                    <visible>String.Contains(skin.string(sextendalbum_list),9010)</visible>
+                    <viewtype label="List">List Info</viewtype>
+                    <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+                    <left>78</left>
+                    <top>738</top>
+                    <width>1842</width>
+                    <height>330</height>
+                    <onup>149</onup>
+					<ondown>Skin.Reset(artistzoom)</ondown>
+					<ondown>Skin.Reset(coverzoom)</ondown>
+					<ondown>Skin.Reset(albums_as)</ondown>
+					<ondown>Skin.Reset(mostloved)</ondown>
+					<ondown>Skin.Reset(youtube)</ondown>
+					<ondown>Skin.Reset(similarartist)</ondown>
+					<ondown>Skin.Reset(similarartistlastfm)</ondown>
+                    <ondown>SetFocus(160)</ondown>
+					<ondown>Skin.SetBool(topartist)</ondown>
+					<onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,album)">RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
+					<onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,song)">RunScript(script.playalbum,songid=$INFO[ListItem.DBID])</onclick>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>2</focusposition>
+                    <itemlayout height="255" width="372">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="255" width="372">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(9010)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(9010)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>-->
+					<control type="list" id="10010">
+                    <viewtype label="List">List Info</viewtype>
+                    <visible>String.Contains(skin.string(sextendalbum_list),10010)</visible>
+                    <content>plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$VAR[value_discography_title]</content>
+                    <left>78</left>
+                    <top>738</top>
+                    <width>1800</width>
+                    <height>330</height>
+                    <onup>149</onup>
+					<ondown>Skin.Reset(artistzoom)</ondown>
+					<ondown>Skin.Reset(coverzoom)</ondown>
+					<ondown>Skin.Reset(albums_as)</ondown>
+					<ondown>Skin.Reset(mostloved)</ondown>
+					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(similarartist)</ondown>
+                    <ondown>SetFocus(160)</ondown>
+					<ondown>Skin.SetBool(youtube)</ondown>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>2</focusposition>
+                    <itemlayout height="255" width="372">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="255" width="372">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(10010)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>270</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(10010)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>	
+            </control>
+            <control type="group">
+                <!-- Menu bar -->
+                <left>0</left>
+                <top>698</top>
+                <control type="image">
+                    <left>0</left>
+                    <top>-45</top>
+                    <width>1920</width>
+                    <height>45</height>
+                    <texture>shadow_h.png</texture>
+                    <colordiffuse>C3FFFFFF</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>44</top>
+                    <width>1920</width>
+                    <height>45</height>
+                    <texture flipy="true">shadow_h.png</texture>
+                    <colordiffuse>C3FFFFFF</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>1920</width>
+                    <height>45</height>
+                    <texture>darkgrey.png</texture>
+                    <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                    <include>Animation_DefaultGlass2</include>
+                </control>
+                <control type="list" id="149">
+                    <left>0</left>
+                    <top>4</top>
+                    <width>1920</width>
+                    <height>38</height>
+					<onup>49</onup>
+                    <ondown>910</ondown>
+                    <orientation>horizontal</orientation>
+                    <pagecontrol></pagecontrol>
+                    <scrolltime>300</scrolltime>
+                    <focusposition>3</focusposition>
+                    <itemlayout height="38" width="273">
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>1</width>
+                            <height>38</height>
+                            <texture>separator_v.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>0</top>
+                            <height>38</height>
+                            <width>243</width>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <textcolor>B6FFFFFF</textcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="38" width="273">
+                        <control type="image">
+                            <left>0</left>
+                            <top>-2</top>
+                            <width>273</width>
+                            <height>40</height>
+                            <texture>settings_button_focus.png</texture>
+                            <visible>Control.Hasfocus(149)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>1</width>
+                            <height>38</height>
+                            <texture>separator_v.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>0</top>
+                            <height>38</height>
+                            <width>243</width>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <textcolor>FF101010</textcolor>
+                            <visible>Control.Hasfocus(149)</visible>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>0</top>
+                            <height>38</height>
+                            <width>243</width>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <textcolor>B6FFFFFF</textcolor>
+                            <visible>!Control.Hasfocus(149)</visible>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <item id="15">
+                            <!-- Artist Rating -->
+                            <label>$INFO[ListItem.DBTYPE]  Rating : [COLOR blue]($INFO[ListItem.UserRating])[/COLOR]</label>
+                            <onclick>SendClick(musicinformation,7)</onclick>
+							<visible>Container.Content(albums)|Container.Content(songs)</visible>
+                        </item>
+                        <item id="1">
+                            <!-- Albums -->
+                            <label>Albums</label>
+                            <onclick>Skin.SetString(sextendalbum_list,6010)</onclick>
+                            <enable>Integer.IsGreater(Container(6010).NumItems,0)</enable>
+                        </item>
+                        <item id="12">
+                            <!-- MostLoved Track -->
+                            <label>MostLoved Track</label>
+                            <onclick>Skin.SetString(sextendalbum_list,7010)</onclick>
+							<enable>Integer.IsGreater(Container(7010).NumItems,0)</enable>
+                        </item>
+                        <item id="2">
+                            <!-- AlbumsAS -->
+                            <label>Albums_AS</label>
+                            <onclick>Skin.SetString(sextendalbum_list,8010)</onclick>
+                            <visible>Integer.IsGreater(Container(8010).NumItems,0)</visible>
+                        </item>
+                        <item id="3">
+                            <!-- Similar -->
+                            <label>SimilarArtist</label>
+                            <onclick>Skin.SetString(sextendalbum_list,15014)</onclick>
+                            <visible>Integer.IsGreater(Container(15014).NumItems,0)</visible>
+                        </item>
+                        <item id="23">
+                            <!-- Similar -->
+                            <label>Similar LastFM</label>
+                            <onclick>Skin.SetString(sextendalbum_list,15011)</onclick>
+                        </item>
+                        <item id="24">
+                            <!-- Library -->
+                            <label>Library Artist</label>
+                            <onclick>Skin.SetString(sextendalbum_list,15012)</onclick>
+                            <visible>Container.Content(artists)</visible>
+                        </item>
+                        <item id="25">
+                            <!-- Library -->
+                            <label>Library Album</label>
+                            <onclick>Skin.SetString(sextendalbum_list,15013)</onclick>
+                            <visible>Container.Content(albums)</visible>
+                        </item>
+                        <item id="4">
+                            <!-- Youtube -->
+                            <label>Youtube</label>
+                            <onclick>Skin.SetString(sextendalbum_list,10010)</onclick>
+                            <enable>Integer.IsGreater(Container(10010).NumItems,0)</enable>
+                        </item>	
+                        <item id="13">
+                            <!-- TopArtist -->
+                            <label>TopArtist</label>
+                            <onclick>Skin.SetString(sextendalbum_list,9010)</onclick>
+                            <visible>Integer.IsGreater(Container(9010).NumItems,0)</visible>
+                        </item>
+                        <item id="5">
+                            <!-- Refresh -->
+                            <description>Refresh</description>
+                            <label>31695</label>
+                            <onclick>SendClick(2001,6)</onclick>
+                            <visible>!Skin.HasSetting(kioskininfo)</visible>
+                        </item>
+                        <item id="6">
+                            <!-- Get Thumb -->
+                            <label>13405</label>
+                            <onclick>SendClick(2001,10)</onclick>
+                            <visible>!Skin.HasSetting(kioskininfo)</visible>
+                        </item>
+                        <item id="7">
+                            <!-- Get Fanart -->
+                            <label>20413</label>
+                            <onclick>SendClick(2001,12)</onclick>
+                            <visible>!Skin.HasSetting(kioskininfo)</visible>
+                        </item>
+                        <item id="8">
+                            <!-- Artist Info -->
+                            <label>31885</label>
+                            <onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$VAR[value_music_title])</onclick>
+                            <visible>System.HasAddon(script.extendedinfo)</visible>
+                        </item>
+                        <item id="9">
+                            <!-- Artist Zoom -->
+                            <label>31944</label>
+                            <onclick>Skin.Reset(coverzoom)</onclick>
+                            <onclick>Skin.SetBool(artistzoom)</onclick>
+                            <onclick>SetFocus(160)</onclick>
+                        </item>
+                        <item id="10">
+                            <!-- Video Clips -->
+                            <label>31950</label>
+                            <onclick>RunScript(script.skin.helper.service,action=searchyoutube,title=$VAR[value_music_title],header=Search YouTube Artists)</onclick>
+                        </item>
+                        <item id="11">
+                            <!-- Song Video Clip -->
+                            <label>31951</label>
+                            <onclick>Dialog.Close(2001)</onclick>
+                            <onclick>Skin.SetBool(musictrailers)</onclick>
+                            <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Title],return)</onclick>
+							<visible>Container.Content(songs)</visible>
+                        </item>
+                        <item id="12">
+                            <!-- Artist Info -->
+                            <label>Artist as Actor</label>
+                            <onclick>RunScript(script.metadata.actors,$VAR[value_music_title])</onclick>
+                            <visible>System.HasAddon(script.metadata.actors)</visible>
+                        </item>
+                        <item id="14">
+                            <!-- TopMenu -->
+                            <label>TopMenu</label>
+                            <onclick>SetFocus(9201,1)</onclick>
+                        </item>
+                    </content>
+                </control>
+            </control>
+            <control type="button" id="160">
+                <include>InvisibleButton</include>
+                <onup condition="Skin.HasSetting(artistzoom)">SetFocus(149)</onup>
+				<onup condition="Skin.HasSetting(similarartist)">SetFocus(15014)</onup>
+                <onup condition="Skin.HasSetting(coverzoom)">SetFocus(6010)</onup>
+				<onup condition="Skin.HasSetting(mostloved)">SetFocus(7010)</onup>
+				<onup condition="Skin.HasSetting(albums_as)">SetFocus(8010)</onup>
+				<onup condition="Skin.HasSetting(topartist)">SetFocus(9010)</onup>
+				<onup condition="Skin.HasSetting(youtube)">SetFocus(10010)</onup>
+                <ondown>Dialog.Close(all,true)</ondown>
+                <onleft condition="Skin.HasSetting(artistzoom)">SetFocus(149)</onleft>
+                <onleft condition="Skin.HasSetting(coverzoom)">SetFocus(6010)</onleft>
+                <onright condition="Skin.HasSetting(artistzoom)">SetFocus(149)</onright>
+                <onright condition="Skin.HasSetting(coverzoom)">SetFocus(6010)</onright>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1920</width>
+                <height>1080</height>
+                <texture>darkgrey.png</texture>
+                <animation effect="fade" start="0" end="100" time="200">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
+                <visible>Control.HasFocus(160)</visible>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1920</width>
+                <height>1080</height>
+                <texture>hive_back.png</texture>
+                <animation effect="fade" start="0" end="100" time="200">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
+                <visible>Control.HasFocus(160)</visible>
+            </control>
+            <control type="group">
+                <left>-1920</left>
+                <top>22</top>
+                <animation effect="slide" start="0,0" end="1920,0" time="400" tween="cubic" easing="inout" condition="Control.HasFocus(160)">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-38" time="600" delay="1000" tween="cubic" easing="inout" condition="Control.HasFocus(160)">Conditional</animation>
+                <control type="image">
+                    <description>Cover image</description>
+                    <left>52</left>
+                    <top>48</top>
+                    <width>1920</width>
+                    <height>960</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture diffuse="thumb_cdcover_mask.png" background="true">$INFO[Container(6010).ListItem.Property(thumb)]</texture>
+                    <visible>Skin.HasSetting(coverzoom)</visible>
+                </control>
+                <control type="image">
+                    <!-- Thumb -->
+                    <left>52</left>
+                    <top>48</top>
+                    <width>1800</width>
+                    <height>960</height>
+                    <aspectratio align="center">keep</aspectratio>
+                    <texture background="true">$INFO[Listitem.Icon]</texture>
+                    <visible>Skin.HasSetting(artistzoom)</visible>
+                </control>
+                <control type="image">
+                    <!-- Thumb -->
+                    <left>52</left>
+                    <top>48</top>
+                    <width>1800</width>
+                    <height>960</height>
+                    <aspectratio align="center">keep</aspectratio>
+                    <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ArtistThumb)]</texture>
+                    <visible>String.IsEmpty(Listitem.Icon) +  Skin.HasSetting(artistzoom)</visible>
+                </control>
+                <control type="image">
+                    <!-- Thumb -->
+                    <left>52</left>
+                    <top>48</top>
+                    <width>1800</width>
+                    <height>960</height>
+                    <aspectratio align="center">keep</aspectratio>
+                    <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Thumb)]</texture>
+                    <visible>String.IsEmpty(Listitem.Icon) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ArtistThumb)) + Skin.HasSetting(artistzoom)</visible>
+                </control>
+                <control type="multiimage">
+                    <!-- Artist -->
+                    <left>52</left>
+                    <top>48</top>
+                    <width>1800</width>
+                    <height>960</height>
+                    <timeperimage>5000</timeperimage>
+                    <randomize>true</randomize>
+                    <fadetime>FanartCrossFadeTime</fadetime>
+                    <aspectratio align="center">keep</aspectratio>
+                    <imagepath fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+                    <visible>Window.IsActive(Visualisation)+Skin.HasSetting(artistzoom)</visible>
+                </control>
+				<control type="image">
+					<left>52</left>
+					<top>48</top>
+					<width>1800</width>
+					<height>960</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture>$INFO[Container(7010).ListItem.Icon]</texture>
+					<visible>Skin.HasSetting(mostloved)</visible>
+				</control>
+				<control type="image">
+					<left>52</left>
+					<top>48</top>
+					<width>1800</width>
+					<height>960</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture background="true">$INFO[Container(15014).ListItem.Icon]</texture>
+					<visible>Skin.HasSetting(similarartist)</visible>
+				</control>
+				<control type="image">
+					<left>52</left>
+					<top>48</top>
+					<width>1800</width>
+					<height>960</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture background="true">$INFO[Container(15011).ListItem.Icon]</texture>
+					<visible>Skin.HasSetting(similarartistlastfm)</visible>
+				</control>
+				<control type="image">
+					<left>52</left>
+					<top>48</top>
+					<width>1800</width>
+					<height>960</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture background="true">$INFO[Container(9010).ListItem.Icon]</texture>
+					<visible>Skin.HasSetting(topartist)</visible>
+				</control>
+				<control type="image">
+					<left>52</left>
+					<top>48</top>
+					<width>1800</width>
+					<height>960</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture background="true">$INFO[Container(10010).ListItem.Icon]</texture>
+					<visible>Skin.HasSetting(youtube)</visible>
+				</control>
+				<control type="image">
+					<left>52</left>
+					<top>48</top>
+					<width>1800</width>
+					<height>960</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture background="true">$INFO[Container(8010).ListItem.Icon]</texture>
+					<visible>Skin.HasSetting(albums_as)</visible>
+				</control>
+
+            </control>
+            <control type="group">
+                <visible>Control.HasFocus(160)</visible>
+                <animation effect="slide" start="0,0" end="0,-120" time="600" delay="1000" tween="cubic" easing="inout" condition="Control.HasFocus(160)">Conditional</animation>
+                <control type="image">
+                    <left>0</left>
+                    <top>1140</top>
+                    <height>60</height>
+                    <width>1920</width>
+                    <texture>darkgrey.png</texture>
+                    <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                    <include>Animation_DefaultGlass2</include>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>1140</top>
+                    <height>60</height>
+                    <width>1920</width>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$VAR[value_audioinfo_zoomlabel]</label>
+                    <font>Font_24</font>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>1140</top>
+                    <height>60</height>
+                    <width>1920</width>
+                    <texture>gradient_small.png</texture>
+                </control>
+            </control>
+            <include>BGBlack</include>
+            <include>TopMenu_M</include>
+        </control>
+    </controls>
+</window>

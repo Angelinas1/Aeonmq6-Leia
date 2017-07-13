@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- Aeon MQ 6 -->
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<menucontrol>9229</menucontrol>
+	<onload condition="!String.IsEqual(skin.string(defaultsettings),1)">ActivateWindow(6628)</onload>
+	<onload condition="System.HasAddon(script.artistslideshow) + Player.HasAudio">RunScript(script.artistslideshow)</onload>
+	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
+	<onload condition="Skin.HasSetting(rcbgames)">RunScript(script.games.rom.collection.browser,limit=12)</onload>
+	<onload condition="Skin.HasSetting(rcbgames)">Skin.Reset(rcbgames)</onload>
+	<onload condition="Skin.HasSetting(kioskcode)">Skin.Reset(codestep)</onload>
+	<onload>SetProperty(NINE_manual_set,"var=blursize,set=5",home)</onload>
+	<onload>SetProperty(SEVEN_manual_set,"var=pixelsize,set=3",home)</onload>
+	<onload>Skin.Reset(playlists)</onload>
+	<onload>Skin.Reset(windowbg)</onload>
+	<onload>SetProperty(SkinHelper.WidgetContainer,510)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableAnimatedPosters)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
+	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,10)</onload>
+	<onload>Skin.SetString(SkinHelper.WallImagesDelay, 10)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicVideosBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicSongsBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.RecentMusicBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.GlobalFanartBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.InProgressMoviesBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.RecentMoviesBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.UnwatchedMoviesBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.InProgressShowsBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.RecentEpisodesBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.GlobalFanartBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllVideosBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.RecentVideosBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.InProgressVideosBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.PvrBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.PicturesBackground.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.BW_AllMoviesBackground.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicBackground.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicSongsBackground.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Poster.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.Poster.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(BW_SkinHelper.AllMoviesBackground.Poster.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(BW_SkinHelper.AllTvShowsBackground.Poster.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(BW_SkinHelper.AllMoviesBackground.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(BW_SkinHelper.AllMusicBackground.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(BW_SkinHelper.AllMusicSongsBackground.Wall.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(BW_SkinHelper.AllTvShowsBackground.Wall.EnableWallImages, 20)</onload>
+	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
+	<onunload condition="String.Contains(Container(9000).ListItem.Property(id),vpl) | String.Contains(Container(9000).ListItem.Property(id),apl)">Skin.SetString(playlists,$INFO[Container(9000).ListItem.Property(id)])</onunload>
+	<controls>
+	<include condition="!Skin.HasSetting(homemq)">Aeonmq6</include>
+    <include condition="Skin.HasSetting(homemq)">Aeonmq7</include>
+	</controls>
+	</window>

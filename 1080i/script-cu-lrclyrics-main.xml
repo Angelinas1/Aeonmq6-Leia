@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <!-- Aeon MQ 6 -->
+    <controls>
+        <include condition="String.IsEqual(skin.string(vis_layout),style1) | String.IsEqual(skin.string(vis_layout),style2) | String.IsEqual(skin.string(vis_layout),style3) | String.IsEqual(skin.string(vis_layout),style4) | String.IsEqual(skin.string(vis_layout),style5)">LyricsDefault</include>
+        <include condition="String.IsEqual(skin.string(vis_layout),karaoke) | String.IsEqual(skin.string(vis_layout),style6)">LyricsKaraoke</include>
+	<!-- 	<include condition="!Skin.HasSetting(nolyrics_on)+Window.IsVisible(Home)">LyricsDefaultHome</include> -->
+    </controls>
+</window>

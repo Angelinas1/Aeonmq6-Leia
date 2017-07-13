@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">5550</defaultcontrol>
+	<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+	<controls>
+		<control type="group">
+			<top>112</top>
+			<control type="image">
+				<left>10</left>
+				<top>-240</top>
+				<width>1902</width>
+				<height>400</height>
+				<texture border="40">buttons/dialogbutton-nofo.png</texture>
+			</control>
+			<control type="grouplist">
+				<left>52</left>
+				<top>-204</top>
+				<visible>Control.HasFocus(5551)</visible>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamServiceName,[COLOR button_focus]$LOCALIZE[19099]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamProviderName,[COLOR button_focus]$LOCALIZE[19101]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamClient,[COLOR button_focus]$LOCALIZE[19012]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamDevice,[COLOR button_focus]$LOCALIZE[19006]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamStatus,[COLOR button_focus]$LOCALIZE[19007]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamEncryptionName,[COLOR button_focus]$LOCALIZE[19015]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>1250</left>
+				<top>-204</top>
+				<visible>Control.HasFocus(5551)</visible>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamBer,[COLOR button_focus]$LOCALIZE[19010]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamUnc,[COLOR button_focus]$LOCALIZE[19011]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamMux,[COLOR button_focus]$LOCALIZE[19100]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamSignal,[COLOR button_focus]$LOCALIZE[19008]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="progress">
+					<top>5</top>
+					<width>600</width>
+					<height>18</height>
+					<info>PVR.ActStreamProgrSignal</info>
+				</control>
+				<control type="label">
+					<top>5</top>
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamSNR,[COLOR button_focus]$LOCALIZE[19009]:[/COLOR] ]</label>
+					<font>Font_14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="progress">
+					<top>0</top>
+					<width>600</width>
+					<height>18</height>
+					<info>PVR.ActStreamProgrSNR</info>
+				</control>
+			</control>
+
+	 <control type="image">
+		<top>-120</top>
+		<left>0</left>
+		<width>1920</width>
+		<height>270</height>
+		<texture>settings_button_focus.png</texture>
+		<visible>Player.HasVideo</visible>
+	</control>
+
+			<control type="grouplist">
+				<visible>Player.HasVideo</visible>
+                <top>-100</top>
+                <left>50</left>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+                <control type="label">
+                    <width>450</width>
+                    <height>30</height>
+                    <font>Font_14</font>
+                    <textcolor>$VAR[value_texturecolor]</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>[UPPERCASE]$LOCALIZE[291][/UPPERCASE]  </label>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>248</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>DECODER:</label>
+                    </control>
+                    <control type="label">
+                        <left>255</left>
+                        <width>600</width>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">[UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE] </label>
+                    </control>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>248</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[UPPERCASE]$LOCALIZE[169]:[/UPPERCASE] </label>
+                    </control>
+                    <control type="label">
+                        <left>255</left>
+                        <width>600</width>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Player.Process(videowidth)]$INFO[Player.Process(videoheight),x, px]$INFO[Player.Process(videodar)]</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>248</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>FRAMERATE:</label>
+                    </control>
+                    <control type="label">
+                        <left>255</left>
+                        <width>600</width>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">$INFO[Player.Process(videofps),, FPS]</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>248</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>PIXEL FORMAT:</label>
+                    </control>
+                    <control type="label">
+                        <left>255</left>
+                        <width>600</width>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">[UPPERCASE]$INFO[Player.Process(pixformat)][/UPPERCASE] </label>
+                    </control>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>248</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>DEINTERLACE METHOD:</label>
+                    </control>
+                    <control type="label">
+                        <left>255</left>
+                        <width>600</width>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">[UPPERCASE]$INFO[Player.Process(deintmethod)][/UPPERCASE] </label>
+                    </control>
+                </control>
+            </control>
+            <control type="grouplist">
+				<visible>Player.HasVideo</visible>
+                <top>-100</top>
+                <left>550</left>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+                <control type="label">
+                    <width>450</width>
+                    <height>30</height>
+                    <font>Font_14</font>
+                    <textcolor>$VAR[value_texturecolor]</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>[UPPERCASE]$LOCALIZE[292][/UPPERCASE] </label>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>248</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>DECODER:</label>
+                    </control>
+                    <control type="label">
+                        <left>255</left>
+                        <width>600</width>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">[UPPERCASE]$INFO[Player.Process(audiodecoder)][/UPPERCASE] </label>
+                    </control>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>248</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>AUDIO CHANNELS:</label>
+                    </control>
+                    <control type="label">
+                        <left>255</left>
+                        <width>600</width>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">$INFO[Player.Process(audiochannels)] </label>
+                    </control>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>248</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>SAMPLERATE:</label>
+                    </control>
+                    <control type="label">
+                        <left>255</left>
+                        <width>600</width>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">$INFO[Player.Process(audiosamplerate),, Hz]</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>248</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>BITS PER SAMPLE:</label>
+                    </control>
+                    <control type="label">
+                        <left>255</left>
+                        <width>600</width>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Player.Process(audiobitspersample),, Bit]</label>
+                    </control>
+                </control>
+            </control>
+            <control type="grouplist">
+				<visible>Player.HasVideo</visible>
+                <top>-100</top>
+                <left>1050</left>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+                <control type="label">
+                    <width>450</width>
+                    <height>30</height>
+                    <font>Font_14</font>
+                    <textcolor>$VAR[value_texturecolor]</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>SYSTEM</label>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>218</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>DECODER:</label>
+                    </control>
+                    <control type="label">
+                        <visible>Player.Process(videohwdecoder)</visible>                    
+                        <left>155</left>
+                        <width>150</width>
+                        <align>right</align>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>HARDWARE</label>
+                    </control>
+                    <control type="label">
+                        <visible>!Player.Process(videohwdecoder)</visible>                    
+                        <left>155</left>
+                        <width>150</width>
+                        <align>right</align>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>SOFTWARE</label>
+                    </control>                    
+                </control>                
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>218</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[UPPERCASE]$LOCALIZE[13271][/UPPERCASE] </label>
+                    </control>
+                    <control type="label">
+                        <left>155</left>
+                        <width>150</width>
+                        <align>right</align>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">$INFO[System.CpuUsage]</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>218</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[UPPERCASE]$LOCALIZE[31309]:[/UPPERCASE] </label>
+                    </control>
+                    <control type="label">
+                        <left>155</left>
+                        <width>150</width>
+                        <align>right</align>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">$INFO[System.Memory(used.percent)]</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <height>30</height>
+                    <control type="label">
+                        <width>218</width>
+                        <font>Font_14</font>
+                        <textcolor>black</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>CACHE LEVEL:</label>
+                    </control>
+                    <control type="label">
+                        <left>155</left>
+                        <width>150</width>
+                        <align>right</align>
+                        <font>Font_14</font>
+                        <textcolor>$VAR[value_texturecolor]</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label fallback="31001">$INFO[Player.CacheLevel,,%]</label>
+                    </control>
+                </control>
+            </control>            
+			<control type="image">
+				<!-- Skin Logo -->
+				<left>1547</left>
+				<top>-100</top>
+				<width>210</width>
+				<height>150</height>
+				<texture>aeonmq6_logo.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<visible>Player.HasVideo</visible>	
+			</control> 
+			
+			<control type="grouplist" id="5550">
+				<right>15</right>
+				<top>-310</top>
+				<width>1000</width>
+				<height>100</height>
+				<align>right</align>
+				<orientation>horizontal</orientation>
+				<itemgap>-10</itemgap>
+				<onup>Close</onup>
+				<ondown>Close</ondown>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="button" id="5551">
+					<width>auto</width>
+					<height>100</height>
+					<textoffsetx>40</textoffsetx>
+					<label>$LOCALIZE[31137]</label>
+					<visible>VideoPlayer.Content(livetv)</visible>
+				</control>
+				<control type="button" id="5552">
+					<width>auto</width>
+					<height>100</height>
+					<textoffsetx>40</textoffsetx>
+					<label>$LOCALIZE[31138]</label>
+				</control>
+			</control>
+			<!-- Progress -->
+			<control type="group">
+				<top>119</top>
+				<control type="progress">
+					<animation effect="fade" end="0" time="200">WindowClose</animation>
+					<left>29</left>
+					<top>-10</top>
+					<width>1862</width>
+					<height>30</height>
+					<info>Player.ProgressCache</info>
+				</control>
+				<control type="progress" id="23">
+					<animation effect="fade" end="0" time="200">WindowClose</animation>
+					<left>29</left>
+					<top>-10</top>
+					<width>1862</width>
+					<height>30</height>
+					<info>Player.Progress</info>
+				</control>
+				<control type="button" id="87">
+					<include>InvisibleButton</include>
+					<onup condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onup>
+					<onup>201</onup>
+					<ondown condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</ondown>
+					<ondown>201</ondown>
+					<onright>PlayerControl(Forward)</onright>
+					<onleft>PlayerControl(Rewind)</onleft>
+					<visible>Player.SeekEnabled</visible>
+					<onclick condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onclick>
+				</control>
+				<control type="slider">
+					<left>29</left>
+					<top>-10</top>
+					<width>1862</width>
+					<height>30</height>
+					<onup>8010</onup>
+					<ondown>650</ondown>
+					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
+					<textureslidernib>osd/progress/nub_bar.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_bar.png</textureslidernibfocus>
+					<info>Player.Progress</info>
+					<action>seek</action>
+					<visible>!Control.HasFocus(87)</visible>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

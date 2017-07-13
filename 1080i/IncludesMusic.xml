@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Aeon MQ 6 -->
+    <!-- ######################################################################### Music Window #########################################################################-->
+    <include name="MusicWindow">
+        <defaultcontrol always="true">51</defaultcontrol>
+        <menucontrol>9100</menucontrol>
+        <onload condition="Window.Previous(6626)">Container.SetViewMode($INFO[skin.string(setviewmusic)])</onload>
+        <onload condition="Window.Previous(6626)">SetFocus(9940)</onload>
+        <onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
+        <onunload>ClearProperty(Banner,home)</onunload>
+        <allowoverlay>no</allowoverlay>
+        <views>51,52,54,55,56,57,58,59,62,78,53,185,186</views>
+        <controls>
+            <control type="multiimage">
+                <!-- Multi Fanart -->
+                <include>WindowBG</include>
+                <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_musicfanart]</imagepath>
+                <visible>!Container.Content(genres)</visible>
+            </control>
+            <control type="image">
+                <!-- Single Fanart -->
+                <include>WindowBG</include>
+                <texture background="true">$VAR[value_defaultmusicfanart]</texture>
+                <visible>!Container.Content(genres)</visible>
+            </control>
+            <control type="image">
+                <!-- Single Fanart Genre -->
+                <include>WindowBG</include>
+                <texture fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_defaultmusicfanart]</texture>
+                <visible>Container.Content(genres)</visible>
+            </control>
+            <control type="image" id="5034">
+                <!-- Extra Fanart Artist/Album -->
+                <include>WindowBG</include>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Fanart)]</texture>
+                <visible>[Container.Content(artists) | Container.Content(albums)] + String.IsEmpty(ListItem.Art(fanart))</visible>
+            </control>
+            <control type="multiimage" id="5032">
+                <!-- Extra Fanart Artist/Album -->
+                <include>WindowBG</include>
+                <imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</imagepath>
+                <visible>[Container.Content(artists) | Container.Content(albums)] + String.Contains(skin.string(musicfanart),extra)</visible>
+            </control>
+
+            <control type="multiimage" id="5033">
+                <!-- Extra Fanart Song -->
+                <include>WindowBG</include>
+                 <imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</imagepath>
+                <visible>Container.Content(songs) + String.Contains(skin.string(musicfanart),extra)</visible>
+            </control>
+            <control type="group">
+                <!-- default group -->
+                <include>Animation_Window</include>
+                <control type="image" id="198">
+                    <!-- Controle codec -->
+                    <include>InvisibleButton</include>
+                    <fadetime>FanartCrossFadeTime</fadetime>
+                    <texture>$VAR[value_musiccodec]</texture>
+                </control>
+                <control type="image" id="199">
+                    <!-- Controle rating -->
+                    <include>InvisibleButton</include>
+                    <fadetime>FanartCrossFadeTime</fadetime>
+                    <texture>$VAR[value_musicrating]</texture>
+                </control>
+                <control type="label" id="556">
+                    <!-- Controle drive externo -->
+                    <include>InvisibleButton</include>
+                    <label>$VAR[value_drive]</label>
+                </control>
+                <control type="button" id="9900">
+                    <!-- to menu/kiosk condition -->
+                    <include>InvisibleButton</include>
+                    <onfocus condition="![Skin.HasSetting(kiosk) | Skin.HasSetting(kiosksmart) + !String.Contains(skin.string(codestep),step3)]">SetFocus(9300)</onfocus>
+                    <onfocus condition="Skin.HasSetting(kiosksmart) + !String.Contains(skin.string(codestep),step3)">SetFocus(9100)</onfocus>
+                    <onfocus condition="Skin.HasSetting(kiosk)">SetFocus(51)</onfocus>
+                </control>
+                <control type="button" id="9920">
+                    <!-- hidden colection/view fanart -->
+                    <include>InvisibleButton</include>
+                    <onleft>SetFocus(51)</onleft>
+                    <onright>SetFocus(51)</onright>
+                    <onup>SetFocus(51)</onup>
+                    <ondown>SetFocus(51)</ondown>
+                </control>
+                <control type="image" id="9921">
+                    <!-- painel de info auto -->
+                    <include>InvisibleButton</include>
+                    <animation effect="fade" start="0" end="100" time="150" delay="1000" condition="String.Contains(skin.string(panel_seconds),1)">Visible</animation>
+                    <animation effect="fade" start="0" end="100" time="150" delay="2000" condition="String.Contains(skin.string(panel_seconds),2)">Visible</animation>
+                    <animation effect="fade" start="0" end="100" time="150" delay="3000" condition="String.Contains(skin.string(panel_seconds),3)">Visible</animation>
+                    <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="String.Contains(skin.string(panel_seconds),4)">Visible</animation>
+                    <animation effect="fade" start="0" end="100" time="150" delay="5000" condition="String.Contains(skin.string(panel_seconds),5)">Visible</animation>
+                    <visible>![Container.OnNext | Container.OnPrevious]</visible>
+                </control>
+                <control type="button" id="9922">
+                    <!-- refresh das vistas -->
+                    <include>InvisibleButton</include>
+                    <animation effect="fade" start="0" end="100" time="150" delay="3000">Hidden</animation>
+                    <visible>Window.IsVisible(6626)</visible>
+                </control>
+                <control type="group">
+                    <animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
+                    <animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
+                    <animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
+                    <animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">Hidden</animation>
+                    <animation effect="slide" end="0,30" time="500" tween="sine" easing="out" condition="Skin.HasSetting(musicinfobar) | Skin.HasSetting(musicdate)">Conditional</animation>
+                    <visible>![String.IsEqual(Container.Viewmode,WIDE) | String.IsEqual(Container.Viewmode,LOW LIST) + [Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] | ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsVisible(6621)]</visible>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>790</width>
+				<height>1080</height>
+				<texture diffuse="shadow_mask_v.png">darkgrey.png</texture>
+				<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+				<animation effect="fade" end="75" condition="true">Conditional</animation>
+				<animation effect="rotate" center="auto" start="0" end="180" time="0" condition="true">Conditional</animation>
+				<visible>Container.Content(albums)+Control.IsVisible(51)</visible>
+			</control>
+			<control type="panel" id="777">
+				<top>140</top>
+				<width>540</width>
+				<height>440</height>
+				<onleft>9900</onleft>
+				<onright>51</onright>
+				<orientation>vertical</orientation>
+				<content sortby="track" sortorder="ascending">$INFO[ListItem.FolderPath]</content>
+				<visible>Container.Content(albums)+Control.IsVisible(51)+!String.Contains(ListItem.Label,..)</visible>
+				<itemlayout height="32" width="540">
+					<control type="label">
+						<left>10</left>
+						<height>30</height>
+						<width>540</width>
+						<aligny>center</aligny>
+						<label>[COLOR=$VAR[value_headercolor]]$INFO[ListItem.Duration,,  -  ][/COLOR]$INFO[ListItem.Label]</label>
+						<font>Font_18A</font>
+					</control>
+				</itemlayout>
+				<focusedlayout height="32" width="540">
+					<control type="image">
+						<left>10</left>
+                        <top>0</top>
+                        <width>542</width>
+                        <height>32</height>
+                        <texture>settings_button_focus.png</texture>
+                    </control>
+					<control type="label">
+						<left>10</left>
+						<height>30</height>
+						<width>540</width>
+						<aligny>center</aligny>
+						<label>[COLOR=$VAR[value_headercolor]]$INFO[ListItem.Duration,,  -  ][/COLOR]$INFO[ListItem.Label]</label>
+						<font>Font_18A</font>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<height>30</height>
+						<width>540</width>
+						<aligny>center</aligny>
+						<label>[COLOR=$VAR[value_headercolor]]$INFO[ListItem.Duration,,  -  ][/COLOR]$INFO[ListItem.Label]</label>
+						<font>Font_18A</font>
+						<visible>Control.HasFocus(777)</visible>
+					</control>
+				</focusedlayout>
+				</control>
+                   
+				   <control type="image">
+                        <left>0</left>
+                        <top>-30</top>
+                        <height>255</height>
+                        <width>1920</width>
+                        <texture flipy="true">shadow_mask.png</texture>
+                        <colordiffuse>75000000</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <!-- Artist -->
+                        <left>45</left>
+                        <top>12</top>
+                        <width>1650</width>
+                        <height>60</height>
+                        <font>Font_40</font>
+                        <label>$VAR[value_music_title]</label>
+                        <textcolor>FFFFFAF0</textcolor>
+                        <scroll>true</scroll>
+                        <scrollout>false</scrollout>
+                    </control>
+                    <control type="label" id="200">
+                        <left>45</left>
+                        <top>68</top>
+                        <width>1650</width>
+                        <height>38</height>
+                        <font>Font_18A</font>
+                        <label>$VAR[value_music_subtitle]</label>
+                        <textcolor>90FFFFFF</textcolor>
+                        <scroll>true</scroll>
+                        <scrollout>false</scrollout>
+                    </control>
+                    <control type="image" id="2000">
+                        <left>45</left>
+                        <top>30</top>
+                        <width>190</width>
+                        <height>140</height>
+                        <font>Font_18A</font>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+                        <texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
+                       <visible>String.IsEqual(Container.Viewmode,WALL)+Container.Content(artists)</visible>
+                    </control>
+                    <control type="image">
+                        <left>45</left>
+                        <top>102</top>
+                        <width>155</width>
+                        <height>44</height>
+                        <texture>$VAR[value_styleratingstars]$INFO[ListItem.Rating,,.png]</texture>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+                        <colordiffuse>$VAR[value_headercolor]</colordiffuse>
+                        <animation effect="slide" start="0,0" end="0,-45" condition="String.IsEmpty(Control.GetLabel(200))">Conditional</animation>
+                        <visible>!String.IsEmpty(Control.GetLabel(199))</visible>
+                    </control>
+                    <control type="label">
+                        <!-- Nota -->
+                        <left>240</left>
+                        <top>105</top>
+                        <width>45</width>
+                        <height>38</height>
+                        <font>Font_23</font>
+                        <label>$INFO[ListItem.Rating]</label>
+                        <textcolor>FFFFFAF0</textcolor>
+                        <animation effect="slide" start="0,0" end="0,-45" condition="String.IsEmpty(Control.GetLabel(200))">Conditional</animation>
+                        <visible>!String.IsEmpty(Control.GetLabel(199))</visible>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- Grupo ocultar flags ou fanart -->
+                    <top>45</top>
+                    <include>Animation_HiddenView</include>
+                    <control type="image">
+                        <!-- Barra do rodape -->
+                        <left>0</left>
+                        <top>765</top>
+                        <width>1920</width>
+                        <height>270</height>
+                        <colordiffuse>$VAR[value_floorcolor]</colordiffuse>
+                        <texture>shadow_mask.png</texture>
+                        <include>Animation_FloorGlass</include>
+						<visible>!Control.IsVisible(186)</visible>
+                    </control>
+                    <control type="group">
+                        <animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">WindowOpen</animation>
+                        <animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
+                        <animation effect="slide" start="0,0" end="0,450" time="500" tween="sine" easing="out">Hidden</animation>
+                        <visible>[String.Contains(skin.string(mediaflags),true) | String.Contains(skin.string(mediaflags),auto) + Control.IsVisible(9921)]</visible>
+                        <control type="grouplist">
+                            <!-- Etiquetas -->
+                            <left>30</left>
+                            <top>968</top>
+                            <orientation>horizontal</orientation>
+                            <itemgap>38</itemgap>
+                            <control type="image">
+                                <!-- Gravadora -->
+                                <height>68</height>
+                                <include>FlagImage</include>
+                                <texture fallback="blanc.png">$VAR[record_values]</texture>
+                            </control>
+                            <control type="image">
+                                <include>FlagSeparator</include>
+                                <visible>!String.IsEmpty(Control.GetLabel(557))</visible>
+                            </control>
+                            <control type="group">
+                                <width>126</width>
+                                <height>75</height>
+                                <visible>!String.IsEmpty(ListItem.top100)</visible>
+                                <control type="label">
+                                    <!-- Top 100 -->
+                                    <top>-15</top>
+                                    <font>Font_15</font>
+                                    <include>FlagLabel</include>
+                                    <label>$LOCALIZE[31042]</label>
+                                </control>
+                                <control type="label">
+                                    <!-- Top 100 info -->
+                                    <top>9</top>
+                                    <font>Font_23</font>
+                                    <include>FlagLabel</include>
+                                    <label>$INFO[ListItem.Top100]</label>
+                                </control>
+                            </control>
+                            <control type="image">
+                                <!-- Codec -->
+                                <include>FlagImage</include>
+                                <texture>$VAR[value_musiccodec]</texture>
+                                <visible>!String.IsEmpty(Control.GetLabel(198))</visible>
+                            </control>
+                            <control type="image">
+                                <include>FlagSeparator</include>
+                                <visible>!String.IsEmpty(Control.GetLabel(198))</visible>
+                            </control>
+                            <control type="label">
+                                <!-- Drive externo -->
+                                <include>FlagLabel</include>
+                                <label>$VAR[value_drive]</label>
+                                <visible>!String.IsEmpty(Control.GetLabel(556))</visible>
+                            </control>
+                        </control>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>975</top>
+                        <height>63</height>
+                        <width>1920</width>
+                        <texture>gradient_small.png</texture>
+                    </control>
+                    <!-- ViewTypes -->
+                    <include>ViewRightList</include>
+                    <!-- 51 -->
+                    <include condition="Skin.HasSetting(viewposter_music)">ViewPoster</include>
+                    <!-- 54 -->
+                    <include condition="Skin.HasSetting(viewlowlist_music)">ViewLowList</include>
+                    <!-- 55 -->
+                    <include condition="Skin.HasSetting(viewwall_music)">ViewWallAudio</include>
+                    <!-- 56 -->
+					<include condition="Skin.HasSetting(viewglasslist_video)">ViewGlassList</include>
+					<!-- 57 -->		
+                    <include condition="Skin.HasSetting(viewcoverflow_music)">ViewCoverFlowAudio</include>
+                    <!-- 58 -->
+                    <include condition="Skin.HasSetting(viewwide_music)">ViewWide</include>
+                    <!-- 59 -->
+                    <include condition="Skin.HasSetting(viewpanel_music)">ViewPanel</include>
+                    <!-- 62 -->
+                    <include condition="Skin.HasSetting(viewcoverflowback_music)">ViewCoverFlowBackAudio</include>
+                    <!-- 78 -->
+                    <include condition="Skin.HasSetting(viewbanner_music)">ViewBanner</include>
+                    <!-- 52 -->
+                    <include condition="Skin.HasSetting(viewbannerinfo_music)">ViewBannerInfo</include>
+                    <!-- 53 -->
+                    <include condition="Skin.HasSetting(viewaeon_music)">ViewAeon</include>
+                    <!-- 185 -->
+                    <include condition="Skin.HasSetting(viewaeon_music)">ViewAeonMusic</include>
+                    <!-- 186 -->
+                </control>
+                <control type="image">
+                    <!-- Logo -->
+                    <left>1402</left>
+                    <top>962</top>
+                    <width>300</width>
+                    <height>75</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
+                    <fadetime>FanartCrossFadeTime</fadetime>
+                    <animation effect="slide" end="-735,-270" tween="cubic" easing="in" condition="String.IsEqual(Container.Viewmode,POSTER)">Conditional</animation>
+                    <include>Animation_HiddenView</include>
+                    <visible>String.IsEqual(Container.Viewmode,POSTER)</visible>
+                </control>
+                <include>TouchScreen</include>
+                <include>ScrollLabel</include>
+                <include condition="Skin.HasSetting(musicinfobar)">MultiData</include>
+                <include condition="Skin.HasSetting(musicdate)">TopDate</include>
+                <include>TopMenu_Audio</include>
+                <include>BGBlack</include>
+            </control>
+        </controls>
+    </include>
+</includes>

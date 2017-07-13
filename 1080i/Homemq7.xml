@@ -1,0 +1,1054 @@
+
+<includes>
+	<!-- Aeon MQ 7 -->	
+	<include name="Aeonmq7">
+		<control type="button" id="8000">
+			<include>InvisibleButton</include>
+			<onleft>SetFocus(9000)</onleft>
+			<onright>SetFocus(9000)</onright>
+			<onup>SetFocus(9000)</onup>
+			<ondown>SetFocus(9000)</ondown>
+			<onclick>SetFocus(9000)</onclick>
+			<onfocus>$INFO[Skin.String(submenu_action)]</onfocus>
+		</control>
+		<control type="button" id="8001">
+			<include>InvisibleButton</include>
+			<onfocus>SetFocus(9000)</onfocus>
+			<onfocus>Skin.SetString(windowbg,$VAR[value_menubg])</onfocus>
+			<onfocus condition="Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)">2517</onfocus>
+			<onfocus condition="!Player.HasMedia + [!Skin.HasSetting(higherwidgets) | Skin.HasSetting(highermainmenu)]">SetFocus($VAR[Top_GoTo])</onfocus>
+			<onfocus condition="!Player.HasMedia + [Skin.HasSetting(higherwidgets) + !Skin.HasSetting(highermainmenu) + [Control.IsVisible(604) + [String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks)] | !Control.IsVisible(604)]]">SetFocus($VAR[Top_GoTo])</onfocus>
+			<onfocus condition="!Player.HasMedia + [Skin.HasSetting(higherwidgets) + !Skin.HasSetting(highermainmenu) + Control.IsVisible(604) + ![String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks)]]">SetFocus(603)</onfocus>
+			<onfocus condition="Player.HasMedia">SetFocus(600)</onfocus>
+		</control>
+		<control type="button" id="8002">
+			<include>InvisibleButton</include>
+			<onfocus>SetFocus(9000)</onfocus>
+			<onfocus>Skin.SetString(windowbg,$VAR[value_menubg])</onfocus>
+			<onfocus condition="!Skin.HasSetting(highermainmenu)">Skin.SetBool(submode)</onfocus>
+			<onfocus condition="!Skin.HasSetting(highermainmenu)">ActivateWindow($VAR[Sub_GoTo])</onfocus>
+			<onfocus condition="Skin.HasSetting(highermainmenu) + [Control.IsVisible(604) + [String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks)] | !Control.IsVisible(604)]">Skin.SetBool(submode)</onfocus>
+			<onfocus condition="Skin.HasSetting(highermainmenu) + [Control.IsVisible(604) + [String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks)] | !Control.IsVisible(604)]">ActivateWindow($VAR[Sub_GoTo])</onfocus>
+			<onfocus condition="Skin.HasSetting(highermainmenu) + Control.IsVisible(604) + ![String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks)]">SetFocus(603)</onfocus>
+		</control>
+		<control type="button" id="8003">
+			<include>InvisibleButton</include>
+			<visible>![Container(9000).OnNext | Container(9000).OnPrevious | Skin.HasSetting(submode)]</visible>
+		</control>
+		<control type="button" id="8004">
+			<include>InvisibleButton</include>
+			<onfocus condition="!String.IsEqual(skin.string(codestep),step3)">ActivateWindow(6629)</onfocus>
+			<onfocus condition="String.IsEqual(skin.string(codestep),step3)">SetFocus(5100)</onfocus>
+		</control>
+		<control type="button" id="8005">
+			<include>InvisibleButton</include>
+			<onleft>SetFocus(510)</onleft>
+			<onright>SetFocus(510)</onright>
+			<onup>SetFocus(510)</onup>
+			<ondown>SetFocus(510)</ondown>
+		</control>
+		<control type="button" id="8006">
+			<include>InvisibleButton</include>
+			<animation effect="fade" start="0" end="100" time="150" delay="500" condition="true">Visible</animation>
+			<visible>![Container(510).OnNext | Container(510).OnPrevious]</visible>
+		</control>
+		<!--Controle delay dos wigets -->
+		<control type="button" id="8007">
+			<include>InvisibleButton</include>
+			<animation effect="fade" start="0" end="100" time="150" delay="500" condition="true">Visible</animation>
+			<visible>![Container(9000).OnNext | Container(9000).OnPrevious]</visible>
+		</control>
+		<control type="button" id="9222">
+			<include>InvisibleButton</include>
+			<onleft>Control.Move(510,-1)</onleft>
+			<onright>Control.Move(510,1)</onright>
+			<ondown>SetFocus(510)</ondown>
+			<onup>SetFocus(510)</onup>
+			<onfocus>PlayMedia($INFO[Container(510).ListItem.FilenameAndPath],1)</onfocus>
+			<onfocus>SetFocus(9223)</onfocus>
+			<onclick>PlayMedia($INFO[Container(510).ListItem.FilenameAndPath],1)</onclick>
+		</control>
+		<control type="button" id="9225">
+			<include>InvisibleButton</include>
+			<onleft>Control.Move(510,-1)</onleft>
+			<onright>Control.Move(510,1)</onright>
+			<ondown>SetFocus(510)</ondown>
+			<onup>SetFocus(510)</onup>
+			<onfocus>ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(510).ListItem.Title],return)</onfocus>
+			<onfocus>SetFocus(9223)</onfocus>
+		</control>
+		<control type="button" id="9223">
+			<include>InvisibleButton</include>
+			<onleft>SetFocus(510)</onleft>
+			<onright>SetFocus(510)</onright>
+			<ondown>SetFocus(510)</ondown>
+			<onup>SetFocus(510)</onup>
+		</control>
+		<control type="button" id="9224">
+			<include>InvisibleButton</include>
+			<onleft>SetFocus(510)</onleft>
+			<onright>SetFocus(510)</onright>
+			<ondown>SetFocus(9000)</ondown>
+			<onup>SetFocus(510)</onup>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video1)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.recent)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recent)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.random)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.random)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.recommended)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras.helper)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recommendedmovies)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedmovies)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedmovies)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.sets)</onclick>
+			
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.nextepisodes)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.unairedepisodes)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.unairedepisodes)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.nextairedtvshows)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.nextairedtvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video2)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.nextairedtvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.random)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.random)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.recommended)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.recommended)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.recent)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.recent)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras.helper)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.recent)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.nextepisodes)</onclick>
+			
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.artist)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,music.recentsong)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.recentsong)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,music.randomsong)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.randomsong)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,music.recentalbum)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.recentalbum)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,music.randomalbum)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.randomalbum)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,music.recentplayedalbum)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.recentplayedalbum)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,music.artist)</onclick>
+			
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),favourites)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plus)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),favourites)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,addons.video)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),addons.video)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,addons.audio)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),addons.audio)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,addons.programs)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),addons.programs)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras.helper)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),addons.programs)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.favouritemedia)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.favouritemedia)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.favouritesmovies)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.favouritesmovies)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.favouritestvshows)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.favouritestvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.favouritesartists)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.favouritesartists)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.favouritesalbums)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.favouritesalbums)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.favourites)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.favourites)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.favourites)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,favourites)</onclick>
+			
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.populartvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.topratedmovies)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.topratedmovies)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.trendingmovies)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.trendingmovies)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.incinemas)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.incinemas)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.upcoming)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.upcoming)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.popularmovies)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.popularmovies)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.topratedtvshows)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.topratedtvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.onairtvshows)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.onairtvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.airingtodaytvshows)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.airingtodaytvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.airingepisodes)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.airingepisodes)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.premiereshows)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.premiereshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.trendingshows)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.trendingshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.populartvshows)</onclick>
+			
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),channel.group)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plus)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),channel.group)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,channel.tv)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),channel.tv)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,channel.reacent)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),channel.reacent)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,plus.pvrhelper)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),plus.pvrhelper)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,plus.pvrhelper2)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),plus.pvrhelper2)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,plus.pvrhelper3)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),plus.pvrhelper3)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,channel.radio)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),channel.radio)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plus_epg)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),channel.radio)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,channel.epg)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),channel.epg)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plus_group)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),channel.epg)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,channel.group)</onclick>
+			
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.inprogressmedia)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recommendedmedia)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedmedia)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.inprogressandrecommendedmedia)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.inprogressandrecommendedmedia)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recentmedia)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentmedia)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.moviesforgenre)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.moviesforgenre)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.showsforgenre)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.showsforgenre)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recentartists)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentartists)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recommendedartists)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedartists)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.randomartists)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.randomartists)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recentalbums)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentalbums)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recommendedalbums)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedalbums)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.randomalbums)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.randomalbums)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recentsongs)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentsongs)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recentplayedsongs)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentplayedsongs)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.randomsongs)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.randomsongs)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.similarsongs)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.similarsongs)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.inprogressmedia)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedsongs)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.inprogressmedia)</onclick>
+			
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.tvshow.recent)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.genre)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.genre)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.genre)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.genre)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.actors)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.actors)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.actors)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.actors)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.studios)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.studios)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.studios)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.studios)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.years)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.years)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.years)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.years)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.directors)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.directors)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.countries)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.countries)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.top250movies)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.countries)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras.helper)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.top250movies)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.top250tvshows)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.top250tvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.top250media)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.top250media)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.airingtoday)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.airingtoday)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.airingtoday)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.tvshow.recent)</onclick>
+		</control>
+		<control type="button" id="9229">
+			<include>InvisibleButton</include>
+			<onfocus>ActivateWindow(6639)</onfocus>
+		</control>
+		<control type="multiimage">
+			<include>HomeBG</include>
+			<imagepath background="true">$VAR[value_menubg]</imagepath>
+		</control>
+		<control type="multiimage">
+			<include>HomeBG</include>
+			<include>Animation_Fade</include>
+			<imagepath background="true">$VAR[value_videoplayerfanart]</imagepath>
+			<visible>Player.HasVideo + System.IdleTime(8)</visible>
+		</control>
+		<control type="image" id="5043">
+			<!-- Audio Fanart -->
+			<include>HomeBG</include>
+			<include>Animation_Fade</include>
+			<texture background="true">$INFO[MusicPlayer.Property(fanart_image)]</texture>
+			<visible>Player.HasAudio + System.IdleTime(8)</visible>
+		</control>
+	<!--	<control type="multiimage" id="5044">
+			<include>HomeBG</include>
+			<include>Animation_Fade</include>
+			<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
+			<visible>Player.HasAudio + System.IdleTime(8) + !String.IsEmpty(Control.GetLabel(5044))</visible>
+		</control> -->
+		<control type="image">
+			<include>HomeBG</include>
+			<include>Animation_Fade</include>
+			<texture background="true">$VAR[value_widgetsfanart]</texture>
+			<visible>[Control.HasFocus(510) | ControlGroup(512).HasFocus | Control.HasFocus(8005)]</visible>
+		</control>
+		<control type="multiimage">
+			<include>HomeBG</include>
+			<!-- Extra Fanart Plugin.Video -->
+			<include>WindowBG</include>
+			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArts)]</imagepath>
+			<visible>String.Contains(skin.string(moviesfanart),extra) + String.Contains(Container(510).ListItem.Path,plugin://plugin)</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture>special://skin/backgrounds/default.jpg</texture>
+			<animation effect="fade" start="0" end="80" time="200">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
+			<visible>Control.HasFocus(500)</visible>
+		</control>
+
+	<!-- Controle estudio -->
+	<control type="image" id="556">	
+	<include>InvisibleButton</include>
+	<texture fallback="blanc.png">$VAR[value_studio_510]</texture>
+	</control>
+	<!-- 
+	<control type="image" id="557">	
+	<include>InvisibleButton</include>
+	<texture fallback="blanc.png">$VAR[value_widgetsmpaa]</texture>
+
+	<control type="image" id="558">	
+	<include>InvisibleButton</include>
+	<texture fallback="blanc.png">$VAR[value_videocodechome]</texture>
+	</control>
+		
+	<control type="image" id="559">	
+	<include>InvisibleButton</include>
+	<texture fallback="blanc.png">$VAR[value_widgetsaudiocodec]</texture>
+	</control>
+
+	<control type="image" id="560">	
+	<include>InvisibleButton</include>
+	<texture fallback="blanc.png">$VAR[value_widgetvresolution]</texture>
+	</control>
+
+	<control type="image" id="561">	
+	<include>InvisibleButton</include>
+	<texture fallback="blanc.png">$VAR[value_widgetaspect]</texture>
+	</control>-->
+	<!-- Controle audio codec -->
+	<control type="image" id="562">	
+	<include>InvisibleButton</include>
+	<texture fallback="blanc.png">$VAR[value_widgetsaudiocodec]</texture>
+	</control>
+	<!-- Controle canais de audio -->
+	<control type="label" id="563">	
+	<include>InvisibleButton</include>
+	<label>$INFO[Container(510).ListItem.Property(AudioLanguage.1)]</label>
+	</control>
+	<!-- Controle legenda -->
+	<control type="label" id="564">	
+	<include>InvisibleButton</include>
+	<label>$INFO[Container(510).ListItem.Property(SubtitleLanguage.1)]</label>
+	</control>
+	<!-- Controle gravadora -->
+	<control type="image" id="565">	
+	<include>InvisibleButton</include>
+	<texture fallback="blanc.png">$VAR[value_widgetrecord]</texture>
+	</control>
+	<control type="label" id="566">	
+	<include>InvisibleButton</include>
+	<label>$VAR[value_widgetstypecast]</label>
+	</control>
+	<!-- Widgets modo auto -->
+	<control type="image" id="9931">
+	<include>InvisibleButton</include>
+	<animation effect="fade" start="0" end="100" time="150" delay="1000" condition="String.Contains(skin.string(widgets_seconds),1)">Visible</animation>
+	<animation effect="fade" start="0" end="100" time="150" delay="2000" condition="String.Contains(skin.string(widgets_seconds),2)">Visible</animation>
+	<animation effect="fade" start="0" end="100" time="150" delay="3000" condition="String.Contains(skin.string(widgets_seconds),3)">Visible</animation>
+	<animation effect="fade" start="0" end="100" time="150" delay="4000" condition="String.Contains(skin.string(widgets_seconds),4)">Visible</animation>
+	<animation effect="fade" start="0" end="100" time="150" delay="5000" condition="String.Contains(skin.string(widgets_seconds),5)">Visible</animation>
+	<visible>![Container(9000).OnNext | Container(9000).OnPrevious]</visible>
+	</control>
+	<include>LiveBG</include>
+	<!-- default group -->
+	<control type="group">		
+	<include>Animation_Window</include>
+	
+	<include condition="!Skin.HasSetting(mainmenuvertical)">MenuHorizontal</include>
+	<include condition="Skin.HasSetting(mainmenuvertical)">MenuVertical</include>
+	<include condition="system.getbool(lookandfeel.enablerssfeeds)">HomeRSS</include>
+			<control type="group">
+				<animation effect="slide" start="0,0" end="0,578" time="600" tween="sine" easing="inout" condition="Control.HasFocus(5100)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,98" time="600" tween="sine" easing="inout" condition="Control.HasFocus(5100)+Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)">Conditional</animation>
+				<control type="panel" id="5100">
+					<left>0</left>
+					<top>-525</top>
+					<width>1950</width>
+					<height>390</height>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<orientation>horizontal</orientation>
+					<pagecontrol></pagecontrol>
+					<itemlayout width="480" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<texture>topmenu_button_nofocus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FF101010</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout width="480" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<texture>topmenu_button_focus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+							<visible>!Container(5100).Position(0)</visible>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<texture>settings_button_focus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+							<colordiffuse>FFDAA520</colordiffuse>
+							<visible>Container(5100).Position(0)</visible>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FFFFFAF0</textcolor>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<!-- Ajustes dos widgets -->
+							<icon></icon>
+							<label>31246</label>
+							<onclick>ActivateWindowAndFocus(SkinSettings, 9100,1)</onclick>
+						</item>
+						<item>
+							<!-- Contex menu widgets -->
+							<icon></icon>
+							<label>31460</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=$INFO[Container(9000).ListItem.Property(name)].widgets,header=Widget Chooser,simple to set your favorite widget)</onclick>
+							<visible>![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Nenhum -->
+							<icon></icon>
+							<label>31162</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,none)</onclick>
+							<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(name)].widgets)</onclick>
+							<visible>![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Modo custom 1 -->
+							<icon></icon>
+							<label>$LOCALIZE[31343] 1</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,dualwidget1)</onclick>
+							<onclick>Skin.SetString(duallabel,widget1)</onclick>
+							<onclick>Skin.SetString(dualwidgets,widget1)</onclick>
+							<onclick>SetFocus(5200)</onclick>
+							<visible>![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Modo custom 2 -->
+							<icon></icon>
+							<label>$LOCALIZE[31343] 2</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,dualwidget2)</onclick>
+							<onclick>Skin.SetString(duallabel,widget2)</onclick>
+							<onclick>Skin.SetString(dualwidgets,widget2)</onclick>
+							<onclick>SetFocus(5200)</onclick>
+							<visible>![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Modo custom 3 -->
+							<icon></icon>
+							<label>$LOCALIZE[31343] 3</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,dualwidget3)</onclick>
+							<onclick>Skin.SetString(duallabel,widget3)</onclick>
+							<onclick>Skin.SetString(dualwidgets,widget3)</onclick>
+							<onclick>SetFocus(5200)</onclick>
+							<visible>![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Meu menu 1 -->
+							<icon></icon>
+							<label>$LOCALIZE[31075] 1</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,mymenu1)</onclick>
+							<visible>!String.IsEmpty(skin.string(mymenu1.widget))+![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Meu menu 2 -->
+							<icon></icon>
+							<label>$LOCALIZE[31075] 2</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,mymenu2)</onclick>
+							<visible>!String.IsEmpty(skin.string(mymenu2.widget))+![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Meu menu 3 -->
+							<icon></icon>
+							<label>$LOCALIZE[31075] 3</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,mymenu3)</onclick>
+							<visible>!String.IsEmpty(skin.string(mymenu3.widget))+![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Meu menu 4 -->
+							<icon></icon>
+							<label>$LOCALIZE[31075] 4</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,mymenu4)</onclick>
+							<visible>!String.IsEmpty(skin.string(mymenu4.widget))+![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Meu menu 5 -->
+							<icon></icon>
+							<label>$LOCALIZE[31075] 5</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,mymenu5)</onclick>
+							<visible>!String.IsEmpty(skin.string(mymenu5.widget))+![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Clima -->
+							<icon></icon>
+							<label>31009</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,none)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,weather)</onclick>
+							<visible>!String.IsEmpty(Weather.Plugin)+![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Sistema -->
+							<icon></icon>
+							<label>31011</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,none)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,settings)</onclick>
+							<visible>![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Jogos -->
+							<icon></icon>
+							<label>31007</label>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,pluign)</onclick>
+							<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,games)</onclick>
+							<visible>System.HasAddon(script.games.rom.collection.browser) + !String.IsEmpty(Window(0).Property(MostPlayedROM.1.Title))+![Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery -->
+							<icon></icon>
+							<label>Choose content for 1L</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_1l,header=Widget Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery -->
+							<icon></icon>
+							<label>Choose content for 2L</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_2l,header=Widget Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery -->
+							<icon></icon>
+							<label>Choose content for 3L</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_3l,header=Widget Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery -->
+							<icon></icon>
+							<label>Choose content for 4L</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_4l,header=Widget Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery -->
+							<icon></icon>
+							<label>Choose content for L</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_l,header=Widget Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery -->
+							<icon></icon>
+							<label>Choose content for R</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_r,header=Widget Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery -->
+							<icon></icon>
+							<label>Choose content for C</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_c,header=Widget Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery -->
+							<icon></icon>
+							<label>Choose content for 1R</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_1r,header=Widget Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery -->
+							<icon></icon>
+							<label>Choose content for 2R</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_2r,header=Widget Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery Def-->
+							<icon></icon>
+							<label>Set default content Galery</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_def,header=Galerry Chooser,simple to set your favorite widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+						<item>
+							<!-- Gallery Empty-->
+							<icon></icon>
+							<label>Set empty content Galery</label>
+							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Gallery_no,header=Galerry Chooser,simple to erease your widget in Gallery)</onclick>
+							<visible>[Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)]</visible>
+						</item>
+					</content>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-526</top>
+					<width>1928</width>
+					<height>45</height>
+					<texture flipy="true">shadow_h.png</texture>
+					<colordiffuse>C3FFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-578</top>
+					<height>52</height>
+					<width>1920</width>
+					<aligny>top</aligny>
+					<texture>darkgrey.png</texture>
+					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+					<animation effect="fade" end="95" condition="System.IdleTime(0)">Conditional</animation>
+				</control>
+				<control type="label">
+					<left>510</left>
+					<top>-572</top>
+					<height>45</height>
+					<width>900</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_20</font>
+					<label>31318</label>
+					<textcolor>FFFFFAF0</textcolor>
+				</control>
+				<control type="label">
+					<left>1500</left>
+					<top>-572</top>
+					<height>45</height>
+					<width>390</width>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>Font_15</font>
+					<label>$INFO[Container(5100).NumItems] $LOCALIZE[31093] - $LOCALIZE[31757] $INFO[Container(5100).CurrentPage]/$INFO[Container(5100).NumPages]</label>
+					<textcolor>$VAR[value_headercolor]</textcolor>
+				</control>
+			</control>
+			<control type="group">
+				<control type="image">
+					<left>480</left>
+					<top>-525</top>
+					<height>38</height>
+					<width>477</width>
+					<texture>topmenu_button_nofocus.png</texture>
+					<colordiffuse>FFDAA520</colordiffuse>
+					<aspectratio align="center">stretch</aspectratio>
+				</control>
+				<control type="label">
+					<left>480</left>
+					<top>-525</top>
+					<height>38</height>
+					<width>477</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_15</font>
+					<label>31319</label>
+					<textcolor>FFFFFAF0</textcolor>
+				</control>
+				<control type="image">
+					<left>960</left>
+					<top>-525</top>
+					<height>38</height>
+					<width>477</width>
+					<texture>topmenu_button_nofocus.png</texture>
+					<colordiffuse>FF4169E1</colordiffuse>
+					<aspectratio align="center">stretch</aspectratio>
+				</control>
+				<control type="label">
+					<left>960</left>
+					<top>-525</top>
+					<height>38</height>
+					<width>477</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_15</font>
+					<label>31650</label>
+					<textcolor>FFFFFAF0</textcolor>
+				</control>
+				<animation effect="slide" start="0,0" end="0,578" time="600" tween="sine" easing="inout" condition="Control.HasFocus(5200) | Control.HasFocus(5300)">Conditional</animation>
+				<control type="list" id="5200">
+					<left>480</left>
+					<top>-488</top>
+					<width>480</width>
+					<height>450</height>
+					<onleft>9000</onleft>
+					<onright>5300</onright>
+					<orientation>vertical</orientation>
+					<pagecontrol></pagecontrol>
+					<itemlayout width="480" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<texture>topmenu_button_nofocus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FF101010</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout width="480" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<texture>topmenu_button_focus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FFFFFAF0</textcolor>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<!-- Filmes recentes -->
+							<icon></icon>
+							<label>$LOCALIZE[31003] - $LOCALIZE[31583]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[31003] - $LOCALIZE[31583])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,recentmovies)</onclick>
+							<visible>Library.HasContent(Movies)</visible>
+						</item>
+						<item>
+							<!-- Filmes random -->
+							<icon></icon>
+							<label>$LOCALIZE[31003] - $LOCALIZE[31584]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[31003] - $LOCALIZE[31584])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,randommovies)</onclick>
+							<visible>Library.HasContent(Movies)</visible>
+						</item>
+						<item>
+							<!-- Filmes em progresso -->
+							<icon></icon>
+							<label>$LOCALIZE[31003] - $LOCALIZE[31585]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[31003] - $LOCALIZE[31585])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,recommendedmovies)</onclick>
+							<visible>Library.HasContent(Movies)</visible>
+						</item>
+						<item>
+							<!-- Seriados recentes -->
+							<icon></icon>
+							<label>$LOCALIZE[31005] - $LOCALIZE[31583]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[31005] - $LOCALIZE[31583])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,recentepisodes)</onclick>
+							<visible>Library.HasContent(TVShows)</visible>
+						</item>
+						<item>
+							<!-- Seriados random -->
+							<icon></icon>
+							<label>$LOCALIZE[31005] - $LOCALIZE[31584]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[31005] - $LOCALIZE[31584])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,randomepisodes)</onclick>
+							<visible>Library.HasContent(TVShows)</visible>
+						</item>
+						<item>
+							<!-- Seriados em progresso -->
+							<icon></icon>
+							<label>$LOCALIZE[31005] - $LOCALIZE[31585]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[31005] - $LOCALIZE[31585])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,recommendedepisodes)</onclick>
+							<visible>Library.HasContent(TVShows)</visible>
+						</item>
+						<item>
+							<!-- Filmes + seriados recentes -->
+							<icon></icon>
+							<label>$LOCALIZE[31003] + $LOCALIZE[31527] - $LOCALIZE[31583]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[31003] + $LOCALIZE[31527] - $LOCALIZE[31583])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,recentvideos)</onclick>
+							<visible>Library.HasContent(Movies) + Library.HasContent(TVShows)</visible>
+						</item>
+						<item>
+							<!-- Albuns recentes -->
+							<icon></icon>
+							<label>$LOCALIZE[132] - $LOCALIZE[31583]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[132] - $LOCALIZE[31583])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,recentalbums)</onclick>
+							<visible>Library.HasContent(Music)</visible>
+						</item>
+						<item>
+							<!-- Albuns random -->
+							<icon></icon>
+							<label>$LOCALIZE[132] - $LOCALIZE[31584]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[132] - $LOCALIZE[31584])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,randomalbums)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Albuns Recommended -->
+							<icon></icon>
+							<label>$LOCALIZE[132] - Recommended Albums</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[182] - Recommended Albums)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,recommendedalbums)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Songs random -->
+							<icon></icon>
+							<label>$LOCALIZE[182] - randomsongs</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[182] - randomsongs)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,randomsongs)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Recent Music Videos -->
+							<icon></icon>
+							<label>Recent Music Videos</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,Recent Music Videos)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,recentmusicvideos)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Recent Music Videos -->
+							<icon></icon>
+							<label>Random Music Videos</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,Random Music Videos)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,randommusicvideos)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Recommended Music Videos -->
+							<icon></icon>
+							<label>Recommended Music Videos</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,Recommended Music Videos)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]a,recommendedmusicvideos)</onclick>
+							<visible/>
+						</item>
+					</content>
+				</control>
+				<control type="list" id="5300">
+					<left>960</left>
+					<top>-488</top>
+					<width>480</width>
+					<height>450</height>
+					<onleft>5200</onleft>
+					<onright>9000</onright>
+					<orientation>vertical</orientation>
+					<pagecontrol></pagecontrol>
+					<itemlayout width="480" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<texture>topmenu_button_nofocus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FF101010</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout width="480" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<texture>topmenu_button_focus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>477</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FFFFFAF0</textcolor>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<!-- Filmes recentes -->
+							<icon></icon>
+							<label>$LOCALIZE[31003] - $LOCALIZE[31583]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[31003] - $LOCALIZE[31583])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,recentmovies)</onclick>
+							<visible>Library.HasContent(Movies)</visible>
+						</item>
+						<item>
+							<!-- Filmes random -->
+							<icon></icon>
+							<label>$LOCALIZE[31003] - $LOCALIZE[31584]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[31003] - $LOCALIZE[31584])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,randommovies)</onclick>
+							<visible>Library.HasContent(Movies)</visible>
+						</item>
+						<item>
+							<!-- Filmes em progresso -->
+							<icon></icon>
+							<label>$LOCALIZE[31003] - $LOCALIZE[31585]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[31003] - $LOCALIZE[31585])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,recommendedmovies)</onclick>
+							<visible>Library.HasContent(Movies)</visible>
+						</item>
+						<item>
+							<!-- Seriados recentes -->
+							<icon></icon>
+							<label>$LOCALIZE[31005] - $LOCALIZE[31583]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[31005] - $LOCALIZE[31583])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,recentepisodes)</onclick>
+							<visible>Library.HasContent(TVShows)</visible>
+						</item>
+						<item>
+							<!-- Seriados random -->
+							<icon></icon>
+							<label>$LOCALIZE[31005] - $LOCALIZE[31584]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[31005] - $LOCALIZE[31584])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,randomepisodes)</onclick>
+							<visible>Library.HasContent(TVShows)</visible>
+						</item>
+						<item>
+							<!-- Seriados em progresso -->
+							<icon></icon>
+							<label>$LOCALIZE[31005] - $LOCALIZE[31585]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[31005] - $LOCALIZE[31585])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,recommendedepisodes)</onclick>
+							<visible>Library.HasContent(TVShows)</visible>
+						</item>
+						<item>
+							<!-- Filmes + seriados recentes -->
+							<icon></icon>
+							<label>$LOCALIZE[31003] + $LOCALIZE[31527] - $LOCALIZE[31583]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[31003] + $LOCALIZE[31527] - $LOCALIZE[31583])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,recentvideos)</onclick>
+							<visible>Library.HasContent(Movies) + Library.HasContent(TVShows)</visible>
+						</item>
+						<item>
+							<!-- Albuns recentes -->
+							<icon></icon>
+							<label>$LOCALIZE[132] - $LOCALIZE[31583]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[132] - $LOCALIZE[31583])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,recentalbums)</onclick>
+							<visible>Library.HasContent(Music)</visible>
+						</item>
+						<item>
+							<!-- Albuns random -->
+							<icon></icon>
+							<label>$LOCALIZE[132] - $LOCALIZE[31584]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[132] - $LOCALIZE[31584])</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,randomalbums)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Albuns Recommended -->
+							<icon></icon>
+							<label>$LOCALIZE[132] - Recommended Albums</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,$LOCALIZE[182] - Recommended Albums)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,recommendedalbums)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Songs random -->
+							<icon></icon>
+							<label>$LOCALIZE[182] - randomsongs</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,$LOCALIZE[182] - randomsongs)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,randomsongs)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Playliststats -->
+							<icon></icon>
+							<label>Playlist Stats</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labela,Playlist Stats)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,playliststats)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Recent Music Videos -->
+							<icon></icon>
+							<label>Recent Music Videos</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,Recent Music Videos)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,recentmusicvideos)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Recent Music Videos -->
+							<icon></icon>
+							<label>Random Music Videos</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,Random Music Videos)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,randommusicvideos)</onclick>
+							<visible/>
+						</item>
+						<item>
+							<!-- Recommended Music Videos -->
+							<icon></icon>
+							<label>Recommended Music Videos</label>
+							<onclick>Skin.SetString($INFO[Skin.String(duallabel)].labelb,Recommended Music Videos)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(dualwidgets)]b,recommendedmusicvideos)</onclick>
+							<visible/>
+						</item>
+					</content>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-526</top>
+					<width>1928</width>
+					<height>45</height>
+					<texture flipy="true">shadow_h.png</texture>
+					<colordiffuse>C3FFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>-578</top>
+					<height>52</height>
+					<width>1920</width>
+					<aligny>top</aligny>
+					<texture>darkgrey.png</texture>
+					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+					<animation effect="fade" end="95" condition="System.IdleTime(0)">Conditional</animation>
+				</control>
+				<control type="label">
+					<left>540</left>
+					<top>-572</top>
+					<height>45</height>
+					<width>900</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_20</font>
+					<label>31318</label>
+					<textcolor>FFFFFAF0</textcolor>
+				</control>
+			</control>
+	<include>BGBlack</include>
+	<include>TrailerWindow</include>
+	<include>TouchScreen</include>
+	<control type="videowindow" id="8">
+	<left>-5</left>
+	<top>-10</top>
+	<width>1930</width>
+	<height>1090</height>
+	<aspectratio>stretch</aspectratio>
+	<animation effect="zoom" start="10" end="100" center="auto" time="2500" easing="inout" tween="cubic">Visible</animation>
+	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus] + Player.HasMedia + System.IdleTime(55)+Skin.HasSetting(mq6)</visible>
+	</control>
+	<control type="group"><!-- Home efect -->
+	<include condition="String.IsEqual(skin.string(homeefect),lightsnow)">LightSnow</include>
+	<include condition="String.IsEqual(skin.string(homeefect),snow)">snow</include>
+	<include condition="String.IsEqual(skin.string(homeefect),fog)">fog</include>
+	<include condition="String.IsEqual(skin.string(homeefect),raining)">raining</include>
+	<include condition="String.IsEqual(skin.string(homeefect),christmas)">Christmas</include>
+	<include condition="String.IsEqual(skin.string(homeefect),lighting)">Grom</include>
+	</control>
+
+	</control>
+	</include>
+</includes>
