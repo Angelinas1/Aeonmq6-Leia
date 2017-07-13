@@ -3,7 +3,7 @@
 	<!-- Aeon MQ 6 -->
 	<!--############################################################################### SUBMENU  - IR PARA ###############################################################################-->
 	<variable name="SkinVersion">
-		<value>6.7.0 MOD[COLOR=80FFFFFF] | [/COLOR]18/02/2017</value>
+		<value>6.13.0 MOD[COLOR=80FFFFFF] | [/COLOR]14/07/2017</value>
 	</variable>
 	<variable name="service_library">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),dualwidget1)">plugin://service.library.data.provider?type=$INFO[Skin.String(widget1a)]+$INFO[Skin.String(widget1b)]&amp;reload=$INFO[Window(0).Property($INFO[Skin.String(widget1a)])]$INFO[Window(0).Property($INFO[Skin.String(widget1b)])]</value>
