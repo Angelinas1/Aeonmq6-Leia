@@ -76,6 +76,16 @@
                 <textcolor>FFFFFAF0</textcolor>
                 <scroll>true</scroll>
                 <shadowcolor>grey</shadowcolor>
+				<visible>String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ClearLogo))</visible>
+            </control>
+            <control type="image">
+                <!-- Logo liveTV -->
+                <left>45</left>
+                <top>2</top>
+                <width>320</width>
+                <height>90</height>
+                <aspectratio>keep</aspectratio>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
             </control>
             <control type="label">
                 <left>45</left>

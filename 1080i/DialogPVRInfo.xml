@@ -6,6 +6,7 @@
     <!-- <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Title],backend=True)</onload>
 	<onunload>ClearProperty(script-ExtendedInfo.isactive)</onunload>	
 	<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>-->
+	<onload>SetProperty(SkinHelper.WidgetContainer,510)</onload>
     <controls>
         <control type="group">
             <!-- default group -->
@@ -407,7 +408,7 @@
                 <height>170</height>
                 <align>justify</align>
                 <font>Font_18A</font>
-                <label>$INFO[ListItem.Plot]</label>
+                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]</label>
                 <textcolor>FFFFFAF0</textcolor>
                 <autoscroll delay="10000" time="4000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
                 <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster))</visible>
@@ -420,7 +421,7 @@
                 <height>180</height>
                 <align>justify</align>
                 <font>Font_18A</font>
-                <label>$INFO[ListItem.Plot]</label>
+                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]</label>
                 <textcolor>FFFFFAF0</textcolor>
                 <autoscroll delay="10000" time="4000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
                 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster))</visible>

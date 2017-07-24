@@ -4995,7 +4995,7 @@
 	<height>30</height>
 	<align>left</align>
 	<font>Font_20</font>
-	<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Genre)]$INFO[Container(510).ListItem.Property(Events)]$INFO[Container(510).ListItem.Property(Addon.Summary)] [COLOR=50FFFAF0] $INFO[Window(Home).Property(SkinHelper.ListItem.media_type),, - ]$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber),IMDBID:][/COLOR]</label>
+	<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Genre)]$INFO[Container(510).ListItem.Property(Events)]$INFO[Container(510).ListItem.Property(Addon.Summary)] [COLOR=50FFFAF0] $INFO[Container(510).ListItem.DBTYPE] $INFO[Window(Home).Property(SkinHelper.ListItem.media_type),, - ]$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber),IMDBID:][/COLOR]</label>
 	<textcolor>$VAR[value_texturecolor]</textcolor>
 	<scroll>true</scroll>
 	<shadowcolor>grey</shadowcolor>

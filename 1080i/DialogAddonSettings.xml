@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="140">
     <!-- Aeon MQ 6 -->
-    <defaultcontrol always="true">9</defaultcontrol>
+    <defaultcontrol always="true">3</defaultcontrol>
     <controls>
 	<include>SettingsBG</include>
         <control type="image">
@@ -14,11 +14,11 @@
             <!-- default group -->
             <include>Animation_Window</include>
             <include>SettingsBack</include>
-            <control type="label" id="20">
+            <control type="label" id="2">
                 <include>SettingsContentTitle</include>
                 <label></label>
             </control>
-            <control type="grouplist" id="2">
+            <control type="grouplist" id="5">
                 <!-- Menu da direita -->
                 <left>360</left>
                 <top>180</top>
@@ -26,19 +26,19 @@
                 <height>741</height>
                 <itemgap>0</itemgap>
                 <pagecontrol>30</pagecontrol>
-                <onup>10</onup>
-                <ondown>10</ondown>
-                <onleft>9</onleft>
+                <onup>28</onup>
+                <ondown>28</ondown>
+                <onleft>3</onleft>
                 <onright>30</onright>
             </control>
             <control type="scrollbar" id="30">
                 <left>1785</left>
                 <top>180</top>
                 <height>630</height>
-                <onleft>2</onleft>
-                <onright>10</onright>
+                <onleft>5</onleft>
+                <onright>28</onright>
             </control>
-            <control type="button" id="13">
+            <control type="button" id="10">
                 <left>0</left>
                 <top>0</top>
                 <width>358</width>
@@ -55,18 +55,19 @@
                 <selectedcolor>FFFFFFFF</selectedcolor>
                 <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
                 <animation effect="fade" end="85" condition="true">Conditional</animation>
-                <pulseonselect>no</pulseonselect>
+                <pulseonselect></pulseonselect>
             </control>
-            <control type="button" id="3"></control>
-            <control type="radiobutton" id="4"></control>
-            <control type="spincontrolex" id="5">
-                <subtype>text</subtype>
-            </control>
-            <control type="image" id="6">
+            <control type="button" id="7"></control>
+            <control type="radiobutton" id="8"></control>
+            <control type="spincontrolex" id="9"></control>
+            <control type="image" id="11">
                 <height>3</height>
                 <texture></texture>
             </control>
-            <control type="label" id="7">
+            <control type="sliderex" id="13">
+                <textoffsetx>75</textoffsetx>
+            </control>
+            <control type="label" id="14">
                 <textoffsetx>75</textoffsetx>
                 <height>60</height>
                 <font>Font_20</font>
@@ -74,9 +75,6 @@
                 <textcolor>$VAR[value_headercolor]</textcolor>
                 <align>left</align>
                 <aligny>center</aligny>
-            </control>
-            <control type="sliderex" id="8">
-                <textoffsetx>75</textoffsetx>
             </control>
             <control type="image">
                 <left>360</left>
@@ -87,24 +85,24 @@
                 <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
                 <animation effect="fade" end="85" condition="true">Conditional</animation>
             </control>
-            <control type="grouplist" id="9001">
+            <control type="grouplist" id="9000">
                 <left>360</left>
                 <top>933</top>
                 <itemgap>0</itemgap>
-                <onup>2</onup>
-                <ondown>2</ondown>
+                <onup>5</onup>
+                <ondown>5</ondown>
                 <orientation>horizontal</orientation>
-                <control type="button" id="10">
+                <control type="button" id="28">
                     <!-- OK -->
                     <include>SettingsBottomButton</include>
                     <label>186</label>
                 </control>
-                <control type="button" id="11">
+                <control type="button" id="29">
                     <!-- Cancel -->
                     <include>SettingsBottomButton</include>
                     <label>222</label>
                 </control>
-                <control type="button" id="12">
+                <control type="button" id="30">
                     <!-- Defaults -->
                     <include>SettingsBottomButton</include>
                     <label>409</label>
@@ -118,7 +116,7 @@
                 <include>SettingsSectionTitle</include>
                 <label>31202</label>
             </control>
-            <control type="grouplist" id="9">
+            <control type="grouplist" id="3">
                 <!-- Button Section -->
                 <left>0</left>
                 <top>180</top>
@@ -126,10 +124,10 @@
                 <height>990</height>
                 <orientation>vertical</orientation>
                 <itemgap>0</itemgap>
-                <onup>9</onup>
-                <ondown>9</ondown>
-                <onleft>10</onleft>
-                <onright>2</onright>
+                <onup>3</onup>
+                <ondown>3</ondown>
+                <onleft>28</onleft>
+                <onright>5</onright>
             </control>
         </control>
         <control type="image">

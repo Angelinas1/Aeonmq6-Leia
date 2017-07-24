@@ -379,7 +379,7 @@
                                 <height>488</height>
                                 <align>center</align>
                                 <label>$INFO[ListItem.Label]</label>
-                                <font>font_11A</font>
+                                <font>Font_14</font>
                                 <shadowcolor>shadow</shadowcolor>
                                 <textcolor>white</textcolor>
                                 <scroll>false</scroll>
@@ -463,7 +463,7 @@
                                 <height>488</height>
                                 <align>center</align>
                                 <label>$INFO[ListItem.Label]</label>
-                                <font>font_14A</font>
+                                <font>Font_14</font>
                                 <shadowcolor>shadow</shadowcolor>
                                 <textcolor>yellow</textcolor>
                                 <animation type="Focus" reversible="false">

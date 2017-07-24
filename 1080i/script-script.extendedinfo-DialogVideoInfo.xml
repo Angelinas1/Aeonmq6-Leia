@@ -251,6 +251,16 @@
                 <visible>!Skin.HasSetting(sextendsett_artlogo)</visible>
             </control>
             <control type="image">
+                <!-- ClearArt -->
+                <left>825</left>
+                <top>258</top>
+                <height>218</height>
+                <width>240</width>
+                <aspectratio>keep</aspectratio>
+                <texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearArt)]</texture>
+				<visible>String.IsEmpty(Window.Property(Clearart))+String.IsEmpty(Window.Property(tvshow.Clearart))</visible>
+            </control>
+            <control type="image">
                 <!-- Studio -->
                 <left>1132</left>
                 <top>105</top>

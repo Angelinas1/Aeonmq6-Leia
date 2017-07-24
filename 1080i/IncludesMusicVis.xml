@@ -1774,7 +1774,7 @@
                     <height>700</height>
                     <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.DiscArt)]</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt)) + !String.IsEmpty(Window(Home).Property(ImageFilterFIVE))</visible>
+					<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))</visible>
                 </control>
             <control type="image" id="7973">
                 <width>720</width>
@@ -1793,7 +1793,7 @@
                 <texture background="true">$INFO[Window(Home).Property(ImageFilterFIVE)]</texture>
                 <aspectratio align="left">stretch</aspectratio>
             </control>
- <!--           <control type="image">
+   <!--         <control type="image">
 				<animation type="Conditional" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Thumb))" reversible="true">
 					<effect type="slide" start="360,0" end="0,0" time="3200" delay="2000" />
 					<effect type="fade" start="0" end="100" time="1200" delay="2000" />
@@ -1802,8 +1802,7 @@
                 <width>720</width>
                 <height>720</height>
                 <fadetime>6200</fadetime>
-				 <camera x="20" y="30" />
-                <texture diffuse="mozaik2.png" background="true">$INFO[Container(80036).ListItem.Icon]</texture>
+                <texture diffuse="mo0.png" background="true">$INFO[Container(80036).ListItem.Icon]</texture>
                 <aspectratio align="left">stretch</aspectratio>
             </control>
             <control type="image">
@@ -1815,8 +1814,7 @@
                 <width>720</width>
                 <height>720</height>
                 <fadetime>6200</fadetime>
-				 <camera x="20" y="30" />
-                <texture diffuse="mozaik3.png" background="true">$INFO[Container(80036).ListItem.Icon]</texture>
+                <texture diffuse="mo1.png" background="true">$INFO[Container(80036).ListItem.Icon]</texture>
                 <aspectratio align="left">stretch</aspectratio>
             </control>-->
 			<control type="image" id="7974">
