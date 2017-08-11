@@ -500,6 +500,18 @@
 						<onclick>Addon.OpenSettings(plugin.program.autocompletion)</onclick>
 						<visible>System.HasAddon(plugin.program.autocompletion)</visible>
 					</control>
+					<control type="button" id="250">
+						<label>script.colorbox</label>
+						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
+						<onclick>InstallAddon(script.colorbox)</onclick>
+						<visible>!System.HasAddon(script.colorbox)</visible>
+					</control>
+					<control type="button" id="251">
+						<label>script.colorbox</label>
+						<label2>[COLOR green]$LOCALIZE[107][/COLOR]</label2>
+						<onclick>Addon.OpenSettings(script.colorbox)</onclick>
+						<visible>System.HasAddon(script.colorbox)</visible>
+					</control>
             </control>
             <include>BGBlack</include>
         </control>

@@ -341,14 +341,24 @@
                 </control>
                 <control type="radiobutton" id="19283">
                     <!-- AeonView -->
-                    <!-- 85 -->
+                    <!-- 185 -->
                     <radioposx>1341</radioposx>
                     <label>AEON</label>
                     <onclick>Skin.ToggleSetting(viewaeon_video)</onclick>
-                    <onclick condition="!Skin.HasSetting(viewaeon_video)">Skin.SetString(setviewvideo,85)</onclick>
-                    <onclick condition="!Skin.HasSetting(viewmodern_video) + Skin.HasSetting(clickactivateview_video)">back</onclick>
+                    <onclick condition="!Skin.HasSetting(viewaeon_video)">Skin.SetString(setviewvideo,185)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewaeon_video) + Skin.HasSetting(clickactivateview_video)">back</onclick>
                     <selected>Skin.HasSetting(viewaeon_video)</selected>
                     <visible>String.IsEqual(skin.string(videocontent),movies) | String.IsEqual(skin.string(videocontent),sets)</visible>
+                </control>
+                <control type="radiobutton" id="19284">
+                    <!-- FanArtView -->
+                    <!-- 187 -->
+                    <radioposx>1341</radioposx>
+                    <label>View FanArt</label>
+                    <onclick>Skin.ToggleSetting(viewfanart_video)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewfanart_video)">Skin.SetString(setviewvideo,187)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewfanart_video) + Skin.HasSetting(clickactivateview_video)">back</onclick>
+                    <selected>Skin.HasSetting(viewfanart_video)</selected>
                 </control>
             </control>
             <control type="scrollbar" id="9031">

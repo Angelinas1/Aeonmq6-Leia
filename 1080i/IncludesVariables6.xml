@@ -5630,6 +5630,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<variable name="value_poster">
 		<value condition="!String.IsEmpty(ListItem.Art(animatedposter)) + !Skin.HasSetting(AnimatedPosters)">$INFO[ListItem.Art(animatedposter)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(poster)) + [String.IsEmpty(ListItem.Art(animatedposter)) | Skin.HasSetting(AnimatedPosters)]">$INFO[ListItem.Art(poster)]</value>
+		<value condition="Container.Content(episodes)+!Window.IsVisible(movieinformation)">$INFO[ListItem.Icon]</value>
 		<value condition="![String.IsEmpty(ListItem.Art(tvshow.poster)) | Container.Content(episodes)]">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="Window.IsVisible(movieinformation) + Container.Content(episodes)">$INFO[Container.Art(season.poster)]</value>
 		<value condition="String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + ![Container.Content(artists) | Container.Content(albums) | Container.Content(genres) | Container.Content(countries) | Container.Content(studios) | Container.Content(years) | Container.Content(episodes)] | Container.Content(episodes)+!Window.IsVisible(movieinformation)+String.IsEmpty(ListItem.Art(Season.poster))">$INFO[ListItem.Icon]</value>

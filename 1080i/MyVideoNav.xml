@@ -15,7 +15,7 @@
 	<onload>ClearProperty(ImageFIVE,Home)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<allowoverlay>no</allowoverlay>
-	<views>51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,76,77,78,83,84,185</views>
+	<views>51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,76,77,78,83,84,185,187</views>
 	<controls>
 		<control type="multiimage">
 			<!-- Multi Fanart -->
@@ -561,6 +561,8 @@
 				<!-- 84 -->
 				<include condition="Skin.HasSetting(viewaeon_video)">ViewAeon</include>
 				<!-- 185 -->
+				<include condition="Skin.HasSetting(viewfanart_video)">ViewFanArt</include>
+				<!-- 187 -->
 			</control>
 			<include>TouchScreen</include>
 			<include>ScrollLabel</include>

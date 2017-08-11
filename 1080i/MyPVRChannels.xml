@@ -664,7 +664,7 @@
                             <top>0</top>
                             <width>448</width>
                             <height>90</height>
-                            <texture background="true">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;type=banner</texture>
+                            <texture background="true">http://localhost:52307/getpvrthumb&amp;title=$ESCINFO[Listitem.Title]&amp;type=banner</texture>
                             <aspectratio>keep</aspectratio>
                             <animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(50)">conditional</animation>
                         </control>

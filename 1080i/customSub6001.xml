@@ -22,6 +22,7 @@
                             <property name="condition">$INFO[skin.string(menu0101.visible)]</property>
                             <property name="name">menu0101</property>
                             <property name="id">$INFO[skin.string(menu0101.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0101.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0101.action])</onclick>
@@ -31,6 +32,7 @@
                             <property name="condition">$INFO[skin.string(menu0102.visible)]</property>
                             <property name="name">menu0102</property>
                             <property name="id">$INFO[skin.string(menu0102.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0102.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0102.action])</onclick>
@@ -41,6 +43,7 @@
                             <property name="condition">$INFO[skin.string(menu0103.visible)]</property>
                             <property name="name">menu0103</property>
                             <property name="id">$INFO[skin.string(menu0103.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0103.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0103.action])</onclick>
@@ -51,6 +54,7 @@
                             <property name="condition">$INFO[skin.string(menu0104.visible)]</property>
                             <property name="name">menu0104</property>
                             <property name="id">$INFO[skin.string(menu0104.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0104.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0104.action])</onclick>
@@ -61,6 +65,7 @@
                             <property name="condition">$INFO[skin.string(menu0105.visible)]</property>
                             <property name="name">menu0105</property>
                             <property name="id">$INFO[skin.string(menu0105.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0105.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0105.action])</onclick>
@@ -71,6 +76,7 @@
                             <property name="condition">$INFO[skin.string(menu0106.visible)]</property>
                             <property name="name">menu0106</property>
                             <property name="id">$INFO[skin.string(menu0106.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0106.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0106.action])</onclick>
@@ -81,6 +87,7 @@
                             <property name="condition">$INFO[skin.string(menu0107.visible)]</property>
                             <property name="name">menu0107</property>
                             <property name="id">$INFO[skin.string(menu0107.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0107.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0107.action])</onclick>
@@ -91,6 +98,7 @@
                             <property name="condition">$INFO[skin.string(menu0108.visible)]</property>
                             <property name="name">menu0108</property>
                             <property name="id">$INFO[skin.string(menu0108.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0108.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0108.action])</onclick>
@@ -101,6 +109,7 @@
                             <property name="condition">$INFO[skin.string(menu0109.visible)]</property>
                             <property name="name">menu0109</property>
                             <property name="id">$INFO[skin.string(menu0109.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0109.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0109.action])</onclick>
@@ -111,6 +120,7 @@
                             <property name="condition">$INFO[skin.string(menu0110.visible)]</property>
                             <property name="name">menu0110</property>
                             <property name="id">$INFO[skin.string(menu0110.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0110.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0110.action])</onclick>
@@ -121,6 +131,7 @@
                             <property name="condition">$INFO[skin.string(menu0111.visible)]</property>
                             <property name="name">menu0111</property>
                             <property name="id">$INFO[skin.string(menu0111.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0111.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0111.action])</onclick>
@@ -131,6 +142,7 @@
                             <property name="condition">$INFO[skin.string(menu0112.visible)]</property>
                             <property name="name">menu0112</property>
                             <property name="id">$INFO[skin.string(menu0112.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0112.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0112.action])</onclick>
@@ -141,6 +153,7 @@
                             <property name="condition">$INFO[skin.string(menu0113.visible)]</property>
                             <property name="name">menu0113</property>
                             <property name="id">$INFO[skin.string(menu0113.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0113.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0113.action])</onclick>
@@ -151,6 +164,7 @@
                             <property name="condition">$INFO[skin.string(menu0114.visible)]</property>
                             <property name="name">menu0114</property>
                             <property name="id">$INFO[skin.string(menu0114.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0114.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0114.action])</onclick>
@@ -161,6 +175,7 @@
                             <property name="condition">$INFO[skin.string(menu0115.visible)]</property>
                             <property name="name">menu0115</property>
                             <property name="id">$INFO[skin.string(menu0115.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0115.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0115.action])</onclick>
@@ -171,6 +186,7 @@
                             <property name="condition">$INFO[skin.string(menu0116.visible)]</property>
                             <property name="name">menu0116</property>
                             <property name="id">$INFO[skin.string(menu0116.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0116.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0116.action])</onclick>
@@ -181,6 +197,7 @@
                             <property name="condition">$INFO[skin.string(menu0117.visible)]</property>
                             <property name="name">menu0117</property>
                             <property name="id">$INFO[skin.string(menu0117.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0117.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0117.action])</onclick>
@@ -191,6 +208,7 @@
                             <property name="condition">$INFO[skin.string(menu0118.visible)]</property>
                             <property name="name">menu0118</property>
                             <property name="id">$INFO[skin.string(menu0118.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0118.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0118.action])</onclick>
@@ -201,6 +219,7 @@
                             <property name="condition">$INFO[skin.string(menu0119.visible)]</property>
                             <property name="name">menu0119</property>
                             <property name="id">$INFO[skin.string(menu0119.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0119.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0119.action])</onclick>
@@ -211,6 +230,7 @@
                             <property name="condition">$INFO[skin.string(menu0120.visible)]</property>
                             <property name="name">menu0120</property>
                             <property name="id">$INFO[skin.string(menu0120.master)]</property>
+							<property name="widgets">$INFO[skin.string(menu0120.widgets)]</property>
                             <onclick condition="Window.IsVisible(6000)">SetFocus(5000)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Dialog.Close(6001)</onclick>
                             <onclick condition="Window.IsVisible(Home)">Skin.SetString(submenu_action,$VAR[value_menu0120.action])</onclick>

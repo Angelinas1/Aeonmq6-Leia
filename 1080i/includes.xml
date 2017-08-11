@@ -66,8 +66,10 @@
 	<include file="ViewsMiddleList967.xml"/>
 	<!-- 83 -->
 	<include file="ViewsModernList.xml"/>
-	<!-- 85 -->
+	<!-- 185 -->
 	<include file="ViewsAeon.xml"/>
+	<!-- 185 -->
+	<include file="ViewsFanart.xml"/>
 	<!-- 5802 -->
 	<include file="ViewsGames.xml"/>
 	<include file="ViewsLiveTV.xml"/>
@@ -1842,6 +1844,123 @@
 			<animation effect="fade" start="100" end="75" time="0" condition="!Control.Hasfocus(5201)">conditional</animation>
 			<visible>Skin.HasSetting(touchscreen) + !Control.HasFocus(9920)</visible>
 		</control>
+	<control type="group">
+	<left>35</left>
+	<top>140</top>
+	<animation effect="slide" end="1650,0" time="500" tween="sine" easing="inout" condition="String.IsEqual(skin.string(touchscreen),topright)">Conditional</animation>
+	<animation effect="slide" end="0,665" time="500" tween="sine" easing="inout" condition="String.IsEqual(skin.string(touchscreen),bottomleft)">Conditional</animation>
+	<animation effect="slide" end="1650,665" time="500" tween="sine" easing="inout" condition="String.IsEqual(skin.string(touchscreen),bottomright)">Conditional</animation>
+	<visible>Skin.HasSetting(touchscreen)</visible>
+	<control type="image">
+	<left>0</left>
+	<top>0</top>
+	<width>200</width>
+	<height>193</height>
+	<texture>touchscreen_navigator.png</texture>
+	</control>
+	<!-- botao canto esquerdo acima -->
+	<control type="button" id="5201">
+	<left>5</left>
+	<top>5</top>
+	<width>45</width>
+	<height>45</height>
+	<onclick>Skin.Reset(touchscreen)</onclick>
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	</control>
+	<!-- botao canto direito acima -->
+	<control type="button" id="5202">
+	<left>150</left>
+	<top>5</top>
+	<width>45</width>
+	<height>45</height>
+	<onclick>Skin.SetString(touchscreen,topright)</onclick>
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	</control>
+	<!-- botao canto esquerdo abaixo -->
+	<control type="button" id="5203">
+	<left>5</left>
+	<top>142</top>
+	<width>45</width>
+	<height>45</height>
+	<onclick>Skin.SetString(touchscreen,bottomleft)</onclick>
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	</control>
+	<!-- botao canto direito abaixo -->
+	<control type="button" id="5204">
+	<left>150</left>
+	<top>142</top>
+	<width>45</width>
+	<height>45</height>
+	<onclick>Skin.SetString(touchscreen,bottomright)</onclick>
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	</control>
+	<!-- botao voltar -->
+	<control type="button" id="5205">
+	<left>78</left>
+	<top>78</top>
+	<width>45</width>
+	<height>37</height>
+	<onclick>Back</onclick>
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	</control>
+	<!-- botao para cima -->
+	<control type="button" id="5206">
+	<left>61</left>
+	<top>0</top>
+	<width>78</width>
+	<height>78</height>
+	<onclick condition="Window.IsVisible(home)">SetFocus(9000)</onclick>
+	<onclick condition="![Window.IsVisible(home) | Window.IsVisible(10012) | Window.IsVisible(10013) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10021)]">SetFocus(51)</onclick>
+	<onclick condition="Window.IsVisible(10012) | Window.IsVisible(10013) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10021)">SetFocus(3)</onclick>
+	<onclick>Up</onclick>
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	</control>
+	<!-- botao para baixo -->
+	<control type="button" id="5207">
+	<left>61</left>
+	<top>115</top>
+	<width>78</width>
+	<height>78</height>
+	<onclick condition="Window.IsVisible(home)">SetFocus(9000)</onclick>
+	<onclick condition="![Window.IsVisible(home) | Window.IsVisible(10012) | Window.IsVisible(10013) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10021)]">SetFocus(51)</onclick>
+	<onclick condition="Window.IsVisible(10012) | Window.IsVisible(10013) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10021)">SetFocus(3)</onclick>
+	<onclick>Down</onclick>
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	</control>
+	<!-- botao para esquerda -->
+	<control type="button" id="5208">
+	<left>0</left>
+	<top>57</top>
+	<width>78</width>
+	<height>78</height>
+	<onclick condition="Window.IsVisible(home)">SetFocus(9000)</onclick>
+	<onclick condition="![Window.IsVisible(home) | Window.IsVisible(10012) | Window.IsVisible(10013) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10021)]">SetFocus(51)</onclick>
+	<onclick condition="Window.IsVisible(10012) | Window.IsVisible(10013) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10021)">SetFocus(3)</onclick>
+	<onclick>Left</onclick>
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	</control>
+	<!-- botao para direita -->
+	<control type="button" id="5209">
+	<left>122</left>
+	<top>57</top>
+	<width>78</width>
+	<height>78</height>
+	<onclick condition="Window.IsVisible(home)">SetFocus(9000)</onclick>
+	<onclick condition="![Window.IsVisible(home) | Window.IsVisible(10012) | Window.IsVisible(10013) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10021)]">SetFocus(51)</onclick>
+	<onclick condition="Window.IsVisible(10012) | Window.IsVisible(10013) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10021)">SetFocus(3)</onclick>
+	<onclick>Right</onclick>
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	</control>
+	</control>
 	</include>
 	<!-- ######################################################################### Next Aired ######################################################################### -->
 	<include name="NextAiredThumb">
@@ -2025,7 +2144,6 @@
 		<align>left</align>
 		<textcolor>$VAR[value_headercolor]</textcolor>
 		<font>Font_17</font>
-		<scroll>true</scroll>
 	</include>
 	<include name="Dialogs_Label2">
 		<left>1155</left>

@@ -8,13 +8,12 @@
     <onload condition="Skin.HasSetting(custommode)">Skin.Reset(custommode)</onload>
     <onload condition="Skin.HasSetting(submode)">Skin.Reset(submode)</onload>
 	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True)</onload>
-<onload>SetProperty(NINE_manual_set,blur,home)</onload>
 	<onload>SetProperty(FIVE_daemon_set,blur,home)</onload>
-	<onload>SetProperty(SEVEN_daemon_set,pixelate,home)</onload>
-	<onload>Skin.SetString(colorbox_quality,5)</onload>
-	<onload>Skin.SetString(colorbox_blursize,5)</onload>
-	<onload>Skin.SetString(colorbox_bitsize,2)</onload>
-	<onload>Skin.SetString(colorbox_pixelsize,3)</onload>
+	<onload>SetProperty(cfa_daemon_set,blur,home)</onload>
+	<onload>Skin.SetString(colorbox_quality,8)</onload>
+	<onload>Skin.SetString(colorbox_blursize,2)</onload>
+	<onload>Skin.SetString(colorbox_bitsize,1)</onload>
+	<onload>Skin.SetString(colorbox_pixelsize,12)</onload>
 	<onload>Skin.SetString(colorbox_black,000000)</onload>
 	<onload>Skin.SetString(colorbox_white,ffffff)</onload>
     <onload condition="Skin.HasSetting(startplay)">PlayMedia($INFO[Skin.String(startupplaylist)])</onload>

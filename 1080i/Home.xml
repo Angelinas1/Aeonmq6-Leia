@@ -9,8 +9,6 @@
 	<onload condition="Skin.HasSetting(rcbgames)">RunScript(script.games.rom.collection.browser,limit=12)</onload>
 	<onload condition="Skin.HasSetting(rcbgames)">Skin.Reset(rcbgames)</onload>
 	<onload condition="Skin.HasSetting(kioskcode)">Skin.Reset(codestep)</onload>
-	<onload>SetProperty(NINE_manual_set,"var=blursize,set=5",home)</onload>
-	<onload>SetProperty(SEVEN_manual_set,"var=pixelsize,set=3",home)</onload>
 	<onload>Skin.Reset(playlists)</onload>
 	<onload>Skin.Reset(windowbg)</onload>
 	<onload>SetProperty(SkinHelper.WidgetContainer,510)</onload>
@@ -18,6 +16,7 @@
 	<onload>Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableExtraPoster)</onload>
 	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,10)</onload>
 	<onload>Skin.SetString(SkinHelper.WallImagesDelay, 10)</onload>
 	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.EnableWallImages, 20)</onload>

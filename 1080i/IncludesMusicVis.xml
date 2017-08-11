@@ -125,7 +125,7 @@
                 <top>-8</top>
                 <width>540</width>
                 <height>360</height>
-                <texture fallback="DefaultAudio.png" background="true">http://localhost:52307/getthumb&amp;title=$INFO[MusicPlayer.Artist]&amp;fallback=special://skin/media/blanc.png</texture>
+                <texture fallback="DefaultAudio.png" background="true">http://localhost:52307/getthumb&amp;title=$ESCINFO[MusicPlayer.Artist]&amp;fallback=special://skin/media/blanc.png</texture>
                 <fadetime>FanartCrossFadeTime</fadetime>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>!Pvr.IsPlayingRadio + !Player.IsInternetStream + String.IsEmpty(Control.GetLabel(15649))+String.IsEmpty(Control.GetLabel(15650))</visible>
@@ -396,7 +396,7 @@
                 <width>450</width>
                 <height>336</height>
                 <fadetime>200</fadetime>
-                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">http://localhost:52307/getthumb&amp;title=$INFO[MusicPlayer.Artist]&amp;fallback=special://skin/media/blanc.png</texture>
+                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">http://localhost:52307/getthumb&amp;title=$ESCINFO[MusicPlayer.Artist]&amp;fallback=special://skin/media/blanc.png</texture>
                 <aspectratio align="left">keep</aspectratio>
                 <visible>!Pvr.IsPlayingRadio+String.IsEqual(Control.GetLabel(5703),DefaultAudio.png)</visible>
             </control>
@@ -1766,7 +1766,7 @@
                 <control type="image">
 				<animation effect="slide" start="0,0" end="0,350" time="4600" delay="3500" tween="quadratic" easing="out" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))">Visible</animation>
 				<animation effect="slide" start="0,350" end="0,0" time="4600" delay="3500" tween="quadratic" easing="out" reversible="false" condition="String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))">Hidden</animation>
-				<animation effect="fade" start="100" end="0" time="3600" tween="quadratic" easing="out" condition="String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="3600" tween="quadratic" easing="out" condition="String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))">Conditional</animation>
 				<animation effect="rotate" end="-360" center="auto" time="16000" delay="3500" loop="true" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))+Integer.IsGreater(MusicPlayer.Time,13)">Conditional</animation>
                     <left>10</left>
                     <top>0</top>
@@ -1774,7 +1774,6 @@
                     <height>700</height>
                     <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.DiscArt)]</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))</visible>
                 </control>
             <control type="image" id="7973">
                 <width>720</width>
@@ -1874,7 +1873,7 @@
 		<content>
 			<item id="2">
 				<label>2.</label>
-				<icon>http://localhost:52307/getthumb&amp;title=$INFO[MusicPlayer.Title]</icon>
+				<icon>http://localhost:52307/getthumb&amp;title=$ESCINFO[MusicPlayer.Title]</icon>
 				<property name="source">SkinHelper-WebThumb</property>
 				<onclick>noop</onclick>
 				<visible>String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Thumb))</visible>
@@ -2245,7 +2244,7 @@
 	<visible>Skin.HasSetting(nolyrics_on)</visible>
 	<left>1000</left>
 	<top>520</top>
-				<control type="image" id="7977">
+				<control type="image">
 					<animation effect="fade" start="0" end="100" time="3600" delay="1500" tween="linear" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Banner))">Visible</animation>
 					<animation effect="fade" start="100" end="0" time="1600" delay="1500" tween="linear" reversible="false" condition="String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Banner))">Hidden</animation>
 					<left>0</left>
