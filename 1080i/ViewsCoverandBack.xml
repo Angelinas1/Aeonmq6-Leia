@@ -197,7 +197,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(4).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(4).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -263,7 +263,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(3).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(3).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -327,7 +327,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(2).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(2).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -391,7 +391,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(1).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(1).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -460,7 +460,7 @@
                         </control>
                         <control type="image">
                             <include>WatchedCoverFlow</include>
-                            <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png)</visible>
+                            <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png)</visible>
                         </control>
                     </control>
                     <control type="group">
@@ -525,7 +525,7 @@
                         </control>
                         <control type="image">
                             <include>WatchedCoverFlow</include>
-                            <visible>String.IsEqual(ListItem(-1).Overlay,OverlayWatched.png)</visible>
+                            <visible>String.IsEqual(ListItem(-1).Overlay,overlaywatched.png)</visible>
                         </control>
                     </control>
                 </control>
@@ -598,7 +598,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(5).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(5).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -664,7 +664,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(4).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(4).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -728,7 +728,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(3).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(3).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -792,7 +792,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(2).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(2).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -861,7 +861,7 @@
                         </control>
                         <control type="image">
                             <include>WatchedCoverFlow</include>
-                            <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png)</visible>
+                            <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png)</visible>
                         </control>
                     </control>
                     <control type="group">
@@ -926,7 +926,7 @@
                         </control>
                         <control type="image">
                             <include>WatchedCoverFlow</include>
-                            <visible>String.IsEqual(ListItem(1).Overlay,OverlayWatched.png)</visible>
+                            <visible>String.IsEqual(ListItem(1).Overlay,overlaywatched.png)</visible>
                         </control>
                     </control>
                 </control>
@@ -997,7 +997,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(4).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(4).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -1061,7 +1061,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(3).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(3).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -1125,7 +1125,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(2).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(2).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -1189,7 +1189,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(1).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(1).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -1341,7 +1341,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedCoverFlow</include>
-                        <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png)</visible>
+                        <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png)</visible>
                     </control>
                 </control>
                 <control type="group">

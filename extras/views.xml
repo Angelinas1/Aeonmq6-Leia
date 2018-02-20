@@ -28,6 +28,7 @@
     <view id="PVR AeonNox" value="5801" languageid="31798" type="tvchannels,tvrecordings" />
     <view id="MiddleList967" value="83" languageid="31823" type="movies,setmovies,tvshows,season" />
     <view id="Modern View" value="84" languageid="31845" type="movies,setmovies" />
-	<view id="AEON" value="185" languageid="31848" type="movies,setmovies,tvshows,season,musicvideos,seasons,sets,artists" />
+	<view id="AEON" value="185" languageid="31848" type="movies,setmovies,tvshows,,musicvideos,seasons,sets,artists" />
 	<view id="AEON MUSIC" value="186" languageid="31848" type="artists,albums" />
+	<view id="FANART" value="187" languageid="32032" type="movies,tvshows,episodes" />
 </views>

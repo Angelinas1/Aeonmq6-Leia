@@ -65,8 +65,8 @@
                             <width>885</width>
                             <height>190</height>
                             <bordersize>8</bordersize>
-                            <texture background="true">$VAR[value_banner]</texture>
-                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultAddonVideo.png" background="true">$VAR[value_banner]</texture>
+                            <aspectratio>scale</aspectratio>
                         </control>
                         <control type="image">
                             <left>819</left>
@@ -75,7 +75,7 @@
                             <height>60</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </control>
                 </itemlayout>
@@ -101,8 +101,8 @@
                         <width>885</width>
                         <height>190</height>
                         <bordersize>8</bordersize>
-                        <texture background="true">$VAR[value_banner]</texture>
-                        <aspectratio>keep</aspectratio>
+                        <texture fallback="DefaultAddonVideo.png" background="true">$VAR[value_banner]</texture>
+                        <aspectratio>scale</aspectratio>
                         <animation effect="zoom" center="auto" start="90" end="110" time="600" tween="back" easing="out" reversible="false" condition="Skin.HasSetting(bannerzoom)">Focus</animation>
                     </control>
                     <control type="image">
@@ -113,7 +113,7 @@
                         <texture>$VAR[value_watchedstyle]</texture>
                         <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
                         <animation effect="zoom" center="435,90" start="90" end="110" time="600" tween="back" easing="out" reversible="false" condition="Skin.HasSetting(bannerzoom)">Focus</animation>
-                        <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                     </control>
                 </focusedlayout>
             </control>

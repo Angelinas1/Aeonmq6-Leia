@@ -8,14 +8,17 @@
     <onload condition="Skin.HasSetting(custommode)">Skin.Reset(custommode)</onload>
     <onload condition="Skin.HasSetting(submode)">Skin.Reset(submode)</onload>
 	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True)</onload>
-	<onload>SetProperty(FIVE_daemon_set,blur,home)</onload>
+	<onload>SetProperty(FIVE_daemon_set,$INFO[Skin.String(FIVE_daemon_set)],home)</onload>
 	<onload>SetProperty(cfa_daemon_set,blur,home)</onload>
-	<onload>Skin.SetString(colorbox_quality,8)</onload>
-	<onload>Skin.SetString(colorbox_blursize,2)</onload>
-	<onload>Skin.SetString(colorbox_bitsize,1)</onload>
-	<onload>Skin.SetString(colorbox_pixelsize,12)</onload>
-	<onload>Skin.SetString(colorbox_black,000000)</onload>
-	<onload>Skin.SetString(colorbox_white,ffffff)</onload>
+    <onload>Skin.SetString(colorbox_main,main:hls*0.0;0.1;0.0)</onload>
+    <onload>Skin.SetString(colorbox_comp,main:hls*0.5;0.2;0.4)</onload>
+
+	
+<onload condition="System.HasAddon(script.colorbox)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|
+var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|
+var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|
+var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|
+var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onload>
     <onload condition="Skin.HasSetting(startplay)">PlayMedia($INFO[Skin.String(startupplaylist)])</onload>
     <onload condition="System.HasAddon(script.randomandlastitems) + [String.Contains(skin.string(menu1.master),vpl) | String.Contains(skin.string(menu1.master),apl)]">RunScript(script.randomandlastitems,limit=1,playlist=$INFO[Skin.String(menu1.path)],property=Widget1)</onload>
     <onload condition="System.HasAddon(script.randomandlastitems) + [String.Contains(skin.string(menu2.master),vpl) | String.Contains(skin.string(menu2.master),apl)]">RunScript(script.randomandlastitems,limit=1,playlist=$INFO[Skin.String(menu2.path)],property=Widget2)</onload>

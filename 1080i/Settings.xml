@@ -267,7 +267,7 @@
 				<content>
 					<item id="105">
 						<!-- Aparencia -->
-						<label>31351</label>
+						<label>$LOCALIZE[14206]</label>
 						<label2>31352</label2>
 						<property name="MainLabel">31376</property>
 						<property name="SubLabel">31377</property>
@@ -336,6 +336,14 @@
 						<icon>special://skin/backgrounds/extras/settings_profiles.jpg</icon>
 						<onclick>ActivateWindow(profiles)</onclick>
 					</item>
+					<item id="107">
+						<label>$LOCALIZE[15016]</label>
+						<label2>$LOCALIZE[10022]</label2>
+						<property name="MainLabel">31394</property>
+						<property name="SubLabel">31395</property>
+						<icon>special://skin/backgrounds/games.jpg</icon>
+						<onclick>ActivateWindow(GameSettings)</onclick>
+					</item>
 					<item id="104">
 						<!-- Opcoes da skin -->
 						<label>31371</label>
@@ -346,11 +354,11 @@
 						<onclick>ActivateWindow(skinsettings)</onclick>
 					</item>
 					<item id="110">
-					<label>LibreELEC</label>
-					<label2>General Settings for LibreELEC</label2>
-					<onclick>RunAddon(service.libreelec.settings)</onclick>
-					<icon>special://skin/backgrounds/extras/libreelec.jpg</icon>
-					<visible>System.HasAddon(service.libreelec.settings)</visible>
+						<label>LibreELEC</label>
+						<label2>General Settings for LibreELEC</label2>
+						<onclick>RunAddon(service.libreelec.settings)</onclick>
+						<icon>special://skin/backgrounds/extras/libreelec.jpg</icon>
+						<visible>System.HasAddon(service.libreelec.settings)</visible>
 				</item>
 				</content>
 			</control>

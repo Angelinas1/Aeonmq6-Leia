@@ -5406,6 +5406,32 @@
 				<onclick>Skin.SetString($INFO[skin.string(custom_label)])</onclick>
 				<visible>!String.IsEqual(Container(9000).ListItem.Property(id),virtual)</visible>
 			</control>
+			<control type="button" id="120">
+				<!-- Button Action -->
+				<include>CustomMenuButton</include>
+				<label>Set Action</label>
+				<onleft>9000</onleft>
+				<onclick>SetFocus(121)</onclick>
+				<enable>![Control.HasFocus(121)|Control.HasFocus(122)]</enable>
+			</control>
+			<control type="button" id="121">
+				<!-- Button Action -->
+				<include>CustomMenuButton</include>
+				<label>  - Set Action (From menu)</label>
+				<onup>117</onup>
+				<onleft>9000</onleft>
+				<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=$INFO[skin.string(custom_action)],header=Set Button for Action)</onclick>
+				<enable>Control.HasFocus(120)|Control.HasFocus(121)|Control.HasFocus(122)</enable>
+			</control>
+			<control type="button" id="122">
+				<!-- Button Action -->
+				<include>CustomMenuButton</include>
+				<label>  - Set Action (Mannual set Action)</label>
+				<ondown>128</ondown>
+				<onleft>9000</onleft>
+				<onclick>Skin.SetString($INFO[skin.string(custom_action)])</onclick>
+				<enable>Control.HasFocus(120)|Control.HasFocus(121)|Control.HasFocus(122)</enable>
+			</control>
 	<!-- Definir composicao global -->
 	<control type="radiobutton" id="128">
 	<include>CustomMenuRadioButton</include>	
@@ -5645,7 +5671,9 @@
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),weather/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.coloured/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.coloured/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.3d-coloured/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.3d-coloured/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.default/)</onclick>
-				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.default/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.white/)</onclick>
+				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.default/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.animated/)</onclick>
+				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.hd.animated/)</onclick>
+				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.hd.animated/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.white/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.white/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.3d-white/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.3d-white/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.flat/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.flat/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.outline/)</onclick>

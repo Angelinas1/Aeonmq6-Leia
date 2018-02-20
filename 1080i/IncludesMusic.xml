@@ -10,7 +10,7 @@
         <onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
         <onunload>ClearProperty(Banner,home)</onunload>
         <allowoverlay>no</allowoverlay>
-        <views>51,52,54,55,56,57,58,59,62,78,53,185,186</views>
+        <views>51,52,54,55,56,57,58,59,62,63,78,53,185,186</views>
         <controls>
             <control type="multiimage">
                 <!-- Multi Fanart -->
@@ -100,13 +100,13 @@
                     <animation effect="fade" start="0" end="100" time="150" delay="3000">Hidden</animation>
                     <visible>Window.IsVisible(6626)</visible>
                 </control>
-                <control type="group">
-                    <animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
-                    <animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
-                    <animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
-                    <animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">Hidden</animation>
-                    <animation effect="slide" end="0,30" time="500" tween="sine" easing="out" condition="Skin.HasSetting(musicinfobar) | Skin.HasSetting(musicdate)">Conditional</animation>
-                    <visible>![String.IsEqual(Container.Viewmode,WIDE) | String.IsEqual(Container.Viewmode,LOW LIST) + [Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] | ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsVisible(6621)]</visible>
+		<control type="group">
+			<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
+			<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
+			<animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
+			<animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">Hidden</animation>
+			<animation effect="slide" end="0,30" time="500" tween="sine" easing="out" condition="Skin.HasSetting(musicinfobar) | Skin.HasSetting(musicdate)">Conditional</animation>
+			<visible>![String.IsEqual(Container.Viewmode,WIDE) | String.IsEqual(Container.Viewmode,LOW LIST) + [Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] | ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsVisible(6621)]</visible>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
@@ -134,6 +134,7 @@
 						<width>540</width>
 						<aligny>center</aligny>
 						<label>[COLOR=$VAR[value_headercolor]]$INFO[ListItem.Duration,,  -  ][/COLOR]$INFO[ListItem.Label]</label>
+						<include>listcolor</include>
 						<font>Font_18A</font>
 					</control>
 				</itemlayout>
@@ -151,6 +152,7 @@
 						<width>540</width>
 						<aligny>center</aligny>
 						<label>[COLOR=$VAR[value_headercolor]]$INFO[ListItem.Duration,,  -  ][/COLOR]$INFO[ListItem.Label]</label>
+						<include>listcolorfocus</include>
 						<font>Font_18A</font>
 					</control>
 					<control type="label">
@@ -160,11 +162,123 @@
 						<aligny>center</aligny>
 						<label>[COLOR=$VAR[value_headercolor]]$INFO[ListItem.Duration,,  -  ][/COLOR]$INFO[ListItem.Label]</label>
 						<font>Font_18A</font>
+						<include>listcolorfocus</include>
 						<visible>Control.HasFocus(777)</visible>
 					</control>
 				</focusedlayout>
 				</control>
-                   
+ 			<control type="list" id="5778">
+				<viewtype label="List">List Info</viewtype>
+				<top>120</top>
+				<left>0</left>
+				<width>1675</width>
+				<height>165</height>
+				<onleft>9900</onleft>
+				<onright>51</onright>
+				<orientation>horizontal</orientation>
+				<scrolltime>400</scrolltime>
+				<visible>Container.Content(artists)+Control.IsVisible(51)</visible>
+				<focusposition>3</focusposition>
+                    <itemlayout height="127" width="186">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>135</width>
+                            <height>135</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="127" width="186">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>135</width>
+                            <height>135</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(5778)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>135</width>
+                            <height>135</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(5778)</visible>
+                        </control>
+                    </focusedlayout>
+			<content>
+			<item>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.0.track)]</label>
+				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.0.trackthumb)]</icon>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.0.musicvideos)])</onclick>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.0.trackthumb))</visible>
+			</item>
+			<item>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.1.track)]</label>
+				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.1.trackthumb)]</icon>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.1.musicvideos)])</onclick>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.1.trackthumb))</visible>
+			</item>
+			<item>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.2.track)]</label>
+				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.2.trackthumb)]</icon>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.2.musicvideos)])</onclick>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.2.trackthumb))</visible>
+			</item>
+			<item>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.3.track)]</label>
+				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.3.trackthumb)]</icon>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.3.musicvideos)])</onclick>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.3.trackthumb))</visible>
+			</item>
+			<item>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.4.track)]</label>
+				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.4.trackthumb)]</icon>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.4.musicvideos)])</onclick>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.4.trackthumb))</visible>
+			</item>
+			<item>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.5.track)]</label>
+				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.5.trackthumb)]</icon>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.5.musicvideos)])</onclick>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.5.trackthumb))</visible>
+			</item>
+			<item>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.6.track)]</label>
+				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.6.trackthumb)]</icon>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.6.musicvideos)])</onclick>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.6.trackthumb))</visible>
+			</item>
+			<item>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.7.track)]</label>
+				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.7.trackthumb)]</icon>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.7.musicvideos)])</onclick>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.7.trackthumb))</visible>
+			</item>
+			<item>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.8.track)]</label>
+				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.8.trackthumb)]</icon>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.8.musicvideos)])</onclick>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.8.trackthumb))</visible>
+			</item>
+			</content>
+		</control>
 				   <control type="image">
                         <left>0</left>
                         <top>-30</top>
@@ -326,6 +440,8 @@
                     <include condition="Skin.HasSetting(viewwide_music)">ViewWide</include>
                     <!-- 59 -->
                     <include condition="Skin.HasSetting(viewpanel_music)">ViewPanel</include>
+                    <!-- 62 -->
+                    <include condition="Skin.HasSetting(viewshelf_music)">ViewShelf</include>
                     <!-- 62 -->
                     <include condition="Skin.HasSetting(viewcoverflowback_music)">ViewCoverFlowBackAudio</include>
                     <!-- 78 -->

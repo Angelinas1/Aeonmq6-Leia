@@ -642,7 +642,7 @@
                     <width>372</width>
                     <height>549</height>
                     <aspectratio align="center" aligny="bottom">stretch</aspectratio>
-                    <texture diffuse="thumb_3dwall_mask2.png" background="true">$INFO[ListItem.Icon]</texture>
+                    <texture diffuse="thumb_3dwall_mask2.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                     <animation type="WindowOpen">
                         <effect type="fade" start="0" end="100" time="500" delay="500" />
                         <effect type="zoom" center="auto" start="80" end="100" time="500" delay="1000" />
@@ -661,7 +661,7 @@
                     <animation type="Visible">
                         <effect type="fade" start="0" end="100" time="500" delay="100" />
                     </animation>
-                    <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                    <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                 </control>
                 <control type="image">
                     <left>615</left>

@@ -93,7 +93,7 @@
                     <top>780</top>
                     <width>510</width>
                     <height>171</height>
-                    <texture background="true">http://localhost:52307/getpvrthumb&amp;title=$INFO[ListItem.Title]&amp;type=clearart</texture>
+                    <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearArt)]</texture>
                     <fadetime>FanartCrossFadeTime</fadetime>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>String.IsEmpty(ListItem.Art(clearart))</visible>
@@ -216,7 +216,7 @@
                             <left>123</left>
                             <top>138</top>
                             <width>786</width>
-                            <height>543</height>
+                            <height>553</height>
                             <aspectratio align="left">keep</aspectratio>
                             <texture>Case/levo.png</texture>
                             <animation effect="slide" end="-399,0" time="0" condition="false">Conditional</animation>
@@ -385,7 +385,7 @@
                             <height>38</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </itemlayout>
                     <itemlayout condition="!Skin.HasSetting(bannermodernlistvideo) + !Skin.HasSetting(slimmodernlistvideo)" height="45">
@@ -424,7 +424,7 @@
                             <height>38</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </itemlayout>
                     <itemlayout condition="!Skin.HasSetting(bannermodernlistvideo) + Skin.HasSetting(slimmodernlistvideo)" height="40">
@@ -463,7 +463,7 @@
                             <height>42</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout condition="!Skin.HasSetting(bannermodernlistvideo) + Skin.HasSetting(slimmodernlistvideo)" height="45">
@@ -502,7 +502,7 @@
                             <height>45</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                     <focusedlayout condition="!Skin.HasSetting(bannermodernlistvideo) + !Skin.HasSetting(slimmodernlistvideo)" height="75">
@@ -563,7 +563,7 @@
                             <height>45</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                     <focusedlayout condition="Skin.HasSetting(bannermodernlistvideo)" height="180">
@@ -582,7 +582,7 @@
                             <height>45</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                 </control>

@@ -404,6 +404,10 @@
 					<visible>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</visible>
 					<label>Forced view for movies inside set: $INFO[Skin.String(SkinHelper.ForcedViews.setmovies)]</label>
 				</control>
+
+
+
+
 			</control>
 			<control type="grouplist" id="9201">
 				<!-- Opcoes da Vista -->
@@ -1522,11 +1526,11 @@
 			</control>
 			<control type="grouplist" id="9401">
 				<!-- Artwork -->
-				<animation effect="slide" start="0,0" end="0,525" time="600" tween="sine" easing="inout" condition="Control.HasFocus(9400) | ControlGroup(9401).HasFocus">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,725" time="600" tween="sine" easing="inout" condition="Control.HasFocus(9400) | ControlGroup(9401).HasFocus">Conditional</animation>
 				<left>1442</left>
-				<top>-450</top>
+				<top>-650</top>
 				<width>477</width>
-				<height>450</height>
+				<height>750</height>
 				<onup>9400</onup>
 				<ondown>9401</ondown>
 				<onleft>9300</onleft>
@@ -1854,6 +1858,267 @@
 					<onclick>Skin.SetPath(CustomVideoGenreIcon)</onclick>
 					<visible>Container.Content(genres) + Skin.HasSetting(externalvideogenreicon)</visible>
 				</control>
+		<control type="button" id="9459">
+			<include>TopMenuButton</include>
+			<label>Focus effect</label>
+			<label2>$INFO[Skin.String(FIVE_daemon_set)]</label2>
+			<onfocus>SetProperty(FIVE_daemon_set,$INFO[Skin.String(FIVE_daemon_set)],home)</onfocus>
+			<onfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onfocus>
+			<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=FIVE_daemon_set,header=ColorBox Chooser,simple to set your favorite Effect)</onclick>
+			<onunfocus>SetProperty(FIVE_daemon_set,$INFO[Skin.String(FIVE_daemon_set)],home)</onunfocus>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+		</control>
+<!--		<control type="button" id="9460">
+			<description>widget</description>
+			<include>TopMenuButton</include>
+			<label>Info effect</label>
+			<label2>$INFO[Window(home).Property(cfa_daemon_set),[UPPERCASE],[/UPPERCASE]]</label2>
+			<onclick>SetProperty(RefreshItem,Info effect,home)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,19)</onclick>
+			<onclick>SetProperty(Dialog.1.Label,Blur)</onclick>
+			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(cfa_daemon_set,blur))</onclick>
+			<onclick>SetProperty(Dialog.2.Label,Pixelate)</onclick>
+			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(cfa_daemon_set,pixelate-shiftblock,home))</onclick>
+			<onclick>SetProperty(Dialog.3.Label,Posterize)</onclick>
+			<onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(cfa_daemon_set,posterize,home))</onclick>
+			<onclick>SetProperty(Dialog.4.Label,Distort)</onclick>
+			<onclick>SetProperty(Dialog.4.BuiltIn,SetProperty(cfa_daemon_set,distort,home))</onclick>
+			<onclick>SetProperty(Dialog.5.Label,Twotone)</onclick>
+			<onclick>SetProperty(Dialog.5.BuiltIn,SetProperty(cfa_daemon_set,twotone,home))</onclick>
+			<onclick>SetProperty(Dialog.6.Label,Shiftblock)</onclick>
+			<onclick>SetProperty(Dialog.6.BuiltIn,SetProperty(cfa_daemon_set,shiftblock,home))</onclick>
+			<onclick>SetProperty(Dialog.7.Label,Pixelnone)</onclick>
+			<onclick>SetProperty(Dialog.7.BuiltIn,SetProperty(cfa_daemon_set,pixelnone,home))</onclick>
+			<onclick>SetProperty(Dialog.8.Label,Pixelwaves)</onclick>
+			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(cfa_daemon_set,pixelwaves,home))</onclick>
+			<onclick>SetProperty(Dialog.9.Label,Pixelrandom)</onclick>
+			<onclick>SetProperty(Dialog.9.BuiltIn,SetProperty(cfa_daemon_set,pixelrandom,home))</onclick>
+			<onclick>SetProperty(Dialog.10.Label,Pixelfile)</onclick>
+			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(cfa_daemon_set,pixelfile,home))</onclick>
+			<onclick>SetProperty(Dialog.11.Label,Pixelfedges)</onclick>
+			<onclick>SetProperty(Dialog.11.BuiltIn,SetProperty(cfa_daemon_set,pixelfedges,home))</onclick>
+			<onclick>SetProperty(Dialog.12.Label,Pixeledges)</onclick>
+			<onclick>SetProperty(Dialog.12.BuiltIn,SetProperty(cfa_daemon_set,pixeledges,home))</onclick>
+			<onclick>SetProperty(Dialog.13.Label,Fakelight)</onclick>
+			<onclick>SetProperty(Dialog.13.BuiltIn,SetProperty(cfa_daemon_set,fakelight,home))</onclick>
+			<onclick>SetProperty(Dialog.14.Label,Dataglitch)</onclick>
+			<onclick>SetProperty(Dialog.14.BuiltIn,SetProperty(cfa_daemon_set,dataglitch,home))</onclick>
+			<onclick>SetProperty(Dialog.15.Label,Halftone)</onclick>
+			<onclick>SetProperty(Dialog.15.BuiltIn,SetProperty(cfa_daemon_set,halftone,home))</onclick>
+			<onclick>SetProperty(Dialog.16.Label,Dither)</onclick>
+			<onclick>SetProperty(Dialog.16.BuiltIn,SetProperty(cfa_daemon_set,dither,home))</onclick>
+			<onclick>SetProperty(Dialog.17.Label,Desaturate)</onclick>
+			<onclick>SetProperty(Dialog.17.BuiltIn,SetProperty(cfa_daemon_set,desaturate,home))</onclick>
+			<onclick>SetProperty(Dialog.18.Label,Sharpness)</onclick>
+			<onclick>SetProperty(Dialog.18.BuiltIn,SetProperty(cfa_daemon_set,sharpness,home))</onclick>
+			<onclick>SetProperty(Dialog.19.Label,None)</onclick>
+			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(cfa_daemon_set,,home))</onclick>
+			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
+			<onclick>AlarmClock(nms1,SetProperty(cfa_daemon_fire,True,home),00:01,true)</onclick>
+		</control> -->
+		<control type="button" id="9461">
+			<include>TopMenuButton</include>
+			<label>Colorbox quality</label>
+			<label2>$INFO[Skin.String(colorbox_quality)]</label2>
+			<onclick>SetProperty(RefreshItem,quality,home)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,10)</onclick>
+			<onclick>SetProperty(Dialog.1.Label,1)</onclick>
+			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=1",home))</onclick>
+			<onclick>SetProperty(Dialog.2.Label,2)</onclick>
+			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=2",home))</onclick>
+			<onclick>SetProperty(Dialog.3.Label,3)</onclick>
+			<onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=3",home))</onclick>
+			<onclick>SetProperty(Dialog.4.Label,4)</onclick>
+			<onclick>SetProperty(Dialog.4.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=4",home))</onclick>
+			<onclick>SetProperty(Dialog.5.Label,5)</onclick>
+			<onclick>SetProperty(Dialog.5.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=5",home))</onclick>
+			<onclick>SetProperty(Dialog.6.Label,6)</onclick>
+			<onclick>SetProperty(Dialog.6.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=6",home))</onclick>
+			<onclick>SetProperty(Dialog.7.Label,7)</onclick>
+			<onclick>SetProperty(Dialog.7.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=7",home))</onclick>
+			<onclick>SetProperty(Dialog.8.Label,8)</onclick>
+			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=8",home))</onclick>
+			<onclick>SetProperty(Dialog.9.Label,9)</onclick>
+			<onclick>SetProperty(Dialog.9.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=9",home))</onclick>
+			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
+			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=10",home))</onclick>
+			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Quality Colorbox)</onclick>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+		</control>
+		<control type="button" id="9462">
+			<include>TopMenuButton</include>
+			<label>Blur size</label>
+			<label2>$INFO[Skin.String(colorbox_blursize)]</label2>
+			<onclick>SetProperty(RefreshItem,blursize,home)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,10)</onclick>
+			<onclick>SetProperty(Dialog.1.Label,1)</onclick>
+			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=1",home))</onclick>
+			<onclick>SetProperty(Dialog.2.Label,2)</onclick>
+			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=2",home))</onclick>
+			<onclick>SetProperty(Dialog.3.Label,3)</onclick>
+			<onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=3",home))</onclick>
+			<onclick>SetProperty(Dialog.4.Label,4)</onclick>
+			<onclick>SetProperty(Dialog.4.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=4",home))</onclick>
+			<onclick>SetProperty(Dialog.5.Label,5)</onclick>
+			<onclick>SetProperty(Dialog.5.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=5",home))</onclick>
+			<onclick>SetProperty(Dialog.6.Label,6)</onclick>
+			<onclick>SetProperty(Dialog.6.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=6",home))</onclick>
+			<onclick>SetProperty(Dialog.7.Label,7)</onclick>
+			<onclick>SetProperty(Dialog.7.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=7",home))</onclick>
+			<onclick>SetProperty(Dialog.8.Label,8)</onclick>
+			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=8",home))</onclick>
+			<onclick>SetProperty(Dialog.9.Label,9)</onclick>
+			<onclick>SetProperty(Dialog.9.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=9",home))</onclick>
+			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
+			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=10",home))</onclick>
+			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),blur) | String.IsEqual(Window(home).Property(FIVE_daemon_set),blur)</visible>
+		</control>
+		<control type="button" id="9463">
+			<include>TopMenuButton</include>
+			<label>Bit size</label>
+			<label2>$INFO[Skin.String(colorbox_bitsize)]</label2>
+			<onclick>SetProperty(RefreshItem,bitsize,home)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,8)</onclick>
+			<onclick>SetProperty(Dialog.1.Label,1)</onclick>
+			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=1",home))</onclick>
+			<onclick>SetProperty(Dialog.2.Label,2)</onclick>
+			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=2",home))</onclick>
+			<onclick>SetProperty(Dialog.3.Label,3)</onclick>
+			<onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=3",home))</onclick>
+			<onclick>SetProperty(Dialog.4.Label,4)</onclick>
+			<onclick>SetProperty(Dialog.4.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=4",home))</onclick>
+			<onclick>SetProperty(Dialog.5.Label,5)</onclick>
+			<onclick>SetProperty(Dialog.5.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=5",home))</onclick>
+			<onclick>SetProperty(Dialog.6.Label,6)</onclick>
+			<onclick>SetProperty(Dialog.6.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=6",home))</onclick>
+			<onclick>SetProperty(Dialog.7.Label,7)</onclick>
+			<onclick>SetProperty(Dialog.7.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=7",home))</onclick>
+			<onclick>SetProperty(Dialog.8.Label,8)</onclick>
+			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=8",home))</onclick>
+			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),posterize) | String.IsEqual(Window(home).Property(FIVE_daemon_set),posterize)</visible>
+		</control>
+		<control type="button" id="9464">
+			<include>TopMenuButton</include>
+			<label>Pixel size</label>
+			<label2>$INFO[Skin.String(colorbox_pixelsize)]</label2>
+			<onclick>SetProperty(RefreshItem,pixelsize,home)</onclick>
+			<onclick>Skin.SetNumeric(colorbox_pixelsize)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]",home)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),pixelate) | String.IsEqual(Window(home).Property(FIVE_daemon_set),pixelate-shiftblock) | String.IsEqual(Window(home).Property(FIVE_daemon_set),pixelate)</visible>
+		</control>
+		<control type="button" id="9465">
+			<include>TopMenuButton</include>
+			<label>black</label>
+			<label2>#$INFO[Skin.String(colorbox_black)]</label2>
+			<onclick>SetProperty(RefreshItem,black,home)</onclick>
+			<onclick>Skin.SetString(colorbox_black)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=black,set=$INFO[Skin.String(colorbox_black)]",home)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
+		</control>
+		<control type="button" id="9466">
+			<include>TopMenuButton</include>
+			<label>Blend size</label>
+			<label2>$INFO[Skin.String(colorbox_blend)]</label2>
+			<onclick>SetProperty(RefreshItem,blend,home)</onclick>
+			<onclick>Skin.SetNumeric(colorbox_blend)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=blend,set=$INFO[Skin.String(colorbox_blend)]",home)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),pixelate) | String.IsEqual(Window(home).Property(FIVE_daemon_set),pixelate-shiftblock) | String.IsEqual(Window(home).Property(FIVE_daemon_set),pixelate)</visible>
+		</control>
+		<control type="button" id="9467">
+			<include>TopMenuButton</include>
+			<label>white</label>
+			<label2>#$INFO[Skin.String(colorbox_white)]</label2>
+			<onclick>SetProperty(RefreshItem,white,home)</onclick>
+			<onclick>Skin.SetString(colorbox_white)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
+		</control>
+		<control type="button" id="9468">
+			<include>TopMenuButton</include>
+			<label>Highlight Color</label>
+			<label2>$INFO[Skin.String(colorbox_comp),[UPPERCASE],[/UPPERCASE]]</label2>
+			<onclick>SetProperty(RefreshItem,comp,home)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,9)</onclick>
+			<onclick>SetProperty(Dialog.1.Label,Comp)</onclick>
+			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=comp",home))</onclick>
+			<onclick>SetProperty(Dialog.2.Label,Bump RGB Comp)</onclick>
+			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=bump",home))</onclick>
+			<onclick>SetProperty(Dialog.3.Label,Hue HSV Main)</onclick>
+			<onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=hue",home))</onclick>
+			<onclick>SetProperty(Dialog.4.Label,Light HLS Main)</onclick>
+			<onclick>SetProperty(Dialog.4.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=light",home))</onclick>
+			<onclick>SetProperty(Dialog.5.Label,Comp Main +HLS)</onclick>
+			<onclick>SetProperty(Dialog.5.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fix",home))</onclick>
+			<onclick>SetProperty(Dialog.6.Label,Fix Both +HLS)</onclick>
+			<onclick>SetProperty(Dialog.6.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixboth",home))</onclick>
+			<onclick>SetProperty(Dialog.7.Label,Fix Comp +HLS)</onclick>
+			<onclick>SetProperty(Dialog.7.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixcomp",home))</onclick>
+			<onclick>SetProperty(Dialog.8.Label,Bump Comp +HLS)</onclick>
+			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixbump",home))</onclick>
+			<onclick>SetProperty(Dialog.9.Label,Fix Main +HLS)</onclick>
+			<onclick>SetProperty(Dialog.9.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixmain",home))</onclick>
+			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Highlight Colorbox)</onclick>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+		</control>
+		<control type="radiobutton" id="9469">
+			<label>Contrast colors</label>
+			<include>TopMenuRadioButton</include>
+			<onclick>Skin.ToggleSetting(Colorbox.contrast)</onclick>
+			<selected>Skin.HasSetting(Colorbox.contrast)</selected>
+			<visible>!String.IsEqual(Window(home).Property(FIVE_daemon_set),None)</visible>
+		</control>
+		<control type="radiobutton" id="9470">
+			<label>Color background</label>
+			<include>TopMenuRadioButton</include>
+			<onclick>Skin.ToggleSetting(Colorbox.background)</onclick>
+			<selected>Skin.HasSetting(Colorbox.background)</selected>
+			<visible>!String.IsEqual(Window(home).Property(FIVE_daemon_set),None)</visible>
+		</control>
+		<control type="radiobutton" id="9480">
+			<label>Color panel</label>
+			<include>TopMenuRadioButton</include>
+			<onclick>Skin.ToggleSetting(Colorbox.header)</onclick>
+			<selected>Skin.HasSetting(Colorbox.header)</selected>
+			<visible>!String.IsEqual(Window(home).Property(FIVE_daemon_set),None)</visible>
+		</control>
+		<control type="button" id="9481">
+			<include>TopMenuButton</include>
+			<label>Desaturation amount</label>
+			<label2>$INFO[Skin.String(colorbox_desat)]</label2>
+			<onclick>SetProperty(RefreshItem,desat,home)</onclick>
+			<onclick>Skin.SetNumeric(colorbox_desat)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=desat,set=$INFO[Skin.String(colorbox_desat)]",home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),desaturate) | String.IsEqual(Window(home).Property(FIVE_daemon_set),desaturate)</visible>
+		</control>
+		<control type="button" id="9482">
+			<include>TopMenuButton</include>
+			<label>Sharpness amount</label>
+			<label2>$INFO[Skin.String(colorbox_sharp)]</label2>
+			<onclick>SetProperty(RefreshItem,sharp,home)</onclick>
+			<onclick>Skin.SetNumeric(colorbox_sharp)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=sharp,set=$INFO[Skin.String(colorbox_sharp)]",home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),sharpness) | String.IsEqual(Window(home).Property(FIVE_daemon_set),sharpness)</visible>
+		</control>
+		<control type="button" id="9483">
+			<label>Reset colorBox Values</label>
+			<include>TopMenuButton</include>
+			<onclick>Skin.SetString(colorbox_quality,2)</onclick>
+			<onclick>Skin.SetString(colorbox_blursize,6)</onclick>
+			<onclick>Skin.SetString(colorbox_bitsize,1)</onclick>
+			<onclick>Skin.SetString(colorbox_pixelsize,2)</onclick>
+			<onclick>Skin.SetString(colorbox_black,000000)</onclick>
+			<onclick>Skin.SetString(colorbox_white,ffffff)</onclick>
+		</control>
 			</control>
 			<include>TopMenu_Bar</include>
 			<control type="button" id="9100">
@@ -2302,7 +2567,7 @@
 				<onup>9400</onup>
 				<ondown>9401</ondown>
 				<onleft>9300</onleft>
-				<onleft>51</onleft>
+				<onright>51</onright>
 				<itemgap>0</itemgap>
 				<focusposition>1</focusposition>
 				<scrolltime>450</scrolltime>

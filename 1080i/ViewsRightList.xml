@@ -16,6 +16,7 @@
             <onload>ClearProperty(Logo,home)</onload>
             <animation effect="fade" time="400">VisibleChange</animation>
             <visible>String.IsEqual(Container.Viewmode,RIGHT LIST)</visible>
+			
             <control type="button" id="9915">
                 <include>InvisibleButton</include>
                 <onup>51</onup>
@@ -62,7 +63,7 @@
                     <top>660</top>
                     <width>450</width>
                     <height>165</height>
-                    <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
+                    <texture background="true">$VAR[value_pvrclearart]</texture>
                     <aspectratio align="right" aligny="bottom">keep</aspectratio>
                     <fadetime>FanartCrossFadeTime</fadetime>
                     <visible>Window.IsActive(musicplaylist) | Window.IsActive(music)</visible>
@@ -291,7 +292,7 @@
                     <left>1380</left>
                     <top>30</top>
                     <width>510</width>
-                    <height>594</height>
+                    <height>574</height>
                     <font>Font_18A</font>
                     <label>$VAR[value_plot]</label>
                     <autoscroll delay="30000" time="3000" repeat="30000">!Skin.HasSetting(noallowscroll)</autoscroll>
@@ -358,6 +359,20 @@
                             </control>
                         </focusedlayout>
                         <content>
+							<item>
+                                <label>TV Show Title</label>
+                                <!-- Director -->
+                                <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.tvshowtitle)]</label2>
+                                <onclick>noop</onclick>
+								<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.tvshowtitle))</visible>
+                            </item>
+							<item>
+                                <label>Total Seasons</label>
+                                <!-- Director -->
+                                <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.totalSeasons)]</label2>
+                                <onclick>noop</onclick>
+								<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.totalSeasons))</visible>
+                            </item>
 							<item>
                                 <label>Director</label>
                                 <!-- Director -->
@@ -629,7 +644,7 @@
                 </control>
                 <control type="group">
                     <left>1380</left>
-                    <top>630</top>
+                    <top>610</top>
                     <visible>Control.HasFocus(9915) +[Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]</visible>
                     <control type="image">
                         <left>15</left>
@@ -712,77 +727,53 @@
                         <content>
                             <item>
                                 <label>TrackList</label>
-                                <!-- Rating -->
+                                <!-- TrackList -->
                                 <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks)]</label2>
                                 <onclick>noop</onclick>
+								<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Tracks))</visible>
                             </item>
                             <item>
                                 <label>TrackList Formatted</label>
-                                <!-- Metar -->
+                                <!-- TrackList Formatted -->
                                 <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted)]</label2>
                                 <onclick>noop</onclick>
+								<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted))</visible>
                             </item>
                             <item>
                                 <label>Albums</label>
-                                <!-- FreshCount -->
+                                <!-- Albums -->
                                 <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Albums)]</label2>
                                 <onclick>noop</onclick>
+								<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Albums))</visible>
                             </item>
                             <item>
                                 <label>Albums Formatted</label>
-                                <!-- RottenCount -->
+                                <!-- Albums Formatted -->
                                 <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Albums.Formatted)]</label2>
                                 <onclick>noop</onclick>
+								<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Albums.Formatted))</visible>
                             </item>
                             <item>
                                 <label>SongCount</label>
-                                <!-- Reviews -->
+                                <!-- SongCount -->
                                 <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.SongCount)]</label2>
                                 <onclick>noop</onclick>
+								<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
                             </item>
                             <item>
                                 <label>AlbumCount</label>
-                                <!-- Consensus -->
+                                <!-- AlbumCount -->
                                 <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.AlbumCount)]</label2>
                                 <onclick>noop</onclick>
+								<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.AlbumCount))</visible>
                             </item>
                             <item>
                                 <label>AlbumRatingMusicBrainz</label>
                                 <!-- AlbumRatingMusicBrainz -->
                                 <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Rating)]</label2>
                                 <onclick>noop</onclick>
+								<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating))</visible>
                             </item>
-                            <item>
-                                <label>Info</label>
-                                <!-- AudienceMeter -->
-                                <label2>$INFO[Window(Home).Property(SkinHelper.Player.Info)]</label2>
-                                <onclick>noop</onclick>
-                            </item>
-                            <item>
-                                <label>TrackList</label>
-                                <!-- AudienceRating -->
-                                <label2>$INFO[Window(Home).Property(SkinHelper.Player.TrackList)]</label2>
-                                <onclick>noop</onclick>
-                            </item>
-                            <item>
-                                <label>Albums</label>
-                                <!-- AudienceReviews -->
-                                <label2>$INFO[Window(Home).Property(SkinHelper.Player.Albums)]</label2>
-                                <onclick>noop</onclick>
-                            </item>
-                            <item>
-                                <label>SongCount</label>
-                                <!-- Awards -->
-                                <label2>$INFO[Window(Home).Property(SkinHelper.Player.SongCount)]</label2>
-                                <onclick>noop</onclick>
-                            </item>
-                            <item>
-                                <label>AlbumCount</label>
-                                <!-- BoxOffice -->
-                                <label2>$INFO[Window(Home).Property(SkinHelper.Player.AlbumCount)]</label2>
-                                <onclick>noop</onclick>
-                            </item>
-
                         </content>
                     </control>
                 </control>
@@ -793,8 +784,10 @@
                     <width>1020</width>
                     <height>760</height>
                     <pagecontrol>85</pagecontrol>
+					<oninfo condition="String.IsEqual(ListItem.DBType,set)">ActivateWindow(1166)</oninfo>
                     <onleft condition="Control.IsVisible(777)">777</onleft>
-					<onleft condition="!Control.IsVisible(777)">9900</onleft>
+					<onleft condition="Control.IsVisible(5778)">5778</onleft>
+					<onleft condition="![Control.IsVisible(777)|Control.IsVisible(5778)]">9900</onleft>
                     <onright condition="!Skin.HasSetting(alphabet)">85</onright>
 					<onright condition="Skin.HasSetting(alphabet)">81</onright>
                     <focusposition>1</focusposition>
@@ -830,7 +823,7 @@
                             <height>45</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout condition="String.IsEmpty(Control.GetLabel(5102)) | [Window.IsActive(videos) + !Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimrightlistmusic)]" height="45">
@@ -860,7 +853,7 @@
                             <texture>$VAR[value_watchedstyle]</texture>
                             <aspectratio align="right" aligny="top">keep</aspectratio>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                     <focusedlayout condition="!String.IsEmpty(Control.GetLabel(5102)) + [Window.IsActive(videos) + Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(slimrightlistmusic)]" height="75">
@@ -902,7 +895,7 @@
                             <texture>$VAR[value_watchedstyle]</texture>
                             <aspectratio align="right" aligny="top">keep</aspectratio>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                 </control>
@@ -1184,8 +1177,8 @@
                         <width>368</width>
                         <height>525</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
-                        <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                        <imagepath>http://localhost:52307/getthumb&amp;title=$INFO[ListItem.Label]</imagepath>
+                        <aspectratio align="center" aligny="top">keep</aspectratio>
+                        <imagepath>http://localhost:52307/getthumb&amp;title=$ESCINFO[ListItem.Label]</imagepath>
                         <visible>Container.Content(directors)</visible>
                     </control>
                     <control type="multiimage">
@@ -1196,7 +1189,7 @@
                         <height>525</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio align="center" aligny="center">scale</aspectratio>
-                        <imagepath>http://localhost:52307/getthumb&amp;title=$INFO[Container.FolderName] tvshow&amp;type=thumb</imagepath>
+                        <imagepath>http://localhost:52307/getthumb&amp;title=$ESCINFO[Container.FolderName] tvshow&amp;type=thumb</imagepath>
                         <visible>Container.Content(seasons)+String.Contains(ListItem.Label,all seasons)</visible>
                     </control>
                 </control>
@@ -1273,14 +1266,14 @@
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
                         <include>Animation_ViewsCDart</include>
-                        <visible>Container.Content(artists)|Container.Content(albums)|Container.Content(songs)</visible>
+                        <visible>[Container.Content(albums)|Container.Content(songs)]+!Control.HasFocus(777)</visible>
                     </control>
                     <control type="image">
                         <!-- Musica reflexo -->
                         <left>-8</left>
                         <top>630</top>
                         <width>368</width>
-                        <height>525</height>
+                        <height>368</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio align="center" aligny="top">keep</aspectratio>
                         <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_poster]</texture>
@@ -1294,7 +1287,19 @@
                         <height>525</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                        <texture fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
+                        <texture fallback="DefaultAudioCover.png" background="true">$INFO[Listitem.Art(artist.thumb)]</texture>
+                        <bordertexture border="-2">black.png</bordertexture>
+						<visible>String.IsEmpty(Control.GetLabel(223))</visible>
+                    </control>
+                    <control type="image" id="223">
+                        <!-- Musica -->
+                        <left>-8</left>
+                        <top>255</top>
+                        <width>368</width>
+                        <height>368</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio align="center" aligny="bottom">stretch</aspectratio>
+                        <texture background="true">$VAR[value_poster]</texture>
                         <bordertexture border="-2">black.png</bordertexture>
                     </control>
                     <control type="multiimage">
@@ -1305,7 +1310,7 @@
                         <height>368</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio align="center" aligny="center">scale</aspectratio>
-                        <imagepath>http://localhost:52307/getthumb&amp;title=$INFO[Container.FolderName] Artist&amp;type=thumb</imagepath>
+                        <imagepath>http://localhost:52307/getthumb&amp;title=$ESCINFO[Container.FolderName] Artist&amp;type=thumb</imagepath>
                         <visible>Container.Content(albums)+String.Contains(ListItem.Label,all albums)</visible>
                     </control>
                 </control>
@@ -1323,7 +1328,7 @@
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
                         <include>Animation_ViewsCDart</include>
-                        <visible>Container.Content(artists)|Container.Content(albums)|Container.Content(songs)</visible>
+                        <visible>[Container.Content(albums)|Container.Content(songs)]+!Control.HasFocus(777)</visible>
                     </control>
                     <control type="image">
                         <!-- Musica/Estojo reflexo-->
@@ -1361,7 +1366,7 @@
                         <height>345</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio align="center" aligny="center">scale</aspectratio>
-                        <imagepath>http://localhost:52307/getthumb&amp;title=$INFO[Container.FolderName] Artist&amp;type=thumb</imagepath>
+                        <imagepath>http://localhost:52307/getthumb&amp;title=$ESCINFO[Container.FolderName] Artist&amp;type=thumb</imagepath>
                         <visible>Container.Content(albums)+String.Contains(ListItem.Label,all albums)</visible>
                     </control>
                     <control type="image">
@@ -1375,6 +1380,7 @@
                     </control>
                 </control>
             </control>
+
             <control type="scrollbar" id="85">
                 <include>ScrollBar_Vertical</include>
                 <left>1875</left>

@@ -116,7 +116,7 @@
                 <onright>Dialog.Close(106)</onright>
                 <onclick>Dialog.Close(all,true)</onclick>
 				<onclick>ActivateWindow(Home)</onclick>
-                <label>Close Lyrics</label>
+                <label>$LOCALIZE[31084] LYRICS</label>
                 <visible>Window.IsActive(Visualisation)</visible>
             </control>
             <control type="button" id="1040">

@@ -87,7 +87,7 @@
                 <height>45</height>
                 <texture>$VAR[value_watchedstyle]</texture>
                 <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
             </control>
         </itemlayout>
         <itemlayout condition="!Skin.HasSetting(nomultiplexvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)]" width="208" height="570">
@@ -138,7 +138,7 @@
                 <height>45</height>
                 <texture>$VAR[value_watchedstyle]</texture>
                 <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Codec -->
@@ -195,7 +195,7 @@
                 <texture>$VAR[value_watchedstyle]</texture>
                 <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
                 <animation effect="zoom" start="100" end="110" center="202,382" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-                <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
             </control>
         </focusedlayout>
         <focusedlayout condition="!Skin.HasSetting(nomultiplexvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)]" width="262" height="570">
@@ -251,7 +251,7 @@
                 <texture>$VAR[value_watchedstyle]</texture>
                 <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
                 <animation effect="zoom" start="100" end="110" center="202,382" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-                <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Codec -->

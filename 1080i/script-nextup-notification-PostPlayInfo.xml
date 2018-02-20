@@ -77,15 +77,6 @@
     <texture>$INFO[Window.Property(banner)]</texture>
     <aspectratio align="left" aligny="top">keep</aspectratio>
     </control>
-    <control type="image">
-    <!-- characterart -->
-    <left>900</left>
-    <top>0</top>
-    <width>300</width>
-    <height>190</height>
-    <texture>$INFO[Window.Property(characterart)]</texture>
-    <aspectratio align="left" aligny="top">keep</aspectratio>
-    </control>
     <control type="label">
     <!-- Title -->
     <left>30</left>
@@ -323,7 +314,8 @@
     <control type="textbox">
     <left>40</left>
     <top>485</top>
-    <width>1430</width>
+    <width condition="!String.IsEmpty(Window.Property(characterart))">1230</width>
+    <width condition="String.IsEmpty(Window.Property(characterart))">1430</width>
     <height>250</height>
     <font>Font_18B</font>
     <align>left</align>
@@ -334,7 +326,8 @@
     <control type="textbox">
     <left>40</left>
     <top>475</top>
-    <width>1430</width>
+    <width condition="!String.IsEmpty(Window.Property(characterart))">1230</width>
+    <width condition="String.IsEmpty(Window.Property(characterart))">1430</width>
     <height>250</height>
     <font>Font_18B</font>
     <align>left</align>
@@ -343,6 +336,27 @@
     <visible>Control.HasFocus(101)</visible>
     </control>
     </control>
+    <control type="textbox">
+    <left>40</left>
+    <top>475</top>
+    <width condition="!String.IsEmpty(Window.Property(characterart))">1230</width>
+    <width condition="String.IsEmpty(Window.Property(characterart))">1430</width>
+    <height>250</height>
+    <font>Font_18B</font>
+    <align>left</align>
+    <textcolor>FFFFFFFF</textcolor>
+    <label>$INFO[Container(400).ListItem.Plot]</label>
+    <visible>Control.HasFocus(400)</visible>
+    </control>
+    </control>
+    <control type="image">
+    <!-- characterart -->
+    <left>1180</left>
+    <top>500</top>
+    <width>300</width>
+    <height>190</height>
+    <texture>$INFO[Window.Property(characterart)]</texture>
+    <aspectratio align="right" aligny="botom">keep</aspectratio>
     </control>
     <control type="image">
     <!-- Logo -->

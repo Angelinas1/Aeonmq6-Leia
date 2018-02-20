@@ -194,7 +194,7 @@
                         <texture>$VAR[value_watchedstyle]</texture>
                         <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
                         <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                        <visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                     </control>
                     <control type="image">
                         <left>303</left>
@@ -204,7 +204,7 @@
                         <texture flipy="true">$VAR[value_watchedstyle]</texture>
                         <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
                         <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                        <visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)]</visible>
+                        <visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)]</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout height="201" width="303">
@@ -271,7 +271,7 @@
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="225,90" start="80" end="100" time="400" tween="back" easing="out" />
                         </animation>
-                        <visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                        <visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                     </control>
                     <control type="image">
                         <left>303</left>
@@ -284,7 +284,7 @@
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="225,90" start="80" end="100" time="400" tween="back" easing="out" />
                         </animation>
-                        <visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)]</visible>
+                        <visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)]</visible>
                     </control>
                 </focusedlayout>
             </control>

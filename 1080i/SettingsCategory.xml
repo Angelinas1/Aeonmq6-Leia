@@ -40,6 +40,11 @@
 				<label>31361</label>
 				<visible>Window.IsActive(servicesettings)</visible>
 			</control>
+			<control type="label">
+				<include>SettingsContentTitle</include>
+				<label>10022</label>
+				<visible>Window.IsActive(GameSettings)</visible>
+			</control>
 			<control type="image">
 				<left>360</left>
 				<top>900</top>
@@ -128,7 +133,7 @@
 					<control type="button" id="21">
 						<!-- Reset level -->
 						<include>SettingsButton</include>
-						<label>10035</label>
+						<label>13007</label>
 						<onclick>SettingsReset</onclick>
 					</control>
 				</control>

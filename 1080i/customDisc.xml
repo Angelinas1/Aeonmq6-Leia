@@ -142,7 +142,7 @@
                         <top>86</top>
                         <width>615</width>
                         <height>615</height>
-                        <texture>CDart_Master_2.png</texture>
+                        <texture>cdart_master_2.png</texture>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <fadetime>FanartCrossFadeTime</fadetime>
                     </control>

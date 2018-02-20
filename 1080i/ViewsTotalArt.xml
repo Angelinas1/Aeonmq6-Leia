@@ -272,7 +272,7 @@
                             <height>56</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                         <control type="label">
                             <!-- titulo -->

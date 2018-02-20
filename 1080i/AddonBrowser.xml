@@ -359,7 +359,7 @@
 					<control type="button" id="226">
 						<label>script.skin.helper.widgets</label>
 						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
-						<onclick>RunPlugin(script.skin.helper.widgets)</onclick>
+						<onclick>InstallAddon(script.skin.helper.widgets)</onclick>
 						<visible>!System.HasAddon(script.skin.helper.widgets)</visible>
 					</control>
 					<control type="button" id="227">
@@ -371,7 +371,7 @@
 					<control type="button" id="228">
 						<label>script.skin.helper.skinbackup</label>
 						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
-						<onclick>RunPlugin(script.skin.helper.skinbackup)</onclick>
+						<onclick>InstallAddon(script.skin.helper.skinbackup)</onclick>
 						<visible>!System.HasAddon(script.skin.helper.skinbackup)</visible>
 					</control>
 					<control type="button" id="229">
@@ -383,7 +383,7 @@
 					<control type="button" id="230">
 						<label>script.skin.helper.backgrounds</label>
 						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
-						<onclick>RunPlugin(script.skin.helper.backgrounds)</onclick>
+						<onclick>InstallAddon(script.skin.helper.backgrounds)</onclick>
 						<visible>!System.HasAddon(script.skin.helper.backgrounds)</visible>
 					</control>
 					<control type="button" id="231">
@@ -419,7 +419,7 @@
 					<control type="button" id="236">
 						<label>script.tv.show.next.aired</label>
 						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
-						<onclick>RunPlugin(script.tv.show.next.aired)</onclick>
+						<onclick>InstallAddon(script.tv.show.next.aired)</onclick>
 						<visible>!System.HasAddon(script.tv.show.next.aired)</visible>
 					</control>
 					<control type="button" id="237">
@@ -431,7 +431,7 @@
 					<control type="button" id="238">
 						<label>service.nextup.notification</label>
 						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
-						<onclick>RunPlugin(service.nextup.notification)</onclick>
+						<onclick>InstallAddon(service.nextup.notification)</onclick>
 						<visible>!System.HasAddon(service.nextup.notification)</visible>
 					</control>
 					<control type="button" id="239">
@@ -452,7 +452,7 @@
 						<onclick>Addon.OpenSettings(service.library.data.provider)</onclick>
 						<visible>System.HasAddon(service.library.data.provider)</visible>
 					</control>
-					<control type="button" id="242">
+	<!--				<control type="button" id="242">
 						<label>script.tvtunes</label>
 						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
 						<onclick>InstallAddon(script.tvtunes)</onclick>
@@ -463,7 +463,7 @@
 						<label2>[COLOR green]$LOCALIZE[107][/COLOR]</label2>
 						<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 						<visible>System.HasAddon(script.tvtunes)</visible>
-					</control>
+					</control>-->
 					<control type="button" id="244">
 						<label>script.cu.lrclyrics</label>
 						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>

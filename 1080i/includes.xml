@@ -1066,7 +1066,6 @@
 			<height>68</height>
 			<include>FlagImage</include>
 			<texture fallback="blanc.png">$VAR[studio_values]</texture>
-			<visible>!String.IsEmpty(Control.GetLabel(557))</visible>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -2493,8 +2492,20 @@
 				<width>94</width>
 				<height>94</height>
 				<aspectratio align="left" aligny="top">keep</aspectratio>
-				<texture diffuse="weather_mask.png" background="true">$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
-			</control>
+				<texture diffuse="weather_mask.png" background="true">$INFO[skin.string(CustomWeatherIconFolder)]$INFO[Window(Weather).Property(Current.OutlookIcon)]</texture>
+				<visible>!Skin.HasSetting(weathericons)</visible>
+				</control>
+			<control type="multiimage">
+				<left>1215</left>
+				<top>-8</top>
+				<width>54</width>
+				<height>54</height>
+                <timeperimage>75</timeperimage>
+                <randomize>false</randomize>
+                <fadetime>0</fadetime>
+                <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+				<visible>Skin.HasSetting(weathericons)</visible>
+            </control>
 			<control type="label">
 				<left>1328</left>
 				<top>3</top>
@@ -3934,7 +3945,7 @@
 				<top>0</top>
 				<width>360</width>
 				<height>360</height>
-				<texture>CDart_Master_2.png</texture>
+				<texture>cdart_master_2.png</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<fadetime>FanartCrossFadeTime</fadetime>
 			</control>
@@ -3969,7 +3980,6 @@
 					<visible>Skin.HasSetting(newdisc_clearlogo)</visible>
 				</control>
 				<control type="label">
-					<!-- Title -->
 					<animation effect="zoom" start="100" end="70" center="auto" easing="out" tween="sine" time="700">Visible</animation>
 					<left>75</left>
 					<top>68</top>

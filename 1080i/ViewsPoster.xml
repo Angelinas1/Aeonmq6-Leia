@@ -70,7 +70,7 @@
                 <texture>$VAR[value_watchedstyle]</texture>
                 <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                <visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
+                <visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,overlaywatched.png) + Control.HasFocus(54)</visible>
             </control>
             <control type="image">
                 <left>332</left>
@@ -80,7 +80,7 @@
                 <texture flipy="true">$VAR[value_watchedstyle]</texture>
                 <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                <visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
+                <visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
             </control>
         </itemlayout>
         <focusedlayout width="447" height="540">
@@ -116,7 +116,7 @@
                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 <animation reversible="false" effect="slide" start="0,0" end="36,54" center="auto" time="200">Focus</animation>
                 <animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
-                <visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
+                <visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,overlaywatched.png) + Control.HasFocus(54)</visible>
             </control>
             <control type="image">
                 <left>296</left>
@@ -128,7 +128,7 @@
                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 <animation reversible="false" effect="slide" start="0,0" end="36,54" center="auto" time="200">Focus</animation>
                 <animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
-                <visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
+                <visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
             </control>
         </focusedlayout>
     </include>
@@ -149,7 +149,7 @@
                 </animation>
                 <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
                 <animation effect="fade" start="100" end="0" time="50">Hidden</animation>
-                <visible>!String.IsEmpty(ListItem.Art(discart)) + !Skin.HasSetting(noposterdiscart) + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
+                <visible>!Skin.HasSetting(noposterdiscart) + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
                 <control type="image">
                     <left>746</left>
                     <top>548</top>
@@ -160,6 +160,18 @@
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
                     <include>Animation_ViewsCDart</include>
+                </control>
+                <control type="image">
+                    <left>746</left>
+                    <top>548</top>
+                    <width>420</width>
+                    <height>420</height>
+                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</texture>
+                    <fadetime>FanartCrossFadeTime</fadetime>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                    <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                    <include>Animation_ViewsCDart</include>
+					<visible>String.IsEmpty(ListItem.Art(discart))</visible>
                 </control>
             </control>
             <include>ViewBack</include>

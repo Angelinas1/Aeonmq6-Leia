@@ -11,7 +11,7 @@
     <onload>Skin.SetString(sextendalbum_list,6010)</onload>
     <onload>ClearProperty(Banner,home)</onload>
 	<onload condition="Control.IsVisible(510)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[Container(510).ListItem.Artist],silent=False)</onload>
-	<onload condition="Player.IsInternetStream">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[Window(Home).Property(SkinHelper.Player.Artist)],silent=False)</onload>
+	<onload condition="[Player.IsInternetStream | Pvr.IsPlayingRadio]">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[Window(Home).Property(SkinHelper.Player.Artist)],silent=False)</onload>
 	<onload condition="Container.Content(songs)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
     <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[ListItem.Artist],silent=False)</onload>
     <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname=$INFO[ListItem.Artist],albumname=$INFO[ListItem.Album],silent=False)</onload>
@@ -265,7 +265,7 @@
                         <visible>Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Title))</visible>
                     </item>
 					<item>
-                        <label>Album</label>
+                        <label>$LOCALIZE[558]</label>
                         <!-- Helper Album -->
                         <label2>$INFO[Window(Home).Property(SkinHelper.Player.Album)]</label2>
 						<onclick>noop</onclick>
@@ -389,7 +389,7 @@
                         <!-- Mood -->
                         <label2>$INFO[ListItem.Property(Album_Mood)]</label2>
 						<onclick>noop</onclick>
-                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Album_Mood))</visible>
+                        <visible>!Window.IsActive(visualisation)+String.IsEmpty(ListItem.Property(Artist_Mood))</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[176]</label>
@@ -403,7 +403,7 @@
                         <!-- Style -->
                         <label2>$INFO[ListItem.Property(Album_Style)]</label2>
 						<onclick>noop</onclick>
-                        <visible>!Window.IsActive(visualisation)+!String.IsEmpty(ListItem.Property(Album_Style))</visible>
+                        <visible>!Window.IsActive(visualisation)+String.IsEmpty(ListItem.Property(Artist_Style))</visible>
                     </item>
 					<item>
                         <label>Country/Formed</label>
@@ -483,7 +483,7 @@
                         <visible>!Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.lastfm.tags))</visible>
                     </item>
 					<item>
-                        <label>Similar Artist</label>
+                        <label>31940</label>
                         <!-- Helper Tags -->
                         <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.lastfm.similarartists)]</label2>
 						<onclick>noop</onclick>
@@ -620,7 +620,7 @@
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>Font_18A</font>
-                    <label>Album Title</label>
+                    <label>$LOCALIZE[558] $LOCALIZE[369]</label>
                     <textcolor>$VAR[value_headercolor]</textcolor>
                 </control>
                 <control type="label">
@@ -645,7 +645,7 @@
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>Font_18A</font>
-                    <label>Album Artist</label>
+                    <label>$LOCALIZE[558] $LOCALIZE[557]</label>
                     <textcolor>$VAR[value_headercolor]</textcolor>
                 </control>
                 <control type="label">
@@ -684,7 +684,7 @@
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>Font_18A</font>
-                    <label>Album Genre</label>
+                    <label>$LOCALIZE[558] $LOCALIZE[515]</label>
                     <textcolor>$VAR[value_headercolor]</textcolor>
                 </control>
                 <control type="label">
@@ -852,15 +852,15 @@
                     <height>195</height>
                     <width>195</width>
                     <aspectratio align="center" aligny="top">stretch</aspectratio>
-                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Container(6010).ListItem.Property(thumb)]</texture>
-                    <visible>String.IsEmpty(Container(6010).ListItem.Property(cdart))</visible>
+                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Container(6010).ListItem.Icon]</texture>
+                    <visible>String.IsEmpty(Container(6010).ListItem.Art(cdart))</visible>
                 </control>
                 <control type="image">
                     <left>765</left>
                     <top>210</top>
                     <height>195</height>
                     <width>195</width>
-                    <texture>$INFO[Container(6010).ListItem.Property(cdart)]</texture>
+                    <texture>$INFO[Container(6010).ListItem.Art(cdart)]</texture>
                 </control>
                 <control type="image">
                     <left>0</left>
@@ -923,7 +923,16 @@
                 <fadetime>FanartCrossFadeTime</fadetime>
                 <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="Player.HasAudio">Conditional</animation>
                 <include>Animation_ViewsCDart</include>
-                <visible>!Control.HasFocus(6010)+!Container.Content(artists)+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))</visible>
+                <visible>!Control.HasFocus(6010)+!Container.Content(artists)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb cd from helper-->
+                <include>LeftMusicDiscCase</include>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</texture>
+                <fadetime>FanartCrossFadeTime</fadetime>
+                <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="Player.HasAudio">Conditional</animation>
+                <include>Animation_ViewsCDart</include>
+                <visible>!Control.HasFocus(6010)+!Container.Content(artists)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))</visible>
             </control>
             </control>
             <control type="image">
@@ -977,7 +986,16 @@
                 <fadetime>FanartCrossFadeTime</fadetime>
                 <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasAudio">Conditional</animation>
                 <include>Animation_ViewsCDart</include>
-                <visible>!Container.Content(artists)+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))</visible>
+                <visible>!Container.Content(artists)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))</visible>
+            </control>
+            <control type="image">
+                <!-- Thumb cd from helper-->
+                <include>LeftMusicADiscNoCase</include>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</texture>
+                <fadetime>FanartCrossFadeTime</fadetime>
+                <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasAudio">Conditional</animation>
+                <include>Animation_ViewsCDart</include>
+                <visible>!Container.Content(artists)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))</visible>
             </control>
             </control>
             <control type="image">
@@ -1016,7 +1034,7 @@
             <control type="image">
                 <!-- Thumb cd from helper-->
                 <include>LeftMusicADiscNoCase</include>
-                <texture background="true">$INFO[Container(6010).ListItem.Property(cdart)]</texture>
+                <texture background="true">$INFO[Container(6010).ListItem.Art(cdart)]</texture>
                 <fadetime>FanartCrossFadeTime</fadetime>
                 <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasAudio">Conditional</animation>
                 <include>Animation_ViewsCDart</include>
@@ -1024,14 +1042,14 @@
             <control type="image">
                 <!-- Thumb Stream -->
                 <include>SizeMusicArtNoCase</include>
-                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Container(6010).ListItem.Property(thumb)]</texture>
-                <visible>!String.IsEmpty(Container(6010).ListItem.Property(thumb))+Control.HasFocus(6010)</visible>
+                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Container(6010).ListItem.Icon]</texture>
+                <visible>!String.IsEmpty(Container(6010).ListItem.Icon)+Control.HasFocus(6010)</visible>
             </control>
             <control type="image">
                 <!-- Thumb Stream -->
                 <include>SizeMusicArtNoCase</include>
-                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Container(6010).ListItem.Property(thumbback)]</texture>
-                <visible>!String.IsEmpty(Container(6010).ListItem.Property(thumbback))+Control.HasFocus(6010)</visible>
+                <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Container(6010).ListItem.Art(thumbback)]</texture>
+                <visible>!String.IsEmpty(Container(6010).ListItem.Art(thumbback))+Control.HasFocus(6010)</visible>
             </control>
            </control>		
             <control type="image">
@@ -1307,7 +1325,7 @@
                             <top>8</top>
                             <width>270</width>
                             <height>270</height>
-                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Property(cdart)]</texture>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(cdart)]</texture>
                             <fadetime>FanartCrossFadeTime</fadetime>
                             <aspectratio align="center" aligny="top">stretch</aspectratio>
                             <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
@@ -1318,7 +1336,7 @@
                             <top>8</top>
                             <width>270</width>
                             <height>270</height>
-                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Property(thumb)]</texture>
+                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Icon]</texture>
                         </control>
                     </itemlayout>
                     <focusedlayout height="255" width="372">
@@ -1340,7 +1358,7 @@
                             <top>8</top>
                             <width>270</width>
                             <height>270</height>
-                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Property(cdart)]</texture>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(cdart)]</texture>
                             <fadetime>FanartCrossFadeTime</fadetime>
                             <aspectratio align="center" aligny="top">stretch</aspectratio>
                             <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
@@ -1354,7 +1372,7 @@
                             <aligny>center</aligny>
                             <align>left</align>
                             <aspectratio>scale</aspectratio>
-                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Property(thumb)]</texture>
+                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Icon]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
                             <include>Animation_Fade</include>
@@ -1368,7 +1386,7 @@
                             <aligny>center</aligny>
                             <align>left</align>
                             <aspectratio>scale</aspectratio>
-                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Property(thumb)]</texture>
+                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Icon]</texture>
                             <bordertexture border="-2">grey.png</bordertexture>
                             <include>Animation_Fade</include>
                             <visible>Control.HasFocus(6010)</visible>
@@ -1640,7 +1658,7 @@
                             <top>8</top>
                             <width>270</width>
                             <height>270</height>
-                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
                             <fadetime>FanartCrossFadeTime</fadetime>
                             <aspectratio align="center" aligny="top">stretch</aspectratio>
                             <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
@@ -1666,7 +1684,7 @@
                             <top>8</top>
                             <width>270</width>
                             <height>270</height>
-                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
                             <fadetime>FanartCrossFadeTime</fadetime>
                             <aspectratio align="center" aligny="top">stretch</aspectratio>
                             <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
@@ -2581,7 +2599,7 @@
                     <width>1920</width>
                     <height>960</height>
                     <aspectratio>keep</aspectratio>
-                    <texture diffuse="thumb_cdcover_mask.png" background="true">$INFO[Container(6010).ListItem.Property(thumb)]</texture>
+                    <texture diffuse="thumb_cdcover_mask.png" background="true">$INFO[Container(6010).ListItem.Icon]</texture>
                     <visible>Skin.HasSetting(coverzoom)</visible>
                 </control>
                 <control type="image">

@@ -107,24 +107,24 @@
                     <scroll>true</scroll>
                 </control>
                 <control type="label">
-                    <!-- Rating value -->
+                    <!-- Path value -->
                     <left>165</left>
                     <top>135</top>
                     <width>210</width>
                     <height>38</height>
-                    <label>$LOCALIZE[24098]:</label>
+                    <label>Path:</label>
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>Font_18</font>
                     <textcolor>$VAR[value_headercolor]</textcolor>
                 </control>
                 <control type="label">
-                    <!-- Rating -->
+                    <!-- Path -->
                     <left>390</left>
                     <top>135</top>
                     <width>825</width>
                     <height>38</height>
-                    <label fallback="416">$INFO[ListItem.AddonDisclaimer]</label>
+                    <label fallback="416">$INFO[ListItem.Property(Addon.Path)]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>Font_18</font>
@@ -149,7 +149,32 @@
                     <top>180</top>
                     <width>825</width>
                     <height>38</height>
-                    <label fallback="416">$INFO[ListItem.Addon.Summary]</label>
+                    <label fallback="416">$INFO[ListItem.Addon.Summary,, /]$INFO[ListItem.Property(Addon.Changelog),, / ]$INFO[ListItem.AddonDisclaimer]</label>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_18</font>
+                    <scrollout>false</scrollout>
+                    <pauseatend>2000</pauseatend>
+                </control>
+                <control type="label">
+                    <!-- Status -->
+                    <left>165</left>
+                    <top>225</top>
+                    <width>210</width>
+                    <height>38</height>
+                    <label>Status:</label>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>Font_18</font>
+                    <textcolor>$VAR[value_headercolor]</textcolor>
+                </control>
+                <control type="fadelabel">
+                    <!-- Status Value -->
+                    <left>390</left>
+                    <top>225</top>
+                    <width>825</width>
+                    <height>38</height>
+                    <label fallback="416">$INFO[ListItem.Property(Addon.Status)]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>Font_18</font>
@@ -282,9 +307,9 @@
                     <label>518</label>
                     <include>SettingsButton</include>
                 </control>
-                <control type="button" id="11">
-                    <!-- Rollback -->
-                    <label>24048</label>
+                <control type="button" id="10">
+                    <!-- Depedancies -->
+                    <label>39024</label>
                     <include>SettingsButton</include>
                 </control>
             </control>

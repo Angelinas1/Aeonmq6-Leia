@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Aeon MQ 6 -->
+    <!--##################################################################################   VISTA FANART - ID 187   #############################################################################-->
+    <include name="FanaArtLabel">
+		<left>0</left>
+		<height>30</height>
+		<width>450</width>
+		<font>Font_18A</font>
+		<aligny>top</aligny>
+		<align>left</align>
+		<textcolor>$VAR[value_headercolor]</textcolor>
+		<textoffsetx>0</textoffsetx>
+		<textoffsety>0</textoffsety>
+		<scroll>true</scroll>
+    </include>
+    <include name="ViewFanArt">
+	<control type="group">
+	<visible>String.IsEqual(Container.Viewmode,FANART)</visible>
+	<control type="image">
+		<left>0</left>
+		<top>431</top>
+		<width>1920</width>
+		<height>45</height>
+		<texture>shadow_h.png</texture>
+		<colordiffuse>C3FFFFFF</colordiffuse>
+	<include>Animation_Fade</include>
+	</control>
+	<control type="image">
+		<left>0</left>
+		<top>975</top>
+		<width>1920</width>
+		<height>45</height>
+		<texture flipy="true">shadow_h.png</texture>
+		<colordiffuse>C3FFFFFF</colordiffuse>
+	</control>
+	<control type="image">
+		<left>0</left>
+		<top>474</top>
+		<width>1920</width>
+		<height>500</height>
+		<texture>darkgrey.png</texture>
+		<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	<animation effect="fade" end="85" condition="true">Conditional</animation>
+	</control>
+	<control type="image">
+		<left>106</left>
+		<top>860</top>
+		<width>538</width>
+		<height>118</height>
+		<bordersize>8</bordersize>
+		<texture>$VAR[value_banner]</texture>
+		<aspectratio aligny="top">keep</aspectratio>
+		<animation effect="fade" start="0" end="100" time="1000" delay="4000" condition="!Control.HasFocus(187)">Conditional</animation>
+	<visible>!String.IsEqual(ListItem.Label,..)</visible>
+	</control>
+	<control type="label">
+		<left>106</left>
+		<top>455</top>
+		<width>538</width>
+		<height>118</height>
+		<font>Font_27</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<include>listcolor</include>
+		<label>$VAR[value_aeon_content_label]</label>
+		<animation effect="fade" start="0" end="100" time="1000" delay="2000" condition="!Control.HasFocus(187)">Conditional</animation>
+		<visible>Control.HasFocus(1871)|Control.HasFocus(1971)</visible>
+	</control>	
+	<control type="fixedlist" id="187">
+	<viewtype label="FANART">icon</viewtype>
+		<left>42</left>
+		<top>474</top>
+		<width>1665</width>
+		<height>496</height>
+		<onup>9900</onup>
+		<onleft>9900</onleft>
+		<onright>1871</onright>
+		<scrolltime>800</scrolltime>
+		<pagecontrol>80</pagecontrol>
+		<focusposition>1</focusposition>
+		<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+	<itemlayout height="100" width="1800">
+	<control type="image">
+		<left>64</left>
+		<top>1</top>
+		<width>538</width>
+		<height>118</height>
+		<bordersize>8</bordersize>
+		<texture fallback="DefaultExtraThumbs.png" background="true">$VAR[value_banner]</texture>
+		<aspectratio aligny="top">keep</aspectratio>
+		<animation effect="fade" start="100" end="0" time="1000" delay="2000" condition="!Control.HasFocus(187)">Conditional</animation>
+		<visible>!String.IsEqual(ListItem.Label,..)</visible>
+	</control>
+	<control type="image">
+		<left>64</left>
+		<top>1</top>
+		<width>538</width>
+		<height>118</height>
+		<bordersize>8</bordersize>
+		<texture fallback="DefaultExtraThumbs.png" background="true">$VAR[value_banner]</texture>
+		<aspectratio aligny="top">scale</aspectratio>
+		<animation effect="fade" start="100" end="0" time="1000" reversible="true" condition="System.IdleTime(5)+!Control.HasFocus(187)">Conditional</animation>
+		<visible>String.IsEqual(ListItem.Label,..)</visible>
+	</control>
+	<control type="image">
+		<left>64</left>
+		<top>1</top>
+		<width>538</width>
+		<height>118</height>
+		<bordersize>8</bordersize>
+		<texture>banner_glass.png</texture>
+		<colordiffuse>30FFFAF0</colordiffuse>
+		<aspectratio aligny="top">keep</aspectratio>
+	</control>
+	<control type="image">
+		<left>303</left>
+		<top>15</top>
+		<width>45</width>
+		<height>45</height>
+		<texture>$VAR[value_watchedstyle]</texture>
+		<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+		<aspectratio align="center" aligny="bottom">keep</aspectratio>
+		<visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
+	</control>
+	<control type="image">
+		<left>303</left>
+		<top>129</top>
+		<width>45</width>
+		<height>45</height>
+		<texture flipy="true">$VAR[value_watchedstyle]</texture>
+		<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+		<aspectratio align="center" aligny="bottom">keep</aspectratio>
+		<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)]</visible>
+	</control>
+	</itemlayout>
+	<focusedlayout height="290" width="1800">
+	<control type="image">
+		<left>64</left>
+		<top>-22</top>
+		<width>538</width>
+		<height>346</height>
+		<bordersize>8</bordersize>
+		<texture fallback="DefaultExtraThumbs.png" background="true">$VAR[value_landscape]</texture>
+		<aspectratio>keep</aspectratio>
+		<animation effect="slide" start="0,0" end="0,-20" delay="2000" time="1000" tween="cubic" easing="inout" condition="!Control.HasFocus(187)">Conditional</animation>
+		<animation type="Focus" reversible="false">
+		<effect type="zoom" center="auto" start="80" end="100" time="800" tween="back" easing="out" />
+		<effect type="fade" start="80" end="100" time="400" />
+		</animation>
+		<visible>!String.IsEqual(ListItem.Label,..)</visible>
+	</control>
+	<control type="image">
+		<left>64</left>
+		<top>-22</top>
+		<width>538</width>
+		<height>346</height>
+		<bordersize>8</bordersize>
+		<texture fallback="DefaultExtraThumbs.png" background="true">$VAR[value_landscape]</texture>
+		<aspectratio>stretch</aspectratio>
+		<animation type="Focus" reversible="false">
+		<effect type="zoom" center="auto" start="80" end="100" time="800" tween="back" easing="out" />
+		<effect type="fade" start="80" end="100" time="400" />
+		</animation>
+		<visible>String.IsEqual(ListItem.Label,..)</visible>
+	</control>
+	<control type="image">
+		<left>606</left>
+		<top>-22</top>
+		<width>45</width>
+		<height>45</height>
+		<texture>$VAR[value_watchedstyle]</texture>
+		<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+		<aspectratio align="center" aligny="bottom">keep</aspectratio>
+		<animation type="Focus" reversible="false">
+		<effect type="zoom" center="225,90" start="80" end="100" time="800" tween="back" easing="out" />
+		</animation>
+		<visible>![Skin.HasSetting(nooverlays) | String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
+	</control>
+	<control type="image">
+		<left>606</left>
+		<top>-22</top>
+		<width>45</width>
+		<height>45</height>
+		<texture flipy="true">$VAR[value_watchedstyle]</texture>
+		<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+		<aspectratio align="center" aligny="bottom">keep</aspectratio>
+		<animation type="Focus" reversible="false">
+		<effect type="zoom" center="225,90" start="80" end="100" time="800" tween="back" easing="out" />
+		</animation>
+		<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)] + [String.Contains(skin.string(stylewatched),2) | String.Contains(skin.string(stylewatched),3)]</visible>
+	</control>
+	</focusedlayout>
+	</control>
+	<control type="list" id="1871">
+	<viewtype label="FANART">icon</viewtype>
+		<left>720</left>
+		<top>480</top>
+		<width>700</width>
+		<height>496</height>
+		<onup>1871</onup>
+		<onleft>187</onleft>
+		<onright>1971</onright>
+		<onclick>ActivateWindow(videos,$INFO[Container(1871).ListItem.FolderPath],return)</onclick>
+		<scrolltime>800</scrolltime>
+		<focusposition>1</focusposition>
+		<visible>!String.IsEqual(ListItem.Label,..)+[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+		<orientation>vertical</orientation>
+		<scrolltime>450</scrolltime>
+		<content>$VAR[value_aeon_content]</content>
+	<itemlayout height="128">
+	<control type="image">
+		<animation effect="fade" start="100" end="15" time="1000" delay="1000" condition="Control.HasFocus(1871)|Control.HasFocus(1971)+!String.IsEqual(Container(1871).Season,Container(1971).Season)">Conditional</animation>
+		<left>5</left>
+		<top>0</top>
+		<width>524</width>
+		<height>108</height>
+		<texture fallback="aeonmq6_banner.jpg">$VAR[value_aeon_content_art]</texture>
+		<aspectratio align="left" aligny="center">keep</aspectratio>
+	</control>
+	</itemlayout>
+	<focusedlayout height="128">
+	<control type="image">
+		<left>-70</left>
+		<top>0</top>
+		<width>605</width>
+		<height>108</height>
+		<texture>aeonfocus1.png</texture>
+		<animation effect="fade" start="100" end="0" time="0" condition="!Control.Hasfocus(1871)">conditional</animation>
+	</control>
+	<control type="image">
+		<left>5</left>
+		<top>0</top>
+		<width>524</width>
+		<height>108</height>
+		<texture fallback="aeonmq6_banner.jpg">$VAR[value_aeon_content_art]</texture>
+		<aspectratio align="left" aligny="center">keep</aspectratio>
+	</control>
+	</focusedlayout>
+	</control>
+	<control type="panel" id="1971">
+	<viewtype label="FANART">icon</viewtype>
+		<left>1340</left>
+		<top>480</top>
+		<width>800</width>
+		<height>496</height>
+		<onup>1971</onup>
+		<onleft>1871</onleft>
+		<onright>80</onright>
+		<scrolltime>800</scrolltime>
+		<focusposition>1</focusposition>
+		<visible>!String.IsEqual(ListItem.Label,..)+[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+		<orientation>vertical</orientation>
+		<scrolltime>450</scrolltime>
+		<content>$VAR[value_aeon_content1]</content>
+	<itemlayout height="128" width="270">
+	<control type="image">
+		<animation effect="fade" start="100" end="15" time="1000" delay="1000" condition="Control.HasFocus(1971)">Conditional</animation>
+		<left>0</left>
+		<top>0</top>
+		<width>224</width>
+		<height>108</height>
+		<texture fallback="DefaultVideoCover.png">$INFO[ListItem.Art(thumb)]</texture>
+		<aspectratio align="left" aligny="center">keep</aspectratio>
+	</control>
+	</itemlayout>
+	<focusedlayout height="128" width="270">
+	<control type="image">
+		<left>0</left>
+		<top>0</top>
+		<width>224</width>
+		<height>108</height>
+		<bordersize>4</bordersize>
+		<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+		<aspectratio align="left" aligny="center">keep</aspectratio>
+		<animation type="Focus" reversible="false">
+		<effect type="zoom" center="auto" start="80" end="110" time="400" tween="back" easing="out" />
+		<effect type="fade" start="80" end="110" time="400" />
+	</animation>
+	</control>
+	<control type="group">
+		<animation effect="fade" start="0" end="100" time="1000" delay="1000" condition="Control.HasFocus(1971)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,128" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(0)+Container(1971).Column(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-270,128" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(0)+Container(1971).Column(1)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-128" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(1)+Container(1971).Column(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-270,-128" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(1)+Container(1971).Column(1)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,128" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(2)+Container(1971).Column(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-270,128" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(2)+Container(1971).Column(1)">Conditional</animation>
+	<control type="image">
+		<left>-120</left>
+		<top>20</top>
+		<width>800</width>
+		<height>40</height>
+		<texture>gradient_focus.png</texture>
+		<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+	</control>
+	<control type="label">
+		<left>0</left>
+		<top>20</top>
+		<width>540</width>
+		<height>22</height>
+		<textcolor>FFFFFAF0</textcolor>
+		<label>[COLOR=$VAR[value_headercolor]]$LOCALIZE[33054]: [/COLOR]$INFO[ListItem.Season]  [COLOR=$VAR[value_headercolor]]$LOCALIZE[20360]: [/COLOR]$INFO[ListItem.Episode]</label>
+		<font>Font_18A</font>
+		<align>center</align>
+		<visible>!String.IsEqual(ListItem.Label,..)</visible>
+	</control>
+	<control type="image">
+		<left>-120</left>
+		<top>20</top>
+		<width>800</width>
+		<height>130</height>
+		<texture>gradient_focus.png</texture>
+		<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+	</control>
+	<control type="label">
+		<left>0</left>
+		<top>65</top>
+		<width>540</width>
+		<height>22</height>
+		<font>Font_27</font>
+		<include>listcolor</include>
+		<align>center</align>
+		<label>$INFO[ListItem.Label]</label>
+		<visible>Control.HasFocus(1971)</visible>
+	</control>
+	</control>	
+	<control type="group">
+		<animation effect="fade" start="0" end="100" time="1000" delay="2000" condition="Control.HasFocus(1971)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,256" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(0)+Container(1971).Column(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-270,256" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(0)+Container(1971).Column(1)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,128" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(1)+Container(1971).Column(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-270,128" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(1)+Container(1971).Column(1)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-256" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(2)+Container(1971).Column(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-270,-256" time="0" condition="Control.HasFocus(1971)+Container(1971).Row(2)+Container(1971).Column(1)">Conditional</animation>
+	<control type="image">
+		<left>0</left>
+		<top>8</top>
+		<width>540</width>
+		<height>256</height>
+		<texture>gradient_focus.png</texture>
+		<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+	</control>
+	<control type="textbox">
+		<left>0</left>
+		<top>0</top>
+		<width>520</width>
+		<height>230</height>
+		<textcolor>FFFFFAF0</textcolor>
+		<label>$VAR[value_plot]</label>
+		<font>Font_18A</font>
+		<aligny>center</aligny>
+		<scroll>true</scroll>
+		<visible>!String.IsEqual(ListItem.Label,..)</visible>
+	</control>	
+	</control>	
+	</focusedlayout>
+	</control>
+	<control type="scrollbar" id="80">
+		<include>ScrollBar_Vertical</include>
+		<left>1870</left>
+		<top>480</top>
+		<height>496</height>
+		<width>25</width>
+		<onleft>1971</onleft>
+		<onright>9920</onright>
+		<include>Animation_Fade</include>
+		<visible allowhiddenfocus="true">String.IsEqual(Container.Viewmode,FANART) + Control.HasFocus(80)</visible>
+	</control>
+	</control>
+    </include>
+</includes>

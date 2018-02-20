@@ -128,22 +128,25 @@
     <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="addons.audio" label="Addons Audio" condition="!System.Platform.Android" icon="special://skin/extras/widgetthumbs/44.jpg" description="Widget from helper script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plus)</onselect>
     </setting>
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.topratedmovies" label="Top rated Movies" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/45.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.topratedmovies" label="Top rated Movies" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/media/flags/trakt.png" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.trendingmovies" label="Trending Movies" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/46.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.trendingmovies" label="Trending Movies -Trakt" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/46.jpg" description="Widget from extendedinfo script">
+        <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
+    </setting>
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.mostplayedmovies" label="Mostplayed Movies -Trakt" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/46.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>	
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.topratedtvshows" label="Toprated tvShows" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/47.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.topratedtvshows" label="Toprated TVShows" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/47.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>	
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.onairtvshows" label="onair tvShows" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/48.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.onairtvshows" label="OnAir TVShows" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/48.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>		
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.airingtodaytvshows" label="airingtoday tvShows" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/49.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.airingtodaytvshows" label="Airing Today TVShows" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/49.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>	
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="nextaired" label="nextaired tvShows" condition="System.HasAddon(script.tv.show.next.aired) + Library.HasContent(TVShows)" icon="special://skin/extras/widgetthumbs/50.jpg" description="Widget from script.tv.show.next.aired">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="nextaired" label="nextaired TVShows" condition="System.HasAddon(script.tv.show.next.aired) + Library.HasContent(TVShows)" icon="special://skin/extras/widgetthumbs/50.jpg" description="Widget from script.tv.show.next.aired">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,plugin)</onselect>
     </setting>		
     <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.incinemas" label="in Cinemas" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/54.jpg" description="Widget from extendedinfo script">
@@ -152,19 +155,22 @@
     <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.popularmovies" label="Popular Movies" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/54.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.upcoming" label="upcoming Movies" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/56.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.upcoming" label="Upcoming Movies" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/56.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.premiereshows" label="PremiereShows" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/64.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.premiereshows" label="Premiere Shows -Trakt" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/64.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.trendingshows" label="TrendingShows" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/66.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.trendingshows" label="Trending Shows -Trakt" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/66.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.traktsimilartvshows" label="traktsimilartvshows" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/66.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.populartvshows" label="Populartv Shows - Trakt" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/66.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.traktsimilarmovies" label="traktsimilarmovies" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/66.jpg" description="Widget from extendedinfo script">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.traktsimilartvshows" label="Similar TVShows - Trakt" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/66.jpg" description="Widget from extendedinfo script">
+        <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
+    </setting>
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.traktsimilarmovies" label="Similar Movies - Trakt" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/66.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>
     <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.airingepisodes" label="airingepisodes" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/66.jpg" description="Widget from extendedinfo script">
@@ -863,4 +869,101 @@
 		<setting id="vis_layout" value="style5" label="Style 5" condition="" icon="bw1.png" description="Style 5" />
 		<setting id="vis_layout" value="style6" label="Style 6" condition="" icon="bw1.png" description="Style 6" />
 		<setting id="vis_layout" value="style7" label="Style 7" condition="" icon="bw1.png" description="Style 7" />
+
+		<setting id="FIVE_daemon_set" value="" label="None" condition="" icon="colorbox.png" description="Colorbox 0" >
+			<onselect condition="">SetProperty(FIVE_daemon_set,$INFO[Skin.String(FIVE_daemon_set)],home)</onselect>
+			<onselect condition="">AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onselect>    
+		</setting>				
+		<setting id="FIVE_daemon_set" value="blur" label="Blur" condition="" icon="colorbox.png" description="Colorbox 1">
+			<onselect condition="">SetProperty(FIVE_daemon_set,$INFO[Skin.String(FIVE_daemon_set)],home)</onselect>
+			<onselect condition="">AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onselect>
+		</setting>			
+		<setting id="FIVE_daemon_set" value="pixelate" label="Pixelate" condition="" icon="colorbox.png" description="Colorbox 2">
+			<onselect condition="">SetProperty(FIVE_daemon_set,$INFO[Skin.String(FIVE_daemon_set)],home)</onselect>
+			<onselect condition="">AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onselect>
+		</setting>			
+		<setting id="FIVE_daemon_set" value="posterize" label="Posterize" condition="" icon="colorbox.png" description="Colorbox 3" />
+		<setting id="FIVE_daemon_set" value="distort" label="Distort" condition="" icon="colorbox.png" description="Colorbox 4" />
+		<setting id="FIVE_daemon_set" value="twotone" label="Twotone" condition="" icon="colorbox.png" description="Colorbox 5" />
+		<setting id="FIVE_daemon_set" value="shiftblock" label="Shiftblock" condition="" icon="colorbox.png" description="Colorbox 6" />
+		<setting id="FIVE_daemon_set" value="pixelnone" label="Pixelnone" condition="" icon="colorbox.png" description="Colorbox 7" />		
+		<setting id="FIVE_daemon_set" value="pixelwaves" label="Pixelwaves" condition="" icon="colorbox.png" description="Colorbox 8" />
+		<setting id="FIVE_daemon_set" value="pixelrandom" label="Pixelrandom" condition="" icon="colorbox.png" description="Colorbox 9" />
+		<setting id="FIVE_daemon_set" value="pixelfile" label="Pixelfile" condition="" icon="colorbox.png" description="Colorbox 10" />
+		<setting id="FIVE_daemon_set" value="pixelfedges" label="Pixelfedges" condition="" icon="colorbox.png" description="Colorbox 11" />
+		<setting id="FIVE_daemon_set" value="pixeledges" label="Pixeledges" condition="" icon="colorbox.png" description="Colorbox 12" />
+		<setting id="FIVE_daemon_set" value="angletone" label="Sngletone" condition="" icon="colorbox.png" description="Colorbox 13" />
+		<setting id="FIVE_daemon_set" value="dataglitch" label="Dataglitch" condition="" icon="colorbox.png" description="Colorbox 14" />
+		<setting id="FIVE_daemon_set" value="pixelate-shiftblock" label="Pixelate-shiftblock" condition="" icon="colorbox.png" description="Colorbox 15" />
+		<setting id="FIVE_daemon_set" value="desaturate" label="Desaturate" condition="" icon="colorbox.png" description="Colorbox 16" />
+		<setting id="FIVE_daemon_set" value="sharpness" label="Sharpness" condition="" icon="colorbox.png" description="Colorbox 17" />
+		<setting id="FIVE_daemon_set" value="halftone" label="Halftone" condition="" icon="colorbox.png" description="Colorbox 18" />
+		<setting id="FIVE_daemon_set" value="fakelight" label="Fakelight" condition="" icon="colorbox.png" description="Colorbox 19" />
+
+		<setting id="$INFO[skin.string(custom_action)]" value="System.Exec(/storage/ss/select.sh)" label="System.Exec(/storage/ss/select.sh)" condition="" icon="" description="Deff.Action for Menu Button" />				
+		<setting id="$INFO[skin.string(custom_action)]" value="RunScript(script.globalsearch)" label="RunScript(script.globalsearch)" condition="" icon="" description="Deff.Action for Menu Button" />				
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(settings)" label="ActivateWindow(settings)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,movietitles,return)" label="ActivateWindow(movietitles)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,tvshowtitles,return)" label="ActivateWindow(tvshowtitles)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,musicvideotitles,return)" label="ActivateWindow(musicvideotitles)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(music)" label="ActivateWindow(music)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(TVChannels)" label="ActivateWindow(TVChannels)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(RadioChannels)" label="ActivateWindow(RadioChannels)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(pictures)" label="ActivateWindow(pictures)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(favourites)" label="ActivateWindow(favourites)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(weather)" label="ActivateWindow(weather)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(addonbrowser)" label="ActivateWindow(addonbrowser)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Programs,Addons,return)" label="ActivateWindow(Programs,Addons,return)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Programs)" label="ActivateWindow(Programs)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,recentlyaddedmovies,return)" label="ActivateWindow(recently added movies)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,moviesets,return)" label="ActivateWindow(moviesets)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,moviegenres,return)" label="ActivateWindow(movie genres)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,movieyears,return)" label="ActivateWindow(movie years)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,movieactors,return)" label="ActivateWindow(movie actors)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,moviedirectors,return)" label="ActivateWindow(movie directors)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,moviestudios,return)" label="ActivateWindow(movie studios)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,moviecountries,return)" label="ActivateWindow(movie countries)" condition="" icon="" description="Deff.Action for Menu Button" />		
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,recentlyaddedepisodes,return))" label="ActivateWindow(recently added episodes)" condition="" icon="" description="Deff.Action for Menu Button" />		
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,tvshowgenres,return)" label="ActivateWindow(tvshow genres)" condition="" icon="" description="Deff.Action for Menu Button" />		
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,tvshowyears,return)" label="ActivateWindow(tvshow years)" condition="" icon="" description="Deff.Action for Menu Button" />		
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,tvshowactors,return)" label="ActivateWindow(tvshow actors)" condition="" icon="" description="Deff.Action for Menu Button" />		
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,tvshowstudios,return)" label="ActivateWindow(tvshow studios)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,files)" label="ActivateWindow(video files)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,recentlyaddedmusicvideos,return)" label="ActivateWindow(recently added music videos)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,musicvideogenres,return)" label="ActivateWindow(music video genres)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,musicvideoyears,return)" label="ActivateWindow(music video years)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,musicvideoartists,return)" label="ActivateWindow(music video artists)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,musicvideoalbums,return)" label="ActivateWindow(music video albums)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,musicvideodirectors,return)" label="ActivateWindow(music video directors)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,musicvideostudios,return)" label="ActivateWindow(music video studios)" condition="" icon="" description="Deff.Action for Menu Button" />	
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(TVGuide)" label="ActivateWindow(TVGuide)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(TVSearch)" label="ActivateWindow(TVSearch)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(TVRecordings)" label="ActivateWindow(TVRecordings)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(TVTimers)" label="ActivateWindow(TVTimers)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(pvrsettings)" label="ActivateWindow(pvrsettings)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Music,recentlyplayedalbums,return)" label="ActivateWindow(recently played albums)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Music,genres,return)" label="ActivateWindow(Music genres)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Music,playlists,return)" label="ActivateWindow(Music playlists)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Music,artists,return)" label="ActivateWindow(Music artists)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Music,albums,return)" label="ActivateWindow(Music albums)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Music,songs,return)" label="ActivateWindow(Music songs)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Music,compilations,return)" label="ActivateWindow(Music compilations)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(Music,top100,return)" label="ActivateWindow(Music top100)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(music,plugin://plugin.audio.radio_de/stations/top,return)" label="ActivateWindow(plugin.audio.radio_de-top)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(filemanager)" label="ActivateWindow(filemanager)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(systeminfo)" label="ActivateWindow(systeminfo)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="Quit" label="Quit" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="Powerdown" label="Powerdown" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="Reboot" label="Reboot" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="Suspend" label="Suspend" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="Hibernate" label="Hibernate" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="AlarmClock(shutdowntimer,Powerdown()" label="shutdowntimer" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="System.Logoff" label="System.Logoff" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(programs,addons,return)" label="ActivateWindow(programs addons)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,addons,return)" label="ActivateWindow(videos addons)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(music,addons,return)" label="ActivateWindow(music addons)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(pictures,addons,return)" label="ActivateWindow(pictures addons)" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=,return)" label="YouTube" condition="" icon="" description="Deff.Action for Menu Button" />
+		<setting id="$INFO[skin.string(custom_action)]" value="ActivateWindow(videos,plugin://plugin.video.youtube/special/popular_right_now/,return)" label="YouTube - popular" condition="" icon="" description="Deff.Action for Menu Button" />
+		
 		</settings>

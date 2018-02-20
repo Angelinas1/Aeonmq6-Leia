@@ -121,7 +121,7 @@
                         <font>Font_32</font>
                         <textcolor>FFFFFAF0</textcolor>
                         <selectedcolor>$VAR[value_headercolor]</selectedcolor>
-                        <info>ListItem.ChannelNumber</info>
+                        <info>ListItem.ChannelNumberLabel</info>
                     </control>
                     <control type="label">
                         <posx>240</posx>
@@ -194,7 +194,7 @@
                         <align>center</align>
                         <aligny>center</aligny>
                         <font>Font_32</font>
-                        <info>ListItem.ChannelNumber</info>
+                        <info>ListItem.ChannelNumberLabel</info>
                         <textcolor>$VAR[value_headercolor]</textcolor>
                         <selectedcolor>$VAR[value_headercolor]</selectedcolor>
                     </control>

@@ -145,7 +145,7 @@
                         <top>8</top>
                         <width>33</width>
                         <height>33</height>
-                        <texture>OverlayWatched.png</texture>
+                        <texture>overlaywatched.png</texture>
                         <colordiffuse>$VAR[value_headercolor]</colordiffuse>
                         <visible>ListItem.Property(Changed)</visible>
                     </control>
@@ -227,7 +227,7 @@
                         <top>8</top>
                         <width>33</width>
                         <height>33</height>
-                        <texture>OverlayWatched.png</texture>
+                        <texture>overlaywatched.png</texture>
                         <colordiffuse>$VAR[value_headercolor]</colordiffuse>
                         <visible>ListItem.Property(Changed)</visible>
                     </control>

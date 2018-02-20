@@ -378,8 +378,8 @@ msgid "SIMILAR"
 msgstr "СЛИЧНИ"
 
 msgctxt "#31047"
-msgid "STUDIOS"
-msgstr "СТУДИО"
+msgid "Studios"
+msgstr "Студио"
 
 msgctxt "#31048"
 msgid "SETS"
@@ -542,8 +542,8 @@ msgid "Year"
 msgstr "Година"
 
 msgctxt "#31090"
-msgid "DIRECTORS"
-msgstr "РЕЖИСЕРИ"
+msgid "Directors"
+msgstr "Режисери"
 
 msgctxt "#31091"
 msgid "GENRES"
@@ -895,7 +895,7 @@ msgstr "БРОЈ ВИДЉИВИХ ВИЏГЕТА"
 
 msgctxt "#31181"
 msgid "CLICK FOR CHANGE"
-msgstr "пРИТИСНИ ЗА ИЗМЕНУ"
+msgstr "ПРИТИСНИ ЗА ИЗМЕНУ"
 
 msgctxt "#31183"
 msgid "MEMORY USAGE"
@@ -979,7 +979,7 @@ msgstr "ОПЦИЈЕ"
 
 msgctxt "#31203"
 msgid "SKIN"
-msgstr "МАСКА"
+msgstr "МАСКУ"
 
 msgctxt "#31204"
 msgid "UPDATE"
@@ -1844,7 +1844,7 @@ msgstr "БИБЛИОТЕКА ПОДАТАКА"
 
 msgctxt "#31460"
 msgid "CHANGE WIDGETS"
-msgstr "ПРОМЕНИ \"WIDGET\""
+msgstr "ПРОМЕНИ WIDGET"
 
 msgctxt "#31461"
 msgid "PLEASE WAIT"
@@ -2029,6 +2029,10 @@ msgstr "ВЕЛИКО"
 msgctxt "#31515"
 msgid "HORIZONTAL"
 msgstr "ХОРИЗОНТАЛНО"
+
+msgctxt "#31516"
+msgid "VERTICAL"
+msgstr "БЕРТИКАЛНО"
 
 msgctxt "#31517"
 msgid "LANDSCAPE"
@@ -2511,8 +2515,8 @@ msgid "GET ARTWORK"
 msgstr "НАБАВИ АРТ"
 
 msgctxt "#31703"
-msgid "STARRING"
-msgstr "ГЛУМИ"
+msgid "Starring"
+msgstr "Глуме"
 
 msgctxt "#31704"
 msgid "International relationships and assistance"
@@ -3425,3 +3429,127 @@ msgid ""
 "Original Aeon. A big thanks to the master djh_ for creating the masterpiece "
 "that is original Aeon."
 msgstr "Оригинална Aeon маска и само име је брендиран на име djh_.Иако је Aeon MQ 6 написан са независним кодом и не користи текстуру оригиналног Aeon, ипак се захваљујем господину djh_ за прављење оригиналног Aeon-а"
+
+msgctxt "#32001"
+msgid "Similar"	
+msgstr "Слично"
+
+msgctxt "#32002"
+msgid "Writers"
+msgstr "Сценаристи"
+
+msgctxt "#32003"
+msgid "COountry"
+msgstr "Држава"
+
+msgctxt "#32004"
+msgid "Awards"
+msgstr "Награде"
+
+msgctxt "#32005"
+msgid "Duration"
+msgstr "Трајање"
+
+msgctxt "#32006"
+msgid "Status"
+msgstr "Статус"
+
+msgctxt "#32007"
+msgid "Total"
+msgstr "Укупно"
+
+msgctxt "#32008"
+msgid "Seasons"
+msgstr "Сезона"
+
+msgctxt "#32009"
+msgid "NextEpisode"
+msgstr "СледећаЕпизода"
+
+msgctxt "#32010"
+msgid "Title"
+msgstr "Наслов"
+
+msgctxt "#32011"
+msgid "Label"
+msgstr "Име"
+
+msgctxt "#32012"
+msgid "Airdate"
+msgstr "Премијера"
+
+msgctxt "#32013"
+msgid "LastEpisode"
+msgstr "ПоследњаЕпизода"
+
+msgctxt "#32014"
+msgid "GuestStars"
+msgstr "Гост"
+
+msgctxt "#32015"
+msgid "Popularity"
+msgstr "Популарност"
+
+msgctxt "#32016"
+msgid "RT Meter"
+msgstr "РТ Метар"
+
+msgctxt "#32017"
+msgid "MetaCritic"
+msgstr "МетаЦртиц"
+
+msgctxt "#32018"
+msgid "Top250"
+msgstr "Топ250"
+
+msgctxt "#32019"
+msgid "Budget"
+msgstr "Буџет"
+
+msgctxt "#32020"
+msgid "BoxOffice"
+msgstr "Благајна"
+
+msgctxt "#32021"
+msgid "Revenue"
+msgstr "Опис"
+
+msgctxt "#32022"
+msgid "in"
+msgstr "у"
+
+msgctxt "#32023"
+msgid "Change Home Look like : AeonMQ "
+msgstr "Промени изглед да гл. мени буде као : AeonMQ "
+
+msgctxt "#32024"
+msgid "Home Efect"
+msgstr "Ефекти"
+
+msgctxt "#32025"
+msgid "none"
+msgstr "БЕЗ ЕФЕКТА"
+
+msgctxt "#32026"
+msgid "LightSnow"
+msgstr "МАЛИ СНЕГ"
+
+msgctxt "#32027"
+msgid "Snow"
+msgstr "СНЕГ"
+
+msgctxt "#32028"
+msgid "Fog"
+msgstr "МАГЛА"
+
+msgctxt "#32029"
+msgid "Lighting"
+msgstr "МУЊЕ"
+
+msgctxt "#32030"
+msgid "Raining"
+msgstr "КИША"
+
+msgctxt "#32031"
+msgid "Christmas"
+msgstr "БОЖИЋ"

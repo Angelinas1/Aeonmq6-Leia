@@ -200,7 +200,7 @@
                 </control>
                 <control type="image">
                     <include>WatchedShowCase</include>
-                    <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]]</visible>
+                    <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]]</visible>
                 </control>
             </control>
             <control type="group">
@@ -225,7 +225,7 @@
                 </control>
                 <control type="image">
                     <include>WatchedShowCaseCase</include>
-                    <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]]</visible>
+                    <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]]</visible>
                 </control>
                 <control type="image">
                     <!-- Estojo -->
@@ -261,7 +261,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedShowCase</include>
-                        <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]]</visible>
+                        <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]]</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -286,7 +286,7 @@
                     </control>
                     <control type="image">
                         <include>WatchedShowCaseCase</include>
-                        <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]]</visible>
+                        <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]]</visible>
                     </control>
                     <control type="image">
                         <!-- Estojo -->
@@ -328,7 +328,7 @@
                 <height>75</height>
                 <texture>$VAR[value_watchedstyle]</texture>
                 <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(programs)] + !Skin.HasSetting(nooverlays)</visible>
+                <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(programs)] + !Skin.HasSetting(nooverlays)</visible>
             </control>
         </itemlayout>
         <focusedlayout height="525" width="375" condition="[Container.Content(episodes) + Skin.HasSetting(flattenshowcase)]">
@@ -359,7 +359,7 @@
                     <height>75</height>
                     <texture>$VAR[value_watchedstyle]</texture>
                     <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                    <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(programs)] + !Skin.HasSetting(nooverlays)</visible>
+                    <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(programs)] + !Skin.HasSetting(nooverlays)</visible>
                 </control>
             </control>
         </focusedlayout>
@@ -876,7 +876,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -899,7 +899,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(0).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -929,7 +929,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(1).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(1).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -952,7 +952,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(1).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(1).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -982,7 +982,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(2).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(2).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1005,7 +1005,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(2).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(2).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1035,7 +1035,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(3).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(3).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1058,7 +1058,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(3).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(3).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1088,7 +1088,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(4).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(4).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1111,7 +1111,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(4).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(4).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1141,7 +1141,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(5).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(5).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1164,7 +1164,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(5).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(5).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1194,7 +1194,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(6).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(6).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1217,7 +1217,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(6).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(6).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1247,7 +1247,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(7).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(7).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1270,7 +1270,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(7).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(7).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1300,7 +1300,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(-1).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-1).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1323,7 +1323,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(-1).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-1).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1353,7 +1353,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(-2).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-2).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1376,7 +1376,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(-2).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-2).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1406,7 +1406,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(-3).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-3).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1429,7 +1429,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(-3).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-3).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1459,7 +1459,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(-4).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-4).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1482,7 +1482,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(-4).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-4).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1512,7 +1512,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(-5).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-5).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1535,7 +1535,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(-5).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-5).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1565,7 +1565,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(-6).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-6).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1588,7 +1588,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(-6).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-6).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->
@@ -1618,7 +1618,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCase</include>
-                <visible>String.IsEqual(ListItem(-7).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-7).Overlay,overlaywatched.png)</visible>
             </control>
         </control>
         <control type="group">
@@ -1641,7 +1641,7 @@
             </control>
             <control type="image">
                 <include>WatchedShowCaseCase</include>
-                <visible>String.IsEqual(ListItem(-7).Overlay,OverlayWatched.png)</visible>
+                <visible>String.IsEqual(ListItem(-7).Overlay,overlaywatched.png)</visible>
             </control>
             <control type="image">
                 <!-- Estojo -->

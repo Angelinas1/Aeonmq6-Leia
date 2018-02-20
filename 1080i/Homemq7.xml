@@ -228,7 +228,7 @@
 			<!-- Extra Fanart Plugin.Video -->
 			<include>WindowBG</include>
 			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArts)]</imagepath>
-			<visible>String.Contains(skin.string(moviesfanart),extra) + String.Contains(Container(510).ListItem.Path,plugin://plugin)</visible>
+			<visible>String.Contains(skin.string(moviesfanart),extra) + String.Contains(Container(510).ListItem.Path,plugin://)</visible>
 		</control>
 		<control type="image">
 			<left>0</left>
@@ -246,30 +246,6 @@
 	<include>InvisibleButton</include>
 	<texture fallback="blanc.png">$VAR[value_studio_510]</texture>
 	</control>
-	<!-- 
-	<control type="image" id="557">	
-	<include>InvisibleButton</include>
-	<texture fallback="blanc.png">$VAR[value_widgetsmpaa]</texture>
-
-	<control type="image" id="558">	
-	<include>InvisibleButton</include>
-	<texture fallback="blanc.png">$VAR[value_videocodechome]</texture>
-	</control>
-		
-	<control type="image" id="559">	
-	<include>InvisibleButton</include>
-	<texture fallback="blanc.png">$VAR[value_widgetsaudiocodec]</texture>
-	</control>
-
-	<control type="image" id="560">	
-	<include>InvisibleButton</include>
-	<texture fallback="blanc.png">$VAR[value_widgetvresolution]</texture>
-	</control>
-
-	<control type="image" id="561">	
-	<include>InvisibleButton</include>
-	<texture fallback="blanc.png">$VAR[value_widgetaspect]</texture>
-	</control>-->
 	<!-- Controle audio codec -->
 	<control type="image" id="562">	
 	<include>InvisibleButton</include>

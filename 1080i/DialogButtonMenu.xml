@@ -142,7 +142,7 @@
                     </item>
                     <item id="20">
                         <!-- Reload Skin -->
-                        <label>Reload Skin</label>
+                        <label>$LOCALIZE[31695] $LOCALIZE[31203]</label>
                         <onclick>Dialog.Close(111)</onclick>
                         <onclick>ReloadSkin()</onclick>
                     </item>

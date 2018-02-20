@@ -25,7 +25,7 @@
                     <left>8</left>
                     <right>8</right>
                     <control type="image" id="5004" description="clearlogo">
-                        <width>150%</width>
+                        <width>100%</width>
                         <height>315</height>
                         <aspectratio align="center" aligny="bottom">keep</aspectratio>
                     </control>

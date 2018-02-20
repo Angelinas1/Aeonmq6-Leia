@@ -740,11 +740,56 @@
     </fontset>
     <fontset id="Arial" unicode="true">
         <!-- ########################################### ARIAL ########################################### -->
- 	<font>
+	<font>
     <name>Font_fake</name>
     <filename>aeon_mainmenu1.ttf</filename>
     <size>34</size>
     </font>
+	<font>
+	<name>Font_menu1</name>	
+	<filename>aeon_mainmenu1.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu2</name>	
+	<filename>aeon_mainmenu2.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu3</name>	
+	<filename>aeon_mainmenu3.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu4</name>	
+	<filename>aeon_mainmenu4.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu5</name>	
+	<filename>aeon_mainmenu5.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu6</name>	
+	<filename>aeon_mainmenu6.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu7</name>	
+	<filename>aeon_mainmenu7.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu8</name>	
+	<filename>aeon_mainmenu8.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu9</name>	
+	<filename>aeon_mainmenu9.ttf</filename>
+	<size>90</size>
+	</font>
 		<font>
             <name>Font_14</name>
             <!-- nao usar uppercase -->
@@ -777,7 +822,7 @@
         <font>
             <name>Font_18</name>
             <filename>arial.ttf</filename>
-            <size>27</size>
+            <size>22</size>
         </font>
         <font>
             <name>Font13</name>
@@ -789,7 +834,7 @@
             <name>Font_18A</name>
             <!-- nao usar uppercase -->
             <filename>arial.ttf</filename>
-            <size>27</size>
+            <size>22</size>
             <linespacing>0.94</linespacing>
         </font>
         <font>
@@ -1245,6 +1290,51 @@
     <size>34</size>
     </font>
 	<font>
+	<name>Font_menu1</name>	
+	<filename>aeon_mainmenu1.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu2</name>	
+	<filename>aeon_mainmenu2.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu3</name>	
+	<filename>aeon_mainmenu3.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu4</name>	
+	<filename>aeon_mainmenu4.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu5</name>	
+	<filename>aeon_mainmenu5.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu6</name>	
+	<filename>aeon_mainmenu6.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu7</name>	
+	<filename>aeon_mainmenu7.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu8</name>	
+	<filename>aeon_mainmenu8.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu9</name>	
+	<filename>aeon_mainmenu9.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
             <name>Font_14</name>
             <!-- nao usar uppercase -->
             <filename>arial.ttf</filename>
@@ -1276,7 +1366,7 @@
         <font>
             <name>Font_18</name>
             <filename>arial.ttf</filename>
-            <size>27</size>
+            <size>22</size>
         </font>
         <font>
             <name>Font13</name>
@@ -1288,7 +1378,7 @@
             <name>Font_18A</name>
             <!-- nao usar uppercase -->
             <filename>arial.ttf</filename>
-            <size>27</size>
+            <size>22</size>
             <linespacing>0.94</linespacing>
         </font>
         <font>
@@ -1744,6 +1834,51 @@
     <size>34</size>
     </font>
 	<font>
+	<name>Font_menu1</name>	
+	<filename>aeon_mainmenu1.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu2</name>	
+	<filename>aeon_mainmenu2.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu3</name>	
+	<filename>aeon_mainmenu3.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu4</name>	
+	<filename>aeon_mainmenu4.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu5</name>	
+	<filename>aeon_mainmenu5.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu6</name>	
+	<filename>aeon_mainmenu6.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu7</name>	
+	<filename>aeon_mainmenu7.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu8</name>	
+	<filename>aeon_mainmenu8.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu9</name>	
+	<filename>aeon_mainmenu9.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
             <name>Font_14</name>
             <!-- nao usar uppercase -->
             <filename>aeon_mainmenu8.ttf</filename>
@@ -1775,7 +1910,7 @@
         <font>
             <name>Font_18</name>
             <filename>aeon_mainmenu8.ttf</filename>
-            <size>27</size>
+            <size>22</size>
         </font>
         <font>
             <name>Font13</name>
@@ -1787,7 +1922,7 @@
             <name>Font_18A</name>
             <!-- nao usar uppercase -->
             <filename>aeon_mainmenu8.ttf</filename>
-            <size>27</size>
+            <size>22</size>
             <linespacing>0.94</linespacing>
         </font>
         <font>
@@ -2242,6 +2377,51 @@
     <filename>aeon_mainmenu1.ttf</filename>
     <size>34</size>
     </font>
+	<font>
+	<name>Font_menu1</name>	
+	<filename>aeon_mainmenu1.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu2</name>	
+	<filename>aeon_mainmenu2.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu3</name>	
+	<filename>aeon_mainmenu3.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu4</name>	
+	<filename>aeon_mainmenu4.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu5</name>	
+	<filename>aeon_mainmenu5.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu6</name>	
+	<filename>aeon_mainmenu6.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu7</name>	
+	<filename>aeon_mainmenu7.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu8</name>	
+	<filename>aeon_mainmenu8.ttf</filename>
+	<size>90</size>
+	</font>
+	<font>
+	<name>Font_menu9</name>	
+	<filename>aeon_mainmenu9.ttf</filename>
+	<size>90</size>
+	</font>
         <font>
             <name>Font_14</name>
             <!-- nao usar uppercase -->
@@ -3399,5 +3579,4 @@
 			<size>78</size>
 		</font>
     </fontset>
-
 	</fonts>

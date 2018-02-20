@@ -249,7 +249,7 @@
                             <height>38</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </itemlayout>
                     <itemlayout condition="[Window.IsActive(videos) + Skin.HasSetting(slimlowlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimlowlistmusic)]" height="40">
@@ -288,7 +288,7 @@
                             <height>42</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout condition="String.IsEmpty(Control.GetLabel(5502)) | [Window.IsActive(videos) + Skin.HasSetting(slimlowlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimlowlistmusic)]" height="45">
@@ -327,7 +327,7 @@
                             <height>45</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                     <focusedlayout condition="!String.IsEmpty(Control.GetLabel(5502)) + [Window.IsActive(videos) + !Skin.HasSetting(slimlowlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(slimlowlistmusic)]" height="75">
@@ -388,7 +388,7 @@
                             <height>45</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                 </control>

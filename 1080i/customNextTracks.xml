@@ -9,7 +9,7 @@
             <animation effect="slide" start="-1950,0" end="0,0" time="700" tween="sine" easing="inout" delay="1000">Visible</animation>
             <animation effect="slide" start="0,0" end="-1950,0" time="400" tween="sine" easing="inout">WindowClose</animation>
             <animation effect="slide" start="0,0" end="-1950,0" time="400" tween="sine" easing="inout">Hidden</animation>
-            <visible>![String.IsEmpty(MusicPlayer.offset(1).Artist) | Window.IsVisible(musicosd) | Window.IsVisible(visualisationpresetlist) | Skin.HasSetting(novisfurniture) | Skin.HasSetting(nonexttracks_on)] + [String.IsEqual(skin.string(vis_layout),style1) | String.IsEqual(skin.string(vis_layout),style2) | String.IsEqual(skin.string(vis_layout),style3) | String.IsEqual(skin.string(vis_layout),style4)]</visible>
+            <visible>![String.IsEmpty(MusicPlayer.offset(1).Artist) | Window.IsVisible(musicosd) | Window.IsVisible(visualisationpresetlist) | Skin.HasSetting(novisfurniture) | Skin.HasSetting(nonexttracks_on)] + [String.IsEqual(skin.string(vis_layout),style1) | String.IsEqual(skin.string(vis_layout),style2) | String.IsEqual(skin.string(vis_layout),style3) | String.IsEqual(skin.string(vis_layout),style4) | String.IsEqual(skin.string(vis_layout),style5)]</visible>
             <control type="image">
                 <!-- Fundo -->
                 <left>0</left>
@@ -102,9 +102,7 @@
                 <onleft condition="!Skin.HasSetting(nolyrics_on)">Close</onleft>
                 <onright>ActivateWindow(musicosd)</onright>
                 <orientation>vertical</orientation>
-                <pagecontrol></pagecontrol>
                 <include>Animation_HomeFade</include>
-                <visible>String.IsEqual(skin.string(vis_layout),style1) | String.IsEqual(skin.string(vis_layout),style2) | String.IsEqual(skin.string(vis_layout),style3) | String.IsEqual(skin.string(vis_layout),style4)</visible>
                 <itemlayout width="600" height="45">
                     <control type="image">
                         <left>3</left>

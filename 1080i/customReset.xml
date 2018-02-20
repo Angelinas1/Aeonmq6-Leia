@@ -17,6 +17,8 @@
 				<include>InvisibleButton</include>
 				<onclick>noop</onclick>
 				<onfocus>Skin.SetString(font,font1)</onfocus>
+				<onfocus>Skin.SetBool(homemq)</onfocus>
+				<onfocus>Skin.SetBool(mainmenuvertical)</onfocus>		
 				<onfocus>Skin.SetString(animationwindow,zoom)</onfocus>
 				<onfocus>Skin.SetString(colortexture,spring)</onfocus>
 				<onfocus>Skin.SetString(idcolortexture,118)</onfocus>
@@ -52,7 +54,7 @@
 				<onfocus>Skin.SetString(widetvshows.art,poster)</onfocus>
 				<onfocus>Skin.SetString(wideconcerts.art,poster)</onfocus>
 				<onfocus>Skin.SetString(viewpanel.art,poster)</onfocus>
-				<onfocus>Skin.SetString(case_default,deepblue)</onfocus>
+				<onfocus>Skin.SetString(case_default,digital)</onfocus>
 				<onfocus>Skin.SetString(case_bluray,sky)</onfocus>
 				<onfocus>Skin.SetString(case_3dbd,orange)</onfocus>
 				<onfocus>Skin.SetString(case_webtv,red)</onfocus>
@@ -60,7 +62,7 @@
 				<onfocus>Skin.SetString(case_dvd,grey)</onfocus>
 				<onfocus>Skin.SetString(case_set,blood)</onfocus>
 				<onfocus>Skin.SetString(case_4k,chocolate)</onfocus>
-				<onfocus>Skin.SetString(idcasecolor_default,171)</onfocus>
+				<onfocus>Skin.SetString(idcasecolor_default,174)</onfocus>
 				<onfocus>Skin.SetString(idcasecolor_bluray,170)</onfocus>
 				<onfocus>Skin.SetString(idcasecolor_3dbd,182)</onfocus>
 				<onfocus>Skin.SetString(idcasecolor_webtv,176)</onfocus>
@@ -133,17 +135,17 @@
 				<onfocus>Skin.SetString(PosterLiteSeasons,poster)</onfocus>
 				<onfocus>Skin.SetString(PosterLiteEpisodes,landscape)</onfocus>
 				<onfocus>Skin.SetString(PosterLiteSets,poster)</onfocus>
-				<onfocus>Skin.SetString(PosterLitePlusMovies,noicon)</onfocus>
+				<onfocus>Skin.SetString(PosterLitePlusMovies,clearart)</onfocus>
 				<onfocus>Skin.SetString(PosterLitePlusConcerts,noicon)</onfocus>
-				<onfocus>Skin.SetString(PosterLitePlusTVShows,banner)</onfocus>
+				<onfocus>Skin.SetString(PosterLitePlusTVShows,clearart)</onfocus>
 				<onfocus>Skin.SetString(PosterLitePlusSeasons,banner)</onfocus>
-				<onfocus>Skin.SetString(PosterLitePlusEpisodes,banner)</onfocus>
-				<onfocus>Skin.SetString(PosterLitePlusSets,noicon)</onfocus>
+				<onfocus>Skin.SetString(PosterLitePlusEpisodes,clearart)</onfocus>
+				<onfocus>Skin.SetString(PosterLitePlusSets,clearart)</onfocus>
 				<onfocus>Skin.SetString(weather_mode,7days)</onfocus>
 				<onfocus>Skin.SetString(weatherconditionbg,northamerica)</onfocus>
 				<onfocus>Skin.SetString(lyricscript_path,script.cu.lrclyrics)</onfocus>
 				<onfocus>Skin.SetString(vis_bg,slideshowmosaicmix)</onfocus>
-				<onfocus>Skin.SetString(vis_layout,style5)</onfocus>
+				<onfocus>Skin.SetString(vis_layout,style6)</onfocus>
 				<onfocus>Skin.SetString(games_link,rcb)</onfocus>
 				<onfocus>Skin.SetString(videofurniture,full)</onfocus>
 				<onfocus>Skin.SetString(audiofurniture,full)</onfocus>
@@ -172,6 +174,7 @@
 				<onfocus>Skin.SetBool(sextendsett_case)</onfocus>
 				<onfocus>Skin.SetString(newdisc,6)</onfocus>
 				<onfocus>Skin.SetString(vis_layout_time,10)</onfocus>
+				<onfocus>Skin.SetString(music_panel_layout,panel_layout)</onfocus>
 				<onfocus>Skin.SetString(extra_panel_layout,panel_layout_case)</onfocus>
 				<onfocus>Skin.SetString(m_panel_layout,panel_zoom)</onfocus>
 				<onfocus>Skin.SetString(tv_panel_layout,panel_layout_fanart)</onfocus>
@@ -191,27 +194,65 @@
 				<onfocus>Skin.SetString(colorratingstars100,FF4CFF4C)</onfocus>
 				<onfocus>Skin.SetString(styleratingstars,strip)</onfocus>
 				<onfocus>Skin.SetString(homeefect,none)</onfocus>
-	<onfocus>Skin.SetString(global.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu1.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu2.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu3.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu4.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu5.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu6.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu7.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu8.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu9.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu10.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu11.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu12.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu13.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu14.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu15.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu16.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu17.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu18.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu19.colorcomposition,FFFFFFFF)</onfocus>
-	<onfocus>Skin.SetString(menu20.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(global.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu1.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu2.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu3.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu4.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu5.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu6.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu7.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu8.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu9.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu10.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu11.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu12.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu13.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu14.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu15.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu16.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu17.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu18.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu19.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetString(menu20.colorcomposition,FFFFFFFF)</onfocus>
+				<onfocus>Skin.SetBool(viewbanner_video)</onfocus>
+				<onfocus>Skin.SetBool(viewbannerinfo_video)</onfocus>
+				<onfocus>Skin.SetBool(viewposter_video)</onfocus>
+				<onfocus>Skin.SetBool(viewposterlite_video)</onfocus>
+				<onfocus>Skin.SetBool(viewlowlist_video)</onfocus>
+				<onfocus>Skin.SetBool(viewglasslist_video)</onfocus>
+				<onfocus>Skin.SetBool(viewposterlist_video)</onfocus>
+				<onfocus>Skin.SetBool(viewwide_video)</onfocus>
+				<onfocus>Skin.SetBool(viewwall_video)</onfocus>
+				<onfocus>Skin.SetBool(view3dwall_video)</onfocus>				
+				<onfocus>Skin.SetBool(viewpanel_video)</onfocus>
+				<onfocus>Skin.SetBool(viewshowcase_video)</onfocus>
+				<onfocus>Skin.SetBool(viewcoverflow_video)</onfocus>
+				<onfocus>Skin.SetBool(viewshowart_video)</onfocus>
+				<onfocus>Skin.SetBool(viewtotalart_video)</onfocus>				
+				<onfocus>Skin.SetBool(viewshelf_video)</onfocus>
+				<onfocus>Skin.SetBool(viewmultiplex_video)</onfocus>
+				<onfocus>Skin.SetBool(viewlandscapex_video)</onfocus>
+				<onfocus>Skin.SetBool(viewsets_video)</onfocus>				
+				<onfocus>Skin.SetBool(viewposterzoom_video)</onfocus>
+				<onfocus>Skin.SetBool(viewmiddle_video)</onfocus>
+				<onfocus>Skin.SetBool(viewcoverback_video)</onfocus>
+				<onfocus>Skin.SetBool(viewmidlist967_video)</onfocus>
+				<onfocus>Skin.SetBool(viewmodern_video)</onfocus>			
+				<onfocus>Skin.SetBool(viewaeon_video)</onfocus>					
+				<onfocus>Skin.SetBool(viewfanart_video)</onfocus>		
+				<onfocus>Skin.SetBool(viewposter_music)</onfocus>
+				<onfocus>Skin.SetBool(viewlowlist_music)</onfocus>		
+				<onfocus>Skin.SetBool(viewwall_music)</onfocus>			
+				<onfocus>Skin.SetBool(viewcoverflow_music)</onfocus>
+				<onfocus>Skin.SetBool(viewwide_music)</onfocus>		
+				<onfocus>Skin.SetBool(viewpanel_music)</onfocus>
+				<onfocus>Skin.SetBool(viewshelf_music)</onfocus>
+				<onfocus>Skin.SetBool(viewcoverflowback_music)</onfocus>		
+				<onfocus>Skin.SetBool(viewbanner_music)</onfocus>
+				<onfocus>Skin.SetBool(viewbannerinfo_music)</onfocus>
+				<onfocus>Skin.SetBool(viewaeon_music)</onfocus>
+				<onfocus>Skin.SetBool(AnimatedFanart)</onfocus>				
 				<onfocus>AlarmClock(nextstep,SetFocus(901),0:03,true)</onfocus>
 			</control>
 			<control type="button" id="901">

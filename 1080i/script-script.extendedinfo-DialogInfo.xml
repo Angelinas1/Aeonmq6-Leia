@@ -14,20 +14,6 @@
                 <imagepath background="true">black.png</imagepath>
             </control>
             <control type="image">
-                <!-- Multi Fanart -->
-                <left>0</left>
-                <top>0</top>
-                <width>1920</width>
-                <height>1080</height>
-                <fadetime>FanartCrossFadeTime</fadetime>
-                <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan)">Conditional</animation>
-                <animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan)">Conditional</animation>
-                <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan)">Conditional</animation>
-                <animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan)">Conditional</animation>
-                <texture background="true">$INFO[Window(home).Property(fanart)]</texture>
-            </control>
-            <include>LiveBG</include>
-            <control type="image">
                 <left>0</left>
                 <top>0</top>
                 <width>1920</width>
@@ -592,7 +578,7 @@
                     <scroll>true</scroll>
                 </control>
                 <control type="label">
-                    <!-- 1350 -->
+                    <!-- 1351 -->
                     <left>172</left>
                     <top>1034</top>
                     <width>1575</width>
@@ -657,7 +643,7 @@
                             <aligny>center</aligny>
                             <align>center</align>
                             <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
                             <visible>!Skin.HasSetting(sextendsett_case)</visible>
@@ -673,7 +659,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -713,7 +699,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                                 <include>Animation_Fade</include>
@@ -727,7 +713,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <include>Animation_Fade</include>
                                 <visible>Control.HasFocus(150)</visible>
@@ -744,7 +730,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -756,7 +742,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <visible>Control.HasFocus(150)</visible>
                             </control>
@@ -1029,7 +1015,7 @@
                     </focusedlayout>
                 </control>
                 <control type="list" id="550">
-                    <!-- Similar 163 -->
+                    <!-- Movie Crew -->
                     <visible>String.Contains(skin.string(sextendcast_list),550)</visible>
                     <viewtype label="List">List Info</viewtype>
                     <left>45</left>
@@ -1052,7 +1038,7 @@
                             <aligny>center</aligny>
                             <align>center</align>
                             <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
                             <visible>!Skin.HasSetting(sextendsett_case)</visible>
@@ -1068,7 +1054,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -1096,7 +1082,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                                 <include>Animation_Fade</include>
@@ -1110,7 +1096,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <include>Animation_Fade</include>
                                 <visible>Control.HasFocus(550)</visible>
@@ -1127,7 +1113,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -1139,7 +1125,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <visible>Control.HasFocus(550)</visible>
                             </control>
@@ -1157,7 +1143,7 @@
                     </focusedlayout>
                 </control>
                 <control type="list" id="650">
-                    <!-- Similar 164 -->
+                    <!-- TV Crew -->
                     <visible>String.Contains(skin.string(sextendcast_list),650)</visible>
                     <viewtype label="List">List Info</viewtype>
                     <left>45</left>
@@ -1180,7 +1166,7 @@
                             <aligny>center</aligny>
                             <align>center</align>
                             <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
                             <visible>!Skin.HasSetting(sextendsett_case)</visible>
@@ -1196,7 +1182,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -1224,7 +1210,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                                 <include>Animation_Fade</include>
@@ -1238,7 +1224,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <include>Animation_Fade</include>
                                 <visible>Control.HasFocus(650)</visible>
@@ -1255,7 +1241,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -1267,7 +1253,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <visible>Control.HasFocus(650)</visible>
                             </control>
@@ -1285,7 +1271,7 @@
                     </focusedlayout>
                 </control>
                 <control type="list" id="750">
-                    <!-- Similar 165 -->
+                    <!-- Tagged Img -->
                     <visible>String.Contains(skin.string(sextendcast_list),750)</visible>
                     <viewtype label="List">List Info</viewtype>
                     <left>45</left>
@@ -1342,6 +1328,135 @@
                             <visible>Control.HasFocus(750)</visible>
                         </control>
                     </focusedlayout>
+                </control>
+                <control type="list" id="1351">
+                    <!-- Similar 165 -->
+                    <visible>String.Contains(skin.string(sextendcast_list),1351)</visible>
+                    <viewtype label="List">List Info</viewtype>
+                    <left>45</left>
+                    <top>738</top>
+                    <width>1830</width>
+                    <height>330</height>
+                    <onup>149</onup>
+                    <ondown>Skin.Reset(coverzoom)</ondown>
+                    <ondown>SetFocus(165)</ondown>
+                    <ondown>Skin.SetBool(artistzoom)</ondown>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>3</focusposition>
+					<content>plugin://script.skin.helper.service/?action=getcastmedia&amp;name=$INFO[Window.Property(Label)]</content>
+                    <itemlayout height="255" width="272">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>195</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <visible>!Skin.HasSetting(sextendsett_case)</visible>
+                        </control>
+                        <control type="group">
+                            <!-- DVD Case -->
+                            <visible>Skin.HasSetting(sextendsett_case)</visible>
+                            <control type="image">
+                                <left>0</left>
+                                <top>30</top>
+                                <width>158</width>
+                                <height>240</height>
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <aspectratio>stretch</aspectratio>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+                                <bordertexture border="-2">black.png</bordertexture>
+                                <colordiffuse>FF909090</colordiffuse>
+                            </control>
+                            <control type="image">
+                                <!-- Case -->
+                                <left>-15</left>
+                                <top>-8</top>
+                                <width>195</width>
+                                <height>300</height>
+                                <fadetime>FanartCrossFadeTime</fadetime>
+                                <texture>$VAR[value_videocase0]</texture>
+                                <include>Animation_CaseGlass</include>
+                            </control>
+                        </control>
+				   </itemlayout>
+                    <focusedlayout height="255" width="272">
+                        <control type="group">
+                            <!-- DVD CaseFocus -->
+                            <visible>!Skin.HasSetting(sextendsett_case)</visible>
+                            <control type="image">
+                                <left>0</left>
+                                <top>8</top>
+                                <width>195</width>
+                                <height>270</height>
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <aspectratio>keep</aspectratio>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+                                <bordertexture border="-2">black.png</bordertexture>
+                                <colordiffuse>FF909090</colordiffuse>
+                                <include>Animation_Fade</include>
+                                <visible>!Control.HasFocus(1351)</visible>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>8</top>
+                                <width>195</width>
+                                <height>270</height>
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <aspectratio>keep</aspectratio>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+                                <bordertexture border="-2">grey.png</bordertexture>
+                                <include>Animation_Fade</include>
+                                <visible>Control.HasFocus(1351)</visible>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <!-- DVD Case -->
+                            <visible>Skin.HasSetting(sextendsett_case)</visible>
+                            <control type="image">
+                                <left>0</left>
+                                <top>30</top>
+                                <width>158</width>
+                                <height>240</height>
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <aspectratio>stretch</aspectratio>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+                                <bordertexture border="-2">black.png</bordertexture>
+                                <colordiffuse>FF909090</colordiffuse>
+                            </control>
+                            <control type="image">
+                                <left>0</left>
+                                <top>30</top>
+                                <width>158</width>
+                                <height>240</height>
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <aspectratio>stretch</aspectratio>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+                                <bordertexture border="-2">grey.png</bordertexture>
+                                <visible>Control.HasFocus(1351)</visible>
+                            </control>
+                            <control type="image">
+                                <!-- Case -->
+                                <left>-15</left>
+                                <top>-8</top>
+                                <width>195</width>
+                                <height>300</height>
+                                <fadetime>FanartCrossFadeTime</fadetime>
+                                <texture>$VAR[value_videocase0]</texture>
+                                <include>Animation_CaseGlass</include>
+                            </control>
+                        </control>
+					</focusedlayout>
                 </control>
             </control>
             <control type="group">
@@ -1487,6 +1602,11 @@
                             <label>TV Crew</label>
                             <onclick>Skin.SetString(sextendcast_list,650)</onclick>
                             <visible>Integer.IsGreater(Container(650).NumItems,0)</visible>
+                        </item>
+                        <item id="19">
+                            <!-- All Movie and TVShow in library -->
+                            <label>Movie and TV</label>
+                            <onclick>Skin.SetString(sextendcast_list,1351)</onclick>
                         </item>
                     </content>
                 </control>

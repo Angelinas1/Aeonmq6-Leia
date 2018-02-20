@@ -774,9 +774,9 @@
 					<top>952</top>
 					<width>255</width>
 					<height>255</height>
-					<texture fallback="Empty.png" diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]&amp;fallback=cdart_diffuse.png</texture>
+					<texture fallback="empty.png" diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]&amp;fallback=cdart_diffuse.png</texture>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<visible>Player.HasAudio+String.IsEqual(Control.GetLabel(5604),Empty.png)+String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))</visible>
+					<visible>Player.HasAudio+String.IsEqual(Control.GetLabel(5604),empty.png)+String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))</visible>
 				</control>
 				<control type="image" id="5604">
 					<include>Animation_CDart</include>
@@ -784,7 +784,7 @@
 					<top>952</top>
 					<width>255</width>
 					<height>255</height>
-					<texture fallback="Empty.png" diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]&amp;track=$VAR[value_playertitle]&amp;album=$INFO[MusicPlayer.Album]&amp;type=discart&amp;fallback=cdart_diffuse.png</texture>
+					<texture fallback="empty.png" diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]&amp;track=$VAR[value_playertitle]&amp;album=$INFO[MusicPlayer.Album]&amp;type=discart&amp;fallback=cdart_diffuse.png</texture>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
 					<visible>Player.HasAudio+String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))</visible>
 				</control>
@@ -794,7 +794,7 @@
 					<top>952</top>
 					<width>255</width>
 					<height>255</height>
-					<texture fallback="Empty.png" diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.DiscArt)]</texture>
+					<texture fallback="empty.png" diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.DiscArt)]</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<visible>Player.HasAudio</visible>
 				</control>
@@ -804,7 +804,7 @@
 					<top>952</top>
 					<width>255</width>
 					<height>255</height>
-					<texture fallback="Empty.png" diffuse="cdart_diffuse.png" background="true">$VAR[value_videodisc]</texture>
+					<texture fallback="empty.png" diffuse="cdart_diffuse.png" background="true">$VAR[value_videodisc]</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<visible>Player.HasVideo + !VideoPlayer.Content(LiveTV)</visible>
 				</control>
@@ -2179,6 +2179,15 @@
 						<texture>$VAR[value_extra_discart]</texture>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 					</control>
+					<control type="image">
+						<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="System.IdleTime(6)">Conditional</animation>
+						<left>285</left>
+						<top>330</top>
+						<width>165</width>
+						<height>165</height>
+						<texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+					</control>
 				</control>
 				<control type="image">
 					<!-- Thumb -->
@@ -3367,7 +3376,7 @@ Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetti
 					<width>75</width>
 					<height>75</height>
 					<aspectratio align="left" aligny="top">keep</aspectratio>
-					<texture background="true">$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+					<texture background="true">$INFO[skin.string(CustomWeatherIconFolder)]$INFO[Window(Weather).Property(Current.OutlookIcon)]</texture>
 					<visible>!Skin.HasSetting(weathericons)</visible>
 				</control>
 				<control type="multiimage">
@@ -3376,7 +3385,7 @@ Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetti
 					<width>90</width>
 					<height>75</height>
 					<aspectratio align="left" aligny="top">keep</aspectratio>
-					<imagepath>$VAR[value_weathericons]$INFO[Weather.FanartCode]/</imagepath>
+					<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
 					<timeperimage>175</timeperimage>
 					<randomize>false</randomize>
 					<fadetime>0</fadetime>

@@ -137,7 +137,15 @@
                     <include>SetsValue</include>
                     <left>45</left>
                     <top>584</top>
-                    <label>$INFO[ListItem.Duration,, $LOCALIZE[31961]]$VAR[value_ground16_value]</label>
+                    <label>$VAR[value_ground16_value]</label>
+					<visible>!Control.HasFocus(5801)</visible>
+                </control>
+                <control type="label">
+                    <include>SetsValue</include>
+                    <left>45</left>
+                    <top>584</top>
+                    <label>$INFO[Container(5801).ListItem.Duration]</label>
+                    <visible>Control.HasFocus(5801)</visible>
                 </control>
                 <control type="label">
                     <include>SetsLabel</include>

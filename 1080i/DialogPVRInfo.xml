@@ -297,14 +297,14 @@
                     <item>
                         <label>$LOCALIZE[573]</label>
                         <!-- Path -->
-                        <label2>$INFO[ListItem.FilenameAndPath]</label2>
+                        <label2>$INFO[ListItem.FolderPath]</label2>
                         <onclick>noop</onclick>
-                        <visible>!String.IsEmpty(ListItem.FilenameAndPath)</visible>
+                        <visible>!String.IsEmpty(ListItem.FolderPath)</visible>
                     </item>
                     <item>
                         <label>Year</label>
                         <!-- PVR INFo -->
-                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Year)]</label2>
+                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Year)]$INFO[Window(Home).Property(SkinHelper.ListItem.Premiered), / ]</label2>
                         <onclick>noop</onclick>
                         <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Year))</visible>
                     </item>
@@ -408,7 +408,7 @@
                 <height>170</height>
                 <align>justify</align>
                 <font>Font_18A</font>
-                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]</label>
+                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.imdb.Plot)][CR][CR]$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]</label>
                 <textcolor>FFFFFAF0</textcolor>
                 <autoscroll delay="10000" time="4000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
                 <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster))</visible>
@@ -421,7 +421,7 @@
                 <height>180</height>
                 <align>justify</align>
                 <font>Font_18A</font>
-                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]</label>
+                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.imdb.Plot)][CR][CR]$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]</label>
                 <textcolor>FFFFFAF0</textcolor>
                 <autoscroll delay="10000" time="4000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
                 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster))</visible>
@@ -462,7 +462,7 @@
             <control type="image">
                 <!-- Fundo do rodape -->
                 <left>0</left>
-                <top>975</top>
+                <top>1005</top>
                 <width>1920</width>
                 <height>105</height>
                 <colordiffuse>$VAR[value_flagscolor]</colordiffuse>
@@ -471,11 +471,20 @@
             <control type="image">
                 <left>0</left>
                 <top>741</top>
-                <height>279</height>
+                <height>289</height>
                 <width>1920</width>
                 <texture>darkgrey.png</texture>
                 <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
                 <include>Animation_DefaultGlass</include>
+            </control>
+            <control type="image">
+                <!-- Cast -->
+                <left>0</left>
+                <top>1023</top>
+                <width>1920</width>
+                <height>45</height>
+                <texture flipy="true">shadow_h.png</texture>
+                <colordiffuse>C3FFFFFF</colordiffuse>
             </control>
             <control type="grouplist">
                 <!-- Etiquetas -->
@@ -658,27 +667,19 @@
             </control>
             <control type="image">
                 <left>0</left>
-                <top>1020</top>
+                <top>1035</top>
                 <height>64</height>
                 <width>1920</width>
                 <texture>gradient_small.png</texture>
             </control>
-            <control type="image">
-                <!-- Cast -->
-                <left>0</left>
-                <top>1018</top>
-                <width>1920</width>
-                <height>45</height>
-                <texture flipy="true">shadow_h.png</texture>
-                <colordiffuse>C3FFFFFF</colordiffuse>
-            </control>
+
             <control type="group" id="617">
                 <visible>![Control.HasFocus(1000) | Control.HasFocus(1001)]</visible>
                 <control type="image">
                     <left>60</left>
                     <top>746</top>
                     <width>495</width>
-                    <height>270</height>
+                    <height>280</height>
                     <aligny>center</aligny>
                     <align>center</align>
                     <aspectratio>keep</aspectratio>
@@ -691,7 +692,7 @@
                     <left>60</left>
                     <top>746</top>
                     <width>495</width>
-                    <height>270</height>
+                    <height>280</height>
                     <aligny>center</aligny>
                     <align>center</align>
                     <aspectratio>keep</aspectratio>
@@ -703,7 +704,7 @@
                     <left>600</left>
                     <top>746</top>
                     <width>495</width>
-                    <height>270</height>
+                    <height>280</height>
                     <aligny>center</aligny>
                     <align>center</align>
                     <aspectratio>keep</aspectratio>
@@ -715,7 +716,7 @@
                     <left>600</left>
                     <top>746</top>
                     <width>495</width>
-                    <height>270</height>
+                    <height>280</height>
                     <aligny>center</aligny>
                     <align>center</align>
                     <aspectratio>keep</aspectratio>
@@ -727,7 +728,7 @@
             <control type="label">
                 <visible>Control.IsVisible(615) | Control.IsVisible(616)</visible>
                 <left>0</left>
-                <top>1020</top>
+                <top>1025</top>
                 <height>60</height>
                 <width>1215</width>
                 <align>center</align>
@@ -841,15 +842,15 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <item id="2">
+                        <item id="1">
                             <!-- Start -->
                             <label>31700</label>
-                            <onclick>SendClick(2003,8)</onclick>
+                            <onclick>SendClick(2003,5)</onclick>
                         </item>
-                        <item id="1">
+                        <item id="2">
                             <!-- Record -->
                             <label>Record</label>
-                            <onclick>SendClick(2003,6)</onclick>
+                            <onclick>SendClick(2003,8)</onclick>
                             <visible>!Skin.HasSetting(kioskininfo)</visible>
                         </item>
                         <item id="3">
@@ -879,13 +880,13 @@
                         <item id="7">
                             <!-- Youtube -->
                             <label>YouTube</label>
-                            <onclick condition="System.HasAddon(plugin.video.youtube)">RunScript(script.skin.helper.service,action=searchyoutube,title=$INFO[ListItem.Title] Trailer,header=Search YouTube Trailers)</onclick>
-                            <onclick condition="!System.HasAddon(plugin.video.youtube)">ActivateWindow(Videos,plugin://plugin.video.youtube)</onclick>
+                            <onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=searchyoutube,title=$INFO[Window(Home).Property(SkinHelper.ListItem.Title)] Trailer,header=Search YouTube Trailers)</onclick>
+							<onclick>Dialog.Close(pvrguideinfo)</onclick>
                         </item>
                         <item id="8">
                             <!-- ExtendInfo -->
                             <label>Phil script</label>
-                            <onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Title])</onclick>
+                            <onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Window(Home).Property(SkinHelper.ListItem.Title)])</onclick>
                         </item>
                         <item id="9">
                             <!-- Actor Info -->

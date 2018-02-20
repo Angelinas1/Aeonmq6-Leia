@@ -254,7 +254,7 @@
                 <control type="image">
                     <!-- Aspect -->
                     <include>FlagImage</include>
-                    <texture>$INFO[Videoplayer.VideoAspect,flags/aspectratio/,.png]</texture>
+                    <texture>$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
                 </control>
                 <control type="image">
                     <!-- Audio Codec -->
@@ -267,7 +267,7 @@
                     <texture>$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,.png]</texture>
                 </control>
             </control>
-            <control type="image">
+            <control type="image" id="9346">
                 <!-- Logo e Clearart -->
                 <left>1620</left>
                 <top>162</top>
@@ -276,7 +276,16 @@
                 <aspectratio aligny="bottom">keep</aspectratio>
                 <texture background="true">$VAR[value_art]</texture>
             </control>
-
+            <control type="image" id="9347">
+                <!-- Logo e Clearart -->
+                <left>1620</left>
+                <top>162</top>
+                <width>270</width>
+                <height>510</height>
+                <aspectratio aligny="bottom">keep</aspectratio>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearArt)]</texture>
+				<visible></visible>
+            </control>
             <control type="image">
                 <!-- Fundo -->
                 <left>0</left>
@@ -346,7 +355,8 @@
                 <width>270</width>
                 <height>510</height>
                 <aspectratio aligny="bottom">keep</aspectratio>
-                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearArt)]</texture>
+                <texture background="true">http://localhost:52307/getartwork&amp;title=$ESCINFO[VideoPlayer.TVShowTitle]&amp;type=clearlogo</texture>
+				<visible>String.StartsWith(Player.FilenameAndPath,http)</visible>
             </control>
             <control type="image">
                 <!-- Poster com estojo -->
@@ -362,12 +372,12 @@
                 <!-- Titulo enredo -->
                 <left>330</left>
                 <top>670</top>
-                <width>450</width>
+                <width>750</width>
                 <height>38</height>
                 <align>left</align>
                 <font>Font_17</font>
                 <textcolor>$VAR[value_headercolor]</textcolor>
-                <label>$INFO[VideoPlayer.Title]</label>
+                <label>$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Title, - ,]$INFO[Window(Home).Property(SkinHelper.Player.subtitles)]</label>
             </control>
             <control type="textbox">
                 <!-- Plot -->
@@ -396,7 +406,7 @@
                 <posy>720</posy>
                 <width>570</width>
                 <height>345</height>
-                <texture background="true">http://localhost:52307/getthumb&amp;title=$INFO[VideoPlayer.Title]</texture>
+                <texture background="true">http://localhost:52307/getthumb&amp;title=$ESCINFO[VideoPlayer.Title]</texture>
                 <bordertexture border="-12">musicframe.png</bordertexture>
                 <fadetime>FanartCrossFadeTime</fadetime>
                 <aspectratio>keep</aspectratio>
@@ -521,7 +531,7 @@
                     <height>60</height>
                     <font>Font_40</font>
                     <textcolor>$VAR[value_texturecolor]</textcolor>
-                    <label>$INFO[VideoPlayer.ChannelNumber]. $VAR[value_videoosdtag]</label>
+                    <label>$INFO[VideoPlayer.ChannelNumberLabel]. $VAR[value_videoosdtag]</label>
                     <scroll>true</scroll>
                     <scrollout>false</scrollout>
                     <shadowcolor>grey</shadowcolor>
@@ -605,7 +615,19 @@
                     <label>$INFO[VideoPlayer.Plot]</label>
                     <autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
                     <include>Animation_Fade</include>
-                    <visible>!Control.HasFocus(9915)</visible>
+                    <visible>!Control.HasFocus(9915)+!VideoPlayer.Content(LiveTV)</visible>
+                </control>
+                <control type="textbox">
+                    <!-- Plot -->
+                    <left>300</left>
+                    <top>904</top>
+                    <width>1275</width>
+                    <height>158</height>
+                    <font>Font_18A</font>
+                    <label>$INFO[Window(Home).Property(SkinHelper.Player.imdb.Plot)][CR][CR]$INFO[Window(Home).Property(SkinHelper.Player.Plot)] $INFO[Window(Home).Property(SkinHelper.Player.Plot)]</label>
+                    <autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                    <include>Animation_Fade</include>
+                    <visible>!Control.HasFocus(9915)+VideoPlayer.Content(LiveTV)</visible>
                 </control>
                 <control type="image">
                     <!-- Back for Etiquetas -->
@@ -891,7 +913,7 @@
                 <top>750</top>
                 <width>180</width>
                 <height>285</height>
-                <texture>http://localhost:52307/getthumb&amp;title=$INFO[VideoPlayer.Title]</texture>
+                <texture>http://localhost:52307/getthumb&amp;title=$ESCINFO[VideoPlayer.Title]</texture>
                 <aspectratio align="center" aligny="bottom">stretch</aspectratio>
 				<visible>String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster))</visible>
             </control>

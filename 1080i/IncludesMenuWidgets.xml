@@ -76,7 +76,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>!Skin.HasSetting(nooverlays) + Integer.IsGreater(ListItem.Playcount,0)+String.StartsWith(Container(9000).ListItem.Property(widgets),movie)</visible>
@@ -115,7 +115,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation type="Focus" reversible="false">
@@ -187,7 +187,7 @@
 		<include condition="String.Contains(skin.string(widgetsnumber),4)">panel_layout4</include>
 		<include condition="String.Contains(skin.string(widgetsnumber),8)">panel_layout8</include>
 		<include condition="String.Contains(skin.string(widgetsnumber),12)">panel_layout12</include>
-		<include>widgets_updown</include>>
+		<include>widgets_updown</include>
 		<orientation>horizontal</orientation>
 		<pagecontrol></pagecontrol>
 		<include>Animation_Widgets</include>
@@ -271,7 +271,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>!Skin.HasSetting(nooverlays) + Integer.IsGreater(ListItem.Playcount,0)</visible>
@@ -324,7 +324,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation type="Focus" reversible="false">
@@ -716,7 +716,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>!Skin.HasSetting(nooverlays) + Integer.IsGreater(ListItem.Playcount,0)</visible>
@@ -755,7 +755,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation type="Focus" reversible="false">
@@ -959,7 +959,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>!Skin.HasSetting(nooverlays) + Integer.IsGreater(ListItem.Playcount,0)</visible>
@@ -1040,7 +1040,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation type="Focus" reversible="false">
@@ -1537,7 +1537,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>!Skin.HasSetting(nooverlays) + Integer.IsGreater(ListItem.Playcount,0)</visible>
@@ -1618,7 +1618,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation type="Focus" reversible="false">
@@ -1777,7 +1777,7 @@
 					<top>177</top>
 					<width>38</width>
 					<height>38</height>
-					<texture>OverlayWatched.png</texture>
+					<texture>overlaywatched.png</texture>
 					<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 					<aspectratio align="center" aligny="bottom">keep</aspectratio>
 					<animation effect="fade" start="100" end="25" time="400" condition="ControlGroup(510).HasFocus">Conditional</animation>
@@ -1832,7 +1832,7 @@
 				<top>177</top>
 				<width>38</width>
 				<height>38</height>
-				<texture>OverlayWatched.png</texture>
+				<texture>overlaywatched.png</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>!Skin.HasSetting(nooverlays) + Integer.IsGreater(ListItem.Playcount,0)</visible>
@@ -1855,7 +1855,7 @@
 			<control type="group">
 				<!-- modern case  -->
 				<top>195</top>
-				<animation effect="zoom" center="0,372" start="100" end="220" time="500" tween="cubic" easing="out" reversible="false">Focus</animation>
+				<animation effect="zoom" center="0,372" start="100" end="220" time="500" tween="cubic" easing="out" reversible="false" condition="true">Conditional</animation>
 				<animation type="Focus" reversible="false" condition="true">
 					<effect type="slide" start="0,0" end="30,0" time="500" delay="1000" tween="cubic" easing="out"/>
 					<effect type="fade" start="0" end="100" time="300" delay="1000"/>
@@ -1978,7 +1978,7 @@
 			<control type="group">
 				<!-- modern case  -->
 				<top>195</top>
-				<animation effect="zoom" center="0,372" start="100" end="220" time="500" tween="cubic" easing="out" reversible="false">Focus</animation>
+				<animation effect="zoom" center="0,372" start="100" end="220" time="500" tween="cubic" easing="out" reversible="false" condition="true">Conditional</animation>
 				<animation type="Focus" reversible="false" condition="true">
 					<effect type="slide" start="0,0" end="30,0" time="500" delay="1000" tween="cubic" easing="out"/>
 					<effect type="fade" start="0" end="100" time="300" delay="1000"/>
@@ -2098,6 +2098,111 @@
 			</control>
 		</focusedlayout>
 	</include>
+	<include name="panel_zoom_1">
+		<left>45</left>
+		<top>525</top>
+		<width>1822</width>
+		<height>600</height>
+		<include>widgets_updown</include>
+		<orientation>horizontal</orientation>
+		<pagecontrol>1</pagecontrol>
+		<focusposition>0</focusposition>
+		<scrolltime tween="sine" easing="out">500</scrolltime>
+		<include>Animation_Widgets</include>
+		<animation effect="fade" start="100" end="10" time="400" condition="Control.HasFocus(500)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="660,0" time="300" tween="sine" easing="out" condition="Skin.HasSetting(homemq)+Skin.HasSetting(mainmenuvertical) + ![Control.HasFocus(500) | Control.HasFocus(510) | ControlGroup(512).HasFocus]">Conditional</animation>
+	<itemlayout width="152" height="285">
+	<control type="group">	
+	<visible>Control.HasFocus(9000) | Control.HasFocus(510) | ControlGroup(512).HasFocus | Control.HasFocus(8001) | ControlGroup(600).HasFocus | Window.IsVisible(6641)</visible>
+	<!-- reflexo video -->
+	<control type="image">
+	<left>6</left>
+	<top>249</top>
+	<width>145</width>
+	<height>248</height>
+	<texture flipy="true" fallback="DefaultPicture.png" diffuse="thumb_poster_reflect.png" background="true">$VAR[value_widgetsposter]</texture>
+	<colordiffuse>97FFFFFF</colordiffuse>
+	<aspectratio align="center" aligny="top">keep</aspectratio>
+	<animation effect="fade" start="100" end="25" time="400" condition="ControlGroup(512).HasFocus">Conditional</animation>	
+	</control>
+	<!-- poster -->
+	<control type="image">
+	<left>6</left>
+	<top>0</top>
+	<width>145</width>
+	<height>248</height>
+	<texture fallback="DefaultPicture.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_widgetsposter]</texture>
+	<aspectratio align="center" aligny="bottom">keep</aspectratio>
+	<animation effect="fade" start="100" end="25" time="400" condition="ControlGroup(512).HasFocus">Conditional</animation>
+	</control>
+	</control>
+	</itemlayout>
+	<focusedlayout width="152" height="285" condition="![Control.HasFocus(500) | Control.HasFocus(510) | ControlGroup(512).HasFocus]">
+    <!-- reflexo video -->
+    <control type="image">
+    <left>6</left>
+    <top>249</top>
+    <width>145</width>
+    <height>248</height>
+    <texture flipy="true" fallback="DefaultPicture.png" diffuse="thumb_poster_reflect.png" background="true">$VAR[value_widgetsposter]</texture>
+    <colordiffuse>97FFFFFF</colordiffuse>
+    <aspectratio align="center" aligny="top">keep</aspectratio>
+    <visible>Control.HasFocus(9000)|ControlGroup(600).HasFocus</visible>
+    </control>
+    <!-- poster -->
+    <control type="image">
+    <left>6</left>
+    <top>0</top>
+    <width>145</width>
+    <height>248</height>
+    <texture fallback="DefaultPicture.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_widgetsposter]</texture>
+    <aspectratio align="center" aligny="bottom">keep</aspectratio>
+    <visible>Control.HasFocus(9000)|ControlGroup(600).HasFocus</visible>
+    </control>
+    </focusedlayout>
+	<focusedlayout condition="Control.HasFocus(500) | Control.HasFocus(510) | ControlGroup(512).HasFocus" width="450" height="285">
+	<control type="group">
+	<animation type="Focus" reversible="false" condition="true">
+	<effect type="slide" start="0,0" end="180,0" time="500" delay="1000" tween="cubic" easing="out" />
+	<effect type="fade" start="0" end="100" time="300" delay="1000" />
+	</animation>
+	<animation effect="slide" start="0,0" end="180,0" time="0" tween="cubic" easing="out" condition="ControlGroup(512).HasFocus">Conditional</animation>
+	<animation effect="slide" time="0" start="0,0" end="0,-270" tween="cubic" easing="out" condition="true">Conditional</animation>
+	<visible>Control.IsVisible(8006)</visible>
+	<control type="image">
+	<left>50</left>
+	<top>0</top>
+	<width>300</width>
+	<height>300</height>
+	<texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
+	<aspectratio align="center" aligny="center">keep</aspectratio>
+	<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="2000" loop="true" reversible="false" condition="true">Conditional</animation>
+	</control>
+	</control>
+	<!-- reflexo -->
+	<control type="image">	
+	<left>6</left>
+	<top>249</top>
+	<width>145</width>
+	<height>248</height>
+	<texture flipy="true" fallback="DefaultPicture.png" diffuse="thumb_poster_reflect.png" background="true">$VAR[value_widgetsposter]</texture>
+	<colordiffuse>CCFFFFFF</colordiffuse>
+	<aspectratio align="center" aligny="top">keep</aspectratio>
+	<animation effect="zoom" center="0,248" start="100" end="300" time="400" tween="cubic" easing="out" condition="Control.HasFocus(500) | Control.HasFocus(510) | ControlGroup(512).HasFocus">Conditional</animation>
+	</control>
+	<!-- poster -->
+	<control type="image">	
+	<left>6</left>
+	<top>0</top>
+	<width>145</width>
+	<height>248</height>
+	<texture fallback="DefaultPicture.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_widgetsposter]</texture>
+	<aspectratio align="center" aligny="bottom">keep</aspectratio>
+	<animation effect="zoom" center="0,248" start="100" end="300" time="400" tween="cubic" easing="out" condition="Control.HasFocus(500) | Control.HasFocus(510) | ControlGroup(512).HasFocus">Conditional</animation>
+	</control>
+	</focusedlayout>
+	</include>
+
 	<!-- ################################################################################ Comum ################################################################################ -->
 	<include name="widgets_common">
 		<control type="panel" id="510">
@@ -2138,9 +2243,14 @@
 			<visible>Control.IsVisible(8003) + String.IsEqual(Container(9000).ListItem.Property(target),playlistvideo)</visible>
 		</control>
 		<control type="panel" id="510">
-			<include>panel_layout</include>
+			<include condition="String.Contains(skin.string(music_panel_layout),panel_layout)">panel_layout</include>
 			<content target="music">$VAR[value_widgetsmusic]</content>
-			<visible>Control.IsVisible(8003) + String.IsEqual(Container(9000).ListItem.Property(target),music)</visible>
+			<visible>Control.IsVisible(8003) + String.IsEqual(Container(9000).ListItem.Property(target),music)+String.Contains(skin.string(music_panel_layout),panel_layout)</visible>
+		</control>
+		<control type="fixedlist" id="510">
+			<include condition="String.Contains(skin.string(music_panel_layout),panel_zoom)">panel_zoom_1</include>
+			<content target="music">$VAR[value_widgetsmusic]</content>
+			<visible>Control.IsVisible(8003) + String.IsEqual(Container(9000).ListItem.Property(target),music)+!String.Contains(skin.string(music_panel_layout),panel_layout)</visible>
 		</control>
 		<control type="panel" id="510">
 			<include>panel_layout</include>
@@ -2609,7 +2719,7 @@
 				</item>
 				<item>
 					<label>31865</label>
-					<icon>DefaultEmpty.png</icon>
+					<icon>Defaultempty.png</icon>
 					<onclick>noop</onclick>
 					<visible>String.IsEmpty(Window(0).Property(NextAired.1.NextTitle))</visible>
 				</item>
@@ -3690,9 +3800,9 @@
 							<onclick>ActivateWindowAndFocus(SkinSettings, 9100,6)</onclick>
 						</item>
 						<item>
-							<label>Home Efect:</label>
+							<label>$LOCALIZE[32024]:</label>
 							<!-- Home Efect -->
-							<label2>$INFO[skin.string(homeefect)]</label2>
+							<label2>$VAR[value_homeefect]</label2>
 							<onclick condition="String.IsEqual(skin.string(homeefect),none)">Skin.SetString(homeefect,lightsnow)</onclick>
 							<onclick condition="String.IsEqual(skin.string(homeefect),lightsnow)">Skin.SetString(homeefect,snow)</onclick>
 							<onclick condition="String.IsEqual(skin.string(homeefect),snow)">Skin.SetString(homeefect,fog)</onclick>
@@ -3939,7 +4049,7 @@
 				<width>420</width>
 				<height>420</height>
 				<aspectratio align="center">keep</aspectratio>
-				<texture background="true">$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+				<texture background="true">$INFO[skin.string(CustomWeatherIconFolder)]$INFO[Window(Weather).Property(Current.OutlookIcon)]</texture>
 				<colordiffuse>95FFFFFF</colordiffuse>
 				<visible>!Skin.HasSetting(weathericons)</visible>
 			</control>
@@ -3949,7 +4059,7 @@
 				<width>420</width>
 				<height>420</height>
 				<aspectratio align="center">keep</aspectratio>
-				<imagepath>$VAR[value_weathericons]$INFO[Weather.FanartCode]/</imagepath>
+				<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
 				<timeperimage>175</timeperimage>
 				<randomize>false</randomize>
 				<fadetime>0</fadetime>
@@ -4900,12 +5010,25 @@
 	<width>1380</width>
 	<height>30</height>
 	<font>Font_20A</font>
+	<label>[B]$INFO[Container(510).ListItem.Year,, - ][/B]$INFO[Window(Home).Property(SkinHelper.ListItem.Premiered)][COLOR=$VAR[value_headercolor]]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate), - Airdate:,][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.AirDayTime.label), - , - ]$VAR[value_widgetsruntime, Duration: ]$INFO[Window(Home).Property(SkinHelper.ListItem.Tagline), - ]$INFO[Container(510).ListItem.Artist]</label>
+	<textcolor>FFFFFAF0</textcolor>
+	<scroll>true</scroll>
+	<scrollout>false</scrollout>
+	<shadowcolor>grey</shadowcolor>
+	<visible>!String.StartsWith(Container(9000).ListItem.Property(widgets),extras.helper.nextepisodes)+![String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)+![String.IsEmpty(Container(510).ListItem.Year) + String.IsEmpty(Container(510).ListItem.Premiered) + String.IsEmpty(Container(510).ListItem.Duration) + String.IsEmpty(Container(510).ListItem.Tagline) + String.IsEmpty(Container(510).ListItem.Artist) | Control.HasFocus(500)]</visible>
+	</control>
+	<control type="label">	
+	<left>0</left>
+	<top>0</top>
+	<width>1380</width>
+	<height>30</height>
+	<font>Font_20A</font>
 	<label>[B]$INFO[Container(510).ListItem.Year,, - ][/B]$INFO[Container(510).ListItem.Premiered][COLOR=$VAR[value_headercolor]]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate), - Airdate:,][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.AirDayTime.label), - , - ]$VAR[value_widgetsruntime, Duration: ]$INFO[Window(Home).Property(SkinHelper.ListItem.Tagline), - ]$INFO[Container(510).ListItem.Artist]</label>
 	<textcolor>FFFFFAF0</textcolor>
 	<scroll>true</scroll>
 	<scrollout>false</scrollout>
 	<shadowcolor>grey</shadowcolor>
-	<visible>![String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)+![String.IsEmpty(Container(510).ListItem.Year) + String.IsEmpty(Container(510).ListItem.Premiered) + String.IsEmpty(Container(510).ListItem.Duration) + String.IsEmpty(Container(510).ListItem.Tagline) + String.IsEmpty(Container(510).ListItem.Artist) | Control.HasFocus(500)]</visible>
+	<visible>String.StartsWith(Container(9000).ListItem.Property(widgets),extras.helper.nextepisodes)+!Control.HasFocus(500)</visible>
 	</control>
 	<control type="label">	
 	<left>0</left>
@@ -4913,7 +5036,7 @@
 	<width>1430</width>
 	<height>30</height>
 	<font>Font_20A</font>
-	<label>[B]$INFO[Window(Home).Property(SkinHelper.ListItem.Year),, - ][/B]$INFO[Container(510).ListItem.StartTime,, - ]$INFO[Container(510).ListItem.EndTime,, | ][B][COLOR=$VAR[value_headercolor]]$INFO[Container(510).ListItem.ChannelName,, / ][/COLOR][/B]$VAR[value_widgetsruntime,Duration: ]$INFO[Window(Home).Property(SkinHelper.ListItem.Tagline), | ]</label>
+	<label>[B]$INFO[Window(Home).Property(SkinHelper.ListItem.Year),, - ][/B]$INFO[Container(510).ListItem.StartTime,, - ]$INFO[Container(510).ListItem.EndTime,, | ][B][COLOR=$VAR[value_headercolor]]$INFO[Container(510).ListItem.ChannelName,, / ][/COLOR][/B]$VAR[value_widgetsruntime,Duration: ][COLOR=$VAR[value_headercolor]]$INFO[Window(Home).Property(SkinHelper.ListItem.Premiered), | Premiered: ][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Tagline), | ]</label>
 	<textcolor>FFFFFAF0</textcolor>
 	<scroll>true</scroll>
 	<scrollout>false</scrollout>
@@ -5120,8 +5243,8 @@
 	<top>790</top>
 	<align>left</align>
 	<onup>SetFocus(510)</onup>
-	<ondown condition="Control.IsVisible(500)+!String.IsEqual(Control.GetLabel(566),Album)+!String.IsEqual(Control.GetLabel(566),Artist)">Control.SetFocus(500,0)</ondown>
-	<ondown condition="!Control.IsVisible(500)|String.IsEqual(Control.GetLabel(566),Album)|String.IsEqual(Control.GetLabel(566),Artist)">Control.SetFocus(510)</ondown>
+	<ondown condition="Control.IsVisible(500)+!String.IsEqual(Control.GetLabel(566),Album)+!String.IsEqual(Container(9000).ListItem.Property(target),music)">Control.SetFocus(500,0)</ondown>
+	<ondown condition="!Control.IsVisible(500)">Control.SetFocus(510)</ondown>
 	<onleft>9000</onleft>
 	<onright>9000</onright>
 	<orientation>horizontal</orientation>
@@ -5141,7 +5264,7 @@
 	<!-- fanart -->
 	<control type="button" id="514">
 	<include>Widgets_Button_mq7</include>
-	<label>Show Fanart</label>
+	<label>$LOCALIZE[31242] Fanart</label>
 	<onclick>SetFocus(8005)</onclick>
 	</control>
 	<!-- Trailer -->
@@ -5238,7 +5361,7 @@
 	<height>360</height>
 	<aspectratio align="center" aligny="center">keep</aspectratio>
 	<texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</texture>
-	<visible>String.StartsWith(Container(9000).ListItem.Property(widgets),movie)|String.StartsWith(Container(9000).ListItem.Property(widgets),vpl)|String.EndsWith(Container(9000).ListItem.Property(widgets),albums)|String.StartsWith(Container(9000).ListItem.Property(widgets),vnodes)|String.Contains(Container(9000).ListItem.Property(widgets),extras.popularmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.trendingmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.traktsimilarmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.topratedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.upcoming)|String.Contains(Container(9000).ListItem.Property(widgets),extras.incinemas)|String.Contains(Container(9000).ListItem.Property(widgets),channel.tv)|String.Contains(Container(9000).ListItem.Property(widgets),channel.reacent)|String.Contains(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.Contains(Container(9000).ListItem.Property(widgets),music)+String.Contains(Container(9000).ListItem.Property(widgets),album)</visible>
+	<visible>String.StartsWith(Container(9000).ListItem.Property(widgets),movie)|String.StartsWith(Container(9000).ListItem.Property(widgets),vpl)|String.StartsWith(Container(9000).ListItem.Property(widgets),apl)|String.EndsWith(Container(9000).ListItem.Property(widgets),albums)|String.StartsWith(Container(9000).ListItem.Property(widgets),vnodes)|String.Contains(Container(9000).ListItem.Property(widgets),extras.mostplayedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.popularmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.trendingmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.traktsimilarmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.topratedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.upcoming)|String.Contains(Container(9000).ListItem.Property(widgets),extras.incinemas)|String.Contains(Container(9000).ListItem.Property(widgets),channel.tv)|String.Contains(Container(9000).ListItem.Property(widgets),channel.reacent)|String.Contains(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.Contains(Container(9000).ListItem.Property(widgets),music)+String.Contains(Container(9000).ListItem.Property(widgets),album)</visible>
 	</control>
 	<!-- Logo  -->	
 	<control type="image">
@@ -5248,7 +5371,7 @@
 	<height>168</height>
 	<aspectratio align="center" aligny="center">keep</aspectratio>
 	<texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
-	<visible>String.Contains(Container(9000).ListItem.Property(widgets),music)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recentartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recommendedartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.randomartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recentalbums)</visible>
+	<visible>String.StartsWith(Container(9000).ListItem.Property(widgets),apl)|String.Contains(Container(9000).ListItem.Property(widgets),music)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recentartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recommendedartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.randomartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recentalbums)</visible>
 	</control>
 	<control type="textbox">
 	<left>1240</left>
@@ -5301,14 +5424,14 @@
 
 	<!-- Miniaturas do elenco -->
 	<control type="group">
-	<visible>Skin.HasSetting(widget_cast)+[String.IsEqual(Container(9000).ListItem.Property(target),video) | String.IsEqual(Container(9000).ListItem.Property(target),video1) | String.IsEqual(Container(9000).ListItem.Property(target),video2) | String.IsEqual(Container(9000).ListItem.Property(target),playlistvideo) |  String.IsEqual(Container(9000).ListItem.Property(target),extras) | String.IsEqual(Container(9000).ListItem.Property(target),extras.helper) | String.IsEqual(Container(9000).ListItem.Property(widgets),dualwidget1)| String.IsEqual(Container(9000).ListItem.Property(target),vnodes)|String.IsEqual(Container(9000).ListItem.Property(widgets),channel.reacent)|String.IsEqual(Container(9000).ListItem.Property(widgets),channel.epg)|String.IsEqual(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.IsEqual(Container(9000).ListItem.Property(widgets),channel.tv)]+![String.IsEqual(Container(510).ListItem.Property(Type),artist) | String.IsEqual(Container(510).ListItem.Property(Type),album) | String.IsEqual(Container(510).ListItem.Property(Type),song)]</visible>
+	<visible>Skin.HasSetting(widget_cast)+[String.IsEqual(Container(9000).ListItem.Property(target),video) | String.IsEqual(Container(9000).ListItem.Property(target),video1) | String.IsEqual(Container(9000).ListItem.Property(target),video2) | String.IsEqual(Container(9000).ListItem.Property(target),playlistvideo) |  String.IsEqual(Container(9000).ListItem.Property(target),extras) | String.IsEqual(Container(9000).ListItem.Property(target),extras.helper) | String.IsEqual(Container(9000).ListItem.Property(widgets),dualwidget1)| String.IsEqual(Container(9000).ListItem.Property(target),vnodes)|String.IsEqual(Container(9000).ListItem.Property(widgets),channel.reacent)|String.IsEqual(Container(9000).ListItem.Property(widgets),channel.epg)|String.IsEqual(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.IsEqual(Container(9000).ListItem.Property(widgets),channel.tv)|String.Contains(Container(9000).ListItem.Property(widgets),shows)]+![String.IsEqual(Container(510).ListItem.Property(Type),artist) | String.IsEqual(Container(510).ListItem.Property(Type),album) | String.IsEqual(Container(510).ListItem.Property(Type),song)]</visible>
 	<control type="label">
 	<left>1240</left>
 	<top>838</top>
 	<width>630</width>
 	<height>30</height>
 	<font>Font_22</font>
-	<label>$LOCALIZE[31703] $VAR[value_widgetstypecast, in ,]</label>
+	<label>$LOCALIZE[31703] $LOCALIZE[32022] $VAR[value_widgetstypecast]</label>
 	<textcolor>FFFFFAF0</textcolor>
 	<visible>!Container(500).IsUpdating+Integer.IsGreater(Container(500).NumItems,0)</visible>
 	</control>
@@ -5335,6 +5458,20 @@
 	<texture fallback="DefaultActor.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 	<fadetime>FanartCrossFadeTime</fadetime>
 	<animation effect="fade" start="100" end="50" time="300" condition="Control.HasFocus(500)">Conditional</animation>
+	<visible>!String.Contains(Container(9000).ListItem.Property(widgets),actors)</visible>
+	</control>
+	<control type="image">
+	<left>2</left>
+	<top>8</top>
+	<width>87</width>
+	<height>130</height>
+	<aligny>center</aligny>
+	<align>center</align>
+	<aspectratio scalediffuse="false">scale</aspectratio>
+	<texture fallback="DefaultActor.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<animation effect="fade" start="100" end="50" time="300" condition="Control.HasFocus(500)">Conditional</animation>
+	<visible>String.Contains(Container(9000).ListItem.Property(widgets),actors)</visible>
 	</control>
 	</itemlayout>
 	<focusedlayout height="135" width="105">
@@ -5348,7 +5485,19 @@
 	<aspectratio scalediffuse="false">scale</aspectratio>
 	<texture fallback="DefaultActor.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 	<fadetime>FanartCrossFadeTime</fadetime>
-	<visible>!Control.HasFocus(500)</visible>
+	<visible>!Control.HasFocus(500)+!String.Contains(Container(9000).ListItem.Property(widgets),actors)</visible>
+	</control>
+	<control type="image">
+	<left>2</left>
+	<top>8</top>
+	<width>87</width>
+	<height>130</height>
+	<aligny>center</aligny>
+	<align>center</align>
+	<aspectratio scalediffuse="false">scale</aspectratio>
+	<texture fallback="DefaultActor.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<visible>!Control.HasFocus(500)+String.Contains(Container(9000).ListItem.Property(widgets),actors)</visible>
 	</control>
 	<control type="image">
 	<left>2</left>
@@ -5360,7 +5509,19 @@
 	<aspectratio scalediffuse="false">scale</aspectratio>
 	<texture fallback="DefaultActor.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 	<bordertexture colordiffuse="$VAR[value_texturecolor]" border="-2">white.png</bordertexture>
-	<visible>Control.HasFocus(500)</visible>
+	<visible>Control.HasFocus(500)+!String.Contains(Container(9000).ListItem.Property(widgets),actors)</visible>
+	</control>
+	<control type="image">
+	<left>2</left>
+	<top>8</top>
+	<width>87</width>
+	<height>130</height>
+	<aligny>center</aligny>
+	<align>center</align>
+	<aspectratio scalediffuse="false">scale</aspectratio>
+	<texture fallback="DefaultActor.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+	<bordertexture colordiffuse="$VAR[value_texturecolor]" border="-2">white.png</bordertexture>
+	<visible>Control.HasFocus(500)+String.Contains(Container(9000).ListItem.Property(widgets),actors)</visible>
 	</control>
 	</focusedlayout>
 	<content>$VAR[value_widgetscast]</content>
@@ -5415,6 +5576,17 @@
 	<aspectratio>scale</aspectratio>
 	<texture fallback="DefaultActor.png" background="true">$INFO[Container(500).ListItem.Icon]</texture>
 	<fadetime>FanartCrossFadeTime</fadetime>
+	<visible>!String.Contains(Container(9000).ListItem.Property(widgets),actors)</visible>
+	</control>
+	<control type="image">
+	<left>772</left>
+	<top>218</top>
+	<width>363</width>
+	<height>544</height>
+	<aspectratio>scale</aspectratio>
+	<texture fallback="DefaultActor.png" background="true">$INFO[Container(500).ListItem.Art(poster)]</texture>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<visible>String.Contains(Container(9000).ListItem.Property(widgets),actors)</visible>
 	</control>
 	<control type="image">
 	<left>750</left>

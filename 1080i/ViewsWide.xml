@@ -155,7 +155,7 @@
                             <height>56</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout condition="String.IsEmpty(Control.GetLabel(5901)) | [Window.IsActive(videos) + Skin.HasSetting(slimwidevideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimwidemusic)]" height="60">
@@ -205,7 +205,7 @@
                             <height>56</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                     <focusedlayout condition="!String.IsEmpty(Control.GetLabel(5901)) + [Window.IsActive(videos) + !Skin.HasSetting(slimwidevideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(slimwidemusic)]" height="94">
@@ -266,7 +266,7 @@
                             <height>56</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                 </control>

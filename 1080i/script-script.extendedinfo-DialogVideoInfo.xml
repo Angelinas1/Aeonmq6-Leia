@@ -214,7 +214,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <aspectratio>keep</aspectratio>
-                <texture>$INFO[Window.Property(Logo)]</texture>
+                <texture>$INFO[Window.Property(clearlogo)]</texture>
             </control>
             <control type="radiobutton" id="445">
                 <left>98</left>
@@ -270,7 +270,7 @@
                 <aligny>center</aligny>
                 <aspectratio>keep</aspectratio>
                 <texture>$INFO[Container(550).ListItem(0).label,resource://resource.images.studios.coloured/,.png]</texture>
-                <visible>String.IsEmpty(Window.Property(Logo)) + Skin.HasSetting(sextendsett_artlogo)</visible>
+                <visible>String.IsEmpty(Window.Property(clearlogo)) + Skin.HasSetting(sextendsett_artlogo)</visible>
             </control>
             <control type="image">
                 <!-- Logo -->
@@ -280,7 +280,7 @@
                 <width>240</width>
                 <aspectratio>keep</aspectratio>
                 <texture background="true">$INFO[Container(550).ListItem(0).label,resource://resource.images.studios.coloured/,.png]</texture>
-                <visible>!String.IsEmpty(Window.Property(Logo)) | !Skin.HasSetting(sextendsett_artlogo)</visible>
+                <visible>!String.IsEmpty(Window.Property(clearlogo)) | !Skin.HasSetting(sextendsett_artlogo)</visible>
             </control>
             <control type="image">
                 <!-- Banner -->
@@ -906,7 +906,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_24</font>
-                    <label>$INFO[Container(650).ListItem.Label]</label>
+                    <label>$INFO[Container(650).ListItem.Property(certification)]</label>
                     <textcolor>FF101010</textcolor>
                     <visible>String.Contains(skin.string(sextend_list),650)</visible>
                     <scroll>true</scroll>
@@ -954,9 +954,9 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_24</font>
-                    <label>$INFO[Container(1050).ListItem.Label]</label>
+                    <label>$INFO[Container(1051).ListItem.Label]</label>
                     <textcolor>FF101010</textcolor>
-                    <visible>String.Contains(skin.string(sextend_list),1050)</visible>
+                    <visible>String.Contains(skin.string(sextend_list),1051)</visible>
                     <scroll>true</scroll>
                 </control>
                 <control type="label">
@@ -966,7 +966,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_24</font>
-                    <label>$INFO[Container(1151).ListItem.Label]</label>
+                    <label>$INFO[Container(1150).ListItem.Label]</label>
                     <textcolor>FF101010</textcolor>
                     <visible>String.Contains(skin.string(sextend_list),1151)</visible>
                     <scroll>true</scroll>
@@ -978,7 +978,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_24</font>
-                    <label>$INFO[Container(1251).ListItem.Label]</label>
+                    <label>$INFO[Container(1250).ListItem.Label]</label>
                     <textcolor>FF101010</textcolor>
                     <visible>String.Contains(skin.string(sextend_list),1251)</visible>
                     <scroll>true</scroll>
@@ -990,7 +990,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_24</font>
-                    <label>$INFO[Container(1351).ListItem.Label]</label>
+                    <label>$INFO[Container(1350).ListItem.Label]</label>
                     <textcolor>FF101010</textcolor>
                     <visible>String.Contains(skin.string(sextend_list),1351)</visible>
                     <scroll>true</scroll>
@@ -1002,7 +1002,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_24</font>
-                    <label>$INFO[Container(1451).ListItem.Label]</label>
+                    <label>$INFO[Container(1450).ListItem.Label]</label>
                     <textcolor>FF101010</textcolor>
                     <visible>String.Contains(skin.string(sextend_list),1451)</visible>
                     <scroll>true</scroll>
@@ -1104,7 +1104,7 @@
                             <aligny>center</aligny>
                             <align>center</align>
                             <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
                             <visible>!Skin.HasSetting(sextendsett_case)</visible>
@@ -1120,7 +1120,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -1148,7 +1148,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                                 <include>Animation_Fade</include>
@@ -1162,7 +1162,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <include>Animation_Fade</include>
                                 <visible>Control.HasFocus(150)</visible>
@@ -1179,7 +1179,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -1191,7 +1191,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <visible>Control.HasFocus(150)</visible>
                             </control>
@@ -1232,7 +1232,7 @@
                             <aligny>center</aligny>
                             <align>center</align>
                             <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
                             <visible>!Skin.HasSetting(sextendsett_case)</visible>
@@ -1248,7 +1248,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -1276,7 +1276,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                                 <include>Animation_Fade</include>
@@ -1290,7 +1290,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <include>Animation_Fade</include>
                                 <visible>Control.HasFocus(250)</visible>
@@ -1307,7 +1307,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">black.png</bordertexture>
                                 <colordiffuse>FF909090</colordiffuse>
                             </control>
@@ -1319,7 +1319,7 @@
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <aspectratio>stretch</aspectratio>
-                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
                                 <bordertexture border="-2">grey.png</bordertexture>
                                 <visible>Control.HasFocus(250)</visible>
                             </control>
@@ -1513,14 +1513,14 @@
                         </control>
                     </focusedlayout>
                 </control>
-                <control type="list" id="650">
+                <control type="panel" id="650">
                     <!-- Releases -->
                     <visible>String.Contains(skin.string(sextend_list),650)</visible>
                     <viewtype label="List">List Info</viewtype>
                     <left>45</left>
-                    <top>738</top>
-                    <width>1830</width>
-                    <height>330</height>
+                    <top>788</top>
+                    <width>1096</width>
+                    <height>152</height>
                     <onup>149</onup>
                     <ondown>Skin.Reset(coverzoom)</ondown>
                     <ondown>noop</ondown>
@@ -1528,47 +1528,65 @@
                     <orientation>horizontal</orientation>
                     <scrolltime>400</scrolltime>
                     <focusposition>3</focusposition>
-                    <itemlayout height="300" width="375">
+                    <itemlayout height="38" width="274">
                         <control type="image">
                             <left>0</left>
-                            <top>8</top>
-                            <width>345</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
+                            <top>0</top>
+                            <width>1</width>
+                            <height>38</height>
+                            <texture>separator_v.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>1</top>
+                            <height>38</height>
+                            <width>243</width>
                             <align>center</align>
-                            <aspectratio>keep</aspectratio>
-                            <texture>$INFO[ListItem.Property(iso_3166_1),flags/language/,.png]</texture>
-                            <bordertexture border="-2">black.png</bordertexture>
-                            <colordiffuse>FF909090</colordiffuse>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(certification)][/UPPERCASE]</label>
+                            <textcolor>80FFFAF0</textcolor>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="300" width="375">
+                    <focusedlayout height="38" width="274">
                         <control type="image">
                             <left>0</left>
-                            <top>8</top>
-                            <width>345</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
-                            <align>center</align>
-                            <aspectratio>keep</aspectratio>
-                            <texture>$INFO[ListItem.Property(iso_3166_1),flags/language/,.png]</texture>
-                            <bordertexture border="-2">black.png</bordertexture>
-                            <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
-                            <visible>!Control.HasFocus(650)</visible>
+                            <top>-2</top>
+                            <width>273</width>
+                            <height>40</height>
+                            <texture>settings_button_focus.png</texture>
+                            <visible>Control.Hasfocus(650)</visible>
                         </control>
                         <control type="image">
                             <left>0</left>
-                            <top>8</top>
-                            <width>345</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
+                            <top>0</top>
+                            <width>1</width>
+                            <height>38</height>
+                            <texture>separator_v.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>1</top>
+                            <height>38</height>
+                            <width>243</width>
                             <align>center</align>
-                            <aspectratio>keep</aspectratio>
-                            <texture>$INFO[ListItem.Property(iso_3166_1),flags/language/,.png]</texture>
-                            <bordertexture border="-2">grey.png</bordertexture>
-                            <include>Animation_Fade</include>
-                            <visible>Control.HasFocus(650)</visible>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(certification)][/UPPERCASE]</label>
+                            <textcolor>FF101010</textcolor>
+                            <visible>Control.Hasfocus(650)</visible>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>1</top>
+                            <height>38</height>
+                            <width>243</width>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(certification)][/UPPERCASE]</label>
+                            <textcolor>80FFFAF0</textcolor>
+                            <visible>!Control.Hasfocus(650)</visible>
                         </control>
                     </focusedlayout>
                 </control>
@@ -1690,14 +1708,14 @@
                         </control>
                     </focusedlayout>
                 </control>
-                <control type="list" id="950">
+                <control type="panel" id="950">
                     <!-- Keeywords -->
                     <visible>String.Contains(skin.string(sextend_list),950)</visible>
                     <viewtype label="List">List Info</viewtype>
                     <left>45</left>
-                    <top>738</top>
-                    <width>1830</width>
-                    <height>330</height>
+                    <top>788</top>
+                    <width>1096</width>
+                    <height>152</height>
                     <onup>149</onup>
                     <ondown>Skin.Reset(coverzoom)</ondown>
                     <ondown>noop</ondown>
@@ -1705,58 +1723,76 @@
                     <orientation>horizontal</orientation>
                     <scrolltime>400</scrolltime>
                     <focusposition>3</focusposition>
-                    <itemlayout height="255" width="272">
+                    <itemlayout height="38" width="274">
                         <control type="image">
                             <left>0</left>
-                            <top>8</top>
-                            <width>195</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
+                            <top>0</top>
+                            <width>1</width>
+                            <height>38</height>
+                            <texture>separator_v.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>1</top>
+                            <height>38</height>
+                            <width>243</width>
                             <align>center</align>
-                            <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="-2">black.png</bordertexture>
-                            <colordiffuse>FF909090</colordiffuse>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <textcolor>80FFFAF0</textcolor>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="255" width="272">
+                    <focusedlayout height="38" width="274">
                         <control type="image">
                             <left>0</left>
-                            <top>8</top>
-                            <width>195</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
-                            <align>center</align>
-                            <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="-2">black.png</bordertexture>
-                            <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
-                            <visible>!Control.HasFocus(950)</visible>
+                            <top>-2</top>
+                            <width>273</width>
+                            <height>40</height>
+                            <texture>settings_button_focus.png</texture>
+                            <visible>Control.Hasfocus(950)</visible>
                         </control>
                         <control type="image">
                             <left>0</left>
-                            <top>8</top>
-                            <width>195</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
+                            <top>0</top>
+                            <width>1</width>
+                            <height>38</height>
+                            <texture>separator_v.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>1</top>
+                            <height>38</height>
+                            <width>243</width>
                             <align>center</align>
-                            <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="-2">grey.png</bordertexture>
-                            <include>Animation_Fade</include>
-                            <visible>Control.HasFocus(950)</visible>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <textcolor>FF101010</textcolor>
+                            <visible>Control.Hasfocus(950)</visible>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>1</top>
+                            <height>38</height>
+                            <width>243</width>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <textcolor>80FFFAF0</textcolor>
+                            <visible>!Control.Hasfocus(950)</visible>
                         </control>
                     </focusedlayout>
                 </control>
-                <control type="list" id="1050">
+                <control type="panel" id="1050">
                     <!-- Reviews -->
                     <visible>String.Contains(skin.string(sextend_list),1051)</visible>
                     <viewtype label="List">List Info</viewtype>
                     <left>45</left>
-                    <top>738</top>
-                    <width>1830</width>
-                    <height>330</height>
+                    <top>788</top>
+                    <width>1096</width>
+                    <height>152</height>
                     <onup>149</onup>
                     <ondown>Skin.Reset(coverzoom)</ondown>
                     <ondown>noop</ondown>
@@ -1764,47 +1800,65 @@
                     <orientation>horizontal</orientation>
                     <scrolltime>400</scrolltime>
                     <focusposition>3</focusposition>
-                    <itemlayout height="255" width="272">
+                    <itemlayout height="38" width="274">
                         <control type="image">
                             <left>0</left>
-                            <top>8</top>
-                            <width>195</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
+                            <top>0</top>
+                            <width>1</width>
+                            <height>38</height>
+                            <texture>separator_v.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>1</top>
+                            <height>38</height>
+                            <width>243</width>
                             <align>center</align>
-                            <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="-2">black.png</bordertexture>
-                            <colordiffuse>FF909090</colordiffuse>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <textcolor>80FFFAF0</textcolor>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="255" width="272">
+                    <focusedlayout height="38" width="274">
                         <control type="image">
                             <left>0</left>
-                            <top>8</top>
-                            <width>195</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
-                            <align>center</align>
-                            <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="-2">black.png</bordertexture>
-                            <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
-                            <visible>!Control.HasFocus(1050)</visible>
+                            <top>-2</top>
+                            <width>273</width>
+                            <height>40</height>
+                            <texture>settings_button_focus.png</texture>
+                            <visible>Control.Hasfocus(1050)</visible>
                         </control>
                         <control type="image">
                             <left>0</left>
-                            <top>8</top>
-                            <width>195</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
+                            <top>0</top>
+                            <width>1</width>
+                            <height>38</height>
+                            <texture>separator_v.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>1</top>
+                            <height>38</height>
+                            <width>243</width>
                             <align>center</align>
-                            <aspectratio>keep</aspectratio>
-                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="-2">grey.png</bordertexture>
-                            <include>Animation_Fade</include>
-                            <visible>Control.HasFocus(1050)</visible>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <textcolor>FF101010</textcolor>
+                            <visible>Control.Hasfocus(1050)</visible>
+                        </control>
+                        <control type="label">
+                            <left>15</left>
+                            <top>1</top>
+                            <height>38</height>
+                            <width>243</width>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>Font_18</font>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <textcolor>80FFFAF0</textcolor>
+                            <visible>!Control.Hasfocus(1050)</visible>
                         </control>
                     </focusedlayout>
                 </control>
@@ -2301,6 +2355,12 @@
                             <label>Networks</label>
                             <onclick>Skin.SetString(sextend_list,1451)</onclick>
                             <visible>Integer.IsGreater(Container(1450).NumItems,0)</visible>
+                        </item>
+                        <item id="18">
+                            <!-- Reviews -->
+                            <label>Reviews</label>
+                            <onclick>Skin.SetString(sextend_list,1051)</onclick>
+                            <visible>Integer.IsGreater(Container(1050).NumItems,0)</visible>
                         </item>
                         <item id="24">
                             <!-- Episodes -->

@@ -9,6 +9,7 @@
 	<onload condition="Skin.HasSetting(rcbgames)">RunScript(script.games.rom.collection.browser,limit=12)</onload>
 	<onload condition="Skin.HasSetting(rcbgames)">Skin.Reset(rcbgames)</onload>
 	<onload condition="Skin.HasSetting(kioskcode)">Skin.Reset(codestep)</onload>
+	<onload>Skin.SetString(SkinHelper.StudioLogos.Path,resource://resource.images.studios.coloured/)</onload>
 	<onload>Skin.Reset(playlists)</onload>
 	<onload>Skin.Reset(windowbg)</onload>
 	<onload>SetProperty(SkinHelper.WidgetContainer,510)</onload>

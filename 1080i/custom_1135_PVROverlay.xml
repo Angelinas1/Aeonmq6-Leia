@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1135">
+	<visible>Player.ShowInfo + !System.HasActiveModalDialog + VideoPlayer.Content(LiveTV) + Window.IsActive(fullscreenvideo)</visible>
+	<depth>DepthOSD</depth>
+	<controls>
+			<control type="image">
+				<include>Animation_HomePanel</include>
+                <left>0</left>
+                <top>825</top>
+                <height>255</height>
+                <width>1920</width>
+                <texture>shadow_mask.png</texture>
+                <colordiffuse>E4000000</colordiffuse>
+            </control>
+		<control type="group">
+			<include>Animation_HomePanel</include>
+			<bottom>-140</bottom>
+			<height>380</height>
+			<control type="image">
+				<left>0</left>
+				<width>100%</width>
+				<height>240</height>
+                <colordiffuse>$VAR[value_flagscolor]</colordiffuse>
+                <texture>details_back.png</texture>
+			</control>
+			<control type="image">
+				<left>30</left>
+				<top>20</top>
+				<width>200</width>
+				<height>200</height>
+				<aspectratio aligny="center" align="center">keep</aspectratio>
+				<texture fallback="DefaultAddonPVRClient.png">$INFO[Player.Art(thumb)]</texture>
+			</control>
+			<control type="label">
+				<left>530</left>
+				<top>145</top>
+				<height>30</height>
+				<textcolor>$VAR[value_flagscolor]</textcolor>
+				<label>$INFO[VideoPlayer.ChannelName]</label>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<left>240</left>
+				<top>70</top>
+				<width>280</width>
+				<height>100</height>
+				<label>$INFO[VideoPlayer.ChannelNumberLabel]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_50</font>
+			</control>
+			<control type="label">
+				<left>532</left>
+				<top>22</top>
+				<height>25</height>
+				<font>Font_50</font>
+				<textcolor>$VAR[value_headercolor]</textcolor>
+				<label>[B]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - ,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.EpisodeName][/B]</label>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<left>530</left>
+				<top>20</top>
+				<height>25</height>
+				<font>Font_50</font>
+				<label>[B]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - ,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.EpisodeName][/B]</label>
+				<aligny>center</aligny>
+			</control>
+			<control type="progress">
+				<animation effect="fade" end="0" time="200">WindowClose</animation>
+				<left>530</left>
+				<top>72</top>
+				<height>15</height>
+				<info>Player.ProgressCache</info>
+				<midtexture>progress_mid.png</midtexture>
+				<colordiffuse>$VAR[value_flagscolor]</colordiffuse>
+				<animation effect="fade" end="80" condition="true">Conditional</animation>
+				<visible>!Player.ChannelPreviewActive</visible>
+			</control>
+			<control type="progress" id="23">
+				<animation effect="fade" end="0" time="200">WindowClose</animation>
+				<left>530</left>
+				<top>72</top>
+				<height>15</height>
+				<info>Player.ProgressCache</info>
+				<midtexture>progress_mid.png</midtexture>
+				<colordiffuse>$VAR[value_flagscolor]</colordiffuse>
+				<visible>!Player.ChannelPreviewActive | VideoPlayer.HasEpg</visible>
+			</control>
+			<control type="label">
+				<left>530</left>
+				<top>105</top>
+				<height>25</height>
+				<label>$INFO[VideoPlayer.NextStartTime]$INFO[VideoPlayer.NextEndTime, - , : ][COLOR white]$INFO[VideoPlayer.NextTitle][/COLOR]</label>
+				<textcolor>$VAR[value_texturecolor]</textcolor>
+				<aligny>center</aligny>
+			</control>
+			<control type="image" id="752">
+				<top>-210</top>
+				<left>1530</left>
+				<width>358</width>
+				<height>200</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture>http://localhost:52307/getthumb&amp;title=$ESCINFO[VideoPlayer.Title]</texture>
+			</control>
+	<!--		<control type="image" id="753">
+				<top>36</top>
+				<left>1130</left>
+				<width>358</width>
+				<height>200</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture>http://localhost:52307/getpvrthumb&amp;title=$INFO[VideoPlayer.Title]&amp;type=landscape,fanart,thumb,poster</texture>
+			</control>
+			<control type="image" id="754">
+				<top>36</top>
+				<left>1530</left>
+				<width>358</width>
+				<height>200</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture>http://localhost:52307/getpvrthumb&amp;title=$INFO[VideoPlayer.NextTitle]&amp;type=landscape,fanart,thumb,poster</texture>
+			</control> -->
+		</control>
+	</controls>
+</window>

@@ -58,7 +58,7 @@
                 <animation effect="slide" time="400" start="0,0" end="0,-1500" easing="inout" tween="cubic" condition="Control.HasFocus(9920)">Conditional</animation>
                 <animation effect="slide" end="0,-60" time="500" tween="sine" easing="out" condition="String.Contains(skin.string(mediaflags),false)">Conditional</animation>
                 <animation effect="slide" end="0,30" time="500" tween="sine" easing="out" condition="Skin.HasSetting(videodate)">Conditional</animation>
-                <visible>!Skin.HasSetting(nooverlays)+String.IsEqual(ListItem.Overlay,OverlayWatched.png)+[String.IsEqual(Control.GetLabel(92132),logo)|String.IsEqual(Control.GetLabel(92132),clearart)|String.IsEqual(Control.GetLabel(92132),characterart)|String.IsEqual(Control.GetLabel(92132),noicon)]</visible>
+                <visible>!Skin.HasSetting(nooverlays)+String.IsEqual(ListItem.Overlay,overlaywatched.png)+[String.IsEqual(Control.GetLabel(92132),logo)|String.IsEqual(Control.GetLabel(92132),clearart)|String.IsEqual(Control.GetLabel(92132),characterart)|String.IsEqual(Control.GetLabel(92132),noicon)]</visible>
             </control>
             <control type="group">
                 <animation effect="fade" start="100" end="0" time="160" condition="[String.IsEqual(Control.GetLabel(92131),infopaneloff)|[[[String.IsEqual(Control.GetLabel(92131),infopanelmanual)+[!Control.HasFocus(9969)|Control.IsVisible(69195)]]|[String.IsEqual(Control.GetLabel(92131),infopanelauto)+!Control.IsVisible(69200)]]+String.IsEqual(Control.GetLabel(92132),noicon)]]">Conditional</animation>
@@ -799,7 +799,7 @@
         <aspectratio>keep</aspectratio>
         <texture background="true">$VAR[value_watchedstyle]</texture>
         <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-        <visible>!Skin.HasSetting(nooverlays)+String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+        <visible>!Skin.HasSetting(nooverlays)+String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
     </include>
     <include name="PLcdART">
         <control type="group">
@@ -824,7 +824,7 @@
                 <height>390</height>
                 <aligny>center</aligny>
                 <fadetime>FanartCrossFadeTime</fadetime>
-                <texture diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$INFO[ListItem.Label]</texture>
+                <texture diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$ESCINFO[ListItem.Label]</texture>
                 <include>PLDisc</include>
                 <visible>String.IsEmpty(ListItem.Art(discart))</visible>
             </control>

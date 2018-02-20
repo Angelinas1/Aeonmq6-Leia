@@ -207,7 +207,7 @@
 	<top>177</top>
 	<width>38</width>
 	<height>38</height>
-	<texture>OverlayWatched.png</texture>
+	<texture>overlaywatched.png</texture>
 	<colordiffuse>$INFO[Skin.String(colorwatched)]</colordiffuse>
 	<aspectratio align="center" aligny="bottom">keep</aspectratio>
 	<animation effect="fade" start="100" end="25" time="400" condition="Control.HasFocus(76)">Conditional</animation>
@@ -286,7 +286,7 @@
 	<top>177</top>
 	<width>38</width>
 	<height>38</height>
-	<texture>OverlayWatched.png</texture>
+	<texture>overlaywatched.png</texture>
 	<colordiffuse>$INFO[Skin.String(colorwatched)]</colordiffuse>
 	<aspectratio align="center" aligny="bottom">keep</aspectratio>
 	<animation effect="fade" start="100" end="25" time="400" condition="Control.HasFocus(76)">Conditional</animation>
@@ -318,7 +318,7 @@
 	<top>220</top>
 	<width>120</width>
 	<height>120</height>
-	<texture diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getartwork&amp;title=$INFO[ListItem.Title]&amp;type=discart&amp;fallback=special://skin/media/aeonmq6_disc.jpg</texture>
+	<texture diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getpvrthumbk&amp;title=$ESCINFO[ListItem.Title]&amp;type=discart&amp;fallback=aeonmq6_disc.jpg</texture>
 	<aspectratio align="right" aligny="top">keep</aspectratio>
 	<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="2500" loop="true" reversible="false" condition="true">Conditional</animation>
 	<visible>String.IsEmpty(ListItem.Art(discart))+!String.IsEqual(ListItem.Label,..)+![String.Contains(ListItem.Path,videodb://movies/sets) | Container.Content(tvshows) | Container.Content(seasons)]</visible>

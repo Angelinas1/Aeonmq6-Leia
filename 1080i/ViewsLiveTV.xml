@@ -256,6 +256,7 @@
                 <onup>9000</onup>
                 <ondown>10</ondown>
                 <onback>9900</onback>
+				<orientation>vertical</orientation>
                 <pagecontrol>71</pagecontrol>
                 <scrolltime>350</scrolltime>
                 <progresstexture colordiffuse="$VAR[value_headercolortimer]" border="5">pvr_epgprogressindicator.png</progresstexture>
@@ -283,7 +284,7 @@
                 <channellayout height="60" width="360">
                     <control type="label" id="1">
                         <include>SettingsLabel</include>
-                        <label>$INFO[ListItem.ChannelNumber]$INFO[ListItem.Label, - ]</label>
+                        <label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label>
                     </control>
                     <control type="image">
                         <left>0</left>
@@ -305,7 +306,7 @@
                     </control>
                     <control type="label" id="1">
                         <include>SettingsLabelFocus</include>
-                        <label>$INFO[ListItem.ChannelNumber]$INFO[ListItem.Label, - ]</label>
+                        <label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label>
                     </control>
                 </focusedchannellayout>
                 <itemlayout height="60" width="75">
@@ -666,7 +667,7 @@
                 <onback>9900</onback>
                 <pagecontrol>71</pagecontrol>
                 <scrolltime>350</scrolltime>
-				<orientation>horizontal</orientation>
+				<orientation>vertical</orientation>
                 <progresstexture border="5">pvr_epgprogressindicator.png</progresstexture>
                 <rulerlayout height="45" width="60">
                     <control type="image">
@@ -1758,7 +1759,7 @@
                         <textcolor>white</textcolor>
                         <selectedcolor>$VAR[value_headercolor]</selectedcolor>
                         <align>left</align>
-                        <label>[B]$INFO[ListItem.ChannelNumber]  $INFO[ListItem.Label][/B]</label>
+                        <label>[B]$INFO[ListItem.ChannelNumberLabel]  $INFO[ListItem.Label][/B]</label>
                     </control>
                     <control type="image">
                         <left>334</left>
@@ -1838,7 +1839,7 @@
                         <textcolor>$VAR[value_headercolor]</textcolor>
                         <selectedcolor>$VAR[value_texturecolor]</selectedcolor>
                         <align>left</align>
-                        <label>[B]$INFO[ListItem.ChannelNumber]  $INFO[ListItem.Label][/B]</label>
+                        <label>[B]$INFO[ListItem.ChannelNumberLabel]  $INFO[ListItem.Label][/B]</label>
                     </control>
                     <control type="group">
                         <left>15</left>
@@ -2249,7 +2250,7 @@
                             <height>56</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                         <control type="image">
                             <left>3</left>
@@ -2315,7 +2316,7 @@
                             <width>243</width>
                             <height>180</height>
                             <aspectratio align="center" aligny="bottom">stretch</aspectratio>
-                            <texture>http://localhost:52307/getthumb&amp;title=$INFO[Listitem.Title]</texture>
+                            <texture>http://localhost:52307/getthumb&amp;title=$ESCINFO[Listitem.Title]</texture>
                             <bordertexture border="-2">darkgrey.png</bordertexture>
                         </control>
                         <control type="image">
@@ -2345,7 +2346,7 @@
                             <height>56</height>
                             <texture>$VAR[value_watchedstyle]</texture>
                             <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+                            <visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,overlaywatched.png)</visible>
                         </control>
                     </focusedlayout>
                 </control>

@@ -29,7 +29,7 @@
                 <label>$VAR[value_osdcustomtitle]</label>
             </control>
             <!--#######################################################################   BOTOES DE FOCO   #######################################################################-->
-            <control type="button" id="4193">
+            <control type="button" id="4192">
                 <include>InvisibleButton</include>
                 <onfocus>SetFocus(1154)</onfocus>
                 <onfocus condition="String.Contains(skin.string(extra_panel_layout),panel_layout_1)">Skin.SetString(extra_panel_layout,panel_layoutcd_fake)</onfocus>
@@ -37,6 +37,12 @@
                 <onfocus condition="String.Contains(skin.string(extra_panel_layout),panel_layoutfanartbig)">Skin.SetString(extra_panel_layout,panel_layout_case)</onfocus>
                 <onfocus condition="String.Contains(skin.string(extra_panel_layout),panel_layout_case)">Skin.SetString(extra_panel_layout,panel_layout_shelf)</onfocus>
                 <onfocus condition="String.Contains(skin.string(extra_panel_layout),panel_layout_shelf)">Skin.SetString(extra_panel_layout,panel_layout_1)</onfocus>
+            </control>
+            <control type="button" id="4193">
+                <include>InvisibleButton</include>
+                <onfocus>SetFocus(1165)</onfocus>
+                <onfocus condition="String.Contains(skin.string(music_panel_layout),panel_layout)">Skin.SetString(music_panel_layout,panel_zoom)</onfocus>
+                <onfocus condition="String.Contains(skin.string(music_panel_layout),panel_zoom)">Skin.SetString(music_panel_layout,panel_layout)</onfocus>
             </control>
             <control type="button" id="4194">
                 <include>InvisibleButton</include>
@@ -317,6 +323,7 @@
                     <onclick>Skin.SetString(widgetsnumber,12)</onclick>
                     <onclick>Skin.SetString(widgetsmode,true)</onclick>
                     <onclick>Skin.SetString(widgets_seconds,3)</onclick>
+                    <onclick>Skin.SetString(music_panel_layout,panel_layout)</onclick>
                     <onclick>Skin.SetString(m_panel_layout,panel_layout_1)</onclick>
                     <onclick>Skin.SetString(tv_panel_layout,panel_layout_1)</onclick>
                     <onclick>Skin.SetString(extra_panel_layout,panel_layout_1)</onclick>
@@ -347,12 +354,17 @@
                 <control type="button" id="1154">
                     <!-- Art dos Widgets -->
                     <label>ExtendedInfo (Art) - $VAR[value_widgets_extra]</label>
-                    <onclick>SetFocus(4193)</onclick>
+                    <onclick>SetFocus(4192)</onclick>
                 </control>
                 <control type="button" id="1155">
                     <!-- Art dos Widgets -->
                     <label>Movies (Art) - $VAR[value_widgets_movie]</label>
                     <onclick>SetFocus(4194)</onclick>
+                </control>
+                <control type="button" id="1165">
+                    <!-- Art dos Widgets -->
+                    <label>Music (Art) - $VAR[value_widgets_music]</label>
+                    <onclick>SetFocus(4193)</onclick>
                 </control>
                 <control type="button" id="1157">
                     <!-- Art dos Widgets -->
@@ -549,7 +561,7 @@
                         <width>60</width>
                         <height>60</height>
                         <aspectratio align="left" aligny="top">keep</aspectratio>
-                        <texture background="true">$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+                        <texture background="true">$INFO[skin.string(CustomWeatherIconFolder)]$INFO[Window(Weather).Property(Current.OutlookIcon)]</texture>
                         <visible>!Skin.HasSetting(weathericons)</visible>
                     </control>
                     <control type="multiimage">
@@ -558,7 +570,7 @@
                         <width>75</width>
                         <height>60</height>
                         <aspectratio align="left" aligny="top">keep</aspectratio>
-                        <imagepath>$VAR[value_weathericons]$INFO[Weather.FanartCode]/</imagepath>
+                        <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
                         <timeperimage>175</timeperimage>
                         <randomize>false</randomize>
                         <visible>Skin.HasSetting(weathericons)</visible>
@@ -1115,7 +1127,7 @@
                         <!-- resetar -->
                         <label>$LOCALIZE[31687] - $LOCALIZE[31599]</label>
                         <colordiffuse>FFDAA520</colordiffuse>
-                        <onclick>Skin.SetString(case_default,deepblue)</onclick>
+                        <onclick>Skin.SetString(case_default,digital)</onclick>
                         <onclick>Skin.SetString(case_bluray,sky)</onclick>
                         <onclick>Skin.SetString(case_3dbd,orange)</onclick>
                         <onclick>Skin.SetString(case_webtv,red)</onclick>
@@ -2138,37 +2150,37 @@
                             <content>
                                 <item id="1">
                                     <label></label>
-                                    <icon>OverlayWatched.png</icon>
+                                    <icon>overlaywatched.png</icon>
                                     <onclick>Skin.SetString(stylewatched,0)</onclick>
                                 </item>
                                 <item id="2">
                                     <label></label>
-                                    <icon>OverlayWatched_1.png</icon>
+                                    <icon>overlaywatched_1.png</icon>
                                     <onclick>Skin.SetString(stylewatched,1)</onclick>
                                 </item>
                                 <item id="3">
                                     <label></label>
-                                    <icon>OverlayWatched_2.png</icon>
+                                    <icon>overlaywatched_2.png</icon>
                                     <onclick>Skin.SetString(stylewatched,2)</onclick>
                                 </item>
                                 <item id="4">
                                     <label></label>
-                                    <icon>OverlayWatched_3.png</icon>
+                                    <icon>overlaywatched_3.png</icon>
                                     <onclick>Skin.SetString(stylewatched,3)</onclick>
                                 </item>
                                 <item id="5">
                                     <label></label>
-                                    <icon>OverlayWatched_4.png</icon>
+                                    <icon>overlaywatched_4.png</icon>
                                     <onclick>Skin.SetString(stylewatched,4)</onclick>
                                 </item>
                                 <item id="6">
                                     <label></label>
-                                    <icon>OverlayWatched_5.png</icon>
+                                    <icon>overlaywatched_5.png</icon>
                                     <onclick>Skin.SetString(stylewatched,5)</onclick>
                                 </item>
                                 <item id="7">
                                     <label></label>
-                                    <icon>OverlayWatched_6.png</icon>
+                                    <icon>overlaywatched_6.png</icon>
                                     <onclick>Skin.SetString(stylewatched,6)</onclick>
                                 </item>
                             </content>
