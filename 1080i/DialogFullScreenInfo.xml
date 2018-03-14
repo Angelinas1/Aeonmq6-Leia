@@ -434,20 +434,11 @@
                     <label>$INFO[VideoPlayer.CastAndRole]</label>
                     <textcolor>FFFFFAF0</textcolor>
                     <autoscroll delay="20000" time="4000" repeat="15000">true</autoscroll>
+					<visible>!(Control.IsVisible(1000)|Control.IsVisible(1001))</visible>
                 </control>
-                <control type="textbox">
-                    <!-- Cast -->
-                    <left>1320</left>
-                    <top>720</top>
-                    <width>570</width>
-                    <height>345</height>
-                    <font>Font_18A</font>
-                    <label>$INFO[VideoPlayer.CastAndRole]</label>
-                    <textcolor>FFFFFAF0</textcolor>
-                    <autoscroll delay="20000" time="4000" repeat="15000">true</autoscroll>
-                </control>
+
 				<control type="list" id="1000">
-				<visible>String.IsEmpty(VideoPlayer.CastAndRole)</visible>
+				<visible>!Skin.HasSetting(widget_cast)+String.IsEmpty(VideoPlayer.CastAndRole)</visible>
 				<content>plugin://script.skin.helper.service/?action=getcast&amp;$INFO[Window(Home).Property(SkinHelper.Player.media_type)]=$INFO[Window(Home).Property(SkinHelper.Player.OriginalTitle)]</content>
 				<viewtype label="List">List Info</viewtype>
 				<left>1320</left>
@@ -482,7 +473,48 @@
                     </control>
 				</focusedlayout>
 				</control>
-            </control>
+                <control type="panel" id="1001">
+                    <content>plugin://script.skin.helper.service/?action=getcast&amp;$INFO[Window(Home).Property(SkinHelper.Player.media_type)]=$INFO[Window(Home).Property(SkinHelper.Player.OriginalTitle)]</content>
+                    <viewtype label="List">List Info</viewtype>
+				<left>1320</left>
+				<top>720</top>
+				<width>570</width>
+				<height>345</height>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>400</scrolltime>
+                    <focusposition>1</focusposition>
+					<visible>Skin.HasSetting(widget_cast)+String.IsEmpty(VideoPlayer.CastAndRole)</visible>
+                    <itemlayout height="145" width="114">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>98</width>
+                            <height>135</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="145" width="114">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>98</width>
+                            <height>127</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                        </control>
+                    </focusedlayout>
+                </control>
+				</control>
         </control>
         <control type="group">
             <!-- New FS dialoginfo -->
@@ -527,7 +559,7 @@
                     <!-- Titulo menor -->
                     <left>300</left>
                     <top>742</top>
-                    <width>645</width>
+                    <width>1275</width>
                     <height>60</height>
                     <font>Font_40</font>
                     <textcolor>$VAR[value_texturecolor]</textcolor>
@@ -687,8 +719,8 @@
                     </control>
                 </control>
                 <control type="group" id="345">
-                    <left>960</left>
-                    <top>758</top>
+                    <left>420</left>
+                    <top>875</top>
                     <control type="group" id="1">
                         <control type="label" id="1">
                             <left>0</left>
@@ -711,8 +743,8 @@
                     </control>
                 </control>
                 <control type="group" id="346">
-                    <left>1155</left>
-                    <top>758</top>
+                    <left>585</left>
+                    <top>875</top>
                     <control type="label" id="1">
                         <left>22</left>
                         <width>15</width>

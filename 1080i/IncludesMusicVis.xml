@@ -817,7 +817,7 @@
 	    <top>310</top>
 	    <width>300</width>
 	    <height>38</height>
-	    <texture  fallback="flags\stars\sloped\empty.png">$VAR[value_styleratingstars]$INFO[MusicPlayer.UserRating,,.0.png]</texture>
+	    <texture  fallback="flags\stars\sloped\empty.png">flags/stars/sloped/$INFO[Window(home).Property(SkinHelper.Player.Rating),,.png]</texture>
 	    <colordiffuse>$VAR[value_music_starrating]</colordiffuse>
 	    <aspectratio align="left" aligny="bottom">keep</aspectratio>
 	</control>
@@ -1189,7 +1189,7 @@
 	    <top>310</top>
 	    <width>300</width>
 	    <height>38</height>
-	    <texture  fallback="flags\stars\sloped\empty.png">$VAR[value_styleratingstars]$INFO[MusicPlayer.UserRating,,.0.png]</texture>
+	    <texture  fallback="flags\stars\sloped\empty.png">flags/stars/sloped/$INFO[Window(home).Property(SkinHelper.Player.Rating),,.png]</texture>
 	    <colordiffuse>$VAR[value_music_starrating]</colordiffuse>
 	    <aspectratio align="left" aligny="bottom">keep</aspectratio>
 	</control>
@@ -1307,7 +1307,7 @@
 			<top>98</top>
 			<width>450</width>
 			<height>35</height>
-			<texture  fallback="flags\stars\sloped\empty.png">$INFO[Window(home).Property(SkinHelper.Player.Rating),flags\stars\sloped\,.0.png]</texture>
+			<texture  fallback="flags\stars\sloped\empty.png">flags/stars/sloped/$INFO[Window(home).Property(SkinHelper.Player.Rating),,.png]</texture>
 			<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 			<animation effect="rotate" center="auto" start="90" end="90" condition="true">Conditional</animation>
 			<aspectratio align="left" aligny="top">stretch</aspectratio>
@@ -1726,7 +1726,7 @@
 	<visible>String.IsEqual(skin.string(vis_layout),style6)</visible>	
 	<include>Animation_Fade</include>
 	<control type="image">
-	<animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+	<animation effect="fade" end="90" time="0" condition="true">Conditional</animation>
 	<left>0</left>
 	<top>-60</top>
 	<width>1920</width>

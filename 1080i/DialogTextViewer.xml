@@ -81,6 +81,7 @@
                 <font>Font_18A</font>
                 <align>justify</align>
                 <pagecontrol>61</pagecontrol>
+				<monofont>mono30</monofont>
             </control>
             <control type="scrollbar" id="61">
                 <include>ScrollBar_Vertical</include>

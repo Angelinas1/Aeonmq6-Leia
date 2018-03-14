@@ -346,25 +346,18 @@
                         <visible>String.IsEmpty(ListItem.Studio)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Studio))</visible>
                     </item>
 					<item>
-                        <label>RT.Meter</label>
-                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter)]</label2>
+                        <label>Totalmovies</label>
+                        <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Totalmovies)]</label2>
                         <onclick>noop</onclick>
-                        <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
+                        <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Totalmovies))</visible>
                     </item>
 					<item>
                         <label>No:</label>
                         <!-- Title -->
-                        <label2>Total movies $INFO[Window(Home).Property(SkinHelper.ListItem.Count)] UnWatched Count: $INFO[Window(Home).Property(SkinHelper.ListItem.UnWatchedCount)] </label2>
+                        <label2>Movies : $INFO[Window(Home).Property(SkinHelper.ListItem.Count)]  UnWatched Count : $INFO[Window(Home).Property(SkinHelper.ListItem.UnWatchedCount)] </label2>
                         <onclick>noop</onclick>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Count))</visible>
                     </item>	
-					<item>
-						<label>Awards</label>
-						<!-- Awards -->
-						<label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Awards)]</label2>
-						<onclick>noop</onclick>
-                        <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Awards))</visible>
-					</item>
 					<item>
 						<label>BoxOffice</label>
 						<!-- BoxOffice -->
@@ -378,6 +371,13 @@
                         <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Years)]</label2>
                         <onclick>noop</onclick>
                     </item>
+					<item>
+	<label>$LOCALIZE[32005]</label>
+	<!-- Duration -->
+	<label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours),, $LOCALIZE[31877]] $INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),, $LOCALIZE[31961]]</label2>
+	<onclick>noop</onclick>
+	<visible>Container.Content(movies)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration.Minutes))</visible>
+	</item>
                 </content>
             </control>
             <control type="image">

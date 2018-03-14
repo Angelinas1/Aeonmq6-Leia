@@ -5050,7 +5050,7 @@
 	<width>1430</width>
 	<height>30</height>
 	<font>Font_20A</font>
-	<label>[B]$INFO[Window(Home).Property(SkinHelper.ListItem.Years),, - ][/B][B][COLOR=$VAR[value_headercolor]][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Duration),Duration: , - ][/B][B]$INFO[Window(Home).Property(SkinHelper.ListItem.Country)][/B]</label>
+	<label>[B]$INFO[Window(Home).Property(SkinHelper.ListItem.Years),, - ][/B][B][COLOR=$VAR[value_headercolor]][/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Duration),Duration: , - ][/B][B]$INFO[Window(Home).Property(SkinHelper.ListItem.Country)][/B]$INFO[Container(510).ListItem.Plot,, - )]</label>
 	<textcolor>FFFFFAF0</textcolor>
 	<scroll>true</scroll>
 	<scrollout>false</scrollout>

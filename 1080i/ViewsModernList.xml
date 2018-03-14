@@ -158,7 +158,7 @@
                         <width>784</width>
                         <height>573</height>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>Case/pozadina.png</texture>
+                        <texture>case/pozadina.png</texture>
                         <animation effect="slide" end="-399,0" time="0" condition="false">Conditional</animation>
                     </control>
                     <control type="group">
@@ -218,7 +218,7 @@
                             <width>786</width>
                             <height>553</height>
                             <aspectratio align="left">keep</aspectratio>
-                            <texture>Case/levo.png</texture>
+                            <texture>case/levo.png</texture>
                             <animation effect="slide" end="-399,0" time="0" condition="false">Conditional</animation>
                         </control>
                     </control>
@@ -229,7 +229,7 @@
                         <width>784</width>
                         <height>573</height>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>Case/pozadina1.png</texture>
+                        <texture>case/pozadina1.png</texture>
                         <animation effect="slide" end="-399,0" time="0" condition="false">Conditional</animation>
                     </control>
                     <control type="group">
@@ -274,7 +274,7 @@
                             <width>786</width>
                             <height>543</height>
                             <aspectratio align="left">keep</aspectratio>
-                            <texture>Case/levoram.png</texture>
+                            <texture>case/levoram.png</texture>
                             <animation effect="slide" end="-399,0" time="0" condition="false">Conditional</animation>
                         </control>
                         <control type="image">
@@ -305,7 +305,7 @@
                         <width>860</width>
                         <height>573</height>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>Case/desno.png</texture>
+                        <texture>case/desno.png</texture>
                         <animation effect="slide" end="-414,0" time="0" condition="false">Conditional</animation>
                     </control>
                     <control type="image">
@@ -315,7 +315,7 @@
                         <width>660</width>
                         <height>592</height>
                         <aspectratio align="right">stretch</aspectratio>
-                        <texture diffuse="Case/desno_podloga.png">$INFO[ListItem.Art(poster)]</texture>
+                        <texture diffuse="case/desno_podloga.png">$INFO[ListItem.Art(poster)]</texture>
                         <animation condition="true" effect="rotatey" center="183" start="0" end="-27" time="0">Conditional</animation>
                         <visible>Skin.HasSetting(widget_zoom_hd)</visible>
                     </control>
@@ -337,7 +337,7 @@
                         <width>830</width>
                         <height>573</height>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>Case/desnoram.png</texture>
+                        <texture>case/desnoram.png</texture>
                         <animation effect="slide" end="-414,0" time="0" condition="false">Conditional</animation>
                     </control>
                 </control>

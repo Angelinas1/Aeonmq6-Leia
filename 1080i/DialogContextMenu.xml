@@ -100,7 +100,7 @@
                 <onclick condition="!Player.HasAudio + !Skin.HasSetting(fullscreentrailer)">PlayMedia($INFO[ListItem.Filenameandpath])</onclick>
                 <onclick condition="!Skin.HasSetting(fullscreentrailer)">ActivateWindow(visualisation)</onclick>
                 <label>Music Fulscreen</label>
-                <visible>Player.HasAudio + [Container.Content(artist)|Container.Content(albums)] | Container.Content(songs)</visible>
+                <visible>Player.HasAudio</visible>
             </control>
             <control type="button" id="1036">
                 <include>DialogContext_Button</include>

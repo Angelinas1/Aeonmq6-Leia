@@ -452,6 +452,14 @@
                 <animation effect="slide" end="-399,0" time="0" condition="Container.Content(episodes)">Conditional</animation>
                 <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster))</visible>
             </control>
+            <control type="multiimage">
+                <left>1095</left>
+                <top>123</top>
+                <width>784</width>
+                <height>573</height>
+                <aspectratio align="left">keep</aspectratio>
+                <imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraPosters)]</imagepath>
+            </control>
             <control type="image">
                 <left>0</left>
                 <top>120</top>
@@ -665,6 +673,131 @@
                     </focusedlayout>
                 </control>
             </control>
+            <control type="list" id="350">
+                <viewtype label="List">List Info</viewtype>
+                <left>-1850</left>
+                <top>738</top>
+                <width>1130</width>
+                <height>330</height>
+                <onup>149</onup>
+				<content>$VAR[dialog_similar]</content>
+				<onfocus>Skin.SetBool(similar)</onfocus>
+				<ondown>Skin.Reset(similar)</ondown>
+                <ondown>Skin.SetBool(artistzoom)</ondown>
+				<ondown>SetFocus(149)</ondown>
+				<onup>Skin.Reset(similar)</onup>
+                <onup>Skin.SetBool(artistzoom)</onup>
+				<onup>SetFocus(149)</onup>
+                <animation effect="slide" start="0,0" end="1920,0" time="400" tween="cubic" easing="inout" condition="Control.HasFocus(350)">Conditional</animation>
+                <orientation>horizontal</orientation>
+                <scrolltime>400</scrolltime>
+                <itemlayout height="255" width="272">
+                    <control type="image">
+                        <left>0</left>
+                        <top>8</top>
+                        <width>195</width>
+                        <height>270</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <aspectratio>keep</aspectratio>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+                        <bordertexture border="-2">black.png</bordertexture>
+                        <colordiffuse>FF909090</colordiffuse>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="255" width="272">
+                    <control type="image">
+                        <left>0</left>
+                        <top>8</top>
+                        <width>195</width>
+                        <height>270</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <aspectratio>keep</aspectratio>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+                        <bordertexture border="-2">black.png</bordertexture>
+                        <colordiffuse>FF909090</colordiffuse>
+                        <include>Animation_Fade</include>
+                        <visible>!Control.HasFocus(350)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>8</top>
+                        <width>195</width>
+                        <height>270</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <aspectratio>keep</aspectratio>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+                        <bordertexture border="-2">grey.png</bordertexture>
+                        <include>Animation_Fade</include>
+                        <visible>Control.HasFocus(350)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="list" id="450">
+                <viewtype label="List">List Info</viewtype>
+                <left>-1890</left>
+                <top>738</top>
+                <width>1130</width>
+                <height>330</height>
+                <onup>149</onup>
+				<onfocus>Skin.SetBool(ytvideo)</onfocus>
+				<content>$VAR[dialog_video]</content>
+				<ondown>Skin.Reset(ytvideo)</ondown>
+                <ondown>Skin.SetBool(artistzoom)</ondown>
+				<ondown>SetFocus(149)</ondown>
+				<onup>Skin.Reset(ytvideo)</onup>
+                <onup>Skin.SetBool(artistzoom)</onup>
+				<onup>SetFocus(149)</onup>
+                <orientation>horizontal</orientation>
+                <scrolltime>400</scrolltime>
+                <animation effect="slide" start="0,0" end="1920,0" time="400" tween="cubic" easing="inout" condition="Control.HasFocus(450)">Conditional</animation>
+
+					<itemlayout height="300" width="375">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>345</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="300" width="375">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>345</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(450)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>345</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(450)</visible>
+                        </control>
+                    </focusedlayout>
+            </control>
             <control type="image">
                 <left>0</left>
                 <top>1035</top>
@@ -672,9 +805,8 @@
                 <width>1920</width>
                 <texture>gradient_small.png</texture>
             </control>
-
             <control type="group" id="617">
-                <visible>![Control.HasFocus(1000) | Control.HasFocus(1001)]</visible>
+                <visible>![Control.HasFocus(1000) | Control.HasFocus(1001) | Control.HasFocus(350) | Control.HasFocus(450)]</visible>
                 <control type="image">
                     <left>60</left>
                     <top>746</top>
@@ -686,7 +818,6 @@
                     <texture fallback="DefaultVideoPoster.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Landscape)]</texture>
                     <bordertexture border="-2">black.png</bordertexture>
                     <colordiffuse>FF909090</colordiffuse>
-                    <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Landscape))</visible>
                 </control>
                 <control type="image">
                     <left>60</left>
@@ -698,7 +829,7 @@
                     <aspectratio>keep</aspectratio>
                     <texture fallback="DefaultVideoPoster.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Landscape)]</texture>
                     <bordertexture border="-8">black.png</bordertexture>
-                    <visible>Control.HasFocus(159) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Landscape))</visible>
+					<visible>Control.HasFocus(159)</visible>
                 </control>
                 <control type="image">
                     <left>600</left>
@@ -722,7 +853,7 @@
                     <aspectratio>keep</aspectratio>
                     <texture fallback="DefaultVideoPoster.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArt)]</texture>
                     <bordertexture border="-8">black.png</bordertexture>
-                    <visible>Control.HasFocus(158)</visible>
+					<visible>Control.HasFocus(158)</visible>
                 </control>
             </control>
             <control type="label">
@@ -734,6 +865,32 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <label>$INFO[Container(1000).ListItem.Label]$INFO[Container(1001).ListItem.Label] [COLOR=red]as[/COLOR] $INFO[Container(1000).ListItem.Label2]$INFO[Container(1001).ListItem.Label2]</label>
+                <font>Font_24</font>
+                <textcolor>F9000000</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>Control.HasFocus(350)</visible>
+                <left>0</left>
+                <top>1025</top>
+                <height>60</height>
+                <width>1215</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>$INFO[Container(350).ListItem.Label]</label>
+                <font>Font_24</font>
+                <textcolor>F9000000</textcolor>
+                <scroll>true</scroll>
+            </control>
+            <control type="label">
+                <visible>Control.HasFocus(450)</visible>
+                <left>0</left>
+                <top>1025</top>
+                <height>60</height>
+                <width>1215</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>$INFO[Container(450).ListItem.Label]</label>
                 <font>Font_24</font>
                 <textcolor>F9000000</textcolor>
                 <scroll>true</scroll>
@@ -930,6 +1087,18 @@
                             <onclick>SendClick(600,4)</onclick>
                             <visible>!Skin.HasSetting(kioskininfo)</visible>
                         </item>
+                        <item id="16">
+                            <!-- Similar -->
+                            <label>$LOCALIZE[32001]</label>
+                            <onclick>Control.SetFocus(350,0)</onclick>
+							<visible></visible>
+                        </item>
+                        <item id="17">
+                            <!-- yt Video -->
+                            <label>31949</label>
+                            <onclick>Control.SetFocus(450,0)</onclick>
+							<visible></visible>
+                        </item>
                     </content>
                 </control>
                 <control type="image">
@@ -943,6 +1112,7 @@
             <control type="button" id="4">
                 <include>InvisibleButton</include>
                 <onup>SetFocus(149)</onup>
+				<onup>Skin.SetBool(artistzoom)</onup>
                 <ondown>SetFocus(162)</ondown>
                 <onleft>SetFocus(159)</onleft>
                 <onright>SetFocus(159)</onright>
@@ -950,6 +1120,7 @@
             <control type="button" id="9">
                 <include>InvisibleButton</include>
                 <onup>SetFocus(149)</onup>
+				<onup>Skin.SetBool(artistzoom)</onup>
                 <ondown>SetFocus(162)</ondown>
                 <onleft>SetFocus(159)</onleft>
                 <onright>SetFocus(159)</onright>
@@ -957,6 +1128,7 @@
             <control type="button" id="158">
                 <include>InvisibleButton</include>
                 <onup>SetFocus(149)</onup>
+				<onup>Skin.SetBool(artistzoom)</onup>
                 <ondown>SetFocus(162)</ondown>
                 <onleft>SetFocus(159)</onleft>
                 <onright>SetFocus(159)</onright>
@@ -964,16 +1136,20 @@
             <control type="button" id="159">
                 <include>InvisibleButton</include>
                 <onup>SetFocus(149)</onup>
+				<onup>Skin.SetBool(artistzoom)</onup>
                 <ondown>SetFocus(161)</ondown>
                 <onleft>SetFocus(158)</onleft>
                 <onright>SetFocus(158)</onright>
             </control>
             <control type="button" id="160">
                 <include>InvisibleButton</include>
+				<onup>Skin.SetBool(artistzoom)</onup>
                 <onup>SetFocus(149)</onup>
                 <ondown>Dialog.Close(pvrguideinfo)</ondown>
                 <onleft>SetFocus(149)</onleft>
+				<onleft>Skin.SetBool(artistzoom)</onleft>
                 <onright>SetFocus(149)</onright>
+				<onright>Skin.SetBool(artistzoom)</onright>
             </control>
             <control type="button" id="162">
                 <include>InvisibleButton</include>

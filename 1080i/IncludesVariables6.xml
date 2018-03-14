@@ -4474,13 +4474,9 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<variable name="value_playerplot">
 		<value condition="Player.HasVideo">$INFO[VideoPlayer.Plot]</value>
 		<value condition="Player.HasAudio + !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.ArtistBiography))">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31940]: 
-
 [/COLOR][CR]$INFO[Window(Visualisation).Property(ArtistSlideshow.1.SimilarName)]$INFO[Window(Visualisation).Property(ArtistSlideshow.2.SimilarName), 
-
 / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.3.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.4.SimilarName), 
-
 / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.5.SimilarName), / ][CR]   $INFO[MusicPlayer.Property(Artist_Description)]$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography), 
-
 - ]</value>
 		<value condition="Player.HasAudio + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.ArtistBiography))+!String.IsEmpty(MusicPlayer.Property(Artist_Description))">$INFO[MusicPlayer.Property(Artist_Description)]</value>
 		<value condition="Player.HasAudio + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.ArtistBiography))+String.IsEmpty(MusicPlayer.Property(Artist_Description))">$INFO[Window(Home).Property(SkinHelper.Player.Art.Info)]</value>
@@ -4490,10 +4486,10 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Player.HasAudio">$INFO[Window(Home).Property(SkinHelper.Player.Art.Thumb)]</value>
 	</variable>
 	<variable name="value_videoplayerfanart">
-		<value condition="!VideoPlayer.Content(episodes) + String.IsEmpty(Control.GetLabel(5045))">$INFO[Player.Art(fanart)]</value>
-		<value condition="!VideoPlayer.Content(episodes) + !String.IsEmpty(Control.GetLabel(5045))">$INFO[Window(home).Property(SkinHelper.Player.Art.ExtraFanArts)]</value>
-		<value condition="VideoPlayer.Content(episodes) + String.IsEmpty(Control.GetLabel(5046))">$INFO[Player.Art(fanart)]</value>
-		<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Control.GetLabel(5046))">$INFO[Window(home).Property(SkinHelper.Player.Art.ExtraFanArts)]</value>
+		<value condition="!VideoPlayer.Content(episodes) + !String.Contains(skin.string(moviesfanart),extra)">$INFO[Player.Art(fanart)]</value>
+		<value condition="!VideoPlayer.Content(episodes) + String.Contains(skin.string(moviesfanart),extra)">$INFO[Window(home).Property(SkinHelper.Player.Art.ExtraFanArts)]</value>
+		<value condition="VideoPlayer.Content(episodes) + !String.Contains(skin.string(moviesfanart),extra)">$INFO[Player.Art(fanart)]</value>
+		<value condition="VideoPlayer.Content(episodes) + String.Contains(skin.string(moviesfanart),extra)">$INFO[Window(home).Property(SkinHelper.Player.Art.ExtraFanArts)]</value>
 	</variable>
 	<variable name="value_playerthumb">
 		<value condition="!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.ArtworkReady)) + !Pvr.IsPlayingRadio">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</value>
@@ -4580,11 +4576,11 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),logo) + !VideoPlayer.Content(episodes)">$INFO[Player.Art(clearlogo)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),logo) + VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),logo) + VideoPlayer.Content(episodes) + String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearart)]</value>
-		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),logo) + String.IsEmpty(Player.Art(clearlogo)) + String.IsEmpty(Player.Art(clearart)) + String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearLogo)]</value>
+		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),logo) + String.IsEmpty(Player.Art(clearlogo)) + String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearLogo)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),clearart) + !VideoPlayer.Content(episodes)">$INFO[Player.Art(clearart)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),clearart) + VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),clearart) + VideoPlayer.Content(episodes) + String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearlogo)]</value>
-		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),clearart) + String.IsEmpty(Player.Art(clearlogo)) + String.IsEmpty(Player.Art(clearart)) + String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearArt)]</value>		
+		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),clearart) + String.IsEmpty(Player.Art(clearart)) + String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearArt)]</value>		
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),banner) + !VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(banner))">$INFO[Player.Art(banner)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),banner) + VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.banner))">$INFO[Player.Art(tvshow.banner)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),banner) + String.IsEmpty(Player.Art(banner)) + String.IsEmpty(Player.Art(tvshow.banner))">$INFO[Window(Home).Property(SkinHelper.Player.Art.Banner)]</value>
@@ -5820,9 +5816,10 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="!String.IsEmpty(ListItem(8).Art(tvshow.poster))">$INFO[ListItem(8).Art(tvshow.poster)]</value>
 	</variable>
 	<variable name="value_banner">
-		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)] + ![String.IsEmpty(ListItem.Art(banner)) | Skin.HasSetting(nodefaultbannersource)]">$INFO[ListItem.Art(banner)]</value>
-		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)] + String.IsEmpty(ListItem.Art(banner)) + !Skin.HasSetting(nodefaultbannersource)">$INFO[ListItem.Icon]</value>
-		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)] + Skin.HasSetting(nodefaultbannersource)">$INFO[ListItem.path,,banner.jpg]</value>
+	
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies) | Container.Content(sets)] + ![String.IsEmpty(ListItem.Art(banner)) | Skin.HasSetting(nodefaultbannersource)]">$INFO[ListItem.Art(banner)]</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies) | Container.Content(sets)] + String.IsEmpty(ListItem.Art(banner)) + !Skin.HasSetting(nodefaultbannersource)">$INFO[ListItem.Icon]</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies) | Container.Content(sets)] + Skin.HasSetting(nodefaultbannersource)">$INFO[ListItem.path,,banner.jpg]</value>
 		<value condition="![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)]+!Container.Content(artists)">$INFO[ListItem.Icon]</value>
 		<value condition="Container.Content(artists)">http://localhost:52307/getmusicart&amp;artist=$ESCINFO[Listitem.Artist]&amp;type=banner,clearlogo,thumb</value>
 	</variable>
@@ -7614,6 +7611,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Container.Content(TVshows)">$INFO[ListItem.Art(season.banner)]</value>
 	</variable>
 	<variable name="value_aeon_content_label">
+		<value condition="Container.Content(Movies)">$INFO[ListItem.OriginalTitle]</value>
 		<value condition="Container.Content(Sets)">$INFO[ListItem.Art(banner)]</value>
 		<value condition="Container.Content(TVshows)+Control.HasFocus(1871)">$INFO[Container(1871).ListItem.Label]</value>
 		<value condition="Container.Content(TVshows)+Control.HasFocus(1971)">$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]$INFO[Container(1971).ListItem.Premiered, : ]</value>
@@ -7722,6 +7720,8 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<value condition="Container.Content(tvshows)+!String.IsEmpty(ListItem.DBID)+String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)+!String.StartsWith(ListItem.FilenameAndPath,plugin://)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[ListItem.Title]</value>
 	<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)+String.StartsWith(ListItem.FilenameAndPath,plugin://)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[ListItem.Title]</value>
 	<value condition="!String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)+String.StartsWith(ListItem.FilenameAndPath,plugin://)">plugin://script.extendedinfo?info=traktsimilarmovies&amp;&amp;id=$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber)]</value>
+	<value condition="Pvr.HasTVChannels+String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),movie)">plugin://script.extendedinfo?info=traktsimilarmovies&amp;&amp;id=$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber)]</value>
+	<value condition="Pvr.HasTVChannels+String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[Window(Home).Property(SkinHelper.ListItem.originaltitle)]</value>
 	</variable>
 	<variable name="dialog_video">
 	<value condition="!String.IsEmpty(ListItem.TVShowTitle)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$INFO[ListItem.TVShowTitle]</value>	
