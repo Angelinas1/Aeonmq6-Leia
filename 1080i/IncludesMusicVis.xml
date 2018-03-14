@@ -1987,8 +1987,8 @@
 	    <top>8</top>
 	    <width>420</width>
 	    <height>38</height>
-	    <texture>flags/stars/sloped/$INFO[Window(home).Property(SkinHelper.Player.Rating),,.png]</texture>
-	    <colordiffuse>$VAR[value_music_starrating]</colordiffuse>
+	    <texture>flags/stars/sloped/$VAR[value_rating_star_di,,.png]</texture>
+	    <colordiffuse>$VAR[value_colorratingstars_di]</colordiffuse>
 	    <aspectratio align="right" aligny="bottom">keep</aspectratio>
 	</control>
 	<control type="label">
@@ -2000,7 +2000,7 @@
 	    <font>Font_17</font>
 	    <textcolor>88DDDDDD</textcolor>
 	    <shadowcolor>AA000000</shadowcolor>
-		<label>rating : [COLOR=$VAR[value_headercolor]]$INFO[Window(home).Property(SkinHelper.Player.Rating)][/COLOR]</label>
+		<label>rating : [COLOR=$VAR[value_headercolor]]$VAR[value_rating_star_di][/COLOR]</label>
 		<visible>!String.IsEmpty(Window(home).Property(SkinHelper.Player.Rating))</visible>
 	</control>
 	<control type="label">
