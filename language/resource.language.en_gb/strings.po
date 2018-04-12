@@ -580,8 +580,8 @@ msgid "Highlights to remember"
 msgstr "Highlights to remember"
 
 msgctxt "#31104"
-msgid "Forecast for up to 16 DAYS"
-msgstr "Forecast for up to 16 DAYS"
+msgid "Forecast for up to 7 DAYS"
+msgstr "Forecast for up to 10 DAYS"
 
 msgctxt "#31105"
 msgid "My favourites items"
@@ -2943,8 +2943,8 @@ msgid "WEEKEND"
 msgstr "WEEKEND"
 
 msgctxt "#31842"
-msgid "16 DAYS"
-msgstr "16 DAYS"
+msgid "10 DAYS"
+msgstr "10 DAYS"
 
 msgctxt "#31843"
 msgid "CURRENT"

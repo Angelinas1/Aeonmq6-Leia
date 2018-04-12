@@ -349,7 +349,7 @@
                         <label>Totalmovies</label>
                         <label2>$INFO[Window(Home).Property(SkinHelper.ListItem.Totalmovies)]</label2>
                         <onclick>noop</onclick>
-                        <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Totalmovies))</visible>
+                        <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Totalmovies))</visible>
                     </item>
 					<item>
                         <label>No:</label>

@@ -211,12 +211,6 @@
 			<texture background="true">$INFO[MusicPlayer.Property(fanart_image)]</texture>
 			<visible>Player.HasAudio + System.IdleTime(8)</visible>
 		</control>
-	<!--	<control type="multiimage" id="5044">
-			<include>HomeBG</include>
-			<include>Animation_Fade</include>
-			<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-			<visible>Player.HasAudio + System.IdleTime(8) + !String.IsEmpty(Control.GetLabel(5044))</visible>
-		</control> -->
 		<control type="image">
 			<include>HomeBG</include>
 			<include>Animation_Fade</include>
@@ -240,54 +234,52 @@
 			<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
 			<visible>Control.HasFocus(500)</visible>
 		</control>
-
-	<!-- Controle estudio -->
-	<control type="image" id="556">	
-	<include>InvisibleButton</include>
-	<texture fallback="blanc.png">$VAR[value_studio_510]</texture>
-	</control>
-	<!-- Controle audio codec -->
-	<control type="image" id="562">	
-	<include>InvisibleButton</include>
-	<texture fallback="blanc.png">$VAR[value_widgetsaudiocodec]</texture>
-	</control>
-	<!-- Controle canais de audio -->
-	<control type="label" id="563">	
-	<include>InvisibleButton</include>
-	<label>$INFO[Container(510).ListItem.Property(AudioLanguage.1)]</label>
-	</control>
-	<!-- Controle legenda -->
-	<control type="label" id="564">	
-	<include>InvisibleButton</include>
-	<label>$INFO[Container(510).ListItem.Property(SubtitleLanguage.1)]</label>
-	</control>
-	<!-- Controle gravadora -->
-	<control type="image" id="565">	
-	<include>InvisibleButton</include>
-	<texture fallback="blanc.png">$VAR[value_widgetrecord]</texture>
-	</control>
-	<control type="label" id="566">	
-	<include>InvisibleButton</include>
-	<label>$VAR[value_widgetstypecast]</label>
-	</control>
-	<!-- Widgets modo auto -->
-	<control type="image" id="9931">
-	<include>InvisibleButton</include>
-	<animation effect="fade" start="0" end="100" time="150" delay="1000" condition="String.Contains(skin.string(widgets_seconds),1)">Visible</animation>
-	<animation effect="fade" start="0" end="100" time="150" delay="2000" condition="String.Contains(skin.string(widgets_seconds),2)">Visible</animation>
-	<animation effect="fade" start="0" end="100" time="150" delay="3000" condition="String.Contains(skin.string(widgets_seconds),3)">Visible</animation>
-	<animation effect="fade" start="0" end="100" time="150" delay="4000" condition="String.Contains(skin.string(widgets_seconds),4)">Visible</animation>
-	<animation effect="fade" start="0" end="100" time="150" delay="5000" condition="String.Contains(skin.string(widgets_seconds),5)">Visible</animation>
-	<visible>![Container(9000).OnNext | Container(9000).OnPrevious]</visible>
-	</control>
-	<include>LiveBG</include>
-	<!-- default group -->
-	<control type="group">		
-	<include>Animation_Window</include>
-	
-	<include condition="!Skin.HasSetting(mainmenuvertical)">MenuHorizontal</include>
-	<include condition="Skin.HasSetting(mainmenuvertical)">MenuVertical</include>
-	<include condition="system.getbool(lookandfeel.enablerssfeeds)">HomeRSS</include>
+		<!-- Controle estudio -->
+		<control type="image" id="556">	
+			<include>InvisibleButton</include>
+			<texture fallback="blanc.png">$VAR[value_studio_510]</texture>
+		</control>
+		<!-- Controle audio codec -->
+		<control type="image" id="562">	
+			<include>InvisibleButton</include>
+			<texture fallback="blanc.png">$VAR[value_widgetsaudiocodec]</texture>
+		</control>
+		<!-- Controle canais de audio -->
+		<control type="label" id="563">	
+			<include>InvisibleButton</include>
+			<label>$INFO[Container(510).ListItem.Property(AudioLanguage.1)]</label>
+		</control>
+		<!-- Controle legenda -->
+		<control type="label" id="564">	
+			<include>InvisibleButton</include>
+			<label>$INFO[Container(510).ListItem.Property(SubtitleLanguage.1)]</label>
+		</control>
+		<!-- Controle gravadora -->
+		<control type="image" id="565">	
+			<include>InvisibleButton</include>
+			<texture fallback="blanc.png">$VAR[value_widgetrecord]</texture>
+		</control>
+		<control type="label" id="566">	
+			<include>InvisibleButton</include>
+			<label>$VAR[value_widgetstypecast]</label>
+		</control>
+		<!-- Widgets modo auto -->
+		<control type="image" id="9931">
+			<include>InvisibleButton</include>
+			<animation effect="fade" start="0" end="100" time="150" delay="1000" condition="String.Contains(skin.string(widgets_seconds),1)">Visible</animation>
+			<animation effect="fade" start="0" end="100" time="150" delay="2000" condition="String.Contains(skin.string(widgets_seconds),2)">Visible</animation>
+			<animation effect="fade" start="0" end="100" time="150" delay="3000" condition="String.Contains(skin.string(widgets_seconds),3)">Visible</animation>
+			<animation effect="fade" start="0" end="100" time="150" delay="4000" condition="String.Contains(skin.string(widgets_seconds),4)">Visible</animation>
+			<animation effect="fade" start="0" end="100" time="150" delay="5000" condition="String.Contains(skin.string(widgets_seconds),5)">Visible</animation>
+			<visible>![Container(9000).OnNext | Container(9000).OnPrevious]</visible>
+		</control>
+		<include>LiveBG</include>
+		<!-- default group -->
+		<control type="group">		
+			<include>Animation_Window</include>
+			<include condition="!Skin.HasSetting(mainmenuvertical)">MenuHorizontal</include>
+			<include condition="Skin.HasSetting(mainmenuvertical)">MenuVertical</include>
+			<include condition="system.getbool(lookandfeel.enablerssfeeds)">HomeRSS</include>
 			<control type="group">
 				<animation effect="slide" start="0,0" end="0,578" time="600" tween="sine" easing="inout" condition="Control.HasFocus(5100)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,98" time="600" tween="sine" easing="inout" condition="Control.HasFocus(5100)+Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)">Conditional</animation>
@@ -1004,27 +996,26 @@
 					<textcolor>FFFFFAF0</textcolor>
 				</control>
 			</control>
-	<include>BGBlack</include>
-	<include>TrailerWindow</include>
-	<include>TouchScreen</include>
-	<control type="videowindow" id="8">
-	<left>-5</left>
-	<top>-10</top>
-	<width>1930</width>
-	<height>1090</height>
-	<aspectratio>stretch</aspectratio>
-	<animation effect="zoom" start="10" end="100" center="auto" time="2500" easing="inout" tween="cubic">Visible</animation>
-	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus] + Player.HasMedia + System.IdleTime(55)+Skin.HasSetting(mq6)</visible>
-	</control>
-	<control type="group"><!-- Home efect -->
-	<include condition="String.IsEqual(skin.string(homeefect),lightsnow)">LightSnow</include>
-	<include condition="String.IsEqual(skin.string(homeefect),snow)">snow</include>
-	<include condition="String.IsEqual(skin.string(homeefect),fog)">fog</include>
-	<include condition="String.IsEqual(skin.string(homeefect),raining)">raining</include>
-	<include condition="String.IsEqual(skin.string(homeefect),christmas)">Christmas</include>
-	<include condition="String.IsEqual(skin.string(homeefect),lighting)">Grom</include>
-	</control>
-
+		<include>BGBlack</include>
+		<include>TrailerWindow</include>
+		<include>TouchScreen</include>
+		<control type="videowindow" id="8">
+			<left>-5</left>
+			<top>-10</top>
+			<width>1930</width>
+			<height>1090</height>
+			<aspectratio>stretch</aspectratio>
+			<animation effect="zoom" start="10" end="100" center="auto" time="2500" easing="inout" tween="cubic">Visible</animation>
+			<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus] + Player.HasMedia + System.IdleTime(55)+Skin.HasSetting(mq6)</visible>
+		</control>
+		<control type="group"><!-- Home efect -->
+			<include condition="String.IsEqual(skin.string(homeefect),lightsnow)">LightSnow</include>
+			<include condition="String.IsEqual(skin.string(homeefect),snow)">snow</include>
+			<include condition="String.IsEqual(skin.string(homeefect),fog)">fog</include>
+			<include condition="String.IsEqual(skin.string(homeefect),raining)">raining</include>
+			<include condition="String.IsEqual(skin.string(homeefect),christmas)">Christmas</include>
+			<include condition="String.IsEqual(skin.string(homeefect),lighting)">Grom</include>
+		</control>
 	</control>
 	</include>
 </includes>

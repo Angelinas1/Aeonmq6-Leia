@@ -1319,6 +1319,18 @@
                     <include>Animation_Fade</include>
                     <visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + ![Skin.HasSetting(norightlistaudiocase) | Container.Content(genres)]</visible>
                     <control type="image">
+                        <left>240</left>
+                        <top>105</top>
+                        <width>375</width>
+                        <height>375</height>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(album.discart2)]</texture>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                        <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                        <include>Animation_ViewsCDart</include>
+                        <visible>[Container.Content(albums)|Container.Content(songs)]+!Control.HasFocus(777)</visible>
+                    </control>
+                    <control type="image">
                         <left>180</left>
                         <top>105</top>
                         <width>375</width>

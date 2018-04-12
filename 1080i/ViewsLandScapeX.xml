@@ -152,9 +152,8 @@
                 <onleft>9900</onleft>
                 <onright>80</onright>
                 <scrolltime>400</scrolltime>
-                
                 <pagecontrol>80</pagecontrol>
-                <visible>Container.Content(tvshows) | Container.Content(episodes)</visible>
+                <visible>Container.Content(tvshows) | Container.Content(episodes) | Container.Content(artists)</visible>
                 <itemlayout height="201" width="303">
                     <control type="image">
                         <left>68</left>

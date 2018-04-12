@@ -5376,7 +5376,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<!-- Estreou -->
 		<value condition="Container.Content(artists)">$LOCALIZE[176]</value>
 		<!-- Estilo Artistas -->
-		<value condition="Container.Content(albums)">$LOCALIZE[21895]</value>
+		<value condition="Container.Content(albums)">$LOCALIZE[29902]</value>
 		<!-- Temas Albuns -->
 		<value condition="Container.Content(songs)">$LOCALIZE[554]</value>
 		<!-- Faixa -->
@@ -5393,7 +5393,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Container.Content(sets)">$INFO[Window(Home).Property(SkinHelper.ListItem.Countrys)]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[ListItem.Premiered]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Style)]</value>
-		<value condition="Container.Content(albums)">$INFO[Window(Home).Property(SkinHelper.ListItem.theme)]</value>
+		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Style)] $INFO[ListItem.Year,( , )]</value>
 		<value condition="Container.Content(songs)">$VAR[value_songinfo_track]</value>
 		<value condition="Window.IsActive(programs) + !Container.Content(Addons)">$INFO[ListItem.Premiered]</value>
 		<value condition="Window.IsActive(programs) + Container.Content(Addons)">$INFO[ListItem.AddonVersion]</value>
@@ -5570,37 +5570,37 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),years)">icons/years/$INFO[ListItem.Label].png</value>
 	</variable>
 	<variable name="value_widgetsinfopanel">
-		<value condition="!String.IsEmpty(ListItem.Art(animatedposter)) + !Skin.HasSetting(AnimatedPosters)">$INFO[ListItem.Art(animatedposter)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(poster)) + [String.IsEmpty(ListItem.Art(animatedposter)) | Skin.HasSetting(AnimatedPosters)]">$INFO[ListItem.Art(poster)]</value>
-		<value condition="String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + ![String.Contains(Container(9000).ListItem.Property(widgets),genre) | String.Contains(Container(9000).ListItem.Property(widgets),countries) | String.Contains(Container(9000).ListItem.Property(widgets),studios) | String.Contains(Container(9000).ListItem.Property(widgets),years)]">$INFO[Container(510).ListItem.Icon]</value>
+		<value condition="!String.IsEmpty(Container(510).ListItem.Art(animatedposter)) + !Skin.HasSetting(AnimatedPosters)">$INFO[Container(510).ListItem.Art(animatedposter)]</value>
+		<value condition="!String.IsEmpty(Container(510).ListItem.Art(poster)) + [String.IsEmpty(Container(510).ListItem.Art(animatedposter)) | Skin.HasSetting(AnimatedPosters)]">$INFO[Container(510).ListItem.Art(poster)]</value>
+		<value condition="String.IsEmpty(Container(510).ListItem.Art(poster)) + String.IsEmpty(Container(510).ListItem.Art(tvshow.poster)) + ![String.Contains(Container(9000).ListItem.Property(widgets),genre) | String.Contains(Container(9000).ListItem.Property(widgets),countries) | String.Contains(Container(9000).ListItem.Property(widgets),studios) | String.Contains(Container(9000).ListItem.Property(widgets),years)]">$INFO[Container(510).ListItem.Icon]</value>
 		<value condition="[String.IsEqual(Container(9000).ListItem.Property(widgets),movie.genre) | String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.genre) | String.IsEqual(Container(9000).ListItem.Property(widgets),concert.genre)]">genres/video/$INFO[Container(510).ListItem.Label].jpg</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.genre)">genres/music/$INFO[Container(510).ListItem.Label].jpg</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),countries)">icons/countries/$INFO[Container(510).ListItem.Label].png</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),studios)">$INFO[Container(510).ListItem.Label,resource://resource.images.studios.coloured/,.png]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),years)">icons/years/$INFO[Container(510).ListItem.Label].png</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),channel.group)">group/$INFO[ListItem.Label].png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),channel.group)">group/$INFO[Container(510).ListItem.Label].png</value>
 	</variable>
 	<variable name="value_widgetsinfopanelgallaery">
-		<value condition="Control.HasFocus(2510)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2510).ListItem.Title]&amp;type=poster</value>
+		<value condition="Control.HasFocus(2510)">$INFO[Container(2510).ListItem.Art(poster)]</value>
 		<value condition="Control.HasFocus(2511)">$INFO[Container(2511).ListItem.Art(poster)]</value>
 		<value condition="Control.HasFocus(2512)">$INFO[Container(2512).ListItem.Art(poster)]</value>
-		<value condition="Control.HasFocus(2513)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2513).ListItem.Title]&amp;type=poster</value>
-		<value condition="Control.HasFocus(2514)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2514).ListItem.Title]&amp;type=poster</value>
-		<value condition="Control.HasFocus(2515)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2515).ListItem.Title]&amp;type=poster</value>
+		<value condition="Control.HasFocus(2513)">$INFO[Container(2513).ListItem.Art(poster)]</value>
+		<value condition="Control.HasFocus(2514)">$INFO[Container(2514).ListItem.Art(poster)]</value>
+		<value condition="Control.HasFocus(2515)">$INFO[Container(2515).ListItem.Art(poster)]</value>
 		<value condition="Control.HasFocus(2516) + !String.IsEmpty(Container(2516).ListItem.Art(tvshow.poster))">$INFO[Container(2516).ListItem.Art(tvshow.poster)]</value>
 		<value condition="Control.HasFocus(2516)">$INFO[Container(2516).ListItem.Art(poster)]</value>
-		<value condition="Control.HasFocus(2517)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2517).ListItem.Title]&amp;type=poster</value>
+		<value condition="Control.HasFocus(2517)">$INFO[Container(2517).ListItem.Art(poster)]</value>
 		<value condition="Control.HasFocus(2518)">$INFO[Container(2518).ListItem.Art(poster)]</value>
 	</variable>
 	<variable name="value_widgetsinfopanelgallaeryfanart">
-		<value condition="Control.HasFocus(2510)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2510).ListItem.Title]&amp;type=fanart</value>
+		<value condition="Control.HasFocus(2510)">$INFO[Container(2510).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(2511)">$INFO[Container(2511).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(2512)">$INFO[Container(2512).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(2513)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2513).ListItem.Title]&amp;type=fanart</value>
-		<value condition="Control.HasFocus(2514)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2514).ListItem.Title]&amp;type=fanart</value>
-		<value condition="Control.HasFocus(2515)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2515).ListItem.Title]&amp;type=fanart</value>
+		<value condition="Control.HasFocus(2513)">$INFO[Container(2513).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(2514)">$INFO[Container(2514).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(2515)">$INFO[Container(2515).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(2516)">$INFO[Container(2516).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(2517)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2517).ListItem.Title]&amp;type=fanart</value>
+		<value condition="Control.HasFocus(2517)">$INFO[Container(2517).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(2518)">$INFO[Container(2518).ListItem.Art(fanart)]</value>
 	</variable>
 	<variable name="value_widgetsinfopanelvideo1">
@@ -6315,6 +6315,15 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<value condition="Integer.IsGreater(ListItem.Rating,6.9) + !Integer.IsGreater(ListItem.Rating,7.9)">$INFO[Skin.String(colorratingstars79)]</value>
 	<value condition="Integer.IsGreater(ListItem.Rating,7.9) + !Integer.IsGreater(ListItem.Rating,8.9)">$INFO[Skin.String(colorratingstars89)]</value>
 	<value condition="Integer.IsGreater(ListItem.Rating,8.9)">$INFO[Skin.String(colorratingstars100)]</value>
+	<value condition="Integer.IsGreater(VideoPlayer.Rating,0.9) + !Integer.IsGreater(VideoPlayer.Rating,1.9)">$INFO[Skin.String(colorratingstars19)]</value>
+	<value condition="Integer.IsGreater(VideoPlayer.Rating,1.9) + !Integer.IsGreater(VideoPlayer.Rating,2.9)">$INFO[Skin.String(colorratingstars29)]</value>	
+	<value condition="Integer.IsGreater(VideoPlayer.Rating,2.9) + !Integer.IsGreater(VideoPlayer.Rating,3.9)">$INFO[Skin.String(colorratingstars39)]</value>
+	<value condition="Integer.IsGreater(VideoPlayer.Rating,3.9) + !Integer.IsGreater(VideoPlayer.Rating,4.9)">$INFO[Skin.String(colorratingstars49)]</value>
+	<value condition="Integer.IsGreater(VideoPlayer.Rating,4.9) + !Integer.IsGreater(VideoPlayer.Rating,5.9)">$INFO[Skin.String(colorratingstars59)]</value>
+	<value condition="Integer.IsGreater(VideoPlayer.Rating,5.9) + !Integer.IsGreater(VideoPlayer.Rating,6.9)">$INFO[Skin.String(colorratingstars69)]</value>
+	<value condition="Integer.IsGreater(VideoPlayer.Rating,6.9) + !Integer.IsGreater(VideoPlayer.Rating,7.9)">$INFO[Skin.String(colorratingstars79)]</value>
+	<value condition="Integer.IsGreater(VideoPlayer.Rating,7.9) + !Integer.IsGreater(VideoPlayer.Rating,8.9)">$INFO[Skin.String(colorratingstars89)]</value>
+	<value condition="Integer.IsGreater(VideoPlayer.Rating,8.9)">$INFO[Skin.String(colorratingstars100)]</value>
 	</variable>
 	<variable name="value_pvr_starrating">
 	<value condition="!Integer.IsGreater(Window(home).Property(SkinHelper.Player.Rating),0.9)">$INFO[Skin.String(colorratingstars09)]</value>
@@ -6687,13 +6696,13 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="[Player.IsInternetStream | Pvr.IsPlayingRadio]+Window.IsActive(visualisation)">$INFO[Window(Home).Property(SkinHelper.Player.Artist)]</value>
 	</variable>
 	<variable name="value_music_title">
-		<value condition="!Window.IsActive(visualisation) + [Container.Content(artists) | Container.Content(albums)] + [Window.Is(songinformation) | Window.IsActive(musicinformation) | String.IsEqual(Container.Viewmode,RIGHT LIST)  | String.IsEqual(Container.Viewmode,POSTER) | String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,COVERFLOW) | String.IsEqual(Container.Viewmode,PANEL) | String.IsEqual(Container.Viewmode,SHELF) | String.IsEqual(Container.Viewmode,CowerFlowandBack)]">$INFO[ListItem.Artist]</value>
-		<value condition="!Window.IsActive(visualisation) + Container.Content(songs) + [Window.Is(musicinformation) | String.IsEqual(Container.Viewmode,RIGHT LIST)  | String.IsEqual(Container.Viewmode,POSTER) | String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,COVERFLOW) | String.IsEqual(Container.Viewmode,PANEL) | String.IsEqual(Container.Viewmode,SHELF) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
+		<value condition="!Window.IsActive(visualisation) + [Container.Content(artists) | Container.Content(albums)] + [Window.Is(songinformation) | Window.IsActive(musicinformation) | String.IsEqual(Container.Viewmode,RIGHT LIST)  | String.IsEqual(Container.Viewmode,POSTER) | String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,COVERFLOW) | String.IsEqual(Container.Viewmode,PANEL) | String.IsEqual(Container.Viewmode,SHELF) | String.IsEqual(Container.Viewmode,CowerFlowandBack) | String.IsEqual(Container.Viewmode,LANDSCAPEX)]">$INFO[ListItem.Artist]</value>
+		<value condition="!Window.IsActive(visualisation) + Container.Content(songs) + [Window.Is(musicinformation) | String.IsEqual(Container.Viewmode,RIGHT LIST)  | String.IsEqual(Container.Viewmode,POSTER) | String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,COVERFLOW) | String.IsEqual(Container.Viewmode,PANEL) | String.IsEqual(Container.Viewmode,SHELF) | String.IsEqual(Container.Viewmode,LANDSCAPEX) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
 		<value condition="![Player.IsInternetStream | Pvr.IsPlayingRadio]+Window.IsActive(visualisation)">$INFO[MusicPlayer.Artist]</value>
 		<value condition="[Player.IsInternetStream | Pvr.IsPlayingRadio]+Window.IsActive(visualisation)">$INFO[Window(Home).Property(SkinHelper.Player.Artist)]</value>
 	</variable>
 	<variable name="value_music_subtitle">
-		<value condition="!Window.IsActive(visualisation)+![Window.Is(musicinformation)|Window.Is(songinformation)]+Container.Content(albums) + [String.IsEqual(Container.Viewmode,POSTER)  | String.IsEqual(Container.Viewmode,RIGHT LIST) | String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,COVERFLOW) | String.IsEqual(Container.Viewmode,PANEL) | String.IsEqual(Container.Viewmode,SHELF) | Window.IsActive(musicinformation)]">$INFO[ListItem.Label]</value>
+		<value condition="!Window.IsActive(visualisation)+![Window.Is(musicinformation)|Window.Is(songinformation)]+Container.Content(albums) + [String.IsEqual(Container.Viewmode,POSTER)  | String.IsEqual(Container.Viewmode,RIGHT LIST) | String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,COVERFLOW) | String.IsEqual(Container.Viewmode,PANEL) | String.IsEqual(Container.Viewmode,SHELF) | String.IsEqual(Container.Viewmode,LANDSCAPEX) | Window.IsActive(musicinformation)]">$INFO[ListItem.Label]</value>
 		<value condition="!Window.IsActive(visualisation)+![Window.Is(musicinformation)|Window.Is(songinformation)]+Container.Content(songs) + [String.IsEqual(Container.Viewmode,POSTER) | String.IsEqual(Container.Viewmode,RIGHT LIST) | String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,COVERFLOW) | String.IsEqual(Container.Viewmode,SHELF)]">$INFO[ListItem.Artist]$INFO[ListItem.Album, | ]</value>
 		<value condition="!Window.IsActive(visualisation)+[Window.Is(musicinformation)|Window.Is(songinformation)]">$INFO[ListItem.Artist]$INFO[ListItem.Album, | ]</value>
 		<value condition="Window.IsActive(visualisation)">$INFO[MusicPlayer.Artist,,/ ]$INFO[MusicPlayer.Album,,/ ]$INFO[MusicPlayer.Title]</value>
@@ -6702,8 +6711,8 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value>$INFO[ListItem.TrackNumber]</value>
 	</variable>
 	<variable name="value_songinfo_duration">
-		<value condition="!Player.HasAudio + String.Contains(ListItem.Duration,min)">$INFO[ListItem.Duration]</value>
-		<value condition="![Player.HasAudio | String.Contains(ListItem.Duration,min)]">$INFO[ListItem.Duration] $LOCALIZE[31961]</value>
+		<value condition="Player.HasAudio">$INFO[ListItem.Duration]</value>
+		<value condition="!Player.HasAudio">$INFO[ListItem.Duration] $LOCALIZE[31961]</value>
 	</variable>
 	<variable name="value_songinfo_plot">
 		<value condition="!Player.HasAudio">$INFO[Window(Home).Property(SkinHelper.Player.Art.Info)]$INFO[ListItem.Property(Artist_Description)]</value>
@@ -7526,7 +7535,9 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<value condition="Integer.IsGreater(VideoPlayer.Rating,8.9)">$INFO[Skin.String(colorratingstars100)]</value>
 	</variable>
 	<variable name="value_oscars_won">
-	<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Awards),won)">years.png</value>
+	<value condition="String.IsEqual(Container(510).ListItem.DBTYPE,movie)+String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Awards),won)">years.png</value>
+	<value condition="!String.IsEqual(Container(510).ListItem.DBTYPE,movie)+String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Awards),won)+String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),globe)">flags/goldenglobe0.png</value>	
+	<value condition="!String.IsEqual(Container(510).ListItem.DBTYPE,movie)+String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Awards),won)+String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),emmy)">flags/emmy.png</value>
 	</variable>
 	
 	<variable name="value_lyrics_no">
@@ -7755,7 +7766,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),2.0)">4.0</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),2.1)">4.2</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),2.2)">4.4</value>
-		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),2.3">4.6</value>
+		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),2.3)">4.6</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),2.4)">4.8</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),2.5)">5.0</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),2.6)">5.2</value>
@@ -7765,7 +7776,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),3.0)">6.0</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),3.1)">6.2</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),3.2)">6.4</value>
-		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),3.3">6.6</value>
+		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),3.3)">6.6</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),3.4)">6.8</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),3.5)">7.0</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),3.6)">7.2</value>
@@ -7775,7 +7786,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.0)">8.0</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.1)">8.2</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.2)">8.4</value>
-		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.3">8.6</value>
+		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.3)">8.6</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.4)">8.8</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.5)">9.0</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.6)">9.2</value>
@@ -7783,7 +7794,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.8)">9.6</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),4.9)">9.8</value>
 		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.Player.Rating),5.0)">10.0</value>
-		<value condition="Integer.IsGreater(Window(home).Property(SkinHelper.Player.Rating),5.0)">$INFO(Window(home).Property(SkinHelper.Player.Rating))</value>
+		<value condition="Integer.IsGreater(Window(home).Property(SkinHelper.Player.Rating),5.0)">$INFO[Window(home).Property(SkinHelper.Player.Rating)]</value>
 	</variable>
 	<variable name="value_colorratingstars_di">
 		<value condition="!Integer.IsGreater(Window(home).Property(SkinHelper.Player.Rating),0.5)">$INFO[Skin.String(colorratingstars09)]</value>
@@ -7797,5 +7808,74 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Integer.IsGreater(Window(home).Property(SkinHelper.Player.Rating),4.0) + !Integer.IsGreater(Window(home).Property(SkinHelper.Player.Rating),4.5)">$INFO[Skin.String(colorratingstars89)]</value>
 		<value condition="Integer.IsGreater(Window(home).Property(SkinHelper.Player.Rating),4.5)">$INFO[Skin.String(colorratingstars100)]</value>
 	</variable>
-
+    <variable name="value_rating_star_do">
+        <value condition="String.IsEmpty(ListItem.Rating)"></value>
+        <value condition="Integer.IsEqual(ListItem.Rating,0.1)">0.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,0.2)">0.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,0.3)">0.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,0.4)">0.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,0.5)">1.0</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,0.6)">1.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,0.7)">1.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,0.8)">1.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,0.9)">1.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.0)">2.0</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.1)">2.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.2)">2.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.3)">2.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.4)">2.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.5)">3.0</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.6)">3.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.7)">3.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.8)">3.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,1.9)">3.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.0)">4.0</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.1)">4.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.2)">4.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.3)">4.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.4)">4.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.5)">5.0</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.6)">5.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.7)">5.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.8)">5.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,2.9)">5.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.0)">6.0</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.1)">6.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.2)">6.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.3)">6.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.4)">6.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.5)">7.0</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.6)">7.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.7)">7.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.8)">7.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,3.9)">7.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.0)">8.0</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.1)">8.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.2)">8.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.3)">8.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.4)">8.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.5)">9.0</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.6)">9.2</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.7)">9.4</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.8)">9.6</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,4.9)">9.8</value>
+        <value condition="Integer.IsEqual(ListItem.Rating,5.0)">10.0</value>
+        <value condition="Integer.IsGreater(ListItem.Rating,5.0)">$INFO(ListItem.Rating)</value>
+    </variable>
+    <variable name="value_colorratingstars_do">
+        <value condition="!Integer.IsGreater(ListItem.Rating,0.5)">$INFO[Skin.String(colorratingstars09)]</value>
+        <value condition="Integer.IsGreater(ListItem.Rating,0.5) + !Integer.IsGreater(ListItem.Rating,1.0)">$INFO[Skin.String(colorratingstars19)]</value>
+        <value condition="Integer.IsGreater(ListItem.Rating,1.0) + !Integer.IsGreater(ListItem.Rating,1.5)">$INFO[Skin.String(colorratingstars29)]</value>    
+        <value condition="Integer.IsGreater(ListItem.Rating,1.5) + !Integer.IsGreater(ListItem.Rating,2.0)">$INFO[Skin.String(colorratingstars39)]</value>
+        <value condition="Integer.IsGreater(ListItem.Rating,2.0) + !Integer.IsGreater(ListItem.Rating,2.5)">$INFO[Skin.String(colorratingstars49)]</value>
+        <value condition="Integer.IsGreater(ListItem.Rating,2.5) + !Integer.IsGreater(ListItem.Rating,3.0)">$INFO[Skin.String(colorratingstars59)]</value>
+        <value condition="Integer.IsGreater(ListItem.Rating,3.0) + !Integer.IsGreater(ListItem.Rating,3.5)">$INFO[Skin.String(colorratingstars69)]</value>
+        <value condition="Integer.IsGreater(ListItem.Rating,3.5) + !Integer.IsGreater(ListItem.Rating,4.0)">$INFO[Skin.String(colorratingstars79)]</value>
+        <value condition="Integer.IsGreater(ListItem.Rating,4.0) + !Integer.IsGreater(ListItem.Rating,4.5)">$INFO[Skin.String(colorratingstars89)]</value>
+        <value condition="Integer.IsGreater(ListItem.Rating,4.5)">$INFO[Skin.String(colorratingstars100)]</value>
+    </variable>
+    <variable name="RandomFanartDelaySec">
+		<value condition="String.IsEmpty(skin.string(RandomFanartDelaySec))">10</value>
+		<value condition="!String.IsEmpty(skin.string(RandomFanartDelaySec))">$INFO[skin.string(RandomFanartDelaySec)]</value>
+    </variable>
 	</includes>

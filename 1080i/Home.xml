@@ -18,7 +18,7 @@
 	<onload>Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableExtraPoster)</onload>
-	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,10)</onload>
+	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,$VAR[RandomFanartDelaySec)])</onload>
 	<onload>Skin.SetString(SkinHelper.WallImagesDelay, 10)</onload>
 	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.EnableWallImages, 20)</onload>
 	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.EnableWallImages, 20)</onload>

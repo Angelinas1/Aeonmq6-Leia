@@ -56,14 +56,14 @@
             </control>
             <control type="image">
                 <!-- Star -->
-                <left>1672</left>
+                <left>1650</left>
                 <top>22</top>
                 <width>225</width>
                 <height>38</height>
                 <align>right</align>
                 <aligny>center</aligny>
-                <texture>$VAR[value_player_starrating]</texture>
-                <colordiffuse>$VAR[value_headercolor]</colordiffuse>
+                <texture>$VAR[value_styleratingstars]$INFO[VideoPlayer.Rating,,.png]</texture>
+                <colordiffuse>$VAR[value_video_starrating]</colordiffuse>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>!VideoPlayer.Content(LiveTV)</visible>
             </control>

@@ -178,7 +178,7 @@
             </control>
             <control type="scrollbar" id="80">
                 <include>ScrollBar_Vertical</include>
-                <left>322</left>
+                <left>1220</left>
                 <top>210</top>
                 <height>477</height>
                 <onleft>450</onleft>

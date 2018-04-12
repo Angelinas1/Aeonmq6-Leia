@@ -140,6 +140,26 @@
                         <onclick>Dialog.Close(111)</onclick>
                         <onclick>ActivateWindow(Favourites)</onclick>
                     </item>
+                    <item id="15">
+                        <!-- Music Library -->
+                        <label>Browse library for playing song</label>
+                        <onclick>Dialog.Close(all,true)</onclick>
+                        <onclick>ActivateWindow(music,musicdb://artists/$INFO[Window(Home).Property(SkinHelper.Player.artistid)]/)</onclick>
+						<visible>Window.IsActive(Visualisation)</visible>
+                    </item>
+                    <item id="16">
+                        <!-- Music Library -->
+                        <label>Browse library for playlist $INFO[Player.Folderpath]</label>
+                        <onclick>Dialog.Close(all,true)</onclick>
+                        <onclick>ActivateWindowAndFocus(special://musicplaylists/ /$INFO[Player.Folderpath]/)</onclick>
+						<visible>Window.IsActive(Visualisation)</visible>
+                    </item>
+                    <item id="17">
+                        <!-- Music Library -->
+                        <label>Browse library for playing song</label>
+                        <onclick>ActivateWindow(music,musicdb://artists/$INFO[Window(Home).Property(SkinHelper.Player.artistid)]/)</onclick>
+						<visible>!Window.IsActive(Visualisation)</visible>
+                    </item>
                     <item id="20">
                         <!-- Reload Skin -->
                         <label>$LOCALIZE[31695] $LOCALIZE[31203]</label>

@@ -215,7 +215,7 @@
 					<focusposition>0</focusposition>
 					<autoscroll time="10000">String.IsEqual(skin.string(extra_seconds),10000) + !Control.HasFocus(2518)</autoscroll>
 					<scrolltime tween="elastic" easing="inout">0</scrolltime>
-					
+					<animation effect="fade" time="400">VisibleChange</animation>
 					<itemlayout width="172" height="525">
 						<control type="image">
 							<width>172</width>
@@ -264,7 +264,7 @@
 					<animation condition="System.IdleTime(0)" effect="rotatey" center="300" start="-80" end="-84" time="0">Conditional</animation>
 					<focusposition>0</focusposition>
 					<autoscroll time="10000">String.IsEqual(skin.string(extra_seconds),10000) + !Control.HasFocus(2510)</autoscroll>
-					<scrolltime tween="quadratic">0</scrolltime>
+					<scrolltime tween="elastic">0</scrolltime>
 					
 					<itemlayout width="75" height="540">
 						<control type="image">
@@ -322,7 +322,7 @@
 					<animation condition="System.IdleTime(0)" effect="rotatey" center="300" start="-80" end="-84" time="0">Conditional</animation>
 					<focusposition>0</focusposition>
 					<autoscroll time="10000">String.IsEqual(skin.string(extra_seconds),10000) + !Control.HasFocus(2511)</autoscroll>
-					<scrolltime tween="quadratic">0</scrolltime>
+					<scrolltime tween="elastic">0</scrolltime>
 					
 					<itemlayout width="75" height="540">
 						<control type="image">
@@ -384,7 +384,7 @@
 					<animation condition="System.IdleTime(0)" effect="rotatey" center="300" start="-80" end="-84" time="0">Conditional</animation>
 					<focusposition>0</focusposition>
 					<autoscroll time="10000">String.IsEqual(skin.string(extra_seconds),10000) + !Control.HasFocus(2512)</autoscroll>
-					<scrolltime tween="quadratic">0</scrolltime>
+					<scrolltime tween="elastic">0</scrolltime>
 					
 					<itemlayout width="75" height="660">
 						<control type="image">
@@ -441,7 +441,7 @@
 					<orientation>vertical</orientation>
 					<focusposition>0</focusposition>
 					<autoscroll time="10000">String.IsEqual(skin.string(extra_seconds),10000) + !Control.HasFocus(2513)</autoscroll>
-					<scrolltime tween="quadratic">0</scrolltime>
+					<scrolltime tween="elastic">0</scrolltime>
 					
 					<itemlayout width="128" height="459">
 						<control type="image">
@@ -520,7 +520,7 @@
 					<orientation>vertical</orientation>
 					<focusposition>0</focusposition>
 					<autoscroll time="10000">String.IsEqual(skin.string(extra_seconds),10000) + !Control.HasFocus(2517)</autoscroll>
-					<scrolltime tween="quadratic">0</scrolltime>
+					<scrolltime tween="elastic">0</scrolltime>
 					
 					<itemlayout width="128" height="459">
 						<control type="image">
@@ -600,7 +600,7 @@
 					<animation condition="System.IdleTime(0)" effect="rotatey" center="1515,585" start="-300" end="-300" time="0">Conditional</animation>
 					<focusposition>0</focusposition>
 					<autoscroll time="10000">String.IsEqual(skin.string(extra_seconds),10000) + !Control.HasFocus(2514)</autoscroll>
-					<scrolltime tween="quadratic">0</scrolltime>
+					<scrolltime tween="elastic">0</scrolltime>
 					
 					<itemlayout width="80" height="218">
 						<control type="image">
@@ -644,7 +644,7 @@
 					<animation condition="System.IdleTime(0)" effect="rotatey" center="300" start="-80" end="-84" time="0">Conditional</animation>
 					<focusposition>0</focusposition>
 					<autoscroll time="10000">String.IsEqual(skin.string(extra_seconds),10000) + !Control.HasFocus(2515)</autoscroll>
-					<scrolltime tween="quadratic">0</scrolltime>
+					<scrolltime tween="elastic">0</scrolltime>
 					
 					<itemlayout width="105" height="350">
 						<control type="image">
@@ -679,7 +679,7 @@
 					<animation condition="System.IdleTime(0)" effect="rotatey" center="1515,585" start="-300" end="-300" time="0">Conditional</animation>
 					<focusposition>0</focusposition>
 					<autoscroll time="10000">String.IsEqual(skin.string(extra_seconds),10000) + !Control.HasFocus(25168)</autoscroll>
-					<scrolltime tween="quadratic">0</scrolltime>
+					<scrolltime tween="elastic">0</scrolltime>
 					
 					<itemlayout width="80" height="225">
 						<control type="image">
@@ -722,7 +722,7 @@
 					<top>-8</top>
 					<height>1095</height>
 					<width>1950</width>
-					<texture>dan.png</texture>
+					<texture>dan01.png</texture>
 					<aspectratio align="center">stretch</aspectratio>
 					<visible>Skin.HasSetting(extra_extra) + String.Contains(Container(9000).ListItem.Property(id),extras)</visible>
 					<animation effect="fade" start="60" end="100" time="5000" condition="System.IdleTime(0)">conditional</animation>

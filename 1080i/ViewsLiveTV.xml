@@ -1359,7 +1359,7 @@
                         <top>555</top>
                         <height>300</height>
                         <width>450</width>
-                        <ondown>5736</ondown>
+                        <ondown>11</ondown>
                         <onup>9900</onup>
                         <onleft>600</onleft>
                         <onright>600</onright>
@@ -1505,7 +1505,7 @@
                     <posy>52</posy>
                     <height>1035</height>
                     <width>450</width>
-                    <onleft>5736</onleft>
+                    <onleft>11</onleft>
                     <onright>9900</onright>
                     <onup>5735</onup>
                     <ondown>5735</ondown>
@@ -1631,9 +1631,9 @@
             <animation effect="fade" end="95" condition="true">Conditional</animation>
             <visible>Control.IsVisible(5735)</visible>
         </control>
-        <control type="list" id="5736">
+        <control type="list" id="11">
             <animation effect="slide" start="0,0" end="750,0" time="300" easing="out" tween="cubic" condition="Player.HasVideo + System.IdleTime(8) | Control.HasFocus(9920)">Conditional</animation>
-            <content target="tvchannels">$VAR[value_dynamic_box]</content>
+            
             <visible>Control.IsVisible(5735)</visible>
             <posx>1290</posx>
             <posy>0</posy>
@@ -1642,8 +1642,8 @@
             <onleft condition="Player.HasVideo">600</onleft>
             <onleft condition="!Player.HasVideo">9900</onleft>
             <onright>5735</onright>
-            <onup>5736</onup>
-            <ondown>5736</ondown>
+            <onup>11</onup>
+            <ondown>11</ondown>
             <focuspostion>1</focuspostion>
             <orientation>vertical</orientation>
             <scrolltime>440</scrolltime>

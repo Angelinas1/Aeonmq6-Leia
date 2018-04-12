@@ -149,6 +149,16 @@
                     <onclick condition="!Skin.HasSetting(viewshelf_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
                     <selected>Skin.HasSetting(viewshelf_music)</selected>
                 </control>
+                <control type="radiobutton" id="19264">
+                    <!-- Panel -->
+                    <!-- 64 -->
+                    <radioposx>1341</radioposx>
+                    <label>31804</label>
+                    <onclick>Skin.ToggleSetting(viewlandscape_music)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewlandscape_music)">Skin.SetString(setviewmusic,64)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewlandscape_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
+                    <selected>Skin.HasSetting(viewlandscape_music)</selected>
+                </control>
                 <control type="radiobutton" id="19278">
                     <!-- CoverFlowandBack -->
                     <!-- 78 -->

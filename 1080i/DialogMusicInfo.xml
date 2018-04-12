@@ -567,8 +567,8 @@
                 <top>4</top>
                 <width>420</width>
                 <height>38</height>
-                <texture fallback="flags\stars\sloped\empty.png">flags\stars\sloped\$INFO[Window(home).Property(SkinHelper.Player.Rating),,.png]</texture>
-                <colordiffuse>$VAR[value_music_starrating]</colordiffuse>
+                <texture fallback="flags\stars\sloped\empty.png">flags\stars\sloped\$VAR[value_rating_star_di,,.png]</texture>
+                <colordiffuse>$VAR[value_colorratingstars_di]</colordiffuse>
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
 				<visible>String.IsEmpty(MusicPlayer.UserRating)</visible>
             </control>
@@ -593,7 +593,7 @@
                 <font>Font_17</font>
                 <textcolor>88DDDDDD</textcolor>
                 <shadowcolor>AA000000</shadowcolor>
-				<label>rating : [COLOR=$VAR[value_headercolor]]$INFO[Window(home).Property(SkinHelper.Player.Rating)][/COLOR]</label>
+				<label>rating : [COLOR=$VAR[value_headercolor]]$VAR[value_rating_star_di][/COLOR]</label>
 				<visible>String.IsEmpty(MusicPlayer.UserRating)+!String.IsEmpty(Window(home).Property(SkinHelper.Player.Rating))</visible>
             </control>
 			</control>
@@ -2510,7 +2510,7 @@
                             <!-- Get Fanart -->
                             <label>20413</label>
                             <onclick>SendClick(2001,12)</onclick>
-                            <visible>!Skin.HasSetting(kioskininfo)</visible>
+                            <visible>!Skin.HasSetting(kioskininfo)+Container.Content(Artists)</visible>
                         </item>
                         <item id="8">
                             <!-- Artist Info -->
@@ -2535,7 +2535,7 @@
                             <label>31951</label>
                             <onclick>Dialog.Close(2001)</onclick>
                             <onclick>Skin.SetBool(musictrailers)</onclick>
-                            <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Title],return)</onclick>
+                            <onclick>RunScript(script.skin.helper.service,action=searchyoutube,title=$INFO[ListItem.Title],header=Search YouTube Song Title)</onclick>
 							<visible>Container.Content(songs)</visible>
                         </item>
                         <item id="12">

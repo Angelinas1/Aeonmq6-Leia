@@ -10,7 +10,7 @@
         <onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
         <onunload>ClearProperty(Banner,home)</onunload>
         <allowoverlay>no</allowoverlay>
-        <views>51,52,54,55,56,57,58,59,62,63,78,53,185,186</views>
+        <views>51,52,54,55,56,57,58,59,62,63,64,78,53,185,186</views>
         <controls>
             <control type="multiimage">
                 <!-- Multi Fanart -->
@@ -318,16 +318,16 @@
                         <font>Font_18A</font>
 						<aspectratio align="left" aligny="center">keep</aspectratio>
                         <texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
-                       <visible>String.IsEqual(Container.Viewmode,WALL)+Container.Content(artists)</visible>
+                       <visible>[String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,LANDSCAPEX)] + Container.Content(artists)</visible>
                     </control>
                     <control type="image">
                         <left>45</left>
                         <top>102</top>
                         <width>155</width>
                         <height>44</height>
-                        <texture>$VAR[value_styleratingstars]$INFO[ListItem.Rating,,.png]</texture>
+                        <texture>$VAR[value_styleratingstars]$VAR[value_rating_star_do,,.png]</texture>
 						<aspectratio align="left" aligny="center">keep</aspectratio>
-                        <colordiffuse>$VAR[value_headercolor]</colordiffuse>
+                        <colordiffuse>$VAR[value_colorratingstars_do]</colordiffuse>
                         <animation effect="slide" start="0,0" end="0,-45" condition="String.IsEmpty(Control.GetLabel(200))">Conditional</animation>
                         <visible>!String.IsEmpty(Control.GetLabel(199))</visible>
                     </control>
@@ -338,7 +338,7 @@
                         <width>45</width>
                         <height>38</height>
                         <font>Font_23</font>
-                        <label>$INFO[ListItem.Rating]</label>
+                        <label>$VAR[value_rating_star_do]</label>
                         <textcolor>FFFFFAF0</textcolor>
                         <animation effect="slide" start="0,0" end="0,-45" condition="String.IsEmpty(Control.GetLabel(200))">Conditional</animation>
                         <visible>!String.IsEmpty(Control.GetLabel(199))</visible>
@@ -443,6 +443,8 @@
                     <!-- 62 -->
                     <include condition="Skin.HasSetting(viewshelf_music)">ViewShelf</include>
                     <!-- 62 -->
+                    <include condition="Skin.HasSetting(viewlandscape_music)">ViewLandScapeX</include>
+                    <!-- 64 -->
                     <include condition="Skin.HasSetting(viewcoverflowback_music)">ViewCoverFlowBackAudio</include>
                     <!-- 78 -->
                     <include condition="Skin.HasSetting(viewbanner_music)">ViewBanner</include>

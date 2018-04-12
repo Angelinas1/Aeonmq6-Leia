@@ -3096,8 +3096,7 @@
                     <top>105</top>
                     <width>1371</width>
                     <height>742</height>
-                    <scrolltime>200</scrolltime>
-                    
+                    <scrolltime>200</scrolltime>  
                     <pagecontrol>5001</pagecontrol>
                     <itemlayout height="742" width="1371">
                         <control type="image">

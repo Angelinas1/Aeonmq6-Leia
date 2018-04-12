@@ -2851,8 +2851,7 @@
 		<onup>888</onup>
 		<ondown>Close</ondown>
 		<orientation>horizontal</orientation>
-		<scrolltime>300</scrolltime>
-		
+		<scrolltime>300</scrolltime>	
 		<focusposition>6</focusposition>
 		<itemlayout width="112" height="120">
 			<control type="image">
@@ -2932,6 +2931,12 @@
 				<visible>[!String.Contains(skin.string(osd_video_info),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="160">
+				<!-- epg osd -->
+				<icon>osd_menun_bg.png</icon>
+				<onclick>ActivateWindow(pvrosdchannels)</onclick>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</item>
+			<item id="161">
 				<!-- epg osd -->
 				<icon>osd_menun_bg.png</icon>
 				<onclick>ActivateWindow(pvrosdguide)</onclick>

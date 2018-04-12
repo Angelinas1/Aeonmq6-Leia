@@ -83,24 +83,23 @@
 				<colordiffuse>$VAR[value_stylecolor]</colordiffuse>
 				<include>Animation_StyleGlass</include>
 			</control>
-	<!-- Imagem da composicao -->
-	<control type="multiimage">	
-	<left>0</left>
-	<top>680</top>
-	<width>1920</width>
-	<height>400</height>
-	<include condition="String.IsEqual(skin.string(homebg_seconds),5000)">Animation_Timer1</include>
-	<include condition="String.IsEqual(skin.string(homebg_seconds),10000)">Animation_Timer2</include>
-	<include condition="String.IsEqual(skin.string(homebg_seconds),30000)">Animation_Timer3</include>
-	<include condition="String.IsEqual(skin.string(homebg_seconds),60000)">Animation_Timer4</include>
-	<include condition="String.IsEqual(skin.string(homebg_seconds),600000)">Animation_Timer5</include>
-	<include condition="String.IsEqual(skin.string(homebg_seconds),3600000)">Animation_Timer6</include>
-	<randomize>true</randomize>
-	<fadetime>FanartCrossFadeTime</fadetime>	
-	<imagepath fallback="blank.png" diffuse="shadow_mask.png" background="true">$VAR[value_composition]</imagepath>
-	<colordiffuse>$VAR[value_compositioncolor]</colordiffuse>
-	</control>
-
+			<!-- Imagem da composicao -->
+			<control type="multiimage">	
+				<left>0</left>
+				<top>680</top>
+				<width>1920</width>
+				<height>400</height>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),5000)">Animation_Timer1</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),10000)">Animation_Timer2</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),30000)">Animation_Timer3</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),60000)">Animation_Timer4</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),600000)">Animation_Timer5</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),3600000)">Animation_Timer6</include>
+				<randomize>true</randomize>
+				<fadetime>FanartCrossFadeTime</fadetime>	
+				<imagepath fallback="blank.png" diffuse="shadow_mask.png" background="true">$VAR[value_composition]</imagepath>
+				<colordiffuse>$VAR[value_compositioncolor]</colordiffuse>
+			</control>
 			<control type="image">
 				<left>0</left>
 				<top>818</top>
@@ -429,7 +428,6 @@
 					<onright>5000</onright>
 					<orientation>vertical</orientation>
 					<scrolltime>450</scrolltime>
-					
 					<focusposition>0</focusposition>
 					<itemlayout width="450" height="60">
 						<control type="image">

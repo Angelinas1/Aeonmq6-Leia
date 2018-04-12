@@ -5331,6 +5331,18 @@
                     <onright>9100</onright>
                     <itemgap>0</itemgap>
                     <pagecontrol></pagecontrol>
+                    <control type="button" id="1257">
+                        <!-- Pacote extra forcado -->
+                        <label>Random Fanart Delay in Sec</label>
+						<label2>$INFO[skin.string(RandomFanartDelaySec)]</label2>
+						<onclick condition="String.IsEqual(skin.string(RandomFanartDelaySec),)">Skin.SetString(RandomFanartDelaySec,10)</onclick>
+						<onclick condition="String.IsEqual(skin.string(RandomFanartDelaySec),10)">Skin.SetString(RandomFanartDelaySec,15)</onclick>
+						<onclick condition="String.IsEqual(skin.string(RandomFanartDelaySec),15)">Skin.SetString(RandomFanartDelaySec,20)</onclick>
+						<onclick condition="String.IsEqual(skin.string(RandomFanartDelaySec),20)">Skin.SetString(RandomFanartDelaySec,25)</onclick>
+						<onclick condition="String.IsEqual(skin.string(RandomFanartDelaySec),25)">Skin.SetString(RandomFanartDelaySec,30)</onclick>
+						<onclick condition="String.IsEqual(skin.string(RandomFanartDelaySec),30)">Skin.SetString(RandomFanartDelaySec,5)</onclick>
+						<onclick condition="String.IsEqual(skin.string(RandomFanartDelaySec),5)">Skin.SetString(RandomFanartDelaySec,10)</onclick>
+                    </control>
                     <control type="radiobutton" id="1258">
                         <label>Alphabet-Jump</label>
 						<onclick>Skin.ToggleSetting(alphabet)</onclick>
