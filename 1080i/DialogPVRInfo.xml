@@ -864,33 +864,20 @@
                 <width>1215</width>
                 <align>center</align>
                 <aligny>center</aligny>
-                <label>$INFO[Container(1000).ListItem.Label]$INFO[Container(1001).ListItem.Label] [COLOR=red]as[/COLOR] $INFO[Container(1000).ListItem.Label2]$INFO[Container(1001).ListItem.Label2]</label>
+                <label>$INFO[Container.ListItem.Label] [COLOR=red]as[/COLOR] $INFO[Container.ListItem.Label2]</label>
                 <font>Font_24</font>
                 <textcolor>F9000000</textcolor>
                 <scroll>true</scroll>
             </control>
             <control type="label">
-                <visible>Control.HasFocus(350)</visible>
+                <visible>Control.HasFocus(350)|Control.HasFocus(450)</visible>
                 <left>0</left>
                 <top>1025</top>
                 <height>60</height>
                 <width>1215</width>
                 <align>center</align>
                 <aligny>center</aligny>
-                <label>$INFO[Container(350).ListItem.Label]</label>
-                <font>Font_24</font>
-                <textcolor>F9000000</textcolor>
-                <scroll>true</scroll>
-            </control>
-            <control type="label">
-                <visible>Control.HasFocus(450)</visible>
-                <left>0</left>
-                <top>1025</top>
-                <height>60</height>
-                <width>1215</width>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[Container(450).ListItem.Label]</label>
+                <label>$INFO[Container.ListItem.Label]</label>
                 <font>Font_24</font>
                 <textcolor>F9000000</textcolor>
                 <scroll>true</scroll>
