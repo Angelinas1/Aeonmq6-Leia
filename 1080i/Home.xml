@@ -18,7 +18,7 @@
 	<onload>Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableExtraPoster)</onload>
-	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,$VAR[RandomFanartDelaySec)])</onload>
+	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,$VAR[RandomFanartDelaySec])</onload>
 	<onload>Skin.SetString(SkinHelper.WallImagesDelay, 10)</onload>
 	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.EnableWallImages, 20)</onload>
 	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.EnableWallImages, 20)</onload>
@@ -53,6 +53,24 @@
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<onunload condition="String.Contains(Container(9000).ListItem.Property(id),vpl) | String.Contains(Container(9000).ListItem.Property(id),apl)">Skin.SetString(playlists,$INFO[Container(9000).ListItem.Property(id)])</onunload>
 	<controls>
+		<control type="image" id="18000">
+		<visible>String.Contains(Container(9000).ListItem.Property(widgets),countries)</visible>
+		</control>
+		<control type="image" id="18001">
+		<visible>String.Contains(Container(9000).ListItem.Property(widgets),studios)</visible>
+		</control>
+		<control type="image" id="18002">
+		<visible>String.Contains(Container(9000).ListItem.Property(widgets),years)</visible>
+		</control>
+		<control type="image" id="18003">
+		<visible>String.IsEqual(Container(9000).ListItem.Property(widgets),music.genre)</visible>
+		</control>
+		<control type="image" id="18004">
+		<visible>[String.IsEqual(Container(9000).ListItem.Property(widgets),movie.genre) | String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.genre) | String.IsEqual(Container(9000).ListItem.Property(widgets),concert.genre)]</visible>
+		</control>
+		<control type="image" id="18005">
+		<visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + ![String.Contains(Container(9000).ListItem.Property(widgets),genre) | String.Contains(Container(9000).ListItem.Property(widgets),countries) | String.Contains(Container(9000).ListItem.Property(widgets),studios) | String.Contains(Container(9000).ListItem.Property(widgets),years)]</visible>
+		</control>		
 	<include condition="!Skin.HasSetting(homemq)">Aeonmq6</include>
     <include condition="Skin.HasSetting(homemq)">Aeonmq7</include>
 	</controls>
