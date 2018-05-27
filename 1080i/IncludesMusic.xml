@@ -10,7 +10,7 @@
         <onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
         <onunload>ClearProperty(Banner,home)</onunload>
         <allowoverlay>no</allowoverlay>
-        <views>51,52,54,55,56,57,58,59,62,63,64,78,53,185,186</views>
+        <views>51,52,54,55,56,57,58,59,62,63,64,65,78,53,185,186</views>
         <controls>
             <control type="multiimage">
                 <!-- Multi Fanart -->
@@ -226,55 +226,55 @@
 			<item>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.0.track)]</label>
 				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.0.trackthumb)]</icon>
-				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.0.musicvideos)])</onclick>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&amp;videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.0.musicvideos)])</onclick>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.0.trackthumb))</visible>
 			</item>
 			<item>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.1.track)]</label>
 				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.1.trackthumb)]</icon>
-				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.1.musicvideos)])</onclick>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&amp;videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.1.musicvideos)])</onclick>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.1.trackthumb))</visible>
 			</item>
 			<item>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.2.track)]</label>
 				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.2.trackthumb)]</icon>
-				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.2.musicvideos)])</onclick>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&amp;videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.2.musicvideos)])</onclick>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.2.trackthumb))</visible>
 			</item>
 			<item>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.3.track)]</label>
 				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.3.trackthumb)]</icon>
-				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.3.musicvideos)])</onclick>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&amp;videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.3.musicvideos)])</onclick>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.3.trackthumb))</visible>
 			</item>
 			<item>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.4.track)]</label>
 				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.4.trackthumb)]</icon>
-				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.4.musicvideos)])</onclick>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&amp;videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.4.musicvideos)])</onclick>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.4.trackthumb))</visible>
 			</item>
 			<item>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.5.track)]</label>
 				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.5.trackthumb)]</icon>
-				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.5.musicvideos)])</onclick>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&amp;videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.5.musicvideos)])</onclick>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.5.trackthumb))</visible>
 			</item>
 			<item>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.6.track)]</label>
 				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.6.trackthumb)]</icon>
-				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.6.musicvideos)])</onclick>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&amp;videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.6.musicvideos)])</onclick>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.6.trackthumb))</visible>
 			</item>
 			<item>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.7.track)]</label>
 				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.7.trackthumb)]</icon>
-				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.7.musicvideos)])</onclick>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&amp;videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.7.musicvideos)])</onclick>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.7.trackthumb))</visible>
 			</item>
 			<item>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.8.track)]</label>
 				<icon>$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.8.trackthumb)]</icon>
-				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.8.musicvideos)])</onclick>
+				<onclick>PlayMedia(plugin://plugin.video.youtube/?action=play_video&amp;videoid=$INFO[Window(Home).Property(SkinHelper.ListItem.youtube.8.musicvideos)])</onclick>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.youtube.8.trackthumb))</visible>
 			</item>
 			</content>
@@ -442,8 +442,11 @@
                     <include condition="Skin.HasSetting(viewpanel_music)">ViewPanel</include>
                     <!-- 62 -->
                     <include condition="Skin.HasSetting(viewshelf_music)">ViewShelf</include>
-                    <!-- 62 -->
+                    <!-- 63 -->
                     <include condition="Skin.HasSetting(viewlandscape_music)">ViewLandScapeX</include>
+                    <!-- 64 -->
+                    <!-- 63 -->
+                    <include condition="Skin.HasSetting(viewsets_music)">ViewSets</include>
                     <!-- 64 -->
                     <include condition="Skin.HasSetting(viewcoverflowback_music)">ViewCoverFlowBackAudio</include>
                     <!-- 78 -->

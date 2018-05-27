@@ -81,7 +81,7 @@
 			<texture>black.png</texture>
 			<colordiffuse>80FFFFFF</colordiffuse>
 			<include>Animation_Fade</include>
-			<visible>String.IsEqual(Container.Viewmode,71)</visible>
+			<visible>String.IsEqual(Container.Viewmode,TOTAL ART)</visible>
 		</control>
 		<control type="group">
 			<!-- default group -->
@@ -481,7 +481,7 @@
 				<animation effect="slide" end="-1170,0" time="0" condition="String.IsEqual(Container.Viewmode,LOW LIST)+!Skin.HasSetting(noartlowlisttitle)">Conditional</animation>
 				<animation effect="slide" end="-1170,120" time="0" condition="String.IsEqual(Container.Viewmode,LOW LIST)+Skin.HasSetting(noartlowlisttitle)">Conditional</animation>
 				<animation effect="slide" end="-675,0" time="0" condition="String.IsEqual(Container.Viewmode,GLASS LIST)">Conditional</animation>
-				<animation effect="slide" end="225,0" time="0" condition="String.IsEqual(Container.Viewmode,71)">Conditional</animation>
+				<animation effect="slide" end="225,0" time="0" condition="String.IsEqual(Container.Viewmode,TOTAL ART)">Conditional</animation>
 				<animation effect="slide" end="0,-30" time="500" tween="sine" easing="out" condition="![Skin.HasSetting(videoinfobar) | Skin.HasSetting(videodate)]">Conditional</animation>
 				<visible>!String.IsEqual(Container.Viewmode,AEON)+!Skin.HasSetting(flagsaudiosub)+![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.AudioStreams.0.Language)) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Subtitles.0)) | String.IsEqual(Container.Viewmode,WIDE) | String.IsEqual(Container.Viewmode,Middle List)| Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(movieinformation) | Window.IsVisible(6621) | Window.IsVisible(6625)]</visible>
 				<left>1215</left>
@@ -499,7 +499,7 @@
 				<animation effect="slide" end="-1170,0" time="0" condition="String.IsEqual(Container.Viewmode,LOW LIST)+!Skin.HasSetting(noartlowlisttitle)">Conditional</animation>
 				<animation effect="slide" end="-1170,120" time="0" condition="String.IsEqual(Container.Viewmode,LOW LIST)+Skin.HasSetting(noartlowlisttitle)">Conditional</animation>
 				<animation effect="slide" end="-675,0" time="0" condition="String.IsEqual(Container.Viewmode,GLASS LIST)">Conditional</animation>
-				<animation effect="slide" end="225,0" time="0" condition="String.IsEqual(Container.Viewmode,71)">Conditional</animation>
+				<animation effect="slide" end="225,0" time="0" condition="String.IsEqual(Container.Viewmode,TOTAL ART)">Conditional</animation>
 				<animation effect="slide" end="0,-30" time="500" tween="sine" easing="out" condition="![Skin.HasSetting(videoinfobar) | Skin.HasSetting(videodate)]">Conditional</animation>
 				<visible>!String.IsEqual(Container.Viewmode,AEON)+Skin.HasSetting(flagsaudiosub)+![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.AudioStreams.0.Language)) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Subtitles.0)) | String.IsEqual(Container.Viewmode,WIDE) | String.IsEqual(Container.Viewmode,Middle List)| Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(movieinformation) | Window.IsVisible(6621) | Window.IsVisible(6625)]</visible>
 				<left>1215</left>

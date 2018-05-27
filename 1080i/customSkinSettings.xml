@@ -70,6 +70,18 @@
                 <font>Font_18A</font>
                 <align>justify</align>
             </control>
+			
+            <control type="image">
+                <!-- Skin Logo -->
+                <posx>100</posx>
+                <posy>320</posy>
+                <width>210</width>
+                <height>150</height>
+                <texture>aeonmq6_logo.png</texture>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+                <aspectratio align="center" aligny="top">keep</aspectratio>
+				        <animation effect="rotatex" start="0" end="-86" center="-100,320" time="4000" delay="1000" loop="false" reversible="false" condition="System.IdleTime(2)">Conditional</animation>
+            </control>
         </control>
     </controls>
 </window>

@@ -221,6 +221,13 @@
 			<include>HomeBG</include>
 			<!-- Extra Fanart Plugin.Video -->
 			<include>WindowBG</include>
+			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</imagepath>
+			<visible>[String.IsEqual(Control.GetLabel(566),Movie) | String.IsEqual(Control.GetLabel(566),Sets)] + String.Contains(skin.string(moviesfanart),extra) + [Control.HasFocus(510) | ControlGroup(512).HasFocus | Control.HasFocus(8005)]</visible>
+		</control>
+		<control type="multiimage">
+			<include>HomeBG</include>
+			<!-- Extra Fanart Plugin.Video -->
+			<include>WindowBG</include>
 			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArts)]</imagepath>
 			<visible>String.Contains(skin.string(moviesfanart),extra) + String.Contains(Container(510).ListItem.Path,plugin://)</visible>
 		</control>

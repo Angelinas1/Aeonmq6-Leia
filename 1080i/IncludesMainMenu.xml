@@ -2168,7 +2168,7 @@
 	<effect type="slide" start="-1920" end="0" time="600" tween="quadratic" easing="out" />
 	<effect type="fade" start="0" end="100" time="400" />
 	</animation>
-	<animation effect="slide" start="0,0" end="780,0" time="250" easing="in" tween="quadratic" condition="Skin.HasSetting(submode)">Conditional</animation>
+	<animation effect="slide" start="0,0" end="-780,0" time="250" easing="in" tween="quadratic" condition="Skin.HasSetting(submode)">Conditional</animation>
 	<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
 	<animation effect="fade" start="100" end="0" time="350" condition="[Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)] + !Window.IsVisible(6000)">Conditional</animation>
 	<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(510) + ![String.IsEqual(Container(9000).ListItem.Property(widgets),settings) | String.IsEqual(Container(9000).ListItem.Property(widgets),weather)] | Control.HasFocus(500) | ControlGroup(512).HasFocus | ControlGroup(600).HasFocus | Control.HasFocus(8005) | Window.IsActive(5099)">Conditional</animation>

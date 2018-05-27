@@ -4,7 +4,7 @@
     <defaultcontrol always="true">10</defaultcontrol>
     <menucontrol>9100</menucontrol>
     <allowoverlay>no</allowoverlay>
-    <views>10,11,12,13,100</views>
+    <views>10,100</views>
     <onunload condition="!Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
     <allowoverlay>no</allowoverlay>
     <controls>
@@ -137,12 +137,6 @@
                 <!-- 10 -->
                 <include condition="Skin.HasSetting(epglowlist)">ViewEPGTimelinelow</include>
                 <!-- 100 -->
-                <include condition="Skin.HasSetting(viewnow_epg)">ViewLiveTVGuideNow</include>
-                <!-- 11 -->
-                <include condition="Skin.HasSetting(viewnext_epg)">ViewLiveTVGuideNext</include>
-                <!-- 12 -->
-                <include condition="Skin.HasSetting(viewchannel_epg)">ViewLiveTVGuideChannel</include>
-                <!-- 13 -->
             </control>
             <!-- Furniture -->
             <include>TouchScreen</include>

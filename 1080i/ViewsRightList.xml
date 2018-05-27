@@ -153,9 +153,9 @@
                     <top>824</top>
                     <width>158</width>
                     <height>44</height>
-                    <texture fallback="flags\stars\sloped\empty.png">$VAR[value_styleratingstars]$INFO[ListItem.UserRating,,.0.png]</texture>
+                    <texture fallback="flags\stars\sloped\empty.png">$VAR[value_styleratingstars]$VAR[value_rating_star_do,,.png]</texture>
                     <aspectratio align="left" aligny="center">keep</aspectratio>
-                    <colordiffuse>$VAR[value_star_color_userrating]</colordiffuse>
+                    <colordiffuse>$VAR[value_colorratingstars_do]</colordiffuse>
 					<visible>[Container.Content(albums) | Container.Content(songs)]</visible>
                 </control>
                 <control type="label">
@@ -187,7 +187,7 @@
                     <width>75</width>
                     <height>38</height>
                     <font>Font_21</font>
-                    <label>$INFO[ListItem.UserRating]</label>
+                    <label>$VAR[value_rating_star_do]</label>
                     <textcolor>FFFFFAF0</textcolor>
 					<visible>[Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]</visible>
                 </control>
@@ -1437,12 +1437,6 @@
     <label>[B]$INFO[ListItem.Label][/B]</label>
     <textcolor>FF898A8C</textcolor>
     <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-    </control>
-    <control type="label">
-    <font>Font_40</font>
-    <label>[B]$INFO[ListItem.Label][/B]</label>
-    <textcolor>FF556B2F</textcolor>
-    <visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
     </control>
     </itemlayout>
     <focusedlayout height="54" width="120">

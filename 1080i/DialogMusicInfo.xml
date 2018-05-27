@@ -174,8 +174,13 @@
                 <onleft>149</onleft>
                 <onright>149</onright>
 				<onup>Skin.Reset(coverzoom)</onup>
+				<onup>Skin.Reset(albums_as)</onup>
+				<onup>Skin.Reset(mostloved)</onup>
+				<onup>Skin.Reset(youtube)</onup>
+				<onup>Skin.Reset(similarartist)</onup>
+				<onup>Skin.Reset(similarartistlastfm)</onup>
+				<onup>Skin.SetBool(artistzoom)</onup>
                 <onup>SetFocus(160)</onup>
-                <onup>Skin.SetBool(artistzoom)</onup>
                 <ondown>149</ondown>
                 <itemgap>0</itemgap>
                 <pagecontrol></pagecontrol>
@@ -525,7 +530,7 @@
 				<visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Plot))+String.IsEmpty(ListItem.Property(Artist_Description))</visible>
             </control>
 			<control type="group">
-			<visible>Container.Content(Albums)|Container.Content(Songs)</visible>
+			<visible>[Container.Content(Albums)|Container.Content(Songs)]+!Window.IsActive(visualisation)</visible>
 				<!--Star-->
 				<control type="image">
 					<left>1778</left>
@@ -2498,13 +2503,13 @@
                             <description>Refresh</description>
                             <label>31695</label>
                             <onclick>SendClick(2001,6)</onclick>
-                            <visible>!Skin.HasSetting(kioskininfo)</visible>
+                            <visible>!Skin.HasSetting(kioskininfo)+![Player.IsInternetStream | Pvr.IsPlayingRadio]</visible>
                         </item>
                         <item id="6">
                             <!-- Get Thumb -->
                             <label>13405</label>
                             <onclick>SendClick(2001,10)</onclick>
-                            <visible>!Skin.HasSetting(kioskininfo)</visible>
+                            <visible>!Skin.HasSetting(kioskininfo)+![Player.IsInternetStream | Pvr.IsPlayingRadio]</visible>
                         </item>
                         <item id="7">
                             <!-- Get Fanart -->

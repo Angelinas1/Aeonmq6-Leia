@@ -320,8 +320,7 @@
                     <onright>5801</onright>
                     <orientation>vertical</orientation>
                     <pagecontrol>85</pagecontrol>
-                    <scrolltime>400</scrolltime>
-                    
+                    <scrolltime>400</scrolltime>                   
                     <visible>Container.Content(movies) | Container.Content(sets)</visible>
                     <itemlayout height="60">
                         <control type="image">

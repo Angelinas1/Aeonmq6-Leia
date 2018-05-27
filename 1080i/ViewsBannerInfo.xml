@@ -127,7 +127,7 @@
                         <height>118</height>
                         <bordersize>5</bordersize>
                         <texture fallback="DefaultAddonVideo.png" background="true">$VAR[value_banner]</texture>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>keep</aspectratio>
                     </control>
                     <control type="image">
                         <left>492</left>
@@ -172,7 +172,7 @@
                         <height>118</height>
                         <bordersize>5</bordersize>
                         <texture fallback="DefaultAddonVideo.png" background="true">$VAR[value_banner]</texture>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>keep</aspectratio>
                         <animation effect="zoom" center="auto" start="90" end="110" time="600" tween="back" easing="out" reversible="false" condition="Skin.HasSetting(bannerinfozoom)">Focus</animation>
                     </control>
                     <control type="image">

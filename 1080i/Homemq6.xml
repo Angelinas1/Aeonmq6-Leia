@@ -2163,24 +2163,15 @@
 					<animation effect="slide" time="800" start="0,0" end="-68,0" easing="out" tween="cubic" condition="!System.IdleTime(4)">Conditional</animation>
 					<control type="image">
 						<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="System.IdleTime(6)">Conditional</animation>
-						<left>292</left>
-						<top>338</top>
-						<width>150</width>
-						<height>150</height>
-						<texture diffuse="cdart_diffuse.png">$VAR[value_widgetsinfopanelgallaery]</texture>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-					</control>
-					<control type="image">
-						<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="System.IdleTime(6)">Conditional</animation>
 						<left>285</left>
 						<top>330</top>
 						<width>165</width>
 						<height>165</height>
-						<texture>$VAR[value_extra_discart]</texture>
+						<texture>$INFO[Container.ListItem.Art(discart)]</texture>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 					</control>
 					<control type="image">
-						<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="System.IdleTime(6)">Conditional</animation>
+						<animation effect="rotate" end="360" center="auto" time="8000" loop="true" reversible="false" condition="System.IdleTime(6)">Conditional</animation>
 						<left>285</left>
 						<top>330</top>
 						<width>165</width>
@@ -2244,7 +2235,7 @@
 							<aligny>center</aligny>
 							<font>Font_27</font>
 							<textcolor>$VAR[value_flagscolor]</textcolor>
-							<label>$VAR[value_extra_year]</label>
+							<label>$INFO[Container.ListItem.Year]</label>
 						</control>
 						<control type="image">
 							<!-- Mpaa -->
@@ -2254,7 +2245,7 @@
 						<control type="image" id="551">
 							<!-- Controle estudio -->
 							<include>HomeFlagImage</include>
-							<texture>$VAR[value_extra_studio]</texture>
+							<texture>$INFO[Container.ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
 						</control>
 						<control type="image" id="552">
 							<!-- clearart -->

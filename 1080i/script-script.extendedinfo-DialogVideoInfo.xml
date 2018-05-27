@@ -324,6 +324,18 @@
                 <textcolor>FFFFFAF0</textcolor>
             </control>
             <control type="label">
+                <!-- Year -->
+                <left>330</left>
+                <top>120</top>
+                <height>60</height>
+                <width>730</width>
+                <align>right</align>
+                <aligny>center</aligny>
+                <font>Font_24A</font>
+                <label>$INFO[Window.Property(Top250),Top250: ]</label>
+                <textcolor>FFFFFAF0</textcolor>
+            </control>
+            <control type="label">
                 <!-- OMDB -->
                 <left>435</left>
                 <top>120</top>
@@ -487,13 +499,6 @@
                         <visible>!String.IsEmpty(Window.Property(Status))</visible>
                     </item>
                     <item>
-                        <label>Top250: </label>
-                        <!-- Top250 -->
-                        <label2>$INFO[Window.Property(Top250)]</label2>
-                        <visible>!String.IsEmpty(Window.Property(Top250))</visible>
-                        <onclick>noop</onclick>
-                    </item>
-                    <item>
                         <label>Budget/Revenue: </label>
                         <!-- Budget -->
                         <label2>$INFO[Window.Property(Budget)] $ / $INFO[Window.Property(Revenue)] $</label2>
@@ -534,7 +539,7 @@
                 <label>$INFO[Window.Property(Plot)]</label>
                 <textcolor>FFFFFAF0</textcolor>
                 <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
-                <visible>String.IsEmpty(Window.Property(banner))</visible>
+                <visible>String.IsEmpty(Window.Property(Clearart))</visible>
             </control>
             <control type="textbox">
                 <!-- Plot -->
@@ -547,7 +552,7 @@
                 <label>$INFO[Window.Property(Plot)]</label>
                 <textcolor>FFFFFAF0</textcolor>
                 <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
-                <visible>!String.IsEmpty(Window.Property(banner))</visible>
+                <visible>!String.IsEmpty(Window.Property(Clearart))</visible>
             </control>
             <control type="image">
                 <left>1080</left>

@@ -580,7 +580,21 @@
                 <textcolor>FFFFFAF0</textcolor>
                 <animation effect="fade" start="0" end="100" center="auto" time="4000" delay="0" loop="false" reversible="false" condition="Control.HasFocus(49)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" center="auto" time="4000" delay="0" loop="false" reversible="false" condition="!Control.HasFocus(49)">Conditional</animation>
-                <visible>!Container.Content(episodes)+Control.HasFocus(49)</visible>
+                <visible>Container.Content(Movies)+Control.HasFocus(49)</visible>
+            </control>
+            <control type="textbox">
+                <!-- Plot -->
+                <left>625</left>
+                <top>470</top>
+                <width>990</width>
+                <height>220</height>
+                <align>justify</align>
+                <font>Font_17A</font>
+                <label>$INFO[ListItem.RatingAndVotes(tvdb),Rating TVDB - ]</label>
+                <textcolor>FFFFFAF0</textcolor>
+                <animation effect="fade" start="0" end="100" center="auto" time="4000" delay="0" loop="false" reversible="false" condition="Control.HasFocus(49)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" center="auto" time="4000" delay="0" loop="false" reversible="false" condition="!Control.HasFocus(49)">Conditional</animation>
+                <visible>Container.Content(tvshows)+Control.HasFocus(49)</visible>
             </control>
             <control type="image">
                 <left>1080</left>
@@ -868,7 +882,7 @@
                 <include>Animation_DefaultGlass</include>
             </control>
 			<control type="group" id="48">
-            <control type="list" id="51">
+ <!--           <control type="list" id="51">
 			<visible>!Control.HasFocus(52)</visible>
                 <viewtype label="List">List Info</viewtype>
                 <left>45</left>
@@ -927,7 +941,7 @@
                         <visible>Control.HasFocus(51)</visible>
                     </control>
                 </focusedlayout>
-            </control>
+            </control> -->
             <control type="list" id="350">
                 <viewtype label="List">List Info</viewtype>
                 <left>45</left>
