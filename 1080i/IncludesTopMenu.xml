@@ -404,10 +404,6 @@
 					<visible>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</visible>
 					<label>Forced view for movies inside set: $INFO[Skin.String(SkinHelper.ForcedViews.setmovies)]</label>
 				</control>
-
-
-
-
 			</control>
 			<control type="grouplist" id="9201">
 				<!-- Opcoes da Vista -->
@@ -1291,13 +1287,12 @@
 					<selected>Skin.HasSetting(slimmidlistvideo)</selected>
 					<visible>String.IsEqual(Container.Viewmode,Middle List)</visible>
 				</control>
-				<!--
- <control type="button" id="92155">
-					<include>TopMenuButton</include>
-					<label>Setview Enable all</label>
-					<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=enable_all_views_video,header=Enable views for video)</onclick>
+				<control type="radiobutton" id="92155">
+					<include>TopMenuRadioButton</include>
+					<label>Poster: Prefer KeyArt</label>
+					<onclick>Skin.ToggleSetting(keyartposter)</onclick>
+					<selected>Skin.HasSetting(keyartposter)</selected>
 				</control> 
-				-->
 			</control>
 			<control type="grouplist" id="9301">
 				<!-- Colecao -->

@@ -5562,13 +5562,13 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(animatedposter)) + Skin.HasSetting(ap_widgets)">$INFO[ListItem.Art(animatedposter)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(poster)) + [String.IsEmpty(ListItem.Art(animatedposter)) | !Skin.HasSetting(ap_widgets)]">$INFO[ListItem.Art(poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
-		<value condition="Control.IsVisible(18005)">$INFO[ListItem.Icon]</value>
 		<value condition="Control.IsVisible(18004)">genres/video/$INFO[ListItem.Label].jpg</value>
 		<value condition="Control.IsVisible(18003)">genres/music/$INFO[ListItem.Label].jpg</value>
 		<value condition="Control.IsVisible(18000)">icons/countries/$INFO[ListItem.Label].png</value>
 		<value condition="Control.IsVisible(18001)">$INFO[ListItem.Label,resource://resource.images.studios.coloured/,.png]</value>
 		<value condition="Control.IsVisible(18002)">icons/years/$INFO[ListItem.Label].png</value>
-		<value>http://localhost:52307/getthumb&amp;title=$ESCINFO[ListItem.Label] IMDB.com</value>
+		<value condition="Control.IsVisible(18006)">http://localhost:52307/getthumb&amp;title=$INFO[ListItem.Label] IMDB</value>
+		<value condition="Control.IsVisible(18005)">$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="value_widgetsinfopanel">
 		<value condition="!String.IsEmpty(Container(510).ListItem.Art(animatedposter)) + !Skin.HasSetting(AnimatedPosters)">$INFO[Container(510).ListItem.Art(animatedposter)]</value>
@@ -5580,6 +5580,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),studios)">$INFO[Container(510).ListItem.Label,resource://resource.images.studios.coloured/,.png]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),years)">icons/years/$INFO[Container(510).ListItem.Label].png</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),channel.group)">group/$INFO[Container(510).ListItem.Label].png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),directors)">http://localhost:52307/getthumb&amp;title=$INFO[Container(510).ListItem.Label] IMDB</value>
 	</variable>
 	<variable name="value_widgetsinfopanelgallaery">
 		<value condition="Control.HasFocus(2510)">$INFO[Container(2510).ListItem.Art(poster)]</value>
@@ -5639,6 +5640,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_poster">
 		<value condition="!String.IsEmpty(ListItem.Art(animatedposter)) + !Skin.HasSetting(AnimatedPosters)">$INFO[ListItem.Art(animatedposter)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(keyart)) + Skin.HasSetting(keyartposter) + [String.IsEmpty(ListItem.Art(animatedposter)) | Skin.HasSetting(AnimatedPosters)]">$INFO[ListItem.Art(keyart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(poster)) + [String.IsEmpty(ListItem.Art(animatedposter)) | Skin.HasSetting(AnimatedPosters)]">$INFO[ListItem.Art(poster)]</value>
 		<value condition="Container.Content(episodes)+!Window.IsVisible(movieinformation)">$INFO[ListItem.Icon]</value>
 		<value condition="![String.IsEmpty(ListItem.Art(tvshow.poster)) | Container.Content(episodes)]">$INFO[ListItem.Art(tvshow.poster)]</value>
