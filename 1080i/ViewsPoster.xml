@@ -93,7 +93,21 @@
                 <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
                 <bordertexture border="-2">grey.png</bordertexture>
                 <animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
-                <visible>![Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                <visible>![Window.IsActive(musicplaylist) | Window.IsActive(music)]+[String.IsEmpty(Control.GetLabel(1556))|!Skin.HasSetting(keyartposter)]</visible>
+            </control>
+            <control type="multiimage" id="1556">
+                <left>0</left>
+                <top>9</top>
+                <width>390</width>
+                <height>525</height>
+				<timeperimage>6000</timeperimage>
+				<randomize>true</randomize>
+				<fadetime>FanartCrossFadeTime</fadetime>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <bordertexture border="-2">grey.png</bordertexture>
+                <animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
+                <imagepath fallback="DefaultVideoPoster.png" background="true">plugin://script.artwork.helper/multiimage/listitem/?refresh=$INFO[ListItem.Label]&amp;&amp;arttype=keyart</imagepath>
+                <visible>![Window.IsActive(musicplaylist) | Window.IsActive(music)]+Skin.HasSetting(keyartposter)</visible>
             </control>
             <control type="image">
                 <left>0</left>
