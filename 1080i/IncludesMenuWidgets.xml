@@ -81,6 +81,19 @@
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>!Skin.HasSetting(nooverlays) + Integer.IsGreater(ListItem.Playcount,0)+String.StartsWith(Container(9000).ListItem.Property(widgets),movie)</visible>
 			</control>
+			<control type="label">
+				<left>7</left>
+				<top>161</top>
+				<width>140</width>
+				<height>45</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_14</font>
+				<textcolor>FFF8F8F8</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<shadowcolor>black</shadowcolor>
+				<visible>Control.IsVisible(18002)</visible>
+			</control>
 		</itemlayout>
 		<focusedlayout width="152" height="285">
 			<control type="image">
@@ -109,6 +122,20 @@
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out"/>
 				</animation>
+			</control>
+			<control type="label">
+				<left>7</left>
+				<top>161</top>
+				<width>140</width>
+				<height>45</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_14</font>
+				<textcolor>FFF8F8F8</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<shadowcolor>black</shadowcolor>
+				<visible>Control.IsVisible(18002)</visible>
+				<animation effect="fade" start="100" end="30" time="100" condition="true">Conditional</animation>
 			</control>
 			<control type="image">
 				<left>114</left>

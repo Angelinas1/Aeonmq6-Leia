@@ -647,9 +647,9 @@
             <control type="image">
                 <!-- Thumb cd from helper-->
 				<left>1480</left>
-				<top>477</top>
-				<width>220</width>
-				<height>220</height>
+				<top>467</top>
+				<width>210</width>
+				<height>210</height>
 				<aspectratio align="center" aligny="top">stretch</aspectratio>
                 <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</texture>
                 <fadetime>FanartCrossFadeTime</fadetime>

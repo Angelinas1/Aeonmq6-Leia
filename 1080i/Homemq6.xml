@@ -1346,6 +1346,20 @@
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<visible>![String.Contains(skin.string(m_panel_layout),panel_zoom)|String.Contains(skin.string(m_panel_layout),panel_layout_cd)|String.Contains(skin.string(m_panel_layout),panel_layout_clearart)|String.Contains(skin.string(m_panel_layout),panel_layout_clearlogo)]</visible>
 				</control>
+			<control type="label">
+				<left>160</left>
+				<top>447</top>
+				<width>200</width>
+				<height>45</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_22</font>
+				<textcolor>FFF8F8F8</textcolor>
+				<label>[B]$INFO[Container(510).ListItem.Label][/B]</label>
+				<shadowcolor>black</shadowcolor>
+				<visible>Control.IsVisible(18002)</visible>
+				<animation effect="fade" start="100" end="90" time="100" condition="true">Conditional</animation>
+			</control>
 				<control type="image">
 					<left>450</left>
 					<top>90</top>

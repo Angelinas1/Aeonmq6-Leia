@@ -5566,7 +5566,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.IsVisible(18003)">genres/music/$INFO[ListItem.Label].jpg</value>
 		<value condition="Control.IsVisible(18000)">icons/countries/$INFO[ListItem.Label].png</value>
 		<value condition="Control.IsVisible(18001)">$INFO[ListItem.Label,resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="Control.IsVisible(18002)">icons/years/$INFO[ListItem.Label].png</value>
+		<value condition="Control.IsVisible(18002)">years.png</value>
 		<value condition="Control.IsVisible(18006)">http://localhost:52307/getthumb&amp;title=$INFO[ListItem.Label] IMDB</value>
 		<value condition="Control.IsVisible(18005)">$INFO[ListItem.Icon]</value>
 	</variable>
@@ -5578,7 +5578,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.genre)">genres/music/$INFO[Container(510).ListItem.Label].jpg</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),countries)">icons/countries/$INFO[Container(510).ListItem.Label].png</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),studios)">$INFO[Container(510).ListItem.Label,resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),years)">icons/years/$INFO[Container(510).ListItem.Label].png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),years)">years.png</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),channel.group)">group/$INFO[Container(510).ListItem.Label].png</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),directors)">http://localhost:52307/getthumb&amp;title=$INFO[Container(510).ListItem.Label] IMDB</value>
 	</variable>
@@ -5617,7 +5617,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.genre)">genres/music/$INFO[Container(510).ListItem.Label].jpg</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),countries)">icons/countries/$INFO[Container(510).ListItem.Label].png</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),studios)">$INFO[Container(510).ListItem.Label,resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),years)">icons/years/$INFO[Container(510).ListItem.Label].png</value>
+
 	</variable>
 	<variable name="value_widgetsinfopanelvideo2">
 		<value condition="!String.IsEmpty(Container(510).ListItem.Art(poster)) + !String.Contains(skin.string(tv_panel_layout),panel_layout_landscape) + !String.Contains(skin.string(tv_panel_layout),panel_layout_clearart) + !String.Contains(skin.string(tv_panel_layout),panel_layout_clearlogo)">$INFO[Container(510).ListItem.Art(poster)]</value>
@@ -5630,7 +5630,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.genre)">genres/music/$INFO[Container(510).ListItem.Label].jpg</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),countries)">icons/countries/$INFO[Container(510).ListItem.Label].png</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),studios)">$INFO[Container(510).ListItem.Label,resource://resource.images.studios.coloured/resources/,.png]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),years)">icons/years/$INFO[Container(510).ListItem.Label].png</value>
+
 	</variable>
 	<variable name="value_tvwidget2">
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(tvshow.clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.poster)]</value>
@@ -5661,7 +5661,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Container.Content(directors)">http://localhost:52307/getthumb&amp;title=$ESCINFO[ListItem.Label] IMDB.com</value>
 		<value condition="Container.Content(countries)">icons/countries/$INFO[ListItem.Label].png</value>
 		<value condition="Container.Content(studios)">$INFO[ListItem.Label,resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="Container.Content(years)">icons/years/$INFO[ListItem.Label].png</value>
+		<value condition="Container.Content(years)">years.png</value>
 	</variable>
 	<variable name="value_poster-10">
 		<value condition="!String.IsEmpty(ListItem(-10).Art(poster))">$INFO[ListItem(-10).Art(poster)]</value>
@@ -7081,15 +7081,17 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.Contains(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,aplaylist]</value>
 	</variable>
 	<variable name="value_menutheme_vnodes">
-		<value condition="String.Contains(skin.string(theme),colors)">special://skin/backgrounds/vnodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),reddish)">$INFO[Skin.String(extrapack)]backgrounds_reddish/vnodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),modern)">$INFO[Skin.String(extrapack)]backgrounds_modern/vnodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),future)">$INFO[Skin.String(extrapack)]backgrounds_future/vnodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),cold)">$INFO[Skin.String(extrapack)]backgrounds_cold/vnodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),warm)">$INFO[Skin.String(extrapack)]backgrounds_warm/vnodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),darkness)">$INFO[Skin.String(extrapack)]backgrounds_darkness/vnodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),digitalart)">$INFO[Skin.String(extrapack)]backgrounds_digitalart/vnodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,vnodes]</value>
+		<value condition="!Skin.HasSetting(randombg_helper_vnode)+String.Contains(skin.string(theme),colors)">special://skin/backgrounds/vnodes.jpg</value>
+		<value condition="!Skin.HasSetting(randombg_helper_vnode)+String.Contains(skin.string(theme),reddish)">$INFO[Skin.String(extrapack)]backgrounds_reddish/vnodes.jpg</value>
+		<value condition="!Skin.HasSetting(randombg_helper_vnode)+String.Contains(skin.string(theme),modern)">$INFO[Skin.String(extrapack)]backgrounds_modern/vnodes.jpg</value>
+		<value condition="!Skin.HasSetting(randombg_helper_vnode)+String.Contains(skin.string(theme),future)">$INFO[Skin.String(extrapack)]backgrounds_future/vnodes.jpg</value>
+		<value condition="!Skin.HasSetting(randombg_helper_vnode)+String.Contains(skin.string(theme),cold)">$INFO[Skin.String(extrapack)]backgrounds_cold/vnodes.jpg</value>
+		<value condition="!Skin.HasSetting(randombg_helper_vnode)+String.Contains(skin.string(theme),warm)">$INFO[Skin.String(extrapack)]backgrounds_warm/vnodes.jpg</value>
+		<value condition="!Skin.HasSetting(randombg_helper_vnode)+String.Contains(skin.string(theme),darkness)">$INFO[Skin.String(extrapack)]backgrounds_darkness/vnodes.jpg</value>
+		<value condition="!Skin.HasSetting(randombg_helper_vnode)+String.Contains(skin.string(theme),digitalart)">$INFO[Skin.String(extrapack)]backgrounds_digitalart/vnodes.jpg</value>
+		<value condition="!Skin.HasSetting(randombg_helper_vnode)+String.Contains(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,vnodes]</value>
+		<value condition="Skin.HasSetting(randombg_helper_vnode)+String.IsEqual(Window(Home).Property(SkinHelper.ListItem.media_type),movie)">$INFO[Window(Home).Property(SkinHelper.TopRatedMovies)]</value>
+		<value condition="Skin.HasSetting(randombg_helper_vnode)+!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.media_type),movie)">$INFO[Window(Home).Property(SkinHelper.TopRatedShows)]</value>
 	</variable>
 	<variable name="value_menutheme_anodes">
 		<value condition="String.Contains(skin.string(theme),colors)">special://skin/backgrounds/anodes.jpg</value>

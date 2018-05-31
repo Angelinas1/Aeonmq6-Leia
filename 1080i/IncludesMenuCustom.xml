@@ -5593,16 +5593,21 @@
 				<selected>Skin.HasSetting(randombg_helper_pictures)</selected>
 				<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
 			</control>
+			<control type="radiobutton" id="176">
+				<!-- Helper background pictures-->
+				<include>CustomMenuRadioButton</include>
+				<label>Helper Background</label>
+				<onclick>Skin.ToggleSetting(randombg_helper_vnode)</onclick>
+				<selected>Skin.HasSetting(randombg_helper_vnode)</selected>
+				<visible>String.Contains(Container(9000).ListItem.Property(id),vnode)</visible>
+			</control>
 			<control type="radiobutton" id="157">
 				<!-- Helper background pictures-->
 				<include>CustomMenuRadioButton</include>
 				<label>Helper Background</label>
 				<onclick>Skin.ToggleSetting(randombg_helper_vpl)</onclick>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl11) | String.IsEqual(Container(9000).ListItem.Property(id),vpl12) 
-| String.IsEqual(Container(9000).ListItem.Property(id),vpl13) | String.IsEqual(Container(9000).ListItem.Property(id),vpl14) 
-| String.IsEqual(Container(9000).ListItem.Property(id),vpl15) | String.IsEqual(Container(9000).ListItem.Property(id),vpl16) 
-| String.IsEqual(Container(9000).ListItem.Property(id),vpl17) | String.IsEqual(Container(9000).ListItem.Property(id),vpl18) 
-| String.IsEqual(Container(9000).ListItem.Property(id),vpl19) | String.IsEqual(Container(9000).ListItem.Property(id),vpl20)</visible>
+				<selected>Skin.HasSetting(randombg_helper_vpl)</selected>
+				<visible>String.Contains(Container(9000).ListItem.Property(id),vpl)</visible>
 			</control>
 			<control type="button" id="158">
 				<left>360</left>
