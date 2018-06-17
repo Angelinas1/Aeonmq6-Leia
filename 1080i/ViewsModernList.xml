@@ -179,8 +179,8 @@
                             <effect type="fade" start="100" end="0" time="200" />
                         </animation>
                         <control type="image">
-                            <width>300</width>
-                            <height>300</height>
+                            <width>270</width>
+                            <height>270</height>
                             <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
                             <fadetime>FanartCrossFadeTime</fadetime>
                             <aspectratio align="center" aligny="center">keep</aspectratio>
@@ -188,8 +188,8 @@
                             <include>Animation_ViewsCDart</include>
                         </control>
                         <control type="image">
-                            <width>300</width>
-                            <height>300</height>
+                            <width>270</width>
+                            <height>270</height>
                             <visible>String.IsEmpty(ListItem.art(discart))</visible>
                             <texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</texture>
                             <fadetime>FanartCrossFadeTime</fadetime>
@@ -235,12 +235,12 @@
                     <control type="group">
                         <!-- modern case left -->
                         <animation effect="slide" start="0,0" end="-8,0" condition="!Skin.HasSetting(widget_zoom_hd)">Conditional</animation>
-                        <animation type="Conditional" reversible="true" condition="Control.HasFocus(84)">
+                        <animation type="Conditional" reversible="true" condition="Control.HasFocus(84)+!Container.Content(tvshows)">
                             <effect type="slide" start="0,0" end="-60,0" time="4000" tween="cubic" easing="out" />
                             <effect type="slide" start="0,0" end="0,-9" time="4000" tween="cubic" easing="out" />
                             <effect type="zoom" start="100" end="102" time="4000" />
                         </animation>
-                        <animation type="Conditional" reversible="true" condition="!Control.HasFocus(84)">
+                        <animation type="Conditional" reversible="true" condition="!Control.HasFocus(84)+!Container.Content(tvshows)">
                             <effect type="slide" start="0,-9" end="0,0" time="4000" tween="cubic" easing="out" />
                             <effect type="slide" start="-60,0" end="0,0" time="4000" tween="cubic" easing="out" />
                             <effect type="zoom" start="102" end="100" time="4000" />
@@ -260,8 +260,8 @@
                             <!-- left poster -->
                             <left>81</left>
                             <top>138</top>
-                            <width>345</width>
-                            <height>544</height>
+                            <width>365</width>
+                            <height>530</height>
                             <aspectratio align="left">stretch</aspectratio>
                             <texture diffuse="modern_left_poster.png">$INFO[ListItem.Art(poster)]</texture>
                             <animation condition="true" effect="rotatey" center="195,308" start="0" end="-17" time="0">Conditional</animation>
@@ -269,12 +269,12 @@
                         </control>
                         <control type="image">
                             <!-- left ram -->
-                            <left>123</left>
+                            <left>85</left>
                             <top>138</top>
-                            <width>786</width>
-                            <height>543</height>
+                            <width>790</width>
+                            <height>548</height>
                             <aspectratio align="left">keep</aspectratio>
-                            <texture>case/levoram.png</texture>
+                            <texture>modern_left_ram.png</texture>
                             <animation effect="slide" end="-399,0" time="0" condition="false">Conditional</animation>
                         </control>
                         <control type="image">
@@ -315,7 +315,7 @@
                         <width>660</width>
                         <height>592</height>
                         <aspectratio align="right">stretch</aspectratio>
-                        <texture diffuse="case/desno_podloga.png">$INFO[ListItem.Art(poster)]</texture>
+                        <texture diffuse="modern_right_poster.png">$INFO[ListItem.Art(poster)]</texture>
                         <animation condition="true" effect="rotatey" center="183" start="0" end="-27" time="0">Conditional</animation>
                         <visible>Skin.HasSetting(widget_zoom_hd)</visible>
                     </control>
@@ -324,7 +324,7 @@
                         <left>75</left>
                         <top>138</top>
                         <width>405</width>
-                        <height>540</height>
+                        <height>530</height>
                         <aspectratio align="right">stretch</aspectratio>
                         <texture diffuse="modern_right_poster.png">$INFO[ListItem.Art(poster)]</texture>
                         <animation condition="true" effect="rotatey" center="183,292" start="0" end="-16" time="0">Conditional</animation>

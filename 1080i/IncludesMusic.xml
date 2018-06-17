@@ -69,6 +69,11 @@
                     <include>InvisibleButton</include>
                     <label>$VAR[value_drive]</label>
                 </control>
+                <control type="label" id="557">
+                    <!-- Controle drive externo -->
+                    <include>InvisibleButton</include>
+                    <label>$VAR[record_values]</label>
+                </control>
                 <control type="button" id="9900">
                     <!-- to menu/kiosk condition -->
                     <include>InvisibleButton</include>
@@ -415,6 +420,28 @@
                                 <label>$VAR[value_drive]</label>
                                 <visible>!String.IsEmpty(Control.GetLabel(556))</visible>
                             </control>
+							<control type="group">
+                                <width>1460</width>
+                                <height>75</height>
+	
+                            <control type="image">
+								<width>200</width>
+								<align>right</align>
+                                <aspectratio>keep</aspectratio>
+                                <texture>$VAR[value_music_artistvis_clearartlogo]</texture>
+                                <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ClearLogo))</visible>
+                            </control>
+                            <control type="label">
+								<animation effect="slide" start="0,0" end="-100,0" time="500" tween="cubic" easing="inout" condition="!String.IsEmpty(Control.GetLabel(198))+!String.IsEmpty(Control.GetLabel(557))">Conditional</animation>
+								<animation effect="slide" start="0,0" end="180,0" time="500" tween="cubic" easing="inout" condition="String.IsEmpty(Control.GetLabel(198))">Conditional</animation>
+								<top>25</top>
+                                <align>right</align>
+                                <font>Font_23b</font>
+                                <textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>black</shadowcolor>
+                                <label>$INFO[MusicPlayer.Title,[COLOR FF39ED92]NowPlaying: [/COLOR]]</label>
+                            </control>
+							</control>
                         </control>
                     </control>
                     <control type="image">

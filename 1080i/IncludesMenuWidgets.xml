@@ -1956,7 +1956,7 @@
 						<left>88</left>
 						<top>68</top>
 						<width>214</width>
-						<height>280</height>
+						<height>265</height>
 						<aspectratio align="right">stretch</aspectratio>
 						<texture diffuse="modern_left_poster.png">$VAR[value_widgetsposter]</texture>
 						<animation condition="true" effect="rotatey" center="98" start="0" end="-45" time="0">Conditional</animation>
@@ -1985,7 +1985,7 @@
 					<left>94</left>
 					<top>68</top>
 					<width>188</width>
-					<height>276</height>
+					<height>266</height>
 					<aspectratio align="left">stretch</aspectratio>
 					<texture diffuse="modern_right_poster.png">$VAR[value_widgetsposter]</texture>
 					<animation condition="true" effect="rotatey" center="98" start="0" end="-45" time="0">Conditional</animation>
@@ -5751,7 +5751,7 @@
 	<!-- Aspecto -->
 	<control type="image">	
 	<include>FlagImage</include>
-	<texture fallback="blanc.png">resource://resource.images.mediaicons.coloured/aspectratio/$INFO[Container(510).ListItem.VideoAspect,,.png]</texture>
+	<texture fallback="blanc.png">$INFO[Container(510).ListItem.VideoAspect,resource://resource.images.mediaicons.coloured/aspectratio/,.png]</texture>
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>

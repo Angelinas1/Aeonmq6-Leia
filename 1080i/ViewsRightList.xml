@@ -1163,7 +1163,7 @@
                         <left>-8</left>
                         <top>98</top>
                         <width>368</width>
-                        <height>525</height>
+						<height>525</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio align="center" aligny="bottom">keep</aspectratio>
                         <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
@@ -1178,7 +1178,7 @@
                         <height>525</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio align="center" aligny="top">keep</aspectratio>
-                        <imagepath>http://localhost:52307/getthumb&amp;title=$ESCINFO[ListItem.Label]</imagepath>
+                        <imagepath>http://localhost:52307/getthumb&amp;title=$INFO[ListItem.Label]</imagepath>
                         <visible>Container.Content(directors)</visible>
                     </control>
                     <control type="multiimage">

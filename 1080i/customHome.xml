@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="6000">
 	<!-- Aeon MQ 6 -->
+	<menucontrol>9000</menucontrol>
 	<onload condition="Skin.HasSetting(languagedone)">SetFocus(9000)</onload>
 	<onload condition="!Skin.HasSetting(languagedone)">SetFocus(9010)</onload>
 	<onload>Skin.Reset(mymenu1.widget,true)</onload>

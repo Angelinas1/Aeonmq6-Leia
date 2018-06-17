@@ -939,7 +939,7 @@
                     <control type="label">
                         <!-- Temp alta -->
                         <include>36HourHighTemp</include>
-                        <info>Window.Property(36Hour.1.HighTemperature)</info>
+                        <info>Window.Property(36Hour.1.Temperature)</info>
                     </control>
                     <control type="image">
                         <include>36HourArrowDown</include>
@@ -989,7 +989,7 @@
                     <control type="label">
                         <!-- Temp alta -->
                         <include>36HourHighTemp</include>
-                        <info>Window.Property(36Hour.2.HighTemperature)</info>
+                        <info>Window.Property(36Hour.2.Temperature)</info>
                     </control>
                     <control type="image">
                         <include>36HourArrowDown</include>
@@ -1039,7 +1039,7 @@
                     <control type="label">
                         <!-- Temp alta -->
                         <include>36HourHighTemp</include>
-                        <info>Window.Property(36Hour.3.HighTemperature)</info>
+                        <info>Window.Property(36Hour.3.Temperature)</info>
                     </control>
                     <control type="image">
                         <include>36HourArrowDown</include>

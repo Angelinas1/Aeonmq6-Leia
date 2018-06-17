@@ -232,11 +232,11 @@
 	<!-- poster -->
 	<control type="image">
 	<left>6</left>
-	<top>15</top>
+	<top>35</top>
 	<width>150</width>
-	<height>248</height>
+	<height>228</height>
 	<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-	<aspectratio align="center" aligny="bottom">keep</aspectratio>
+	<aspectratio align="center" aligny="bottom">stretch</aspectratio>
 	<animation effect="fade" start="100" end="85" time="400" condition="Control.HasFocus(76)">Conditional</animation>
 	</control>
 	<control type="image">
@@ -274,7 +274,7 @@
 	</control>
 	<control type="progress">
 	<left>14</left>
-	<top>255</top>
+	<top>250</top>
 	<width>130</width>
 	<height>8</height>
 	<info>ListItem.PercentPlayed</info>
@@ -282,15 +282,15 @@
 	<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 	</control>
 	<control type="image">
-	<left>114</left>
-	<top>177</top>
+	<left>112</left>
+	<top>35</top>
 	<width>38</width>
 	<height>38</height>
 	<texture>overlaywatched.png</texture>
+	<texture background="true">$VAR[value_watchedstyle]</texture>
 	<colordiffuse>$INFO[Skin.String(colorwatched)]</colordiffuse>
-	<aspectratio align="center" aligny="bottom">keep</aspectratio>
-	<animation effect="fade" start="100" end="25" time="400" condition="Control.HasFocus(76)">Conditional</animation>
-	<visible>Integer.IsGreater(ListItem.PercentPlayed,90)</visible>
+	<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+	<visible>!Skin.HasSetting(nooverlays) + Integer.IsGreater(ListItem.Playcount,0)</visible>
 	</control>
 	</control>
 	</itemlayout>
@@ -336,15 +336,15 @@
 	</control>
 	<!-- poster -->
 	<control type="image">	
-	<left>-2</left>
+	<left>10</left>
 	<top>27</top>
-	<width>170</width>
+	<width>150</width>
 	<height>220</height>
 	<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-	<aspectratio align="center" aligny="bottom">keep</aspectratio>
+	<aspectratio align="center" aligny="bottom">stretch</aspectratio>
 	</control>
 	<control type="image">
-	<left>125</left>
+	<left>120</left>
 	<top>25</top>
 	<width>38</width>
 	<height>38</height>

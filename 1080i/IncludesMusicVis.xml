@@ -1232,7 +1232,7 @@
 	    <width>135</width>
 	    <height>135</height>
 	    <fadetime>200</fadetime>
-	    <texture>resource://resource.images.musicgenreicons.grey/$INFO[MusicPlayer.Genre].jpg</texture>
+	    <texture>$INFO[MusicPlayer.Genre,resource://resource.images.musicgenreicons.grey/,.jpg]</texture>
 	    <aspectratio align="left" aligny="bottom">keep</aspectratio>
 	</control>
         </control>
@@ -1816,7 +1816,7 @@
 		<left>0</left>
 	    <width>720</width>
 	    <height>720</height>
-	    <aspectratio align="left">stretch</aspectratio>
+	    <aspectratio align="left">scale</aspectratio>
 		<camera x="20" y="30" />
 		<fadetime>3200</fadetime>
 		<timeperimage>2000</timeperimage>
@@ -2245,31 +2245,22 @@
 			<aspectratio align="center">keep</aspectratio>
 			<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Banners))</visible>
 		</control>
-<!--		<control type="multiimage">
-		<animation effect="slide" start="-360,0" end="0,0" time="3200" delay="2000" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.AlbumThumb))">Conditional</animation>
-			<left>180</left>
-			<top>280</top>
-			<width>400</width>
-			<height>300</height>
-			<fadetime>1200</fadetime>
-			<timeperimage>12000</timeperimage>
-			<imagepath diffuse="moz_line3.png">$INFO[Window(Home).Property(SkinHelper.Player.Art.ExtraFanart)]</imagepath>
-			<aspectratio align="center">keep</aspectratio>
-			<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.AlbumThumb))</visible>
-		</control>
-		<control type="multiimage">
-		<animation effect="slide" start="360,0" end="0,0" time="3200" delay="2000" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.AlbumThumb))">Conditional</animation>
-			<left>180</left>
-			<top>280</top>
-			<width>400</width>
-			<height>300</height>
-			<fadetime>1200</fadetime>
-			<timeperimage>12000</timeperimage>
-			<imagepath diffuse="moz_line2.png">$INFO[Window(Home).Property(SkinHelper.Player.Art.ExtraFanart)]</imagepath>
-			<aspectratio align="center">keep</aspectratio>
-			<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.AlbumThumb))</visible>
-		</control>-->
-	</control>	
+	</control>
+			<control type="slider" id="1">
+				<left>0</left>
+				<top>1042</top>
+				<width>1920</width>
+				<height>30</height>
+      <texturesliderbar></texturesliderbar>
+      <textureslidernib></textureslidernib>
+      <textureslidernibfocus></textureslidernibfocus>
+      <info>$INFO[Window(Home).Property(SkinHelper.Player.Plot)]</info>
+      <action></action>
+      <controloffsetx></controloffsetx>
+      <controloffsety></controloffsety>
+      <pulseonselect></pulseonselect>
+      <orientation>horizontal</orientation>
+			</control>
 	</include>
 	<include name="MULTI_logo_player">
 		<scrolltime>16001</scrolltime>

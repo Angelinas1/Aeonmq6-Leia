@@ -2443,7 +2443,7 @@
                             <!-- Artist Rating -->
                             <label>$INFO[ListItem.DBTYPE]  Rating : [COLOR blue]($INFO[ListItem.UserRating])[/COLOR]</label>
                             <onclick>SendClick(musicinformation,7)</onclick>
-							<visible>Container.Content(albums)|Container.Content(songs)</visible>
+							<visible>!Player.IsInternetStream +[Container.Content(albums)|Container.Content(songs)]</visible>
                         </item>
                         <item id="1">
                             <!-- Albums -->

@@ -100,9 +100,9 @@
                 <top>9</top>
                 <width>390</width>
                 <height>525</height>
-				<timeperimage>6000</timeperimage>
-				<randomize>true</randomize>
-				<fadetime>FanartCrossFadeTime</fadetime>
+                <timeperimage>6000</timeperimage>
+                <randomize>true</randomize>
+                <fadetime>FanartCrossFadeTime</fadetime>
                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 <bordertexture border="-2">grey.png</bordertexture>
                 <animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>

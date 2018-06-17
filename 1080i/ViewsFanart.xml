@@ -76,8 +76,9 @@
 		<onleft>9900</onleft>
 		<onright condition="![Container.Content(movies) | Container.Content(sets)]">1871</onright>
 		<onright condition="[Container.Content(movies) | Container.Content(sets)]">9915</onright>	
-		<scrolltime>800</scrolltime>
+		<scrolltime tween="sine" easing="out">1000</scrolltime>
 		<focusposition>1</focusposition>
+		<movement>1</movement>
 		<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets)</visible>
 	<itemlayout height="100" width="1800">
 	<control type="image">
@@ -400,6 +401,19 @@
                     <label>$INFO[ListItem.Plot]</label>
                     <scroll>true</scroll>
                     <scrollout>false</scrollout>
+                    <visible>!Skin.HasSetting(nomoviestagline)+ListItem.IsCollection</visible>
+                </control>
+                <control type="label">
+                    <!-- Subtitulo maior -->
+                    <left>660</left>
+                    <top>842</top>
+                    <width>940</width>
+                    <height>38</height>
+                    <font>Font_21</font>
+                    <textcolor>90FFFFFF</textcolor>
+                    <label>$INFO[ListItem.Plot]</label>
+                    <scroll>true</scroll>
+                    <scrollout>false</scrollout>
                     <visible>Container.Content(sets)</visible>
                 </control>
                 <control type="image">
@@ -427,7 +441,7 @@
                     <!-- Ano/genero maior -->
                     <left>900</left>
                     <top>880</top>
-                    <width>1365</width>
+                    <width>700</width>
                     <height>38</height>
                     <font>Font_21</font>
                     <label>$VAR[value_ground6_value]</label>
