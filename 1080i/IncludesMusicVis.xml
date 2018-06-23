@@ -2246,21 +2246,6 @@
 			<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Banners))</visible>
 		</control>
 	</control>
-			<control type="slider" id="1">
-				<left>0</left>
-				<top>1042</top>
-				<width>1920</width>
-				<height>30</height>
-      <texturesliderbar></texturesliderbar>
-      <textureslidernib></textureslidernib>
-      <textureslidernibfocus></textureslidernibfocus>
-      <info>$INFO[Window(Home).Property(SkinHelper.Player.Plot)]</info>
-      <action></action>
-      <controloffsetx></controloffsetx>
-      <controloffsety></controloffsety>
-      <pulseonselect></pulseonselect>
-      <orientation>horizontal</orientation>
-			</control>
 	</include>
 	<include name="MULTI_logo_player">
 		<scrolltime>16001</scrolltime>

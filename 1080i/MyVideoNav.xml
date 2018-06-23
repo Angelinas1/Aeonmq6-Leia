@@ -62,6 +62,12 @@
 			<texture fallback="special://skin/backgrounds/red_metal.jpg" background="true">$VAR[value_defaultvideofanart]</texture>
 			<visible>String.IsEqual(Container.Viewmode,Modern List)</visible>
 		</control>
+		<control type="image">
+			<!-- Fanart Genero -->
+			<include>WindowBG</include>
+			<texture>$INFO[Container(777).ListItem.Art(fanart)]</texture>
+			<visible>Control.HasFocus(777)+String.IsEqual(Container.Viewmode,Right List)</visible>
+		</control>
 		<include>LiveBG</include>
 		<control type="image">
 			<left>0</left>
@@ -507,7 +513,56 @@
 				<orientation>horizontal</orientation>
 				<include condition="Skin.HasSetting(flagsaudiosub)">AudioandSubImage</include>
 			</control>
-			<control type="group">
+			<control type="panel" id="777">
+				<top>140</top>
+				<width>540</width>
+				<height>280</height>
+				<onleft>9900</onleft>
+				<onright>51</onright>
+				<orientation>vertical</orientation>
+				<content sortby="year" sortorder="ascending">$INFO[ListItem.FolderPath]</content>
+				<visible>Container.Content(playlists)+String.IsEqual(Container.Viewmode,RIGHT LIST)</visible>
+				<itemlayout height="32" width="540">
+					<control type="label">
+						<left>10</left>
+						<height>30</height>
+						<width>540</width>
+						<aligny>center</aligny>
+						<label>[COLOR=$VAR[value_headercolor]]$INFO[ListItem.Duration,,  -  ][/COLOR]$INFO[ListItem.Label]</label>
+						<include>listcolor</include>
+						<font>Font_18A</font>
+					</control>
+				</itemlayout>
+				<focusedlayout height="32" width="540">
+					<control type="image">
+						<left>10</left>
+                        <top>0</top>
+                        <width>542</width>
+                        <height>32</height>
+                        <texture>settings_button_focus.png</texture>
+                    </control>
+					<control type="label">
+						<left>10</left>
+						<height>30</height>
+						<width>540</width>
+						<aligny>center</aligny>
+						<label>[COLOR=$VAR[value_headercolor]]$INFO[ListItem.Duration,,  -  ][/COLOR]$INFO[ListItem.Label]</label>
+						<include>listcolorfocus</include>
+						<font>Font_18A</font>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<height>30</height>
+						<width>540</width>
+						<aligny>center</aligny>
+						<label>[COLOR=$VAR[value_headercolor]]$INFO[ListItem.Duration,,  -  ][/COLOR]$INFO[ListItem.Label]</label>
+						<font>Font_18A</font>
+						<include>listcolorfocus</include>
+						<visible>Control.HasFocus(777)</visible>
+					</control>
+				</focusedlayout>
+				</control>
+		<control type="group">
 				<!-- Grupo vistas -->
 				<top>45</top>
 				<include>Animation_HiddenView</include>

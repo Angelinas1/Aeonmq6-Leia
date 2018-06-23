@@ -44,19 +44,19 @@
                     <colordiffuse>E9FFFFFF</colordiffuse>
                     <include>Animation_Fade</include>
                 </control>
-                    <control type="image">
+                <control type="image">
                     <animation effect="slide" time="200" start="0,0" end="15,-15" tween="cubic" easing="out" condition="!Skin.HasSetting(norightlistvideocase)">Conditional</animation>
-                        <left>210</left>
-                        <top>405</top>
-                        <width>375</width>
-                        <height>375</height>
-                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</texture>
-                        <fadetime>FanartCrossFadeTime</fadetime>
-                        <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
-                        <include>Animation_ViewsCDart</include>
-						<visible>!Skin.HasSetting(norightlistdiscart)+Window.IsActive(videos)+String.IsEmpty(ListItem.Art(discart))+!String.Contains(ListItem.Path,videodb://movies/sets)</visible>
-                    </control>
+					<left>210</left>
+					<top>405</top>
+					<width>375</width>
+					<height>375</height>
+					<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</texture>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+					<include>Animation_ViewsCDart</include>
+					<visible>!Skin.HasSetting(norightlistdiscart)+Window.IsActive(videos)+String.IsEmpty(ListItem.Art(discart))+!String.Contains(ListItem.Path,videodb://movies/sets)</visible>
+                </control>
                 <control type="image" id="5103">
                     <!-- Logo -->
                     <left>540</left>

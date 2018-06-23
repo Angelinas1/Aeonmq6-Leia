@@ -5370,7 +5370,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_ground11_label">
 		<!-- Para vistas que sejam lista -->
-		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(sets)">$LOCALIZE[21875]</value>
+		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(sets) | Control.HasFocus(777)+!Window.IsVisible(music)">$LOCALIZE[21875]</value>
 		<!-- Pais -->
 		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$LOCALIZE[31233]</value>
 		<!-- Estreou -->
@@ -5388,7 +5388,8 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Window.IsActive(TVRecordings)|PVR.HasTVChannels">$LOCALIZE[19148]</value>
 	</variable>
 	<variable name="value_ground11_value">
-		<value condition="!String.IsEmpty(ListItem.Country) + Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos)">$INFO[ListItem.Country]</value>
+		<value condition="Control.HasFocus(777)+!Window.IsVisible(music)">$INFO[Container(777).ListItem.Country]</value>
+		<value condition="!String.IsEmpty(ListItem.Country) + Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Control.HasFocus(777)+!Window.IsVisible(music)">$INFO[ListItem.Country]</value>
 		<value condition="String.IsEmpty(ListItem.Country) + Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos)">$INFO[Window(Home).Property(SkinHelper.ListItem.Country)]</value>
 		<value condition="Container.Content(sets)">$INFO[Window(Home).Property(SkinHelper.ListItem.Countrys)]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[ListItem.Premiered]</value>
@@ -5401,7 +5402,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_ground12_label">
 		<!-- Para vistas que sejam lista -->
-		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(albums)">$LOCALIZE[515]</value>
+		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(albums) | Control.HasFocus(777)+!Window.IsVisible(music)">$LOCALIZE[515]</value>
 		<!-- Genero/Genre -->
 		<value condition="Container.Content(episodes)">$LOCALIZE[20339]</value>
 		<!-- Diretor/Director -->
@@ -5416,6 +5417,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Window.IsActive(TVRecordings)|PVR.HasTVChannels">$LOCALIZE[180]</value>
 	</variable>
 	<variable name="value_ground12_value">
+		<value condition="Control.HasFocus(777)+!Window.IsVisible(music)">$INFO[Container(777).ListItem.Genre]</value>
 		<value condition="!String.IsEmpty(ListItem.Genre)+ [Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums)]">$INFO[ListItem.Genre]</value>
 		<value condition="String.IsEmpty(ListItem.Genre)+[Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums)]">$INFO[Window(Home).Property(SkinHelper.ListItem.Genre)]</value>
 		<value condition="Container.Content(sets)">$INFO[Window(Home).Property(SkinHelper.ListItem.Genres)]</value>
@@ -5430,7 +5432,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_ground13_label">
 		<!-- Para vistas que sejam lista -->
-		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets)">$LOCALIZE[20388]</value>
+		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Control.HasFocus(777)+!Window.IsVisible(music)">$LOCALIZE[20388]</value>
 		<!-- Estudio -->
 		<value condition="Container.Content(artists) | Container.Content(albums)">$LOCALIZE[175]</value>
 		<!-- Moods Artistas/Albuns -->
@@ -5442,6 +5444,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Window.IsActive(TVRecordings)|PVR.HasTVChannels">$LOCALIZE[515]</value>
 	</variable>
 	<variable name="value_ground13_value">
+		<value condition="Control.HasFocus(777)+!Window.IsVisible(music)">$INFO[Container(777).ListItem.Studio]</value>
 		<value condition="!String.IsEmpty(ListItem.Studio)+[Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">$INFO[ListItem.Studio]</value>
 		<value condition="String.IsEmpty(ListItem.Studio)+[Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">$INFO[Window(Home).Property(SkinHelper.ListItem.Studio)]</value>
 		<value condition="String.IsEmpty(ListItem.Studio)+String.Contains(ListItem.Path,videodb://movies/sets)">$INFO[Window(Home).Property(SkinHelper.ListItem.Studios)]</value>
@@ -5639,6 +5642,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.Contains(skin.string(tv_panel_layout),panel_layout_clearlogo)">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 	</variable>
 	<variable name="value_poster">
+		<value condition="Container.Content(playlists)+Control.HasFocus(777)">$INFO[Container(777).ListItem.Art(poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(animatedposter)) + !Skin.HasSetting(AnimatedPosters)">$INFO[ListItem.Art(animatedposter)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(keyart)) + Skin.HasSetting(keyartposter) + [String.IsEmpty(ListItem.Art(animatedposter)) | Skin.HasSetting(AnimatedPosters)]">$INFO[ListItem.Art(keyart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(poster)) + [String.IsEmpty(ListItem.Art(animatedposter)) | Skin.HasSetting(AnimatedPosters)]">$INFO[ListItem.Art(poster)]</value>
@@ -5982,6 +5986,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.Contains(ListItem.Path,videodb://movies/sets) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.3.Art.FanArt)) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.1.Art.Landscape))">$INFO[Window(Home).Property(SkinHelper.ListItem.0.Art.Landscape)]</value>
 	</variable>
 	<variable name="value_plot">
+	<value condition="Control.HasFocus(777)">$INFO[Container(777).ListItem.Plot]</value>
 		<value condition="![Container.Content(files) | Container.Content(addons) | Window.IsActive(pictures) | String.Contains(ListItem.Path,videodb://movies/sets) | Window.IsActive(musicplaylist) | Window.IsActive(music) + [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]]">$INFO[ListItem.Plot]</value>
 		<value condition="String.Contains(ListItem.Path,videodb://movies/sets) + !Control.HasFocus(5801)">$INFO[Window(Home).Property(SkinHelper.ListItem.ExtendedPlots)]</value>
 		<value condition="Container.Content(addons)">$INFO[ListItem.AddonSummary][CR]$INFO[ListItem.AddonDescription]</value>
