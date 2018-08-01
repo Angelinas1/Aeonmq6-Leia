@@ -468,13 +468,13 @@
 						<label>script.cu.lrclyrics</label>
 						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
 						<onclick>InstallAddon(script.cu.lrclyrics)</onclick>
-						<visible>!System.HasAddon(script.cu.lrclyrics)+ListItem.Property(Addon.IsEnabled)</visible>
+						<visible>!System.HasAddon(script.cu.lrclyrics)</visible>
 					</control>
 					<control type="button" id="244">
 						<label>script.cu.lrclyrics</label>
 						<label2>[COLOR red]Enable[/COLOR]</label2>
 						<onclick>EnableAddon(script.cu.lrclyrics)</onclick>
-						<visible>!ListItem.Property(Addon.IsEnabled)</visible>
+						<visible>System.HasAddon(script.cu.lrclyrics)+!ListItem.Property(Addon.IsEnabled)</visible>
 					</control>
 					<control type="button" id="245">
 						<label>script.cu.lrclyrics</label>

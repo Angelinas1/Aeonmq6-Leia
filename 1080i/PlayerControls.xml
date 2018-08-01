@@ -97,7 +97,7 @@
                         <!-- rec -->
                         <label></label>
                         <icon>osd_menu_rec.png</icon>
-                        <onclick>PlayerControl(record)</onclick>
+                        <onclick>PVR.ToggleRecordPlayingChannel</onclick>
                     </item>
                     <item id="9">
                         <!-- repeat -->

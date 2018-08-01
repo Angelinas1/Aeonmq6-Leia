@@ -520,7 +520,7 @@
 				<onleft>9900</onleft>
 				<onright>51</onright>
 				<orientation>vertical</orientation>
-				<content sortby="year" sortorder="ascending">$INFO[ListItem.FolderPath]</content>
+				<content sortby="year" sortorder="ascending">$VAR[playlistfolderpath]</content>
 				<visible>Container.Content(playlists)+String.IsEqual(Container.Viewmode,RIGHT LIST)</visible>
 				<itemlayout height="32" width="540">
 					<control type="label">

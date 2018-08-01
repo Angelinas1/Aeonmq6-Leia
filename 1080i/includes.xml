@@ -2939,7 +2939,7 @@
 			<item id="161">
 				<!-- epg osd -->
 				<icon>osd_menun_bg.png</icon>
-				<onclick>ActivateWindow(pvrosdguide)</onclick>
+				<onclick>ActivateWindow(pvrchannelguide)</onclick>
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</item>
 			<item id="27">
@@ -2982,6 +2982,16 @@
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_video_video),disable)">Skin.SetString(osd_video_video,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_video_video),disable)">Skin.Reset(osd_video_video,disable)</onclick>
 				<visible>[!String.Contains(skin.string(osd_video_video),disable) | Skin.HasSetting(customosd)]</visible>
+			</item>
+			<item id="66">
+				<!-- Cms -->
+				<label></label>
+				<property name="condition">$INFO[skin.string(osd_cms_video),disable)]</property>
+				<icon>osd_menu_vis.png</icon>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(osdcmssettings)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_cms_video),disable)">Skin.SetString(osd_cms_video,disable)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_cms_video),disable)">Skin.Reset(osd_cms_video,disable)</onclick>
+				<visible>[!String.Contains(skin.string(osd_cms_video),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="28">
 				<!-- 3d mode -->
@@ -3078,10 +3088,10 @@
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_video_rec),disable)]</property>
 				<icon>osd_menu_rec.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(Record)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">PVR.ToggleRecordPlayingChannel</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_video_rec),disable)">Skin.SetString(osd_video_rec,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_video_rec),disable)">Skin.Reset(osd_video_rec,disable)</onclick>
-				<visible>[Player.CanRecord + !String.Contains(skin.string(osd_video_rec),disable) | Skin.HasSetting(customosd)]</visible>
+				<visible>[PVR.CanRecordPlayingChannel + !String.Contains(skin.string(osd_video_rec),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="7">
 				<!-- disc -->
@@ -3422,10 +3432,10 @@
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_audio_rec),disable)]</property>
 				<icon>osd_menu_rec.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(Record)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">PVR.ToggleRecordPlayingChannel</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_rec),disable)">Skin.SetString(osd_audio_rec,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_rec),disable)">Skin.Reset(osd_audio_rec,disable)</onclick>
-				<visible>[Player.CanRecord + !String.Contains(skin.string(osd_audio_rec),disable) | Skin.HasSetting(customosd)]</visible>
+				<visible>[PVR.CanRecordPlayingChannel + !String.Contains(skin.string(osd_audio_rec),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="13">
 				<!-- volumeup -->

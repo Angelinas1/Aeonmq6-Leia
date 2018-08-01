@@ -92,7 +92,8 @@
 			<onup>SetFocus(510)</onup>
 			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video1)</onclick>
 			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.recent)</onclick>
-			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recent)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.random)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recent)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.unwatched)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.unwatched)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.random)</onclick>
 			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.random)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.recommended)</onclick>
 			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras.helper)</onclick>
 			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recommendedmovies)</onclick>

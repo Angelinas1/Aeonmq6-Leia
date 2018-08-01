@@ -1816,7 +1816,7 @@
 		<left>0</left>
 	    <width>720</width>
 	    <height>720</height>
-	    <aspectratio align="left">scale</aspectratio>
+	    <aspectratio align="center">scale</aspectratio>
 		<camera x="20" y="30" />
 		<fadetime>3200</fadetime>
 		<timeperimage>2000</timeperimage>

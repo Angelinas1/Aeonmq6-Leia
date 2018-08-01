@@ -9,7 +9,7 @@
             <animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
             <animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
             <animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">Hidden</animation>
-            <visible>![String.Contains(skin.string(videofurniture),hide) | Window.IsActive(pvrosdguide) | Window.IsActive(pvrosdchannels)]</visible>
+            <visible>![String.Contains(skin.string(videofurniture),hide) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels)]</visible>
             <control type="image">
                 <left>0</left>
                 <top>0</top>

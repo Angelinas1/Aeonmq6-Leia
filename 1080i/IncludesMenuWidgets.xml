@@ -1772,7 +1772,7 @@
 				<!-- reflexo video -->
 				<control type="image">
 					<left>6</left>
-					<top>249</top>
+					<top>229</top>
 					<width>146</width>
 					<height>248</height>
 					<texture flipy="true" fallback="DefaultPicture.png" diffuse="thumb_poster_reflect.png" background="true">$VAR[value_widgetsposter]</texture>
@@ -1785,9 +1785,9 @@
 					<left>6</left>
 					<top>0</top>
 					<width>146</width>
-					<height>248</height>
+					<height>228</height>
 					<texture fallback="DefaultPicture.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_widgetsposter]</texture>
-					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<aspectratio align="center" aligny="bottom">stretch</aspectratio>
 					<animation effect="fade" start="100" end="25" time="400" condition="ControlGroup(510).HasFocus">Conditional</animation>
 				</control>
 				<control type="progress">
@@ -1830,7 +1830,7 @@
 			<!-- reflexo video -->
 			<control type="image">
 				<left>6</left>
-				<top>249</top>
+				<top>229</top>
 				<width>146</width>
 				<height>248</height>
 				<texture flipy="true" fallback="DefaultPicture.png" diffuse="thumb_poster_reflect.png" background="true">$VAR[value_widgetsposter]</texture>
@@ -1842,9 +1842,9 @@
 				<left>6</left>
 				<top>0</top>
 				<width>146</width>
-				<height>248</height>
+				<height>228</height>
 				<texture fallback="DefaultPicture.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_widgetsposter]</texture>
-				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<aspectratio align="center" aligny="bottom">stretch</aspectratio>
 			</control>
 			<control type="progress">
 				<left>14</left>
@@ -5316,7 +5316,7 @@
 	<label>31066</label>
 	<onclick>RunScript(script.cinemavision,movieid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
 	<visible>![String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.IsEqual(Control.GetLabel(566),Album)|String.IsEqual(Control.GetLabel(566),Artist)]</visible>
-	<enable>System.HasAddon(script.cinemavision) + [String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recent) | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.random) | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended) | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.tvshow.recent) | [String.Contains(Container(9000).ListItem.Property(widgets),vpl) | String.Contains(Container(9000).ListItem.Property(widgets),dualwidget)] + String.IsEmpty(Container(510).ListItem.TVShowTitle)]</enable>
+	<enable>System.HasAddon(script.cinemavision) + [String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recent) | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.unwatched) | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.random) | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended) | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.tvshow.recent) | [String.Contains(Container(9000).ListItem.Property(widgets),vpl) | String.Contains(Container(9000).ListItem.Property(widgets),dualwidget)] + String.IsEmpty(Container(510).ListItem.TVShowTitle)]</enable>
 	</control>
 	<!-- Play in Small Video Window -->
 	<control type="button" id="517">
