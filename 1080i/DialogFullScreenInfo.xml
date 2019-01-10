@@ -8,7 +8,7 @@
             <animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
             <animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
             <animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">Hidden</animation>
-            <visible>![Skin.HasSetting(novideofurniture) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
+            <visible>![Skin.HasSetting(novideofurniture) | Window.IsActive(SubtitleSearch) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
             <control type="image">
                 <left>0</left>
                 <top>0</top>
@@ -101,7 +101,7 @@
             <animation effect="slide" time="400" start="0,1200" end="0,0" easing="out" tween="cubic">Visible</animation>
             <animation effect="slide" time="400" start="0,0" end="0,1200" easing="in" tween="cubic">WindowClose</animation>
             <animation effect="slide" time="400" start="0,0" end="0,1200" easing="in" tween="cubic">Hidden</animation>
-            <visible>![Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
+            <visible>![Window.IsActive(SubtitleSearch) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
             <control type="image">
                 <left>0</left>
                 <top>825</top>
@@ -118,6 +118,15 @@
                     <width>375</width>
                     <height>15</height>
                     <info>Player.Progress</info>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+                </control>
+                <control type="progress">
+                    <left>30</left>
+                    <top>996</top>
+                    <width>375</width>
+                    <height>15</height>
+                    <info>PVR.EpgEventProgress</info>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
                 </control>
                 <control type="label">
                     <left>45</left>
@@ -128,6 +137,18 @@
                     <align>center</align>
                     <textcolor>FFFFFAF0</textcolor>
                     <label>$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</label>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+                </control>
+                <control type="label">
+                    <left>45</left>
+                    <top>1020</top>
+                    <width>345</width>
+                    <height>38</height>
+                    <font>Font_23</font>
+                    <align>center</align>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <label>$INFO[PVR.EpgEventElapsedTime] / $INFO[PVR.EpgEventDuration]</label>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
                 </control>
             </control>
             <control type="group">
@@ -179,7 +200,7 @@
                     <align>right</align>
                     <font>Font_23</font>
                     <textcolor>FFFFFAF0</textcolor>
-                    <label>$INFO[Player.TimeRemaining]</label>
+                    <label>$INFO[Player.TimeRemaining]$INFO[PVR.EpgEventRemainingTime]</label>
                 </control>
                 <control type="image">
                     <left>1768</left>
@@ -209,6 +230,18 @@
                     <font>Font_23</font>
                     <textcolor>FFFFFAF0</textcolor>
                     <label>$INFO[Player.FinishTime]</label>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+                </control>
+                <control type="label">
+                    <left>1695</left>
+                    <top>1020</top>
+                    <width>180</width>
+                    <height>38</height>
+                    <align>right</align>
+                    <font>Font_23</font>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <label>$INFO[pvr.EpgEventFinishTime]</label>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
                 </control>
             </control>
         </control>
@@ -220,7 +253,7 @@
             <animation effect="slide" time="400" start="0,0" end="0,1200" easing="in" tween="cubic">Hidden</animation>
             <animation effect="slide" start="0,0" end="0,-38" time="300" tween="cubic" easing="out" condition="Player.Forwarding | Player.Rewinding">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,-100" time="400" tween="cubic" easing="inout" condition="Window.IsActive(videoosd)">Conditional</animation>
-            <visible>![Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
+            <visible>![Window.IsActive(SubtitleSearch) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
             <visible>!Skin.HasSetting(pvrdialoginfo) | !VideoPlayer.Content(LiveTV)</visible>
             <control type="image">
                 <!-- Barra de flags -->
@@ -493,7 +526,7 @@
             <animation effect="slide" time="400" start="0,0" end="0,1200" easing="in" tween="cubic">Hidden</animation>
             <animation effect="slide" start="0,0" end="0,-38" time="300" tween="cubic" easing="out" condition="Player.Forwarding | Player.Rewinding">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,-100" time="400" tween="cubic" easing="inout" condition="Window.IsActive(videoosd)">Conditional</animation>
-            <visible>![Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
+            <visible>![Window.IsActive(SubtitleSearch) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
             <visible>Skin.HasSetting(pvrdialoginfo) + VideoPlayer.Content(LiveTV)</visible>
             <control type="image">
                 <left>0</left>
@@ -557,6 +590,18 @@
                     <info>Player.Progress</info>
                     <animation effect="fade" end="90" condition="true">Conditional</animation>
                     <animation effect="fade" reversible="true" time="300">VisibleChange</animation>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+                </control>
+                <control type="progress">
+                    <!-- Progress -->
+                    <left>292</left>
+                    <top>832</top>
+                    <width>488</width>
+                    <height>10</height>
+                    <info>PVR.EpgEventProgress</info>
+                    <animation effect="fade" end="90" condition="true">Conditional</animation>
+                    <animation effect="fade" reversible="true" time="300">VisibleChange</animation>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
                 </control>
                 <control type="label">
                     <!-- Subtitulo maior -->
@@ -624,7 +669,7 @@
                     <width>1275</width>
                     <height>158</height>
                     <font>Font_18A</font>
-                    <label>$INFO[Window(Home).Property(SkinHelper.Player.imdb.Plot)][CR][CR]$INFO[Window(Home).Property(SkinHelper.Player.Plot)] $INFO[Window(Home).Property(SkinHelper.Player.Plot)]</label>
+                    <label>$INFO[Window(Home).Property(SkinHelper.Player.imdb.Plot)][CR][CR]$INFO[Window(Home).Property(SkinHelper.Player.Plot)] $INFO[VideoPlayer.Plot]</label>
                     <autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
                     <include>Animation_Fade</include>
                     <visible>!Control.HasFocus(9915)+VideoPlayer.Content(LiveTV)</visible>
@@ -896,7 +941,7 @@
             <animation effect="slide" time="400" start="0,0" end="0,1200" easing="in" tween="cubic">Hidden</animation>
             <animation effect="slide" start="0,0" end="0,-38" time="300" tween="cubic" easing="out" condition="Player.Forwarding | Player.Rewinding">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,-100" time="400" tween="cubic" easing="inout" condition="Window.IsActive(videoosd)">Conditional</animation>
-            <visible>![Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
+            <visible>![Window.IsActive(SubtitleSearch) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
             <visible>Skin.HasSetting(pvrdialoginfo) + VideoPlayer.Content(LiveTV)</visible>
             <control type="image">
                 <include>Animation_CDart</include>
@@ -1021,7 +1066,7 @@
             <font>Font_100</font>
             <label>31737</label>
             <textcolor>80FFFAF0</textcolor>
-            <visible>Player.Paused + ![Skin.HasSetting(nopausedlabel) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
+            <visible>Player.Paused + ![Skin.HasSetting(nopausedlabel) | Window.IsActive(SubtitleSearch) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
             <animation type="Visible">
                 <effect type="slide" start="0,-900" end="0,0" time="600" tween="cubic" easing="out" />
                 <effect type="fade" start="0" end="100" time="600" />

@@ -2794,7 +2794,7 @@ String.EndsWith(ListItem(7).Filenameandpath,.iso) | String.Contains(ListItem(7).
 | String.Contains(ListItem.Filenameandpath,dvd) | String.Contains(ListItem.Filenameandpath,.3dbd.) | String.Contains(ListItem(0).Filenameandpath,.3d.) 
 | String.EndsWith(ListItem.Filenameandpath,.iso) | String.EndsWith(ListItem.Filenameandpath,.ifo) 
 | String.Contains(ListItem.Filenameandpath,web) | String.Contains(ListItem.Path,videodb://movies/sets) 
-| String.Contains(ListItem.Filenameandpath,4k)|String.Contains(ListItem.Filenameandpath,4k Ultra)]">$INFO[ListItem.VideoCodec,flags/casecodec/,.png]</value>
+| String.Contains(ListItem.Filenameandpath,4k)|String.Contains(ListItem.Filenameandpath,4k Ultra)]">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</value>
 	</variable>
 	<variable name="value_videocodec_modern">
 		<value condition="[String.Contains(ListItem(0).Filenameandpath,bluray) | String.Contains(ListItem(0).Filenameandpath,blu-ray) | String.Contains(ListItem(0).Filenameandpath,bdrip)] + ![String.Contains(ListItem(0).Filenameandpath,.3dbd.) | String.Contains(ListItem(0).Filenameandpath,.3d.)]">modern/bluray.png</value>
@@ -4006,7 +4006,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.random)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window(0).Property(randomepisodes)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.recommended)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window(0).Property(recommendedepisodes)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.genre)">videodb://tvshows/genres/</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.inprogresstv)">videodb://inprogresstvshows</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.inprogresstv)">videodb://inprogresstvshows/</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.actors)">videodb://tvshows/actors/</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.studios)">videodb://tvshows/studios/</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.years)">videodb://tvshows/years/</value>
@@ -4447,8 +4447,8 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="![String.IsEmpty(Container(510).ListItem.Director) + String.IsEmpty(Container(510).ListItem.CastAndRole)]">$LOCALIZE[20339]/$LOCALIZE[31703]</value>
 	</variable>
 	<variable name="value_runtime">
-		<value condition="!String.Contains(Container(510).ListItem.Duration,min)">$INFO[Container(510).ListItem.EndTimeResume,, $LOCALIZE[31961]vvvvv]</value>
-		<value condition="String.Contains(Container(510).ListItem.Duration,min)">$INFO[Container(510).ListItem.EndTimeResume,jjj]</value>
+		<value condition="!String.Contains(Container(510).ListItem.Duration,min)">$INFO[Container(510).ListItem.Duration,, $LOCALIZE[31961]]</value>
+		<value condition="String.Contains(Container(510).ListItem.Duration,min)">$INFO[Container(510).ListItem.Duration]</value>
 	</variable>
 	<variable name="value_playerheader">
 		<value condition="Player.HasMedia + !Control.HasFocus(603)">$LOCALIZE[31582]</value>
@@ -4590,8 +4590,8 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),discart) + String.IsEmpty(Player.Art(discart))">$INFO[Window(Home).Property(SkinHelper.Player.Art.DiscArt)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),discart) + VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.poster)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),fanart)">$INFO[Player.Art(fanart)]</value>
-		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),characterart) + VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.characterart))">$INFO[Player.Art(tvshow.characterart)]</value>
-		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),characterart) + VideoPlayer.Content(episodes) + String.IsEmpty(Player.Art(tvshow.characterart))">$INFO[Player.Art(tvshow.clearart)]</value>
+		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),characterart) + VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(characterart))">$INFO[Player.Art(characterart)]</value>
+		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),characterart) + VideoPlayer.Content(episodes) + String.IsEmpty(Player.Art(characterart))">$INFO[Player.Art(tvshow.clearart)]</value>
 	</variable>
 	<variable name="value_art_full">
 		<value condition="String.IsEqual(skin.string(fullscreen_icon),logo) + !VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
@@ -4609,8 +4609,8 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon),fanart) + VideoPlayer.Content(fanart) + !String.IsEmpty(Player.Art(tvshow.fanart))">$INFO[Player.Art(poster)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon),discart) + !VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon),discart) + VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.poster)]</value>
-		<value condition="String.IsEqual(skin.string(fullscreen_icon),characterart) + VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.characterart))">$INFO[Player.Art(tvshow.characterart)]</value>
-		<value condition="String.IsEqual(skin.string(fullscreen_icon),characterart) + VideoPlayer.Content(episodes) + String.IsEmpty(Player.Art(tvshow.characterart))">$INFO[Player.Art(tvshow.clearlogo)]</value>
+		<value condition="String.IsEqual(skin.string(fullscreen_icon),characterart) + VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(characterart))">$INFO[Player.Art(characterart)]</value>
+		<value condition="String.IsEqual(skin.string(fullscreen_icon),characterart) + VideoPlayer.Content(episodes) + String.IsEmpty(Player.Art(characterart))">$INFO[Player.Art(tvshow.clearlogo)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon),characterart) + !VideoPlayer.Content(episodes)">$INFO[Player.Art(clearlogo)]</value>
 <value condition="Pvr.IsPlayingTv">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearArt)]</value>
 	</variable>
@@ -5654,6 +5654,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="![String.IsEmpty(ListItem.Art(tvshow.poster)) | Container.Content(episodes)]">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="Window.IsVisible(movieinformation) + Container.Content(episodes) + Control.HasFocus(160)">$INFO[ListItem.Icon]</value>
 		<value condition="Window.IsVisible(movieinformation) + Container.Content(episodes)">$INFO[Container.Art(season.poster)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster))+ Window.IsActive(TVChannels)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Poster)]</value>
 		<value condition="Window.IsVisible(movieinformation) + Container.Content(episodes) + String.IsEmpty(Container.Art(season.poster))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Poster)]</value>
 		<value condition="String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + ![Container.Content(artists) | Container.Content(albums) | Container.Content(songs)  | Container.Content(genres) | Container.Content(countries) | Container.Content(studios) | Container.Content(years) | Container.Content(episodes)] | Container.Content(episodes)+!Window.IsVisible(movieinformation)+String.IsEmpty(ListItem.Art(Season.poster))">$INFO[ListItem.Icon]</value>
 		<value condition="[String.IsEqual(Container.Viewmode,AEON MUSIC) | String.IsEqual(Container.Viewmode,RIGHT LIST) | String.IsEqual(Container.Viewmode,LOW LIST)]+Container.Content(artists)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Thumb)]</value>
@@ -7857,5 +7858,9 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
     </variable>
     <variable name="playlistfolderpath">
 		<value condition="Container.Content(playlists)">$INFO[ListItem.FolderPath]</value>
+    </variable>
+    <variable name="thumb_back">
+		<value condition="!String.IsEmpty(Player.Art(album.back))">$INFO[Player.Art(album.back)]</value>
+		<value>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ThumbBack)]</value>
     </variable>
 	</includes>

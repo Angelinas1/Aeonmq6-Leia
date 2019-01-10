@@ -2957,7 +2957,6 @@
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_video_subtitle),disable)]</property>
 				<icon>osd_menu_sub.png</icon>
-				<!--<onclick condition="!Skin.HasSetting(customosd)">Dialog.Close(VideoOSD)</onclick>-->
 				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(osdsubtitlesettings)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_video_subtitle),disable)">Skin.SetString(osd_video_subtitle,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_video_subtitle),disable)">Skin.Reset(osd_video_subtitle,disable)</onclick>
@@ -3408,7 +3407,7 @@
 				<visible>[!String.Contains(skin.string(osd_audio_ff),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="17">
-				<!-- skipfwd -->
+				<!-- skipfwd -->			
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_audio_skipfwd),disable)]</property>
 				<icon>osd_menu_skipfwd.png</icon>

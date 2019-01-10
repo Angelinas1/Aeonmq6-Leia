@@ -5,27 +5,37 @@
 	<menucontrol>9000</menucontrol>
 	<views>570</views>
 	<controls>
+	<include>SettingsMenu</include>
+	<control type="label" id="199">
+	<left>20</left>
+	<top>50</top>
+	<width>275</width>
+	<height>52</height>
+	<font>Font_40</font>
+	<label>EVENTLOG</label>
+	<textcolor>white</textcolor>
+	<align>left</align>
+	</control>
 	<control type="group">
 	<!-- default group -->
 	<include>Animation_Window</include>
 	<visible>Control.IsVisible(570)</visible>
 	<control type="list" id="570">
-	<left>142</left>
+	<left>400</left>
 	<top>117</top>
-	<width>1620</width>
+	<width>1490</width>
 	<height>842</height>
 	<onleft>9000</onleft>
 	<onright>60</onright>
 	<onup>570</onup>
 	<ondown>570</ondown>
-	<viewtype label="535">list</viewtype>
 	<pagecontrol>60</pagecontrol>
 	<scrolltime>200</scrolltime>
-	<itemlayout height="128" width="1620">
+	<itemlayout height="128" width="1490">
 	<control type="image">
 	<left>0</left>
 	<top>0</top>
-	<width>1620</width>
+	<width>1490</width>
 	<height>120</height>
 	<texture border="5"></texture>
 	</control>
@@ -45,7 +55,7 @@
 	<width>1305</width>
 	<height>45</height>
 	<font>Font13</font>
-	<textcolor>grey2</textcolor>
+	<textcolor>FF39ED92</textcolor>
 	<selectedcolor>selected</selectedcolor>
 	<align>left</align>
 	<aligny>center</aligny>
@@ -75,11 +85,11 @@
 	<label>$INFO[ListItem.Label2]</label>
 	</control>
 	</itemlayout>
-	<focusedlayout height="128" width="1620">
+	<focusedlayout height="128" width="1490">
 	<control type="image">
 	<left>0</left>
 	<top>0</top>
-	<width>1620</width>
+	<width>1490</width>
 	<height>120</height>
 	<texture border="5"></texture>
 	<visible>!Control.HasFocus(570)</visible>
@@ -88,7 +98,7 @@
 	<control type="image">
 	<left>0</left>
 	<top>0</top>
-	<width>1620</width>
+	<width>1490</width>
 	<height>120</height>
 	<texture>grey.png</texture>
 	<visible>Control.HasFocus(570)</visible>
@@ -110,7 +120,7 @@
 	<width>1305</width>
 	<height>45</height>
 	<font>Font13</font>
-	<textcolor>white</textcolor>
+	<textcolor>F9000000</textcolor>
 	<selectedcolor>selected</selectedcolor>
 	<align>left</align>
 	<aligny>center</aligny>
@@ -154,7 +164,6 @@
 	</control>
 	</control>
 	<control type="group">
-	<left>-375</left>
 	<control type="grouplist" id="9000">
 	<left>0</left>
 	<top>165</top>
@@ -165,48 +174,54 @@
 	<onup>9000</onup>
 	<ondown>9000</ondown>
 	<onback>570</onback>
+	<usecontrolcoords>true</usecontrolcoords>
 	<itemgap>0</itemgap>
 	<control type="label" id="200">
+	<left>20</left>
 	<width>375</width>
 	<height>52</height>
-	<font>Font_14</font>
-	<label>31006</label>
-	<textcolor>blue</textcolor>
-	<align>center</align>
-	<aligny>center</aligny>
+	<font>Font_24A</font>
+	<label>Sort order :</label>
+	<textcolor>$VAR[value_texturecolor]</textcolor>
+	<align>left</align>
 	</control>
 	<control type="togglebutton" id="4">
 	<description>Sort asc</description>
-	<alttexturefocus>grey.png</alttexturefocus>
-	<alttexturenofocus></alttexturenofocus>
-	<label>31051</label>
-	<altlabel>31050</altlabel>
-	<usealttexture>Container.SortDirection(Ascending)</usealttexture>
+	<include>SettingsButton</include>
+	<alttexturefocus>settings_button.png</alttexturefocus>
+	<label>$LOCALIZE[584]</label>
+	<altlabel>$LOCALIZE[585]</altlabel>
 	</control>
 	<control type="label" id="201">
+	<left>20</left>
 	<width>375</width>
 	<height>52</height>
-	<font>Font_14</font>
-	<label>31026</label>
-	<textcolor>blue</textcolor>
-	<align>center</align>
-	<aligny>center</aligny>
+	<font>Font_24A</font>
+	<label>$LOCALIZE[5] :</label>
+	<textcolor>$VAR[value_texturecolor]</textcolor>
+	<align>left</align>
 	</control>
 	<control type="button" id="21">
 	<description>Level button</description>
 	<textwidth>352</textwidth>
-	<include>SettingsBottomButton</include>
+	<include>SettingsButton</include>
 	<label></label>
 	</control>
 	<control type="radiobutton" id="22">
 	<description>Only show current level</description>
-	<include>SettingsBottomButton</include>
+	<include>SettingsButton</include>
 	<label></label>
 	</control>
 	<control type="button" id="20">
 	<description>Clear button</description>
-	<include>SettingsBottomButton</include>
+	<include>SettingsButton</include>
 	<label>192</label>
+	</control>
+	<control type="button" id="501">
+	<description>Back</description>
+	<include>SettingsButton</include>
+	<onclick>ActivateWindow(systemsettings,logging)</onclick>
+	<label>Back</label>
 	</control>
 	</control>
 	</control>

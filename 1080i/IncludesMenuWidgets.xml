@@ -5026,7 +5026,7 @@
 	<width>1380</width>
 	<height>60</height>
 	<font>Font_40</font>
-	<label>$VAR[value_mainmenu_label]$INFO[Window(106).Property(ListItem(1030).Label)]</label>
+	<label>$VAR[value_mainmenu_label]</label>
 	<textcolor>FFFFFAF0</textcolor>
 	<shadowcolor>grey</shadowcolor>
 	</control>
@@ -5446,6 +5446,17 @@
                         <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.0.Art.DiscArt))</visible>
                     </control>
                 </control>
+	<!-- ClearArt  -->	
+	<control type="image">
+	<left>1500</left>
+	<top>320</top>
+	<width>360</width>
+	<height>220</height>
+	<animation effect="slide" time="500" start="0,0" end="0,80" tween="cubic" easing="out" condition="String.StartsWith(Container(9000).ListItem.Property(widgets),apl)|String.Contains(Container(9000).ListItem.Property(widgets),music)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recentartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recommendedartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.randomartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recentalbums)">conditional</animation>
+	<aspectratio align="center" aligny="center">keep</aspectratio>
+	<texture>$VAR[value_pvrclearart]</texture>
+	<visible>[String.StartsWith(Container(9000).ListItem.Property(target),video)]|String.StartsWith(Container(9000).ListItem.Property(widgets),vpl)|String.StartsWith(Container(9000).ListItem.Property(widgets),vnodes)|String.Contains(Container(9000).ListItem.Property(widgets),extras.mostplayedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.popularmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.trendingmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.traktsimilarmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.topratedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.upcoming)|String.Contains(Container(9000).ListItem.Property(widgets),extras.incinemas)|String.Contains(Container(9000).ListItem.Property(widgets),channel.tv)|String.Contains(Container(9000).ListItem.Property(widgets),channel.reacent)|String.Contains(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.Contains(Container(9000).ListItem.Property(widgets),music)</visible>
+	</control>
 	<!-- Logo  -->	
 	<control type="image">
 	<left>1240</left>

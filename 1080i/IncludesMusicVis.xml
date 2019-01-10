@@ -1862,7 +1862,7 @@
 		<onclick>noop</onclick>
 		<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Thumb))</visible>
 	</item>
-	<item id="3">
+	<item id="4">
 		<label>3.</label>
 		<icon>$INFO[Window(Home).Property(SkinHelper.Player.Art.AlbumThumb)]</icon>
 		<property name="source">SkinHelper-AlbumThumb</property>
@@ -1871,7 +1871,6 @@
 	</item>
 		</content>
 	</control>	
-
 	<control type="image">
 	<left>1000</left>
 	<top>20</top>
@@ -2066,6 +2065,23 @@
 	<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Album))+Skin.HasSetting(nolyrics_on)</visible>
 	</control>
 	<control type="group">
+	<animation effect="slide" start="1000,0" end="0,0" time="15000" tween="sine" easing="out" reversible="true" condition="!Container(80036).IsUpdating">Conditional</animation>
+	<visible>!Container(80036).IsUpdating+Skin.HasSetting(nolyrics_on)</visible>
+			<control type="label" id="7698">
+				<left>860</left>
+				<top>1042</top>
+				<width>1120</width>
+				<height>30</height>
+				<textcolor>FFFFFAF0</textcolor>
+				<shadowcolor>FFDAA520</shadowcolor>
+				<align>left</align>
+				<font>Font_18A</font>
+				<scroll>true</scroll>
+				<scrollspeed>20</scrollspeed>
+				<label>$INFO[Window(Home).Property(SkinHelper.Player.Plot)]</label>
+			</control>	
+	</control>
+	<control type="group">
 	<animation effect="slide" end="0,120" time="0" condition="Skin.HasSetting(nolyrics_on)">Conditional</animation>
 	<left>900</left>
 	<top>330</top>
@@ -2244,7 +2260,7 @@
 			<imagepath fallback="$INFO[Window(Home).Property(SkinHelper.Player.Art.Banner)]" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.Banners)]</imagepath>
 			<aspectratio align="center">keep</aspectratio>
 			<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Banners))</visible>
-		</control>
+		</control>	
 	</control>
 	</include>
 	<include name="MULTI_logo_player">

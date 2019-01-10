@@ -313,6 +313,12 @@
                     <label>$LOCALIZE[33028]:</label>
                     <visible>!String.IsEmpty(Window.Property(Today.Sunset))</visible>
                 </control>
+                <control type="label">
+                    <!-- Visibility -->
+                    <include>CurrentLabel</include>
+                    <label>Visibility:</label>
+                    <visible>!String.IsEmpty(Window.Property(Current.Visibility))</visible>
+                </control>
             </control>
             <control type="grouplist">
                 <!-- Grupo dos valores -->
@@ -340,6 +346,7 @@
                     <!-- Chuva -->
                     <include>CurrentValue</include>
                     <label>$INFO[Window.Property(Current.Precipitation)]</label>
+					<visible>!String.IsEmpty(Window.Property(Current.Precipitation))</visible>
                 </control>
                 <control type="label">
                     <!-- Pressao  -->
@@ -355,6 +362,12 @@
                     <!-- Por do sol -->
                     <include>CurrentValue</include>
                     <label>$INFO[Window.Property(Today.Sunset)]</label>
+                </control>
+                <control type="label">
+                    <!-- Visibility -->
+                    <include>CurrentValue</include>
+                    <label>$INFO[Window.Property(Current.Visibility)]</label>
+					<visible>!String.IsEmpty(Window.Property(Current.Visibility))</visible>
                 </control>
             </control>
             <control type="label">

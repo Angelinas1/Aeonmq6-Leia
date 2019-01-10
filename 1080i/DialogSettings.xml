@@ -7,7 +7,7 @@
     </coordinates>
     <controls>
         <control type="group">
-		 <visible>!Window.IsActive(subtitlesearch)</visible>
+		 <visible>!Window.IsVisible(sliderdialog)</visible>
             <include>Animation_DialogPopup</include>
             <control type="image">
                 <left>165</left>

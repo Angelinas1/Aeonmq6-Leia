@@ -51,15 +51,7 @@
             <height>1080</height>
             <texture>black.png</texture>
         </control>
-        <control type="visualisation" id="2">
-            <left>0</left>
-            <top>0</top>
-            <width>1920</width>
-            <height>1080</height>
-            <animation effect="fade" start="0" end="100" time="400">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-            <visible>String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis)+!Player.IsInternetStream</visible>
-        </control>
+
         <control type="image">
             <!-- Fanart -->
             <include>WindowBG</include>
@@ -186,7 +178,15 @@
 			<aspectratio align="right" aligny="top">scale</aspectratio>
 			<visible>Skin.HasSetting(nolyrics_on)+String.IsEqual(skin.string(vis_layout),style6)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.AlbumThumb))</visible>
         </control>
-
+        <control type="visualisation" id="2">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <animation effect="fade" start="0" end="100" time="400">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+            <visible>[String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis)]+Skin.HasSetting(nolyrics_on)</visible>
+        </control>
 		<include condition="String.IsEqual(skin.string(vis_layout),style1)">style1</include>
 		<include condition="String.IsEqual(skin.string(vis_layout),style2)">style2</include>
 		<include condition="String.IsEqual(skin.string(vis_layout),style3)">style3</include>

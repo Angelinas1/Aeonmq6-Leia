@@ -11,7 +11,7 @@
             <animation effect="slide" time="400" start="0,-188" end="0,0" easing="out" tween="cubic">Visible</animation>
             <animation effect="slide" time="400" start="0,0" end="0,-188" easing="in" tween="cubic">WindowClose</animation>
             <animation effect="slide" time="400" start="0,0" end="0,-188" easing="in" tween="cubic">Hidden</animation>
-            <visible>![Window.IsVisible(seekbar) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(osdsubtitlesettings) | Window.IsActive(fullscreeninfo) | Window.IsActive(2901) | Skin.HasSetting(customosd)]</visible>
+            <visible>![Window.IsVisible(seekbar) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(fullscreeninfo) | Window.IsActive(2901) | Skin.HasSetting(customosd)]</visible>
             <control type="image">
                 <left>0</left>
                 <top>0</top>
