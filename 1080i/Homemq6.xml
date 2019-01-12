@@ -1428,7 +1428,7 @@
 							<onclick condition="String.Contains(Container(9000).ListItem.Property(widgets),movie.)+String.IsEqual(skin.string(button_widget_info),extended)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(510).ListItem.Title],dbid=$INFO[Container(510).ListItem.IMDBNumber])</onclick>
 							<onclick condition="String.Contains(Container(9000).ListItem.Property(widgets),tvshow.)+String.IsEqual(skin.string(button_widget_info),extended)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(510).ListItem.TVShowTitle],dbid=$INFO[Container(510).ListItem.DBID])</onclick>
 							<onclick condition="[String.Contains(Container(9000).ListItem.Property(widgets),movie.)|String.Contains(Container(9000).ListItem.Property(widgets),tvshow.)]+String.IsEqual(skin.string(button_widget_info),youtube)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(510).ListItem.Title],return)</onclick>
-							<onclick condition="[String.Contains(Container(9000).ListItem.Property(widgets),movie.)|String.Contains(Container(9000).ListItem.Property(widgets),tvshow.)]+String.IsEqual(skin.string(button_widget_info),cinemavision)">RunScript(script.cinemavision,experience,name=$INFO[Container(510).ListItem.Title])</onclick>
+							<onclick condition="[String.Contains(Container(9000).ListItem.Property(widgets),movie.)|String.Contains(Container(9000).ListItem.Property(widgets),tvshow.)]+String.IsEqual(skin.string(button_widget_info),cinemavision)">RunScript(script.cinemavision,movieid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
 							
 							<onclick condition="String.Contains(Container(9000).ListItem.Property(widgets),music.)+String.IsEqual(skin.string(button_widget_info_music),helper)+String.IsEmpty(Container(510).ListItem.Property(Type))">RunScript(script.skin.helper.service,action=showinfo</onclick>
 							<onclick condition="String.Contains(Container(9000).ListItem.Property(widgets),music.)+String.IsEqual(skin.string(button_widget_info_music),extended)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(510).ListItem.Artist])</onclick>
@@ -1443,7 +1443,7 @@
 							<onclick condition="String.Contains(Container(9000).ListItem.Property(widgets),extras.)+String.IsEqual(skin.string(button_widget_info_extras),extended)+String.IsEqual(Container(510).ListItem.Property(Type),episode)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(510).ListItem.TVShowTitle],dbid=$INFO[Container(510).ListItem.DBID])</onclick>
 							<onclick condition="String.Contains(Container(9000).ListItem.Property(widgets),extras.)+String.IsEqual(skin.string(button_widget_info_extras),extended)+String.IsEqual(Container(510).ListItem.Property(Type),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(510).ListItem.Title],dbid=$INFO[Container(510).ListItem.DBID])</onclick>
 							<onclick condition="String.Contains(Container(9000).ListItem.Property(widgets),extras.)+String.IsEqual(skin.string(button_widget_info_extras),youtube)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(510).ListItem.Title],return)</onclick>
-							<onclick condition="String.Contains(Container(9000).ListItem.Property(widgets),extras.)+String.IsEqual(skin.string(button_widget_info_extras),cinemavision)">RunScript(script.cinemavision,experience,name=$INFO[Container(510).ListItem.Title])</onclick>
+							<onclick condition="String.Contains(Container(9000).ListItem.Property(widgets),extras.)+String.IsEqual(skin.string(button_widget_info_extras),cinemavision)">RunScript(script.cinemavision,movieid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
 
 						</control>
 						<control type="button" id="516">
@@ -3782,7 +3782,7 @@ Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetti
 					<viewtype label="List">List Info</viewtype>
 					<top>0</top>
 					<left>0</left>
-					<width>1060</width>
+					<width>1052</width>
 					<height>330</height>
 					<onleft>1000</onleft>
 					<onright>1000</onright>
@@ -3791,7 +3791,7 @@ Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetti
 					<orientation>horizontal</orientation>
 					<scrolltime>400</scrolltime>
 					<focusposition>3</focusposition>
-					<itemlayout height="172" width="135">
+					<itemlayout height="172" width="132">
 						<control type="image">
 							<left>0</left>
 							<top>8</top>
@@ -3805,7 +3805,7 @@ Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetti
 							<colordiffuse>FF909090</colordiffuse>
 						</control>
 					</itemlayout>
-					<focusedlayout height="172" width="135">
+					<focusedlayout height="172" width="132">
 						<control type="image">
 							<left>0</left>
 							<top>8</top>

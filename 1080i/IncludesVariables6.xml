@@ -3,7 +3,7 @@
 	<!-- Aeon MQ 6 -->
 	<!--############################################################################### SUBMENU  - IR PARA ###############################################################################-->
 	<variable name="SkinVersion">
-		<value>6.13.3 MOD[COLOR=80FFFFFF] | [/COLOR]27/5/2018</value>
+		<value>6.13.4 MOD[COLOR=80FFFFFF] | [/COLOR]12/1/2019</value>
 	</variable>
 	<variable name="service_library">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),dualwidget1)">plugin://service.library.data.provider?type=$INFO[Skin.String(widget1a)]+$INFO[Skin.String(widget1b)]&amp;reload=$INFO[Window(0).Property($INFO[Skin.String(widget1a)])]$INFO[Window(0).Property($INFO[Skin.String(widget1b)])]</value>
@@ -7592,8 +7592,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Container.Content(Compilation)">musicdb://artists/$INFO[ListItem.DBID]/</value>
 	</variable>
 		<variable name="value_aeon_content_art">
-		<value condition="Container.Content(Sets)">$INFO[ListItem.Art(banner)]</value>
-		<value condition="Container.Content(TVshows)">$INFO[ListItem.Art(season.banner)]</value>
+		<value condition="Container.Content(Sets)|Container.Content(TVshows)">$INFO[ListItem.Art(banner)]</value>
 	</variable>
 	<variable name="value_aeon_content_label">
 		<value condition="Container.Content(Movies)">$INFO[ListItem.OriginalTitle]</value>

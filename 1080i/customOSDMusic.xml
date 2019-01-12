@@ -164,7 +164,7 @@
                     <label>Use Lyrics V2</label>
                     <onclick>Skin.ToggleSetting(nolyrics_onv2)</onclick>
                     <selected>!Skin.HasSetting(nolyrics_onv2)</selected>
-                    <enable>![String.IsEmpty(Skin.String(lyricscript_path)) | Skin.HasSetting(novisfurniture) | String.IsEqual(skin.string(vis_layout),karaoke)]</enable>
+                    <enable>!String.IsEmpty(Skin.String(lyricscript_path)) | !Skin.HasSetting(novisfurniture) | !String.IsEqual(skin.string(vis_layout),karaoke)</enable>
                 </control>
                 <control type="radiobutton" id="15">
                     <!-- lyrics -->
@@ -172,7 +172,7 @@
                     <label>31722</label>
                     <onclick>Skin.ToggleSetting(nolyrics_on)</onclick>
                     <selected>!Skin.HasSetting(nolyrics_on)</selected>
-                    <enable>![String.IsEmpty(Skin.String(lyricscript_path)) | Skin.HasSetting(novisfurniture) | String.IsEqual(skin.string(vis_layout),karaoke)]</enable>
+                    <enable>!String.IsEmpty(Skin.String(lyricscript_path)) | !Skin.HasSetting(novisfurniture) | !String.IsEqual(skin.string(vis_layout),karaoke)</enable>
                 </control>
                 <control type="button" id="16">
                     <!-- lyrics set script -->

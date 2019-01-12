@@ -876,6 +876,11 @@
 							<onclick>Skin.SetBool(set)</onclick>
                             <onclick>SetFocus(50)</onclick>
                         </item>
+                        <item id="4">
+                            <!-- Browse Extended Info -->
+                            <label>Browse Extended Info</label>
+                            <onclick>RunScript(script.extendedinfo,info=moviedbbrowser,id=$INFO[Container(50).ListItem.Title])</onclick>
+                        </item>
                     </content>
                 </control>
                 <control type="image">

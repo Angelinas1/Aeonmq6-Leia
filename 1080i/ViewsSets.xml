@@ -484,7 +484,7 @@
                         <aspectratio align="center" aligny="top">keep</aspectratio>
                         <texture flipy="true" diffuse="thumb_reflect.png" background="true">$INFO[ListItem.Icon]</texture>
                         <bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">grey.png</bordertexture>
-                        <animation effect="zoom" start="100" end="115" center="188,270" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+                        <animation effect="zoom" start="100" end="113" center="188,270" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
                     </control>
                     <control type="image">
                         <left>0</left>
@@ -494,13 +494,13 @@
                         <aspectratio align="center" aligny="bottom">keep</aspectratio>
                         <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
                         <bordertexture border="-2">grey.png</bordertexture>
-                        <animation effect="zoom" start="100" end="115" center="188,270" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+                        <animation effect="zoom" start="100" end="113" center="188,270" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
                     </control>
                 </focusedlayout>
                 <focusedlayout condition="!Skin.HasSetting(nosetsdiscart)" height="330" width="312">
                     <!-- Com disco -->
                     <control type="group">
-                        <animation effect="zoom" start="100" end="115" center="188,270" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+                        <animation effect="zoom" start="100" end="113" center="188,270" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
                         <control type="image">
                             <left>86</left>
                             <top>15</top>

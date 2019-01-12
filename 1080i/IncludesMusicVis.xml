@@ -2067,7 +2067,7 @@
 	<control type="group">
 	<animation effect="slide" start="1000,0" end="0,0" time="15000" tween="sine" easing="out" reversible="true" condition="!Container(80036).IsUpdating">Conditional</animation>
 	<visible>!Container(80036).IsUpdating+Skin.HasSetting(nolyrics_on)</visible>
-			<control type="label" id="7698">
+			<control type="fadelabel" id="7698">
 				<left>860</left>
 				<top>1042</top>
 				<width>1120</width>

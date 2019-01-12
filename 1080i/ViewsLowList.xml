@@ -98,7 +98,7 @@
                         <texture background="true">$VAR[value_logoandclearart]</texture>
                         <aspectratio align="right" aligny="bottom">keep</aspectratio>
                         <fadetime>FanartCrossFadeTime</fadetime>
-                        <visible>Window.IsActive(videos) + !Skin.HasSetting(noartlowlistvideo)</visible>
+                        <visible>[Window.IsActive(videos) + !Skin.HasSetting(noartlowlistvideo)] | Window.IsActive(TVChannels)</visible>
                     </control>
                 </control>
                 <control type="group">

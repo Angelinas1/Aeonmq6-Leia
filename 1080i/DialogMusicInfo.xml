@@ -494,7 +494,13 @@
 						<onclick>noop</onclick>
                         <visible>!Window.IsActive(visualisation)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.lastfm.similarartists))</visible>
                     </item>
-
+                    <item>
+                        <label>$LOCALIZE[573]</label>
+                        <!-- Helper Mood -->
+                        <label2>$INFO[Player.FolderPath]</label2>
+						<onclick>noop</onclick>
+						<visible>Window.IsActive(visualisation)+[Player.IsInternetStream | Pvr.IsPlayingRadio]</visible>
+                    </item>
                 </content>
             </control>
             <control type="image">
@@ -521,7 +527,7 @@
                 <left>45</left>
                 <top>450</top>
                 <width>952</width>
-                <height>262</height>
+                <height>232</height>
                 <align>justify</align>
                 <font>Font_18A</font>
                 <label>$INFO[Window(Home).Property(SkinHelper.Player.Plot)]</label>
@@ -1090,6 +1096,7 @@
                 <visible>!Control.HasFocus(6010)+Skin.HasSetting(music_case)+String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo))</visible>
             </control>	
             <control type="image">
+				<animation effect="slide" start="0,0" end="-20,0" time="100" condition="!Skin.HasSetting(music_case)">Conditional</animation>
                 <!-- Banner -->
                 <left>1050</left>
                 <top>8</top>
@@ -1099,6 +1106,7 @@
                 <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</texture>
             </control>
             <control type="image">
+				<animation effect="slide" start="0,0" end="-20,0" time="100" condition="!Skin.HasSetting(music_case)">Conditional</animation>
                 <!-- Banner -->
                 <left>1050</left>
                 <top>8</top>
@@ -1106,7 +1114,6 @@
                 <width>490</width>
                 <height>100</height>
                 <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Art.Banner)]</texture>
-				<visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Banner))</visible>
             </control>
             <control type="image">
                 <left>1029</left>
@@ -1402,9 +1409,9 @@
                     <visible>String.Contains(skin.string(sextendalbum_list),7010)</visible>
                     <viewtype label="List">List Info</viewtype>
                     <content>plugin://script.extendedinfo?info=mostlovedtracks&amp;&amp;artistname=$VAR[value_discography_title]</content>
-                    <left>78</left>
+                    <left>40</left>
                     <top>738</top>
-                    <width>1800</width>
+                    <width>1857</width>
                     <height>330</height>
                     <onup>149</onup>
 					<ondown>Skin.Reset(artistzoom)</ondown>
@@ -1419,29 +1426,29 @@
                     <orientation>horizontal</orientation>
                     <scrolltime>400</scrolltime>
                     <focusposition>2</focusposition>
-                    <itemlayout height="255" width="372">
+					<itemlayout height="300" width="375">
                         <control type="image">
                             <left>0</left>
                             <top>8</top>
-                            <width>270</width>
+                            <width>345</width>
                             <height>270</height>
                             <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
                             <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="255" width="372">
+                    <focusedlayout height="300" width="375">
                         <control type="image">
-                            <left>0</left>
+                            <left>1</left>
                             <top>8</top>
-                            <width>270</width>
+                            <width>344</width>
                             <height>270</height>
                             <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
                             <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
@@ -1449,20 +1456,20 @@
                             <visible>!Control.HasFocus(7010)</visible>
                         </control>
                         <control type="image">
-                            <left>0</left>
+                            <left>1</left>
                             <top>8</top>
-                            <width>270</width>
+                            <width>344</width>
                             <height>270</height>
                             <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
                             <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
                             <bordertexture border="-2">grey.png</bordertexture>
                             <include>Animation_Fade</include>
                             <visible>Control.HasFocus(7010)</visible>
                         </control>
                     </focusedlayout>
-                </control>
+            </control>	
                 <control type="list" id="15014">
                     <visible>String.Contains(skin.string(sextendalbum_list),15014)+!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))</visible>
                     <viewtype label="List">List Info</viewtype>
@@ -2276,9 +2283,9 @@
                     <viewtype label="List">List Info</viewtype>
                     <visible>String.Contains(skin.string(sextendalbum_list),10010)</visible>
                     <content>plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$VAR[value_discography_title]</content>
-                    <left>78</left>
+                    <left>40</left>
                     <top>738</top>
-                    <width>1800</width>
+                    <width>1857</width>
                     <height>330</height>
                     <onup>149</onup>
 					<ondown>Skin.Reset(artistzoom)</ondown>
@@ -2292,29 +2299,29 @@
                     <orientation>horizontal</orientation>
                     <scrolltime>400</scrolltime>
                     <focusposition>2</focusposition>
-                    <itemlayout height="255" width="372">
+					<itemlayout height="300" width="375">
                         <control type="image">
                             <left>0</left>
                             <top>8</top>
-                            <width>270</width>
+                            <width>345</width>
                             <height>270</height>
                             <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
                             <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="255" width="372">
+                    <focusedlayout height="300" width="375">
                         <control type="image">
-                            <left>0</left>
+                            <left>1</left>
                             <top>8</top>
-                            <width>270</width>
+                            <width>344</width>
                             <height>270</height>
                             <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
                             <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
@@ -2322,20 +2329,20 @@
                             <visible>!Control.HasFocus(10010)</visible>
                         </control>
                         <control type="image">
-                            <left>0</left>
+                            <left>1</left>
                             <top>8</top>
-                            <width>270</width>
+                            <width>344</width>
                             <height>270</height>
                             <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
                             <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
                             <bordertexture border="-2">grey.png</bordertexture>
                             <include>Animation_Fade</include>
                             <visible>Control.HasFocus(10010)</visible>
                         </control>
                     </focusedlayout>
-                </control>	
+            </control>	
             </control>
             <control type="group">
                 <!-- Menu bar -->

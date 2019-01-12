@@ -320,6 +320,30 @@
                 <onright>9000</onright>
                 <onup>9002</onup>
                 <ondown>9002</ondown>
+					<control type="button" id="216">
+						<label>repository.marcelveldt > Download from repo</label>
+						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
+						<onclick>Extract(https://github.com/marcelveldt/repository.marcelveldt/raw/master/repository.marcelveldt/repository.marcelveldt-1.0.1.zip,special://home/addons/)</onclick>
+						<visible>!System.HasAddon(repository.marcelveldt)</visible>
+					</control>
+					<control type="button" id="217">
+						<label>repo Marcelveldt</label>
+						<label2>[COLOR green]$LOCALIZE[107][/COLOR]</label2>
+						<onclick>Addon.OpenSettings(repository.marcelveldt)</onclick>
+						<visible>System.HasAddon(repository.marcelveldt)</visible>
+					</control>
+					<control type="button" id="218">
+						<label>repository.rector.stuff > Download from repo</label>
+						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
+						<onclick>Extract(https://github.com/rmrector/repository.rector.stuff/raw/master/repository.rector.stuff/repository.rector.stuff-1.0.0.zip,special://home/addons/)</onclick>
+						<visible>!System.HasAddon(repository.rector.stuff)</visible>
+					</control>
+					<control type="button" id="219">
+						<label>repo Rector</label>
+						<label2>[COLOR green]$LOCALIZE[107][/COLOR]</label2>
+						<onclick>Addon.OpenSettings(repository.rector.stuff)</onclick>
+						<visible>System.HasAddon(repository.rector.stuff)</visible>
+					</control>
 					<control type="button" id="220">
 						<label>script.extendedinfo > Extended Info for Media</label>
 						<label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
