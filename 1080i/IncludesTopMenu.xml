@@ -1518,6 +1518,14 @@
 					<selected>System.HasAddon(script.tvtunes) + Skin.HasSetting(ontvtunes)</selected>
 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				</control>
+				<control type="radiobutton" id="9324">
+					<!-- TV Tunes -->
+					<include>TopMenuRadioButton</include>
+					<label>New DialogInfo</label>
+					<onclick>Skin.ToggleSetting(newdialog)</onclick>
+					<selected>Skin.HasSetting(newdialog)</selected>
+					<visible>Container.Content(movies)</visible>
+				</control>
 			</control>
 			<control type="grouplist" id="9401">
 				<!-- Artwork -->

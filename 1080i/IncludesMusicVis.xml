@@ -2072,6 +2072,7 @@
 				<top>1042</top>
 				<width>1120</width>
 				<height>30</height>
+				<textoffsetx>1120</textoffsetx>
 				<textcolor>FFFFFAF0</textcolor>
 				<shadowcolor>FFDAA520</shadowcolor>
 				<align>left</align>

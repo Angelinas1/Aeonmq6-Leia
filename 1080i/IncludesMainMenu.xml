@@ -1243,7 +1243,7 @@
 	<!-- Controles -->
 	<include name="ControlsCommon">
 	<!-- play DVD -->	
-	<control type="button" id="601">
+	<control type="button" id="600">
 	<left>0</left>
 	<top>0</top>
 	<width>36</width>
@@ -1259,7 +1259,25 @@
 	<texturefocus>osd_menu_playdisc_square.png</texturefocus>
 	<texturenofocus>osd_menu_playdisc_square.png</texturenofocus>
 	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(601)">conditional</animation>
-	<enable>System.HasMediaDVD</enable>
+	<visible>System.HasMediaDVD</visible>
+	</control>
+	<control type="button" id="601">
+	<left>0</left>
+	<top>0</top>
+	<width>36</width>
+	<height>36</height>
+	<onleft>9000</onleft>
+	<onright>602</onright>
+	<ondown>9000</ondown>	
+	<onup condition="![String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)]">SetFocus(510)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + !Skin.HasSetting(kioskcode)">SetFocus(8001)</onup>
+	<onup condition="[String.IsEmpty(Container(9000).ListItem.Property(widgets)) | String.IsEmpty(Container(510).ListItem(1).Label)] + Skin.HasSetting(kioskcode)">SetFocus(8004)</onup>
+	<onclick>ActivateWindow(playercontrols,return])</onclick>
+	<label></label>
+	<texturefocus>osd_menu_playlist_square.png</texturefocus>
+	<texturenofocus>osd_menu_playlist_square.png</texturenofocus>
+	<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(601)">conditional</animation>
+	<visible>!System.HasMediaDVD</visible>
 	</control>
 	<!-- tocar/pausa -->
 	<control type="togglebutton" id="602">

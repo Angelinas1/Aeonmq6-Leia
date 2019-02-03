@@ -2,7 +2,7 @@
 <window type="dialog" id="114">
     <!-- Aeon MQ 6 -->
     <defaultcontrol always="true">100</defaultcontrol>
-    <visible>Player.HasMedia + Window.IsActive(PlayerControls) + ![Window.IsActive(FullscreenVideo) | Window.IsActive(Visualisation)]</visible>
+    <visible>Window.IsActive(PlayerControls) + ![Window.IsActive(FullscreenVideo) | Window.IsActive(Visualisation)]</visible>
     <controls>
         <control type="image">
             <left>0</left>
@@ -21,15 +21,15 @@
                 <top>638</top>
                 <height>300</height>
                 <width>1485</width>
-                <ondown>300</ondown>
+                <ondown>703</ondown>
                 <onup>300</onup>
                 <onleft>600</onleft>
                 <onright>600</onright>
                 <viewtype>list</viewtype>
                 <orientation>horizontal</orientation>
                 <scrolltime>200</scrolltime>
-                
                 <focusposition>2</focusposition>
+				<visible allowhiddenfocus="true">!Control.HasFocus(300)</visible>
                 <itemlayout width="76" height="45">
                     <control type="image">
                         <top>33</top>
@@ -80,6 +80,7 @@
                         <label></label>
                         <icon>osd_menu_stop.png</icon>
                         <onclick>PlayerControl(Stop)</onclick>
+						<onclick>Dialog.Close(playercontrols)</onclick>
                     </item>
                     <item id="6">
                         <!-- ff -->
@@ -165,12 +166,12 @@
             </control>
             <control type="fadelabel">
                 <left>795</left>
-                <top>300</top>
+                <top>290</top>
                 <width>825</width>
                 <height>45</height>
                 <align>left</align>
                 <aligny>center</aligny>
-                <font>Font_18A</font>
+                <font>Font_30</font>
                 <textcolor>FFFFFAF0</textcolor>
                 <label>$VAR[value_playergenre]</label>
                 <scroll>true</scroll>
@@ -205,6 +206,112 @@
                 <label>$VAR[value_playerplot]</label>
                 <autoscroll delay="20000" time="3000" repeat="20000">!Skin.HasSetting(noallowscroll)</autoscroll>
             </control>
+			<control type="image">
+				<left>1540</left>
+				<top>20</top>
+				<width>400</width>
+				<height>120</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+				<texture>darkgrey.png</texture>
+				<visible>Control.HasFocus(300)</visible>
+			</control>
+			<control type="image">
+				<left>1540</left>
+				<top>20</top>
+				<width>400</width>
+				<height>120</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture>$VAR[value_music_artistvis_clearartlogo]</texture>
+				<animation effect="fade" start="0" end="100" time="3600" delay="1500" tween="linear" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ClearLogo))">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200" delay="500" tween="linear" reversible="false" condition="String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ClearLogo))">Hidden</animation>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ClearLogo))</visible>
+			</control>
+            <control type="button" id="300">
+			    <ondown>100</ondown>
+                <onup>100</onup>
+                <onleft>100</onleft>
+                <onright>100</onright>
+                <include>InvisibleButton</include>
+                <onclick>Back</onclick>
+            </control>
+			<control type="panel" id="703">
+				<left>52</left>
+				<top>840</top>
+				<width>1820</width>
+				<height>130</height>
+				<onup>100</onup>
+				<ondown>100</ondown>
+				<onleft>703</onleft>
+				<onright>703</onright>
+				<orientation>horizontal</orientation>
+				<pagecontrol></pagecontrol>
+				<include>Animation_HomeFade</include>
+				<itemlayout width="304" height="60">
+					<control type="image">
+						<width>60</width>
+						<height>60</height>
+						<aspectratio align="center">stretch</aspectratio>
+						<texture fallback="DefaultAudioCover.png">$INFO[ListItem.Icon]</texture>                                
+					</control>
+					<control type="label">
+						<left>70</left>
+						<top>5</top>
+						<width>220</width>
+						<height>24</height>
+						<align>left</align>
+						<font>Font13</font>
+						<textcolor>FFFFFAF0</textcolor>
+						<label>$INFO[ListItem.Label]</label>	
+					</control>
+					<control type="label">
+						<left>70</left>
+						<top>29</top>
+						<width>220</width>
+						<height>30</height>
+						<align>left</align>
+						<font>Font_14</font>
+						<textcolor>FFFFFAF0</textcolor>
+						<label>$INFO[ListItem.Label2]</label>	
+					</control>
+				</itemlayout>
+				<focusedlayout width="304" height="60">
+					<control type="image">
+						<left>60</left>
+						<width>240</width>
+						<height>60</height>
+						<texture>grey.png</texture>
+						<include>Animation_Fade</include>                               
+					</control>
+					<control type="image">
+						<width>60</width>
+						<height>60</height>
+						<aspectratio align="center">stretch</aspectratio>
+						<texture fallback="DefaultAudioCover.png">$INFO[ListItem.Icon]</texture>                                
+					</control>
+					<control type="label">
+						<left>70</left>
+						<top>5</top>
+						<width>220</width>
+						<height>24</height>
+						<align>left</align>
+						<font>Font13</font>
+						<textcolor>FF101010</textcolor>
+						<label>$INFO[ListItem.Label]</label>	
+					</control>
+					<control type="label">
+						<left>70</left>
+						<top>29</top>
+						<width>220</width>
+						<height>30</height>
+						<align>left</align>
+						<font>Font_14</font>
+						<textcolor>FF101010</textcolor>
+						<label>$INFO[ListItem.Label2]</label>	
+					</control>
+				</focusedlayout>
+			<include>NextTracksContent</include>
+		</control>
         </control>
     </controls>
 </window>

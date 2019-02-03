@@ -3098,7 +3098,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.Contains(VideoPlayer.Mpaa,Australia:MA)">flags/mpaa/Australian_OFLC_MA15s.png</value>
 		<value condition="String.Contains(VideoPlayer.Mpaa,Australia:R)">flags/mpaa/Australian_OFLC_R18s.png</value>
 		<value condition="String.Contains(VideoPlayer.Mpaa,Australia:X)">flags/mpaa/Australian_OFLC_X18s.png</value>
-
 		<value condition="VideoPlayer.Content(LiveTV)+[String.Contains(Window(home).Property(SkinHelper.Player.Mpaa),Rated NR) | String.Contains(Window(home).Property(SkinHelper.Player.Mpaa),Rated: NR) | String.IsEqual(Window(home).Property(SkinHelper.Player.Mpaa),NR)]">flags/mpaa/MPAA_NR_Certificate_US.png</value>
 		<value condition="VideoPlayer.Content(LiveTV)+[String.Contains(Window(home).Property(SkinHelper.Player.Mpaa),Rated G) | String.Contains(Window(home).Property(SkinHelper.Player.Mpaa),Rated: G) | String.IsEqual(Window(home).Property(SkinHelper.Player.Mpaa),G)]">flags/mpaa/MPAA_G_Certificate_US.png</value>
 		<value condition="VideoPlayer.Content(LiveTV)+[[String.Contains(Window(home).Property(SkinHelper.Player.Mpaa),Rated PG) | String.Contains(Window(home).Property(SkinHelper.Player.Mpaa),Rated: PG) | String.IsEqual(Window(home).Property(SkinHelper.Player.Mpaa),PG)] + ![String.Contains(Window(home).Property(SkinHelper.Player.Mpaa),Rated PG-13) | String.Contains(Window(home).Property(SkinHelper.Player.Mpaa),Rated: PG-13)]]">flags/mpaa/MPAA_PG_Certificate_US.png</value>
@@ -3982,7 +3981,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">$LOCALIZE[36911]</value>
 	<value condition="String.IsEqual(Window(Home).Property(SkinHelper.ListItem.media_type),movie)+[String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]">$LOCALIZE[20338] $LOCALIZE[14301]</value>
 	<value condition="String.IsEqual(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)+[String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]">$LOCALIZE[36902] $LOCALIZE[14301]</value>
-
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),tvshow.actors)|String.IsEqual(Container(9000).ListItem.Property(widgets),movie.actors)
 	|String.IsEqual(Container(9000).ListItem.Property(widgets),music.artist)|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentartists)
 	|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.randomartists)|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedartists)">$LOCALIZE[29904]</value>
@@ -4436,7 +4434,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),anodes19)">$LOCALIZE[31082] ($VAR[value_menu19.label])</value>
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),anodes20)">$LOCALIZE[31082] ($VAR[value_menu20.label])</value>
 	</variable>
-	
 	<variable name="value_castgallery">
 		<value condition="[Control.HasFocus(2512) + !String.IsEmpty(Container(2512).ListItem.CastAndRole)]">$INFO[Container(2512).ListItem.CastAndRole]</value>
 		<value condition="[Control.HasFocus(2518) + !String.IsEmpty(Container(2518).ListItem.CastAndRole)]">$INFO[Container(2518).ListItem.CastAndRole]</value>
@@ -4471,7 +4468,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_playergenre">
 		<value condition="Player.HasVideo">$INFO[VideoPlayer.Genre]</value>
-		<value condition="Player.HasAudio">$INFO[MusicPlayer.ChannelName]</value>
+		<value condition="Player.HasAudio">$INFO[Window(Home).Property(SkinHelper.Player.Genre),(,)]</value>
 	</variable>
 	<variable name="value_playerplot">
 		<value condition="Player.HasVideo">$INFO[VideoPlayer.Plot]</value>
@@ -5623,7 +5620,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.genre)">genres/music/$INFO[Container(510).ListItem.Label].jpg</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),countries)">icons/countries/$INFO[Container(510).ListItem.Label].png</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),studios)">$INFO[Container(510).ListItem.Label,resource://resource.images.studios.coloured/,.png]</value>
-
 	</variable>
 	<variable name="value_widgetsinfopanelvideo2">
 		<value condition="!String.IsEmpty(Container(510).ListItem.Art(poster)) + !String.Contains(skin.string(tv_panel_layout),panel_layout_landscape) + !String.Contains(skin.string(tv_panel_layout),panel_layout_clearart) + !String.Contains(skin.string(tv_panel_layout),panel_layout_clearlogo)">$INFO[Container(510).ListItem.Art(poster)]</value>
@@ -5636,7 +5632,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.genre)">genres/music/$INFO[Container(510).ListItem.Label].jpg</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),countries)">icons/countries/$INFO[Container(510).ListItem.Label].png</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),studios)">$INFO[Container(510).ListItem.Label,resource://resource.images.studios.coloured/resources/,.png]</value>
-
 	</variable>
 	<variable name="value_tvwidget2">
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(tvshow.clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.poster)]</value>
@@ -6172,16 +6167,16 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(500)">$INFO[Container(500).ListItem.Label]</value>
 		</variable>
 	<variable name="value_extra_clearart">
-		<value condition="Control.HasFocus(2510)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2510).ListItem.Title]&amp;type=clearart</value>
-		<value condition="Control.HasFocus(2511)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2511).ListItem.Title]&amp;type=clearart</value>
-		<value condition="Control.HasFocus(2512)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2512).ListItem.Title]&amp;type=clearart</value>
-		<value condition="Control.HasFocus(2513)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2513).ListItem.Title]&amp;type=clearart</value>
-		<value condition="Control.HasFocus(2514)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2514).ListItem.Title]&amp;type=clearart</value>
-		<value condition="Control.HasFocus(2515)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2515).ListItem.Title]&amp;type=clearart</value>
+		<value condition="Control.HasFocus(2510)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2510).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
+		<value condition="Control.HasFocus(2511)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2511).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
+		<value condition="Control.HasFocus(2512)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2512).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
+		<value condition="Control.HasFocus(2513)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2513).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
+		<value condition="Control.HasFocus(2514)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2514).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
+		<value condition="Control.HasFocus(2515)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2515).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
 		<value condition="Control.HasFocus(2516) + !String.IsEmpty(Container(2516).ListItem.Art(tvshow.clearart))">$INFO[Container(2516).ListItem.Art(tvshow.clearart)]</value>
 		<value condition="Control.HasFocus(2516)">$INFO[Container(2516).ListItem.Art(clearart)]</value>
-		<value condition="Control.HasFocus(2517)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2517).ListItem.Title]&amp;type=clearart</value>
-		<value condition="Control.HasFocus(2518)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2518).ListItem.Title]&amp;type=clearart</value>
+		<value condition="Control.HasFocus(2517)">http://localhost:52307/getartworkk&amp;title=$INFO[Container(2517).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
+		<value condition="Control.HasFocus(2518)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2518).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
 	</variable>
 	<variable name="value_audiochannelshome1">
 		<value condition="String.Contains(Container(510).ListItem.Property(AudioChannels.1),1)">[B]1.0[/B]</value>
@@ -7392,7 +7387,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<value condition="String.Contains(Container(510).ListItem.Path,videodb://movies/sets)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[Window(0).Property(SkinHelper.ListItem.0.DBID)]&amp;downloadthumbs=true</value>
 	<value condition="[String.Contains(Container(9000).ListItem.Property(widgets),vnode)+String.IsEqual(Window(Home).Property(SkinHelper.ListItem.media_type),movie)]|String.Contains(Container(9000).ListItem.Property(widgets),vpl)|String.Contains(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.Contains(Container(9000).ListItem.Property(widgets),channel.epg)|String.Contains(Container(9000).ListItem.Property(widgets),channel.tv)|String.Contains(Container(9000).ListItem.Property(widgets),channel.reacent)">plugin://script.skin.helper.service/?action=getcast&amp;$INFO[Window(Home).Property(SkinHelper.ListItem.media_type)]=$INFO[Container(510).ListItem.Title]&amp;downloadthumbs=true</value>
 	<value condition="[String.Contains(Container(9000).ListItem.Property(widgets),vnode)+!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.media_type),movie)]|String.IsEqual(Container(510).ListItem.Property(Type),tvshow)|String.Contains(Container(9000).ListItem.Property(widgets),extras.traktsimilartvshows)|String.Contains(Container(9000).ListItem.Property(widgets),extras.populartvshows)|String.Contains(Container(9000).ListItem.Property(widgets),extras.trendingshows)|String.Contains(Container(9000).ListItem.Property(widgets),extras.topratedtvshows)|String.Contains(Container(9000).ListItem.Property(widgets),extras.airingtodaytvshows)|String.Contains(Container(9000).ListItem.Property(widgets),extras.onairtvshows)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.top250tvshows)">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Container(510).ListItem.Title]&amp;downloadthumbs=true</value>
-
 	</variable>
 	<variable name="value_widgetsstatus">
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(target),video)">$VAR[value_widgetsmodevideo]</value>
@@ -7449,7 +7443,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Skin.HasSetting(compositionglobal)">$INFO[Skin.String(global.colorcomposition)]</value>
 		<value condition="!Skin.HasSetting(compositionglobal)">$INFO[Container(9000).ListItem.Property(colorcomposition)]</value>
 	</variable>
-	
 	<variable name="value_styleratingstars">
 	<value condition="String.IsEqual(Skin.String(styleratingstars),3D)">flags/stars/3D/</value>
 	<value condition="String.IsEqual(Skin.String(styleratingstars),bar)">flags/stars/bar/</value>
@@ -7513,7 +7506,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<value condition="!String.IsEqual(Container(510).ListItem.DBTYPE,movie)+String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Awards),won)+String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),globe)">flags/goldenglobe0.png</value>	
 	<value condition="!String.IsEqual(Container(510).ListItem.DBTYPE,movie)+String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Awards),won)+String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),emmy)">flags/emmy.png</value>
 	</variable>
-	
 	<variable name="value_lyrics_no">
 	<value>1</value>
 	</variable>
@@ -7556,7 +7548,9 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value>$INFO[ListItem.Playcount,, / ] $INFO[ListItem.Comment]</value>	
 		</variable>
 	<variable name="value_addon_image">
-		<value condition="Control.HasFocus(220)">special://home/addons/script.extendedinfo/resources/icon.png</value>
+		<value condition="Control.HasFocus(217)">special://home/addons/repository.marcelveldt/icon.png</value>
+		<value condition="Control.HasFocus(219)">special://home/addons/repository.rector.stuff/icon.png</value>
+		<value condition="Control.HasFocus(221)">special://home/addons/script.extendedinfo/resources/icon.png</value>
 		<value condition="Control.HasFocus(223)">special://home/addons/script.skin.helper.service/icon.png</value>
 		<value condition="Control.HasFocus(225)">special://home/addons/script.skin.helper.colorpicker/icon.png</value>
 		<value condition="Control.HasFocus(227)">special://home/addons/script.skin.helper.widgets/icon.png</value>
@@ -7607,7 +7601,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="MusicVisCColor">
 		<value condition="!String.IsEmpty(Window(Home).Property(ImageCColorFIVE))">$INFO[Window(Home).Property(ImageCColorFIVE)]</value>
-
 	</variable>
 	<variable name="MusicVisColor">
 		<value condition="!String.IsEmpty(Window(Home).Property(ImageColorFIVE))">$INFO[Window(Home).Property(ImageColorFIVE)]</value>
@@ -7713,7 +7706,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="dialog_video_set">
 	<value condition="!Container.Content(tvshows)+!String.StartsWith(ListItem.FilenameAndPath,plugin://)">plugin://script.extendedinfo?info=set&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
-
 	</variable>
 	<variable name="value_rating_star_di">
 		<value condition="String.IsEmpty(Window(home).Property(SkinHelper.Player.Rating))"></value>

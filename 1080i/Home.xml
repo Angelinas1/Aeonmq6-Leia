@@ -21,42 +21,43 @@
 	<onload>Skin.SetBool(SkinHelper.EnableWallBackgrounds)</onload>
 	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,$VAR[RandomFanartDelaySec])</onload>
 	<onload>Skin.SetString(SkinHelper.WallImagesDelay, 10)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMusicVideosBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMusicSongsBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.RecentMusicBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMusicBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.GlobalFanartBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.InProgressMoviesBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.RecentMoviesBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.UnwatchedMoviesBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.InProgressShowsBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.RecentEpisodesBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllVideosBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.RecentVideosBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.InProgressVideosBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.TopRatedMovies.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.TopRatedShows.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.PvrBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.PicturesBackground.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.Wall.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.Poster.Wall.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.Wall.BW.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.Poster.Wall.BW.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Wall.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Poster.Wall.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Wall.BW.EnableWallImages, 20)</onload>	
-	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Poster.Wall.BW.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMusicBackground.Wall.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMusicBackground.Wall.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMusicSongsBackground.Wall.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(SkinHelper.AllMusicSongsBackground.Wall.BW.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(playlist.0.image.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(playlist.1.image.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(playlist.2.image.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(playlist.3.image.EnableWallImages, 20)</onload>
-	<onload>Skin.SetString(playlist.4.image.EnableWallImages, 20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicVideosBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicSongsBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.RecentMusicBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.GlobalFanartBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.InProgressMoviesBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.RecentMoviesBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.UnwatchedMoviesBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.InProgressShowsBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.RecentEpisodesBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllVideosBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.RecentVideosBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.InProgressVideosBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.TopRatedMovies.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.TopRatedShows.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.PvrBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.PicturesBackground.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.Wall.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.Poster.Wall.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.Wall.BW.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMoviesBackground.Poster.Wall.BW.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Wall.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Poster.Wall.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Wall.BW.EnableWallImages,20)</onload>	
+	<onload>Skin.SetString(SkinHelper.AllTvShowsBackground.Poster.Wall.BW.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicBackground.Wall.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicBackground.Wall.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicSongsBackground.Wall.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(SkinHelper.AllMusicSongsBackground.Wall.BW.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(playlist.0.image.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(playlist.1.image.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(playlist.2.image.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(playlist.3.image.EnableWallImages,20)</onload>
+	<onload>Skin.SetString(playlist.4.image.EnableWallImages,20)</onload>
+	<onload>Skin.SetBool(EnableAddonsLookups)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<onunload condition="String.Contains(Container(9000).ListItem.Property(id),vpl) | String.Contains(Container(9000).ListItem.Property(id),apl)">Skin.SetString(playlists,$INFO[Container(9000).ListItem.Property(id)])</onunload>
 	<controls>

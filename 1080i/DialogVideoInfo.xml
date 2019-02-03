@@ -12,6 +12,7 @@
 	<onunload>Skin.Reset(ytvideo)</onunload>
     <controls>
         <control type="group">
+			<visible>!Skin.HasSetting(newdialog)</visible>
             <!-- default group -->
             <include>Animation_Window</include>
             <control type="image">
@@ -1786,5 +1787,23 @@
             <include>BGBlack</include>
             <include>TrailerWindow</include>
         </control>
-    </controls>
+        <control type="group">
+			<visible>Skin.HasSetting(newdialog)</visible>
+            <control type="image">
+                <!-- Single Fanart -->
+				<animation effect="rotate" stsrt="0" end="-90" condition="System.IdleTime(0)">Conditional</animation>
+                <left>0</left>
+                <top>0</top>
+                <height>1920</height>
+                <width>420</width>
+                <texture>osd_grey_bg.png</texture>
+				<colordiffuse>black</colordiffuse>
+            </control>
+
+		
+		
+		
+		
+		</control>
+		</controls>
 </window>

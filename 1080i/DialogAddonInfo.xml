@@ -112,7 +112,7 @@
                     <top>135</top>
                     <width>210</width>
                     <height>38</height>
-                    <label>Path:</label>
+                    <label>Updated:</label>
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>Font_18</font>
@@ -124,7 +124,7 @@
                     <top>135</top>
                     <width>825</width>
                     <height>38</height>
-                    <label fallback="416">$INFO[ListItem.Property(Addon.Path)]</label>
+                    <label fallback="416">$INFO[ListItem.AddonLastUpdated]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>Font_18</font>
@@ -238,11 +238,11 @@
 						<height>220</height>
 						<texture border="2" background="true">DefaultNoPreview.png</texture>
 						<aspectratio>keep</aspectratio>
-							<bordertexture colordiffuse="$VAR[value_texturecolor]" border="-2">white.png</bordertexture>
+						<bordertexture colordiffuse="$VAR[value_texturecolor]" border="-2">white.png</bordertexture>
 						<bordersize>4</bordersize>
-										<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out"/>
-					<effect type="fade" start="80" end="120" time="400"/>
+						<animation type="Focus" reversible="false">
+						<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out"/>
+						<effect type="fade" start="80" end="120" time="400"/>
 				</animation>
 					</control>
 					<control type="image">
@@ -250,21 +250,39 @@
 						<height>220</height>
 						<texture border="2" background="true">$INFO[ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
-							<bordertexture colordiffuse="$VAR[value_texturecolor]" border="-2">white.png</bordertexture>
-											<animation type="Focus" reversible="false">
-					<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out"/>
-					<effect type="fade" start="80" end="120" time="400"/>
-				</animation>
+						<bordertexture colordiffuse="$VAR[value_texturecolor]" border="-2">white.png</bordertexture>
+						<animation type="Focus" reversible="false">
+						<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out"/>
+						<effect type="fade" start="80" end="120" time="400"/>
+						</animation>
 						<bordersize>4</bordersize>
 					</control>
 					<control type="image">
 						<width>385</width>
 						<height>220</height>
-							<bordertexture colordiffuse="$VAR[value_texturecolor]" border="-2">white.png</bordertexture>
+						<bordertexture colordiffuse="$VAR[value_texturecolor]" border="-2">white.png</bordertexture>
 					</control>
 				</focusedlayout>
 			</control>
-            <include>RSS</include>
+			<control type="fadelabel" id="7798">
+				<left>400</left>
+				<top>1042</top>
+				<width>1090</width>
+				<height>60</height>
+				<textoffsetx>1920</textoffsetx>
+				<textcolor>FFFFFAF0</textcolor>
+				<shadowcolor>FFDAA520</shadowcolor>
+				<align>left</align>
+				<font>Font_18A</font>
+				<scroll>true</scroll>
+				<scrollspeed>20</scrollspeed>
+				<scrollout>true</scrollout>
+				<label>$INFO[ListItem.AddonNews]</label>
+				<info>$INFO[ListItem.AddonNews]</info>
+				<info>$INFO[ListItem.AddonNews]</info>
+				<info>$INFO[ListItem.AddonNews]</info>
+				<info>$INFO[ListItem.AddonNews]</info>
+			</control>	
             <include>SettingsMenu</include>
             <!-- Menu da esquerda -->
             <include>Date</include>

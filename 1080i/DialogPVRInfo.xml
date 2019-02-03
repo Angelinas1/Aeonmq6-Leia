@@ -377,6 +377,13 @@
                         <onclick>noop</onclick>
                         <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Country))</visible>
                     </item>
+					<item>
+                        <label></label>
+                        <!-- PVR INFo -->
+                        <label2>[COLOR=$VAR[value_headercolor]]MPAA  -  [/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.mpaa)]</label2>
+                        <onclick>noop</onclick>
+                        <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.mpaa))</visible>
+                    </item>
                 </content>
             </control>
             <control type="image">
