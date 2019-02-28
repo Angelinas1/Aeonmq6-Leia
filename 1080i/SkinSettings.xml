@@ -57,7 +57,7 @@
             </control>
             <control type="button" id="4195">
                 <include>InvisibleButton</include>
-                <onfocus>SetFocus(1150)</onfocus>
+                <onfocus>SetFocus(1157)</onfocus>
                 <onfocus condition="String.Contains(skin.string(tv_panel_layout),panel_layout_1)">Skin.SetString(tv_panel_layout,panel_layout_fanart)</onfocus>
                 <onfocus condition="String.Contains(skin.string(tv_panel_layout),panel_layout_fanart)">Skin.SetString(tv_panel_layout,panel_layout_banner)</onfocus>
                 <onfocus condition="String.Contains(skin.string(tv_panel_layout),panel_layout_banner)">Skin.SetString(tv_panel_layout,panel_layout_landscape)</onfocus>

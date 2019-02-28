@@ -3437,30 +3437,31 @@
 				<visible>[PVR.CanRecordPlayingChannel + !String.Contains(skin.string(osd_audio_rec),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="13">
-				<!-- volumeup -->
-				<label></label>
-				<property name="condition">$INFO[skin.string(osd_audio_volumeup),disable)]</property>
-				<icon>osd_menu_volup.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">SetFocus(152)</onclick>
-				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_volumeup),disable)">Skin.SetString(osd_audio_volumeup,disable)</onclick>
-				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_volumeup),disable)">Skin.Reset(osd_audio_volumeup,disable)</onclick>
-				<visible>[!String.Contains(skin.string(osd_audio_volumeup),disable) | Skin.HasSetting(customosd)]</visible>
-			</item>
-			<item id="14">
 				<!-- volumedown-->
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_audio_volumedown),disable)]</property>
-				<icon>osd_menu_voldown.png</icon>
+				<icon>osd_menu_volupF.png</icon>
 				<onclick condition="!Skin.HasSetting(customosd)">SetFocus(153)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_volumedown),disable)">Skin.SetString(osd_audio_volumedown,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_volumedown),disable)">Skin.Reset(osd_audio_volumedown,disable)</onclick>
 				<visible>[!String.Contains(skin.string(osd_audio_volumedown),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
+			<item id="14">
+				<!-- volumeup -->
+				<label></label>
+				<property name="condition">$INFO[skin.string(osd_audio_volumeup),disable)]</property>
+				<icon>osd_menu_voldownF.png</icon>
+				<onclick condition="!Skin.HasSetting(customosd)">SetFocus(152)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_volumeup),disable)">Skin.SetString(osd_audio_volumeup,disable)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_volumeup),disable)">Skin.Reset(osd_audio_volumeup,disable)</onclick>
+				<visible>[!String.Contains(skin.string(osd_audio_volumeup),disable) | Skin.HasSetting(customosd)]</visible>
+			</item>
+
 			<item id="15">
 				<!-- mute -->
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_audio_mute),disable)]</property>
-				<icon>osd_menu_mute.png</icon>
+				<icon>osd_menu_lyrics.png</icon>
 				<onclick condition="!Skin.HasSetting(customosd)">SetFocus(154)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_mute),disable)">Skin.SetString(osd_audio_mute,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_mute),disable)">Skin.Reset(osd_audio_mute,disable)</onclick>

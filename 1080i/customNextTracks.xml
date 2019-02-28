@@ -113,23 +113,13 @@
                         <aspectratio align="center">stretch</aspectratio>
                     </control>
                     <control type="label">
-                        <left>6</left>
+                        <left>46</left>
                         <top>4</top>
-                        <width>75</width>
-                        <height>27</height>
-                        <align>right</align>
-                        <font>Font_18A</font>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>$VAR[value_headercolor]</textcolor>
-                    </control>
-                    <control type="label">
-                        <left>96</left>
-                        <top>4</top>
-                        <width>495</width>
+                        <width>520</width>
                         <height>27</height>
                         <align>left</align>
                         <font>Font_18A</font>
-                        <label>$INFO[ListItem.Label2]</label>
+                        <label>$INFO[ListItem.Label] [COLOR=$VAR[value_headercolor]]$INFO[ListItem.Label2, - ][/COLOR]</label>
                         <textcolor>B5FFFAF0</textcolor>
                     </control>
                 </itemlayout>
@@ -163,23 +153,13 @@
                         <aspectratio align="center">stretch</aspectratio>
                     </control>
                     <control type="label">
-                        <left>6</left>
+                        <left>46</left>
                         <top>4</top>
-                        <width>75</width>
-                        <height>27</height>
-                        <align>right</align>
-                        <font>Font_18A</font>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>$VAR[value_headercolor]</textcolor>
-                    </control>
-                    <control type="label">
-                        <left>96</left>
-                        <top>4</top>
-                        <width>495</width>
+                        <width>520</width>
                         <height>27</height>
                         <align>left</align>
                         <font>Font_18A</font>
-                        <label>$INFO[ListItem.Label2]</label>
+                        <label>$INFO[ListItem.Label] [COLOR=$VAR[value_headercolor]]$INFO[ListItem.Label2, - ][/COLOR]</label>
                         <textcolor>FFFFFAF0</textcolor>
                     </control>
                 </focusedlayout>

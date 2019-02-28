@@ -60,6 +60,12 @@
             <size>21</size>
         </font>
         <font>
+            <name>Font_13</name>
+            <!-- nao usar uppercase -->
+            <filename>aeon_common.ttf</filename>
+            <size>17</size>
+        </font>
+        <font>
             <name>Font_15</name>
             <filename>aeon_mainmenu.ttf</filename>
             <size>22</size>

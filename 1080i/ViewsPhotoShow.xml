@@ -75,8 +75,8 @@
                 <width>1756</width>
                 <height>378</height>
                 <pagecontrol>80</pagecontrol>
-                <onup>9900</onup>
                 <ondown>80</ondown>
+				<onup>Control.SetFocus(9901)</onup>
                 <orientation>horizontal</orientation>
                 <scrolltime>450</scrolltime>
                 <itemlayout width="288" height="288">

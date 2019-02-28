@@ -2072,6 +2072,7 @@
 				<top>1042</top>
 				<width>1120</width>
 				<height>30</height>
+				<animation effect="slide" start="0,0" end="0,-200" time="400" tween="cubic" easing="inout" condition="Window.IsVisible(musicosd)">Conditional</animation>
 				<textoffsetx>1120</textoffsetx>
 				<textcolor>FFFFFAF0</textcolor>
 				<shadowcolor>FFDAA520</shadowcolor>

@@ -439,7 +439,7 @@
                         <effect type="fade" start="100" end="0" time="200" />
                     </animation>
                     <animation effect="slide" time="200" start="0,0" end="0,-30" tween="cubic" easing="out" condition="!Skin.HasSetting(nolowlistvideocase)">Conditional</animation>
-                    <visible>![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nolowlistdiscart) | String.Contains(ListItem.Path,videodb://movies/sets)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
+                    <visible>![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nolowlistdiscart) | String.Contains(ListItem.Path,videodb://movies/sets)] + [Window.IsActive(videos) + Control.IsVisible(9923)] | Window.IsActive(music)</visible>
                     <control type="image">
                         <left>168</left>
                         <top>105</top>
@@ -448,6 +448,7 @@
                         <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
+						                    <animation effect="slide" time="200" start="0,0" end="20,30" tween="cubic" easing="out" condition="!Skin.HasSetting(nolowlistaudiocase)">Conditional</animation>
                         <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
                         <include>Animation_ViewsCDart</include>
                     </control>

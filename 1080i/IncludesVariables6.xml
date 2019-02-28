@@ -6175,7 +6175,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(2515)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2515).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
 		<value condition="Control.HasFocus(2516) + !String.IsEmpty(Container(2516).ListItem.Art(tvshow.clearart))">$INFO[Container(2516).ListItem.Art(tvshow.clearart)]</value>
 		<value condition="Control.HasFocus(2516)">$INFO[Container(2516).ListItem.Art(clearart)]</value>
-		<value condition="Control.HasFocus(2517)">http://localhost:52307/getartworkk&amp;title=$INFO[Container(2517).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
+		<value condition="Control.HasFocus(2517)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2517).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
 		<value condition="Control.HasFocus(2518)">http://localhost:52307/getartwork&amp;title=$INFO[Container(2518).ListItem.Title]&amp;imdb_id=&amp;mediatype=clearart</value>
 	</variable>
 	<variable name="value_audiochannelshome1">

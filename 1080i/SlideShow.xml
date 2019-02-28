@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="2007">
+<window id="12007">
     <!-- Aeon MQ 6 -->
-    <defaultcontrol>2</defaultcontrol>
-    <controls></controls>
+    <controls>
+	<include>slideshows</include>
+	</controls>
 </window>

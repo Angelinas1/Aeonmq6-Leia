@@ -2333,7 +2333,7 @@
 		<control type="list" id="510">
 			<visible>Control.IsVisible(8003) + String.IsEqual(Container(9000).ListItem.Property(target),plus_epg)</visible>
 			<animation effect="slide" start="0,0" end="400,0" time="0" condition="![Control.HasFocus(510) | ControlGroup(512).HasFocus]+Skin.HasSetting(homemq) + Skin.HasSetting(mainmenuvertical)">Conditional</animation>
-			<animation effect="zoom" start="100" end="65" center="auto" time="0" condition="![Control.HasFocus(510) | ControlGroup(512).HasFocus]+Skin.HasSetting(homemq) + Skin.HasSetting(mainmenuvertical)">Conditional</animation>
+			<animation effect="zoom" start="100" end="65" center="auto" time="0" condition="![Control.HasFocus(510) | ControlGroup(512).HasFocus]+Skin.HasSetting(homemqhomemq) + Skin.HasSetting(mainmenuvertical)">Conditional</animation>
 			<content target="videos">$VAR[value_widgetsplus]</content>
 			<viewtype label="19031">list</viewtype>
 			<left>0</left>
@@ -5446,15 +5446,24 @@
                         <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.0.Art.DiscArt))</visible>
                     </control>
                 </control>
-	<!-- ClearArt  -->	
+	<!-- ClearArt -->	
 	<control type="image">
 	<left>1500</left>
-	<top>320</top>
+	<top>340</top>
 	<width>360</width>
 	<height>220</height>
-	<animation effect="slide" time="500" start="0,0" end="0,18" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_layout_1)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,-10" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_zoom)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,90" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_layout_cd)|String.Contains(skin.string(m_panel_layout),panel_layout_banner)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,-26" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_zoom) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="[String.IsEqual(skin.string(m_panel_layout),panel_layout_1) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)] | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,70" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_layout_banner) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,50" tween="cubic" easing="out" condition="[String.Contains(skin.string(m_panel_layout),panel_layout_cd) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,75" tween="cubic" easing="out" condition="String.Contains(skin.string(music_panel_layout),panel_zoom) + String.Contains(Container(9000).ListItem.Property(widgets),music)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,63" tween="cubic" easing="out" condition="!String.Contains(skin.string(music_panel_layout),panel_zoom) + String.Contains(Container(9000).ListItem.Property(widgets),music)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,-20" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_fanart) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_landscape) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,70" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layoutbannertv) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,-120" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_shelf) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_1) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,-20" tween="cubic" easing="out" condition="String.Contains(skin.string(extra_panel_layout),panel_layout) + String.StartsWith(Container(9000).ListItem.Property(widgets),extras)">conditional</animation>
 	<aspectratio align="center" aligny="center">keep</aspectratio>
 	<texture>$VAR[value_pvrclearart]</texture>
 	<visible>[String.StartsWith(Container(9000).ListItem.Property(target),video)]|String.StartsWith(Container(9000).ListItem.Property(widgets),vpl)|String.StartsWith(Container(9000).ListItem.Property(widgets),vnodes)|String.Contains(Container(9000).ListItem.Property(widgets),extras.mostplayedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.popularmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.trendingmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.traktsimilarmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.topratedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.upcoming)|String.Contains(Container(9000).ListItem.Property(widgets),extras.incinemas)|String.Contains(Container(9000).ListItem.Property(widgets),channel.tv)|String.Contains(Container(9000).ListItem.Property(widgets),channel.reacent)|String.Contains(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.Contains(Container(9000).ListItem.Property(widgets),music)</visible>

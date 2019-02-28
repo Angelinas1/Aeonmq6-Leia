@@ -112,6 +112,24 @@
                         <icon>$VAR[value_button_random]</icon>
                         <onclick>PlayerControl(Random)</onclick>
                     </item>
+                    <item id="11">
+                        <!-- volume down -->
+                        <label></label>
+                        <icon>osd_menu_volupF.png</icon>
+                        <onclick>VolumeDown</onclick>
+                    </item>
+                    <item id="12">
+                        <!-- volume up -->
+                        <label></label>
+                        <icon>osd_menu_voldownF.png</icon>
+                        <onclick>VolumeUp</onclick>
+                    </item>
+                    <item id="13">
+                        <!-- mute -->
+                        <label></label>
+                        <icon>osd_menu_lyrics.png</icon>
+                        <onclick>Mute</onclick>
+                    </item>
                 </content>
             </control>
             <control type="group">

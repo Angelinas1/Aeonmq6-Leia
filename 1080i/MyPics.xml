@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="2">
     <!-- Aeon MQ 6 -->
+	<menucontrol>9900</menucontrol>
     <defaultcontrol>51</defaultcontrol>
     <onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
     <views>51,56,59,79</views>
@@ -14,9 +15,37 @@
         </control>
         <control type="image" id="555">
             <!-- Fanart -->
-            <include>WindowBG</include>
-            <aspectratio>keep</aspectratio>
+			<width>1920</width>
+			<height>1080</height>
+			<aspectratio>keep</aspectratio>
             <texture background="true">$INFO[ListItem.filenameandpath]</texture>
+			<visible>!Control.HasFocus(79)</visible>
+        </control>
+        <control type="multiimage" id="556">
+            <!-- Fanart -->
+			<width>1920</width>
+			<height>1080</height>
+			<fadetime>100</fadetime>
+			<animation effect="zoom" start="100" end="120" center="auto" time="12000" tween="cubic" easing="inout" pulse="true" reversible="true" condition="Skin.HasSetting(animtionimage)">Conditional</animation>
+			<animation effect="slide" start="15,15" end="-15,-15" time="5000" tween="cubic" easing="inout" pulse="true" reversible="true" condition="Skin.HasSetting(animtionimage)">Conditional</animation>
+			<animation effect="zoom" start="100" end="120" center="auto" time="12000" tween="cubic" easing="inout" pulse="true" reversible="true" condition="Skin.HasSetting(animtionimage)">Conditional</animation>
+			<animation effect="slide" start="15,15" end="-15,-15" time="5000" tween="cubic" easing="inout" pulse="true" reversible="true" condition="Skin.HasSetting(animtionimage)">Conditional</animation>
+			<aspectratio>keep</aspectratio>
+            <imagepath background="true">$INFO[ListItem.filenameandpath]</imagepath>
+			<visible>Control.HasFocus(79) + ![Container(79).OnNext | Container(79).OnPrevious]+![Container(79).Column(0)|Container(79).Column(2)|Container(79).Column(4)]</visible>
+        </control>
+        <control type="multiimage" id="557">
+            <!-- Fanart -->
+			<width>1920</width>
+			<height>1080</height>
+			<fadetime>100</fadetime>
+			<animation effect="zoom" start="100" end="80" center="auto" time="7000" tween="cubic" easing="inout" pulse="true" reversible="true" condition="Skin.HasSetting(animtionimage)">Conditional</animation>
+			<animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" reversible="true" condition="Skin.HasSetting(animtionimage)">Conditional</animation>
+			<animation effect="zoom" start="100" end="80" center="auto" time="7000" tween="cubic" easing="inout" pulse="true" reversible="true" condition="Skin.HasSetting(animtionimage)">Conditional</animation>
+			<animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" reversible="true" condition="Skin.HasSetting(animtionimage)">Conditional</animation>
+			<aspectratio>keep</aspectratio>
+            <imagepath background="true">$INFO[ListItem.filenameandpath]</imagepath>
+			<visible>Control.HasFocus(79) + ![Container(79).OnNext | Container(79).OnPrevious]+[Container(79).Column(0)|Container(79).Column(2)|Container(79).Column(4)]</visible>
         </control>
         <control type="group">
             <!-- default group -->
@@ -36,6 +65,13 @@
                     <onfocus condition="Skin.HasSetting(kiosk) + String.IsEmpty(ListItem.Trailer)">SetFocus(50)</onfocus>
                     <onfocus condition="Skin.HasSetting(kiosk) + !String.IsEmpty(ListItem.Trailer)">SetFocus(90000)</onfocus>
                 </control>
+                <control type="button" id="9901">
+                    <!-- to menu/kiosk condition -->
+                    <include>InvisibleButton</include>
+					<onfocus condition="Skin.HasSetting(animtionimage)">Skin.Reset(animtionimage)</onfocus>
+					<onfocus condition="!Skin.HasSetting(animtionimage)">Skin.SetBool(animtionimage)</onfocus>
+                    <onfocus>SetFocus(79)</onfocus>
+                </control>	
                 <control type="button" id="9910">
                     <!-- panel focus -->
                     <include>InvisibleButton</include>

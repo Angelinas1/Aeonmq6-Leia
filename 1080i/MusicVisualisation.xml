@@ -167,6 +167,13 @@
             <texture background="true">ayes1.png</texture>
         </control>
 		</control>
+        <control type="visualisation" id="2">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <visible>[String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis)]+Skin.HasSetting(nolyrics_on)</visible>
+        </control>
         <control type="image">
             <!-- Fanart -->
 			<left>0</left>
@@ -174,18 +181,10 @@
 			<width>1920</width>
 			<height>1400</height>
 			<fadetime>1200</fadetime>
+			<animation effect="fade" end="40" condition="[String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis)]+Skin.HasSetting(nolyrics_on)">Conditional</animation>
 			<texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.AlbumThumb)]</texture>
 			<aspectratio align="right" aligny="top">scale</aspectratio>
 			<visible>Skin.HasSetting(nolyrics_on)+String.IsEqual(skin.string(vis_layout),style6)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.AlbumThumb))</visible>
-        </control>
-        <control type="visualisation" id="2">
-            <left>0</left>
-            <top>0</top>
-            <width>1920</width>
-            <height>1080</height>
-            <animation effect="fade" start="0" end="100" time="400">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-            <visible>[String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis)]+Skin.HasSetting(nolyrics_on)</visible>
         </control>
 		<include condition="String.IsEqual(skin.string(vis_layout),style1)">style1</include>
 		<include condition="String.IsEqual(skin.string(vis_layout),style2)">style2</include>
