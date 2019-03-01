@@ -3204,24 +3204,24 @@
 				<visible>[!String.Contains(skin.string(osd_video_listmode),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="13">
-				<!-- volumeup -->
-				<label></label>
-				<property name="condition">$INFO[skin.string(osd_video_volumeup),disable)]</property>
-				<icon>osd_menu_volup.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">VolumeUp</onclick>
-				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_video_volumeup),disable)">Skin.SetString(osd_video_volumeup,disable)</onclick>
-				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_video_volumeup),disable)">Skin.Reset(osd_video_volumeup,disable)</onclick>
-				<visible>[!String.Contains(skin.string(osd_video_volumeup),disable) | Skin.HasSetting(customosd)]</visible>
-			</item>
-			<item id="14">
 				<!-- volumedown-->
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_video_volumedown),disable)]</property>
-				<icon>osd_menu_voldown.png</icon>
+				<icon>osd_menu_voldownF.png</icon>
 				<onclick condition="!Skin.HasSetting(customosd)">VolumeDown</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_video_volumedown),disable)">Skin.SetString(osd_video_volumedown,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_video_volumedown),disable)">Skin.Reset(osd_video_volumedown,disable)</onclick>
 				<visible>[!String.Contains(skin.string(osd_video_volumedown),disable) | Skin.HasSetting(customosd)]</visible>
+			</item>
+			<item id="14">
+				<!-- volumeup -->
+				<label></label>
+				<property name="condition">$INFO[skin.string(osd_video_volumeup),disable)]</property>
+				<icon>osd_menu_volupF.png</icon>
+				<onclick condition="!Skin.HasSetting(customosd)">VolumeUp</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_video_volumeup),disable)">Skin.SetString(osd_video_volumeup,disable)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_video_volumeup),disable)">Skin.Reset(osd_video_volumeup,disable)</onclick>
+				<visible>[!String.Contains(skin.string(osd_video_volumeup),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="15">
 				<!-- mute -->

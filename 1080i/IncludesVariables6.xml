@@ -6599,9 +6599,9 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<!-- repeat all -->
 		<value condition="Container(101).HasFocus(12)">$LOCALIZE[590]</value>
 		<!-- random -->
-		<value condition="Container(101).HasFocus(13)">$LOCALIZE[31754] +</value>
+		<value condition="Container(101).HasFocus(13)">$LOCALIZE[31754] -</value>
 		<!-- volumeup -->
-		<value condition="Container(101).HasFocus(14)">$LOCALIZE[31754] -</value>
+		<value condition="Container(101).HasFocus(14)">$LOCALIZE[31754] +</value>
 		<!-- volumedown -->
 		<value condition="Container(101).HasFocus(15)">$LOCALIZE[31755]</value>
 		<!-- mute -->
