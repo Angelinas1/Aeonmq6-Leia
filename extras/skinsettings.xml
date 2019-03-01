@@ -1,11 +1,17 @@
 <settings>
-    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="movie.recent" label="Recent" condition="" icon="special://skin/extras/widgetthumbs/1.jpg" description="Reacent Movie widget provided by service.library.data.provider.">
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="movie.recent" label="Recent" condition="" icon="special://skin/extras/widgetthumbs/1.jpg" description="Reacent Movie widget provided by Kodi.">
+        <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video1)</onselect>
+    </setting>
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="movie.recentldt" label="RecentLDT" condition="" icon="special://skin/extras/widgetthumbs/1.jpg" description="Reacent Movie widget provided by service.library.data.provider.">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video1)</onselect>
     </setting>
     <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="movie.random" label="Random" condition="" icon="special://skin/extras/widgetthumbs/2.jpg" description="Random Movie widget provided by service.library.data.provider.">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video1)</onselect>
     </setting>
     <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="movie.recommended" label="Recomended" condition="" icon="special://skin/extras/widgetthumbs/3.jpg" description="In Progres Movie widget provided by service.library.data.provider.">
+        <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video1)</onselect>
+    </setting>
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="movie.unwatched" label="Unwatched" condition="" icon="special://skin/extras/widgetthumbs/1.jpg" description="Reacent Movie widget provided by Kodi.">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video1)</onselect>
     </setting>
     <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="movie.genre" label="Genre" condition="" icon="special://skin/extras/widgetthumbs/4.jpg" description="Widget aranged by Genre">

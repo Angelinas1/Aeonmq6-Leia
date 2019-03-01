@@ -1764,9 +1764,9 @@
 		<left>140</left>
 		<top>100</top>
 	    <control type="image">
-		<animation effect="slide" start="0,0" end="0,350" time="4600" delay="3500" tween="quadratic" easing="out" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))+String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ThumbBack))">Conditionl</animation>
-		<animation effect="slide" start="0,350" end="0,0" time="4600" delay="3500" tween="quadratic" easing="out" reversible="false" condition="String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))">Conditionl</animation>
-		<animation effect="slide" start="0,0" end="0,350" time="4600" delay="3500" tween="quadratic" easing="out" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ThumbBack))">Conditionl</animation>
+		<animation effect="slide" start="0,0" end="0,350" time="4600" delay="3500" tween="quadratic" easing="out" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))+String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ThumbBack))">Conditional</animation>
+		<animation effect="slide" start="0,350" end="0,0" time="4600" delay="3500" tween="quadratic" easing="out" reversible="false" condition="String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,350" time="4600" delay="3500" tween="quadratic" easing="out" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ThumbBack))">Conditional</animation>
 		<animation effect="fade" start="100" end="0" delay="3500" time="3600" tween="quadratic" easing="out" condition="String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))">Conditional</animation>
 		<animation effect="rotate" end="-360" center="auto" time="16000" delay="3500" loop="true" reversible="false" condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.DiscArt))+Integer.IsGreater(MusicPlayer.Time,13)">Conditional</animation>
 	        <left>10</left>

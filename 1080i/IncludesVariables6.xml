@@ -3988,6 +3988,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_widgetsvideo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recent)">videodb://recentlyaddedmovies/</value>
+				<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recentldt)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window(0).Property(recentmovies)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.random)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window(0).Property(randommovies)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window(0).Property(recommendedmovies)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.unwatched)">special://skin/playlists/movies_unwatched.xsp</value>
@@ -4189,6 +4190,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_widgetsmodevideo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recent)">$LOCALIZE[31003] - $LOCALIZE[31583]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recentldt)">$LOCALIZE[31003] - $LOCALIZE[31583] LDT</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.random)">$LOCALIZE[31003] - $LOCALIZE[31584]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended)">$LOCALIZE[31003] - $LOCALIZE[31585]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended.recent)">$LOCALIZE[31003] - $LOCALIZE[31585] + $LOCALIZE[31583]</value>
