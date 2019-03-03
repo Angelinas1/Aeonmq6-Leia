@@ -69,6 +69,85 @@
             <include>SettingsContentTitle</include>
             <label>$INFO[Control.GetLabel(29)] $INFO[Control.GetLabel(30)]</label>
         </control>
+		<control type="fixedlist" id="11">
+			<top>160</top>
+			<left>359</left>
+			<width>1104</width>
+			<onleft>noop</onleft>
+			<onright>noop</onright>
+			<onup>9000</onup>
+			<ondown>10</ondown>
+			<orientation>horizontal</orientation>
+			<scrolltime>200</scrolltime>
+			<visible>Control.IsVisible(10)</visible>
+			<itemlayout height="50" width="368">
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>1</width>
+					<height>38</height>
+					<texture>separator_v.png</texture>
+				</control>
+				<control type="image">
+					<left>1</left>
+					<top>0</top>
+					<width>366</width>
+					<height>49</height>
+					<texture>darkgrey.png</texture>
+					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+					<include>Animation_DefaultGlass2</include>
+				</control>
+				<control type="label">
+					<left>5</left>
+					<width>358</width>
+					<height>48</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>80FFFAF0</textcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout height="50" width="368">
+				<control type="image">
+					<left>1</left>
+					<top>0</top>
+					<width>366</width>
+					<height>50</height>
+					<texture>darkgrey.png</texture>
+					<visible>!Control.Hasfocus(11)</visible>
+				</control>
+				<control type="image">
+					<left>1</left>
+					<top>0</top>
+					<width>366</width>
+					<height>50</height>
+					<texture>settings_button_focus.png</texture>
+					<visible>Control.Hasfocus(11)</visible>
+				</control>
+				<control type="label">
+					<left>5</left>
+					<width>358</width>
+					<height>48</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>80FFFAF0</textcolor>
+					<scroll>true</scroll>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>!Control.Hasfocus(11)</visible>
+				</control>
+				<control type="label">
+					<left>5</left>
+					<width>358</width>
+					<height>48</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>FF101010</textcolor>
+					<scroll>true</scroll>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>Control.Hasfocus(11)</visible>
+				</control>
+			</focusedlayout>
+		</control>
     </include>
     <include name="PVRCommonInfo">
         <control type="image">
@@ -240,7 +319,7 @@
             <control type="image">
                 <left>0</left>
                 <top>210</top>
-                <width>360</width>
+                <width>1920</width>
                 <height>38</height>
                 <texture>grey.png</texture>
                 <colordiffuse>E4101010</colordiffuse>
@@ -253,9 +332,9 @@
                 <height>645</height>
                 <onleft>9000</onleft>
                 <onright>71</onright>
-                <onup>9000</onup>
+                <onup>11</onup>
                 <ondown>10</ondown>
-                <onback>9900</onback>
+                <onback>11</onback>
 				<orientation>vertical</orientation>
                 <pagecontrol>71</pagecontrol>
                 <scrolltime>350</scrolltime>
@@ -559,7 +638,6 @@
                 <visible>!Player.HasMedia + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Thumb)) </visible>
             </control>
             <control type="image">
-                <animation effect="zoom" pulse="true" start="100" end="98" time="12000" condition="!Player.HasMedia">Conditional</animation>
                 <left>502</left>
                 <top>60</top>
                 <width>915</width>
@@ -571,7 +649,6 @@
                 <visible>!Player.HasMedia + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.FanArt)) </visible>
             </control>
             <control type="image">
-                <animation effect="zoom" pulse="true" start="100" end="98" time="12000" condition="!Player.HasMedia">Conditional</animation>
                 <left>502</left>
                 <top>60</top>
                 <width>915</width>

@@ -1257,14 +1257,6 @@
 </include>
     <!-- ######################################################################### Letras em modo karaoke ######################################################################### -->
     <include name="LyricsKaraoke">
-	            <control type="image" id="7975">
-				<include>InvisibleButton</include>
-                <texture>$VAR[MusicVisInfo]</texture>
-            </control>
-	            <control type="image" id="7977">
-				<include>InvisibleButton</include>
-                <texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.Banner)]</texture>
-            </control>
         <control type="group">
             <!-- karaoke mode -->
             <animation effect="zoom" start="100" end="80" time="700" tween="sine" easing="inout" delay="1000">WindowOpen</animation>
@@ -4446,5 +4438,5 @@
 			</control>
 		</control>
 </include>
-			
+
 			</includes>

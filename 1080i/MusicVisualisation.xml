@@ -2,7 +2,7 @@
 <window id="2006">
     <!-- Aeon MQ 6 -->
     <onload condition="System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
-    <onload condition="!Skin.HasSetting(nonexttracks_on) + ![String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(novisfurniture) | !Skin.HasSetting(nolyrics_on)]">ActivateWindow(5600)</onload>
+    <onload condition="!Skin.HasSetting(nonexttracks_on) + ![String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(novisfurniture) | !Skin.HasSetting(nolyrics_on)]+!String.IsEqual(skin.string(vis_layout),style6)">ActivateWindow(5600)</onload>
 	<onload condition="System.HasAddon(script.colorbox)">SetProperty(NINE_manual_set,"info=blur,id=$VAR[MusicVisInfo]",home)</onload>
 	<onload>SetProperty(FIVE_daemon_fire,True,home)</onload>
 	<onload>SetProperty(SEVEN_daemon_fire,True,home)</onload>
