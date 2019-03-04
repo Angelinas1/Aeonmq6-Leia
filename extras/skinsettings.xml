@@ -182,6 +182,9 @@
     <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.airingepisodes" label="airingepisodes" condition="System.HasAddon(script.extendedinfo)" icon="special://skin/extras/widgetthumbs/66.jpg" description="Widget from extendedinfo script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras)</onselect>
     </setting>
+    <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.helper.recentmovies" label="Helper Recent Movies" condition="" icon="special://skin/extras/widgetthumbs/67.jpg" description="Widget from skin helper script">
+        <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras.helper)</onselect>
+    </setting>
     <setting id="$INFO[Container(9000).ListItem.Property(name)].widgets" value="extras.helper.recommendedmovies" label="Helper Recommended Movies" condition="" icon="special://skin/extras/widgetthumbs/67.jpg" description="Widget from skin helper script">
         <onselect condition="">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras.helper)</onselect>
     </setting>

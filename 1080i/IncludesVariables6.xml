@@ -3988,7 +3988,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_widgetsvideo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recent)">videodb://recentlyaddedmovies/</value>
-				<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recentldt)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window(0).Property(recentmovies)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recentldt)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window(0).Property(recentmovies)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.random)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window(0).Property(randommovies)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recommended)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window(0).Property(recommendedmovies)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.unwatched)">special://skin/playlists/movies_unwatched.xsp</value>
@@ -4153,6 +4153,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedmovies)">plugin://script.skin.helper.widgets/?action=recommended&amp;mediatype=movies&amp;reload=$INFO[Window(home).Property(widgetreload-movies)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedmedia)">plugin://script.skin.helper.widgets/?action=recommended&amp;mediatype=media&amp;reload=$INFO[Window(home).Property(widgetreload2)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentmedia)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=media&amp;reload=$INFO[Window(home).Property(widgetreload2)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentmovies)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=movies&amp;reload=$INFO[Window(home).Property(widgetreload-movies)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.inprogressandrecommendedmedia)">plugin://script.skin.helper.widgets/?action=inprogressandrecommended&amp;mediatype=media&amp;reload=$INFO[Window(home).Property(widgetreload2)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.nextepisodes)">plugin://script.skin.helper.widgets/?action=nextepisodes&amp;limit=50&amp;reload=$INFO[Window(home).Property(widgetreload)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentalbums)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=albums&amp;reload=$INFO[Window(home).Property(widgetreload-music)]</value>
@@ -4357,6 +4358,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.mostplayedroms)">$LOCALIZE[31953] (YouTube)</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras2.mostplayedroms)">$LOCALIZE[31953] (YouTube)</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.popularpeople)">Popular People (The MovieDB)</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentmovies)">Recent Movies (SHS)</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedmovies)">Recomended Movies (Script.helper)</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recommendedmedia)">Recomended Media (Script.helper)</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentmedia)">Recent Media (Script.helper)</value>

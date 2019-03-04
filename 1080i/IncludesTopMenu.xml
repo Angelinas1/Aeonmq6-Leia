@@ -3958,7 +3958,7 @@
 				<scrolltime>450</scrolltime>
 				<control type="button" id="28">
 					<include>TopMenuButton</include>
-					<label></label>
+					<label>31068</label>
 					<ondown>SetFocus(50)</ondown>
 					<visible>!Control.IsVisible(50)</visible>
 				</control>
