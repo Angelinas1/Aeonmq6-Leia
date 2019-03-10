@@ -1900,20 +1900,16 @@
 				</control>
 				<control type="group">
 					<!-- CDART VIDEO -->
-					<left>105</left>
+					<left>85</left>
 					<top>105</top>
-					<animation condition="true" effect="rotatey" center="105" start="0" end="-45" time="0">Conditional</animation>
-					<animation type="Focus">
-						<effect type="slide" start="0,0" end="-48,0" time="8000" delay="8000" tween="cubic" easing="out"/>
-					</animation>
 					<control type="image">
 						<width>168</width>
 						<height>168</height>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
+						<texture fallback="cdart.png" diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
 						<fadetime>FanartCrossFadeTime</fadetime>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<animation effect="slide" start="0,0" end="-48,0" time="8000" delay="8000" tween="cubic" easing="out" condition="Control.HasFocus(510)">Conditional</animation>
 						<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
-						<include>Animation_ViewsCDart</include>
 					</control>
 					<control type="image">
 						<width>168</width>
@@ -1922,13 +1918,12 @@
 						<fadetime>FanartCrossFadeTime</fadetime>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
-						<include>Animation_ViewsCDart</include>
 						<visible>String.IsEmpty(ListItem.Art(discart))</visible>
 					</control>
 				</control>
 				<control type="group">
 					<!-- modern case left -->
-					<animation type="Focus" reversible="false" condition="true">
+					<animation type="TYPE" reversible="false" condition="true">
 						<effect type="slide" start="0,0" end="-8,0" time="8000" delay="9000" tween="cubic" easing="out"/>
 						<effect type="slide" start="0,0" end="0,-2" time="8000" delay="9000" tween="cubic" easing="out"/>
 						<effect type="zoom" start="100" end="101" time="8000" delay="9000" tween="cubic" easing="out"/>
@@ -5455,7 +5450,7 @@
 	<animation effect="slide" time="500" start="0,0" end="0,-26" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_zoom) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
 	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="[String.IsEqual(skin.string(m_panel_layout),panel_layout_1) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)] | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
 	<animation effect="slide" time="500" start="0,0" end="0,70" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_layout_banner) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,50" tween="cubic" easing="out" condition="[String.Contains(skin.string(m_panel_layout),panel_layout_cd) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,50" tween="cubic" easing="out" condition="[String.Contains(skin.string(m_panel_layout),panel_layout_cd) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)]+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
 	<animation effect="slide" time="500" start="0,0" end="0,75" tween="cubic" easing="out" condition="String.Contains(skin.string(music_panel_layout),panel_zoom) + String.Contains(Container(9000).ListItem.Property(widgets),music)">conditional</animation>
 	<animation effect="slide" time="500" start="0,0" end="0,63" tween="cubic" easing="out" condition="!String.Contains(skin.string(music_panel_layout),panel_zoom) + String.Contains(Container(9000).ListItem.Property(widgets),music)">conditional</animation>
 	<animation effect="slide" time="500" start="0,0" end="0,-20" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_fanart) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>

@@ -2932,7 +2932,7 @@
 			</item>
 			<item id="160">
 				<!-- epg osd -->
-				<icon>osd_menun_bg.png</icon>
+				<icon>osd_menu_epg.png</icon>
 				<onclick>ActivateWindow(pvrosdchannels)</onclick>
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</item>

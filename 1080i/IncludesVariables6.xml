@@ -6517,6 +6517,9 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Container(100).HasFocus(1) + String.Contains(skin.string(videofurniture),partial)">$LOCALIZE[31398] - $LOCALIZE[31190]</value>
 		<!-- furniture parcial -->
 		<value condition="Container(100).HasFocus(1) + String.Contains(skin.string(videofurniture),hide)">$LOCALIZE[31398] - $LOCALIZE[31191]</value>
+		<!-- Epg/livetv -->
+		<value condition="Container(100).HasFocus(160)">EPG</value>
+		<value condition="Container(100).HasFocus(161)">PVR channel guide</value>
 		<!-- furniture escondido -->
 		<value condition="Container(100).HasFocus(2)">$LOCALIZE[23050]</value>
 		<!-- teletext -->
