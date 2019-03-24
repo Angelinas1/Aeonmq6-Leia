@@ -96,6 +96,32 @@
                 <texturefocus></texturefocus>
                 <texturenofocus></texturenofocus>
             </control>
+            <control type="image">
+                <left>302</left>
+                <top>20</top>
+                <width>1527</width>
+                <height>100</height>
+                <texture>darkgrey.png</texture>
+				<visible>![String.IsEmpty(Control.GetLabel(313))|String.IsEmpty(Control.GetLabel(314))]</visible>
+            </control>
+            <control type="label" id="313">
+                <left>472</left>
+                <top>25</top>
+                <width>1185</width>
+                <height>40</height>
+                <font>Font_23</font>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            <control type="label" id="314">
+                <left>472</left>
+                <top>70</top>
+                <width>1185</width>
+                <height>40</height>
+                <font>Font_23</font>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
             <control type="group">
                 <left>302</left>
                 <top>205</top>
@@ -107,7 +133,7 @@
                     <width>267</width>
                     <height>102</height>
                     <label>20177</label>
-                    <onleft>111</onleft>
+                    <onleft>301</onleft>
                     <onright>100</onright>
                     <onup>307</onup>
                     <ondown>302</ondown>
@@ -193,7 +219,7 @@
                     <height>102</height>
                     <onleft>105</onleft>
                     <onright>107</onright>
-                    <onup>305</onup>
+                    <onup>8</onup>
                     <ondown>126</ondown>
                 </control>
                 <control type="button" id="107">
@@ -205,7 +231,7 @@
                     <height>102</height>
                     <onleft>106</onleft>
                     <onright>108</onright>
-                    <onup>306</onup>
+                    <onup>8</onup>
                     <ondown>127</ondown>
                 </control>
                 <control type="button" id="108">
@@ -217,7 +243,7 @@
                     <height>102</height>
                     <onleft>107</onleft>
                     <onright>109</onright>
-                    <onup>306</onup>
+                    <onup>305</onup>
                     <ondown>128</ondown>
                 </control>
                 <control type="button" id="109">
@@ -229,7 +255,7 @@
                     <height>102</height>
                     <onleft>108</onleft>
                     <onright>110</onright>
-                    <onup>306</onup>
+                    <onup>305</onup>
                     <ondown>129</ondown>
                 </control>
                 <control type="button" id="110">
@@ -252,9 +278,22 @@
                     <width>102</width>
                     <height>102</height>
                     <onleft>110</onleft>
+                    <onright>301</onright>
+                    <onup>306</onup>
+                    <ondown>306</ondown>
+                </control>
+                <control type="button" id="301">
+                    <description>cancel button</description>
+                    <include>KeyboardSingle</include>
+                    <left>1320</left>
+                    <top>0</top>
+                    <width>207</width>
+                    <height>416</height>
+                    <label>Cancel</label>
+                    <onleft>111</onleft>
                     <onright>300</onright>
                     <onup>306</onup>
-                    <ondown>131</ondown>
+                    <ondown>306</ondown>
                 </control>
                 <control type="togglebutton" id="302">
                     <description>SHIFT button</description>
@@ -263,7 +302,7 @@
                     <width>267</width>
                     <height>102</height>
                     <label>20178</label>
-                    <onleft>131</onleft>
+                    <onleft>301</onleft>
                     <onright>120</onright>
                     <onup>300</onup>
                     <ondown>303</ondown>
@@ -416,7 +455,7 @@
                     <width>102</width>
                     <height>102</height>
                     <onleft>130</onleft>
-                    <onright>302</onright>
+                    <onright>301</onright>
                     <onup>111</onup>
                     <ondown>151</ondown>
                 </control>
@@ -428,7 +467,7 @@
                     <height>102</height>
                     <label>20179</label>
                     <textwidth>225</textwidth>
-                    <onleft>151</onleft>
+                    <onleft>301</onleft>
                     <onright>140</onright>
                     <onup>302</onup>
                     <ondown>304</ondown>
@@ -581,7 +620,7 @@
                     <width>102</width>
                     <height>102</height>
                     <onleft>150</onleft>
-                    <onright>303</onright>
+                    <onright>301</onright>
                     <onup>131</onup>
                     <ondown>171</ondown>
                 </control>
@@ -593,7 +632,7 @@
                     <height>102</height>
                     <label>@#!*   </label>
                     <textwidth>225</textwidth>
-                    <onleft>171</onleft>
+                    <onleft>301</onleft>
                     <onright>160</onright>
                     <onup>303</onup>
                     <ondown>307</ondown>
@@ -744,7 +783,7 @@
                     <width>102</width>
                     <height>102</height>
                     <onleft>170</onleft>
-                    <onright>304</onright>
+                    <onright>301</onright>
                     <onup>151</onup>
                     <ondown>306</ondown>
                 </control>
@@ -810,7 +849,7 @@
                     <textwidth>375</textwidth>
                     <onleft>32</onleft>
                     <onright>305</onright>
-                    <onup>167</onup>
+                    <onup>166</onup>
                     <ondown condition="!Control.IsVisible(5000)">106</ondown>
 					<ondown condition="Control.IsVisible(5000)">5000</ondown>
                     <texturenofocus>darkgrey.png</texturenofocus>
@@ -843,7 +882,7 @@
                     <label>&gt;</label>
                     <onleft>305</onleft>
                     <onright>307</onright>
-                    <onup>169</onup>
+                    <onup>301</onup>
                     <ondown condition="!Control.IsVisible(5000)">109</ondown>
 					<ondown condition="Control.IsVisible(5000)">5000</ondown>
                 </control>

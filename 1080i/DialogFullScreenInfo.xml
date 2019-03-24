@@ -200,7 +200,19 @@
                     <align>right</align>
                     <font>Font_23</font>
                     <textcolor>FFFFFAF0</textcolor>
-                    <label>$INFO[Player.TimeRemaining]$INFO[PVR.EpgEventRemainingTime]</label>
+                    <label>$INFO[Player.TimeRemaining]</label>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+                </control>
+                <control type="label">
+                    <left>1538</left>
+                    <top>1020</top>
+                    <width>180</width>
+                    <height>38</height>
+                    <align>right</align>
+                    <font>Font_23</font>
+                    <textcolor>FFFFFAF0</textcolor>
+                    <label>$INFO[PVR.EpgEventRemainingTime]</label>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
                 </control>
                 <control type="image">
                     <left>1768</left>
@@ -410,7 +422,7 @@
                 <align>left</align>
                 <font>Font_17</font>
                 <textcolor>$VAR[value_headercolor]</textcolor>
-                <label>$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Title, - ,]$INFO[Window(Home).Property(SkinHelper.Player.subtitles)]</label>
+                <label>$INFO[VideoPlayer.TVShowTitle,, -]$INFO[VideoPlayer.Title,, -] $INFO[Window(Home).Property(SkinHelper.Player.subtitles)]</label>
             </control>
             <control type="textbox">
                 <!-- Plot -->

@@ -775,14 +775,14 @@
 					<label>31490</label>
 					<onclick>Skin.ToggleSetting(slimrightlistvideo)</onclick>
 					<selected>!Skin.HasSetting(slimrightlistvideo)</selected>
-					<visible>String.IsEqual(Container.Viewmode,RIGHT LIST) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)]</visible>
+					<visible>String.IsEqual(Container.Viewmode,RIGHT LIST) + Window.IsActive(videos)</visible>
 				</control>
 				<control type="radiobutton" id="9265">
 					<include>TopMenuRadioButton</include>
 					<label>31486</label>
 					<onclick>Skin.ToggleSetting(norightlistvideocase)</onclick>
 					<selected>!Skin.HasSetting(norightlistvideocase)</selected>
-					<visible>String.IsEqual(Container.Viewmode,RIGHT LIST) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)]</visible>
+					<visible>String.IsEqual(Container.Viewmode,RIGHT LIST) + Window.IsActive(videos)</visible>
 				</control>
 				<control type="button" id="9266">
 					<include>TopMenuButton</include>
@@ -790,14 +790,14 @@
 					<onclick>SetFocus(59)</onclick>
 					<onclick>Skin.SetString(customwindow,video)</onclick>
 					<onclick>ActivateWindowAndFocus(SkinSettings, 9100,3 ,403,0)</onclick>
-					<visible>!Skin.HasSetting(norightlistvideocase) + String.IsEqual(Container.Viewmode,RIGHT LIST) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)]</visible>
+					<visible>!Skin.HasSetting(norightlistvideocase) + String.IsEqual(Container.Viewmode,RIGHT LIST) + Window.IsActive(videos)</visible>
 				</control>
 				<control type="radiobutton" id="9267">
 					<include>TopMenuRadioButton</include>
 					<label>31111</label>
 					<onclick>Skin.ToggleSetting(norightlistdiscart)</onclick>
 					<selected>!Skin.HasSetting(norightlistdiscart)</selected>
-					<visible>String.IsEqual(Container.Viewmode,RIGHT LIST) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)]</visible>
+					<visible>String.IsEqual(Container.Viewmode,RIGHT LIST) + Window.IsActive(videos)</visible>
 				</control>
 				<control type="radiobutton" id="9268">
 					<include>TopMenuRadioButton</include>
@@ -1471,23 +1471,21 @@
 					<!-- ArtWork Downloader Solo Mode-->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_addon1_solo]</label>
-					<onclick condition="!system.hasaddon(script.artwork.downloader)">ActivateWindow(Programs,Addons,return)</onclick>
 					<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader, mediatype=musicvideos, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick>SetFocus(51)</onclick>
-					<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)</visible>
+					<visible>System.HasAddon(script.artwork.downloader)+[Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)]</visible>
 				</control>
 				<control type="button" id="9320">
 					<!-- ArtWork Downloader Gui Mode-->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_addon1_gui]</label>
-					<onclick condition="!system.hasaddon(script.artwork.downloader)">ActivateWindow(Programs,Addons,return)</onclick>
 					<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader, mode=gui, mediatype=musicvideo, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick>SetFocus(51)</onclick>
-					<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)</visible>
+					<visible>System.HasAddon(script.artwork.downloader)+[Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)]</visible>
 				</control>
 				<control type="button" id="9321">
 					<!-- ArtWork Downloader - Auto Mode -->
@@ -1497,7 +1495,7 @@
 					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mediatype=movie)</onclick>
 					<onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader, mediatype=musicvideos)</onclick>
 					<onclick>SetFocus(51)</onclick>
-					<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)</visible>
+					<visible>System.HasAddon(script.artwork.downloader)+[Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)]</visible>
 				</control>
 				<control type="button" id="9322">
 					<!-- ArtWork Downloader - Custom Mode -->
@@ -1507,18 +1505,24 @@
 					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mode=custom, mediatype=movie, dbid=$INFO[ListItem.DBID], poster, fanart, extrafanart, extrathumbs, clearlogo, clearart, discart, thumb, banner)</onclick>
 					<onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader, mode=custom, dbid=$INFO[ListItem.DBID], poster, fanart, extrafanart, extrathumbs, clearlogo, clearart, discart)</onclick>
 					<onclick>SetFocus(51)</onclick>
-					<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)</visible>
+					<visible>System.HasAddon(script.artwork.downloader)+[Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)]</visible>
 				</control>
 				<control type="radiobutton" id="9323">
 					<!-- TV Tunes -->
 					<include>TopMenuRadioButton</include>
 					<label>$VAR[value_addon2]</label>
 					<onclick condition="System.HasAddon(script.tvtunes)">Skin.ToggleSetting(ontvtunes)</onclick>
-					<onclick condition="!System.HasAddon(script.tvtunes)">ActivateWindow(Programs,Addons,return)</onclick>
 					<selected>System.HasAddon(script.tvtunes) + Skin.HasSetting(ontvtunes)</selected>
-					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+					<visible>System.HasAddon(script.tvtunes) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 				</control>
-				<control type="radiobutton" id="9324">
+				<control type="button" id="9324">
+					<!-- ArtWork Beef - OpenSettings -->
+					<include>TopMenuButton</include>
+					<label>ArtWork Beef Settings</label>
+					<onclick>Addon.OpenSettings(script.artwork.beef)</onclick>
+					<visible>System.HasAddon(script.artwork.beef)</visible>
+				</control>
+				<control type="radiobutton" id="9325">
 					<!-- TV Tunes -->
 					<include>TopMenuRadioButton</include>
 					<label>New DialogInfo</label>
@@ -2452,6 +2456,13 @@
 					<visible>String.IsEqual(Container.Viewmode,COVERFLOW)</visible>
 				</control>
 				<!-- RightList -->
+				<control type="radiobutton" id="9234">
+					<include>TopMenuRadioButton</include>
+					<label>31490</label>
+					<onclick>Skin.ToggleSetting(slimrightlistmusic)</onclick>
+					<selected>Skin.HasSetting(slimrightlistmusic)</selected>
+					<visible>String.IsEqual(Container.Viewmode,RIGHT LIST) + Window.IsActive(music)</visible>
+				</control>
 				<control type="radiobutton" id="9235">
 					<include>TopMenuRadioButton</include>
 					<label>31486</label>
@@ -3220,7 +3231,6 @@
 			</control>
 		</control>
 	</include>
-	<!--##################################################################################################  Games  ################################################################################################## -->
 	<!--##################################################################################################  Pictures  ################################################################################################## -->
 	<include name="TopMenu_Pics">
 		<include>TopMenu_BG</include>

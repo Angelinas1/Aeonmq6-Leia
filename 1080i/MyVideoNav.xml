@@ -48,19 +48,26 @@
 			<!-- Extra Fanart Movies/TvShows/MusicVideos -->
 			<include>WindowBG</include>
 			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</imagepath>
-			<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + String.Contains(skin.string(moviesfanart),extra) + String.Contains(ListItem.Path,plugin://plugin)</visible>
+			<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + String.Contains(skin.string(moviesfanart),extra)</visible>
 		</control>
 		<control type="multiimage" id="5021">
 			<!-- Extra Fanart Plugin.Video -->
 			<include>WindowBG</include>
 			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArts)]</imagepath>
-			<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + String.Contains(skin.string(moviesfanart),extra) + String.Contains(ListItem.Path,plugin://plugin)</visible>
+			<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + String.Contains(skin.string(moviesfanart),extra) + String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.ExtraFanArt))</visible>
 		</control>
 		<control type="multiimage" id="5022">
 			<!-- Extra Fanart Plugin.Video -->
-			<include>WindowBG</include>
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<timeperimage>6000</timeperimage>
+			<randomize>true</randomize>
+			<include condition="Skin.HasSetting(keepaspect)">KeepAspect</include>
+			<fadetime>600</fadetime>
 			<imagepath background="true">$INFO[Control.GetLabel(4444)]</imagepath>
-			<visible>[Container.Content(movies) | String.Contains(ListItem.Path,videodb://movies/sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + String.Contains(skin.string(moviesfanart),extra) + String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.ExtraFanArt))</visible>
+			<visible>[Container.Content(movies) | String.Contains(ListItem.Path,videodb://movies/sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + String.Contains(skin.string(moviesfanart),extra) + [String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.ExtraFanArt))+String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.FanArts))]</visible>
 		</control>
 		<control type="image">
 			<!-- Fanart Genero -->
@@ -119,7 +126,7 @@
 			<info>Container.ListItem.Art(tvshow.fanart8)</info>
 			<info>Container.ListItem.Art(tvshow.fanart9)</info>
 			<randomize>true</randomize>
-			<pauseatend>6000</pauseatend> 
+			<pauseatend>5990</pauseatend> 
 			<scroll>false</scroll>
 			<scrollout>false</scrollout>
 			<resetonlabelchange>true</resetonlabelchange>
