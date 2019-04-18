@@ -4126,7 +4126,8 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),plus.pvrhelper)">plugin://script.skin.helper.widgets/?action=channels&amp;channelgroup=1&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),plus.pvrhelper2)">plugin://script.skin.helper.widgets/?action=channels&amp;channelgroup=2&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),plus.pvrhelper3)">plugin://script.skin.helper.widgets/?action=channels&amp;channelgroup=3&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-	</variable>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),plus.gto)">plugin://script.service.gto?action=getcontent&amp;ts=$INFO[Window(Home).Property(GTO.timestamp)]</value>
+		</variable>
 	<variable name="value_dynamic_box">
 		<value condition="Pvr.HasTVChannels">pvr://channels/tv/</value>
 	</variable>
@@ -4325,6 +4326,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),addons.programs) | String.IsEqual(Container(9000).ListItem.Property(widgets),addons.android)">$LOCALIZE[31010] - $LOCALIZE[31030]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),addons.video)">$LOCALIZE[31010] - $LOCALIZE[31353]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),addons.audio)">$LOCALIZE[31010] - $LOCALIZE[31355]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),plus.gto)">PVR (Script.GTO)</value>
 	</variable>
 	<variable name="value_widgetsmodeplugin">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),nextaired)">$LOCALIZE[31962] (Next Aired)</value>
@@ -6521,6 +6523,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Container(100).HasFocus(160)">EPG</value>
 		<value condition="Container(100).HasFocus(161)">PVR channel guide</value>
 		<!-- furniture escondido -->
+		<value condition="Container(100).HasFocus(162)">YouTube Similar</value>
 		<value condition="Container(100).HasFocus(2)">$LOCALIZE[23050]</value>
 		<!-- teletext -->
 		<value condition="Container(100).HasFocus(3) + Skin.HasSetting(nopausedlabel)">$LOCALIZE[31661]</value>
@@ -7860,5 +7863,39 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
     <variable name="thumb_back">
 		<value condition="!String.IsEmpty(Player.Art(album.back))">$INFO[Player.Art(album.back)]</value>
 		<value>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ThumbBack)]</value>
+    </variable>
+    <variable name="ytfanart">
+		<value condition="Control.HasFocus(188)">$INFO[Container(188).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(400)">$INFO[Container(400).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(410)">$INFO[Container(410).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(420)">$INFO[Container(420).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(430)">$INFO[Container(430).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(440)">$INFO[Container(440).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(450)">$INFO[Container(450).ListItem.Art(fanart)]</value>
+    </variable>
+    <variable name="ytplot">
+		<value condition="Control.HasFocus(400)">$INFO[Container(400).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(410)">$INFO[Container(410).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(420)">$INFO[Container(420).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(430)">$INFO[Container(430).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(440)">$INFO[Container(440).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(450)">$INFO[Container(450).ListItem.Plot]</value>
+    </variable>
+    <variable name="ytduration">
+		<value condition="Control.HasFocus(400)">$INFO[Container(400).ListItem.Duration]</value>
+		<value condition="Control.HasFocus(410)">$INFO[Container(410).ListItem.Duration]</value>
+		<value condition="Control.HasFocus(420)">$INFO[Container(420).ListItem.Duration]</value>
+		<value condition="Control.HasFocus(430)">$INFO[Container(430).ListItem.Duration]</value>
+		<value condition="Control.HasFocus(440)">$INFO[Container(440).ListItem.Duration]</value>
+		<value condition="Control.HasFocus(450)">$INFO[Container(450).ListItem.Duration]</value>
+    </variable>
+    <variable name="yttitle">
+		<value condition="Player.HasMedia">[COLOR=$VAR[value_headercolor]]$INFO[VideoPlayer.Duration,, | ][/COLOR]$INFO[VideoPlayer.Title]</value>
+		<value condition="Control.HasFocus(400)">$INFO[Container(400).ListItem.Label]</value>
+		<value condition="Control.HasFocus(410)">$INFO[Container(410).ListItem.Label]</value>
+		<value condition="Control.HasFocus(420)">$INFO[Container(420).ListItem.Label]</value>
+		<value condition="Control.HasFocus(430)">$INFO[Container(430).ListItem.Label]</value>
+		<value condition="Control.HasFocus(440)">$INFO[Container(440).ListItem.Label]</value>
+		<value condition="Control.HasFocus(450)">$INFO[Container(450).ListItem.Label]</value>
     </variable>
 	</includes>

@@ -70,7 +70,9 @@
 	<include file="ViewsAeon.xml"/>
 	<!-- 185 -->
 	<include file="ViewsFanart.xml"/>
-	<!-- 5802 -->
+	<!-- 187 -->
+	<include file="ViewsYouTube.xml"/>
+	<!-- 188 -->
 	<include file="ViewsGames.xml"/>
 	<include file="ViewsLiveTV.xml"/>
 	<constant name="FanartCrossFadeTime">350</constant>
@@ -2942,6 +2944,13 @@
 				<onclick>ActivateWindow(pvrchannelguide)</onclick>
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</item>
+			<item id="162">
+				<!-- YT Similar -->
+				<icon>osd_menun_bg.png</icon>
+				<onclick>ActivateWindow(1136)</onclick>
+				<onclick>SetFocus(450,1)</onclick>
+				<visible>String.Contains(Player.Filenameandpath,youtube)</visible>
+			</item>
 			<item id="27">
 				<!-- subtitle delay -->
 				<label></label>
@@ -3117,6 +3126,7 @@
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_video_playlist),disable)]</property>
 				<icon>osd_menu_playlist.png</icon>
+				<onclick condition="!Skin.HasSetting(customosd)">Dialog.Close(all,true)</onclick>
 				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(videoplaylist)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_video_playlist),disable)">Skin.SetString(osd_video_playlist,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_video_playlist),disable)">Skin.Reset(osd_video_playlist,disable)</onclick>
@@ -3520,6 +3530,30 @@
 			</item>
 		</content>
 	</include>
+	<include name="snexttracks_items">
+		<definition>
+			<label>$PARAM[track]: $INFO[VideoPlayer.offset($PARAM[track]).Title]</label>
+			<label2>$INFO[VideoPlayer.offset($PARAM[track]).Artist]</label2>
+			<icon>$INFO[VideoPlayer.offset($PARAM[track]).Cover]</icon>
+			<property name="Details">$INFO[VideoPlayer.offset($PARAM[track]).Album][CR]$INFO[VideoPlayer.offset($PARAM[track]).Duration]</property>
+			<onclick>Playlist.PlayOffset($PARAM[track])</onclick>
+		</definition>
+	</include>	
+	<include name="sNextTracksContent">
+		<content>
+			<item>
+				<include content="snexttracks_items">
+					<param name="track" value="1" />
+				</include>
+			</item>
+			<item>
+				<include content="snexttracks_items">
+					<param name="track" value="2" />
+				</include>
+			</item>	
+		</content>
+		</include>		
+
 	<include name="nexttracks_items">
 		<definition>
 			<label>$PARAM[track]: $INFO[MusicPlayer.offset($PARAM[track]).Title]</label>
@@ -4394,4 +4428,143 @@
 	<label>$INFO[Window(Home).Property(SkinHelper.Player.Album)]</label>	
 	</include>
 
+	<include name="YTLabel">
+		<param name="visible">true</param>
+		<definition>
+			<control type="group" id="$PARAM[list_id]11">
+				<left>55</left>
+				<top>5</top>
+				<height>25</height>
+				<right>55</right>
+				<visible>$PARAM[visible]</visible>
+				<control type="label">
+					<left>22</left>
+					<top>0</top>
+					<right>2</right>
+					<height>25</height>
+					<label>$PARAM[label]</label>
+					<font>Font_18A</font>
+					<textcolor>white</textcolor>
+					<visible>!Control.HasFocus($PARAM[list_id])</visible>
+				</control>
+				<control type="label">
+					<left>22</left>
+					<top>0</top>
+					<right>2</right>
+					<height>25</height>
+					<label>$PARAM[label]$PARAM[label_focus]</label>
+					<font>Font_18A</font>
+					<textcolor>white</textcolor>
+					<visible>Control.HasFocus($PARAM[list_id])</visible>
+				</control>
+			</control>
+		</definition>
+	</include>			
+	<include name="YTListPoster">
+		<param name="visible">true</param>
+		<definition>
+			<include content="YTLabel">
+				<param name="label">$PARAM[yt_header]</param>
+				<param name="label_focus">$PARAM[yt_header_focus]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="visible" value="$PARAM[visible]"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				<left>-23</left>
+				<top>25</top>
+				<visible>$PARAM[visible]</visible>
+				<height>330</height>
+				<onclick condition="!String.IsEmpty(Container.ListItem.Duration)">$PARAM[action]</onclick>
+				<onclick condition="!String.IsEmpty(Container.ListItem.Duration)">$PARAM[action1]</onclick>
+				<onclick condition="String.IsEmpty(Container.ListItem.Duration)+String.Contains(ListItem.FilenameAndPath,playlist)">$PARAM[action]</onclick>
+				<onclick condition="String.IsEmpty(Container.ListItem.Duration)+String.Contains(ListItem.FilenameAndPath,playlist)">$PARAM[action1]</onclick>
+				<onclick condition="String.IsEmpty(Container.ListItem.Duration)+!String.Contains(ListItem.FilenameAndPath,playlist)">ActivateWindow(videos,$INFO[ListItem.FilenameAndPath],return)</onclick>
+				<include content="YTListCommon">
+					<param name="list_id" value="$PARAM[list_id]"/>
+				</include>
+				<itemlayout width="300" height="375">
+					<control type="group">
+						<left>0</left>
+						<top>10</top>
+						<include content="InfoYTLayout">
+							<param name="focused" value="false" />
+						</include>
+						<control type="label">
+                            <left>0</left>
+                            <top>10</top>
+                            <width>345</width>
+                            <height>20</height>
+                            <align>center</align>
+							<font>Font_13</font>
+							<textcolor>red</textcolor>
+							<label>PlayList</label>
+							<visible>String.Contains(ListItem.FilenameAndPath,playlist)</visible>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="300" height="375">
+					<control type="group">
+						<left>0</left>
+						<top>10</top>
+						<animation type="Focus" condition="true" reversible="false">
+							<effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto" />
+							<effect type="zoom" end="91" time="225" tween="sine" delay="100" easing="out" center="auto" />
+						</animation>
+						<include content="InfoYTLayout">
+							<param name="focused" value="true" />
+						</include>
+						<control type="label">
+                            <left>0</left>
+                            <top>10</top>
+                            <width>345</width>
+                            <height>20</height>
+                            <align>center</align>
+							<font>Font_13</font>
+							<textcolor>red</textcolor>
+							<label>PlayList</label>
+							<visible>String.Contains(ListItem.FilenameAndPath,playlist)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content sortby="$INFO[Skin.String(searchytplay)]" target="$PARAM[yt_target]" limit="40">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="YTListCommon">
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+		<orientation>horizontal</orientation>
+		<onleft>188</onleft>
+		<onback>9000</onback>
+		<onback>SetFocus($PARAM[list_id],0,absolute)</onback>
+
+		<preloaditems>2</preloaditems>
+	</include>			
+	<include name="InfoYTLayout">
+		<param name="focused">false</param>
+		<definition>
+			<control type="group">
+				<control type="image">
+					<left>0</left>
+					<top>8</top>
+					<width>345</width>
+					<height>270</height>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>stretch</aspectratio>
+					<bordertexture border="-2">grey.png</bordertexture>
+					<visible>$PARAM[focused]</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>8</top>
+					<width>345</width>
+					<height>270</height>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>!$PARAM[focused]</visible>
+				</control>
+			</control>
+		</definition>
+	</include>
+	
+	
 	</includes>

@@ -176,6 +176,81 @@
                 <onfocus condition="String.Contains(skin.string(videofurniture),partial)">Skin.SetString(videofurniture,hide)</onfocus>
                 <onfocus condition="String.Contains(skin.string(videofurniture),hide)">Skin.SetString(videofurniture,full)</onfocus>
             </control>
+            <control type="panel" id="889">
+                <left>60</left>
+                <top>-312</top>
+                <width>1860</width>
+                <height>360</height>
+                <onup>889</onup>
+                <ondown>889</ondown>
+                <onleft>100</onleft>
+                <onright>100</onright>
+                <orientation>vertical</orientation>
+                <include>Animation_HomeFade</include>
+				<visible allowhiddenfocus="true">Control.HasFocus(889)</visible>
+                <itemlayout width="600" height="45">
+                    <control type="image">
+                        <left>3</left>
+                        <top>3</top>
+                        <width>38</width>
+                        <height>38</height>
+                        <texture fallback="DefaultAudioCover.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio align="center">stretch</aspectratio>
+                    </control>
+                    <control type="label">
+                        <left>46</left>
+                        <top>4</top>
+                        <width>520</width>
+                        <height>27</height>
+                        <align>left</align>
+                        <font>Font_18A</font>
+                        <label>$INFO[ListItem.Label] [COLOR=$VAR[value_headercolor]]$INFO[ListItem.Label2, - ][/COLOR]</label>
+                        <include>listcolor</include>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="600" height="45">
+                    <control type="image">
+                        <left>0</left>
+                        <top>1</top>
+                        <width>618</width>
+                        <height>38</height>
+                        <texture>gradient_focus.png</texture>
+                        <colordiffuse>$VAR[value_headercolor]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>42</top>
+                        <width>44</width>
+                        <height>3</height>
+                        <texture>grey.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                        <animation type="Focus" reversible="false">
+                            <effect type="slide" start="0,-30" end="0,0" time="400" tween="back" easing="out" />
+                            <effect type="fade" start="80" end="100" time="400" />
+                        </animation>
+                    </control>
+                    <control type="image">
+                        <left>3</left>
+                        <top>3</top>
+                        <width>38</width>
+                        <height>38</height>
+                        <texture fallback="DefaultAudioCover.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio align="center">stretch</aspectratio>
+                    </control>
+                    <control type="label">
+                        <left>46</left>
+                        <top>4</top>
+                        <width>520</width>
+                        <height>27</height>
+                        <align>left</align>
+                        <font>Font_18A</font>
+                        <label>$INFO[ListItem.Label] [COLOR=$VAR[value_headercolor]]$INFO[ListItem.Label2, - ][/COLOR]</label>
+                        <include>listcolor</include>
+                    </control>
+                </focusedlayout>
+                <content>playlistvideo://</content>
+            </control>
+
             <!-- Menu Content -->
             <include condition="!Skin.HasSetting(videoosdfixedlist)">VideoOSDWrapList</include>
             <include condition="Skin.HasSetting(videoosdfixedlist)">VideoOSDFixedList</include>
@@ -200,7 +275,8 @@
                 <top>112</top>
                 <width>1803</width>
                 <height>32</height>
-                <onup>Dialog.Close(2901)</onup>
+                <onup condition="!VideoPlayer.Content(files)">Dialog.Close(2901)</onup>
+				<onup condition="VideoPlayer.Content(files)">889</onup>
                 <ondown>100</ondown>
                 <action>seek</action>
                 <texturesliderbar>sliderback_large.png</texturesliderbar>

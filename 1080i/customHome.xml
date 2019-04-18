@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="6000">
+<window id="6000" type="dialog">
 	<!-- Aeon MQ 6 -->
 	<menucontrol>9000</menucontrol>
 	<onload condition="Skin.HasSetting(languagedone)">SetFocus(9000)</onload>

@@ -3,6 +3,7 @@
     <!-- Aeon MQ 6 -->
     <defaultcontrol always="true">300</defaultcontrol>
     <controls>
+		<animation effect="zoom" time="1000" start="100" end="40" condition="Window.IsVisible(Videos)">conditional</animation>
         <control type="image">
             <left>0</left>
             <top>0</top>
@@ -11,8 +12,11 @@
             <texture>black.png</texture>
             <colordiffuse>C3FFFFFF</colordiffuse>
             <include>Animation_Fade</include>
+			<visible>!Window.IsVisible(Videos)</visible>
         </control>
         <control type="group">
+			<animation effect="zoom" time="0" start="100" end="50" condition="Window.IsVisible(Videos)">conditional</animation>
+			<animation effect="slide" time="0" start="0,0" end="2100,0" reversible="true" tween="cubic" easing="inout" condition="Window.IsVisible(Videos)">conditional</animation>
             <!-- Default group -->
             <left>-105</left>
             <include>Animation_DialogPopup</include>

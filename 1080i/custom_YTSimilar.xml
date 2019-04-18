@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1136">
+	<onload>RunScript(script.skin.helper.service,action=stripstring,splitchar=d=,string=$INFO[Player.Filenameandpath],output=SimularYT,index=1)</onload>
+	<defaultcontrol always="true">450</defaultcontrol>
+	<controls>
+			<control type="grouplist" id="440">
+				<orientation>horizontal</orientation>
+				<left>440</left>
+				<bottom>480</bottom>
+				<width>1000</width>
+				<align>left</align>
+				<height>100</height>
+				<onup>SetFocus(450,0,absolute)</onup>
+				<ondown>SetFocus(450,0,absolute)</ondown>
+				<itemgap>-20</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="button" id="441">
+					<include>InvisibleButton</include>
+					<onclick>SetFocus(445)</onclick>
+				</control>
+			</control>
+			<control type="button" id="445">
+				<include>InvisibleButton</include>
+				<onfocus>Action(Close)</onfocus>
+				<onfocus>ActivateWindow(videoosd)</onfocus>
+			</control>
+			<control type="wraplist" id="450">
+				<top>581</top>
+				<left>30</left>
+                <width>1860</width>
+                <height>330</height>
+				<onup>445</onup>
+				<ondown>445</ondown>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<focusposition>0</focusposition>
+				<animation effect="slide" start="0,0" end="0,200" time="400" tween="cubic" easing="inout" condition="!Window.IsVisible(videoosd)">Conditional</animation>
+					<itemlayout height="300" width="375">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>345</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                        </control>
+						<control type="label">
+                            <left>0</left>
+                            <top>240</top>
+                            <width>345</width>
+                            <height>20</height>
+                            <align>center</align>
+							<font>Font_13</font>
+							<textcolor>$VAR[value_headercolor]</textcolor>
+							<label>$INFO[Container(450).ListItem.Label]</label>
+						</control>
+                    </itemlayout>
+                    <focusedlayout height="300" width="375">
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>345</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                            <colordiffuse>FF909090</colordiffuse>
+                            <include>Animation_Fade</include>
+                            <visible>!Control.HasFocus(450)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>8</top>
+                            <width>345</width>
+                            <height>270</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <aspectratio>keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                            <include>Animation_Fade</include>
+                            <visible>Control.HasFocus(450)</visible>
+                        </control>
+						<control type="label">
+                            <left>0</left>
+                            <top>240</top>
+                            <width>345</width>
+                            <height>20</height>
+                            <align>center</align>
+							<font>Font_13</font>
+							<textcolor>$VAR[value_headercolor]</textcolor>
+							<label>$INFO[Container(450).ListItem.Label]</label>
+						</control>
+                    </focusedlayout>
+				<content>plugin://plugin.video.youtube/special/related_videos/?video_id=$INFO[Window(Home).Property(SimularYT)]</content>
+			</control>
+	</controls>
+</window>

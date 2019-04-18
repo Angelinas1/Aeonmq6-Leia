@@ -12,7 +12,7 @@
 	<onload>SetProperty(SkinHelper.WidgetContainer,5801)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<allowoverlay>no</allowoverlay>
-	<views>51,52,53,54,55,59,57,62,56,67,68,58,78,60,61,66,63,64,65,69,76,70,71,77,83,84,187,185</views>
+	<views>51,52,53,54,55,59,57,62,56,67,68,58,78,60,61,66,63,64,65,69,76,70,71,77,83,84,187,185,188</views>
 	<controls>
 		<control type="image">
 			<!-- Fanart padrao -->
@@ -684,6 +684,8 @@
 				<include condition="Skin.HasSetting(viewaeon_video)">ViewAeon</include>
 				<!-- 185 -->
 				<include condition="Skin.HasSetting(viewfanart_video)">ViewFanArt</include>
+				<!-- 187 -->
+				<include condition="Skin.HasSetting(viewYouTube_video)">ViewYouTube</include>
 				<!-- 187 -->
 			</control>
 			<include>TouchScreen</include>

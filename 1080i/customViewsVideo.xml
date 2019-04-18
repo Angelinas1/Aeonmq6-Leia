@@ -360,6 +360,16 @@
                     <onclick condition="!Skin.HasSetting(viewfanart_video) + Skin.HasSetting(clickactivateview_video)">back</onclick>
                     <selected>Skin.HasSetting(viewfanart_video)</selected>
                 </control>
+                <control type="radiobutton" id="19285">
+                    <!-- ViewYouTube -->
+                    <!-- 188 -->
+                    <radioposx>1341</radioposx>
+                    <label>View YouTube</label>
+                    <onclick>Skin.ToggleSetting(viewYouTube_video)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewYouTube_video)">Skin.SetString(setviewvideo,188)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewYouTube_video) + Skin.HasSetting(clickactivateview_video)">back</onclick>
+                    <selected>Skin.HasSetting(viewYouTube_video)</selected>
+                </control>
             </control>
             <control type="scrollbar" id="9031">
                 <include>ScrollBar_Vertical</include>
