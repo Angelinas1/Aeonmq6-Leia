@@ -1983,7 +1983,7 @@
 					<!-- 6400 -->
 					<label2>31071</label2>
 					<property name="id">custom</property>
-					<onclick>Skin.SetString($INFO[skin.string(custom_master)],favs)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],favourite)</onclick>
 					<onclick condition="!System.HasAddon(script.favourites)">ActivateWindow(Programs,Addons,return)</onclick>
 					<onclick condition="System.HasAddon(script.favourites)">RunScript(script.favourites,property=$INFO[Container(9000).ListItem.Property(name)])</onclick>
 					<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,favourites)</onclick>
@@ -2341,7 +2341,7 @@
 					<!-- 6060 -->
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31092]</label2>
 					<property name="id">music</property>
-					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicplaylists)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],apl)</onclick>
 					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musicplaylist))</onclick>
 					<include>DefaultReset</include>
 				</item>
@@ -2381,7 +2381,7 @@
 					<!-- 6064 -->
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31033]</label2>
 					<property name="id">music</property>
-					<onclick>Skin.SetString($INFO[skin.string(custom_master)],Music)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],music)</onclick>
 					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(Music))</onclick>
 					<include>DefaultReset</include>
 				</item>
@@ -2575,7 +2575,7 @@
 					<!-- 6031 -->
 					<label2>31742</label2>
 					<property name="id">various</property>
-					<onclick>Skin.SetString($INFO[skin.string(custom_master)],ejecttray)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],disc)</onclick>
 					<onclick>Skin.SetString($INFO[skin.string(custom_action)],EjectTray)</onclick>
 					<include>DefaultReset</include>
 				</item>
@@ -2711,7 +2711,7 @@
 					<label2>31024</label2>
 					<property name="id">settings</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],settingsaddonsvideo)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(video,addons,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(videos,addons,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -2858,7 +2858,7 @@
 					<!-- 6029 -->
 					<label2>$LOCALIZE[31001]-$LOCALIZE[31092]</label2>
 					<property name="id">video</property>
-					<onclick>Skin.SetString($INFO[skin.string(custom_master)],videoplaylists)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],vpl)</onclick>
 					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(videoplaylist))</onclick>
 					<include>DefaultReset</include>
 				</item>
@@ -2868,7 +2868,7 @@
 					<!-- 6029 -->
 					<label2>$LOCALIZE[31001]-$LOCALIZE[31092]</label2>
 					<property name="id">music</property>
-					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicplaylist)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],apl)</onclick>
 					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musicplaylist))</onclick>
 					<include>DefaultReset</include>
 				</item>

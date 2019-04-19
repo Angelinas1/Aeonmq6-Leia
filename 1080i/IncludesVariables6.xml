@@ -6801,11 +6801,11 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),suspend)">$VAR[value_menutheme_shutdown]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),hibernate)">$VAR[value_menutheme_shutdown]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),timer)">$VAR[value_menutheme_shutdown]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(id),canceltimer)">$VAR[value_menutheme_shutdown]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),logoff)">$VAR[value_menutheme_shutdown]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),mymenu)">$VAR[value_menutheme_mymenu]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),vpl)">$VAR[value_menutheme_vplaylist]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),apl)">$VAR[value_menutheme_aplaylist]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(id),disc)">$VAR[value_menutheme_disc]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),vnode)">$VAR[value_menutheme_vnodes]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),anode)">$VAR[value_menutheme_anodes]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),addon)">$VAR[value_menutheme_addons]</value>
@@ -6895,6 +6895,17 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="!Skin.HasSetting(randomlivetvbg) + String.Contains(skin.string(theme),digitalart)">$INFO[Skin.String(extrapack)]backgrounds_digitalart/livetv.jpg</value>
 		<value condition="!Skin.HasSetting(randomlivetvbg) + String.Contains(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,livetv]</value>
 		<value condition="Skin.HasSetting(randomlivetvbg)">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</value>
+	</variable>
+	<variable name="value_menutheme_disc">
+		<value condition="!Skin.HasSetting(randomdiscbg) + String.Contains(skin.string(theme),colors)">special://skin/backgrounds/disc.jpg</value>
+		<value condition="!Skin.HasSetting(randomdiscbg) + String.Contains(skin.string(theme),reddish)">$INFO[Skin.String(extrapack)]backgrounds_reddish/disc.jpg</value>
+		<value condition="!Skin.HasSetting(randomdiscbg) + String.Contains(skin.string(theme),modern)">$INFO[Skin.String(extrapack)]backgrounds_modern/disc.jpg</value>
+		<value condition="!Skin.HasSetting(randomdiscbg) + String.Contains(skin.string(theme),future)">$INFO[Skin.String(extrapack)]backgrounds_future/disc.jpg</value>
+		<value condition="!Skin.HasSetting(randomdiscbg) + String.Contains(skin.string(theme),cold)">$INFO[Skin.String(extrapack)]backgrounds_cold/disc.jpg</value>
+		<value condition="!Skin.HasSetting(randomdiscbg) + String.Contains(skin.string(theme),warm)">$INFO[Skin.String(extrapack)]backgrounds_warm/disc.jpg</value>
+		<value condition="!Skin.HasSetting(randomdiscbg) + String.Contains(skin.string(theme),darkness)">$INFO[Skin.String(extrapack)]backgrounds_darkness/disc.jpg</value>
+		<value condition="!Skin.HasSetting(randomdiscbg) + String.Contains(skin.string(theme),digitalart)">$INFO[Skin.String(extrapack)]backgrounds_digitalart/disc.jpg</value>
+		<value condition="!Skin.HasSetting(randomdiscbg) + String.Contains(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,disc]</value>
 	</variable>
 	<variable name="value_menutheme_radio">
 		<value condition="!Skin.HasSetting(randombg_helper_radio) + String.Contains(skin.string(theme),colors)">special://skin/backgrounds/radio.jpg</value>
