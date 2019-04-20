@@ -447,6 +447,13 @@
 		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
 		<animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
 	</include>
+    <include name="WindowBGFade">
+        <control type="image">
+            <include>WindowBG</include>
+            <texture background="true">black.png</texture>
+            <animation effect="fade" start="100" end="85" time="0" condition="true">Conditional</animation>
+        </control>
+    </include>
 	<include name="HalfWindowBG">
 		<left>243</left>
 		<top>0</top>
@@ -1196,7 +1203,13 @@
 			<label>$INFO[ListItem.Episode]$INFO[ListItem.Property(UnwatchedEpisodes), / ]</label>
 			<visible>Container.Content(tvshows)</visible>
 		</control>
-<control type="group">
+		<control type="label">
+			<!-- Unwatched Episodes -->
+			<include>FlagLabel</include>
+			<label>$INFO[Container.ListItem.Episode]$INFO[Container.ListItem.Property(UnwatchedEpisodes), / ]</label>
+			<visible>Container.Content(seasons)</visible>
+		</control>
+		<control type="group">
 		<visible>Container.Content(movies)+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.UserRating.Percent))+Skin.HasSetting(extrarating)</visible>
 			<control type="image">
 				<top>-10</top>
@@ -4439,7 +4452,7 @@
 				<visible>$PARAM[visible]</visible>
 				<control type="label">
 					<left>22</left>
-					<top>0</top>
+					<top>-2</top>
 					<right>2</right>
 					<height>25</height>
 					<label>$PARAM[label]</label>
@@ -4449,7 +4462,7 @@
 				</control>
 				<control type="label">
 					<left>22</left>
-					<top>0</top>
+					<top>-2</top>
 					<right>2</right>
 					<height>25</height>
 					<label>$PARAM[label]$PARAM[label_focus]</label>
@@ -4471,7 +4484,7 @@
 			</include>
 			<control type="panel" id="$PARAM[list_id]">
 				<left>-23</left>
-				<top>25</top>
+				<top>22</top>
 				<visible>$PARAM[visible]</visible>
 				<height>330</height>
 				<onclick condition="!String.IsEmpty(Container.ListItem.Duration)">$PARAM[action]</onclick>
@@ -4536,7 +4549,6 @@
 		<onleft>188</onleft>
 		<onback>9000</onback>
 		<onback>SetFocus($PARAM[list_id],0,absolute)</onback>
-
 		<preloaditems>2</preloaditems>
 	</include>			
 	<include name="InfoYTLayout">
@@ -4565,6 +4577,5 @@
 			</control>
 		</definition>
 	</include>
-	
 	
 	</includes>

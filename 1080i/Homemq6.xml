@@ -158,6 +158,10 @@
 			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.top250media)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video)</onclick>
 			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.top250media)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.genre)</onclick>
 		</control>
+		<control type="label" id="566">	
+			<include>InvisibleButton</include>
+			<label>$VAR[value_widgetstypecast]</label>
+		</control>
 		<control type="multiimage">
 			<include>HomeBG</include>
 			<imagepath background="true">$VAR[value_menubg]</imagepath>
@@ -173,19 +177,39 @@
 			<include>HomeBG</include>
 			<include>Animation_Fade</include>
 			<texture background="true">$INFO[MusicPlayer.Property(fanart_image)]</texture>
-			<visible>Player.HasAudio + System.IdleTime(8) + String.IsEmpty(Control.GetLabel(5044))</visible>
-		</control>
-		<control type="multiimage">
-			<include>HomeBG</include>
-			<include>Animation_Fade</include>
-			<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-			<visible>Player.HasAudio + System.IdleTime(8) + !String.IsEmpty(Control.GetLabel(5044))</visible>
+			<visible>Player.HasAudio + System.IdleTime(8)</visible>
 		</control>
 		<control type="image">
-			<include>HomeBG</include>
+			<include>WindowBG</include>
 			<include>Animation_Fade</include>
 			<texture background="true">$VAR[value_widgetsfanart]</texture>
-			<visible>[Control.HasFocus(510) | ControlGroup(512).HasFocus]</visible>
+			<visible>[Control.HasFocus(510) | ControlGroup(512).HasFocus | Control.HasFocus(8005)]</visible>
+		</control>
+		<control type="multiimage">
+			<!-- Extra Fanart .Video -->
+			<include>HomeBG</include>
+			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</imagepath>
+			<visible>System.IdleTime(4) + [[String.IsEqual(Control.GetLabel(566),$LOCALIZE[20338]) + String.Contains(skin.string(moviesfanart),extra)] | [String.Contains(Control.GetLabel(566),$LOCALIZE[36902]) + String.Contains(skin.string(tvshowsfanart),extra)] | [String.IsEqual(Control.GetLabel(566),seasons) + String.Contains(skin.string(seasonsfanart),extra)] | 
+			[String.IsEqual(Control.GetLabel(566),episodes) + String.Contains(skin.string(episodesfanart),extra)] | [String.IsEqual(Control.GetLabel(566),sets) + String.Contains(skin.string(setsfanart),extra)] | [String.IsEqual(Control.GetLabel(566),musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)]]+!String.Contains(Container(510).ListItem.Path,plugin://) + [Control.HasFocus(510) | ControlGroup(512).HasFocus]</visible>
+		</control>
+		<control type="multiimage">
+			<!-- Extra Fanart .Video -->
+			<include>HomeBG</include>
+			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArts)]</imagepath>
+			<visible>String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.ExtraFanArt)) + System.IdleTime(8) + [[String.IsEqual(Control.GetLabel(566),$LOCALIZE[20338]) + String.Contains(skin.string(moviesfanart),extra)] | [String.Contains(Control.GetLabel(566),$LOCALIZE[36902]) + String.Contains(skin.string(tvshowsfanart),extra)] | [String.IsEqual(Control.GetLabel(566),seasons) + String.Contains(skin.string(seasonsfanart),extra)] | 
+			[String.IsEqual(Control.GetLabel(566),episodes) + String.Contains(skin.string(episodesfanart),extra)] | [String.IsEqual(Control.GetLabel(566),sets) + String.Contains(skin.string(setsfanart),extra)] | [String.IsEqual(Control.GetLabel(566),musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)]]+!String.Contains(Container(510).ListItem.Path,plugin://) + [Control.HasFocus(510) | ControlGroup(512).HasFocus]</visible>
+		</control>
+		<control type="multiimage">
+			<!-- Extra Fanart Audio -->
+			<include>HomeBG</include>
+			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</imagepath>
+			<visible>!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.ExtraFanArt)) + [String.IsEqual(Control.GetLabel(566),$LOCALIZE[29904]) | String.IsEqual(Control.GetLabel(566),$LOCALIZE[558]) | String.IsEqual(Control.GetLabel(566),Tracks)] + String.Contains(skin.string(musicfanart),extra) + !String.Contains(Container(510).ListItem.Path,plugin://) + [Control.HasFocus(510) | ControlGroup(512).HasFocus]</visible>
+		</control>
+		<control type="multiimage">
+			<!-- Extra Fanart Plugin.Video -->
+			<include>HomeBG</include>
+			<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArts)]</imagepath>
+			<visible>String.Contains(skin.string(moviesfanart),extra) + String.Contains(Container(510).ListItem.Path,plugin://) + [Control.HasFocus(510) | ControlGroup(512).HasFocus]</visible>
 		</control>
 		<include>LiveBG</include>
 		<control type="group">

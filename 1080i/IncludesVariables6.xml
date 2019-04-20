@@ -7123,13 +7123,13 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_menutheme_anodes">
 		<value condition="String.Contains(skin.string(theme),colors)">special://skin/backgrounds/anodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),reddish)">$INFO[Skin.String(extrapack)]backgrounds_reddish/anodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),modern)">$INFO[Skin.String(extrapack)]backgrounds_modern/anodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),future)">$INFO[Skin.String(extrapack)]backgrounds_future/anodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),cold)">$INFO[Skin.String(extrapack)]backgrounds_cold/anodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),warm)">$INFO[Skin.String(extrapack)]backgrounds_warm/anodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),darkness)">$INFO[Skin.String(extrapack)]backgrounds_darkness/anodes.jpg</value>
-		<value condition="String.Contains(skin.string(theme),digitalart)">$INFO[Skin.String(extrapack)]backgrounds_digitalart/anodes.jpg</value>
+		<value condition="String.Contains(skin.string(theme),reddish)">$INFO[Skin.String(extrapack)]backgrounds_reddish/aplaylist.jpg</value>
+		<value condition="String.Contains(skin.string(theme),modern)">$INFO[Skin.String(extrapack)]backgrounds_modern/aplaylist.jpg</value>
+		<value condition="String.Contains(skin.string(theme),future)">$INFO[Skin.String(extrapack)]backgrounds_future/aplaylist.jpg</value>
+		<value condition="String.Contains(skin.string(theme),cold)">$INFO[Skin.String(extrapack)]backgrounds_cold/aplaylist.jpg</value>
+		<value condition="String.Contains(skin.string(theme),warm)">$INFO[Skin.String(extrapack)]backgrounds_warm/aplaylist.jpg</value>
+		<value condition="String.Contains(skin.string(theme),darkness)">$INFO[Skin.String(extrapack)]backgrounds_darkness/aplaylist.jpg</value>
+		<value condition="String.Contains(skin.string(theme),digitalart)">$INFO[Skin.String(extrapack)]backgrounds_digitalart/aplaylist.jpg</value>
 		<value condition="String.Contains(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,anodes]</value>
 	</variable>
 	<variable name="value_menutheme_addons">

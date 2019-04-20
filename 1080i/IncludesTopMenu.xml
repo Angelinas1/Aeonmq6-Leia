@@ -1293,6 +1293,13 @@
 					<onclick>Skin.ToggleSetting(keyartposter)</onclick>
 					<selected>Skin.HasSetting(keyartposter)</selected>
 				</control> 
+				<control type="radiobutton" id="92156">
+					<include>TopMenuRadioButton</include>
+					<label>Youtube: Zoom video window</label>
+					<onclick>Skin.ToggleSetting(ytzoom)</onclick>
+					<selected>Skin.HasSetting(ytzoom)</selected>
+					<visible>String.IsEqual(Container.Viewmode,YOUTUBE)</visible>
+				</control> 
 			</control>
 			<control type="grouplist" id="9301">
 				<!-- Colecao -->
@@ -1809,15 +1816,13 @@
 					<visible>Container.Content(sets) + String.Contains(skin.string(setsfanart),fallback)</visible>
 				</control>
 				<!-- Extra Fanart Sets -->
-				<!--
-<control type="radiobutton" id="9437">
-	<include>TopMenuRadioButton</include>
-	<label>31498</label>
-	<onclick>Skin.SetString(setsfanart,extra)</onclick>
-	<selected>String.Contains(skin.string(setsfanart),extra)</selected>
-	<visible>Container.Content(sets)</visible>
-	</control>
-				-->
+				<control type="radiobutton" id="9437">
+					<include>TopMenuRadioButton</include>
+					<label>31498</label>
+					<onclick>Skin.SetString(setsfanart,extra)</onclick>
+					<selected>String.Contains(skin.string(setsfanart),extra)</selected>
+					<visible>Container.Content(sets)</visible>
+				</control>
 				<!-- Genero Fanart -->
 				<control type="radiobutton" id="9451">
 					<!-- Curtains -->
