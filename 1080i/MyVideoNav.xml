@@ -70,7 +70,7 @@
 			<fadetime>600</fadetime>
 			<imagepath background="true">$INFO[Control.GetLabel(4444)]</imagepath>
 			<visible>[[Container.Content(movies) + String.Contains(skin.string(moviesfanart),extra)] | [Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),extra)] | [Container.Content(seasons) + String.Contains(skin.string(seasonsfanart),extra)] | 
-			[Container.Content(episodes) + String.Contains(skin.string(episodesfanart),extra)] | [Container.Content(sets) + String.Contains(skin.string(setsfanart),extra)] | [Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)]] + String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.ExtraFanArt)) + String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.FanArts))]</visible>
+			[Container.Content(episodes) + String.Contains(skin.string(episodesfanart),extra)] | [Container.Content(sets) + String.Contains(skin.string(setsfanart),extra)] | [Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)]] + String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.ExtraFanArt)) + String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.FanArts))</visible>
 		</control>
 		<control type="image">
 			<!-- Fanart Genero -->

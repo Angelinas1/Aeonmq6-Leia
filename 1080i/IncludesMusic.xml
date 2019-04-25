@@ -439,7 +439,7 @@
                                 <font>Font_23b</font>
                                 <textcolor>FFFFFFFF</textcolor>
 								<shadowcolor>black</shadowcolor>
-                                <label>$INFO[MusicPlayer.Title,[COLOR FF39ED92]NowPlaying: [/COLOR]]</label>
+                                <label>$INFO[MusicPlayer.Title,[COLOR FF39ED92]Now Playing: [/COLOR]]</label>
                             </control>
 							</control>
                         </control>

@@ -7424,6 +7424,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(target),channel.radio)">$VAR[value_widgetsmodeplus]</value>
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(target),plugin)">$VAR[value_widgetsmodeplugin]</value>
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(target),extras)">$VAR[value_widgetsmodeextras]</value>
+	<value condition="String.IsEqual(Container(9000).ListItem.Property(target),extras2)">$VAR[value_widgetsmodeextras]</value>
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(target),extras.helper)">$VAR[value_widgetsmodeextras]</value>
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(target),vnodes)">$VAR[value_widgetsmodevnodes]</value>
 	<value condition="String.IsEqual(Container(9000).ListItem.Property(target),anodes)">$VAR[value_widgetsmodeanodes]</value>
@@ -7883,6 +7884,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(430)">$INFO[Container(430).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(440)">$INFO[Container(440).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(450)">$INFO[Container(450).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(460)">$INFO[Container(460).ListItem.Art(fanart)]</value>
     </variable>
     <variable name="ytplot">
 		<value condition="Control.HasFocus(400)">$INFO[Container(400).ListItem.Plot]</value>
@@ -7891,6 +7893,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(430)">$INFO[Container(430).ListItem.Plot]</value>
 		<value condition="Control.HasFocus(440)">$INFO[Container(440).ListItem.Plot]</value>
 		<value condition="Control.HasFocus(450)">$INFO[Container(450).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(460)">$INFO[Container(460).ListItem.Plot]</value>
     </variable>
     <variable name="ytduration">
 		<value condition="Control.HasFocus(400)">$INFO[Container(400).ListItem.Duration]</value>
@@ -7899,6 +7902,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(430)">$INFO[Container(430).ListItem.Duration]</value>
 		<value condition="Control.HasFocus(440)">$INFO[Container(440).ListItem.Duration]</value>
 		<value condition="Control.HasFocus(450)">$INFO[Container(450).ListItem.Duration]</value>
+		<value condition="Control.HasFocus(460)">$INFO[Container(460).ListItem.Duration]</value>
     </variable>
     <variable name="yttitle">
 		<value condition="Player.HasMedia">[COLOR=$VAR[value_headercolor]]$INFO[VideoPlayer.Duration,, | ][/COLOR]$INFO[VideoPlayer.Title]</value>
@@ -7908,5 +7912,6 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(430)">$INFO[Container(430).ListItem.Label]</value>
 		<value condition="Control.HasFocus(440)">$INFO[Container(440).ListItem.Label]</value>
 		<value condition="Control.HasFocus(450)">$INFO[Container(450).ListItem.Label]</value>
+		<value condition="Control.HasFocus(460)">$INFO[Container(460).ListItem.Label]</value>
     </variable>
 	</includes>

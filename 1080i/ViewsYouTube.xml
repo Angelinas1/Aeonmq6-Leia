@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Aeon MQ 6 -->
+    <!--##################################################################################   VISTA YOUTUBE - ID 188   #############################################################################-->
+    <include name="ViewYouTube">
+        <control type="group">
+            <!-- default group -->
+            <animation effect="fade" time="400">VisibleChange</animation>
+            <visible>String.IsEqual(Container.Viewmode,YOUTUBE)</visible>
+
+            <control type="image">
+                <!-- Backgrounf Fanart -->
+                <left>0</left>
+                <top>-60</top>
+                <height>1280</height>
+                <width>2000</width>
+                <texture>black.png</texture>
+				<colordiffuse>FFFFFAF0</colordiffuse>
+            </control>
+            <control type="image">
+                <!-- Backgrounf Fanart -->
+                <left>0</left>
+                <top>-60</top>
+                <height>1280</height>
+                <width>2000</width>
+                <texture>special://skin/backgrounds/default.jpg</texture>
+				<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>418</top>
+                <width>1920</width>
+                <height>740</height>
+                <texture>darkgrey.png</texture>
+                <colordiffuse>white</colordiffuse>
+                <animation effect="fade" end="85" condition="true">Conditional</animation>
+            </control>
+            <control type="group">			
+			<animation effect="slide" start="0,0" end="270,0" time="600" tween="sine" easing="inout" condition="Control.HasFocus(188)">Conditional</animation>
+            <left>0</left>
+			<top>-12</top>
+			<control type="image">
+				<top>-20</top>
+                <left>10</left>
+				<width>800</width>
+				<height>450</height>
+				<aligny>left</aligny>
+                <aspectratio>keep</aspectratio>
+                <texture background="true">$VAR[ytfanart]</texture>
+                <bordertexture border="-2">black.png</bordertexture>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<visible>!Player.HasMedia</visible>
+			</control>
+			<control type="textbox" id="151">
+				<top>40</top>
+				<left>850</left>
+				<width>1040</width>
+				<height>370</height>
+				<font>Font_18A</font>
+				<label>[COLOR=$VAR[value_headercolor]]$VAR[ytduration,, : ][/COLOR]$VAR[ytplot]</label>
+				<autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+				<visible>!Player.HasMedia</visible>
+			</control>
+			<control type="textbox">
+				<top>40</top>
+				<left>850</left>
+				<width>810</width>
+				<height>370</height>
+				<font>Font_18A</font>
+				<label>$INFO[VideoPlayer.Plot]</label>
+				<autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+				<visible>Player.HasMedia</visible>
+			</control>
+			<control type="grouplist" id="5001">
+				<top>430</top>
+				<orientation>vertical</orientation>
+				<height>660</height>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<itemgap>-36</itemgap>
+				<onleft>188</onleft>
+				<onright>188</onright>
+				<onup>155</onup>
+				<ondown>5001</ondown>
+				<usecontrolcoords>true</usecontrolcoords>
+					<include content="YTListPoster" condition="Player.HasMedia">
+						<param name="content_path" value="plugin://plugin.video.youtube/special/related_videos/?video_id=$INFO[Window(Home).Property(SimularYT)]"/>
+						<param name="yt_header" value="*YouTube Playing similar"/>
+						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(400).ListItem.Duration, ( , )][/COLOR]$INFO[Container(400).ListItem.Title, | ][COLOR=$VAR[value_headercolor]]$INFO[Container(400).ListItem.Studio, ( , )][/COLOR]"/>
+						<param name="yt_target" value="videos"/>
+						<param name="action" value="PlayMedia($INFO[ListItem.FilenameAndPath],1,playoffset=1)"/>
+						<param name="action1" value="RunScript(script.skin.helper.service,action=stripstring,splitchar=d=,string=$INFO[Player.Filenameandpath],output=SimularYT,index=1)"/>
+						<param name="list_id" value="400"/>
+					</include>
+					<include content="YTListPoster" condition="true">
+						<param name="content_path" value="plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Skin.String(searchyt)]&amp;search_type=$INFO[Skin.String(searchytplay)]"/>
+						<param name="yt_header" value="*YouTube Search $INFO[Skin.String(searchytplay),(,)]"/>
+						<param name="yt_header_focus" value="$INFO[Container(410).ListItem.Label, | ]"/>
+						<param name="yt_target" value="videos"/>
+						<param name="action" value="PlayMedia($INFO[ListItem.FilenameAndPath],1,playoffset=1)"/>
+						<param name="action1" value=""/>
+						<param name="list_id" value="410"/>
+					</include>
+					<include content="YTListPoster" condition="true">
+						<param name="content_path" value="plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Skin.String(searchyt)]"/>
+						<param name="yt_header" value="*YouTube Search"/>
+						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(420).ListItem.Artist, ( , )][/COLOR]$INFO[Container(420).ListItem.Title, ][COLOR=$VAR[value_headercolor]]$INFO[Container(420).ListItem.Duration, ( , )][/COLOR]"/>
+						<param name="yt_target" value="videos"/>
+						<param name="action" value="PlayMedia($INFO[ListItem.FilenameAndPath],1,playoffset=1)"/>
+						<param name="action1" value=""/>
+						<param name="list_id" value="420"/>
+					</include>
+					<include content="YTListPoster" condition="true">
+						<param name="content_path" value="plugin://plugin.video.youtube/special/popular_right_now/"/>
+						<param name="yt_header" value="*YouTube popular right now"/>
+						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(430).ListItem.Duration, ( , )][/COLOR]$INFO[Container(430).ListItem.Title, | ]"/>
+						<param name="yt_target" value="videos"/>
+						<param name="action" value="PlayMedia($INFO[ListItem.FilenameAndPath],1,playoffset=1)"/>
+						<param name="action1" value=""/>
+						<param name="list_id" value="430"/>
+					</include>
+					<include content="YTListPoster" condition="true">
+						<param name="content_path" value="plugin://plugin.video.youtube/special/new_uploaded_videos_tv/"/>
+						<param name="yt_header" value="*YouTube New uploaded"/>
+						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(440).ListItem.Duration, ( , )][/COLOR]$INFO[Container(440).ListItem.Title, | ]"/>
+						<param name="yt_target" value="videos"/>
+						<param name="action" value="PlayMedia($INFO[ListItem.FilenameAndPath],1,playoffset=1)"/>
+						<param name="action1" value=""/>
+						<param name="list_id" value="440"/>
+					</include>
+					<include content="YTListPoster" condition="true">
+						<param name="content_path" value="plugin://plugin.video.youtube/special/recommendations/"/>
+						<param name="yt_header" value="*YouTube recommendations"/>
+						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(450).ListItem.Duration, ( , )][/COLOR]$INFO[Container(450).ListItem.Title, | ]"/>
+						<param name="yt_target" value="videos"/>
+						<param name="action" value="PlayMedia($INFO[ListItem.FilenameAndPath],1,playoffset=1)"/>
+						<param name="action1" value=""/>
+						<param name="list_id" value="450"/>
+					</include>
+					<include content="YTListPoster" condition="true">
+						<param name="content_path" value="plugin://plugin.video.youtube/special/watch_history_tv/"/>
+						<param name="yt_header" value="*YouTube History"/>
+						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(460).ListItem.Duration, ( , )][/COLOR]$INFO[Container(460).ListItem.Title, | ]"/>
+						<param name="yt_target" value="videos"/>
+						<param name="action" value="PlayMedia($INFO[ListItem.FilenameAndPath],1,playoffset=1)"/>
+						<param name="action1" value=""/>
+						<param name="list_id" value="460"/>
+					</include>
+			</control>
+			<control type="image">
+                <left>850</left>
+                <top>-35</top>
+                <width>800</width>
+                <height>50</height>
+				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+				<include>Animation_HomeGlass</include>
+				<texture>details_back.png</texture>
+				<visible>Control.HasFocus(155)|Control.HasFocus(156)</visible>
+			</control>	
+			<control type="image">
+                <left>850</left>
+                <top>-35</top>
+                <width>800</width>
+                <height>50</height>
+				<colordiffuse>grey</colordiffuse>
+				<include>Animation_HomeGlass</include>
+				<texture>dialogs_context_focus.png</texture>
+				<visible>Control.HasFocus(155)|Control.HasFocus(156)</visible>
+			</control>
+            <control type="button" id="155">
+			    <left>882</left>
+                <top>-30</top>
+                <width>735</width>
+				<height>40</height>
+				<onleft>154</onleft>
+				<onright>156</onright>
+				<onup>188</onup>
+				<ondown>5001</ondown>
+				<onclick>Skin.SetString(searchyt,)</onclick>
+                <onclick>Skin.SetString(searchyt)</onclick>
+				<onclick>5001</onclick>
+				<label>$INFO[Skin.String(searchyt)]</label>
+				<visible allowhiddenfocus="true">Control.HasFocus(155)|Control.HasFocus(156)</visible>
+            </control>
+			<control type="panel" id="156">
+			    <left>1670</left>
+                <top>-30</top>
+				<height>115</height>
+				<width>477</width>
+				<onleft>155</onleft>
+				<onright>155</onright>
+				<onup>156</onup>
+				<ondown>5001</ondown>
+				<orientation>vertical</orientation>
+				<visible allowhiddenfocus="true">Control.HasFocus(155)|Control.HasFocus(156)</visible>
+					<itemlayout width="260" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>258</width>
+							<texture>topmenu_button_nofocus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="label">
+							<left>8</left>
+							<top>0</top>
+							<height>38</height>
+							<width>258</width>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FF101010</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout width="260" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>258</width>
+							<texture>topmenu_button_focus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="label">
+							<left>8</left>
+							<top>0</top>
+							<height>38</height>
+							<width>258</width>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>$VAR[value_headercolor]</textcolor>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>$INFO[Skin.String(searchytplay)]</label>
+							<onclick condition="String.IsEqual(skin.string(searchytplay),live) | String.IsEmpty(skin.string(searchytplay))">Skin.SetString(searchytplay,channel)</onclick>
+							<onclick condition="String.IsEqual(skin.string(searchytplay),channel)">Skin.SetString(searchytplay,playlist)</onclick>
+							<onclick condition="String.IsEqual(skin.string(searchytplay),playlist)">Skin.SetString(searchytplay,live)</onclick>
+						</item>
+						<item>
+							<label>$INFO[VideoPlayer.Artist]</label>
+							<onclick>RunScript(script.skin.helper.service,action=stripstring,splitchar=VEVO,string=$INFO[VideoPlayer.Artist],output=SerchVEVO,index=0)</onclick>
+							<onclick>Skin.SetString(searchyt,$INFO[Window(Home).Property(SerchVEVO)])</onclick>
+							<onclick condition="String.IsEqual(skin.string(searchytplay),playlist)">5001</onclick>
+						</item>
+						<item>
+							<label>$INFO[VideoPlayer.Title]</label>
+							<onclick>RunScript(script.skin.helper.service,action=stripstring,splitchar= - ,string=$INFO[VideoPlayer.Title],output=SerchVEVO,index=0)</onclick>
+							<onclick>Skin.SetString(searchyt,$INFO[Window(Home).Property(SerchVEVO)])</onclick>
+							<onclick condition="String.IsEqual(skin.string(searchytplay),playlist)">5001</onclick>
+						</item>
+					</content>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>-50</top>
+				<width>1920</width>
+				<height>1100</height>
+				<texture>black.png</texture>
+				<animation effect="fade" start="0" end="100" time="4500" condition="Player.HasMedia + System.IdleTime(12) + !Control.HasFocus(188) + Skin.HasSetting(ytzoom)">Conditional</animation>
+				<visible>Player.HasMedia + System.IdleTime(12) + !Control.HasFocus(188) + Skin.HasSetting(ytzoom)</visible>
+			</control>
+			<control type="label" id="152">
+				<animation effect="slide" start="0,0" end="-200,0" time="2500" condition="Player.HasMedia + System.IdleTime(12) + !Control.HasFocus(188) + Skin.HasSetting(ytzoom)">Conditional</animation>
+                <left>860</left>
+                <top>-35</top>
+                <width>790</width>
+                <height>50</height>
+                <aligny>center</aligny>
+                <font>Font_20A</font>
+                <label>$VAR[yttitle]</label>
+                <shadowcolor>subcolorfocus</shadowcolor>
+				<colordiffuse>subcolorfocus</colordiffuse>
+				<visible>![Control.HasFocus(155)|Control.HasFocus(156)]</visible>
+			</control>	
+			<control type="group">
+				<animation effect="zoom" start="100" end="170" center="auto" time="2500"condition="Player.HasMedia + System.IdleTime(12) + !Control.HasFocus(188) + Skin.HasSetting(ytzoom)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="550,250" time="2500" condition="Player.HasMedia + System.IdleTime(12) + !Control.HasFocus(188) + Skin.HasSetting(ytzoom)">Conditional</animation>
+			<control type="image">
+				<top>-20</top>
+                <left>10</left>
+				<width>800</width>
+				<height>450</height>
+				<aligny>left</aligny>
+                <aspectratio>keep</aspectratio>
+                <texture background="true">black.png</texture>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<visible>Player.HasMedia</visible>
+			</control>
+			<control type="videowindow">
+				<top>-25</top>
+                <left>10</left>
+				<width>800</width>
+				<height>450</height>
+			</control>
+			<control type="multiimage">
+				<top>-20</top>
+                <left>10</left>
+				<width>160</width>
+				<height>90</height>
+				<aligny>left</aligny>
+                <aspectratio>keep</aspectratio>
+                <imagepath>http://localhost:52307/getmusicart/?artist=$INFO[VideoPlayer.Artist]&amp;type=clearlogo&amp;fallback=flags/videocodec/default.png</imagepath>
+				<visible>Player.HasMedia</visible>
+			</control>
+            <control type="list" id="154">
+				<top>325</top>
+                <left>20</left>
+				<width>800</width>
+				<height>450</height>
+				<ondown>Container.Update(path,replace)</ondown>
+				<ondown>ReplaceWindow(videos,plugin://plugin.video.youtube/,return)</ondown>
+                <ondown>5001</ondown>
+                <onup>155</onup>
+                <onleft>154</onleft>
+                <onright>155</onright>
+                <onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=d=,string=$INFO[Player.Filenameandpath],output=SimularYT,index=1)</onfocus>
+                <viewtype>list</viewtype>
+                <orientation>horizontal</orientation>
+                <scrolltime>200</scrolltime>
+                <focusposition>2</focusposition>
+				<visible allowhiddenfocus="true">Control.HasFocus(154)+Player.HasMedia</visible>
+                <itemlayout width="76" height="45">
+                    <control type="image">
+                        <top>33</top>
+                        <width>69</width>
+                        <height>69</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <colordiffuse>50FFFAF0</colordiffuse>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="76" height="45">
+                    <control type="image">
+                        <top>33</top>
+                        <width>69</width>
+                        <height>69</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <colordiffuse>FFFFFAF0</colordiffuse>
+                    </control>
+                </focusedlayout>
+                <content>
+                    <item id="1">
+                        <!-- full -->
+                        <label></label>
+                        <icon>osd_menun_bg.png</icon>
+                        <onclick>fullscreen</onclick>
+                    </item>
+                    <item id="2">
+                        <!-- skipbwd -->
+                        <label></label>
+                        <icon>osd_menu_skipbwd.png</icon>
+                        <onclick>PlayerControl(Previous)</onclick>
+                    </item>
+                    <item id="3">
+                        <!-- pause -->
+                        <label></label>
+                        <icon>osd_menu_pause.png</icon>
+                        <onclick>PlayerControl(Play)</onclick>
+                        <visible>!Player.Paused</visible>
+                    </item>
+                    <item id="4">
+                        <!-- play -->
+                        <label></label>
+                        <icon>osd_menu_play.png</icon>
+                        <onclick>PlayerControl(Play)</onclick>
+                        <visible>Player.Paused</visible>
+                    </item>
+                    <item id="5">
+                        <!-- stop -->
+                        <label></label>
+                        <icon>osd_menu_stop.png</icon>
+                        <onclick>PlayerControl(Stop)</onclick>
+						<onclick>Dialog.Close(playercontrols)</onclick>
+                    </item>
+                    <item id="7">
+                        <!-- skipfwd -->
+                        <label></label>
+                        <icon>osd_menu_skipfwd.png</icon>
+                        <onclick>PlayerControl(Next)</onclick>
+                    </item>
+                    <item id="9">
+                        <!-- repeat -->
+                        <label></label>
+                        <icon>$VAR[value_button_repeat]</icon>
+                        <onclick>PlayerControl(Repeat)</onclick>
+                    </item>
+                    <item id="10">
+                        <!-- random -->
+                        <label></label>
+                        <icon>$VAR[value_button_random]</icon>
+                        <onclick>PlayerControl(Random)</onclick>
+                    </item>
+                    <item id="11">
+                        <!-- volume down -->
+                        <label></label>
+                        <icon>osd_menu_volupF.png</icon>
+                        <onclick>VolumeDown</onclick>
+                    </item>
+                    <item id="12">
+                        <!-- volume up -->
+                        <label></label>
+                        <icon>osd_menu_voldownF.png</icon>
+                        <onclick>VolumeUp</onclick>
+                    </item>
+                    <item id="13">
+                        <!-- mute -->
+                        <label></label>
+                        <icon>osd_menu_lyrics.png</icon>
+                        <onclick>Mute</onclick>
+                    </item>
+                </content>
+            </control>
+			</control>
+			<control type="image">
+                <left>1670</left>
+                <top>-55</top>
+                <width>256</width>
+                <height>144</height>
+				<colordiffuse>white</colordiffuse>
+				<texture>special://home/addons/plugin.video.youtube/resources/media/fanart.jpg</texture>
+				<visible>![Control.HasFocus(155)|Control.HasFocus(156)]</visible>
+			</control>
+			<control type="group">
+			<visible>Player.HasMedia+!String.IsEmpty(VideoPlayer.Artist)</visible>
+			<control type="label">
+                <left>1670</left>
+                <top>120</top>
+                <width>256</width>
+                <height>25</height>
+                <align>center</align>
+                <font>Font_20A</font>
+                <label>[COLOR=$VAR[value_headercolor]]$LOCALIZE[31037] : [/COLOR]</label>
+			</control>
+			<control type="label">
+                <left>1670</left>
+                <top>155</top>
+                <width>256</width>
+                <height>25</height>
+                <align>center</align>
+                <font>Font_20A</font>
+                <label>$INFO[VideoPlayer.Artist]</label>
+			</control>
+			<control type="label">
+                <left>1670</left>
+                <top>190</top>
+                <width>256</width>
+                <height>25</height>
+                <align>center</align>
+                <font>Font_20A</font>
+                <label>[COLOR=$VAR[value_headercolor]]$LOCALIZE[31089][/COLOR]$INFO[VideoPlayer.Year, : ,]</label>
+			</control>	
+			<control type="label">
+                <left>1670</left>
+                <top>225</top>
+                <width>256</width>
+                <height>25</height>
+                <align>center</align>
+                <font>Font_20A</font>
+                <label>[COLOR=$VAR[value_headercolor]]$LOCALIZE[31126][/COLOR]$INFO[Player.TimeRemaining, : ,]</label>
+			</control>
+			</control>
+            <control type="panel" id="188">
+                <viewtype label="YOUTUBE">icon</viewtype>
+                <left>-320</left>
+                <top>0</top>
+                <width>300</width>
+                <height>1030</height>
+                <onup>188</onup>
+                <onleft>9000</onleft>
+                <onright>5001</onright>
+				<onfocus condition="Window.Previous(fullscreenvideo)">5001</onfocus>
+                <scrolltime>400</scrolltime>
+                <pagecontrol>80</pagecontrol>
+				<orientation>vertical</orientation>
+				<animation effect="slide" start="0,0" end="50,0" time="1600" tween="sine" easing="inout" condition="Control.HasFocus(188)">Conditional</animation>
+				<visible>String.Contains(Container.FolderPath,youtube)</visible>
+                <itemlayout height="60" width="300">
+                    <control type="image">
+                        <left>0</left>
+                        <top>2</top>
+                        <width>84</width>
+                        <height>51</height>
+                        <texture>landscapex_back.png</texture>
+                        <colordiffuse>30FFFAF0</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                        <include>Animation_Fade</include>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>1</top>
+                        <width>87</width>
+                        <height>54</height>
+                        <bordersize>3</bordersize>
+                        <texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                    </control>
+					<control type="label">
+                        <left>90</left>
+                        <top>0</top>
+                        <width>190</width>
+                        <height>60</height>
+                        <align>left</align>
+                        <font>Font_13</font>
+						<wrapmultiline>true</wrapmultiline>
+                        <label>$INFO[ListItem.Label]</label>
+                        <include>listcolor</include>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>1</top>
+                        <width>87</width>
+                        <height>54</height>
+                        <bordersize>3</bordersize>
+                        <texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>String.IsEqual(ListItem.Label,..)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="60" width="300">
+                    <control type="image">
+                        <left>0</left>
+                        <top>2</top>
+                        <width>84</width>
+                        <height>51</height>
+                        <texture>landscapex_back.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+                            <effect type="fade" start="80" end="100" time="400" />
+                        </animation>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>1</top>
+                        <width>87</width>
+                        <height>54</height>
+                        <bordersize>3</bordersize>
+                        <texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+                            <effect type="fade" start="80" end="100" time="400" />
+                        </animation>
+                        <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>1</top>
+                        <width>87</width>
+                        <height>54</height>
+                        <bordersize>3</bordersize>
+                        <texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+                            <effect type="fade" start="80" end="100" time="400" />
+                        </animation>
+                        <visible>String.IsEqual(ListItem.Label,..)</visible>
+                    </control>
+					<control type="label">
+                        <left>90</left>
+                        <top>0</top>
+                        <width>190</width>
+                        <height>60</height>
+                        <align>left</align>
+                        <font>Font_13</font>
+						<wrapmultiline>true</wrapmultiline>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>$VAR[value_headercolor]</textcolor>
+                    </control>
+                </focusedlayout>
+            </control>
+			</control>
+        </control>
+    </include>
+	</includes>

@@ -4560,7 +4560,7 @@
 					<top>8</top>
 					<width>345</width>
 					<height>270</height>
-					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Icon]</texture>
 					<aspectratio>stretch</aspectratio>
 					<bordertexture border="-2">grey.png</bordertexture>
 					<visible>$PARAM[focused]</visible>
@@ -4570,7 +4570,7 @@
 					<top>8</top>
 					<width>345</width>
 					<height>270</height>
-					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Icon]</texture>
 					<aspectratio>stretch</aspectratio>
 					<visible>!$PARAM[focused]</visible>
 				</control>

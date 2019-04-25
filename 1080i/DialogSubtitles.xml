@@ -11,6 +11,24 @@
             <include>Animation_DialogPopup</include>
             <visible>![Player.Forwarding | Player.Rewinding] + [!String.IsEmpty(VideoPlayer.Title) | !String.IsEmpty(VideoPlayer.TVShowTitle)]</visible>
             <control type="image">
+                <!-- Backgrounf Fanart -->
+                <left>0</left>
+                <top>0</top>
+                <height>1080</height>
+                <width>1920</width>
+                <texture>special://skin/backgrounds/default.jpg</texture>
+            </control>
+            <control type="image" id="82">
+                <!-- Logo e Clearart -->
+                <left>680</left>
+                <top>850</top>
+                <width>490</width>
+                <height>325</height>
+                <aspectratio aligny="top">keep</aspectratio>
+                <texture background="true">$VAR[value_art_full]</texture>
+                <visible>!String.IsEqual(skin.string(fullscreen_icon),noicon)</visible>
+            </control>
+            <control type="image">
                 <!-- Menu da direita -->
                 <left>0</left>
                 <top>45</top>
