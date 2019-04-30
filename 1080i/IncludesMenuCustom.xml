@@ -5667,6 +5667,13 @@
 				<onclick>Skin.SetPath(CustomAnimatedIconFolder)</onclick>
 				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + Skin.HasSetting(weathericons) + Skin.HasSetting(weathericons_external)</visible>
 			</control>
+			<control type="button" id="1641">
+				<include>CustomMenuButton</include>
+				<label>Animated Weather icons - $VAR[value_weathericonsfolder_animated]</label>
+				<onclick condition="String.IsEmpty(skin.string(CustomAnimatedWeatherIconFolder))|String.IsEqual(skin.string(CustomAnimatedWeatherIconFolder),resource://resource.images.weathericons.hd.animated/)">Skin.SetString(CustomAnimatedWeatherIconFolder,resource://resource.images.weathericons.animated/)</onclick>
+				<onclick condition="String.IsEqual(skin.string(CustomAnimatedWeatherIconFolder),resource://resource.images.weathericons.animated/)">Skin.SetString(CustomAnimatedWeatherIconFolder,resource://resource.images.weathericons.hd.animated/)</onclick>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + Skin.HasSetting(weathericons) + !Skin.HasSetting(weathericons_external)</visible>
+			</control>
 			<control type="button" id="165">
 				<!-- Icones Clima/Pasta -->
 				<!-- nao trocar id -->
@@ -5676,9 +5683,7 @@
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),weather/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.coloured/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.coloured/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.3d-coloured/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.3d-coloured/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.default/)</onclick>
-				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.default/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.animated/)</onclick>
-				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.hd.animated/)</onclick>
-				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.hd.animated/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.white/)</onclick>
+				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.default/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.white/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.white/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.3d-white/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.3d-white/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.flat/)</onclick>
 				<onclick condition="String.IsEqual(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.flat/)">Skin.SetString(CustomWeatherIconFolder,resource://resource.images.weathericons.outline/)</onclick>

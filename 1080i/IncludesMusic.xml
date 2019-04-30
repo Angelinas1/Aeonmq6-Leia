@@ -12,42 +12,48 @@
         <allowoverlay>no</allowoverlay>
         <views>51,52,54,55,56,57,58,59,62,63,64,65,78,53,185,186</views>
         <controls>
+            <control type="image">
+                <!-- Single Fanart -->
+                <include>WindowBG</include>
+                <texture background="true">special://skin/backgrounds/music.jpg</texture>
+                <visible>String.Contains(ListItem.Label,..)</visible>
+            </control>
             <control type="multiimage">
                 <!-- Multi Fanart -->
                 <include>WindowBG</include>
                 <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_musicfanart]</imagepath>
-                <visible>!Container.Content(genres)</visible>
+                <visible>!Container.Content(genres)+!String.Contains(ListItem.Label,..)</visible>
             </control>
             <control type="image">
                 <!-- Single Fanart -->
                 <include>WindowBG</include>
                 <texture background="true">$VAR[value_defaultmusicfanart]</texture>
-                <visible>!Container.Content(genres)</visible>
+                <visible>!Container.Content(genres)+!String.Contains(ListItem.Label,..)</visible>
             </control>
             <control type="image">
                 <!-- Single Fanart Genre -->
                 <include>WindowBG</include>
                 <texture fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_defaultmusicfanart]</texture>
-                <visible>Container.Content(genres)</visible>
+                <visible>Container.Content(genres)+!String.Contains(ListItem.Label,..)</visible>
             </control>
             <control type="image" id="5034">
                 <!-- Extra Fanart Artist/Album -->
                 <include>WindowBG</include>
                 <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Fanart)]</texture>
-                <visible>[Container.Content(artists) | Container.Content(albums)] + String.IsEmpty(ListItem.Art(fanart))</visible>
+                <visible>[Container.Content(artists) | Container.Content(albums)] + String.IsEmpty(ListItem.Art(fanart))+!String.Contains(ListItem.Label,..)</visible>
             </control>
             <control type="multiimage" id="5032">
                 <!-- Extra Fanart Artist/Album -->
                 <include>WindowBG</include>
                 <imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</imagepath>
-                <visible>[Container.Content(artists) | Container.Content(albums)] + String.Contains(skin.string(musicfanart),extra)</visible>
+                <visible>[Container.Content(artists) | Container.Content(albums)] + String.Contains(skin.string(musicfanart),extra)+!String.Contains(ListItem.Label,..)</visible>
             </control>
 
             <control type="multiimage" id="5033">
                 <!-- Extra Fanart Song -->
                 <include>WindowBG</include>
                  <imagepath background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</imagepath>
-                <visible>Container.Content(songs) + String.Contains(skin.string(musicfanart),extra)</visible>
+                <visible>Container.Content(songs) + String.Contains(skin.string(musicfanart),extra)+!String.Contains(ListItem.Label,..)</visible>
             </control>
             <control type="group">
                 <!-- default group -->

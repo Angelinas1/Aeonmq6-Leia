@@ -1310,6 +1310,8 @@
 					<ondown>Skin.Reset(albums_as)</ondown>
 					<ondown>Skin.Reset(mostloved)</ondown>
 					<ondown>Skin.Reset(youtube)</ondown>
+					<ondown>Skin.Reset(topartists)</ondown>
+					<ondown>Skin.Reset(topalbums)</ondown>
 					<ondown>Skin.Reset(similarartist)</ondown>
 					<ondown>Skin.Reset(similarartistlastfm)</ondown>
                     <ondown>SetFocus(160)</ondown>
@@ -1417,7 +1419,8 @@
 					<ondown>Skin.Reset(artistzoom)</ondown>
 					<ondown>Skin.Reset(coverzoom)</ondown>
 					<ondown>Skin.Reset(albums_as)</ondown>
-					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(topartists)</ondown>
+					<ondown>Skin.Reset(topalbums)</ondown>
 					<ondown>Skin.Reset(youtube)</ondown>
 					<ondown>Skin.Reset(similarartist)</ondown>
 					<ondown>Skin.Reset(similarartistlastfm)</ondown>
@@ -1482,7 +1485,8 @@
 					<ondown>Skin.Reset(artistzoom)</ondown>
 					<ondown>Skin.Reset(coverzoom)</ondown>
 					<ondown>Skin.Reset(mostloved)</ondown>
-					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(topartists)</ondown>
+					<ondown>Skin.Reset(topalbums)</ondown>
 					<ondown>Skin.Reset(youtube)</ondown>
 					<ondown>Skin.Reset(albums_as)</ondown>
 					<ondown>Skin.Reset(similarartistlastfm)</ondown>
@@ -1544,8 +1548,7 @@
                     <width>1800</width>
                     <height>330</height>
                     <onup>149</onup>
-                    <ondown>SetFocus(149)</ondown>
-					<ondown>Skin.SetBool(similarartistlastfm)</ondown>
+                    <ondown>SetFocus(6005)</ondown>
 					<onclick>Dialog.Close(2001)</onclick>
                     <orientation>horizontal</orientation>
                     <scrolltime>400</scrolltime>
@@ -1568,9 +1571,17 @@
                             <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.0.thumb]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
+                            <animation effect="zoom" start="100" end="105" center="auto" time="300"condition="Control.HasFocus(6005)">Conditional</animation>
                             <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
                         </control>
+						<control type="button" id="6005">
+							<onleft>6009</onleft>
+							<onright>6006</onright>
+							<onup>149</onup>
+							<onclick>Dialog.Close(2001)</onclick>
+							<onclick>ActivateWindow(music,$INFO[ListItem.Path]/$VAR[last_fmsa.0.name])</onclick>
+							<include>InvisibleButton</include>
+						</control>
                         <control type="image">
 							<left>450</left>
 							<top>746</top>
@@ -1582,9 +1593,17 @@
                             <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.1.thumb]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
+                            <animation effect="zoom" start="100" end="105" center="auto" time="300"condition="Control.HasFocus(6006)">Conditional</animation>
                             <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
                         </control>
+						<control type="button" id="6006">
+							<onleft>6005</onleft>
+							<onright>6007</onright>
+							<onup>149</onup>
+							<onclick>Dialog.Close(2001)</onclick>
+							<onclick>ActivateWindow(music,$INFO[ListItem.Path]/$VAR[last_fmsa.1.name])</onclick>
+							<include>InvisibleButton</include>
+						</control>
                         <control type="image">
 							<left>832</left>
 							<top>746</top>
@@ -1596,9 +1615,17 @@
                             <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.2.thumb]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
+                            <animation effect="zoom" start="100" end="105" center="auto" time="300"condition="Control.HasFocus(6007)">Conditional</animation>
                             <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
                         </control>
+						<control type="button" id="6007">
+							<onleft>6006</onleft>
+							<onright>6008</onright>
+							<onup>149</onup>
+							<onclick>Dialog.Close(2001)</onclick>
+							<onclick>ActivateWindow(music,$INFO[ListItem.Path]/$VAR[last_fmsa.2.name])</onclick>
+							<include>InvisibleButton</include>
+						</control>
                         <control type="image">
 							<left>1204</left>
 							<top>746</top>
@@ -1610,9 +1637,17 @@
                             <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.3.thumb]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
+                            <animation effect="zoom" start="100" end="105" center="auto" time="300"condition="Control.HasFocus(6008)">Conditional</animation>
                             <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
                         </control>
+						<control type="button" id="6008">
+							<onleft>6007</onleft>
+							<onright>6009</onright>
+							<onup>149</onup>
+							<onclick>Dialog.Close(2001)</onclick>
+							<onclick>ActivateWindow(music,$INFO[ListItem.Path]/$VAR[last_fmsa.3.name],return)</onclick>
+							<include>InvisibleButton</include>
+						</control>
                         <control type="image">
 							<left>1576</left>
 							<top>746</top>
@@ -1624,23 +1659,17 @@
                             <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.4.thumb]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
+                            <animation effect="zoom" start="100" end="105" center="auto" time="300"condition="Control.HasFocus(6009)">Conditional</animation>
                             <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
                         </control>
-                        <control type="image">
-							<left>1948</left>
-							<top>746</top>
-                            <width>270</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
-                            <texture fallback="DefaultAudioCover.png" background="true">$VAR[last_fmsa.3.thumb]</texture>
-                            <bordertexture border="-2">black.png</bordertexture>
-                            <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
-                            <visible>String.Contains(skin.string(sextendalbum_list),15011)</visible>
-                        </control>							
+						<control type="button" id="6009">
+							<onleft>6008</onleft>
+							<onright>6005</onright>
+							<onup>149</onup>
+							<onclick>Dialog.Close(2001)</onclick>
+							<onclick>ActivateWindow(music,$INFO[ListItem.Path]/$VAR[last_fmsa.4.name],return)</onclick>
+							<include>InvisibleButton</include>
+						</control>					
                  <control type="list" id="15012">
                     <visible>String.Contains(skin.string(sextendalbum_list),15012)</visible>
                     <viewtype label="List">List Info</viewtype>
@@ -1654,12 +1683,13 @@
 					<ondown>Skin.Reset(artistzoom)</ondown>
 					<ondown>Skin.Reset(coverzoom)</ondown>
 					<ondown>Skin.Reset(albums_as)</ondown>
-					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(similarartistlastfm)</ondown>
 					<ondown>Skin.Reset(youtube)</ondown>
 					<ondown>Skin.Reset(similarartist)</ondown>
-					<ondown>Skin.Reset(similarartistlastfm)</ondown>
+					<ondown>Skin.Reset(mostloved)</ondown>
+					<ondown>Skin.Reset(topalbums)</ondown>
                     <ondown>SetFocus(160)</ondown>
-					<ondown>Skin.SetBool(mostloved)</ondown>
+					<ondown>Skin.SetBool(topartists)</ondown>
                     <orientation>horizontal</orientation>
                     <scrolltime>400</scrolltime>
                     <focusposition>2</focusposition>
@@ -1743,12 +1773,13 @@
 					<ondown>Skin.Reset(artistzoom)</ondown>
 					<ondown>Skin.Reset(coverzoom)</ondown>
 					<ondown>Skin.Reset(albums_as)</ondown>
-					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(topartists)</ondown>
 					<ondown>Skin.Reset(youtube)</ondown>
 					<ondown>Skin.Reset(similarartist)</ondown>
 					<ondown>Skin.Reset(similarartistlastfm)</ondown>
+					<ondown>Skin.Reset(mostloved)</ondown>
                     <ondown>SetFocus(160)</ondown>
-					<ondown>Skin.SetBool(mostloved)</ondown>
+					<ondown>Skin.SetBool(topalbums)</ondown>
                     <orientation>horizontal</orientation>
                     <scrolltime>400</scrolltime>
                     <focusposition>2</focusposition>
@@ -2135,7 +2166,8 @@
 					<ondown>Skin.Reset(artistzoom)</ondown>
 					<ondown>Skin.Reset(coverzoom)</ondown>
 					<ondown>Skin.Reset(mostloved)</ondown>
-					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(topartists)</ondown>
+					<ondown>Skin.Reset(topalbums)</ondown>
 					<ondown>Skin.Reset(youtube)</ondown>
 					<ondown>Skin.Reset(similarartist)</ondown>
 					<ondown>Skin.Reset(similarartistlastfm)</ondown>
@@ -2212,73 +2244,6 @@
                         </control>
                     </focusedlayout>
                 </control> 
-           <!--    <control type="list" id="9010">
-                    <visible>String.Contains(skin.string(sextendalbum_list),9010)</visible>
-                    <viewtype label="List">List Info</viewtype>
-                    <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
-                    <left>78</left>
-                    <top>738</top>
-                    <width>1842</width>
-                    <height>330</height>
-                    <onup>149</onup>
-					<ondown>Skin.Reset(artistzoom)</ondown>
-					<ondown>Skin.Reset(coverzoom)</ondown>
-					<ondown>Skin.Reset(albums_as)</ondown>
-					<ondown>Skin.Reset(mostloved)</ondown>
-					<ondown>Skin.Reset(youtube)</ondown>
-					<ondown>Skin.Reset(similarartist)</ondown>
-					<ondown>Skin.Reset(similarartistlastfm)</ondown>
-                    <ondown>SetFocus(160)</ondown>
-					<ondown>Skin.SetBool(topartist)</ondown>
-					<onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,album)">RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
-					<onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,song)">RunScript(script.playalbum,songid=$INFO[ListItem.DBID])</onclick>
-                    <orientation>horizontal</orientation>
-                    <scrolltime>400</scrolltime>
-                    <focusposition>2</focusposition>
-                    <itemlayout height="255" width="372">
-                        <control type="image">
-                            <left>0</left>
-                            <top>8</top>
-                            <width>270</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
-                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="-2">black.png</bordertexture>
-                            <colordiffuse>FF909090</colordiffuse>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout height="255" width="372">
-                        <control type="image">
-                            <left>0</left>
-                            <top>8</top>
-                            <width>270</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
-                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="-2">black.png</bordertexture>
-                            <colordiffuse>FF909090</colordiffuse>
-                            <include>Animation_Fade</include>
-                            <visible>!Control.HasFocus(9010)</visible>
-                        </control>
-                        <control type="image">
-                            <left>0</left>
-                            <top>8</top>
-                            <width>270</width>
-                            <height>270</height>
-                            <aligny>center</aligny>
-                            <align>left</align>
-                            <aspectratio>scale</aspectratio>
-                            <texture fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <bordertexture border="-2">grey.png</bordertexture>
-                            <include>Animation_Fade</include>
-                            <visible>Control.HasFocus(9010)</visible>
-                        </control>
-                    </focusedlayout>
-                </control>-->
 					<control type="list" id="10010">
                     <viewtype label="List">List Info</viewtype>
                     <visible>String.Contains(skin.string(sextendalbum_list),10010)</visible>
@@ -2292,7 +2257,8 @@
 					<ondown>Skin.Reset(coverzoom)</ondown>
 					<ondown>Skin.Reset(albums_as)</ondown>
 					<ondown>Skin.Reset(mostloved)</ondown>
-					<ondown>Skin.Reset(topartist)</ondown>
+					<ondown>Skin.Reset(topartists)</ondown>
+					<ondown>Skin.Reset(topalbums)</ondown>
 					<ondown>Skin.Reset(similarartist)</ondown>
                     <ondown>SetFocus(160)</ondown>
 					<ondown>Skin.SetBool(youtube)</ondown>
@@ -2379,7 +2345,7 @@
                     <width>1920</width>
                     <height>38</height>
 					<onup>49</onup>
-                    <ondown>910</ondown>
+                    <ondown>SetFocus(911)</ondown>
                     <orientation>horizontal</orientation>
                     <pagecontrol></pagecontrol>
                     <scrolltime>300</scrolltime>
@@ -2499,12 +2465,6 @@
                             <onclick>Skin.SetString(sextendalbum_list,10010)</onclick>
                             <enable>Integer.IsGreater(Container(10010).NumItems,0)</enable>
                         </item>	
-                        <item id="13">
-                            <!-- TopArtist -->
-                            <label>TopArtist</label>
-                            <onclick>Skin.SetString(sextendalbum_list,9010)</onclick>
-                            <visible>Integer.IsGreater(Container(9010).NumItems,0)</visible>
-                        </item>
                         <item id="5">
                             <!-- Refresh -->
                             <description>Refresh</description>
@@ -2564,6 +2524,18 @@
                     </content>
                 </control>
             </control>
+            <control type="button" id="911">
+                <include>InvisibleButton</include>
+                <onfocus condition="String.Contains(skin.string(sextendalbum_list),6010)">SetFocus(6010)</onfocus>
+                <onfocus condition="String.Contains(skin.string(sextendalbum_list),7010)">SetFocus(7010)</onfocus>
+				<onfocus condition="String.Contains(skin.string(sextendalbum_list),8010)">SetFocus(8010)</onfocus>
+				<onfocus condition="String.Contains(skin.string(sextendalbum_list),9010)">SetFocus(9010)</onfocus>
+				<onfocus condition="String.Contains(skin.string(sextendalbum_list),10010)">SetFocus(10010)</onfocus>
+				<onfocus condition="String.Contains(skin.string(sextendalbum_list),15011)">SetFocus(6005)</onfocus>
+				<onfocus condition="String.Contains(skin.string(sextendalbum_list),15012)">SetFocus(15012)</onfocus>
+				<onfocus condition="String.Contains(skin.string(sextendalbum_list),15013)">SetFocus(15013)</onfocus>
+				<onfocus condition="String.Contains(skin.string(sextendalbum_list),15014)">SetFocus(15014)</onfocus>
+            </control>
             <control type="button" id="160">
                 <include>InvisibleButton</include>
                 <onup condition="Skin.HasSetting(artistzoom)">SetFocus(149)</onup>
@@ -2571,7 +2543,8 @@
                 <onup condition="Skin.HasSetting(coverzoom)">SetFocus(6010)</onup>
 				<onup condition="Skin.HasSetting(mostloved)">SetFocus(7010)</onup>
 				<onup condition="Skin.HasSetting(albums_as)">SetFocus(8010)</onup>
-				<onup condition="Skin.HasSetting(topartist)">SetFocus(9010)</onup>
+				<onup condition="Skin.HasSetting(topartists)">SetFocus(15012)</onup>
+				<onup condition="Skin.HasSetting(topalbums)">SetFocus(15013)</onup>
 				<onup condition="Skin.HasSetting(youtube)">SetFocus(10010)</onup>
                 <ondown>Dialog.Close(all,true)</ondown>
                 <onleft condition="Skin.HasSetting(artistzoom)">SetFocus(149)</onleft>
@@ -2690,8 +2663,17 @@
 					<width>1800</width>
 					<height>960</height>
 					<aspectratio align="center">keep</aspectratio>
-					<texture background="true">$INFO[Container(9010).ListItem.Icon]</texture>
-					<visible>Skin.HasSetting(topartist)</visible>
+					<texture background="true">$INFO[Container(15012).ListItem.Icon]</texture>
+					<visible>Skin.HasSetting(topartists)</visible>
+				</control>
+				<control type="image">
+					<left>52</left>
+					<top>48</top>
+					<width>1800</width>
+					<height>960</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture background="true">$INFO[Container(15013).ListItem.Icon]</texture>
+					<visible>Skin.HasSetting(topalbums)</visible>
 				</control>
 				<control type="image">
 					<left>52</left>

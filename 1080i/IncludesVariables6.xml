@@ -3909,15 +3909,17 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEmpty(Skin.String(CustomWeatherConditionFolder))">[COLOR=$VAR[value_headercolor]] - $LOCALIZE[15300][/COLOR]</value>
 	</variable>
 	<variable name="value_weathericonsfolder">
-		<value condition="!String.IsEmpty(skin.string(weathericonsfolder.label))">$INFO[skin.string(weathericonsfolder.label)]</value>
 		<value condition="!String.IsEmpty(Skin.String(CustomAnimatedIconFolder))">[COLOR=$VAR[value_headercolor]] - $LOCALIZE[15311] $INFO[Skin.String(CustomAnimatedIconFolder)][/COLOR]</value>
 		<value condition="String.IsEmpty(Skin.String(CustomAnimatedIconFolder))">[COLOR=$VAR[value_headercolor]] - $LOCALIZE[15300][/COLOR]</value>
+	</variable>
+	<variable name="value_weathericonsfolder_animated">
+		<value condition="String.Contains(skin.string(CustomAnimatedWeatherIconFolder),resource://resource.images.weathericons.animated/)">animated</value>
+		<value condition="String.Contains(skin.string(CustomAnimatedWeatherIconFolder),resource://resource.images.weathericons.hd.animated/)">hd.animated</value>
 	</variable>
 	<variable name="value_customweathericonsfolder">
 		<value condition="String.Contains(skin.string(CustomWeatherIconFolder),weather/)">Regular</value>
 		<value condition="String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.coloured/)">coloured</value>
 		<value condition="String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.3d-coloured/)">3d-coloured</value>
-		<value condition="String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)">animated</value>
 		<value condition="String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.default/)">default</value>
 		<value condition="String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.white/)">white</value>
 		<value condition="String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.3d-white/)">3d-white</value>
@@ -4013,26 +4015,26 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),concert.genre)">videodb://musicvideos/genres/</value>
 	</variable>
 	<variable name="value_widgetsplaylistvideo">
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl1.recent)">special://videoplaylists/$INFO[skin.string(menu1.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl2.recent)">special://videoplaylists/$INFO[skin.string(menu2.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl3.recent)">special://videoplaylists/$INFO[skin.string(menu3.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl4.recent)">special://videoplaylists/$INFO[skin.string(menu4.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl5.recent)">special://videoplaylists/$INFO[skin.string(menu5.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl6.recent)">special://videoplaylists/$INFO[skin.string(menu6.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl7.recent)">special://videoplaylists/$INFO[skin.string(menu7.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl8.recent)">special://videoplaylists/$INFO[skin.string(menu8.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl9.recent)">special://videoplaylists/$INFO[skin.string(menu9.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl10.recent)">special://videoplaylists/$INFO[skin.string(menu10.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl11.recent)">special://videoplaylists/$INFO[skin.string(menu11.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl12.recent)">special://videoplaylists/$INFO[skin.string(menu12.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl13.recent)">special://videoplaylists/$INFO[skin.string(menu13.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl14.recent)">special://videoplaylists/$INFO[skin.string(menu14.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl15.recent)">special://videoplaylists/$INFO[skin.string(menu15.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl16.recent)">special://videoplaylists/$INFO[skin.string(menu16.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl17.recent)">special://videoplaylists/$INFO[skin.string(menu17.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl18.recent)">special://videoplaylists/$INFO[skin.string(menu18.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl19.recent)">special://videoplaylists/$INFO[skin.string(menu19.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl20.recent)">special://videoplaylists/$INFO[skin.string(menu20.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl1.recent)">$INFO[skin.string(menu1.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl2.recent)">$INFO[skin.string(menu2.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl3.recent)">$INFO[skin.string(menu3.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl4.recent)">$INFO[skin.string(menu4.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl5.recent)">$INFO[skin.string(menu5.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl6.recent)">$INFO[skin.string(menu6.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl7.recent)">$INFO[skin.string(menu7.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl8.recent)">$INFO[skin.string(menu8.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl9.recent)">$INFO[skin.string(menu9.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl10.recent)">$INFO[skin.string(menu10.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl11.recent)">$INFO[skin.string(menu11.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl12.recent)">$INFO[skin.string(menu12.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl13.recent)">$INFO[skin.string(menu13.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl14.recent)">$INFO[skin.string(menu14.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl15.recent)">$INFO[skin.string(menu15.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl16.recent)">$INFO[skin.string(menu16.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl17.recent)">$INFO[skin.string(menu17.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl18.recent)">$INFO[skin.string(menu18.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl19.recent)">$INFO[skin.string(menu19.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vpl20.recent)">$INFO[skin.string(menu20.path)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vnodes1)">$INFO[skin.string(menu1.path)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vnodes2)">$INFO[skin.string(menu2.path)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),vnodes3)">$INFO[skin.string(menu2.path)]</value>
@@ -4085,26 +4087,26 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),music.years)">musicdb://years/</value>
 	</variable>
 	<variable name="value_widgetsplaylistmusic">
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl1.recent)">special://musicplaylists/$INFO[skin.string(menu1.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl2.recent)">special://musicplaylists/$INFO[skin.string(menu2.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl3.recent)">special://musicplaylists/$INFO[skin.string(menu3.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl4.recent)">special://musicplaylists/$INFO[skin.string(menu4.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl5.recent)">special://musicplaylists/$INFO[skin.string(menu5.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl6.recent)">special://musicplaylists/$INFO[skin.string(menu6.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl7.recent)">special://musicplaylists/$INFO[skin.string(menu7.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl8.recent)">special://musicplaylists/$INFO[skin.string(menu8.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl9.recent)">special://musicplaylists/$INFO[skin.string(menu9.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl10.recent)">special://musicplaylists/$INFO[skin.string(menu10.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl11.recent)">special://musicplaylists/$INFO[skin.string(menu11.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl12.recent)">special://musicplaylists/$INFO[skin.string(menu12.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl13.recent)">special://musicplaylists/$INFO[skin.string(menu13.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl14.recent)">special://musicplaylists/$INFO[skin.string(menu14.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl15.recent)">special://musicplaylists/$INFO[skin.string(menu15.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl16.recent)">special://musicplaylists/$INFO[skin.string(menu16.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl17.recent)">special://musicplaylists/$INFO[skin.string(menu17.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl18.recent)">special://musicplaylists/$INFO[skin.string(menu18.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl19.recent)">special://musicplaylists/$INFO[skin.string(menu19.path)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl20.recent)">special://musicplaylists/$INFO[skin.string(menu20.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl1.recent)">$INFO[skin.string(menu1.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl2.recent)">$INFO[skin.string(menu2.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl3.recent)">$INFO[skin.string(menu3.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl4.recent)">$INFO[skin.string(menu4.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl5.recent)">$INFO[skin.string(menu5.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl6.recent)">$INFO[skin.string(menu6.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl7.recent)">$INFO[skin.string(menu7.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl8.recent)">$INFO[skin.string(menu8.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl9.recent)">$INFO[skin.string(menu9.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl10.recent)">$INFO[skin.string(menu10.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl11.recent)">$INFO[skin.string(menu11.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl12.recent)">$INFO[skin.string(menu12.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl13.recent)">$INFO[skin.string(menu13.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl14.recent)">$INFO[skin.string(menu14.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl15.recent)">$INFO[skin.string(menu15.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl16.recent)">$INFO[skin.string(menu16.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl17.recent)">$INFO[skin.string(menu17.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl18.recent)">$INFO[skin.string(menu18.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl19.recent)">$INFO[skin.string(menu19.path)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),apl20.recent)">$INFO[skin.string(menu20.path)]</value>
 	</variable>
 	<variable name="value_target">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(target),video)">videos</value>
@@ -4746,9 +4748,9 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(909)">100%</value>
 	</variable>
 	<variable name="value_weathericons">
-		<value condition="Skin.HasSetting(weathericons) + !Skin.HasSetting(weathericons_external)">$INFO[Skin.String(extrapack)]/icons_weather/</value>
 		<value condition="Skin.HasSetting(weathericons) + Skin.HasSetting(weathericons_external)">$INFO[Skin.String(CustomAnimatedIconFolder)]</value>
-		<value condition="!Skin.HasSetting(weathericons) + String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)">resource://resource.images.weathericons.animated/</value>
+		<value condition="Skin.HasSetting(weathericons) + !Skin.HasSetting(weathericons_external) + !String.Contains(skin.string(customanimatedweathericonfolder),hd)">resource://resource.images.weathericons.animated/</value>
+		<value condition="Skin.HasSetting(weathericons) + !Skin.HasSetting(weathericons_external) + String.Contains(skin.string(CustomAnimatedWeatherIconFolder),hd)">resource://resource.images.weathericons.hd.animated/</value>
 	</variable>
 	<variable name="value_livetvfanart">
 		<value condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.ExtraFanArt))">$INFO[Window(home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</value>
@@ -5184,13 +5186,15 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_audioinfo_zoomlabel">
 		<value condition="Skin.HasSetting(artistzoom)">$INFO[ListItem.Artist]$INFO[ListItem.Album, | ]</value>
-		<value condition="Skin.HasSetting(coverzoom)">$INFO[Container(50).ListItem.Label]</value>
+		<value condition="Skin.HasSetting(coverzoom)">$INFO[Container(6010).ListItem.Label]</value>
 		<value condition="Skin.HasSetting(similarartist)">$INFO[Container(5010).ListItem.Label]</value>
-		<value condition="Skin.HasSetting(similarartistlastfm)">$INFO[Container(5011).ListItem.Label]</value>
+		<value condition="Skin.HasSetting(similarartistlastfm)">$INFO[Container(15011).ListItem.Label]</value>
 		<value condition="Skin.HasSetting(mostloved)">$INFO[Container(7010).ListItem.Label]</value>
 		<value condition="Skin.HasSetting(albums_as)">$INFO[Container(8010).ListItem.Label]</value>
-		<value condition="Skin.HasSetting(topartist)">$INFO[Container(9010).ListItem.Label]</value>
+		<value condition="Skin.HasSetting(topartists)">$INFO[Container(15012).ListItem.Label]</value>
 		<value condition="Skin.HasSetting(youtube)">$INFO[Container(10010).ListItem.Label]</value>
+		<value condition="Skin.HasSetting(topalbums)">$INFO[Container(15013).ListItem.Label]</value>
+		
 		</variable>
 	<variable name="value_audioinfo_label3">
 		<value condition="Container.Content(artists)">$LOCALIZE[31339]</value>

@@ -154,7 +154,7 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<include>Animation_HomeGlass</include>
 				<texture>details_back.png</texture>
-				<visible>Control.HasFocus(155)|Control.HasFocus(156)</visible>
+				<visible>Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)</visible>
 			</control>	
 			<control type="image">
                 <left>850</left>
@@ -164,7 +164,7 @@
 				<colordiffuse>grey</colordiffuse>
 				<include>Animation_HomeGlass</include>
 				<texture>dialogs_context_focus.png</texture>
-				<visible>Control.HasFocus(155)|Control.HasFocus(156)</visible>
+				<visible>Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)</visible>
 			</control>
             <control type="button" id="155">
 			    <left>882</left>
@@ -179,7 +179,7 @@
                 <onclick>Skin.SetString(searchyt)</onclick>
 				<onclick>5001</onclick>
 				<label>$INFO[Skin.String(searchyt)]</label>
-				<visible allowhiddenfocus="true">Control.HasFocus(155)|Control.HasFocus(156)</visible>
+				<visible allowhiddenfocus="true">Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)</visible>
             </control>
 			<control type="panel" id="156">
 			    <left>1670</left>
@@ -189,9 +189,9 @@
 				<onleft>155</onleft>
 				<onright>155</onright>
 				<onup>156</onup>
-				<ondown>5001</ondown>
+				<ondown>1561</ondown>
 				<orientation>vertical</orientation>
-				<visible allowhiddenfocus="true">Control.HasFocus(155)|Control.HasFocus(156)</visible>
+				<visible allowhiddenfocus="true">Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)</visible>
 					<itemlayout width="260" height="38">
 						<control type="image">
 							<left>0</left>
@@ -255,6 +255,63 @@
 						</item>
 					</content>
 			</control>
+			<control type="panel" id="1561">
+			    <left>1670</left>
+                <top>84</top>
+				<height>227</height>
+				<width>477</width>
+				<onleft>155</onleft>
+				<onright>155</onright>
+				<onup>156</onup>
+				<ondown>5001</ondown>
+				<onclick>Skin.SetString(searchyt,$INFO[ListItem.Label])</onclick>
+				<onclick>SetFocus(155)</onclick>
+				<orientation>vertical</orientation>
+				<content>plugin://plugin.video.youtube/kodion/search/list/</content>
+				<visible allowhiddenfocus="true">Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)</visible>
+					<itemlayout width="260" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>258</width>
+							<texture>topmenu_button_nofocus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="label">
+							<left>8</left>
+							<top>0</top>
+							<height>38</height>
+							<width>258</width>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FF101010</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout width="260" height="38">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<height>38</height>
+							<width>258</width>
+							<texture>topmenu_button_focus.png</texture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="label">
+							<left>8</left>
+							<top>0</top>
+							<height>38</height>
+							<width>258</width>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_15</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>$VAR[value_headercolor]</textcolor>
+						</control>
+					</focusedlayout>
+			</control>
 			<control type="image">
 				<left>0</left>
 				<top>-50</top>
@@ -275,7 +332,7 @@
                 <label>$VAR[yttitle]</label>
                 <shadowcolor>subcolorfocus</shadowcolor>
 				<colordiffuse>subcolorfocus</colordiffuse>
-				<visible>![Control.HasFocus(155)|Control.HasFocus(156)]</visible>
+				<visible>![Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)]</visible>
 			</control>	
 			<control type="group">
 				<animation effect="zoom" start="100" end="170" center="auto" time="2500"condition="Player.HasMedia + System.IdleTime(12) + !Control.HasFocus(188) + Skin.HasSetting(ytzoom)">Conditional</animation>
@@ -422,10 +479,10 @@
                 <height>144</height>
 				<colordiffuse>white</colordiffuse>
 				<texture>special://home/addons/plugin.video.youtube/resources/media/fanart.jpg</texture>
-				<visible>![Control.HasFocus(155)|Control.HasFocus(156)]</visible>
+				<visible>![Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)]</visible>
 			</control>
 			<control type="group">
-			<visible>Player.HasMedia+!String.IsEmpty(VideoPlayer.Artist)</visible>
+			<visible>Player.HasMedia+!String.IsEmpty(VideoPlayer.Artist)+![Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)]</visible>
 			<control type="label">
                 <left>1670</left>
                 <top>120</top>

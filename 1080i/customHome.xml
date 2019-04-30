@@ -254,48 +254,7 @@
 				<itemgap>0</itemgap>
 				<scrolltime></scrolltime>
 				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
-				<visible>!Skin.HasSetting(weathericons) + [Control.HasFocus(162) | Control.HasFocus(163) | Control.HasFocus(164)] | [Control.HasFocus(165)]</visible>
-				<control type="multiimage">
-					<!-- Icone animado 1 -->
-					<width>270</width>
-					<height>135</height>
-					<aspectratio align="center">keep</aspectratio>
-					<imagepath>$INFO[skin.string(CustomWeatherIconFolder)]$INFO[Window(Weather).Property(Daily.1.FanartCode)]</imagepath>
-					<timeperimage>175</timeperimage>
-					<randomize>false</randomize>
-					<fadetime>0</fadetime>
-				</control>
-				<control type="multiimage">
-					<!-- Icone animado 2 -->
-					<width>270</width>
-					<height>135</height>
-					<aspectratio align="center">keep</aspectratio>
-					<imagepath>$INFO[skin.string(CustomWeatherIconFolder)]$INFO[Window(Weather).Property(Daily.4.FanartCode)]</imagepath>
-					<timeperimage>175</timeperimage>
-					<randomize>false</randomize>
-					<fadetime>0</fadetime>
-				</control>
-				<control type="multiimage">
-					<!-- Icone animado 3 -->
-					<width>270</width>
-					<height>135</height>
-					<aspectratio align="center">keep</aspectratio>
-					<imagepath>$INFO[skin.string(CustomWeatherIconFolder)]$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
-					<timeperimage>175</timeperimage>
-					<randomize>false</randomize>
-					<fadetime>0</fadetime>
-				</control>
-			</control>
-			<control type="grouplist">
-				<left>675</left>
-				<top>915</top>
-				<width>945</width>
-				<height>135</height>
-				<orientation>horizontal</orientation>
-				<itemgap>0</itemgap>
-				<scrolltime></scrolltime>
-				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
-				<visible>Skin.HasSetting(weathericons) + [Control.HasFocus(162) | Control.HasFocus(163) | Control.HasFocus(164)]</visible>
+				<visible>Skin.HasSetting(weathericons) + [Control.HasFocus(162) | Control.HasFocus(163) | Control.HasFocus(164) | Control.HasFocus(1641)]</visible>
 				<control type="multiimage">
 					<!-- Icone animado 1 -->
 					<width>270</width>
