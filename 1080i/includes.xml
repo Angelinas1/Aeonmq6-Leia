@@ -2517,7 +2517,7 @@
 				<height>54</height>
                 <timeperimage>75</timeperimage>
                 <randomize>false</randomize>
-                <fadetime>0</fadetime>
+                <fadetime>1</fadetime>
                 <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
 				<visible>Skin.HasSetting(weathericons)</visible>
             </control>

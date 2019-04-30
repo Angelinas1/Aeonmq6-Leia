@@ -261,9 +261,9 @@
 					<height>135</height>
 					<aspectratio align="center">keep</aspectratio>
 					<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.1.FanartCode)]</imagepath>
-					<timeperimage>175</timeperimage>
+					<timeperimage>75</timeperimage>
 					<randomize>false</randomize>
-					<fadetime>0</fadetime>
+					<fadetime>1</fadetime>
 				</control>
 				<control type="multiimage">
 					<!-- Icone animado 2 -->
@@ -271,9 +271,9 @@
 					<height>135</height>
 					<aspectratio align="center">keep</aspectratio>
 					<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.4.FanartCode)]</imagepath>
-					<timeperimage>175</timeperimage>
+					<timeperimage>75</timeperimage>
 					<randomize>false</randomize>
-					<fadetime>0</fadetime>
+					<fadetime>1</fadetime>
 				</control>
 				<control type="multiimage">
 					<!-- Icone animado 3 -->
@@ -281,9 +281,9 @@
 					<height>135</height>
 					<aspectratio align="center">keep</aspectratio>
 					<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
-					<timeperimage>175</timeperimage>
+					<timeperimage>75</timeperimage>
 					<randomize>false</randomize>
-					<fadetime>0</fadetime>
+					<fadetime>1</fadetime>
 				</control>
 			</control>
 			<control type="group">

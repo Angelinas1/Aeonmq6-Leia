@@ -230,7 +230,7 @@
                     <height>360</height>
                     <timeperimage>75</timeperimage>
                     <randomize>false</randomize>
-                    <fadetime>0</fadetime>
+                    <fadetime>1</fadetime>
                     <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
 					<visible>Skin.HasSetting(weathericons)</visible>
                 </control>
@@ -416,7 +416,7 @@
                         <include>CurrentDailyIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.1.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -475,7 +475,7 @@
                         <include>CurrentDailyIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.2.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -534,7 +534,7 @@
                         <include>CurrentDailyIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.3.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -593,7 +593,7 @@
                         <include>CurrentDailyIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.4.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -652,7 +652,7 @@
                         <include>CurrentDailyIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.5.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -711,7 +711,7 @@
                         <include>CurrentDailyIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.6.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -770,7 +770,7 @@
                         <include>CurrentDailyIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -937,7 +937,7 @@
                         <include>36HourIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(36Hour.1.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -987,7 +987,7 @@
                         <include>36HourIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(36Hour.2.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -1037,7 +1037,7 @@
                         <include>36HourIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(36Hour.1.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -1202,7 +1202,7 @@
                         <include>WeekendIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Weekend.1.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -1259,7 +1259,7 @@
                         <include>WeekendIcon</include>
                         <timeperimage>75</timeperimage>
                         <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Weekend.2.FanartCode)]</imagepath>
                         <visible>Skin.HasSetting(weathericons)</visible>
                     </control>
@@ -1495,7 +1495,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.1.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1545,7 +1545,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.2.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1595,7 +1595,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.3.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1645,7 +1645,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.5.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1695,7 +1695,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.5.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1745,7 +1745,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.6.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1795,7 +1795,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.7.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1845,7 +1845,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.8.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1895,7 +1895,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.9.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1945,7 +1945,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.10.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -1995,7 +1995,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.11.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2045,7 +2045,7 @@
                             <include>HourlyOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Hourly.12.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2288,7 +2288,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.1.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2338,7 +2338,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.2.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2388,7 +2388,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.3.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2438,7 +2438,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.4.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2488,7 +2488,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.5.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2538,7 +2538,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.6.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2588,7 +2588,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2638,7 +2638,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.8.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2688,7 +2688,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.9.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2738,7 +2738,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.10.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2788,7 +2788,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.11.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2838,7 +2838,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.12.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2888,7 +2888,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.13.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2938,7 +2938,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.14.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -2988,7 +2988,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.15.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>
@@ -3038,7 +3038,7 @@
                             <include>DailyListOutlookIcon</include>
                             <timeperimage>75</timeperimage>
                             <randomize>false</randomize>
-                            <fadetime>0</fadetime>
+                            <fadetime>1</fadetime>
                             <imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Daily.16.FanartCode)]</imagepath>
                             <visible>Skin.HasSetting(weathericons)</visible>
                         </control>

@@ -260,7 +260,7 @@
                         <width>555</width>
                         <height>750</height>
                         <aspectratio>stretch</aspectratio>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <texture background="true">thumb_box_back.png</texture>
                     </control>
                     <control type="image">
@@ -269,7 +269,7 @@
                         <width>387</width>
                         <height>387</height>
                         <aligny>center</aligny>
-                        <fadetime>0</fadetime>
+                        <fadetime>1</fadetime>
                         <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
                     </control>
                     <control type="group">

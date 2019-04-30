@@ -3395,9 +3395,9 @@ Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetti
 					<height>75</height>
 					<aspectratio align="left" aligny="top">keep</aspectratio>
 					<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
-					<timeperimage>175</timeperimage>
+					<timeperimage>75</timeperimage>
 					<randomize>false</randomize>
-					<fadetime>0</fadetime>
+					<fadetime>1</fadetime>
 					<visible>Skin.HasSetting(weathericons)</visible>
 				</control>
 				<control type="label">

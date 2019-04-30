@@ -4082,9 +4082,9 @@
 				<height>420</height>
 				<aspectratio align="center">keep</aspectratio>
 				<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
-				<timeperimage>175</timeperimage>
+				<timeperimage>75</timeperimage>
 				<randomize>false</randomize>
-				<fadetime>0</fadetime>
+				<fadetime>1</fadetime>
 				<colordiffuse>95FFFFFF</colordiffuse>
 				<visible>Skin.HasSetting(weathericons)</visible>
 			</control>
@@ -4384,7 +4384,7 @@
 						<include>Widget_WeatherIcon7Day</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
 					<control type="image">
@@ -4427,7 +4427,7 @@
 						<include>Widget_WeatherIcon7Day</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
 					<control type="image">
@@ -4470,7 +4470,7 @@
 						<include>Widget_WeatherIcon7Day</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
 					<control type="image">
@@ -4513,7 +4513,7 @@
 						<include>Widget_WeatherIcon7Day</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
 					<control type="image">
@@ -4556,7 +4556,7 @@
 						<include>Widget_WeatherIcon7Day</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
 					<control type="image">
@@ -4599,7 +4599,7 @@
 						<include>Widget_WeatherIcon7Day</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
 					<control type="image">
@@ -4642,7 +4642,7 @@
 						<include>Widget_WeatherIcon7Day</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
 				</control>
@@ -4689,7 +4689,7 @@
 						<include>Widget_WeatherIconWeekend</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
 					<control type="image">
@@ -4735,7 +4735,7 @@
 						<include>Widget_WeatherIconWeekend</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
 				</control>
@@ -4772,7 +4772,7 @@
 						<include>Widget_WeatherIcon36hour</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(36Hour.1.FanartCode)]</imagepath>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
@@ -4805,7 +4805,7 @@
 						<include>Widget_WeatherIcon36hour</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(36Hour.2.FanartCode)]</imagepath>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
@@ -4838,7 +4838,7 @@
 						<include>Widget_WeatherIcon36hour</include>
 						<timeperimage>75</timeperimage>
 						<randomize>false</randomize>
-						<fadetime>0</fadetime>
+						<fadetime>1</fadetime>
 						<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(36Hour.3.FanartCode)]</imagepath>
 						<visible>Skin.HasSetting(weathericons) | String.Contains(skin.string(CustomWeatherIconFolder),resource://resource.images.weathericons.animated/)</visible>
 					</control>
