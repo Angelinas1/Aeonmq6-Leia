@@ -5471,7 +5471,7 @@
 	<height>168</height>
 	<aspectratio align="center" aligny="center">keep</aspectratio>
 	<texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
-	<visible>String.StartsWith(Container(9000).ListItem.Property(widgets),apl)|String.Contains(Container(9000).ListItem.Property(widgets),music)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recentartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recommendedartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.randomartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recentalbums)</visible>
+	<visible>String.StartsWith(Container(9000).ListItem.Property(widgets),apl)|String.Contains(Container(9000).ListItem.Property(widgets),music)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recentartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.recommendedartists)|String.Contains(Container(9000).ListItem.Property(widgets),extras.helper.randomartists)|String.Contains(Container(9000).ListItem.Property(widgets),albums)</visible>
 	</control>
 	<control type="textbox">
 	<left>1240</left>

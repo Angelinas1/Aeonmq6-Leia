@@ -15,6 +15,7 @@
 	<include file="IncludesTopMenu.xml"/>
 	<include file="IncludesLyrics.xml"/>
 	<include file="IncludesMusicVis.xml"/>
+	<include file="IncludesParams.xml" />
 	<include file="ViewsRightList.xml"/>
 	<!-- 51 -->
 	<include file="ViewsBanner.xml"/>
@@ -4487,11 +4488,11 @@
 				<top>22</top>
 				<visible>$PARAM[visible]</visible>
 				<height>330</height>
-				<onclick condition="!String.IsEmpty(Container.ListItem.Duration)">$PARAM[action]</onclick>
-				<onclick condition="!String.IsEmpty(Container.ListItem.Duration)">$PARAM[action1]</onclick>
+				<onclick condition="!String.IsEmpty(Container.ListItem.Duration)|Control.HasFocus(460)">$PARAM[action]</onclick>
+				<onclick condition="!String.IsEmpty(Container.ListItem.Duration)|Control.HasFocus(460)">$PARAM[action1]</onclick>
 				<onclick condition="String.IsEmpty(Container.ListItem.Duration)+String.Contains(ListItem.FilenameAndPath,playlist)">$PARAM[action]</onclick>
 				<onclick condition="String.IsEmpty(Container.ListItem.Duration)+String.Contains(ListItem.FilenameAndPath,playlist)">$PARAM[action1]</onclick>
-				<onclick condition="String.IsEmpty(Container.ListItem.Duration)+!String.Contains(ListItem.FilenameAndPath,playlist)">ActivateWindow(videos,$INFO[ListItem.FilenameAndPath],return)</onclick>
+				<onclick condition="String.IsEmpty(Container.ListItem.Duration)+!String.Contains(ListItem.FilenameAndPath,playlist)+!Control.HasFocus(460)">ActivateWindow(videos,$INFO[ListItem.FilenameAndPath],return)</onclick>
 				<include content="YTListCommon">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
@@ -4536,6 +4537,17 @@
 							<textcolor>red</textcolor>
 							<label>PlayList</label>
 							<visible>String.Contains(ListItem.FilenameAndPath,playlist)</visible>
+						</control>
+						<control type="label">
+                            <left>0</left>
+                            <top>10</top>
+                            <width>345</width>
+                            <height>20</height>
+                            <align>center</align>
+							<font>Font_13</font>
+							<textcolor>red</textcolor>
+							<label>$INFO[Container.ListItem.LastPlayed]</label>
+							<visible>!String.IsEmpty(Container.ListItem.LastPlayed)</visible>
 						</control>
 					</control>
 				</focusedlayout>

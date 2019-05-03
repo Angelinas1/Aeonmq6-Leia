@@ -37,7 +37,7 @@
 				<animation effect="slide" start="0,0" end="0,200" time="400" tween="cubic" easing="inout" condition="!Window.IsVisible(videoosd)">Conditional</animation>
 					<itemlayout height="300" width="375">
                         <control type="image">
-                            <left>0</left>
+                            <left>4</left>
                             <top>8</top>
                             <width>345</width>
                             <height>270</height>
@@ -49,7 +49,7 @@
                             <colordiffuse>FF909090</colordiffuse>
                         </control>
 						<control type="label">
-                            <left>0</left>
+                            <left>4</left>
                             <top>240</top>
                             <width>345</width>
                             <height>20</height>
@@ -61,7 +61,7 @@
                     </itemlayout>
                     <focusedlayout height="300" width="375">
                         <control type="image">
-                            <left>0</left>
+                            <left>4</left>
                             <top>8</top>
                             <width>345</width>
                             <height>270</height>
@@ -75,7 +75,7 @@
                             <visible>!Control.HasFocus(450)</visible>
                         </control>
                         <control type="image">
-                            <left>0</left>
+                            <left>4</left>
                             <top>8</top>
                             <width>345</width>
                             <height>270</height>
@@ -88,7 +88,7 @@
                             <visible>Control.HasFocus(450)</visible>
                         </control>
 						<control type="label">
-                            <left>0</left>
+                            <left>4</left>
                             <top>240</top>
                             <width>345</width>
                             <height>20</height>

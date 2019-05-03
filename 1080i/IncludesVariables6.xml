@@ -4588,6 +4588,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),clearart) + VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),clearart) + VideoPlayer.Content(episodes) + String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearlogo)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),clearart) + String.IsEmpty(Player.Art(clearart)) + String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearArt)]</value>		
+		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),clearart) + String.IsEmpty(Player.Art(clearart)) + String.IsEmpty(Player.Art(tvshow.clearart)) + String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ClearArt))">$INFO[Window(Home).Property(SkinHelper.Player.Art.ClearLogo)]</value>	
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),banner) + !VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(banner))">$INFO[Player.Art(banner)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),banner) + VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.banner))">$INFO[Player.Art(tvshow.banner)]</value>
 		<value condition="String.IsEqual(skin.string(fullscreen_icon_seek),banner) + String.IsEmpty(Player.Art(banner)) + String.IsEmpty(Player.Art(tvshow.banner))">$INFO[Window(Home).Property(SkinHelper.Player.Art.Banner)]</value>
@@ -4772,7 +4773,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Container.Content(movies) + String.Contains(skin.string(moviesfanart),extra)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</value>
 		<value condition="Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),fallback)">$INFO[Skin.String(CustomFallbackMusicVideosBG)]</value>
 		<value condition="Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
-		<value condition="Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</value>
+		<value condition="Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArts)]</value>
 		<value condition="Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),fallback)">$INFO[Skin.String(CustomFallbackTVShowsBG)]</value>
 		<value condition="Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
 		<value condition="Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),extra)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</value>

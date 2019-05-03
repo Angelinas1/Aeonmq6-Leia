@@ -77,8 +77,8 @@
 				<height>660</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<itemgap>-36</itemgap>
-				<onleft>188</onleft>
-				<onright>188</onright>
+				<onleft>SetFocus(188)</onleft>
+				<onright>SetFocus(188)</onright>
 				<onup>155</onup>
 				<ondown>5001</ondown>
 				<usecontrolcoords>true</usecontrolcoords>
@@ -91,7 +91,7 @@
 						<param name="action1" value="RunScript(script.skin.helper.service,action=stripstring,splitchar=d=,string=$INFO[Player.Filenameandpath],output=SimularYT,index=1)"/>
 						<param name="list_id" value="400"/>
 					</include>
-					<include content="YTListPoster" condition="true">
+					<include content="YTListPoster" condition="String.Contains(Container.FolderPath,youtube)">
 						<param name="content_path" value="plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Skin.String(searchyt)]&amp;search_type=$INFO[Skin.String(searchytplay)]"/>
 						<param name="yt_header" value="*YouTube Search $INFO[Skin.String(searchytplay),(,)]"/>
 						<param name="yt_header_focus" value="$INFO[Container(410).ListItem.Label, | ]"/>
@@ -100,7 +100,7 @@
 						<param name="action1" value=""/>
 						<param name="list_id" value="410"/>
 					</include>
-					<include content="YTListPoster" condition="true">
+					<include content="YTListPoster" condition="String.Contains(Container.FolderPath,youtube)">
 						<param name="content_path" value="plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Skin.String(searchyt)]"/>
 						<param name="yt_header" value="*YouTube Search"/>
 						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(420).ListItem.Artist, ( , )][/COLOR]$INFO[Container(420).ListItem.Title, ][COLOR=$VAR[value_headercolor]]$INFO[Container(420).ListItem.Duration, ( , )][/COLOR]"/>
@@ -109,7 +109,7 @@
 						<param name="action1" value=""/>
 						<param name="list_id" value="420"/>
 					</include>
-					<include content="YTListPoster" condition="true">
+					<include content="YTListPoster" condition="String.Contains(Container.FolderPath,youtube)">
 						<param name="content_path" value="plugin://plugin.video.youtube/special/popular_right_now/"/>
 						<param name="yt_header" value="*YouTube popular right now"/>
 						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(430).ListItem.Duration, ( , )][/COLOR]$INFO[Container(430).ListItem.Title, | ]"/>
@@ -118,7 +118,7 @@
 						<param name="action1" value=""/>
 						<param name="list_id" value="430"/>
 					</include>
-					<include content="YTListPoster" condition="true">
+					<include content="YTListPoster" condition="String.Contains(Container.FolderPath,youtube)">
 						<param name="content_path" value="plugin://plugin.video.youtube/special/new_uploaded_videos_tv/"/>
 						<param name="yt_header" value="*YouTube New uploaded"/>
 						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(440).ListItem.Duration, ( , )][/COLOR]$INFO[Container(440).ListItem.Title, | ]"/>
@@ -127,7 +127,7 @@
 						<param name="action1" value=""/>
 						<param name="list_id" value="440"/>
 					</include>
-					<include content="YTListPoster" condition="true">
+					<include content="YTListPoster" condition="String.Contains(Container.FolderPath,youtube)">
 						<param name="content_path" value="plugin://plugin.video.youtube/special/recommendations/"/>
 						<param name="yt_header" value="*YouTube recommendations"/>
 						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(450).ListItem.Duration, ( , )][/COLOR]$INFO[Container(450).ListItem.Title, | ]"/>
@@ -136,7 +136,7 @@
 						<param name="action1" value=""/>
 						<param name="list_id" value="450"/>
 					</include>
-					<include content="YTListPoster" condition="true">
+					<include content="YTListPoster" condition="String.Contains(Container.FolderPath,youtube)">
 						<param name="content_path" value="plugin://plugin.video.youtube/special/watch_history_tv/"/>
 						<param name="yt_header" value="*YouTube History"/>
 						<param name="yt_header_focus" value="[COLOR=$VAR[value_headercolor]]$INFO[Container(460).ListItem.Duration, ( , )][/COLOR]$INFO[Container(460).ListItem.Title, | ]"/>
@@ -267,7 +267,7 @@
 				<onclick>Skin.SetString(searchyt,$INFO[ListItem.Label])</onclick>
 				<onclick>SetFocus(155)</onclick>
 				<orientation>vertical</orientation>
-				<content>plugin://plugin.video.youtube/kodion/search/list/</content>
+				<content condition="String.Contains(Container.FolderPath,youtube)">plugin://plugin.video.youtube/kodion/search/list/</content>
 				<visible allowhiddenfocus="true">Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)</visible>
 					<itemlayout width="260" height="38">
 						<control type="image">
@@ -529,7 +529,6 @@
                 <onup>188</onup>
                 <onleft>9000</onleft>
                 <onright>5001</onright>
-				<onfocus condition="Window.Previous(fullscreenvideo)">5001</onfocus>
                 <scrolltime>400</scrolltime>
                 <pagecontrol>80</pagecontrol>
 				<orientation>vertical</orientation>

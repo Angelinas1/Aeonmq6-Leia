@@ -2170,6 +2170,7 @@
                     <texture>gradient_small.png</texture>
                 </control>
             </control>		
+
 			<control type="group">
 				<left>40</left>
 				<control type="grouplist" id="4000">
