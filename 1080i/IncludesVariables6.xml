@@ -6055,7 +6055,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),movie)+!String.Contains(Container(9000).ListItem.Property(id),moviesets)">$INFO[Window(0).Property(Movies.Count),[COLOR=FFFFFAF0]$LOCALIZE[20342]: [/COLOR]]  $INFO[Window(0).Property(Movies.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),moviesets)">$INFO[Window(Home).Property(SkinHelper.TotalMovieSets),[COLOR=FFFFFAF0]$LOCALIZE[31029]: [/COLOR]]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),tvshow)">$INFO[Window(0).Property(TVShows.Count),[COLOR=FFFFFAF0]$LOCALIZE[20343]: [/COLOR]]    $INFO[Window(0).Property(Episodes.Count),[COLOR=FFFFFAF0]$LOCALIZE[20360]: [/COLOR]]    $INFO[Window(0).Property(Episodes.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(id),concert)">$INFO[Window(0).Property(MusicVideos.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(MusicVideos.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(id),concert)">$INFO[Window(0).Property(MusicVideos.Count),[COLOR=FFFFFAF0]$LOCALIZE[31086]: [/COLOR]]    $INFO[Window(0).Property(MusicVideos.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),music)">$INFO[Window(0).Property(Music.ArtistsCount),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Music.AlbumsCount),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Music.SongsCount),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),music)">$INFO[Window(0).Property(Music.ArtistsCount),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Music.AlbumsCount),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Music.SongsCount),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),music)">$INFO[Window(0).Property(Music.ArtistsCount),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Music.AlbumsCount),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Music.SongsCount),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
@@ -7918,5 +7918,20 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(440)">$INFO[Container(440).ListItem.Label]</value>
 		<value condition="Control.HasFocus(450)">$INFO[Container(450).ListItem.Label]</value>
 		<value condition="Control.HasFocus(460)">$INFO[Container(460).ListItem.Label]</value>
+    </variable>
+    <variable name="mainmenuamqbar">
+		<value condition="!Skin.HasSetting(mainmenuamq8)">mq7_menu_bar.png</value>
+		<value condition="Skin.HasSetting(mainmenuamq8)+[String.IsEqual(skin.string(stylemq8),menu bar 1)|String.IsEmpty(Skin.string(stylemq8))]">styles\mq8_bar\menu_bar1.png</value>
+		<value condition="Skin.HasSetting(mainmenuamq8)+String.IsEqual(skin.string(stylemq8),menu bar 2)">styles\mq8_bar\menu_bar2.png</value>
+		<value condition="Skin.HasSetting(mainmenuamq8)+String.IsEqual(skin.string(stylemq8),menu bar 3)">styles\mq8_bar\menu_bar3.png</value>
+		<value condition="Skin.HasSetting(mainmenuamq8)+String.IsEqual(skin.string(stylemq8),menu bar 4)">styles\mq8_bar\menu_bar4.png</value>
+		<value condition="Skin.HasSetting(mainmenuamq8)+String.IsEqual(skin.string(stylemq8),menu bar 5)">styles\mq8_bar\menu_bar5.png</value>
+    </variable>
+    <variable name="mainmenuamqbar_label">
+		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 1)|String.IsEmpty(skin.string(stylemq8)]">Menu bar 1</value>
+		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 2)">Menu bar 2</value>
+		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 3)">Menu bar 3</value>
+		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 4)">Menu bar 4</value>
+		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 5)">Menu bar 5</value>
     </variable>
 	</includes>

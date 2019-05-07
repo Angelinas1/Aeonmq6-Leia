@@ -229,6 +229,28 @@
                     <selected>Skin.HasSetting(mainmenuvertical)</selected>
 					<visible>Skin.HasSetting(homemq)</visible>
                 </control>
+                <control type="radiobutton" id="10431">
+                    <!-- Menu em lista fixa -->
+					<label>Home look like $LOCALIZE[32023]8</label>
+                    <onclick>Skin.ToggleSetting(mainmenuamq8)</onclick>
+                    <selected>Skin.HasSetting(mainmenuamq8)</selected>
+					<visible>Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)</visible>
+                </control>
+                <control type="button" id="10432">
+                    <!-- Menu em lista fixa -->
+					<label>Change bar</label>
+					<label2>$INFO[Control.GetLabel(10433)]</label2>
+					<onclick condition="String.IsEqual(skin.string(stylemq8),menu bar 5) | String.IsEmpty(skin.string(stylemq8))">Skin.SetString(stylemq8,menu bar 1)</onclick>
+					<onclick condition="String.IsEqual(skin.string(stylemq8),menu bar 1)">Skin.SetString(stylemq8,menu bar 2)</onclick>
+					<onclick condition="String.IsEqual(skin.string(stylemq8),menu bar 2)">Skin.SetString(stylemq8,menu bar 3)</onclick>
+					<onclick condition="String.IsEqual(skin.string(stylemq8),menu bar 3)">Skin.SetString(stylemq8,menu bar 4)</onclick>
+					<onclick condition="String.IsEqual(skin.string(stylemq8),menu bar 4)">Skin.SetString(stylemq8,menu bar 5)</onclick>
+					<visible>Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)</visible>
+                </control>
+				<control type="label" id="10433">
+					<include>InvisibleButton</include>
+					<label>$VAR[mainmenuamqbar_label]</label>
+				</control>
 				<control type="radiobutton" id="1044">
                     <!-- Menu em lista fixa -->
                     <label>31235</label>

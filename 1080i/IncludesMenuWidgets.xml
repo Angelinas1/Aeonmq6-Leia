@@ -5325,7 +5325,7 @@
 	<control type="button" id="518">
 	<include>Widgets_Button_mq7</include>
 	<label>Search on YouTube</label>
-	<onclick>SetFocus(9225)</onclick>
+	<onclick>SetFocus(92255)</onclick>
 	<visible>String.IsEqual(Control.GetLabel(566),Album)|String.IsEqual(Control.GetLabel(566),Artist)</visible>
 	<enable>String.IsEqual(Control.GetLabel(566),Album)|String.IsEqual(Control.GetLabel(566),Artist)</enable>
 	</control>
@@ -5360,7 +5360,7 @@
 	<left>60</left>
 	<top>838</top>
 	<width>1080</width>
-	<height>168</height>
+	<height>164</height>
 	<font>Font_18A</font>
 	<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Plot)]$INFO[Container(510).ListItem.Property(Description)]$INFO[Container(510).ListItem.Property(Album_Description)]$INFO[Container(510).ListItem.Property(Artist_Description)]$INFO[Container(510).ListItem.AddonDescription]</label>
 	<textcolor>FFFFFAF0</textcolor>

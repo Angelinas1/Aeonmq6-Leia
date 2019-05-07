@@ -1672,7 +1672,7 @@
 	<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 	<animation effect="fade" start="100" end="0" time="750" condition="Player.HasMedia + System.IdleTime(18)">Conditional</animation>
 	<animation effect="slide" start="0,0" end="0,50" time="0" tween="sine" easing="out" condition="Skin.HasSetting(mainmenuvertical)">Conditional</animation>
-	<visible>ControlGroup(600).HasFocus + ![Player.HasMedia + System.IdleTime(18)]+Skin.HasSetting(mq6)</visible>
+	<visible>ControlGroup(600).HasFocus + ![Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
 	</control>
 	</control>
 	<include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
@@ -1698,7 +1698,7 @@
 	<animation effect="slide" start="-750,0" end="0,0" time="500" delay="500" tween="sine" easing="out">Visible</animation>
 	<animation effect="slide" start="0,0" end="-750,0" time="500" tween="sine" easing="out">Hidden</animation>
 	<animation effect="fade" start="100" end="0" time="300" condition="Skin.HasSetting(submode)">Conditional</animation>
-	<visible>Control.HasFocus(9000) + Weather.IsFetched + ![Skin.HasSetting(nohometime) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
+	<visible>![Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)]+[Control.HasFocus(9000) + Weather.IsFetched + ![Skin.HasSetting(nohometime) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]]</visible>
 	<control type="label">
 	<left>50</left>
 	<top>930</top>
@@ -1745,7 +1745,9 @@
 	</control>
 	
 	<!-- Data e hora -->
-	<include>TimeCommon</include>
+	<include condition="![Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)]">TimeCommon</include>
+	<include condition="Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)">miniweather</include>
+
 	
 	<!-- Status da biblioteca -->
 	<control type="label">
@@ -1758,6 +1760,7 @@
 	<font>Font13</font>
 	<textcolor>FFFFFAF0</textcolor>
 	<label>$VAR[value_librarystatus]</label>
+	<animation effect="slide" start="0,0" end="-650,50" time="0" tween="sine" easing="out" condition="Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)">Conditional</animation>
 	<animation effect="fade" start="0" end="100" time="500" delay="2300" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
 	<animation effect="fade" start="0" end="100" time="500" delay="1300" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
 	<animation effect="fade" start="0" end="100" time="500" delay="500" tween="sine" easing="out">Visible</animation>
@@ -1768,6 +1771,7 @@
 	</control>
 	<control type="group">
 	<visible>Control.HasFocus(9224)</visible>
+		<animation effect="slide" start="0,0" end="150,00" time="0" tween="sine" easing="out" condition="Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)">Conditional</animation>
 	<control type="image">
 	<left>662</left>
 	<top>920</top>
@@ -1826,7 +1830,7 @@
 	<top>918</top>
 	<width>1960</width>
 	<height>60</height>
-	<texture>mq7_menu_bar.png</texture>
+	<texture>$VAR[mainmenuamqbar]</texture>
 	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 	<animation effect="fade" start="0" end="100" time="2000" easing="inout" tween="cubic">WindowOpen</animation>
 	<animation effect="fade" start="0" end="100" time="1500" easing="inout" tween="cubic">Visible</animation>
@@ -2037,7 +2041,8 @@
 	<ondown>8002</ondown>
 	<orientation>horizontal</orientation>
 		<scrolltime>300</scrolltime>
-		<focusposition>1</focusposition>
+	<include condition="Skin.HasSetting(mainmenuamq8)">newlook0</include>
+	<include condition="!Skin.HasSetting(mainmenuamq8)">newlook1</include>
 		<movement>1</movement>
 	<itemlayout width="639" height="90">
 	<control type="label">
@@ -2353,5 +2358,99 @@
 	<include condition="Window.IsVisible(6000)">Menu_ContentPreview</include>
 	</content>
 	</include>
-	
+	<include name="miniweather">
+				<control type="group">
+					<visible>Control.HasFocus(9000) + Weather.IsFetched + ![Skin.HasSetting(nohometime) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
+					<control type="group">
+						<left>800</left>
+						<top>930</top>
+						<width>1080</width>
+						<height>118</height>
+						<include>animation_fade</include>
+						<animation effect="slide" start="0" end="440" time="300" tween="sine" easing="out" condition="String.IsEqual(Container(9000).ListItem.Property(widgets),weather)">Conditional</animation>
+						<!-- data e condicao atual -->
+						<control type="label">
+							<left>0</left>
+							<top>5</top>
+							<width>651</width>
+							<height>30</height>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[System.Date]$INFO[Window(Weather).Property(Current.Condition), | ]</label>
+							<font>Font_18A</font>
+							<include>animation_fade</include>
+							<visible>!Skin.HasSetting(home_nodateandcondition)</visible>
+						</control>
+						<control type="label">
+							<left>200</left>
+							<top>40</top>
+							<width>353</width>
+							<height>40</height>
+							<align>right</align>
+							<aligny>bottom</aligny>
+							<label>$INFO[System.Time]$INFO[Weather.Temperature, | ]</label>
+							<font>Font_20A</font>
+							<textcolor>$VAR[value_texturecolor]</textcolor>
+							<include>animation_fade</include>
+							<visible>!Skin.HasSetting(home_nodateandcondition)</visible>
+						</control>
+						<!-- Icone -->
+						<control type="image">
+							<left>573</left>
+							<top>32</top>
+							<width>78</width>
+							<height>78</height>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<texture>$INFO[skin.string(CustomWeatherIconFolder)]$INFO[Window(Weather).Property(Current.OutlookIcon)]</texture>
+							<animation effect="fade" time="250">Visible</animation>
+							<animation effect="fade" time="50">Hidden</animation>
+							<visible>!Skin.HasSetting(weathericons)</visible>
+						</control>
+						<control type="multiimage">
+							<left>573</left>
+							<top>32</top>
+							<width>78</width>
+							<height>78</height>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<imagepath>$VAR[value_weathericons]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+							<timeperimage>75</timeperimage>
+							<randomize>false</randomize>
+							<fadetime>1</fadetime>
+							<animation effect="fade" time="250">Visible</animation>
+							<animation effect="fade" time="50">Hidden</animation>
+							<visible>Skin.HasSetting(weathericons)</visible>
+						</control>
+						<control type="group">
+						<left>671</left>
+						<include>animation_fade</include>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<width>2</width>
+								<height>118</height>
+								<texture colordiffuse="$VAR[value_texturecolor]">line_v.png</texture>
+							</control>
+							<control type="grouplist">
+								<left>0</left>
+								<orientation>horizontal</orientation>
+								<include content="miniweather_icons">
+									<param name="item" value="2" />
+								</include>
+								<include content="miniweather_icons">
+									<param name="item" value="3" />
+								</include>
+								<include content="miniweather_icons">
+									<param name="item" value="4" />
+								</include>
+								<include content="miniweather_icons">
+									<param name="item" value="5" />
+								</include>
+								<include content="miniweather_icons">
+									<param name="item" value="6" />
+								</include>
+							</control>
+						</control>
+					</control>
+				</control>
+	</include>				
 </includes>

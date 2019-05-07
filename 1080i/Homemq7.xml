@@ -68,7 +68,7 @@
 			<onfocus>SetFocus(9223)</onfocus>
 			<onclick>PlayMedia($INFO[Container(510).ListItem.FilenameAndPath],1)</onclick>
 		</control>
-		<control type="button" id="9225">
+		<control type="button" id="92255">
 			<include>InvisibleButton</include>
 			<onleft>Control.Move(510,-1)</onleft>
 			<onright>Control.Move(510,1)</onright>

@@ -133,6 +133,7 @@
                 </content>
             </control>
             <control type="group">
+			<visible>!Player.HasVideo</visible>
                 <control type="image">
                     <!-- Reflexo -->
                     <left>0</left>
@@ -156,6 +157,12 @@
                     <bordertexture border="-2">black.png</bordertexture>
                 </control>
             </control>
+			<control type="videowindow">
+				<left>20</left>
+				<top>195</top>
+				<width>750</width>
+				<height>550</height>
+			</control>
             <control type="label">
                 <!-- Titulo -->
                 <left>795</left>
