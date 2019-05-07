@@ -7928,7 +7928,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Skin.HasSetting(mainmenuamq8)+String.IsEqual(skin.string(stylemq8),menu bar 5)">styles\mq8_bar\menu_bar5.png</value>
     </variable>
     <variable name="mainmenuamqbar_label">
-		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 1)|String.IsEmpty(skin.string(stylemq8)]">Menu bar 1</value>
+		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 1)|String.IsEmpty(skin.string(stylemq8))">Menu bar 1</value>
 		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 2)">Menu bar 2</value>
 		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 3)">Menu bar 3</value>
 		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 4)">Menu bar 4</value>
