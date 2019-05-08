@@ -5710,17 +5710,15 @@
 	<top>1015</top>
 	<orientation>horizontal</orientation>
 	<itemgap>33</itemgap>
-	<!-- Fake -->
-	<control type="image">	
-	<include>FlagImage</include>
-	<texture fallback="blanc.png">$VAR[value_studio_510]</texture>
-	<visible>String.IsEmpty(Control.GetLabel(556)) + String.IsEmpty(Control.GetLabel(565))</visible>
-	</control>
+
 	<!-- Estudio -->
 	<control type="image">	
 	<include>FlagImage</include>
 	<texture fallback="blanc.png">$VAR[value_studio_510]</texture>
 	<visible>!String.IsEmpty(Control.GetLabel(556))</visible>
+	</control>
+	<control type="image">
+	<include>FlagSeparator</include>
 	</control>
 	<!-- Gravadora -->
 	<control type="image">	
@@ -5730,14 +5728,17 @@
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	</control>
 	<!-- Mpaa -->
 	<control type="image">	
 	<include>FlagImage</include>
 	<texture fallback="blanc.png">$VAR[value_widgetsmpaa]</texture>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	</control>
 	<!-- Codec de video -->
 	<control type="image">	
@@ -5764,27 +5765,33 @@
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	</control>
 	<!-- Aspecto -->
 	<control type="image">	
 	<include>FlagImage</include>
 	<texture fallback="blanc.png">$INFO[Container(510).ListItem.VideoAspect,resource://resource.images.mediaicons.coloured/aspectratio/,.png]</texture>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	</control>
 	<!-- Codec de audio -->
 	<control type="image">	
 	<include>FlagImage</include>
 	<texture fallback="blanc.png">$VAR[value_widgetsaudiocodec]</texture>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	</control>
 	<!-- Canais -->
 	<control type="group">
 	<width>250</width>
 	<height>50</height>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	<control type="image">	
 	<top>10</top>
 	<width>50</width>
@@ -5804,11 +5811,13 @@
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	</control>
 	<!-- Legenda -->
 	<control type="group">
 	<width>250</width>
 	<height>50</height>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
 	<control type="image">	
 	<top>10</top>
 	<width>50</width>
@@ -5838,8 +5847,10 @@
 	</control>
 	</include>
 	<include name="widgets_updown">
+			<onup condition="Skin.HasSetting(homemq) + !Skin.HasSetting(mainmenuvertical)">9000</onup>
 			<onup condition="![Skin.HasSetting(homemq) + Skin.HasSetting(mainmenuvertical)]">512</onup>
 			<onup condition="Skin.HasSetting(homemq) + Skin.HasSetting(mainmenuvertical)">9000</onup>
+			<ondown condition="Skin.HasSetting(homemq) + !Skin.HasSetting(mainmenuvertical)">512</ondown>
 			<ondown condition="![Skin.HasSetting(homemq) + Skin.HasSetting(mainmenuvertical)]">9000</ondown>
 			<ondown condition="Skin.HasSetting(homemq) + Skin.HasSetting(mainmenuvertical)">512</ondown>
 	</include>

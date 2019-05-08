@@ -1181,17 +1181,6 @@
                         <imagepath>http://localhost:52307/getthumb&amp;title=$INFO[ListItem.Label]</imagepath>
                         <visible>Container.Content(directors)</visible>
                     </control>
-                    <control type="multiimage">
-                        <!-- Filmes/Fotos/Arquivos -->
-                        <left>-8</left>
-                        <top>98</top>
-                        <width>368</width>
-                        <height>525</height>
-                        <fadetime>FanartCrossFadeTime</fadetime>
-                        <aspectratio align="center" aligny="center">scale</aspectratio>
-                        <imagepath>http://localhost:52307/getthumb&amp;title=$ESCINFO[Container.FolderName] tvshow&amp;type=thumb</imagepath>
-                        <visible>Container.Content(seasons)+String.Contains(ListItem.Label,all seasons)</visible>
-                    </control>
                 </control>
                 <control type="group">
                     <!-- FILMES ESTOJO -->

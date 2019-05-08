@@ -267,8 +267,9 @@
 				<onclick>Skin.SetString(searchyt,$INFO[ListItem.Label])</onclick>
 				<onclick>SetFocus(155)</onclick>
 				<orientation>vertical</orientation>
-				<content condition="String.Contains(Container.FolderPath,youtube)">plugin://plugin.video.youtube/kodion/search/list/</content>
+				<content condition="String.Contains(Container.FolderPath,youtube)">$VAR[ytsearch]</content>
 				<visible allowhiddenfocus="true">Control.HasFocus(155)|Control.HasFocus(156)|Control.HasFocus(1561)</visible>
+				<enable>String.Contains(Container.FolderPath,youtube)</enable>
 					<itemlayout width="260" height="38">
 						<control type="image">
 							<left>0</left>

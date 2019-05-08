@@ -3962,6 +3962,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.inprogressandrecommendedmedia)+String.IsEqual(Window(Home).Property(SkinHelper.ListItem.media_type),movie)
 	|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.inprogressmedia)|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.top250media)+String.IsEqual(Window(Home).Property(SkinHelper.ListItem.media_type),movie)
 	|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.favouritesmovies)|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.mostplayedmovies)
+	|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.helper.recentmovies)|String.IsEqual(Container(9000).ListItem.Property(widgets),movie.recentldt)
 	">$LOCALIZE[20338]</value>
 	<value condition="String.StartsWith(Container(9000).ListItem.Property(widgets),vnodes)+!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.media_type),movie)
 	|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.topratedtvshows)|String.IsEqual(Container(9000).ListItem.Property(widgets),extras.onairtvshows)
@@ -5544,8 +5545,9 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_YearsActive)]$INFO[ListItem.Property(Artist_Instrument), / ]</value>
 	</variable>
 	<variable name="value_studio_510">
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">$INFO[Window(0).Property(SkinHelper.ListItem.StudioLogo)]</value>
 		<value condition="!String.IsEmpty(Container(510).ListItem.Studio)">$INFO[Container(510).ListItem.Studio,resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="String.IsEmpty(Container(510).ListItem.Studio)+!String.Contains(Container(9000).ListItem.Property(widgets),channel)">$INFO[Window(0).Property(SkinHelper.ListItem.Studio),resource://resource.images.studios.coloured/,.png]</value>
+		<value condition="String.IsEmpty(Container(510).ListItem.Studio)+!String.Contains(Container(9000).ListItem.Property(widgets),channel)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">$INFO[Window(0).Property(SkinHelper.ListItem.Studio),resource://resource.images.studios.coloured/,.png]</value>
 	</variable>
 	<variable name="value_logoandclearart">
 		<value condition="Control.HasFocus(777)+String.IsEmpty(Container(777).ListItem.Art(tvshow.clearart))">$INFO[Container(777).ListItem.Art(clearart)]</value>
@@ -5657,6 +5659,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(keyart)) + Skin.HasSetting(keyartposter) + [String.IsEmpty(ListItem.Art(animatedposter)) | Skin.HasSetting(AnimatedPosters)]">$INFO[ListItem.Art(keyart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(poster)) + [String.IsEmpty(ListItem.Art(animatedposter)) | Skin.HasSetting(AnimatedPosters)]">$INFO[ListItem.Art(poster)]</value>
 		<value condition="Container.Content(episodes)+!Window.IsVisible(movieinformation)">$INFO[ListItem.Icon]</value>
+		<value condition="Container.Content(seasons)+String.Contains(ListItem.Label,all seasons)">http://localhost:52307/getthumb&amp;title=$ESCINFO[Container.FolderName]&amp;type=thumb</value>
 		<value condition="![String.IsEmpty(ListItem.Art(tvshow.poster)) | Container.Content(episodes)]">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="Window.IsVisible(movieinformation) + Container.Content(episodes) + Control.HasFocus(160)">$INFO[ListItem.Icon]</value>
 		<value condition="Window.IsVisible(movieinformation) + Container.Content(episodes)">$INFO[Container.Art(season.poster)]</value>
@@ -6504,7 +6507,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="!String.IsEmpty(Container(510).Player.Art(poster))">$INFO[Container(510).Player.Art(poster)]</value>
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 		<value condition="!String.IsEmpty(Window.Property(movie.Poster))">$INFO[Window.Property(movie.Poster)]</value>
-		<value condition="String.IsEmpty(Player.Art(poster))+String.IsEmpty(Container(510).Player.Art(poster))+String.IsEmpty(Player.Art(tvshow.poster))+String.IsEmpty(Window.Property(movie.Poster))">http://localhost:52307/getthumb&amp;title=$ESCINFO[VideoPlayer.Title]_</value>
+		<value condition="String.IsEmpty(Player.Art(poster))+String.IsEmpty(Container(510).Player.Art(poster))+String.IsEmpty(Player.Art(tvshow.poster))+String.IsEmpty(Window.Property(movie.Poster))">http://localhost:52307/getthumb&amp;title=$ESCINFO[VideoPlayer.Title]</value>
 	</variable>
 	<variable name="value_dialogselect_icon">
 		<value condition="![String.Contains(Container(3).Listitem.Label,Logo)|String.Contains(Container(3).Listitem.Label,Poster)|String.Contains(Container(3).Listitem.Label,Disc Art)|String.Contains(Container(3).Listitem.Label,Fanart)|String.Contains(Container(3).Listitem.Label,Banner)|String.Contains(Container(3).Listitem.Label,Thumb)|String.Contains(Container(3).Listitem.Label,clearart)]+Control.IsVisible(3)+String.IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">http://localhost:52307/getthumb&amp;title=$ESCINFO[Container(3).Listitem.Label]_</value>
@@ -7934,4 +7937,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 4)">Menu bar 4</value>
 		<value condition="String.IsEqual(skin.string(stylemq8),menu bar 5)">Menu bar 5</value>
     </variable>
+    <variable name="ytsearch">
+		<value condition="String.Contains(Container.FolderPath,youtube)">plugin://plugin.video.youtube/kodion/search/list/</value>
+    </variable>	
 	</includes>
