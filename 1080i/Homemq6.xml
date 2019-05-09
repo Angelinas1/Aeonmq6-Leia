@@ -3370,6 +3370,8 @@ Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetti
 				<animation effect="slide" start="0,0" end="0,-315" condition="Skin.HasSetting(highermainmenu)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="-90,0" time="300" tween="sine" easing="out" condition="Weather.IsFetched">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="300" condition="Skin.HasSetting(submode)">Conditional</animation>
+				<control type="group">
+				<visible>Skin.HasSetting(nominihometime)</visible>
 				<control type="image">
 					<left>990</left>
 					<top>908</top>
@@ -3431,6 +3433,8 @@ Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetti
 					<scroll>true</scroll>
 					<visible>Weather.IsFetched</visible>
 				</control>
+				</control>
+				<include condition="![Skin.HasSetting(homemq)+Skin.HasSetting(nominihometime)]">miniweather</include>
 			</control>
 			<control type="group">
 				<!-- Controles -->

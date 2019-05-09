@@ -287,6 +287,13 @@
                     <onclick>Skin.ToggleSetting(nohometime)</onclick>
                     <selected>!Skin.HasSetting(nohometime)</selected>
                 </control>
+                <control type="radiobutton" id="10511">
+                    <!-- Mini Data e Clima -->
+                    <label>Use MiniWeather</label>
+                    <onclick>Skin.ToggleSetting(nominihometime)</onclick>
+                    <selected>!Skin.HasSetting(nominihometime)</selected>
+					<visible>!Skin.HasSetting(homemq)+!Skin.HasSetting(nohometime)</visible>
+                </control>
                 <control type="radiobutton" id="1052">
                     <!-- Status da biblioteca -->
                     <label>31672</label>

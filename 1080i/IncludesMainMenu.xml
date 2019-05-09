@@ -1746,7 +1746,7 @@
 	
 	<!-- Data e hora -->
 	<include condition="![Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)]">TimeCommon</include>
-	<include condition="Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)">miniweather</include>
+	<include condition="[Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)]">miniweather</include>
 
 	
 	<!-- Status da biblioteca -->
@@ -2359,9 +2359,9 @@
 	</content>
 	</include>
 	<include name="miniweather">
-				<control type="group">
-					<visible>Control.HasFocus(9000) + Weather.IsFetched + ![Skin.HasSetting(nohometime) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
+	<animation effect="slide" start="0,0" end="98,0" condition="!Skin.HasSetting(homemq)+!Skin.HasSetting(nominihometime)">Conditional</animation>
 					<control type="group">
+						<visible>Control.HasFocus(9000) + Weather.IsFetched + ![Skin.HasSetting(nohometime) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
 						<left>800</left>
 						<top>930</top>
 						<width>1080</width>
@@ -2451,6 +2451,6 @@
 							</control>
 						</control>
 					</control>
-				</control>
+
 	</include>				
 </includes>
