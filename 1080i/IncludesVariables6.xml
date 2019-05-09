@@ -4505,27 +4505,31 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Pvr.IsPlayingRadio">http://localhost:52307/getthumb&amp;title=$ESCINFO[MusicPlayer.Title]</value>
 	</variable>
 	<variable name="value_playercontrols">
+		<value condition="Control.HasFocus(601)">$LOCALIZE[31353]</value>
+		<!-- player -->
 		<value condition="Control.HasFocus(600) + Container(600).HasFocus(1)">$LOCALIZE[31004]</value>
 		<!-- playdvd -->
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(2) + !Player.Paused">$LOCALIZE[31304]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(2) + !Player.Paused | Control.HasFocus(602) + !Player.Paused ">$LOCALIZE[31304]</value>
 		<!-- pause -->
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(3) + Player.Paused">$LOCALIZE[31303]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(3) + Player.Paused | Control.HasFocus(602) + Player.Paused ">$LOCALIZE[31303]</value>
 		<!-- play -->
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(4)">$LOCALIZE[31035]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(4) | Control.HasFocus(605)">$LOCALIZE[31035]</value>
 		<!-- playlist -->
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(5)">$LOCALIZE[31305]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(5) | Control.HasFocus(603)">$LOCALIZE[31305]</value>
 		<!-- stop -->
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(6) + !VideoPlayer.Content(LiveTV)">$LOCALIZE[31524]</value>
-		<!-- previous -->
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(6) + VideoPlayer.Content(LiveTV)">- $LOCALIZE[31763]</value>
-		<!-- - canal -->
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(7) + !Player.Rewinding">$LOCALIZE[31301]</value>
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(7) + Player.Rewinding">$VAR[value_seekreverse]</value>
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(8) + !Player.Forwarding">$LOCALIZE[31302]</value>
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(8) + Player.Forwarding">$VAR[value_seekforward]</value>
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(9) + !VideoPlayer.Content(LiveTV)">$LOCALIZE[31306]</value>
+		<value condition="Control.HasFocus(604)">$LOCALIZE[31325]</value>
 		<!-- next -->
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(9) + VideoPlayer.Content(LiveTV)">+ $LOCALIZE[31763]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(6) + !VideoPlayer.Content(LiveTV) | Control.HasFocus(606) + !VideoPlayer.Content(LiveTV)">$LOCALIZE[31524]</value>
+		<!-- previous -->
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(6) + VideoPlayer.Content(LiveTV) | Control.HasFocus(606) + VideoPlayer.Content(LiveTV)">- $LOCALIZE[31763]</value>
+		<!-- - canal -->
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(7) + !Player.Rewinding | Control.HasFocus(608)">$LOCALIZE[31301]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(7) + Player.Rewinding ">$VAR[value_seekreverse]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(8) + !Player.Forwarding | Control.HasFocus(609)">$LOCALIZE[31302]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(8) + Player.Forwarding">$VAR[value_seekforward]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(9) + !VideoPlayer.Content(LiveTV) | Control.HasFocus(610) + !VideoPlayer.Content(LiveTV)">$LOCALIZE[31306]</value>
+		<!-- next -->
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(9) + VideoPlayer.Content(LiveTV) | Control.HasFocus(610) + VideoPlayer.Content(LiveTV)">+ $LOCALIZE[31763]</value>
 		<!-- + canal -->
 		<value condition="Control.HasFocus(600) + Container(600).HasFocus(10) + ![Playlist.IsRepeat | Playlist.IsRepeatOne]">$LOCALIZE[486]</value>
 		<!-- repeat -->
@@ -4535,7 +4539,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<!-- repeat all -->
 		<value condition="Control.HasFocus(600) + Container(600).HasFocus(11)">$LOCALIZE[590]</value>
 		<!-- random -->
-		<value condition="Control.HasFocus(600) + Container(600).HasFocus(12)">$LOCALIZE[31907]</value>
+		<value condition="Control.HasFocus(600) + Container(600).HasFocus(12) | Control.HasFocus(612)">$LOCALIZE[31907]</value>
 		<!-- fullscreen -->
 	</variable>
 	<variable name="value_playericon_repeat">

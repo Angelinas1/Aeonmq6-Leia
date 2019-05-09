@@ -72,7 +72,7 @@
 		<animation effect="fade" start="100" end="0" time="750" condition="[Player.HasMedia + System.IdleTime(8)] + !Window.IsVisible(6000)">Conditional</animation>
 		<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(510) | Control.HasFocus(600) | Control.HasFocus(1000) | Skin.HasSetting(extra_extra) + [Control.HasFocus(2518) | Control.HasFocus(2510) | Control.HasFocus(2511) | Control.HasFocus(2512) | Control.HasFocus(2513) | Control.HasFocus(2514) | Control.HasFocus(2515) | Control.HasFocus(2516) | Control.HasFocus(2517)]">Conditional</animation>
 		<left>0</left>
-		<top>818</top>
+		<top>812</top>
 		<width>1920</width>
 		<height>90</height>
 		<onup>8001</onup>
@@ -84,63 +84,63 @@
 		<itemlayout width="639" height="90">
 			<control type="label">
 				<left>22</left>
-				<top>3</top>
+				<top>8</top>
 				<font>Font_60</font>
 				<include>MainMenuFont</include>
 				<visible>String.IsEqual(skin.string(font),font1)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>1</top>
+				<top>8</top>
 				<font>Font_60a</font>
 				<include>MainMenuFont</include>
 				<visible>String.IsEqual(skin.string(font),font2)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>3</top>
+				<top>11</top>
 				<font>Font_60b</font>
 				<include>MainMenuFont</include>
 				<visible>String.IsEqual(skin.string(font),font3)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>1</top>
+				<top>11</top>
 				<font>Font_60c</font>
 				<include>MainMenuFont</include>
 				<visible>String.IsEqual(skin.string(font),font4)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>8</top>
+				<top>14</top>
 				<font>Font_60d</font>
 				<include>MainMenuFont</include>
 				<visible>String.IsEqual(skin.string(font),font5)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>0</top>
+				<top>7</top>
 				<font>Font_60e</font>
 				<include>MainMenuFont</include>
 				<visible>String.IsEqual(skin.string(font),font6)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>8</top>
+				<top>11</top>
 				<font>Font_60f</font>
 				<include>MainMenuFont</include>
 				<visible>String.IsEqual(skin.string(font),font7)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>-2</top>
+				<top>4</top>
 				<font>Font_60g</font>
 				<include>MainMenuFont</include>
 				<visible>String.IsEqual(skin.string(font),font8)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>-2</top>
+				<top>11</top>
 				<font>Font_60h</font>
 				<include>MainMenuFont</include>
 				<visible>String.IsEqual(skin.string(font),font9)</visible>
@@ -182,7 +182,7 @@
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>1</top>
+				<top>2</top>
 				<font>Font_60a</font>
 				<include>MainMenuFontFocus</include>
 				<visible>String.IsEqual(skin.string(font),font2)</visible>
@@ -196,21 +196,21 @@
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>1</top>
+				<top>5</top>
 				<font>Font_60c</font>
 				<include>MainMenuFontFocus</include>
 				<visible>String.IsEqual(skin.string(font),font4)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>8</top>
+				<top>9</top>
 				<font>Font_60d</font>
 				<include>MainMenuFontFocus</include>
 				<visible>String.IsEqual(skin.string(font),font5)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>0</top>
+				<top>2</top>
 				<font>Font_60e</font>
 				<include>MainMenuFontFocus</include>
 				<visible>String.IsEqual(skin.string(font),font6)</visible>
@@ -224,14 +224,14 @@
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>-2</top>
+				<top>0</top>
 				<font>Font_60g</font>
 				<include>MainMenuFontFocus</include>
 				<visible>String.IsEqual(skin.string(font),font8)</visible>
 			</control>
 			<control type="label">
 				<left>22</left>
-				<top>-2</top>
+				<top>5</top>
 				<font>Font_60h</font>
 				<include>MainMenuFontFocus</include>
 				<visible>String.IsEqual(skin.string(font),font9)</visible>

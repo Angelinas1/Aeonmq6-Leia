@@ -218,7 +218,7 @@
 			<include>HomeBG</include>
 			<include>Animation_Fade</include>
 			<texture background="true">$VAR[value_widgetsfanart]</texture>
-			<visible>[Control.HasFocus(510) | ControlGroup(512).HasFocus | Control.HasFocus(8005)]</visible>
+			<visible>[Control.HasFocus(510) | ControlGroup(512).HasFocus | Control.HasFocus(8005) | Control.HasFocus(500)]</visible>
 		</control>
 		<control type="multiimage">
 			<include>HomeBG</include>
