@@ -3434,7 +3434,7 @@ Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetti
 					<visible>Weather.IsFetched</visible>
 				</control>
 				</control>
-				<include condition="![Skin.HasSetting(homemq)+Skin.HasSetting(nominihometime)]">miniweather</include>
+				<include condition="!Skin.HasSetting(nominihometime)">miniweather</include>
 			</control>
 			<control type="group">
 				<!-- Controles -->

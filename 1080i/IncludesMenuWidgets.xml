@@ -5447,7 +5447,7 @@
 	<top>340</top>
 	<width>360</width>
 	<height>220</height>
-	<animation effect="slide" time="500" start="0,0" end="0,-26" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_zoom) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,-26" tween="cubic" easing="out" condition="[String.Contains(skin.string(m_panel_layout),panel_zoom) | String.Contains(skin.string(m_panel_layout),panel_layout_fanart)] + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
 	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="[String.IsEqual(skin.string(m_panel_layout),panel_layout_1) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)] | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
 	<animation effect="slide" time="500" start="0,0" end="0,70" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_layout_banner) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
 	<animation effect="slide" time="500" start="0,0" end="0,50" tween="cubic" easing="out" condition="[String.Contains(skin.string(m_panel_layout),panel_layout_cd) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)]+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
