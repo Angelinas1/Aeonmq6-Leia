@@ -321,12 +321,12 @@
 					<visible>[Container.Content(movies)|Container.Content(tvshows)] + !String.Contains(ListItem.Path,videodb://movies/sets) + [String.IsEqual(Container.Viewmode,RIGHT LIST) | String.IsEqual(Container.Viewmode,POSTER ZOOM) | String.IsEqual(Container.Viewmode,BANNER) | String.IsEqual(Container.Viewmode,BANNER INFO) | String.IsEqual(Container.Viewmode,POSTER) | String.IsEqual(Container.Viewmode,LOW LIST) | String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,CowerFlowandBack) | String.IsEqual(Container.Viewmode,COVERFLOW) | String.IsEqual(Container.Viewmode,SHOWART) | String.IsEqual(Container.Viewmode,MULTIPLEX) | String.IsEqual(Container.Viewmode,PANEL) | String.IsEqual(Container.Viewmode,SHELF) | String.IsEqual(Container.Viewmode,LANDSCAPEX) | String.IsEqual(Container.Viewmode,SETS) | String.IsEqual(Container.Viewmode,SHOWCASE) | String.IsEqual(Container.Viewmode,WALL 3D) | String.IsEqual(Container.Viewmode,WALL 3D) | String.IsEqual(Container.Viewmode,POSTERLITE)]</visible>
 				</control>
 				<control type="image">
-					<!-- Clearlogo -->
+					<!-- Studio -->
 					<left>0</left>
 					<top>75</top>
 					<width>112</width>
 					<height>112</height>
-					<texture fallback="blanc.png">$INFO[Window(0).Property(SkinHelper.ListItem.Studio),resource://resource.images.studios.coloured/,.png]</texture>
+					<texture fallback="blanc.png">$INFO[Window(0).Property(SkinHelper.ListItem.StudioLogo)]</texture>
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<visible>String.Contains(ListItem.Path,videodb://movies/sets) + [String.IsEqual(Container.Viewmode,RIGHT LIST) | String.IsEqual(Container.Viewmode,POSTER ZOOM) | String.IsEqual(Container.Viewmode,BANNER) | String.IsEqual(Container.Viewmode,BANNER INFO) | String.IsEqual(Container.Viewmode,POSTER) | String.IsEqual(Container.Viewmode,LOW LIST) | String.IsEqual(Container.Viewmode,WALL) | String.IsEqual(Container.Viewmode,CowerFlowandBack) | String.IsEqual(Container.Viewmode,COVERFLOW) | String.IsEqual(Container.Viewmode,SHOWART) | String.IsEqual(Container.Viewmode,MULTIPLEX) | String.IsEqual(Container.Viewmode,PANEL) | String.IsEqual(Container.Viewmode,SHELF) | String.IsEqual(Container.Viewmode,LANDSCAPEX) | String.IsEqual(Container.Viewmode,SETS) | String.IsEqual(Container.Viewmode,SHOWCASE) | String.IsEqual(Container.Viewmode,WALL 3D) | String.IsEqual(Container.Viewmode,WALL 3D) | String.IsEqual(Container.Viewmode,POSTERLITE)]</visible>
 				</control>

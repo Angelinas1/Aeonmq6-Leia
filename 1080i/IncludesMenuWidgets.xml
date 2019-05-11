@@ -1911,15 +1911,6 @@
 						<animation effect="slide" start="0,0" end="-48,0" time="8000" delay="8000" tween="cubic" easing="out" condition="Control.HasFocus(510)">Conditional</animation>
 						<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
 					</control>
-					<control type="image">
-						<width>168</width>
-						<height>168</height>
-						<texture background="true">http://localhost:52307/getartwork&amp;title=$INFO[Container(510).ListItem.Title]&amp;type=discart</texture>
-						<fadetime>FanartCrossFadeTime</fadetime>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
-						<visible>String.IsEmpty(ListItem.Art(discart))</visible>
-					</control>
 				</control>
 				<control type="group">
 					<!-- modern case left -->
@@ -2032,16 +2023,6 @@
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
 						<include>Animation_ViewsCDart</include>
-					</control>
-					<control type="image">
-						<width>168</width>
-						<height>168</height>
-						<texture background="true">http://localhost:52307/getartwork&amp;title=$INFO[Container(510).ListItem.Title]&amp;type=discart</texture>
-						<fadetime>FanartCrossFadeTime</fadetime>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
-						<include>Animation_ViewsCDart</include>
-						<visible>String.IsEmpty(ListItem.Art(discart))</visible>
 					</control>
 				</control>
 				<control type="group">
@@ -5269,8 +5250,8 @@
 	<top>790</top>
 	<align>left</align>
 	<onup>SetFocus(510)</onup>
-	<ondown condition="Control.IsVisible(500)+!String.IsEqual(Control.GetLabel(566),Album)+!String.IsEqual(Container(9000).ListItem.Property(target),music)">Control.SetFocus(500,0)</ondown>
-	<ondown condition="!Control.IsVisible(500)">Control.SetFocus(510)</ondown>
+	<ondown condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),movie)|String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)">Control.SetFocus(500,0)</ondown>
+	<ondown condition="![String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),movie)|String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)]">9000</ondown>
 	<onleft>9000</onleft>
 	<onright>9000</onright>
 	<orientation>horizontal</orientation>
@@ -5279,7 +5260,7 @@
 	<include>Widgets_Button_mq7</include>
 	<label>$VAR[value_widgetstypecast,, - Info]</label>
 	<onclick condition="String.IsEqual(Control.GetLabel(566),Movie)|String.IsEqual(Control.GetLabel(566),Movie Channel)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(510).ListItem.Title],imdb_id=$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber)])</onclick>
-	<onclick condition="String.IsEqual(Control.GetLabel(566),TVShows)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(510).ListItem.TvShowTitle],imdb_id=$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber)])</onclick>
+	<onclick condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(510).ListItem.TvShowTitle],imdb_id=$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber)])</onclick>
 	<onclick condition="String.IsEqual(Control.GetLabel(566),Album)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(510).ListItem.Artist],imdb_id=$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber)])</onclick>
 	<onclick condition="String.IsEqual(Control.GetLabel(566),Artist)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(510).ListItem.Label],imdb_id=$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber)])</onclick>
 	<onclick condition="String.IsEqual(Control.GetLabel(566),TVShow)|String.IsEqual(Control.GetLabel(566),TVShow Channel)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(510).ListItem.Title],imdb_id=$INFO[Window(Home).Property(SkinHelper.ListItem.Imdbnumber)])</onclick>

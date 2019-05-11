@@ -1570,7 +1570,7 @@
 	<include>widgets_system</include>
 	<include condition="!String.IsEmpty(Weather.Plugin)">widgets_weather</include>
 	<include>widgets_info</include>
-	<animation effect="fade" start="100" end="0" time="300" easing="inout" tween="sine" condition="[String.IsEqual(skin.string(widgetsmode),manual) | String.IsEqual(skin.string(widgetsmode),auto) + !Control.IsVisible(9931) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6) | Control.HasFocus(8005)] + ![Control.HasFocus(500) | Control.HasFocus(510) | Control.HasFocus(520) | Control.HasFocus(521) | Control.HasFocus(523) | Control.HasFocus(5100) | ControlGroup(512).HasFocus]">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="300" easing="inout" tween="sine" condition="[String.IsEqual(skin.string(widgetsmode),manual) | String.IsEqual(skin.string(widgetsmode),auto) + !Control.IsVisible(9931) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6) | Control.HasFocus(8005)] + ![Control.HasFocus(500) | Control.HasFocus(510) | Control.HasFocus(520) | Control.HasFocus(521) | Control.HasFocus(523) | Control.HasFocus(5100) | ControlGroup(512).HasFocus | Control.HasFocus(9224)]">Conditional</animation>
 	</control>
 	</include>
 	
@@ -1760,7 +1760,7 @@
 	<font>Font13</font>
 	<textcolor>FFFFFAF0</textcolor>
 	<label>$VAR[value_librarystatus]</label>
-	<animation effect="slide" start="0,0" end="-650,50" time="0" tween="sine" easing="out" condition="Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)">Conditional</animation>
+	<animation effect="slide" start="0,0" end="-650,16" time="0" tween="sine" easing="out" condition="Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)">Conditional</animation>
 	<animation effect="fade" start="0" end="100" time="500" delay="2300" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
 	<animation effect="fade" start="0" end="100" time="500" delay="1300" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
 	<animation effect="fade" start="0" end="100" time="500" delay="500" tween="sine" easing="out">Visible</animation>
@@ -1771,7 +1771,7 @@
 	</control>
 	<control type="group">
 	<visible>Control.HasFocus(9224)</visible>
-		<animation effect="slide" start="0,0" end="150,00" time="0" tween="sine" easing="out" condition="Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)">Conditional</animation>
+	<animation effect="slide" start="0,0" end="-650,16" time="0" tween="sine" easing="out" condition="Skin.HasSetting(homemq)+!Skin.HasSetting(mainmenuvertical)+Skin.HasSetting(mainmenuamq8)">Conditional</animation>
 	<control type="image">
 	<left>662</left>
 	<top>920</top>
@@ -1836,6 +1836,7 @@
 	<animation effect="fade" start="0" end="100" time="1500" easing="inout" tween="cubic">Visible</animation>
 	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 	<animation effect="fade" start="100" end="0" time="100" easing="inout" tween="cubic">Hidden</animation>
+	<animation effect="fade" start="100" end="20" time="200" easing="inout" tween="cubic" condition="Skin.HasSetting(mainmenuamq8)">Conditional</animation>
 	<visible>[Control.HasFocus(9000) | ControlGroup(600).HasFocus | Control.HasFocus(703) | Control.HasFocus(9224)] + ![Skin.HasSetting(submode) | Window.IsVisible(5099) | Player.HasMedia + System.IdleTime(18)+Skin.HasSetting(mq6)]</visible>
 	</control>
 	

@@ -67,6 +67,16 @@
                 <aspectratio>keep</aspectratio>
                 <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</texture>
             </control>
+            <control type="image">
+                <left>290</left>
+				<top>15</top>
+                <height>105</height>
+                <width>210</width>
+                <aligny>top</aligny>
+                <aspectratio>keep</aspectratio>
+				<animation effect="slide" time="0" start="0,0" end="1400,0" reversible="true" tween="cubic" easing="inout" condition="String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo))">conditional</animation>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ChannelLogo)]</texture>
+            </control>
             <control type="label">
                 <left>45</left>
                 <top>75</top>
@@ -311,7 +321,7 @@
                     <item>
                         <label></label>
                         <!-- Duration -->
-                        <label2>[COLOR=$VAR[value_headercolor]]$LOCALIZE[180]  -  [/COLOR]$VAR[value_videoinfo_value5]</label2>
+                        <label2>[COLOR=$VAR[value_headercolor]]$LOCALIZE[180]  -  [/COLOR]$INFO[ListItem.Duration]$INFO[Window(Home).Property(SkinHelper.ListItem.DurationAndRuntime), - ]</label2>
                         <onclick>noop</onclick>
                     </item>
                     <item>
@@ -366,7 +376,7 @@
                     <item>
                         <label></label>
                         <!-- PVR INFo -->
-                        <label2>[COLOR=$VAR[value_headercolor]]Status  -  [/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Status)] $INFO[Window(Home).Property(SkinHelper.ListItem.media_type)] </label2>
+                        <label2>[COLOR=$VAR[value_headercolor]]Status  -  [/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Status)] $INFO[Window(Home).Property(SkinHelper.ListItem.media_type)] $INFO[Window(Home).Property(SkinHelper.ListItem.mpaa), - ,]</label2>
                         <onclick>noop</onclick>
                         <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status))</visible>
                     </item>
@@ -376,13 +386,6 @@
                         <label2>[COLOR=$VAR[value_headercolor]]Country  -  [/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.Country)]</label2>
                         <onclick>noop</onclick>
                         <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Country))</visible>
-                    </item>
-					<item>
-                        <label></label>
-                        <!-- PVR INFo -->
-                        <label2>[COLOR=$VAR[value_headercolor]]MPAA  -  [/COLOR]$INFO[Window(Home).Property(SkinHelper.ListItem.mpaa)]</label2>
-                        <onclick>noop</onclick>
-                        <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.mpaa))</visible>
                     </item>
                 </content>
             </control>
@@ -760,7 +763,6 @@
                 <orientation>horizontal</orientation>
                 <scrolltime>400</scrolltime>
                 <animation effect="slide" start="0,0" end="1920,0" time="400" tween="cubic" easing="inout" condition="Control.HasFocus(450)">Conditional</animation>
-
 					<itemlayout height="300" width="375">
                         <control type="image">
                             <left>0</left>
