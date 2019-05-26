@@ -5250,8 +5250,9 @@
 	<top>790</top>
 	<align>left</align>
 	<onup>SetFocus(510)</onup>
-	<ondown condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),movie)|String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)">Control.SetFocus(500,0)</ondown>
-	<ondown condition="![String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),movie)|String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)]">9000</ondown>
+	<ondown condition="![String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),movie)|String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)|String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)]">9000</ondown>
+	<ondown condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),movie)|String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)|String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">Control.SetFocus(500,0)</ondown>
+	<ondown condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),movie)|String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)|String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">Control.SetFocus(500,0)</ondown>
 	<onleft>9000</onleft>
 	<onright>9000</onright>
 	<orientation>horizontal</orientation>
@@ -5281,10 +5282,10 @@
 	<onclick condition="![String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+!Skin.HasSetting(homefullscreentrailer)">SetFocus(9000)</onclick>
 	<onclick condition="![String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+!Skin.HasSetting(homefullscreentrailer)">PlayMedia($INFO[Container(510).ListItem.Trailer],1)</onclick>
 	<onclick condition="![String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+Skin.HasSetting(homefullscreentrailer)">PlayMedia($INFO[Container(510).ListItem.Trailer])</onclick>
-	<onclick condition="[String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+!Skin.HasSetting(homefullscreentrailer)">SetFocus(9000)</onclick>
-	<onclick condition="[String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+!Skin.HasSetting(homefullscreentrailer)">PlayMedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)],1)</onclick>
-	<onclick condition="[String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+Skin.HasSetting(homefullscreentrailer)">PlayMedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)])</onclick>
-	<enable>!String.IsEmpty(Container(510).ListItem.Trailer)|[String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Trailer))</enable>
+	<onclick condition="[String.Contains(Container(9000).ListItem.Property(widgets),tv)|String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+!Skin.HasSetting(homefullscreentrailer)">SetFocus(9000)</onclick>
+	<onclick condition="[String.Contains(Container(9000).ListItem.Property(widgets),tv)|String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+!Skin.HasSetting(homefullscreentrailer)">PlayMedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)],1)</onclick>
+	<onclick condition="[String.Contains(Container(9000).ListItem.Property(widgets),tv)|String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)]+Skin.HasSetting(homefullscreentrailer)">PlayMedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)])</onclick>
+	<enable>!String.IsEmpty(Container(510).ListItem.Trailer)|[String.StartsWith(Container(9000).ListItem.Property(widgets),channel)|String.StartsWith(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.Contains(Container(9000).ListItem.Property(widgets),tv)]+!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Trailer))</enable>
 	</control>
 	<!-- CinemaVision -->
 	<control type="button" id="516">
@@ -5318,6 +5319,31 @@
 	<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=$INFO[Container(9000).ListItem.Property(name)].widgets,header=Widget Chooser,simple to set your favorite widget)</onclick>
 	<enable>![Skin.HasSetting(kiosk) | Skin.HasSetting(kiosksmart)] | Skin.HasSetting(kioskcode)</enable>
 	</control>
+	</control>
+	<!-- ClearArt -->	
+	<control type="image">
+	<left>1500</left>
+	<top>340</top>
+	<width>360</width>
+	<height>220</height>
+	<animation effect="slide" start="450,0" end="0,0" time="400" delay="500" tween="sine" easing="out">WindowOpen</animation>
+	<animation effect="slide" start="450,0" end="0,0" time="400" delay="500" tween="sine" easing="out">Visible</animation>
+	<animation effect="slide" start="0,0" end="450,0" time="300" tween="sine" easing="out">Hidden</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,-26" tween="cubic" easing="out" condition="[String.Contains(skin.string(m_panel_layout),panel_zoom) | String.Contains(skin.string(m_panel_layout),panel_layout_fanart)] + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="[String.IsEqual(skin.string(m_panel_layout),panel_layout_1) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)] | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,70" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_layout_banner) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,50" tween="cubic" easing="out" condition="[String.Contains(skin.string(m_panel_layout),panel_layout_cd) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)]+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,75" tween="cubic" easing="out" condition="String.Contains(skin.string(music_panel_layout),panel_zoom) + [String.Contains(Container(9000).ListItem.Property(widgets),music)|String.Contains(Container(9000).ListItem.Property(widgets),album)]">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,63" tween="cubic" easing="out" condition="!String.Contains(skin.string(music_panel_layout),panel_zoom) + [String.Contains(Container(9000).ListItem.Property(widgets),music)|String.Contains(Container(9000).ListItem.Property(widgets),album)]">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,-20" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_fanart) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_landscape) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,70" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layoutbannertv) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,-120" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_shelf) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_1) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
+	<animation effect="slide" time="500" start="0,0" end="0,-20" tween="cubic" easing="out" condition="String.Contains(skin.string(extra_panel_layout),panel_layout) + String.StartsWith(Container(9000).ListItem.Property(widgets),extras)">conditional</animation>
+	<aspectratio align="center" aligny="center">keep</aspectratio>
+	<texture>$VAR[value_pvrclearart]</texture>
+	<visible>Control.HasFocus(510)+[String.StartsWith(Container(9000).ListItem.Property(target),video)|String.StartsWith(Container(9000).ListItem.Property(widgets),vpl)|String.StartsWith(Container(9000).ListItem.Property(widgets),vnodes)|String.Contains(Container(9000).ListItem.Property(widgets),extras.mostplayedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.popularmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.trendingmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.traktsimilarmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.topratedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.upcoming)|String.Contains(Container(9000).ListItem.Property(widgets),extras.incinemas)|String.Contains(Container(9000).ListItem.Property(widgets),channel.tv)|String.Contains(Container(9000).ListItem.Property(widgets),channel.reacent)|String.Contains(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.Contains(Container(9000).ListItem.Property(widgets),music)|String.Contains(Container(9000).ListItem.Property(widgets),album)|String.Contains(Window(Home).Property(SkinHelper.ListItem.media_type),tvshow)]</visible>
 	</control>	
 	<control type="group">
 	<left>0</left>
@@ -5422,28 +5448,6 @@
                         <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.0.Art.DiscArt))</visible>
                     </control>
                 </control>
-	<!-- ClearArt -->	
-	<control type="image">
-	<left>1500</left>
-	<top>340</top>
-	<width>360</width>
-	<height>220</height>
-	<animation effect="slide" time="500" start="0,0" end="0,-26" tween="cubic" easing="out" condition="[String.Contains(skin.string(m_panel_layout),panel_zoom) | String.Contains(skin.string(m_panel_layout),panel_layout_fanart)] + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="[String.IsEqual(skin.string(m_panel_layout),panel_layout_1) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)] | String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,70" tween="cubic" easing="out" condition="String.Contains(skin.string(m_panel_layout),panel_layout_banner) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,50" tween="cubic" easing="out" condition="[String.Contains(skin.string(m_panel_layout),panel_layout_cd) + String.StartsWith(Container(9000).ListItem.Property(widgets),movie)]+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,75" tween="cubic" easing="out" condition="String.Contains(skin.string(music_panel_layout),panel_zoom) + String.Contains(Container(9000).ListItem.Property(widgets),music)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,63" tween="cubic" easing="out" condition="!String.Contains(skin.string(music_panel_layout),panel_zoom) + String.Contains(Container(9000).ListItem.Property(widgets),music)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,-20" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_fanart) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_landscape) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,70" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layoutbannertv) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,-120" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_shelf) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,0" tween="cubic" easing="out" condition="String.Contains(skin.string(tv_panel_layout),panel_layout_1) + String.StartsWith(Container(9000).ListItem.Property(widgets),tvshow)">conditional</animation>
-	<animation effect="slide" time="500" start="0,0" end="0,-20" tween="cubic" easing="out" condition="String.Contains(skin.string(extra_panel_layout),panel_layout) + String.StartsWith(Container(9000).ListItem.Property(widgets),extras)">conditional</animation>
-	<aspectratio align="center" aligny="center">keep</aspectratio>
-	<texture>$VAR[value_pvrclearart]</texture>
-	<visible>[String.StartsWith(Container(9000).ListItem.Property(target),video)]|String.StartsWith(Container(9000).ListItem.Property(widgets),vpl)|String.StartsWith(Container(9000).ListItem.Property(widgets),vnodes)|String.Contains(Container(9000).ListItem.Property(widgets),extras.mostplayedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.popularmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.trendingmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.traktsimilarmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.topratedmovies)|String.Contains(Container(9000).ListItem.Property(widgets),extras.upcoming)|String.Contains(Container(9000).ListItem.Property(widgets),extras.incinemas)|String.Contains(Container(9000).ListItem.Property(widgets),channel.tv)|String.Contains(Container(9000).ListItem.Property(widgets),channel.reacent)|String.Contains(Container(9000).ListItem.Property(widgets),plus.pvrhelper)|String.Contains(Container(9000).ListItem.Property(widgets),music)</visible>
-	</control>
 	<!-- Logo  -->	
 	<control type="image">
 	<left>1240</left>
@@ -5698,9 +5702,6 @@
 	<texture fallback="blanc.png">$VAR[value_studio_510]</texture>
 	<visible>!String.IsEmpty(Control.GetLabel(556))</visible>
 	</control>
-	<control type="image">
-	<include>FlagSeparator</include>
-	</control>
 	<!-- Gravadora -->
 	<control type="image">	
 	<include>FlagImage</include>
@@ -5728,6 +5729,7 @@
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)+!String.IsEmpty(Control.GetLabel(568))</visible>
 	</control>
 	<!-- Codec de musica -->
 	<control type="image">	
@@ -5746,7 +5748,7 @@
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
-	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)+!String.IsEmpty(Control.GetLabel(567))</visible>
 	</control>
 	<!-- Aspecto -->
 	<control type="image">	
@@ -5756,7 +5758,7 @@
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
-	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)+!String.IsEmpty(Container(510).ListItem.VideoAspect)</visible>
 	</control>
 	<!-- Codec de audio -->
 	<control type="image">	
@@ -5766,7 +5768,7 @@
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
-	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)+!String.IsEmpty(Control.GetLabel(562))</visible>
 	</control>
 	<!-- Canais -->
 	<control type="group">
@@ -5780,7 +5782,7 @@
 	<include>FlagImage</include>
 	<texture>osd_audio.png</texture>
 	<aspectratio>keep</aspectratio>
-	<visible>!String.IsEmpty(Container(510).ListItem.Property(AudioLanguage.1))</visible>
+	<visible>!String.IsEmpty(Container(510).ListItem.Property(AudioLanguage.1))|!String.IsEmpty(Container(510).ListItem.Property(AudioChannels.1))</visible>
 	</control>
 	<control type="label">
 	<left>70</left>
@@ -5792,7 +5794,7 @@
 	</control>
 	<control type="image">
 	<include>FlagSeparator</include>
-	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)</visible>
+	<visible>!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)+!String.IsEmpty(Container(510).ListItem.Property(AudioLanguage.1))</visible>
 	</control>
 	<!-- Legenda -->
 	<control type="group">

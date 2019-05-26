@@ -2814,6 +2814,7 @@ String.EndsWith(ListItem(7).Filenameandpath,.iso) | String.Contains(ListItem(7).
 		<value condition="[String.Contains(Container(510).ListItem.Filenameandpath,bluray) | String.Contains(Container(510).ListItem.Filenameandpath,blu-ray) | String.Contains(Container(510).ListItem.Filenameandpath,bdrip)] + ![String.Contains(Container(510).ListItem.Filenameandpath,.3dbd.) | String.Contains(Container(510).ListItem.Filenameandpath,.3d.)]">flags/casecodec/bluray.png</value>
 		<value condition="String.Contains(Container(510).ListItem.Filenameandpath,web)">flags/casecodec/webtv.png</value>
 		<value condition="String.Contains(Container(510).ListItem.Filenameandpath,hdtv)">flags/casecodec/hdtv.png</value>
+		<value condition="String.Contains(Container(510).ListItem.Filenameandpath,divx)">flags/casecodec/divx.png</value>
 		<value condition="String.Contains(Container(510).ListItem.Filenameandpath,dvd) | String.EndsWith(Container(510).ListItem.Filenameandpath,.ifo) | String.EndsWith(Container(510).ListItem.Filenameandpath,.iso) + ![String.Contains(Container(510).ListItem.Filenameandpath,bluray) | String.Contains(Container(510).ListItem.Filenameandpath,.3dbd.) | String.Contains(Container(510).ListItem.Filenameandpath,.3d.)]">flags/casecodec/dvd.png</value>
 		<value condition="String.Contains(Container(510).ListItem.Filenameandpath,.3dbd.) | String.Contains(Container(510).ListItem.Filenameandpath,.3d.)">flags/casecodec/3dbd.png</value>
 		<value condition="String.Contains(ListItem.Path,videodb://movies/sets)">flags/casecodec/set.png</value>
@@ -5551,7 +5552,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	<variable name="value_studio_510">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">$INFO[Window(0).Property(SkinHelper.ListItem.StudioLogo)]</value>
 		<value condition="!String.IsEmpty(Container(510).ListItem.Studio)">$INFO[Container(510).ListItem.Studio,resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="String.IsEmpty(Container(510).ListItem.Studio)+!String.Contains(Container(9000).ListItem.Property(widgets),channel)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">$INFO[Window(0).Property(SkinHelper.ListItem.StudioLogo)]</value>
+		<value condition="String.IsEmpty(Container(510).ListItem.Studio)+!String.Contains(Container(9000).ListItem.Property(widgets),channel)+!String.IsEqual(Container(9000).ListItem.Property(widgets),movie.sets)">$INFO[Window(0).Property(SkinHelper.ListItem.Studio),resource://resource.images.studios.coloured/,.png]</value>
 	</variable>
 	<variable name="value_logoandclearart">
 		<value condition="Control.HasFocus(777)+String.IsEmpty(Container(777).ListItem.Art(tvshow.clearart))">$INFO[Container(777).ListItem.Art(clearart)]</value>
@@ -6106,6 +6107,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),apl18)">$INFO[Window(0).Property(Widget18.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),apl19)">$INFO[Window(0).Property(Widget19.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),apl20)">$INFO[Window(0).Property(Widget20.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgets),vnodes)"> [COLOR=FFFFFAF0]$VAR[value_widgetsstatus][/COLOR] [COLOR=FFFFFAF0] $VAR[value_widgetscounter]: [/COLOR]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),favourites)">$INFO[Window(0).Property(Favourite.Count),[COLOR=FFFFFAF0]$LOCALIZE[20161]: [/COLOR]]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),pictures)">$INFO[Window(Home).Property(SkinHelper.TotalPicturesAddons),[COLOR=FFFFFAF0]$LOCALIZE[20161]: [/COLOR]]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),programs)">$INFO[Window(Home).Property(SkinHelper.TotalProgramAddons),[COLOR=FFFFFAF0]$LOCALIZE[20161]: [/COLOR]]</value>
@@ -6113,6 +6115,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),radio)">$INFO[Window(Home).Property(SkinHelper.TotalRadioChannels),[COLOR=FFFFFAF0]$LOCALIZE[31120] $LOCALIZE[31333] : [/COLOR]]</value>
 	</variable>
 	<variable name="value_multilabel">
+		<value condition="Container.Content(playlists)+String.IsEqual(Container.Viewmode,RIGHT LIST)">[COLOR=$VAR[value_headercolor]]Files in $LOCALIZE[31107]:[/COLOR] $INFO[Container(777).NumItems]</value>
 		<value condition="Container.Content(movies) + ![String.IsEqual(Container.FolderPath,videodb://movies/sets/) | Window.IsActive(selectdialog) | Skin.HasSetting(trailers) | !String.IsEmpty(skin.string(playlists)) | Container.Content(sets)]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20342]:[/COLOR] $INFO[Window(0).Property(Movies.Count)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16102]:[/COLOR] $INFO[Window(0).Property(Movies.Watched)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]:[/COLOR] $INFO[Window(0).Property(Movies.UnWatched)]</value>
 		<value condition="Container.Content(sets) + !Control.HasFocus(5801)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20457]:[/COLOR] $INFO[Container.NumItems]</value>
 		<value condition="Container.Content(sets) + Control.HasFocus(5801)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20342]:[/COLOR] $INFO[Container(5801).NumItems]</value>
@@ -7456,7 +7459,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_widgetsstudio">
 	<value condition="!String.Contains(Container(510).ListItem.Path,videodb://movies/sets)">resource://resource.images.studios.coloured/$INFO[Container(510).ListItem.Studio,,.png]</value>
-	<value condition="String.Contains(Container(510).ListItem.Path,videodb://movies/sets)">$INFO[Window(0).Property(SkinHelper.ListItem.StudioLogo)]</value>
+	<value condition="String.Contains(Container(510).ListItem.Path,videodb://movies/sets)">resource://resource.images.studios.coloured/$INFO[Window(0).Property(SkinHelper.MovieSet.Studio),,.png]</value>
 	</variable>
 	<variable name="record_values">	
 	<value condition="!String.IsEmpty(ListItem.Property(Album_Label))">$INFO[ListItem.Property(Album_Label),resource://resource.images.recordlabels.white/,.png]</value>

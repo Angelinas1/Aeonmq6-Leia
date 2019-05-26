@@ -59,6 +59,7 @@
 	<onload>Skin.SetString(playlist.4.image.EnableWallImages,20)</onload>
 	<onload>Skin.SetBool(EnableAddonsLookups)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
+	<onunload>ClearProperty(Window(0).Property)</onunload>
 	<onunload condition="String.Contains(Container(9000).ListItem.Property(id),vpl) | String.Contains(Container(9000).ListItem.Property(id),apl)">Skin.SetString(playlists,$INFO[Container(9000).ListItem.Property(id)])</onunload>
 	<controls>
 		<control type="image" id="18000">

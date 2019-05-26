@@ -268,7 +268,7 @@
 		<!-- Controle audio codec -->
 		<control type="image" id="562">	
 			<include>InvisibleButton</include>
-			<texture fallback="blanc.png">$VAR[value_widgetsaudiocodec]</texture>
+			<texture>$VAR[value_widgetsaudiocodec]</texture>
 		</control>
 		<!-- Controle canais de audio -->
 		<control type="label" id="563">	
@@ -288,6 +288,14 @@
 		<control type="label" id="566">	
 			<include>InvisibleButton</include>
 			<label>$VAR[value_widgetstypecast]</label>
+		</control>
+		<control type="label" id="567">	
+			<include>InvisibleButton</include>
+			<label>$VAR[value_widgetvresolution]</label>
+		</control>
+		<control type="label" id="568">	
+			<include>InvisibleButton</include>
+			<label>$VAR[value_videocodechome]</label>
 		</control>
 		<!-- Widgets modo auto -->
 		<control type="image" id="9931">

@@ -181,7 +181,7 @@
 			<width>1920</width>
 			<height>1400</height>
 			<fadetime>1200</fadetime>
-			<animation effect="fade" end="40" condition="[String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis)]+Skin.HasSetting(nolyrics_on)">Conditional</animation>
+			<animation effect="fade" end="60" condition="[String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis)]+Skin.HasSetting(nolyrics_on)">Conditional</animation>
 			<texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.AlbumThumb)]</texture>
 			<aspectratio align="right" aligny="top">scale</aspectratio>
 			<visible>Skin.HasSetting(nolyrics_on)+String.IsEqual(skin.string(vis_layout),style6)+!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.AlbumThumb))</visible>
